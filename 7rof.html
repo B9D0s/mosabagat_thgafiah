@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>مسابقة الألغام</title>
+    <style>
+        :root {
+            --cell: 36px;
+            --gap: 3px;
+            --accent: #5b7cff;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            font-family: system-ui, Tahoma, Arial;
+            margin: 0;
+            background: #0f1220;
+            color: #eaeef7
+        }
+
+        header {
+            padding: 12px 16px;
+            background: #12162a;
+            border-bottom: 1px solid #223;
+            display: flex;
+            justify-content: space-between;
+            align-items: center
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 18px
+        }
+
+        .banner {
+            font-size: 13px;
+            opacity: .9
+        }
+
+        .wrap {
+            display: grid;
+            grid-template-columns: 330px 1fr;
+            min-height: calc(100dvh - 58px);
+        }
+
+        aside {
+            border-left: 1px solid #223;
+            background: #0f1428;
+            padding: 14px;
+            overflow: auto
+        }
+
+        main {
+            padding: 14px;
+            overflow: auto;
+            position: relative
+        }
+
+        fieldset {
+            border: 1px solid #2a2f4a;
+            border-radius: 10px;
+            margin: 0 0 12px;
+            padding: 10px
+        }
+
+        legend {
+            padding: 0 6px;
+            color: #9fb2ff
+        }
+
+        label {
+            display: block;
+            margin: 6px 0 3px;
+            font-size: 13px;
+            color: #c9d2ff
+        }
+
+        input,
+        select,
+        button,
+        textarea {
+            background: #121733;
+            color: #eaeef7;
+            border: 1px solid #27305a;
+            border-radius: 10px;
+            padding: 8px 10px;
+            width: 100%
+        }
+
+        button {
+            cursor: pointer
+        }
+
+        button.action {
+            background: var(--accent);
+            border: none;
+            color: white;
+            font-weight: 700
+        }
+
+        .row {
+            display: flex;
+            gap: 8px
+        }
+
+        .row>* {
+            flex: 1
+        }
+
+        .hint {
+            font-size: 12px;
+            opacity: .85
+        }
+
+        .boards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px
+        }
+
+        .board {
+            background: #0e1431;
+            border: 1px solid #28305a;
+            border-radius: 12px;
+            padding: 10px
+        }
+
+        .board h3 {
+            margin: 0 0 8px;
+            font-size: 15px
+        }
+
+        .grid {
+            display: grid;
+            gap: var(--gap);
+            background: #0b1025;
+            padding: var(--gap);
+            border-radius: 10px;
+            border: 1px dashed #27305a
+        }
+
+        .cell {
+            width: var(--cell);
+            height: var(--cell);
+            border-radius: 6px;
+            background: #111735;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            user-select: none;
+            font-weight: 700;
+            border: 1px solid #1d2550;
+            transition: transform .05s
+        }
+
+        .cell:hover {
+            outline: 2px solid #2e3a7a;
+            transform: translateY(-1px)
+        }
+
+        .cell.hit {
+            background: #18b45b !important;
+            color: #001b09;
+            border-color: #18b45b
+        }
+
+        .cell.miss {
+            color: #000;
+            font-size: 11px
+        }
+
+        .grid .soldier {
+            background: repeating-linear-gradient(45deg, #19d87d 0 6px, #0a3 6px 12px) !important;
+            border-color: #19d87d !important
+        }
+
+        .score {
+            display: grid;
+            gap: 6px
+        }
+
+        .score .item {
+            display: flex;
+            justify-content: space-between;
+            padding: 6px 8px;
+            background: #121733;
+            border: 1px solid #27305a;
+            border-radius: 8px
+        }
+
+        .history {
+            max-height: 220px;
+            overflow: auto;
+            background: #0e1431;
+            border: 1px solid #28305a;
+            border-radius: 8px;
+            padding: 8px;
+            font-size: 13px
+        }
+
+        .tag {
+            background: #161b3b;
+            border: 1px solid #2b3569;
+            border-radius: 999px;
+            padding: 4px 10px;
+            font-size: 12px
+        }
+
+        .pill {
+            display: inline-block;
+            background: #182255;
+            border: 1px solid #2a3c8a;
+            padding: 3px 8px;
+            border-radius: 999px;
+            font-size: 12px
+        }
+
+        .sep {
+            height: 1px;
+            background: #233;
+            margin: 8px 0
+        }
+
+        .top-toast {
+            position: sticky;
+            top: 0;
+            z-index: 3;
+            margin: 0 -14px 10px;
+            padding: 10px 14px;
+            background: #0b1a3d;
+            border: 1px solid #274;
+            display: none;
+            border-inline: 0
+        }
+
+        .top-toast.show {
+            display: block;
+            animation: fade .6s
+        }
+
+        @keyframes fade {
+            from {
+                opacity: 0;
+                transform: translateY(-4px)
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0)
+            }
+        }
+
+        /* شاشة الفوز */
+        .winner-modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, .6);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999
+        }
+
+        .winner-card {
+            background: #0d1333;
+            border: 1px solid #3a4;
+            max-width: 520px;
+            width: 92%;
+            border-radius: 16px;
+            padding: 18px;
+            text-align: center;
+            position: relative;
+            overflow: hidden
+        }
+
+        .winner-card h2 {
+            margin: 0 0 6px
+        }
+
+        .winner-card .crown {
+            font-size: 42px
+        }
+
+        .winner-card .rank {
+            margin-top: 10px;
+            text-align: start;
+            background: #0e1431;
+            border: 1px solid #28305a;
+            border-radius: 10px;
+            padding: 10px;
+            max-height: 220px;
+            overflow: auto
+        }
+
+        .winner-card button {
+            margin-top: 10px
+        }
+
+        /* كونفيتي */
+        .confetti {
+            position: fixed;
+            top: -10px;
+            width: 10px;
+            height: 14px;
+            opacity: .9;
+            z-index: 99999
+        }
+
+        /* ألعاب نارية بسيطة */
+        .firework {
+            position: fixed;
+            bottom: -20px;
+            width: 4px;
+            height: 4px;
+            background: #fff;
+            border-radius: 50%;
+            animation: boom 1.1s ease-out forwards
+        }
+
+        @keyframes boom {
+            0% {
+                transform: translate(var(--x, 0), 0) scale(1);
+                opacity: 1
+            }
+
+            60% {
+                transform: translate(var(--x, 0), -220px) scale(1)
+            }
+
+            100% {
+                transform: translate(var(--x, 0), -220px) scale(0);
+                opacity: 0
+            }
+        }
+
+        .timer {
+            font-variant-numeric: tabular-nums
+        }
+
+        .current {
+            outline: 2px solid #5b7cff44
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1 id="gameTitle">مسابقة الألغام</h1>
+        <div class="banner"><span id="turnInfo">🎯 اختر من الذي سيقصف والمستهدف</span></div>
+    </header>
+
+    <div class="wrap">
+        <aside>
+            <!-- 1) لوحة النقاط (أعلى شيء) -->
+            <fieldset>
+                <legend>النقاط</legend>
+                <div id="scoreBoard" class="score"></div>
+                <div class="sep"></div>
+                <div class="hint">🏆 إصابة = +2 (أو +4 في الموت المفاجئ)، ومسافة 1 = +1.</div>
+            </fieldset>
+
+            <!-- 2) السجل مباشرة تحت النقاط -->
+            <fieldset>
+                <legend>السجل</legend>
+                <div id="history" class="history"></div>
+            </fieldset>
+
+            <!-- 3) باقي الإعدادات تحت -->
+            <fieldset>
+                <legend>إعدادات عامة</legend>
+                <label>اسم المسابقة</label>
+                <input id="titleInput" placeholder="مسابقة الألغام" />
+                <label>عدد الصفوف × الأعمدة</label>
+                <div class="row">
+                    <input id="rows" type="number" min="5" max="25" value="10">
+                    <input id="cols" type="number" min="5" max="25" value="10">
+                </div>
+                <label>عدد المجموعات / الأسر</label>
+                <input id="groupsCount" type="number" min="2" max="12" value="3">
+                <label>أسماء الأسر (افصل بفاصلة)</label>
+                <textarea id="groupNames" rows="2" placeholder="أسرة النور، أسرة التحدي، أسرة الإبداع"></textarea>
+
+                <label>وضع توزيع الجنود</label>
+                <select id="placementMode">
+                    <option value="random">عشوائي</option>
+                    <option value="manual">يدوي</option>
+                </select>
+
+                <div id="manualWrap" style="display:none">
+                    <label>العدد الافتراضي للجنود لكل أسرة</label>
+                    <input id="defaultSoldiers" type="number" min="1" max="10" value="2">
+                    <div id="perGroupConfig"></div>
+                    <div class="hint">👆 في الوضع اليدوي: اختر الأسرة ثم ضع/أزل الجنود بالضغط على خلايا لوحتها.</div>
+                </div>
+
+                <div class="sep"></div>
+                <label>مؤقّت الجولة (ثوانٍ) — اختياري</label>
+                <div class="row">
+                    <input id="roundSeconds" type="number" min="0" value="0">
+                    <select id="timerMode">
+                        <option value="per-shot">لكل قصف</option>
+                        <option value="per-turn">لكل دور</option>
+                    </select>
+                </div>
+
+                <label>وضع الموت المفاجئ (أول إصابة تنهي الجولة)</label>
+                <select id="suddenDeath">
+                    <option value="off">معطّل</option>
+                    <option value="on">مفعّل</option>
+                </select>
+
+                <div class="row" style="margin-top:10px">
+                    <button id="buildBtn">إنشاء اللوحات</button>
+                    <button id="startBtn" class="action">بدء اللعبة</button>
+                </div>
+                <div class="row" style="margin-top:6px">
+                    <button id="resetPlacements">مسح التوزيع اليدوي</button>
+                    <button id="revealBtn">كشف المواقع</button>
+                </div>
+                <div class="row" style="margin-top:6px">
+                    <button id="endGameBtn">إنهاء المباراة</button>
+                    <button id="resetScoreBtn">تصفير النقاط</button>
+                </div>
+                <div class="row" style="margin-top:6px">
+                    <button id="exportBtn">تصدير النتائج (CSV)</button>
+                </div>
+                <div class="sep"></div>
+                <div class="hint">🔁 عدّل الإعدادات ثم “إنشاء اللوحات”؛ ابدأ الجولة من “بدء اللعبة”.</div>
+            </fieldset>
+
+            <fieldset id="manualPanel" style="display:none">
+                <legend>الإعداد اليدوي</legend>
+                <label>اختر الأسرة لوضع الجنود</label>
+                <select id="setupGroupSelect"></select>
+                <div id="setupInfo" class="hint"></div>
+            </fieldset>
+
+            <fieldset>
+                <legend>الدور والقصف</legend>
+                <label>من الذي أجاب؟ (سيقصف الآن)</label>
+                <select id="shooterSelect"></select>
+                <label>اختر المجموعة المستهدفة</label>
+                <select id="targetSelect"></select>
+                <div class="hint">بعد اختيار المستهدف، اضغط خلية في لوحته لإطلاق القصف.</div>
+                <div class="sep"></div>
+                <div>⏱️ الوقت: <strong class="timer" id="timerLabel">—</strong></div>
+            </fieldset>
+        </aside>
+
+        <main>
+            <div id="topToast" class="top-toast"></div>
+            <div id="boards" class="boards"></div>
+        </main>
+    </div>
+
+    <!-- نافذة الفائز -->
+    <div id="winnerModal" class="winner-modal" role="dialog" aria-modal="true">
+        <div class="winner-card">
+            <div class="crown">👑</div>
+            <h2 id="winnerTitle">الفائز</h2>
+            <div class="rank" id="rankList"></div>
+            <button id="closeWinner">إغلاق</button>
+        </div>
+    </div>
+
+    <script>
+        const S = {
+            rows: 10, cols: 10,
+            groups: [],
+            scores: {},
+            started: false,
+            placementMode: 'random',
+            placementsReady: false,
+            timer: null, timerLeft: 0, timerMode: 'per-shot',
+            suddenDeath: false,
+            history: [],
+        };
+
+        const $ = id => document.getElementById(id);
+        const titleInput = $('titleInput'), gameTitleEl = $('gameTitle');
+        const rowsInput = $('rows'), colsInput = $('cols');
+        const groupsCountInput = $('groupsCount'), groupNamesInput = $('groupNames');
+        const placementModeSel = $('placementMode'), manualWrap = $('manualWrap'), manualPanel = $('manualPanel');
+        const defaultSoldiersInput = $('defaultSoldiers'), perGroupConfig = $('perGroupConfig');
+        const buildBtn = $('buildBtn'), startBtn = $('startBtn'), resetPlacementsBtn = $('resetPlacements');
+        const revealBtn = $('revealBtn'), endGameBtn = $('endGameBtn'), resetScoreBtn = $('resetScoreBtn'), exportBtn = $('exportBtn');
+        const setupGroupSelect = $('setupGroupSelect'), setupInfo = $('setupInfo');
+        const shooterSelect = $('shooterSelect'), targetSelect = $('targetSelect');
+        const timerLabel = $('timerLabel'), timerModeSel = $('timerMode'), roundSeconds = $('roundSeconds'), suddenDeathSel = $('suddenDeath');
+        const boardsWrap = $('boards'), historyEl = $('history'), scoreBoard = $('scoreBoard'), topToast = $('topToast');
+        const winnerModal = $('winnerModal'), winnerTitle = $('winnerTitle'), rankList = $('rankList'), closeWinner = $('closeWinner'), turnInfo = $('turnInfo');
+
+        placementModeSel.addEventListener('change', () => {
+            manualWrap.style.display = placementModeSel.value === 'manual' ? '' : 'none';
+            manualPanel.style.display = placementModeSel.value === 'manual' ? '' : 'none';
+        });
+
+        titleInput.addEventListener('input', () => gameTitleEl.textContent = titleInput.value.trim() || 'مسابقة الألغام');
+
+        buildBtn.addEventListener('click', buildBoards);
+        startBtn.addEventListener('click', startGame);
+        resetPlacementsBtn.addEventListener('click', resetManualPlacements);
+        revealBtn.addEventListener('click', revealAll);
+        endGameBtn.addEventListener('click', endGame);
+        resetScoreBtn.addEventListener('click', () => { for (const g of S.groups) S.scores[g.name] = 0; renderScores(); toast('تم تصفير النقاط.'); });
+        exportBtn.addEventListener('click', exportCSV);
+        setupGroupSelect.addEventListener('change', updateSetupInfo);
+        closeWinner.addEventListener('click', () => winnerModal.style.display = 'none');
+
+        function buildBoards() {
+            S.rows = clamp(+rowsInput.value || 10, 5, 25);
+            S.cols = clamp(+colsInput.value || 10, 5, 25);
+            S.placementMode = placementModeSel.value;
+            S.timerMode = timerModeSel.value;
+            S.suddenDeath = (suddenDeathSel.value === 'on');
+
+            const n = clamp(+groupsCountInput.value || 3, 2, 12);
+            let names = (groupNamesInput.value || 'أسرة النور، أسرة التحدي، أسرة الإبداع').split(',').map(s => s.trim()).filter(Boolean);
+            while (names.length < n) names.push('مجموعة ' + (names.length + 1));
+            names = names.slice(0, n);
+
+            S.groups = []; S.scores = {}; S.started = false; S.history = [];
+            boardsWrap.innerHTML = ''; historyEl.innerHTML = '';
+            shooterSelect.innerHTML = ''; targetSelect.innerHTML = ''; setupGroupSelect.innerHTML = ''; perGroupConfig.innerHTML = '';
+
+            const defCount = clamp(+defaultSoldiersInput.value || 2, 1, 10);
+
+            for (let i = 0; i < n; i++) {
+                const g = { id: i, name: names[i], boardEl: null, soldiers: [], hits: 0, revealed: false, cellsState: new Map(), required: defCount };
+                S.groups.push(g);
+                S.scores[g.name] = 0;
+
+                // إعداد يدوي لكل أسرة
+                const row = document.createElement('div'); row.className = 'row'; row.style.alignItems = 'center'; row.style.margin = '6px 0';
+                row.innerHTML = `<span class="pill" style="min-width:120px">${g.name}</span><input type="number" min="1" max="10" value="${defCount}" data-gid="${g.id}">`;
+                perGroupConfig.appendChild(row);
+            }
+            perGroupConfig.querySelectorAll('input[type=number]').forEach(inp => {
+                inp.addEventListener('input', () => {
+                    const gid = +inp.dataset.gid;
+                    const v = clamp(+inp.value || 1, 1, 10);
+                    S.groups.find(x => x.id === gid).required = v;
+                    updateSetupInfo();
+                });
+            });
+
+            for (const g of S.groups) shooterSelect.add(new Option(g.name, g.name));
+            refreshTargetSelect();
+
+            for (const g of S.groups) setupGroupSelect.add(new Option(g.name, g.id));
+            setupGroupSelect.selectedIndex = 0;
+            updateSetupInfo();
+
+            renderBoards(true);
+            toast('🧱 تم إنشاء اللوحات. اضبط التوزيع ثم ابدأ.');
+        }
+
+        function renderBoards(isSetup = false) {
+            boardsWrap.innerHTML = '';
+            for (const g of S.groups) {
+                const board = document.createElement('div'); board.className = 'board';
+                const title = document.createElement('h3');
+                title.innerHTML = `🎯 ${g.name} <span class="tag">${S.rows}×${S.cols}</span>`;
+                const grid = document.createElement('div'); grid.className = 'grid';
+                grid.style.gridTemplateColumns = `repeat(${S.cols}, var(--cell))`;
+                grid.style.gridTemplateRows = `repeat(${S.rows}, var(--cell))`;
+
+                for (let r = 0; r < S.rows; r++) {
+                    for (let c = 0; c < S.cols; c++) {
+                        const cell = document.createElement('div'); cell.className = 'cell';
+                        cell.dataset.r = r; cell.dataset.c = c;
+                        if (isSetup && placementModeSel.value === 'manual') {
+                            cell.addEventListener('click', () => manualPlaceHandler(g, r, c, cell));
+                        } else {
+                            cell.addEventListener('click', () => handleFire(g, r, c, cell));
+                        }
+                        grid.appendChild(cell);
+                    }
+                }
+                board.appendChild(title); board.appendChild(grid); boardsWrap.appendChild(board);
+                g.boardEl = grid;
+            }
+        }
+
+        function manualPlaceHandler(group, r, c, cellEl) {
+            const selectedGid = +setupGroupSelect.value;
+            if (group.id !== selectedGid) return;
+            const already = group.soldiers.some(s => s.r === r && s.c === c);
+            if (already) {
+                group.soldiers = group.soldiers.filter(s => !(s.r === r && s.c === c));
+                cellEl.classList.remove('soldier');
+            } else {
+                if (group.soldiers.length >= group.required) { alert(`هذه الأسرة بلغت الحد المطلوب (${group.required}).`); return; }
+                group.soldiers.push({ r, c });
+                cellEl.classList.add('soldier');
+            }
+            S.placementsReady = S.groups.every(x => x.soldiers.length === x.required);
+            updateSetupInfo();
+        }
+
+        function updateSetupInfo() {
+            const gid = +setupGroupSelect.value || 0;
+            const g = S.groups.find(x => x.id === gid); if (!g) return;
+            $('setupInfo').textContent = `الأسرة: ${g.name} — المطلوب: ${g.required} — المضاف: ${g.soldiers.length} — المتبقي: ${Math.max(0, g.required - g.soldiers.length)}`;
+        }
+
+        function resetManualPlacements() {
+            for (const g of S.groups) {
+                g.soldiers = []; g.hits = 0; g.cellsState.clear();
+                if (g.boardEl) [...g.boardEl.children].forEach(c => c.classList.remove('soldier', 'hit', 'miss'));
+            }
+            S.placementsReady = false;
+            toast('🧹 تم مسح التوزيعات اليدوية.');
+            updateSetupInfo();
+        }
+
+        function startGame() {
+            if (S.groups.length === 0) { alert('أنشئ اللوحات أولًا.'); return; }
+            if (placementModeSel.value === 'manual') {
+                if (!S.placementsReady) { alert('أكمل وضع الجنود لكل الأسر.'); return; }
+            } else {
+                for (const g of S.groups) { g.soldiers = uniqueRandomCells(g.required, S.rows, S.cols); }
+            }
+            for (const g of S.groups) { g.hits = 0; g.revealed = false; g.cellsState.clear(); }
+
+            renderBoards(false);
+            shooterSelect.selectedIndex = 0; refreshTargetSelect();
+            S.started = true; S.history = []; historyEl.innerHTML = '';
+            toast('🚀 بدأت الجولة!');
+            gameTitleEl.textContent = titleInput.value.trim() || 'مسابقة الألغام';
+            startTimerIfNeeded();
+            showTurnInfo();
+        }
+
+        function startTimerIfNeeded() {
+            clearTimer();
+            const seconds = +roundSeconds.value || 0;
+            if (!seconds) { timerLabel.textContent = '—'; return; }
+            S.timerLeft = seconds;
+            timerLabel.textContent = fmt(S.timerLeft);
+            S.timer = setInterval(() => {
+                S.timerLeft--; timerLabel.textContent = fmt(S.timerLeft);
+                if (S.timerLeft <= 0) {
+                    clearTimer();
+                    toast('⏰ انتهى الوقت!');
+                }
+            }, 1000);
+        }
+        function clearTimer() { if (S.timer) { clearInterval(S.timer); S.timer = null; } }
+
+        function refreshTargetSelect() {
+            targetSelect.innerHTML = '';
+            const shooter = shooterSelect.value;
+            for (const g of S.groups) if (g.name !== shooter) targetSelect.add(new Option(g.name, g.name));
+        }
+
+        shooterSelect.addEventListener('change', () => { refreshTargetSelect(); showTurnInfo(); if (S.timerMode === 'per-turn') startTimerIfNeeded(); });
+
+        function handleFire(targetGroup, r, c, cellEl) {
+            if (!S.started) return;
+            const shooter = shooterSelect.value, targetName = targetSelect.value;
+            if (targetGroup.name !== targetName) { flash(cellEl); return; }
+            if (shooter === targetName) { alert('لا يمكنك قصف مجموعتك!'); return; }
+
+            const key = r + ',' + c; if (targetGroup.cellsState.get(key)?.tried) return;
+
+            const isHit = targetGroup.soldiers.some(s => s.r === r && s.c === c);
+            const nearest = nearestManhattan({ r, c }, targetGroup.soldiers);
+
+            if (isHit) {
+                cellEl.classList.add('hit'); cellEl.textContent = '✔';
+                targetGroup.hits++; addScore(shooter, S.suddenDeath ? 4 : 2);
+                log(`${shooter} أصاب (${r + 1},${c + 1}) في لوحة ${targetGroup.name}! ✅`);
+                toast('🎯 إصابة مباشرة! ممتاز!');
+                if (S.suddenDeath) { endGame('m'); return; }
+            } else {
+                const maxD = S.rows + S.cols;
+                const hue = 60 - Math.min(nearest / maxD, 1) * 60; // 60=أصفر..0=أحمر
+                const col = `hsl(${hue},90%,50%)`;
+                cellEl.style.background = col; cellEl.style.borderColor = col;
+                cellEl.classList.add('miss'); cellEl.textContent = nearest;
+                if (nearest === 1) addScore(shooter, 1);
+                log(`${shooter} قصف (${r + 1},${c + 1}) على ${targetGroup.name} — أقرب مسافة: ${nearest}.`);
+                toast(nearest <= 2 ? '🟡 قريب جدًا!' : '🔴 بعيد.');
+            }
+            targetGroup.cellsState.set(key, { tried: true, hit: isHit });
+            renderScores();
+
+            if (S.groups.every(g => g.hits >= g.required)) { endGame('a'); return; }
+            if (S.timerMode === 'per-shot') startTimerIfNeeded();
+        }
+
+        function addScore(name, delta) { S.scores[name] = (S.scores[name] || 0) + delta; renderScores(); }
+        function renderScores() {
+            scoreBoard.innerHTML = '';
+            const entries = Object.entries(S.scores).sort((a, b) => b[1] - a[1]);
+            for (const [name, score] of entries) {
+                const d = document.createElement('div'); d.className = 'item';
+                d.innerHTML = `<strong>${name}</strong><span>${score}</span>`;
+                scoreBoard.appendChild(d);
+            }
+        }
+        function log(t) { const row = document.createElement('div'); row.textContent = `${timeNow()} — ${t}`; historyEl.prepend(row); S.history.push(t); }
+
+        function revealAll() {
+            for (const g of S.groups) {
+                if (g.revealed) continue;
+                const grid = g.boardEl;
+                for (const s of g.soldiers) {
+                    const idx = s.r * S.cols + s.c; const cell = grid.children[idx];
+                    cell.classList.add('soldier'); cell.title = 'موقع جندي';
+                }
+                g.revealed = true;
+            }
+            toast('🗺️ كشف المواقع للجميع.');
+        }
+
+        function endGame(reason = 'm') {
+            S.started = false; clearTimer();
+            const ranks = Object.entries(S.scores).sort((a, b) => b[1] - a[1]);
+            const winner = ranks.length ? ranks[0] : ['لا أحد', 0];
+
+            winnerTitle.textContent = `الفائز: ${winner[0]} — ${winner[1]} نقطة 👑`;
+            rankList.innerHTML = ranks.map(([n, s], i) => `${i + 1}. ${n} — ${s}`).join('\n').replace(/\n/g, '<br>');
+            winnerModal.style.display = 'flex';
+            confettiBurst();
+            fireworks();
+
+            log(`انتهت المباراة (${reason === 'a' ? 'كشف كامل' : 'إنهاء يدوي'}) — الفائز: ${winner[0]} (${winner[1]}).`);
+            toast(`🏆 مبروك ${winner[0]}!`);
+        }
+
+        function exportCSV() {
+            const rows = [['Group', 'Score']];
+            for (const [name, score] of Object.entries(S.scores)) rows.push([name, score]);
+            const csv = rows.map(r => r.map(x => `"${String(x).replace(/"/g, '""')}"`).join(',')).join('\n');
+            const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a'); a.href = url; a.download = 'alagham_results.csv'; a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        function showTurnInfo() {
+            turnInfo.textContent = `الدور: ${shooterSelect.value} — يستهدف: ${targetSelect.value}`;
+            for (const b of boardsWrap.querySelectorAll('.board')) b.classList.remove('current');
+            const tgt = S.groups.find(g => g.name === targetSelect.value);
+            if (tgt?.boardEl) tgt.boardEl.parentElement.classList.add('current');
+        }
+
+        /* ====== أدوات ====== */
+        function uniqueRandomCells(k, rows, cols) {
+            const used = new Set(), list = [];
+            while (list.length < k) {
+                const r = Math.floor(Math.random() * rows), c = Math.floor(Math.random() * cols), key = r + ',' + c;
+                if (!used.has(key)) { used.add(key); list.push({ r, c }); }
+            }
+            return list;
+        }
+        function nearestManhattan(p, soldiers) { let best = Infinity; for (const s of soldiers) { const d = Math.abs(s.r - p.r) + Math.abs(s.c - p.c); if (d < best) best = d; } return best; }
+        function fmt(s) { const m = Math.floor(s / 60), ss = String(s % 60).padStart(2, '0'); return `${m}:${ss}`; }
+        function clamp(x, a, b) { return Math.max(a, Math.min(b, x)); }
+        function timeNow() { const d = new Date(); return d.toLocaleTimeString(); }
+        function flash(el) { el.animate([{ transform: 'scale(1)' }, { transform: 'scale(.95)' }, { transform: 'scale(1)' }], { duration: 150 }); }
+        function toast(msg) { topToast.textContent = msg; topToast.classList.add('show'); setTimeout(() => topToast.classList.remove('show'), 1200); }
+
+        /* كونفيتي بسيط */
+        function confettiBurst() {
+            const colors = ['#ffd166', '#06d6a0', '#ef476f', '#118ab2', '#ffe66d', '#9b5de5'];
+            for (let i = 0; i < 180; i++) {
+                const d = document.createElement('div'); d.className = 'confetti';
+                d.style.left = Math.random() * 100 + 'vw';
+                d.style.background = colors[i % colors.length];
+                d.style.transform = `rotate(${Math.random() * 360}deg)`;
+                const fall = 1200 + Math.random() * 1200;
+                d.animate([{ transform: `translateY(0) rotate(0deg)` }, { transform: `translateY(110vh) rotate(${720 + Math.random() * 360}deg)` }], { duration: fall, easing: 'cubic-bezier(.25,.6,.3,1)' });
+                document.body.appendChild(d);
+                setTimeout(() => d.remove(), fall);
+            }
+        }
+        /* ألعاب نارية */
+        function fireworks() {
+            for (let i = 0; i < 14; i++) {
+                const f = document.createElement('div'); f.className = 'firework';
+                f.style.left = (10 + Math.random() * 80) + 'vw';
+                f.style.setProperty('--x', (Math.random() * 60 - 30) + 'px');
+                document.body.appendChild(f);
+                setTimeout(() => f.remove(), 1100);
+            }
+        }
+
+        /* إنشاء مبدئي */
+        buildBoards();
+    </script>
+</body>
+
+</html>

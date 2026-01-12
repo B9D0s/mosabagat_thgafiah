@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>البرنامج التحفيزي</title>
+    <style>
+        body {
+            background: #f6f7fb;
+            font-family: "Tahoma", Arial;
+            margin: 0;
+        }
+
+        header {
+            background: #1f4c8e;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 22px;
+            font-weight: bold;
+            cursor: text;
+        }
+
+        header small {
+            display: block;
+            font-size: 12px;
+            color: #dcdcdc;
+            margin-top: 5px;
+        }
+
+        .container {
+            width: 90%;
+            margin: auto;
+            margin-top: 20px;
+        }
+
+        section {
+            background: white;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, .1);
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        input,
+        select,
+        button {
+            padding: 8px;
+            margin: 5px;
+        }
+
+        button {
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .addBtn {
+            background: #27ae60;
+            color: white;
+        }
+
+        .resetAll {
+            background: #d63031;
+            color: white;
+        }
+
+        .deductBtn {
+            background: #0984e3;
+            color: white;
+        }
+
+        .studentCard {
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
+            display: inline-block;
+            width: 220px;
+            vertical-align: top;
+            margin: 7px;
+            text-align: center;
+        }
+
+        .studentCard img {
+            width: 100%;
+            height: 150px;
+            border-radius: 8px;
+            object-fit: cover;
+            background: #eee;
+        }
+
+        .name {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .points {
+            margin-top: 5px;
+        }
+
+        .low {
+            background: #ffe5e5;
+        }
+
+        .historyBox {
+            max-height: 200px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header id="programTitle" contenteditable="true">
+        اكتب هنا اسم البرنامج
+        <small>(اضغط هنا لتعديل الاسم)</small>
+    </header>
+
+    <div class="container">
+
+        <section>
+            <h2>إدخال بيانات الطلاب</h2>
+            <input id="nameInput" placeholder="اسم الطالب">
+            <input id="pointsInput" type="number" placeholder="مجموع النقاط">
+            <input id="imgInput" type="file" accept="image/*">
+            <button class="addBtn" onclick="addStudent()">إضافة طالب</button>
+            <button class="resetAll" onclick="resetAll()">إعادة تعيين جميع الطلاب</button>
+        </section>
+
+        <section>
+            <h2>قائمة الطلاب</h2>
+            <div id="studentsList"></div>
+        </section>
+
+        <section>
+            <h2>المزاد وخصم النقاط</h2>
+            <select id="studentSelect"></select>
+            <input id="deductInput" type="number" placeholder="قيمة الخصم">
+            <button class="deductBtn" onclick="deductPoints()">خصم النقاط</button>
+        </section>
+
+        <section>
+            <h2>سجل العمليات</h2>
+            <div class="historyBox" id="history"></div>
+        </section>
+
+    </div>
+
+    <script>
+        // ==========================
+        // إعدادات عامة
+        // ==========================
+
+        // إذا تريد ضرب النقاط في 10 مثلاً 100 → 1000
+        // غيّر القيمة هنا
+        const POINTS_MULTIPLIER = 1;
+
+        // الطلاب (فارغة افتراضياً)
+        let students = [];
+        let idCounter = 1;
+
+        // ==========================
+        // واجهة الطلاب
+        // ==========================
+        function renderStudents() {
+            const list = document.getElementById("studentsList");
+            const select = document.getElementById("studentSelect");
+            list.innerHTML = "";
+            select.innerHTML = "";
+
+            students.forEach(s => {
+                const div = document.createElement("div");
+                div.className = "studentCard " + (s.current <= 200 ? "low" : "");
+
+                div.innerHTML = `
+            <img src="${s.img || ''}">
+            <input type="file" accept="image/*" onchange="updateImage(${s.id}, event)">
+            <div class="name">${s.name}</div>
+            <div class="points">النقاط الأصلية: ${s.total}</div>
+            <div class="points">المتبقي: ${s.current}</div>
+            <div class="points">المصروف: ${s.spent}</div>
+
+            <button onclick="resetStudent(${s.id})">إعادة تعيين</button>
+            <button onclick="removeStudent(${s.id})" style="background:#c0392b;color:white">حذف</button>
+        `;
+                list.appendChild(div);
+
+                const option = document.createElement("option");
+                option.value = s.id;
+                option.text = s.name;
+                select.appendChild(option);
+            });
+        }
+
+        // ==========================
+        // تحديث صورة الطالب
+        // ==========================
+        function updateImage(id, event) {
+            let file = event.target.files[0];
+            if (!file) return;
+
+            let reader = new FileReader();
+            reader.onload = () => {
+                let s = students.find(x => x.id === id);
+                if (!s) return;
+                s.img = reader.result;
+                renderStudents();
+            };
+            reader.readAsDataURL(file);
+        }
+
+        // ==========================
+        // إضافة طالب
+        // ==========================
+        function addStudent() {
+            let name = document.getElementById("nameInput").value.trim();
+            let points = Number(document.getElementById("pointsInput").value);
+            let imgFile = document.getElementById("imgInput").files[0];
+
+            if (!name || !points) {
+                alert("يرجى إدخال الاسم والنقاط");
+                return;
+            }
+
+            points = points * POINTS_MULTIPLIER;
+
+            let reader = new FileReader();
+            reader.onload = () => {
+                students.push({
+                    id: idCounter++,
+                    name: name,
+                    total: points,
+                    current: points,
+                    spent: 0,
+                    img: reader.result
+                });
+                renderStudents();
+            };
+
+            if (imgFile) {
+                reader.readAsDataURL(imgFile);
+            } else {
+                students.push({
+                    id: idCounter++,
+                    name: name,
+                    total: points,
+                    current: points,
+                    spent: 0,
+                    img: ""
+                });
+                renderStudents();
+            }
+
+            document.getElementById("nameInput").value = "";
+            document.getElementById("pointsInput").value = "";
+            document.getElementById("imgInput").value = "";
+        }
+
+        // ==========================
+        // خصم النقاط
+        // ==========================
+        function deductPoints() {
+            let id = Number(document.getElementById("studentSelect").value);
+            let value = Number(document.getElementById("deductInput").value);
+
+            if (!id) {
+                alert("اختر الطالب أولاً");
+                return;
+            }
+
+            if (!value) {
+                alert("أدخل قيمة الخصم");
+                return;
+            }
+
+            let s = students.find(x => x.id === id);
+            if (!s) {
+                alert("لم يتم العثور على الطالب");
+                return;
+            }
+
+            if (s.current - value < 0) {
+                alert("لا يمكن أن تكون نقاط الطالب أقل من صفر");
+                return;
+            }
+
+            s.current -= value;
+            s.spent += value;
+
+            log(`تم خصم ${value} نقطة من الطالب ${s.name} — الرصيد الحالي: ${s.current} نقطة`);
+            renderStudents();
+            document.getElementById("deductInput").value = "";
+        }
+
+        // ==========================
+        // أدوات التحكم
+        // ==========================
+        function resetStudent(id) {
+            if (!confirm("هل تريد إعادة نقاط هذا الطالب؟")) return;
+            let s = students.find(x => x.id === id);
+            if (!s) return;
+            s.current = s.total;
+            s.spent = 0;
+            renderStudents();
+        }
+
+        function removeStudent(id) {
+            if (!confirm("هل تريد حذف هذا الطالب؟")) return;
+            students = students.filter(s => s.id !== id);
+            renderStudents();
+        }
+
+        function resetAll() {
+            if (!confirm("هل تريد إعادة تعيين جميع الطلاب؟")) return;
+            students.forEach(s => {
+                s.current = s.total;
+                s.spent = 0;
+            });
+            renderStudents();
+        }
+
+        // ==========================
+        // سجل العمليات
+        // ==========================
+        function log(text) {
+            let box = document.getElementById("history");
+            let p = document.createElement("div");
+            p.textContent = text;
+            box.prepend(p);
+        }
+
+        // تشغيل أولي
+        renderStudents();
+    </script>
+
+</body>
+
+</html>
