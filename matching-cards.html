@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <title>لعبة الذاكرة</title>
+  <style>
+    :root {
+      --bg: #EAEFEF;
+      --surface: #BFC9D1;
+      --text: #25343F;
+      --accent: #FF9B51;
+      --card-bg: #EAEFEF;
+      --card-back: #BFC9D1;
+      --shadow: rgba(37, 52, 63, 0.15);
+      --header-bg: #25343F;
+      --header-text: #EAEFEF;
+    }
+    [data-theme="dark"] {
+      --bg: #25343F;
+      --surface: #1a2630;
+      --text: #EAEFEF;
+      --accent: #FF9B51;
+      --card-bg: #1a2630;
+      --card-back: #2d3d4a;
+      --shadow: rgba(0, 0, 0, 0.3);
+      --header-bg: #1a2630;
+      --header-text: #EAEFEF;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html {
+      height: 100%;
+      overflow: hidden;
+      -webkit-text-size-adjust: 100%;
+      overscroll-behavior: none;
+    }
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+      height: 100%;
+      overflow: hidden;
+      padding: 0.5rem;
+      padding-top: max(0.5rem, env(safe-area-inset-top));
+      padding-right: max(0.5rem, env(safe-area-inset-right));
+      padding-bottom: max(0.5rem, env(safe-area-inset-bottom));
+      padding-left: max(0.5rem, env(safe-area-inset-left));
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .top-bar {
+      flex-shrink: 0;
+      background: var(--header-bg);
+      color: var(--header-text);
+      padding: 0.75rem 1rem;
+      border-radius: 12px;
+      margin-bottom: 0.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1rem;
+    }
+    .stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-left: auto;
+    }
+    .stat { font-size: 0.9rem; }
+    .stat span { font-weight: 700; color: var(--accent); }
+    .badge {
+      background: var(--accent);
+      color: var(--text);
+      padding: 0.2rem 0.5rem;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+    .btn {
+      background: var(--accent);
+      color: var(--text);
+      border: none;
+      padding: 0.5rem 0.75rem;
+      min-height: 44px;
+      min-width: 44px;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.1s, opacity 0.2s;
+      touch-action: manipulation;
+      -webkit-user-select: none;
+      user-select: none;
+    }
+    .btn:hover { opacity: 0.9; transform: scale(1.02); }
+    .btn:active { transform: scale(0.98); }
+    .btn:disabled { opacity: 0.6; cursor: not-allowed; }
+    .settings-row {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+    }
+    .settings-row input[type="checkbox"] { accent-color: var(--accent); }
+    .grid-size-row { display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; }
+    .grid-size-row select,
+    #difficulty {
+      background: var(--surface);
+      color: var(--text);
+      border: 1px solid var(--accent);
+      border-radius: 6px;
+      padding: 0.35rem 0.5rem;
+      min-height: 44px;
+      font-weight: 600;
+      cursor: pointer;
+      touch-action: manipulation;
+    }
+    .board-wrap {
+      flex: 1;
+      min-height: 0;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      padding: 0.25rem;
+      container-type: size;
+    }
+    .board {
+      display: grid;
+      gap: 6px;
+      aspect-ratio: 1 / 1;
+      width: min(100cqw, 100cqh);
+      height: auto;
+      max-width: 100%;
+      max-height: 100%;
+    }
+    @supports not (container-type: size) {
+      .board-wrap { container-type: none; }
+      .board {
+        width: min(90vw, 90vh, 90vmin);
+        max-width: 100%;
+        max-height: 100%;
+      }
+    }
+    .card-wrap {
+      aspect-ratio: 1 / 1;
+      min-width: 0;
+      min-height: 0;
+    }
+    .card {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      cursor: pointer;
+      border-radius: 8px;
+      overflow: hidden;
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
+      -webkit-user-select: none;
+      user-select: none;
+    }
+    .card.outlined { border: 2px solid var(--surface); }
+    [data-theme="dark"] .card.outlined { border-color: var(--text); }
+    .card.flipped .card-inner { transform: rotateY(180deg); }
+    .card.matched .card-face-front { box-shadow: 0 0 12px var(--accent), 0 0 24px rgba(255, 155, 81, 0.4); }
+    .card.shake .card-inner { animation: shake 0.5s ease; }
+    .card-inner {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.4s ease;
+    }
+    .card-face {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: clamp(1.5rem, 7.5vmin, 3.5rem);
+    }
+    .card-face-back {
+      background: repeating-linear-gradient(
+        45deg,
+        var(--card-back),
+        var(--card-back) 4px,
+        var(--bg) 4px,
+        var(--bg) 8px
+      );
+      background-color: var(--bg);
+    }
+    .card-face-front {
+      background: var(--card-bg);
+      transform: rotateY(180deg);
+      box-shadow: inset 0 0 0 1px var(--shadow);
+    }
+    .card-face-front.card-easy {
+      font-weight: 800;
+      font-size: clamp(1.2rem, 6vmin, 2.8rem);
+      color: #fff;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+    }
+    @keyframes shake {
+      0%, 100% { transform: rotateY(180deg) translateX(0); }
+      20% { transform: rotateY(180deg) translateX(-4px); }
+      40% { transform: rotateY(180deg) translateX(4px); }
+      60% { transform: rotateY(180deg) translateX(-4px); }
+      80% { transform: rotateY(180deg) translateX(4px); }
+    }
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(37, 52, 63, 0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 100;
+      padding: 1rem;
+    }
+    .modal-overlay.hidden { display: none; }
+    .modal {
+      background: var(--bg);
+      color: var(--text);
+      padding: 1.5rem;
+      border-radius: 16px;
+      max-width: 400px;
+      width: 100%;
+      box-shadow: 0 8px 32px var(--shadow);
+    }
+    .modal h2 { margin-bottom: 1rem; color: var(--text); }
+    .modal p { margin-bottom: 0.5rem; }
+    .modal .btn { margin-top: 1rem; margin-right: 0.5rem; }
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      border: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="top-bar">
+    <div class="stats">
+      <span class="stat">النقاط: <span id="score">0</span>/<span id="score-max">50</span></span>
+      <span class="stat">الحركات: <span id="moves">0</span></span>
+      <span class="stat">الوقت: <span id="time">00:00</span></span>
+      <span class="stat">الدقة: <span id="accuracy">0</span>%</span>
+      <span class="stat">السلسلة: <span id="streak">0</span></span>
+    </div>
+    <span class="badge" id="reveal-badge" style="display:none;">وضع الكشف</span>
+    <span class="badge" id="practice-badge" style="display:none;">تدرب</span>
+    <button class="btn" id="btn-new" aria-label="لعبة جديدة">لعبة جديدة</button>
+    <button class="btn" id="btn-reveal" aria-label="كشف الكل">كشف الكل</button>
+    <button class="btn" id="btn-hint" aria-label="تلميح">تلميح (٣)</button>
+    <button class="btn" id="btn-theme" aria-label="المظهر">المظهر</button>
+    <button class="btn" id="btn-sound" aria-label="الصوت">الصوت</button>
+    <div class="settings-row">
+      <input type="checkbox" id="outline-cards" aria-label="حدود البطاقات">
+      <label for="outline-cards">حدود البطاقات</label>
+    </div>
+    <div class="grid-size-row">
+      <label for="difficulty">الصعوبة:</label>
+      <select id="difficulty" aria-label="الصعوبة">
+        <option value="easy">سهل (أرقام وألوان)</option>
+        <option value="medium">متوسط (رموز)</option>
+        <option value="hard" selected>صعب (إيموجيات)</option>
+      </select>
+    </div>
+    <div class="grid-size-row">
+      <label for="grid-size">حجم الشبكة:</label>
+      <select id="grid-size" aria-label="حجم الشبكة">
+        <option value="6">٦×٦ (صغير)</option>
+        <option value="8">٨×٨</option>
+        <option value="10" selected>١٠×١٠ (متوسط)</option>
+        <option value="12">١٢×١٢</option>
+        <option value="14">١٤×١٤ (كبير)</option>
+      </select>
+    </div>
+  </div>
+  <div class="board-wrap">
+    <div class="board" id="board" role="grid" aria-label="شبكة لعبة الذاكرة"></div>
+  </div>
+  <div class="modal-overlay hidden" id="modal-overlay" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal">
+      <h2 id="modal-title">تهانينا!</h2>
+      <p id="modal-stats"></p>
+      <p id="modal-records"></p>
+      <button class="btn" id="btn-close-modal">إغلاق</button>
+    </div>
+  </div>
+  <div id="live-region" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+
+  <script>
+(function() {
+  const EMOJI_POOL = ['😀','😃','😄','😁','😅','😂','🤣','😊','😇','🙂','😉','😌','😍','🥰','😘','😗','😙','😚','😋','😛','😜','🤪','😝','🤑','🤗','🤭','🤫','🤔','🤐','🤨','😐','😑','😶','😏','😒','🙄','😬','🤥','😌','😔','😪','🤤','😴','😷','🤒','🤕','🤢','🤮','🤧','🥵','🥶','🥴','😵','🤯','🤠','🥳','😎','🤓','🧐','😕','😟','🙁','😮','😯','😲','😳','🥺','😦','😧','😨','😰','😥','😢','😭','😱','😖','😣','😞','😓','😩','😫','🥱','😤','😡','😠','🤬','😈','👿','💀','☠️','🌟','🤡','👹','👺','👻','👽','👾','🤖','😺','😸','😹','😻','😼','😽','🙀','😿','😾','🐶','🐱','🐭','🐹','🐰','🦊','🐻','🐼','🐨','🐯','🦁','🐮','🐷','🐸','🐵','🐔','🐧','🐦','🐤','🦆','🦅','🦉','🦇','🐺','🐗','🐴','🦄','🐝','🐛','🦋','🐌','🐞','🐜','🦟','🦗','🕷️','🦂','🐢','🐍','🦎','🦖','🦕','🐙','🦑','🦐','🦞','🦀','🐡','🐠','🐟','🐬','🐳','🐋','🦈','🐅','🐆'];
+  const SYMBOLS_POOL = ['🚗','🚕','🚙','🚌','🚎','🏎️','🚓','🚑','🚒','✈️','🚀','🛸','🚁','🛶','⛵','🚤','🛳️','🚂','🚃','🚄','🚅','🚆','🚇','🚈','🚉','🚊','🚝','🚞','🚋','🚌','🚍','🚎','🚏','🛹','🛼','🚲','🛴','🛵','🚴','🚵','🏠','🏡','🏢','🏣','🏤','🏥','🏦','🏧','🏨','🏩','🏪','🛑','🚦','🚧','⚓','🛟','🎯','🎲','🎮','🕹️','📱','💻','⌨️','🖥️','🖨️','📷','📸','🔦','💡','🔌','🔋','⏰','📻','📺','☎️','🔔','📬','✉️','📦','🔒','🔑','🛒','💰','💎','🏆','🎁','🎈','🎀','⭐','☀️','🌙','🔥','💧','❄️','🌸','🌺','🍎','🍕','🍔','🥤','⚽','🏀','🎾','🎳'];
+  const EASY_COLORS = ['#e74c3c','#3498db','#2ecc71','#f39c12','#9b59b6','#1abc9c','#e67e22','#34495e','#c0392b','#2980b9','#27ae60','#d35400','#8e44ad','#16a085','#f1c40f','#2c3e50','#e91e63','#00bcd4','#4caf50','#ff9800','#795548','#607d8b','#cddc39','#009688','#673ab7','#ff5722','#3f51b5','#ffeb3b','#2196f3','#8bc34a','#ffc107','#9c27b0','#00acc1','#ff7043','#5c6bc0','#66bb6a','#ab47bc','#26a69a','#42a5f5','#7e57c2','#ef5350','#ec407a','#26c6da','#ffee58','#ffa726','#5c6bc0','#66bb6a','#ab47bc','#26a69a','#42a5f5'];
+  const GRID_OPTIONS = [6, 8, 10, 12, 14];
+  const DIFFICULTY_OPTIONS = ['easy', 'medium', 'hard'];
+  const HINT_CARDS = 6;
+  const HINT_DURATION = 1000;
+  const HINT_MAX = 3;
+  const FLIP_BACK_DELAY = 700;
+  const AR_NUMS = '٠١٢٣٤٥٦٧٨٩';
+
+  let state = {
+    cards: [],
+    flipped: [],
+    matched: 0,
+    moves: 0,
+    score: 0,
+    streak: 0,
+    startTime: null,
+    timerId: null,
+    locked: false,
+    revealMode: false,
+    practiceMode: false,
+    hintsUsed: 0
+  };
+
+  function toArNum(n) {
+    return String(n).replace(/\d/g, d => AR_NUMS[+d]);
+  }
+
+  let soundEnabled = true;
+  let audioCtx = null;
+
+  function getStorage(key, def) {
+    try {
+      const v = localStorage.getItem(key);
+      return v !== null ? JSON.parse(v) : def;
+    } catch (_) { return def; }
+  }
+  function setStorage(key, val) {
+    try { localStorage.setItem(key, JSON.stringify(val)); } catch (_) {}
+  }
+
+  const theme = getStorage('memory-theme', 'light');
+  const outlineCards = getStorage('memory-outline', false);
+  let currentGridSize = getStorage('memory-grid-size', 10);
+  let currentDifficulty = getStorage('memory-difficulty', 'hard');
+  if (!GRID_OPTIONS.includes(currentGridSize)) currentGridSize = 10;
+  if (!DIFFICULTY_OPTIONS.includes(currentDifficulty)) currentDifficulty = 'hard';
+  document.documentElement.setAttribute('data-theme', theme === 'dark' ? 'dark' : 'light');
+  document.getElementById('outline-cards').checked = outlineCards;
+  document.getElementById('grid-size').value = String(currentGridSize);
+  document.getElementById('difficulty').value = currentDifficulty;
+  document.body.classList.toggle('outlined', outlineCards);
+
+  function getPairs() { return (currentGridSize * currentGridSize) / 2; }
+  function getTotal() { return currentGridSize * currentGridSize; }
+
+  function initAudio() {
+    if (audioCtx) return audioCtx;
+    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    return audioCtx;
+  }
+  function playTone(freq, duration) {
+    if (!soundEnabled || !audioCtx) return;
+    try {
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+      osc.frequency.value = freq;
+      osc.type = 'sine';
+      gain.gain.setValueAtTime(0.1, audioCtx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + duration);
+      osc.start(audioCtx.currentTime);
+      osc.stop(audioCtx.currentTime + duration);
+    } catch (_) {}
+  }
+
+  function fisherYates(arr) {
+    const a = arr.slice();
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  }
+
+  function pickCards() {
+    const pairsCount = getPairs();
+    if (currentDifficulty === 'easy') {
+      const colors = fisherYates(EASY_COLORS.slice());
+      const cards = [];
+      for (let i = 0; i < pairsCount; i++) {
+        const color = colors[i % colors.length];
+        cards.push({ n: i + 1, c: color }, { n: i + 1, c: color });
+      }
+      return fisherYates(cards);
+    }
+    if (currentDifficulty === 'medium') {
+      const shuffled = fisherYates(SYMBOLS_POOL.slice());
+      const chosen = shuffled.slice(0, pairsCount);
+      const pairs = chosen.flatMap(e => [e, e]);
+      return fisherYates(pairs);
+    }
+    const shuffled = fisherYates(EMOJI_POOL.slice(0, 120));
+    const chosen = shuffled.slice(0, pairsCount);
+    const pairs = chosen.flatMap(e => [e, e]);
+    return fisherYates(pairs);
+  }
+
+  function cardsMatch(a, b) {
+    if (currentDifficulty === 'easy') return a.n === b.n;
+    return a === b;
+  }
+
+  function renderBoard() {
+    const board = document.getElementById('board');
+    board.innerHTML = '';
+    board.style.gridTemplateColumns = 'repeat(' + currentGridSize + ', 1fr)';
+    board.style.aspectRatio = currentGridSize + ' / ' + currentGridSize;
+    board.classList.toggle('outlined', outlineCards);
+    state.cards.forEach((item, i) => {
+      const wrap = document.createElement('div');
+      wrap.className = 'card-wrap';
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.dataset.index = i;
+      card.setAttribute('role', 'gridcell');
+      card.setAttribute('tabindex', '0');
+      card.setAttribute('aria-label', 'بطاقة ' + (i + 1));
+      const inner = document.createElement('div');
+      inner.className = 'card-inner';
+      const back = document.createElement('div');
+      back.className = 'card-face card-face-back';
+      const front = document.createElement('div');
+      front.className = 'card-face card-face-front';
+      if (currentDifficulty === 'easy' && item && typeof item === 'object' && item.n != null) {
+        front.classList.add('card-easy');
+        front.textContent = toArNum(item.n);
+        front.style.backgroundColor = item.c;
+      } else {
+        front.textContent = typeof item === 'string' ? item : '';
+      }
+      inner.appendChild(back);
+      inner.appendChild(front);
+      card.appendChild(inner);
+      wrap.appendChild(card);
+      board.appendChild(wrap);
+    });
+    if (document.getElementById('outline-cards').checked) {
+      board.querySelectorAll('.card').forEach(c => c.classList.add('outlined'));
+    }
+  }
+
+  function updateUI() {
+    document.getElementById('score-max').textContent = getPairs();
+    document.getElementById('score').textContent = state.score;
+    document.getElementById('moves').textContent = state.moves;
+    const acc = state.moves ? Math.round((state.score / state.moves) * 100) : 0;
+    document.getElementById('accuracy').textContent = acc;
+    document.getElementById('streak').textContent = state.streak;
+    const elapsed = state.startTime ? Math.floor((Date.now() - state.startTime) / 1000) : 0;
+    const m = Math.floor(elapsed / 60);
+    const s = elapsed % 60;
+    document.getElementById('time').textContent = `${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+    document.getElementById('reveal-badge').style.display = state.revealMode ? 'inline-block' : 'none';
+    document.getElementById('practice-badge').style.display = state.practiceMode ? 'inline-block' : 'none';
+    document.getElementById('btn-hint').textContent = 'تلميح (' + toArNum(HINT_MAX - state.hintsUsed) + ')';
+    document.getElementById('btn-hint').disabled = state.hintsUsed >= HINT_MAX || state.revealMode || state.locked;
+    document.getElementById('btn-reveal').textContent = state.revealMode ? 'إخفاء الكل' : 'كشف الكل';
+  }
+
+  function getCardEl(index) {
+    return document.querySelector(`.card[data-index="${index}"]`);
+  }
+
+  function flipCard(index, faceUp) {
+    const el = getCardEl(index);
+    if (!el) return;
+    if (faceUp) el.classList.add('flipped');
+    else el.classList.remove('flipped');
+  }
+
+  function setMatched(index) {
+    const el = getCardEl(index);
+    if (el) el.classList.add('matched');
+  }
+
+  function resolveTwoFlipped() {
+    const [a, b] = state.flipped;
+    const cardA = state.cards[a];
+    const cardB = state.cards[b];
+    if (cardsMatch(cardA, cardB)) {
+      state.score++;
+      state.streak++;
+      setMatched(a);
+      setMatched(b);
+      playTone(523, 0.1);
+      state.flipped = [];
+      state.locked = false;
+      if (state.score === getPairs()) endGame();
+      return;
+    }
+    state.streak = 0;
+    const elA = getCardEl(a);
+    const elB = getCardEl(b);
+    if (elA) elA.classList.add('shake');
+    if (elB) elB.classList.add('shake');
+    setTimeout(() => {
+      if (elA) elA.classList.remove('shake');
+      if (elB) elB.classList.remove('shake');
+      flipCard(a, false);
+      flipCard(b, false);
+      state.flipped = [];
+      state.locked = false;
+    }, FLIP_BACK_DELAY);
+  }
+
+  function handleCardClick(index) {
+    if (state.locked || state.revealMode) return;
+    const el = getCardEl(index);
+    if (!el || el.classList.contains('flipped') || el.classList.contains('matched')) return;
+    state.moves++;
+    flipCard(index, true);
+    state.flipped.push(index);
+    if (state.flipped.length === 2) {
+      state.locked = true;
+      resolveTwoFlipped();
+    } else {
+      state.locked = false;
+    }
+    updateUI();
+  }
+
+  function enterRevealMode() {
+    if (state.revealMode) return;
+    if (state.flipped.length === 2) {
+      const [a, b] = state.flipped;
+      if (!cardsMatch(state.cards[a], state.cards[b])) {
+        flipCard(a, false);
+        flipCard(b, false);
+        state.flipped = [];
+      } else {
+        setMatched(a);
+        setMatched(b);
+        state.flipped = [];
+      }
+    } else if (state.flipped.length === 1) {
+      flipCard(state.flipped[0], false);
+      state.flipped = [];
+    }
+    state.locked = false;
+    state.revealMode = true;
+    state.practiceMode = true;
+    state.cards.forEach((_, i) => {
+      const el = getCardEl(i);
+      if (el && !el.classList.contains('matched')) {
+        el.classList.add('flipped');
+      }
+    });
+    updateUI();
+  }
+
+  function exitRevealMode() {
+    if (!state.revealMode) return;
+    state.revealMode = false;
+    state.cards.forEach((_, i) => {
+      const el = getCardEl(i);
+      if (el && !el.classList.contains('matched')) {
+        el.classList.remove('flipped');
+      }
+    });
+    updateUI();
+  }
+
+  function toggleReveal() {
+    if (state.revealMode) exitRevealMode();
+    else enterRevealMode();
+  }
+
+  function hint() {
+    if (state.hintsUsed >= HINT_MAX || state.revealMode || state.locked) return;
+    const unmatched = state.cards
+      .map((item, i) => ({ i, item }))
+      .filter(({ i }) => {
+        const el = getCardEl(i);
+        return el && !el.classList.contains('flipped') && !el.classList.contains('matched');
+      });
+    const pairs = new Map();
+    unmatched.forEach(({ i, item }) => {
+      const key = currentDifficulty === 'easy' ? item.n : item;
+      if (!pairs.has(key)) pairs.set(key, []);
+      pairs.get(key).push(i);
+    });
+    const canReveal = [];
+    pairs.forEach(indices => {
+      indices.forEach(idx => canReveal.push(idx));
+    });
+    const shuffled = fisherYates(canReveal);
+    const toShow = shuffled.slice(0, HINT_CARDS);
+    toShow.forEach(i => flipCard(i, true));
+    state.hintsUsed++;
+    updateUI();
+    setTimeout(() => {
+      toShow.forEach(i => flipCard(i, false));
+      updateUI();
+    }, HINT_DURATION);
+  }
+
+  function endGame() {
+    if (state.timerId) clearInterval(state.timerId);
+    const elapsed = state.startTime ? Math.floor((Date.now() - state.startTime) / 1000) : 0;
+    const acc = state.moves ? Math.round((state.score / state.moves) * 100) : 0;
+    const timeStr = String(Math.floor(elapsed/60)).padStart(2,'0') + ':' + String(elapsed%60).padStart(2,'0');
+    document.getElementById('modal-title').textContent = 'تهانينا!';
+    document.getElementById('modal-stats').textContent = 'الوقت: ' + timeStr + ' | الحركات: ' + state.moves + ' | الدقة: ' + acc + '%';
+    let recordsText = '';
+    if (!state.practiceMode) {
+      const best = getStorage('memory-best', { time: Infinity, moves: Infinity, accuracy: 0 });
+      if (elapsed < best.time) best.time = elapsed;
+      if (state.moves < best.moves) best.moves = state.moves;
+      if (acc > best.accuracy) best.accuracy = acc;
+      setStorage('memory-best', best);
+      const t = String(Math.floor(best.time/60)).padStart(2,'0') + ':' + String(best.time%60).padStart(2,'0');
+      recordsText = 'أفضل: الوقت ' + t + ' | الحركات ' + best.moves + ' | الدقة ' + best.accuracy + '%';
+    } else {
+      recordsText = 'جولة تدرب — لم تُحفظ الأرقام.';
+    }
+    document.getElementById('modal-records').textContent = recordsText;
+    document.getElementById('modal-overlay').classList.remove('hidden');
+    const region = document.getElementById('live-region');
+    region.textContent = 'انتهت اللعبة. الوقت ' + timeStr + '، الحركات ' + state.moves + '، الدقة ' + acc + '%. ' + recordsText;
+  }
+
+  function startTimer() {
+    if (state.timerId) clearInterval(state.timerId);
+    state.startTime = Date.now();
+    state.timerId = setInterval(updateUI, 1000);
+  }
+
+  function newGame() {
+    if (state.timerId) clearInterval(state.timerId);
+    state = {
+      cards: pickCards(),
+      flipped: [],
+      matched: 0,
+      moves: 0,
+      score: 0,
+      streak: 0,
+      startTime: null,
+      timerId: null,
+      locked: false,
+      revealMode: false,
+      practiceMode: false,
+      hintsUsed: 0
+    };
+    renderBoard();
+    updateUI();
+    startTimer();
+  }
+
+  document.getElementById('btn-new').addEventListener('click', newGame);
+  document.getElementById('btn-reveal').addEventListener('click', toggleReveal);
+  document.getElementById('btn-hint').addEventListener('click', hint);
+  document.getElementById('btn-theme').addEventListener('click', () => {
+    const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    setStorage('memory-theme', next);
+    document.getElementById('btn-theme').textContent = next === 'dark' ? 'فاتح' : 'غامق';
+  });
+  document.getElementById('btn-theme').textContent = theme === 'dark' ? 'فاتح' : 'غامق';
+  document.getElementById('btn-sound').addEventListener('click', () => {
+    soundEnabled = !soundEnabled;
+    if (soundEnabled) initAudio();
+    document.getElementById('btn-sound').textContent = soundEnabled ? 'الصوت' : 'كتم';
+  });
+  document.getElementById('outline-cards').addEventListener('change', function() {
+    const v = this.checked;
+    setStorage('memory-outline', v);
+    document.querySelectorAll('.card').forEach(c => c.classList.toggle('outlined', v));
+  });
+  document.getElementById('grid-size').addEventListener('change', function() {
+    currentGridSize = parseInt(this.value, 10);
+    setStorage('memory-grid-size', currentGridSize);
+    newGame();
+  });
+  document.getElementById('difficulty').addEventListener('change', function() {
+    currentDifficulty = this.value;
+    setStorage('memory-difficulty', currentDifficulty);
+    newGame();
+  });
+  document.getElementById('btn-close-modal').addEventListener('click', () => {
+    document.getElementById('modal-overlay').classList.add('hidden');
+  });
+
+  document.getElementById('board').addEventListener('click', function(e) {
+    const card = e.target.closest('.card');
+    if (card) handleCardClick(parseInt(card.dataset.index, 10));
+  });
+
+  document.getElementById('board').addEventListener('keydown', function(e) {
+    const card = e.target.closest('.card');
+    if (!card) return;
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      handleCardClick(parseInt(card.dataset.index, 10));
+    }
+    if (['ArrowLeft','ArrowRight','ArrowUp','ArrowDown'].includes(e.key)) {
+      e.preventDefault();
+      const idx = parseInt(card.dataset.index, 10);
+      let next = idx;
+      const total = getTotal();
+      if (e.key === 'ArrowLeft') next = idx - 1;
+      else if (e.key === 'ArrowRight') next = idx + 1;
+      else if (e.key === 'ArrowUp') next = idx - currentGridSize;
+      else next = idx + currentGridSize;
+      if (next < 0) next += total;
+      if (next >= total) next -= total;
+      const nextEl = getCardEl(next);
+          if (nextEl) nextEl.focus();
+    }
+  });
+
+  document.getElementById('modal-overlay').addEventListener('click', function(e) {
+    if (e.target === this) this.classList.add('hidden');
+  });
+
+  initAudio();
+  newGame();
+})();
+  </script>
+</body>
+</html>

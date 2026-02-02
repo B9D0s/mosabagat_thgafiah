@@ -621,7 +621,6 @@
                     <button class="btn-green" onclick="doubleWallet(${f.id})">×2</button>
                     <button class="btn-purple" onclick="addToWallet(${f.id}, 100)">+100</button>
                     <button class="btn-dark" onclick="addToWallet(${f.id}, -100)">-100</button>
-                    <button class="btn-blue" onclick="depositHalfToBank(${f.id})">نصف للبنك</button>
                     <button class="btn-main" onclick="editFamilyName(${f.id})">تعديل الاسم</button>
                     <button class="btn-red" onclick="deleteFamily(${f.id})">حذف الأسرة</button>
                 </div>
@@ -712,16 +711,6 @@
             f.wallet = f.wallet * 2;
             renderAll();
             log(`تم تضعيف رصيد المحفظة للأسرة «${f.name}» إلى ${f.wallet} نقطة (×2)`);
-        }
-
-        function depositHalfToBank(id) {
-            const f = findFamily(id);
-            if (!f) return;
-            const half = Math.floor(f.wallet / 2);
-            f.wallet -= half;
-            f.bank += half;
-            renderAll();
-            log(`تم تحويل نصف المحفظة (${half} نقطة) إلى بنك الأسرة «${f.name}»`);
         }
 
         function editFamilyName(id) {
@@ -861,10 +850,21 @@
             { id: "guessNumber", label: "4- تخمين الرقم (1-100)" },
             { id: "clicker", label: "5- تحدي النقر السريع" },
             { id: "oddColor", label: "6- اللون المختلف" },
-            { id: "cups", label: "7- الكأس والكرة" },
-            { id: "typing", label: "8- اختبار سرعة الكتابة" },
-            { id: "rps", label: "9- حجر - ورقة - مقص" },
-            { id: "mentalSteps", label: "10- سلم الأرقام (جمع/طرح ذهني)" }
+            { id: "typing", label: "7- اختبار سرعة الكتابة" },
+            { id: "mentalSteps", label: "8- سلم الأرقام (جمع/طرح ذهني)" },
+            { id: "snake", label: "9- لعبة الثعبان" },
+            { id: "flappy", label: "10- لعبة الطائر الطائر" },
+            { id: "maze", label: "11- المتاهة" },
+            { id: "minesweeper", label: "12- كاسح الألغام" },
+            { id: "obstacle", label: "13- تجنب العوائق" },
+            { id: "colorSequence", label: "14- تتابع الألوان (ذاكرة)" },
+            { id: "numberSequence", label: "15- تتابع الأرقام (ذاكرة)" },
+            { id: "speedMath", label: "16- الحساب السريع" },
+            { id: "aimTrainer", label: "17- تدريب التصويب" },
+            { id: "rhythmTap", label: "18- النقر على الإيقاع" },
+            { id: "stackBlocks", label: "19- ترتيب المكعبات" },
+            { id: "patternMatch", label: "20- مطابقة النمط" },
+            { id: "counting", label: "21- لعبة العد السريع" }
         ];
 
         function populateMiniGameSelect() {
@@ -893,6 +893,9 @@
             openMiniGame(MINI_GAMES[idx].id);
         }
 
+        let currentGameId = null;
+        let mazeCurrentIndex = -1;
+
         function openMiniGame(id) {
             const overlay = document.getElementById('miniGameOverlay');
             const titleEl = document.getElementById('miniGameTitle');
@@ -900,6 +903,12 @@
 
             const gameInfo = MINI_GAMES.find(g => g.id === id);
             titleEl.textContent = gameInfo ? gameInfo.label : "ميني قيم";
+
+            // إعادة تعيين المتاهة إذا تغيرت اللعبة
+            if (currentGameId !== id && currentGameId === "maze") {
+                mazeCurrentIndex = -1;
+            }
+            currentGameId = id;
 
             bodyEl.innerHTML = ""; // clear
 
@@ -916,14 +925,36 @@
                 initClickerGame(bodyEl);
             } else if (id === "oddColor") {
                 initOddColorGame(bodyEl);
-            } else if (id === "cups") {
-                initCupsGame(bodyEl);
             } else if (id === "typing") {
                 initTypingGame(bodyEl);
-            } else if (id === "rps") {
-                initRpsGame(bodyEl);
             } else if (id === "mentalSteps") {
                 initMentalStepsGame(bodyEl);
+            } else if (id === "snake") {
+                initSnakeGame(bodyEl);
+            } else if (id === "flappy") {
+                initFlappyGame(bodyEl);
+            } else if (id === "maze") {
+                initMazeGame(bodyEl);
+            } else if (id === "minesweeper") {
+                initMinesweeperGame(bodyEl);
+            } else if (id === "obstacle") {
+                initObstacleGame(bodyEl);
+            } else if (id === "colorSequence") {
+                initColorSequenceGame(bodyEl);
+            } else if (id === "numberSequence") {
+                initNumberSequenceGame(bodyEl);
+            } else if (id === "speedMath") {
+                initSpeedMathGame(bodyEl);
+            } else if (id === "aimTrainer") {
+                initAimTrainerGame(bodyEl);
+            } else if (id === "rhythmTap") {
+                initRhythmTapGame(bodyEl);
+            } else if (id === "stackBlocks") {
+                initStackBlocksGame(bodyEl);
+            } else if (id === "patternMatch") {
+                initPatternMatchGame(bodyEl);
+            } else if (id === "counting") {
+                initCountingGame(bodyEl);
             }
 
             overlay.classList.remove('hidden');
@@ -941,12 +972,13 @@
             wrapper.innerHTML = `
             <div>اختر لاعبًا من كل أسرة، والفائز هو من يفتح الأزواج في أقل عدد محاولات.</div>
             <div style="margin-top:6px;">انقر على كرتين لمحاولة مطابقتهما.</div>
-            <div id="memoryStats" style="margin-top:6px;">المحاولات: 0 | الأزواج المكتملة: 0 / 4</div>
+            <div id="memoryStats" style="margin-top:6px;">المحاولات: 0 | الأزواج المكتملة: 0 / 8</div>
         `;
             const grid = document.createElement('div');
             grid.className = "memory-grid";
+            grid.style.gridTemplateColumns = "repeat(4, 60px)";
 
-            const symbols = ['🍎', '🍎', '⭐', '⭐', '⚽', '⚽', '🎧', '🎧'];
+            const symbols = ['🍎', '🍎', '⭐', '⭐', '⚽', '⚽', '🎧', '🎧', '🚗', '🚗', '🎮', '🎮', '📱', '📱', '🎯', '🎯'];
             // خلط
             for (let i = symbols.length - 1; i > 0; i--) {
                 const j = Math.floor(Math.random() * (i + 1));
@@ -1253,9 +1285,9 @@
             const box = document.createElement('div');
             box.innerHTML = `
             <div>تظهر شبكة من الألوان، واحد منها مختلف قليلاً. من أسرع أسرة تجد اللون المختلف تفوز.</div>
-            <div style="margin-top:6px;">كل جولة: اضغط على المربع المختلف بأسرع ما يمكن.</div>
-            <button class="btn-main" id="oddStart">جولة جديدة</button>
-            <div id="oddStatus" style="margin-top:6px;">جاهز للجولة.</div>
+            <div style="margin-top:6px;">لديك 20 ثانية لإيجاد أكبر عدد من الألوان المختلفة.</div>
+            <button class="btn-main" id="oddStart">بدء الجولة</button>
+            <div id="oddStatus" style="margin-top:6px;">النقاط: 0 | الوقت: -</div>
         `;
             const grid = document.createElement('div');
             grid.className = "color-grid";
@@ -1265,6 +1297,10 @@
 
             let oddIndex = -1;
             let clickable = false;
+            let score = 0;
+            let timeLeft = 20;
+            let timerId = null;
+            let running = false;
 
             function newRound() {
                 grid.innerHTML = "";
@@ -1282,138 +1318,45 @@
                     cell.dataset.index = i;
                     grid.appendChild(cell);
                 }
-                statusEl.textContent = "اضغط على اللون المختلف!";
+                statusEl.textContent = `النقاط: ${score} | الوقت: ${timeLeft}`;
             }
 
             grid.addEventListener('click', (e) => {
                 const cell = e.target.closest('.color-cell');
-                if (!cell || !clickable) return;
+                if (!cell || !clickable || !running) return;
                 const idx = Number(cell.dataset.index);
                 if (idx === oddIndex) {
-                    statusEl.textContent = "صحيح! اللون المختلف تم اختياره.";
-                    clickable = false;
-                    alert("حدد الأسرة الأسرع، وأضف لها نقاطًا.");
+                    score++;
+                    statusEl.textContent = `النقاط: ${score} | الوقت: ${timeLeft}`;
+                    newRound();
                 } else {
-                    statusEl.textContent = "خطأ! جرّب مرة أخرى أو أعطِ الفرصة لأسرة أخرى.";
+                    statusEl.textContent = `خطأ! النقاط: ${score} | الوقت: ${timeLeft}`;
                 }
             });
 
-            startBtn.addEventListener('click', newRound);
+            startBtn.addEventListener('click', () => {
+                if (timerId) clearInterval(timerId);
+                score = 0;
+                timeLeft = 20;
+                running = true;
+                newRound();
+                timerId = setInterval(() => {
+                    timeLeft--;
+                    statusEl.textContent = `النقاط: ${score} | الوقت: ${timeLeft}`;
+                    if (timeLeft <= 0) {
+                        running = false;
+                        clickable = false;
+                        clearInterval(timerId);
+                        alert(`انتهى الوقت! النقاط: ${score}. سجّل النتيجة للأسرة.`);
+                    }
+                }, 1000);
+            });
 
             container.appendChild(box);
             container.appendChild(grid);
         }
 
-        // ========== 7) الكأس والكرة ==========
-        function initCupsGame(container) {
-            const box = document.createElement('div');
-            box.innerHTML = `
-            <div>شاهد مكان الكرة ثم سيتم خلط الأكواب. بعد الخلط اختر الكأس الصحيح.</div>
-            <div>الأسرة التي تخمّن مكان الكرة بشكل صحيح تفوز.</div>
-            <button class="btn-main" id="cupsStart">إظهار الكرة وبدء الخلط</button>
-            <div id="cupsStatus" style="margin-top:6px;">اضغط بدء الجولة.</div>
-        `;
-            const row = document.createElement('div');
-            row.className = "cup-row";
-
-            const cups = [];
-            for (let i = 0; i < 3; i++) {
-                const cup = document.createElement('div');
-                cup.className = "cup";
-                cup.dataset.index = i;
-                cup.textContent = "🥤";
-                row.appendChild(cup);
-                cups.push(cup);
-            }
-
-            const startBtn = box.querySelector('#cupsStart');
-            const statusEl = box.querySelector('#cupsStatus');
-
-            let ballIndex = -1;
-            let shuffling = false;
-            let guessMode = false;
-
-            function showBall() {
-                cups.forEach((cup, idx) => {
-                    if (idx === ballIndex) {
-                        cup.textContent = "⚽";
-                    } else {
-                        cup.textContent = "🥤";
-                    }
-                });
-            }
-
-            function hideBall() {
-                cups.forEach(cup => {
-                    cup.textContent = "🥤";
-                });
-            }
-
-            function shuffleCups(times) {
-                if (times === 0) {
-                    shuffling = false;
-                    guessMode = true;
-                    statusEl.textContent = "اختر الكأس الذي تعتقد أن الكرة تحته.";
-                    return;
-                }
-                shuffling = true;
-                guessMode = false;
-                // تبادل بين كوبين عشوائيين
-                const i = Math.floor(Math.random() * 3);
-                let j = Math.floor(Math.random() * 3);
-                while (j === i) j = Math.floor(Math.random() * 3);
-
-                // تبادل في DOM
-                const cupI = cups[i];
-                const cupJ = cups[j];
-                const tmp = document.createElement('div');
-                row.replaceChild(tmp, cupI);
-                row.replaceChild(cupI, cupJ);
-                row.replaceChild(cupJ, tmp);
-
-                // تحديث الترتيب في المصفوفة
-                cups[i] = cupJ;
-                cups[j] = cupI;
-
-                // تحديث ballIndex بناءً على الحركة
-                if (ballIndex === i) ballIndex = j;
-                else if (ballIndex === j) ballIndex = i;
-
-                setTimeout(() => shuffleCups(times - 1), 400);
-            }
-
-            startBtn.addEventListener('click', () => {
-                if (shuffling) return;
-                // اختيار عشوائي لمكان الكرة
-                ballIndex = Math.floor(Math.random() * 3);
-                showBall();
-                statusEl.textContent = "شاهِد مكان الكرة...";
-                setTimeout(() => {
-                    hideBall();
-                    statusEl.textContent = "يتم خلط الأكواب...";
-                    shuffleCups(8 + Math.floor(Math.random() * 5));
-                }, 1500);
-            });
-
-            row.addEventListener('click', (e) => {
-                const cup = e.target.closest('.cup');
-                if (!cup || !guessMode) return;
-                const idx = cups.indexOf(cup);
-                if (idx === ballIndex) {
-                    showBall();
-                    statusEl.textContent = "إجابة صحيحة! الكرة تحت هذا الكأس.";
-                    guessMode = false;
-                    alert("امنح نقاطًا للأسرة التي خمّنت بشكل صحيح.");
-                } else {
-                    statusEl.textContent = "خطأ! الكرة في كأس آخر.";
-                }
-            });
-
-            container.appendChild(box);
-            container.appendChild(row);
-        }
-
-        // ========== 8) اختبار سرعة الكتابة ==========
+        // ========== 7) اختبار سرعة الكتابة ==========
         function initTypingGame(container) {
             const texts = [
                 "التعاون سر النجاح بين الأسر.",
@@ -1476,50 +1419,7 @@
             container.appendChild(box);
         }
 
-        // ========== 9) حجر - ورقة - مقص ==========
-        function initRpsGame(container) {
-            const box = document.createElement('div');
-            box.innerHTML = `
-            <div>يمكن لكل أسرة اختيار ممثل. اللعب ضد الحاسوب، ويمكن تدوين النتائج لكل أسرة.</div>
-            <div style="margin-top:6px;">اختر: حجر 🪨 أو ورقة 📄 أو مقص ✂️</div>
-            <div style="margin-top:8px;">
-                <button class="btn-dark" data-move="rock">🪨 حجر</button>
-                <button class="btn-dark" data-move="paper">📄 ورقة</button>
-                <button class="btn-dark" data-move="scissors">✂️ مقص</button>
-            </div>
-            <div id="rpsStatus" style="margin-top:8px;">النتيجة ستظهر هنا.</div>
-        `;
-            const statusEl = box.querySelector('#rpsStatus');
-            const buttons = box.querySelectorAll('button[data-move]');
-
-            function computerMove() {
-                const moves = ["rock", "paper", "scissors"];
-                return moves[Math.floor(Math.random() * 3)];
-            }
-            function result(player, comp) {
-                if (player === comp) return "تعادل";
-                if (
-                    (player === "rock" && comp === "scissors") ||
-                    (player === "paper" && comp === "rock") ||
-                    (player === "scissors" && comp === "paper")
-                ) return "فوز اللاعب";
-                return "خسارة اللاعب";
-            }
-
-            buttons.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    const p = btn.dataset.move;
-                    const c = computerMove();
-                    const res = result(p, c);
-                    const toEmoji = (m) => m === "rock" ? "🪨 حجر" : (m === "paper" ? "📄 ورقة" : "✂️ مقص");
-                    statusEl.textContent = `اختيار اللاعب: ${toEmoji(p)} | اختيار الحاسوب: ${toEmoji(c)} | النتيجة: ${res}`;
-                });
-            });
-
-            container.appendChild(box);
-        }
-
-        // ========== 10) سلم الأرقام (جمع/طرح ذهني) ==========
+        // ========== 8) سلم الأرقام (جمع/طرح ذهني) ==========
         function initMentalStepsGame(container) {
             const box = document.createElement('div');
             box.innerHTML = `
@@ -1530,6 +1430,8 @@
         `;
             const startBtn = box.querySelector('#msStart');
             const seqEl = box.querySelector('#msSequence');
+            let answerTimer = null;
+            let startTime = null;
 
             startBtn.addEventListener('click', () => {
                 seqEl.innerHTML = "";
@@ -1560,12 +1462,26 @@
                         const btnShow = document.createElement('button');
                         btnShow.className = "btn-blue";
                         btnShow.textContent = "إظهار الناتج";
+                        const timeDisplay = document.createElement('div');
+                        timeDisplay.id = "msTimer";
+                        timeDisplay.style.marginTop = "6px";
+                        timeDisplay.textContent = "الوقت: 0.0 ثانية";
+                        startTime = performance.now();
                         btnShow.addEventListener('click', () => {
-                            alert(`الناتج النهائي هو: ${final}`);
+                            if (answerTimer) clearInterval(answerTimer);
+                            const elapsed = ((performance.now() - startTime) / 1000).toFixed(1);
+                            alert(`الناتج النهائي هو: ${final}\nالوقت المستغرق: ${elapsed} ثانية`);
                         });
                         msg.appendChild(document.createElement('br'));
                         msg.appendChild(btnShow);
+                        msg.appendChild(timeDisplay);
                         seqEl.appendChild(msg);
+                        answerTimer = setInterval(() => {
+                            if (startTime) {
+                                const elapsed = ((performance.now() - startTime) / 1000).toFixed(1);
+                                timeDisplay.textContent = `الوقت: ${elapsed} ثانية`;
+                            }
+                        }, 100);
                         return;
                     }
                     const s = steps[idx];
@@ -1575,6 +1491,1576 @@
             });
 
             container.appendChild(box);
+        }
+
+        // ========== 9) لعبة الثعبان ==========
+        function initSnakeGame(container) {
+            const box = document.createElement('div');
+            box.innerHTML = `
+            <div>تحكم بالثعبان باستخدام الأسهم. كلما أكلت الطعام، يكبر الثعبان.</div>
+            <div style="margin-top:6px;">الفائز هو من يحصل على أعلى نقاط قبل الاصطدام أو انتهاء الوقت.</div>
+            <button class="btn-main" id="snakeStart">بدء الجولة</button>
+            <div id="snakeStatus" style="margin-top:6px;">النقاط: 0 | الوقت: -</div>
+        `;
+            const canvas = document.createElement('canvas');
+            canvas.width = 240;
+            canvas.height = 240;
+            canvas.style.border = "2px solid #f1c40f";
+            canvas.style.display = "block";
+            canvas.style.margin = "10px auto";
+            canvas.style.background = "#050815";
+
+            const ctx = canvas.getContext('2d');
+            const gridSize = 12;
+            let snake = [{x: 10, y: 10}];
+            let direction = {x: 1, y: 0};
+            let food = {x: 15, y: 15};
+            let score = 0;
+            let timeLeft = 60;
+            let gameLoop = null;
+            let timerId = null;
+            let running = false;
+
+            const statusEl = box.querySelector('#snakeStatus');
+            const startBtn = box.querySelector('#snakeStart');
+
+            function draw() {
+                ctx.fillStyle = "#050815";
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                ctx.fillStyle = "#2ecc71";
+                snake.forEach(seg => {
+                    ctx.fillRect(seg.x * gridSize, seg.y * gridSize, gridSize - 2, gridSize - 2);
+                });
+                ctx.fillStyle = "#e74c3c";
+                ctx.fillRect(food.x * gridSize, food.y * gridSize, gridSize - 2, gridSize - 2);
+            }
+
+            function generateFood() {
+                let newFood;
+                do {
+                    newFood = {
+                        x: Math.floor(Math.random() * (canvas.width / gridSize)),
+                        y: Math.floor(Math.random() * (canvas.height / gridSize))
+                    };
+                } while (snake.some(seg => seg.x === newFood.x && seg.y === newFood.y));
+                return newFood;
+            }
+
+            function move() {
+                if (!running) return;
+                const head = {x: snake[0].x + direction.x, y: snake[0].y + direction.y};
+                if (head.x < 0 || head.x >= canvas.width / gridSize || head.y < 0 || head.y >= canvas.height / gridSize) {
+                    endGame();
+                    return;
+                }
+                if (snake.some(seg => seg.x === head.x && seg.y === head.y)) {
+                    endGame();
+                    return;
+                }
+                snake.unshift(head);
+                if (head.x === food.x && head.y === food.y) {
+                    score++;
+                    statusEl.textContent = `النقاط: ${score} | الوقت: ${timeLeft}`;
+                    food = generateFood();
+                } else {
+                    snake.pop();
+                }
+                draw();
+            }
+
+            function endGame() {
+                running = false;
+                if (gameLoop) clearInterval(gameLoop);
+                if (timerId) clearInterval(timerId);
+                alert(`انتهت الجولة! النقاط: ${score}. سجّل النتيجة للأسرة.`);
+            }
+
+            startBtn.addEventListener('click', () => {
+                if (gameLoop) clearInterval(gameLoop);
+                if (timerId) clearInterval(timerId);
+                snake = [{x: 10, y: 10}];
+                direction = {x: 1, y: 0};
+                score = 0;
+                timeLeft = 60;
+                running = true;
+                food = generateFood();
+                statusEl.textContent = `النقاط: ${score} | الوقت: ${timeLeft}`;
+                draw();
+                gameLoop = setInterval(move, 150);
+                timerId = setInterval(() => {
+                    if (!running) {
+                        clearInterval(timerId);
+                        return;
+                    }
+                    timeLeft--;
+                    statusEl.textContent = `النقاط: ${score} | الوقت: ${timeLeft}`;
+                    if (timeLeft <= 0) {
+                        endGame();
+                    }
+                }, 1000);
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (!running) return;
+                if (e.key === 'ArrowUp' && direction.y === 0) direction = {x: 0, y: -1};
+                if (e.key === 'ArrowDown' && direction.y === 0) direction = {x: 0, y: 1};
+                if (e.key === 'ArrowLeft' && direction.x === 0) direction = {x: -1, y: 0};
+                if (e.key === 'ArrowRight' && direction.x === 0) direction = {x: 1, y: 0};
+            });
+
+            container.appendChild(box);
+            container.appendChild(canvas);
+        }
+
+        // ========== 10) لعبة الطائر الطائر ==========
+        function initFlappyGame(container) {
+            const box = document.createElement('div');
+            box.innerHTML = `
+            <div>اضغط المسافة أو انقر لتحريك الطائر للأعلى. تجنب الأنابيب.</div>
+            <div style="margin-top:6px;">الفائز هو من يمر بأكبر عدد من الأنابيب. السرعة تزيد مع الوقت.</div>
+            <button class="btn-main" id="flappyStart">بدء الجولة</button>
+            <div id="flappyStatus" style="margin-top:6px;">النقاط: 0</div>
+        `;
+            const canvas = document.createElement('canvas');
+            canvas.width = 300;
+            canvas.height = 400;
+            canvas.style.border = "2px solid #f1c40f";
+            canvas.style.display = "block";
+            canvas.style.margin = "10px auto";
+            canvas.style.background = "#87CEEB";
+            canvas.style.cursor = "pointer";
+
+            const ctx = canvas.getContext('2d');
+            let birdY = 200;
+            let birdVel = 0;
+            let pipes = [];
+            let score = 0;
+            let gameLoop = null;
+            let running = false;
+            let pipeSpeed = 2;
+            let gameTime = 0;
+
+            const statusEl = box.querySelector('#flappyStatus');
+            const startBtn = box.querySelector('#flappyStart');
+
+            function draw() {
+                ctx.fillStyle = "#87CEEB";
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                ctx.fillStyle = "#f1c40f";
+                ctx.fillRect(50, birdY, 30, 20);
+                ctx.fillStyle = "#2ecc71";
+                pipes.forEach(pipe => {
+                    ctx.fillRect(pipe.x, 0, 40, pipe.top);
+                    ctx.fillRect(pipe.x, pipe.top + pipe.gap, 40, canvas.height);
+                });
+            }
+
+            function update() {
+                if (!running) return;
+                gameTime++;
+                pipeSpeed = 2 + Math.floor(gameTime / 300);
+                birdVel += 0.5;
+                birdY += birdVel;
+                if (birdY >= canvas.height - 20 || birdY <= 0) {
+                    endGame();
+                    return;
+                }
+                if (pipes.length === 0 || pipes[pipes.length - 1].x < canvas.width - 150) {
+                    const gap = 120;
+                    const top = Math.random() * (canvas.height - gap - 100) + 50;
+                    pipes.push({x: canvas.width, top, gap});
+                }
+                pipes.forEach((pipe, idx) => {
+                    pipe.x -= pipeSpeed;
+                    if (pipe.x + 40 < 50 && pipe.x + 40 > 20) {
+                        if (birdY < pipe.top || birdY + 20 > pipe.top + pipe.gap) {
+                            endGame();
+                            return;
+                        }
+                    }
+                    if (pipe.x + 40 < 50 && pipe.x > 0) {
+                        score++;
+                        statusEl.textContent = `النقاط: ${score}`;
+                        pipes.splice(idx, 1);
+                    }
+                });
+                pipes = pipes.filter(p => p.x > -40);
+                draw();
+            }
+
+            function endGame() {
+                running = false;
+                if (gameLoop) clearInterval(gameLoop);
+                alert(`انتهت الجولة! النقاط: ${score}. سجّل النتيجة للأسرة.`);
+            }
+
+            let gameStarted = false;
+
+            function jump(e) {
+                if (!gameStarted) {
+                    if (running) {
+                        gameStarted = true;
+                        gameLoop = setInterval(update, 16);
+                    }
+                    e.preventDefault();
+                    return;
+                }
+                if (!running) {
+                    e.preventDefault();
+                    return;
+                }
+                birdVel = -5;
+            }
+
+            startBtn.addEventListener('click', () => {
+                if (gameLoop) clearInterval(gameLoop);
+                birdY = 200;
+                birdVel = 0;
+                pipes = [];
+                score = 0;
+                gameTime = 0;
+                pipeSpeed = 2;
+                running = true;
+                gameStarted = false;
+                statusEl.textContent = `النقاط: ${score} | اضغط لبدء الطيران`;
+                draw();
+            });
+
+            canvas.addEventListener('click', (e) => {
+                jump(e);
+            });
+            document.addEventListener('keydown', (e) => {
+                if (e.key === ' ') {
+                    e.preventDefault();
+                    jump(e);
+                }
+            });
+
+            container.appendChild(box);
+            container.appendChild(canvas);
+        }
+
+        // ========== 11) المتاهة ==========
+        function initMazeGame(container) {
+            const box = document.createElement('div');
+            box.innerHTML = `
+            <div>استخدم الأسهم للوصول من البداية (أخضر) إلى النهاية (أحمر).</div>
+            <div style="margin-top:6px;">الفائز هو من يصل بأسرع وقت.</div>
+            <button class="btn-main" id="mazeStart">بدء الجولة</button>
+            <div id="mazeStatus" style="margin-top:6px;">الوقت: -</div>
+        `;
+            const canvas = document.createElement('canvas');
+            canvas.width = 300;
+            canvas.height = 300;
+            canvas.style.border = "2px solid #f1c40f";
+            canvas.style.display = "block";
+            canvas.style.margin = "10px auto";
+            canvas.style.background = "#050815";
+
+            const ctx = canvas.getContext('2d');
+            const cellSize = 20;
+            let playerX = 1;
+            let playerY = 1;
+            let startTime = null;
+            let running = false;
+
+            const mazes = [
+                [
+                    [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+                    [1,0,0,0,1,0,0,0,0,0,0,0,0,0,1],
+                    [1,1,1,0,1,0,1,1,1,1,1,0,1,0,1],
+                    [1,0,0,0,0,0,0,0,0,0,1,0,1,0,1],
+                    [1,0,1,1,1,1,1,1,1,0,1,0,1,0,1],
+                    [1,0,0,0,0,0,0,0,1,0,0,0,1,0,1],
+                    [1,1,1,1,1,0,1,0,1,1,1,1,1,0,1],
+                    [1,0,0,0,0,0,1,0,0,0,0,0,0,0,1],
+                    [1,0,1,1,1,1,1,1,1,1,1,0,1,1,1],
+                    [1,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+                    [1,1,1,1,1,1,1,1,1,1,1,1,1,0,1],
+                    [1,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+                    [1,0,1,1,1,1,1,1,1,1,1,1,1,1,1],
+                    [1,0,0,0,0,0,0,0,0,0,0,0,0,0,2],
+                    [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
+                ],
+                [
+                    [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+                    [1,0,1,0,0,0,0,0,1,0,0,0,0,0,1],
+                    [1,0,1,0,1,1,1,0,1,0,1,1,1,0,1],
+                    [1,0,0,0,1,0,0,0,0,0,1,0,0,0,1],
+                    [1,1,1,1,1,0,1,1,1,1,1,0,1,1,1],
+                    [1,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+                    [1,0,1,1,1,1,1,0,1,1,1,1,1,0,1],
+                    [1,0,0,0,0,0,1,0,1,0,0,0,0,0,1],
+                    [1,1,1,1,1,0,1,0,1,0,1,1,1,1,1],
+                    [1,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+                    [1,0,1,1,1,1,1,1,1,1,1,1,1,0,1],
+                    [1,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+                    [1,1,1,1,1,1,1,0,1,1,1,1,1,1,1],
+                    [1,0,0,0,0,0,0,0,0,0,0,0,0,0,2],
+                    [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
+                ],
+                [
+                    [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+                    [1,0,0,0,0,0,1,0,1,0,0,0,0,0,1],
+                    [1,0,1,1,1,0,1,0,1,0,1,1,1,0,1],
+                    [1,0,1,0,0,0,0,0,0,0,0,0,1,0,1],
+                    [1,0,1,0,1,1,1,1,1,1,1,0,1,0,1],
+                    [1,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+                    [1,1,1,1,1,0,1,1,1,0,1,1,1,1,1],
+                    [1,0,0,0,0,0,1,0,1,0,0,0,0,0,1],
+                    [1,0,1,1,1,0,1,0,1,0,1,1,1,0,1],
+                    [1,0,0,0,1,0,0,0,0,0,1,0,0,0,1],
+                    [1,1,1,0,1,1,1,1,1,1,1,0,1,1,1],
+                    [1,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+                    [1,0,1,1,1,1,1,1,1,1,1,1,1,0,1],
+                    [1,0,0,0,0,0,0,0,0,0,0,0,0,0,2],
+                    [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
+                ],
+                [
+                    [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+                    [1,0,0,0,1,0,0,0,0,0,1,0,0,0,1],
+                    [1,0,1,0,1,0,1,1,1,0,1,0,1,0,1],
+                    [1,0,1,0,0,0,1,0,1,0,0,0,1,0,1],
+                    [1,0,1,1,1,1,1,0,1,1,1,1,1,0,1],
+                    [1,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+                    [1,1,1,0,1,1,1,1,1,1,1,0,1,1,1],
+                    [1,0,0,0,1,0,0,0,0,0,1,0,0,0,1],
+                    [1,0,1,1,1,0,1,1,1,0,1,1,1,0,1],
+                    [1,0,0,0,0,0,1,0,1,0,0,0,0,0,1],
+                    [1,1,1,1,1,0,1,0,1,0,1,1,1,1,1],
+                    [1,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+                    [1,0,1,1,1,1,1,1,1,1,1,1,1,0,1],
+                    [1,0,0,0,0,0,0,0,0,0,0,0,0,0,2],
+                    [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
+                ],
+                [
+                    [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+                    [1,0,1,0,0,0,0,0,0,0,0,0,1,0,1],
+                    [1,0,1,0,1,1,1,1,1,1,1,0,1,0,1],
+                    [1,0,0,0,1,0,0,0,0,0,1,0,0,0,1],
+                    [1,1,1,1,1,0,1,1,1,0,1,1,1,1,1],
+                    [1,0,0,0,0,0,1,0,1,0,0,0,0,0,1],
+                    [1,0,1,1,1,0,1,0,1,0,1,1,1,0,1],
+                    [1,0,0,0,1,0,0,0,0,0,1,0,0,0,1],
+                    [1,1,1,0,1,1,1,0,1,1,1,0,1,1,1],
+                    [1,0,0,0,0,0,1,0,1,0,0,0,0,0,1],
+                    [1,0,1,1,1,0,1,0,1,0,1,1,1,0,1],
+                    [1,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+                    [1,1,1,1,1,1,1,0,1,1,1,1,1,1,1],
+                    [1,0,0,0,0,0,0,0,0,0,0,0,0,0,2],
+                    [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
+                ],
+                [
+                    [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+                    [1,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+                    [1,0,1,1,1,1,1,0,1,1,1,1,1,0,1],
+                    [1,0,1,0,0,0,1,0,1,0,0,0,1,0,1],
+                    [1,0,1,0,1,0,1,0,1,0,1,0,1,0,1],
+                    [1,0,0,0,1,0,0,0,0,0,1,0,0,0,1],
+                    [1,1,1,1,1,0,1,1,1,0,1,1,1,1,1],
+                    [1,0,0,0,0,0,1,0,1,0,0,0,0,0,1],
+                    [1,0,1,1,1,1,1,0,1,1,1,1,1,0,1],
+                    [1,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+                    [1,1,1,0,1,1,1,1,1,1,1,0,1,1,1],
+                    [1,0,0,0,1,0,0,0,0,0,1,0,0,0,1],
+                    [1,0,1,1,1,0,1,1,1,0,1,1,1,0,1],
+                    [1,0,0,0,0,0,0,0,0,0,0,0,0,0,2],
+                    [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
+                ],
+                [
+                    [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+                    [1,0,0,0,1,0,0,0,0,0,1,0,0,0,1],
+                    [1,0,1,0,1,0,1,1,1,0,1,0,1,0,1],
+                    [1,0,1,0,0,0,0,0,0,0,0,0,1,0,1],
+                    [1,0,1,1,1,1,1,1,1,1,1,1,1,0,1],
+                    [1,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+                    [1,0,1,1,1,0,1,1,1,0,1,1,1,0,1],
+                    [1,0,0,0,1,0,1,0,1,0,1,0,0,0,1],
+                    [1,1,1,0,1,0,1,0,1,0,1,0,1,1,1],
+                    [1,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+                    [1,0,1,1,1,1,1,0,1,1,1,1,1,0,1],
+                    [1,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+                    [1,1,1,1,1,0,1,1,1,0,1,1,1,1,1],
+                    [1,0,0,0,0,0,0,0,0,0,0,0,0,0,2],
+                    [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
+                ]
+            ];
+
+            const statusEl = box.querySelector('#mazeStatus');
+            const startBtn = box.querySelector('#mazeStart');
+            
+            function getMaze() {
+                if (mazeCurrentIndex === -1) {
+                    mazeCurrentIndex = Math.floor(Math.random() * mazes.length);
+                }
+                return mazes[mazeCurrentIndex];
+            }
+
+            function draw() {
+                const maze = getMaze();
+                ctx.fillStyle = "#050815";
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                for (let r = 0; r < maze.length; r++) {
+                    for (let c = 0; c < maze[r].length; c++) {
+                        if (maze[r][c] === 1) {
+                            ctx.fillStyle = "#34495e";
+                            ctx.fillRect(c * cellSize, r * cellSize, cellSize, cellSize);
+                        } else if (maze[r][c] === 2) {
+                            ctx.fillStyle = "#e74c3c";
+                            ctx.fillRect(c * cellSize, r * cellSize, cellSize, cellSize);
+                        }
+                    }
+                }
+                ctx.fillStyle = "#2ecc71";
+                ctx.fillRect(playerX * cellSize, playerY * cellSize, cellSize, cellSize);
+            }
+
+            startBtn.addEventListener('click', () => {
+                playerX = 1;
+                playerY = 1;
+                running = true;
+                startTime = performance.now();
+                draw();
+                const timer = setInterval(() => {
+                    if (!running) {
+                        clearInterval(timer);
+                        return;
+                    }
+                    const elapsed = ((performance.now() - startTime) / 1000).toFixed(1);
+                    statusEl.textContent = `الوقت: ${elapsed} ثانية`;
+                }, 100);
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (!running) return;
+                const maze = getMaze();
+                let newX = playerX;
+                let newY = playerY;
+                if (e.key === 'ArrowUp') newY--;
+                if (e.key === 'ArrowDown') newY++;
+                if (e.key === 'ArrowLeft') newX--;
+                if (e.key === 'ArrowRight') newX++;
+                if (newY >= 0 && newY < maze.length && newX >= 0 && newX < maze[0].length) {
+                    if (maze[newY][newX] !== 1) {
+                        playerX = newX;
+                        playerY = newY;
+                        if (maze[newY][newX] === 2) {
+                            running = false;
+                            const time = ((performance.now() - startTime) / 1000).toFixed(2);
+                            alert(`تهانينا! وصلت في ${time} ثانية. سجّل الزمن للأسرة.`);
+                        }
+                        draw();
+                    }
+                }
+            });
+
+            container.appendChild(box);
+            container.appendChild(canvas);
+        }
+
+        // ========== 12) كاسح الألغام ==========
+        function initMinesweeperGame(container) {
+            const box = document.createElement('div');
+            box.innerHTML = `
+            <div>انقر على المربعات للكشف. تجنب الألغام! الأرقام تشير لعدد الألغام المجاورة.</div>
+            <div style="margin-top:6px;">الفائز هو من يكشف كل المربعات الآمنة.</div>
+            <button class="btn-main" id="minesweeperStart">بدء الجولة</button>
+            <div id="minesweeperStatus" style="margin-top:6px;">الألغام: 10</div>
+        `;
+            const grid = document.createElement('div');
+            grid.style.display = "grid";
+            grid.style.gridTemplateColumns = "repeat(10, 25px)";
+            grid.style.gap = "2px";
+            grid.style.justifyContent = "center";
+            grid.style.marginTop = "10px";
+
+            const rows = 10;
+            const cols = 10;
+            const mines = 10;
+            let board = [];
+            let revealed = [];
+            let running = false;
+
+            const statusEl = box.querySelector('#minesweeperStatus');
+            const startBtn = box.querySelector('#minesweeperStart');
+
+            function initBoard() {
+                board = Array(rows).fill().map(() => Array(cols).fill(0));
+                revealed = Array(rows).fill().map(() => Array(cols).fill(false));
+                let placed = 0;
+                while (placed < mines) {
+                    const r = Math.floor(Math.random() * rows);
+                    const c = Math.floor(Math.random() * cols);
+                    if (board[r][c] !== -1) {
+                        board[r][c] = -1;
+                        placed++;
+                    }
+                }
+                for (let r = 0; r < rows; r++) {
+                    for (let c = 0; c < cols; c++) {
+                        if (board[r][c] !== -1) {
+                            let count = 0;
+                            for (let dr = -1; dr <= 1; dr++) {
+                                for (let dc = -1; dc <= 1; dc++) {
+                                    if (r + dr >= 0 && r + dr < rows && c + dc >= 0 && c + dc < cols) {
+                                        if (board[r + dr][c + dc] === -1) count++;
+                                    }
+                                }
+                            }
+                            board[r][c] = count;
+                        }
+                    }
+                }
+            }
+
+            function reveal(r, c) {
+                if (r < 0 || r >= rows || c < 0 || c >= cols || revealed[r][c]) return;
+                revealed[r][c] = true;
+                if (board[r][c] === -1) {
+                    endGame(false);
+                    return;
+                }
+                if (board[r][c] === 0) {
+                    for (let dr = -1; dr <= 1; dr++) {
+                        for (let dc = -1; dc <= 1; dc++) {
+                            reveal(r + dr, c + dc);
+                        }
+                    }
+                }
+                checkWin();
+                render();
+            }
+
+            function checkWin() {
+                let safeRevealed = 0;
+                for (let r = 0; r < rows; r++) {
+                    for (let c = 0; c < cols; c++) {
+                        if (revealed[r][c] && board[r][c] !== -1) safeRevealed++;
+                    }
+                }
+                if (safeRevealed === rows * cols - mines) {
+                    endGame(true);
+                }
+            }
+
+            function endGame(won) {
+                running = false;
+                let safeRevealed = 0;
+                let safeRemaining = 0;
+                for (let r = 0; r < rows; r++) {
+                    for (let c = 0; c < cols; c++) {
+                        if (board[r][c] !== -1) {
+                            if (revealed[r][c]) {
+                                safeRevealed++;
+                            } else {
+                                safeRemaining++;
+                            }
+                        }
+                        revealed[r][c] = true;
+                    }
+                }
+                render();
+                if (won) {
+                    alert("تهانينا! فزت! سجّل النتيجة للأسرة.");
+                } else {
+                    alert(`انفجرت لغم! انتهت الجولة.\nالخلايا المكشوفة: ${safeRevealed}\nالخلايا المتبقية: ${safeRemaining}\nسجّل النتيجة للأسرة.`);
+                }
+            }
+
+            function render() {
+                grid.innerHTML = "";
+                const numberColors = ["", "#3498db", "#2ecc71", "#e74c3c", "#9b59b6", "#f39c12", "#1abc9c", "#000", "#7f8c8d"];
+                for (let r = 0; r < rows; r++) {
+                    for (let c = 0; c < cols; c++) {
+                        const cell = document.createElement('div');
+                        cell.style.width = "25px";
+                        cell.style.height = "25px";
+                        cell.style.display = "flex";
+                        cell.style.alignItems = "center";
+                        cell.style.justifyContent = "center";
+                        cell.style.fontSize = "12px";
+                        cell.style.borderRadius = "2px";
+                        cell.style.fontWeight = "bold";
+                        if (revealed[r][c]) {
+                            if (board[r][c] === -1) {
+                                cell.style.background = "#e74c3c";
+                                cell.textContent = "💣";
+                            } else {
+                                cell.style.background = "#ecf0f1";
+                                cell.style.border = "1px solid #bdc3c7";
+                                const num = board[r][c];
+                                cell.textContent = num === 0 ? "" : num;
+                                if (num > 0 && num < numberColors.length) {
+                                    cell.style.color = numberColors[num];
+                                }
+                            }
+                        } else {
+                            cell.style.background = "#95a5a6";
+                            cell.style.border = "2px outset #7f8c8d";
+                            cell.style.cursor = "pointer";
+                            cell.addEventListener('click', () => {
+                                if (running) reveal(r, c);
+                            });
+                            cell.addEventListener('contextmenu', (e) => {
+                                e.preventDefault();
+                                if (running && !revealed[r][c]) {
+                                    if (cell.textContent === "🚩") {
+                                        cell.textContent = "";
+                                    } else {
+                                        cell.textContent = "🚩";
+                                    }
+                                }
+                            });
+                        }
+                        grid.appendChild(cell);
+                    }
+                }
+            }
+
+            startBtn.addEventListener('click', () => {
+                initBoard();
+                running = true;
+                render();
+            });
+
+            container.appendChild(box);
+            container.appendChild(grid);
+        }
+
+        // ========== 13) تجنب العوائق ==========
+        function initObstacleGame(container) {
+            const box = document.createElement('div');
+            box.innerHTML = `
+            <div>استخدم الأسهم لتجنب العوائق الحمراء. كلما تقدمت أكثر، زادت السرعة.</div>
+            <div style="margin-top:6px;">الفائز هو من يصل لأبعد مسافة.</div>
+            <button class="btn-main" id="obstacleStart">بدء الجولة</button>
+            <div id="obstacleStatus" style="margin-top:6px;">المسافة: 0</div>
+        `;
+            const canvas = document.createElement('canvas');
+            canvas.width = 300;
+            canvas.height = 400;
+            canvas.style.border = "2px solid #f1c40f";
+            canvas.style.display = "block";
+            canvas.style.margin = "10px auto";
+            canvas.style.background = "#050815";
+
+            const ctx = canvas.getContext('2d');
+            let playerX = 150;
+            let obstacles = [];
+            let distance = 0;
+            let gameLoop = null;
+            let running = false;
+
+            const statusEl = box.querySelector('#obstacleStatus');
+            const startBtn = box.querySelector('#obstacleStart');
+
+            function draw() {
+                ctx.fillStyle = "#050815";
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                ctx.fillStyle = "#2ecc71";
+                ctx.fillRect(playerX - 15, canvas.height - 40, 30, 30);
+                ctx.fillStyle = "#e74c3c";
+                obstacles.forEach(obs => {
+                    ctx.fillRect(obs.x, obs.y, obs.width, obs.height);
+                });
+            }
+
+            function update() {
+                distance++;
+                statusEl.textContent = `المسافة: ${distance}`;
+                obstacles.forEach(obs => {
+                    obs.y += 2 + distance / 100;
+                    if (obs.y > canvas.height) {
+                        obstacles.splice(obstacles.indexOf(obs), 1);
+                    }
+                    if (obs.y + obs.height > canvas.height - 40 && obs.y < canvas.height - 10) {
+                        if (playerX - 15 < obs.x + obs.width && playerX + 15 > obs.x) {
+                            endGame();
+                            return;
+                        }
+                    }
+                });
+                if (obstacles.length < 3 && Math.random() < 0.02) {
+                    obstacles.push({
+                        x: Math.random() * (canvas.width - 60),
+                        y: -30,
+                        width: 60,
+                        height: 30
+                    });
+                }
+                draw();
+            }
+
+            function endGame() {
+                running = false;
+                if (gameLoop) clearInterval(gameLoop);
+                alert(`انتهت الجولة! المسافة: ${distance}. سجّل النتيجة للأسرة.`);
+            }
+
+            startBtn.addEventListener('click', () => {
+                if (gameLoop) clearInterval(gameLoop);
+                playerX = 150;
+                obstacles = [];
+                distance = 0;
+                running = true;
+                statusEl.textContent = `المسافة: ${distance}`;
+                draw();
+                gameLoop = setInterval(update, 16);
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (!running) return;
+                if (e.key === 'ArrowLeft' && playerX > 20) playerX -= 5;
+                if (e.key === 'ArrowRight' && playerX < canvas.width - 20) playerX += 5;
+            });
+
+            container.appendChild(box);
+            container.appendChild(canvas);
+        }
+
+        // ========== 14) تتابع الألوان (ذاكرة) ==========
+        function initColorSequenceGame(container) {
+            const box = document.createElement('div');
+            box.innerHTML = `
+            <div>شاهد تتابع الألوان المتوهجة وكررها بالترتيب الصحيح.</div>
+            <div style="margin-top:6px;">الفائز هو من يصل لأطول تتابع.</div>
+            <button class="btn-main" id="colorSeqStart">بدء الجولة</button>
+            <div id="colorSeqStatus" style="margin-top:6px;">النتيجة: 0</div>
+        `;
+            const grid = document.createElement('div');
+            grid.style.display = "grid";
+            grid.style.gridTemplateColumns = "repeat(3, 60px)";
+            grid.style.gap = "6px";
+            grid.style.justifyContent = "center";
+            grid.style.marginTop = "10px";
+
+            const colors = ['#e74c3c', '#2ecc71', '#f1c40f', '#3498db', '#9b59b6', '#1abc9c', '#e67e22', '#16a085', '#c0392b'];
+            let sequence = [];
+            let playerSequence = [];
+            let level = 0;
+            let showing = false;
+            let playing = false;
+
+            const statusEl = box.querySelector('#colorSeqStatus');
+            const startBtn = box.querySelector('#colorSeqStart');
+
+            colors.forEach((color, idx) => {
+                const btn = document.createElement('button');
+                btn.style.width = "60px";
+                btn.style.height = "60px";
+                btn.style.background = color;
+                btn.style.border = "none";
+                btn.style.borderRadius = "8px";
+                btn.style.cursor = "pointer";
+                btn.dataset.index = idx;
+                btn.addEventListener('click', () => {
+                    if (!playing || showing) return;
+                    const idx = Number(btn.dataset.index);
+                    playerSequence.push(idx);
+                    flashColor(btn, color);
+                    checkSequence();
+                });
+                grid.appendChild(btn);
+            });
+
+            function flashColor(btn, color) {
+                btn.style.opacity = "0.5";
+                setTimeout(() => btn.style.opacity = "1", 200);
+            }
+
+            function showSequence() {
+                showing = true;
+                let idx = 0;
+                const timer = setInterval(() => {
+                    if (idx >= sequence.length) {
+                        clearInterval(timer);
+                        showing = false;
+                        playerSequence = [];
+                        return;
+                    }
+                    const btnIdx = sequence[idx];
+                    const btn = grid.querySelector(`button[data-index="${btnIdx}"]`);
+                    flashColor(btn, colors[btnIdx]);
+                    idx++;
+                }, 300);
+            }
+
+            function checkSequence() {
+                const lastIdx = playerSequence.length - 1;
+                if (playerSequence[lastIdx] !== sequence[lastIdx]) {
+                    statusEl.textContent = `خطأ! النتيجة النهائية: ${level}`;
+                    playing = false;
+                    alert(`انتهت الجولة! النتيجة: ${level}. سجّل النتيجة للأسرة.`);
+                    return;
+                }
+                if (playerSequence.length === sequence.length) {
+                    level++;
+                    statusEl.textContent = `النتيجة: ${level}`;
+                    sequence.push(Math.floor(Math.random() * colors.length));
+                    setTimeout(() => showSequence(), 500);
+                }
+            }
+
+            startBtn.addEventListener('click', () => {
+                sequence = [Math.floor(Math.random() * colors.length)];
+                level = 0;
+                playerSequence = [];
+                playing = true;
+                statusEl.textContent = `النتيجة: ${level}`;
+                setTimeout(() => showSequence(), 300);
+            });
+
+            container.appendChild(box);
+            container.appendChild(grid);
+        }
+
+        // ========== 16) تتابع الأرقام (ذاكرة) ==========
+        function initNumberSequenceGame(container) {
+            const box = document.createElement('div');
+            box.innerHTML = `
+            <div>شاهد تتابع الأرقام المتوهجة وكررها بالترتيب الصحيح.</div>
+            <div style="margin-top:6px;">الفائز هو من يصل لأطول تتابع.</div>
+            <button class="btn-main" id="numSeqStart">بدء الجولة</button>
+            <div id="numSeqStatus" style="margin-top:6px;">النتيجة: 0</div>
+        `;
+            const grid = document.createElement('div');
+            grid.style.display = "grid";
+            grid.style.gridTemplateColumns = "repeat(4, 60px)";
+            grid.style.gap = "8px";
+            grid.style.justifyContent = "center";
+            grid.style.marginTop = "10px";
+
+            let sequence = [];
+            let playerSequence = [];
+            let level = 0;
+            let showing = false;
+            let playing = false;
+
+            const statusEl = box.querySelector('#numSeqStatus');
+            const startBtn = box.querySelector('#numSeqStart');
+
+            for (let i = 1; i <= 9; i++) {
+                const btn = document.createElement('button');
+                btn.style.width = "60px";
+                btn.style.height = "60px";
+                btn.style.background = "#34495e";
+                btn.style.border = "none";
+                btn.style.borderRadius = "8px";
+                btn.style.cursor = "pointer";
+                btn.style.fontSize = "20px";
+                btn.textContent = i;
+                btn.dataset.value = i;
+                btn.addEventListener('click', () => {
+                    if (!playing || showing) return;
+                    const val = Number(btn.dataset.value);
+                    playerSequence.push(val);
+                    flashNumber(btn);
+                    checkSequence();
+                });
+                grid.appendChild(btn);
+            }
+
+            function flashNumber(btn) {
+                btn.style.background = "#f1c40f";
+                setTimeout(() => btn.style.background = "#34495e", 200);
+            }
+
+            function showSequence() {
+                showing = true;
+                let idx = 0;
+                const timer = setInterval(() => {
+                    if (idx >= sequence.length) {
+                        clearInterval(timer);
+                        showing = false;
+                        playerSequence = [];
+                        return;
+                    }
+                    const val = sequence[idx];
+                    const btn = grid.querySelector(`button[data-value="${val}"]`);
+                    flashNumber(btn);
+                    idx++;
+                }, 300);
+            }
+
+            function checkSequence() {
+                const lastIdx = playerSequence.length - 1;
+                if (playerSequence[lastIdx] !== sequence[lastIdx]) {
+                    statusEl.textContent = `خطأ! النتيجة النهائية: ${level}`;
+                    playing = false;
+                    alert(`انتهت الجولة! النتيجة: ${level}. سجّل النتيجة للأسرة.`);
+                    return;
+                }
+                if (playerSequence.length === sequence.length) {
+                    level++;
+                    statusEl.textContent = `النتيجة: ${level}`;
+                    sequence.push(Math.floor(Math.random() * 9) + 1);
+                    setTimeout(() => showSequence(), 500);
+                }
+            }
+
+            startBtn.addEventListener('click', () => {
+                sequence = [Math.floor(Math.random() * 9) + 1];
+                level = 0;
+                playerSequence = [];
+                playing = true;
+                statusEl.textContent = `النتيجة: ${level}`;
+                setTimeout(() => showSequence(), 300);
+            });
+
+            container.appendChild(box);
+            container.appendChild(grid);
+        }
+
+        // ========== 17) الحساب السريع ==========
+        function initSpeedMathGame(container) {
+            const box = document.createElement('div');
+            box.innerHTML = `
+            <div>أجب على أكبر عدد ممكن من المسائل الحسابية في 20 ثانية.</div>
+            <div style="margin-top:6px;">الفائز هو من يحصل على أعلى نقاط.</div>
+            <button class="btn-main" id="speedMathStart">بدء الجولة</button>
+            <div id="speedMathQuestion" style="margin-top:8px;font-size:24px;">-</div>
+            <div style="margin-top:6px;">
+                <input id="speedMathAnswer" type="number" placeholder="الإجابة">
+                <button class="btn-green" id="speedMathSubmit">إرسال</button>
+            </div>
+            <div id="speedMathStatus" style="margin-top:6px;">النقاط: 0 | الوقت: -</div>
+        `;
+            let score = 0;
+            let timeLeft = 20;
+            let currentAnswer = 0;
+            let running = false;
+            let timerId = null;
+
+            const questionEl = box.querySelector('#speedMathQuestion');
+            const answerInput = box.querySelector('#speedMathAnswer');
+            const submitBtn = box.querySelector('#speedMathSubmit');
+            const statusEl = box.querySelector('#speedMathStatus');
+            const startBtn = box.querySelector('#speedMathStart');
+
+            function newQuestion() {
+                if (!running) return;
+                const a = Math.floor(Math.random() * 50) + 1;
+                const b = Math.floor(Math.random() * 50) + 1;
+                const op = Math.random() < 0.5 ? '+' : '-';
+                if (op === '+') {
+                    currentAnswer = a + b;
+                    questionEl.textContent = `${a} + ${b} = ?`;
+                } else {
+                    currentAnswer = Math.max(a, b) - Math.min(a, b);
+                    questionEl.textContent = `${Math.max(a, b)} - ${Math.min(a, b)} = ?`;
+                }
+            }
+
+            function endGame() {
+                running = false;
+                if (timerId) clearInterval(timerId);
+                answerInput.disabled = true;
+                submitBtn.disabled = true;
+                alert(`انتهى الوقت! النقاط: ${score}. سجّل النتيجة للأسرة.`);
+            }
+
+            submitBtn.addEventListener('click', () => {
+                if (!running) return;
+                const answer = Number(answerInput.value);
+                if (answer === currentAnswer) {
+                    score++;
+                }
+                answerInput.value = "";
+                if (running) newQuestion();
+            });
+
+            answerInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter' && running) {
+                    submitBtn.click();
+                }
+            });
+
+            startBtn.addEventListener('click', () => {
+                if (timerId) clearInterval(timerId);
+                score = 0;
+                timeLeft = 20;
+                running = true;
+                answerInput.disabled = false;
+                submitBtn.disabled = false;
+                answerInput.value = "";
+                newQuestion();
+                answerInput.focus();
+                timerId = setInterval(() => {
+                    timeLeft--;
+                    statusEl.textContent = `النقاط: ${score} | الوقت: ${timeLeft}`;
+                    if (timeLeft <= 0) {
+                        endGame();
+                    }
+                }, 1000);
+            });
+
+            container.appendChild(box);
+        }
+
+        // ========== 18) تدريب التصويب ==========
+        function initAimTrainerGame(container) {
+            const box = document.createElement('div');
+            box.innerHTML = `
+            <div>اضغط على أكبر عدد ممكن من الأهداف في 15 ثانية.</div>
+            <div style="margin-top:6px;">الفائز هو من يحصل على أعلى نقاط.</div>
+            <button class="btn-main" id="aimStart">بدء الجولة</button>
+            <div id="aimStatus" style="margin-top:6px;">النقاط: 0 | الوقت: -</div>
+        `;
+            const canvas = document.createElement('canvas');
+            canvas.width = 400;
+            canvas.height = 400;
+            canvas.style.border = "2px solid #f1c40f";
+            canvas.style.display = "block";
+            canvas.style.margin = "10px auto";
+            canvas.style.background = "#050815";
+            canvas.style.cursor = "crosshair";
+
+            const ctx = canvas.getContext('2d');
+            let targets = [];
+            let score = 0;
+            let timeLeft = 15;
+            let gameLoop = null;
+            let timerId = null;
+            let running = false;
+
+            const statusEl = box.querySelector('#aimStatus');
+            const startBtn = box.querySelector('#aimStart');
+
+            function spawnTarget() {
+                targets.push({
+                    x: Math.random() * (canvas.width - 30),
+                    y: Math.random() * (canvas.height - 30),
+                    size: 20 + Math.random() * 15
+                });
+            }
+
+            function draw() {
+                ctx.fillStyle = "#050815";
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                ctx.fillStyle = "#e74c3c";
+                targets.forEach(target => {
+                    ctx.beginPath();
+                    ctx.arc(target.x + target.size/2, target.y + target.size/2, target.size/2, 0, Math.PI * 2);
+                    ctx.fill();
+                });
+            }
+
+            canvas.addEventListener('click', (e) => {
+                if (!running) return;
+                const rect = canvas.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                targets.forEach((target, idx) => {
+                    const centerX = target.x + target.size/2;
+                    const centerY = target.y + target.size/2;
+                    const dist = Math.sqrt((x - centerX)**2 + (y - centerY)**2);
+                    if (dist <= target.size/2) {
+                        targets.splice(idx, 1);
+                        score++;
+                        statusEl.textContent = `النقاط: ${score} | الوقت: ${timeLeft}`;
+                    }
+                });
+            });
+
+            startBtn.addEventListener('click', () => {
+                if (gameLoop) clearInterval(gameLoop);
+                if (timerId) clearInterval(timerId);
+                targets = [];
+                score = 0;
+                timeLeft = 15;
+                running = true;
+                statusEl.textContent = `النقاط: ${score} | الوقت: ${timeLeft}`;
+                spawnTarget();
+                draw();
+                gameLoop = setInterval(() => {
+                    if (targets.length < 5) spawnTarget();
+                    draw();
+                }, 500);
+                timerId = setInterval(() => {
+                    timeLeft--;
+                    statusEl.textContent = `النقاط: ${score} | الوقت: ${timeLeft}`;
+                    if (timeLeft <= 0) {
+                        running = false;
+                        clearInterval(gameLoop);
+                        clearInterval(timerId);
+                        alert(`انتهى الوقت! النقاط: ${score}. سجّل النتيجة للأسرة.`);
+                    }
+                }, 1000);
+            });
+
+            container.appendChild(box);
+            container.appendChild(canvas);
+        }
+
+        // ========== 18) النقر على الإيقاع ==========
+        function initRhythmTapGame(container) {
+            const box = document.createElement('div');
+            box.innerHTML = `
+            <div>انقر عندما يصل المؤشر الأصفر إلى الهدف الأخضر. التوقيت الدقيق يعطي نقاط أكثر.</div>
+            <div style="margin-top:6px;">لديك 30 ثانية. الفائز هو من يحصل على أعلى نقاط.</div>
+            <button class="btn-main" id="rhythmStart">بدء الجولة</button>
+            <div id="rhythmStatus" style="margin-top:6px;">النقاط: 0 | الوقت: -</div>
+        `;
+            const canvas = document.createElement('canvas');
+            canvas.width = 400;
+            canvas.height = 100;
+            canvas.style.border = "2px solid #f1c40f";
+            canvas.style.display = "block";
+            canvas.style.margin = "10px auto";
+            canvas.style.background = "#050815";
+            canvas.style.cursor = "pointer";
+
+            const ctx = canvas.getContext('2d');
+            let position = 0;
+            let targetX = 200;
+            let score = 0;
+            let timeLeft = 30;
+            let gameLoop = null;
+            let timerId = null;
+            let running = false;
+
+            const statusEl = box.querySelector('#rhythmStatus');
+            const startBtn = box.querySelector('#rhythmStart');
+
+            function draw() {
+                ctx.fillStyle = "#050815";
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                ctx.fillStyle = "#2ecc71";
+                ctx.fillRect(targetX - 8, 0, 16, canvas.height);
+                ctx.fillStyle = "#f1c40f";
+                ctx.fillRect(position - 4, 0, 8, canvas.height);
+            }
+
+            function update() {
+                if (!running) return;
+                position += 4;
+                if (position >= canvas.width) {
+                    position = 0;
+                    targetX = 50 + Math.random() * (canvas.width - 100);
+                }
+                draw();
+            }
+
+            function handleClick() {
+                if (!running) return;
+                const dist = Math.abs(position - targetX);
+                if (dist < 20) {
+                    const points = Math.max(1, 20 - Math.floor(dist));
+                    score += points;
+                    statusEl.textContent = `النقاط: ${score} | الوقت: ${timeLeft}`;
+                    position = 0;
+                    targetX = 50 + Math.random() * (canvas.width - 100);
+                    draw();
+                } else {
+                    score = Math.max(0, score - 2);
+                    statusEl.textContent = `النقاط: ${score} | الوقت: ${timeLeft}`;
+                }
+            }
+
+            function endGame() {
+                running = false;
+                if (gameLoop) clearInterval(gameLoop);
+                if (timerId) clearInterval(timerId);
+                alert(`انتهى الوقت! النقاط: ${score}. سجّل النتيجة للأسرة.`);
+            }
+
+            canvas.addEventListener('click', handleClick);
+            canvas.addEventListener('touchstart', (e) => {
+                e.preventDefault();
+                handleClick();
+            });
+            document.addEventListener('keydown', (e) => {
+                if (e.key === ' ') {
+                    e.preventDefault();
+                    handleClick();
+                }
+            });
+
+            startBtn.addEventListener('click', () => {
+                if (gameLoop) clearInterval(gameLoop);
+                if (timerId) clearInterval(timerId);
+                position = 0;
+                targetX = 200;
+                score = 0;
+                timeLeft = 30;
+                running = true;
+                statusEl.textContent = `النقاط: ${score} | الوقت: ${timeLeft}`;
+                draw();
+                gameLoop = setInterval(update, 16);
+                timerId = setInterval(() => {
+                    timeLeft--;
+                    statusEl.textContent = `النقاط: ${score} | الوقت: ${timeLeft}`;
+                    if (timeLeft <= 0) {
+                        endGame();
+                    }
+                }, 1000);
+            });
+
+            container.appendChild(box);
+            container.appendChild(canvas);
+        }
+
+        // ========== 20) ترتيب المكعبات ==========
+        function initStackBlocksGame(container) {
+            const box = document.createElement('div');
+            box.innerHTML = `
+            <div>اضغط المسافة في الوقت المناسب لترتيب المكعبات فوق بعضها.</div>
+            <div style="margin-top:6px;">الفائز هو من يبني أعلى برج.</div>
+            <button class="btn-main" id="stackStart">بدء الجولة</button>
+            <div id="stackStatus" style="margin-top:6px;">الارتفاع: 0</div>
+        `;
+            const canvas = document.createElement('canvas');
+            canvas.width = 300;
+            canvas.height = 400;
+            canvas.style.border = "2px solid #f1c40f";
+            canvas.style.display = "block";
+            canvas.style.margin = "10px auto";
+            canvas.style.background = "#050815";
+
+            const ctx = canvas.getContext('2d');
+            let blocks = [];
+            let currentX = 150;
+            let currentDir = 1;
+            let height = 0;
+            let gameLoop = null;
+            let running = false;
+
+            const statusEl = box.querySelector('#stackStatus');
+            const startBtn = box.querySelector('#stackStart');
+
+            function draw() {
+                ctx.fillStyle = "#050815";
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                const colors = ['#f1c40f', '#2ecc71', '#3498db', '#9b59b6', '#e74c3c', '#1abc9c', '#e67e22'];
+                blocks.forEach((block, idx) => {
+                    ctx.fillStyle = colors[idx % colors.length];
+                    ctx.fillRect(block.x - block.width/2, block.y, block.width, 20);
+                    ctx.strokeStyle = "#fff";
+                    ctx.lineWidth = 1;
+                    ctx.strokeRect(block.x - block.width/2, block.y, block.width, 20);
+                });
+                ctx.fillStyle = "#2ecc71";
+                ctx.fillRect(currentX - 30, canvas.height - 40, 60, 20);
+                ctx.strokeStyle = "#fff";
+                ctx.lineWidth = 2;
+                ctx.strokeRect(currentX - 30, canvas.height - 40, 60, 20);
+            }
+
+            function update() {
+                currentX += currentDir * 2;
+                if (currentX <= 30 || currentX >= canvas.width - 30) {
+                    currentDir = -currentDir;
+                }
+                draw();
+            }
+
+            function dropBlock() {
+                if (!running) return;
+                const lastBlock = blocks[blocks.length - 1];
+                let newWidth = 60;
+                if (lastBlock) {
+                    const diff = Math.abs(currentX - lastBlock.x);
+                    if (diff > lastBlock.width/2) {
+                        endGame();
+                        return;
+                    }
+                    newWidth = Math.min(60, lastBlock.width - Math.abs(currentX - lastBlock.x) * 2);
+                    if (newWidth < 10) {
+                        endGame();
+                        return;
+                    }
+                }
+                blocks.push({x: currentX, y: canvas.height - 40 - height * 20, width: newWidth});
+                height++;
+                statusEl.textContent = `الارتفاع: ${height}`;
+            }
+
+            function endGame() {
+                running = false;
+                if (gameLoop) clearInterval(gameLoop);
+                alert(`انتهت الجولة! الارتفاع: ${height}. سجّل النتيجة للأسرة.`);
+            }
+
+            startBtn.addEventListener('click', () => {
+                if (gameLoop) clearInterval(gameLoop);
+                blocks = [];
+                currentX = 150;
+                currentDir = 1;
+                height = 0;
+                running = true;
+                statusEl.textContent = `الارتفاع: ${height}`;
+                draw();
+                gameLoop = setInterval(update, 16);
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === ' ') dropBlock();
+            });
+
+            container.appendChild(box);
+            container.appendChild(canvas);
+        }
+
+        // ========== 21) مطابقة النمط ==========
+        function initPatternMatchGame(container) {
+            const box = document.createElement('div');
+            box.innerHTML = `
+            <div>شاهد النمط المعروض واختر النمط المطابق له من الخيارات.</div>
+            <div style="margin-top:6px;">لديك 15 ثانية لإيجاد أكبر عدد من الأنماط الصحيحة.</div>
+            <button class="btn-main" id="patternStart">بدء الجولة</button>
+            <div id="patternQuestion" style="margin-top:8px;"></div>
+            <div id="patternOptions" style="margin-top:8px;"></div>
+            <div id="patternStatus" style="margin-top:6px;">النقاط: 0 | الوقت: -</div>
+        `;
+            let score = 0;
+            let currentPattern = [];
+            let correctAnswer = 0;
+            let running = false;
+            let timeLeft = 15;
+            let timerId = null;
+
+            const questionEl = box.querySelector('#patternQuestion');
+            const optionsEl = box.querySelector('#patternOptions');
+            const statusEl = box.querySelector('#patternStatus');
+            const startBtn = box.querySelector('#patternStart');
+
+            function generatePattern() {
+                const size = 3;
+                currentPattern = [];
+                for (let i = 0; i < size * size; i++) {
+                    currentPattern.push(Math.random() < 0.5);
+                }
+                correctAnswer = Math.floor(Math.random() * 6);
+            }
+
+            function arraysEqual(a, b) {
+                if (a.length !== b.length) return false;
+                for (let i = 0; i < a.length; i++) {
+                    if (a[i] !== b[i]) return false;
+                }
+                return true;
+            }
+
+            function render() {
+                questionEl.innerHTML = "<div>النمط:</div>";
+                const patternGrid = document.createElement('div');
+                patternGrid.style.display = "grid";
+                patternGrid.style.gridTemplateColumns = "repeat(3, 50px)";
+                patternGrid.style.gap = "6px";
+                patternGrid.style.marginTop = "4px";
+                patternGrid.style.justifyContent = "center";
+                currentPattern.forEach((val, idx) => {
+                    const cell = document.createElement('div');
+                    cell.style.width = "50px";
+                    cell.style.height = "50px";
+                    cell.style.background = val ? "#f1c40f" : "#34495e";
+                    cell.style.border = "2px solid #2c3e50";
+                    cell.style.borderRadius = "4px";
+                    patternGrid.appendChild(cell);
+                });
+                questionEl.appendChild(patternGrid);
+
+                optionsEl.innerHTML = "";
+                optionsEl.style.display = "grid";
+                optionsEl.style.gridTemplateColumns = "repeat(3, 1fr)";
+                optionsEl.style.gap = "8px";
+                optionsEl.style.marginTop = "10px";
+                const usedPatterns = [];
+                for (let i = 0; i < 6; i++) {
+                    const option = document.createElement('button');
+                    option.className = "btn-dark";
+                    option.style.padding = "8px";
+                    option.style.cursor = "pointer";
+                    let optionPattern;
+                    if (i === correctAnswer) {
+                        optionPattern = [...currentPattern];
+                    } else {
+                        do {
+                            optionPattern = Array(9).fill().map(() => Math.random() < 0.5);
+                        } while (arraysEqual(optionPattern, currentPattern) || usedPatterns.some(p => arraysEqual(p, optionPattern)));
+                        usedPatterns.push(optionPattern);
+                    }
+                    const optGrid = document.createElement('div');
+                    optGrid.style.display = "grid";
+                    optGrid.style.gridTemplateColumns = "repeat(3, 30px)";
+                    optGrid.style.gap = "3px";
+                    optGrid.style.justifyContent = "center";
+                    optionPattern.forEach(val => {
+                        const cell = document.createElement('div');
+                        cell.style.width = "30px";
+                        cell.style.height = "30px";
+                        cell.style.background = val ? "#f1c40f" : "#34495e";
+                        cell.style.border = "1px solid #2c3e50";
+                        cell.style.borderRadius = "3px";
+                        optGrid.appendChild(cell);
+                    });
+                    option.appendChild(optGrid);
+                    option.addEventListener('click', () => {
+                        if (!running) return;
+                        if (i === correctAnswer) {
+                            score++;
+                            statusEl.textContent = `النقاط: ${score} | الوقت: ${timeLeft}`;
+                            generatePattern();
+                            render();
+                        } else {
+                            statusEl.textContent = `خطأ! النقاط: ${score} | الوقت: ${timeLeft}`;
+                        }
+                    });
+                    optionsEl.appendChild(option);
+                }
+            }
+
+            function endGame() {
+                running = false;
+                if (timerId) clearInterval(timerId);
+                alert(`انتهى الوقت! النقاط: ${score}. سجّل النتيجة للأسرة.`);
+            }
+
+            startBtn.addEventListener('click', () => {
+                if (timerId) clearInterval(timerId);
+                score = 0;
+                timeLeft = 15;
+                running = true;
+                statusEl.textContent = `النقاط: ${score} | الوقت: ${timeLeft}`;
+                generatePattern();
+                render();
+                timerId = setInterval(() => {
+                    timeLeft--;
+                    statusEl.textContent = `النقاط: ${score} | الوقت: ${timeLeft}`;
+                    if (timeLeft <= 0) {
+                        endGame();
+                    }
+                }, 1000);
+            });
+
+            container.appendChild(box);
+        }
+
+        // ========== 21) لعبة العد السريع ==========
+        function initCountingGame(container) {
+            const box = document.createElement('div');
+            box.innerHTML = `
+            <div>عد العناصر المطلوبة في الشبكة بسرعة. كل جولة تظهر شبكة جديدة.</div>
+            <div style="margin-top:6px;">لديك 20 ثانية لإيجاد أكبر عدد من الإجابات الصحيحة.</div>
+            <button class="btn-main" id="countingStart">بدء الجولة</button>
+            <div id="countingQuestion" style="margin-top:8px;font-size:20px;">-</div>
+            <div style="margin-top:6px;">
+                <input id="countingAnswer" type="number" placeholder="الإجابة">
+                <button class="btn-green" id="countingSubmit">إرسال</button>
+            </div>
+            <div id="countingStatus" style="margin-top:6px;">النقاط: 0 | الوقت: -</div>
+        `;
+            
+            const grid = document.createElement('div');
+            grid.style.display = "grid";
+            grid.style.gridTemplateColumns = "repeat(4, 50px)";
+            grid.style.gap = "6px";
+            grid.style.justifyContent = "center";
+            grid.style.marginTop = "10px";
+            
+            let score = 0;
+            let timeLeft = 20;
+            let currentTarget = null;
+            let currentAnswer = 0;
+            let running = false;
+            let timerId = null;
+            let items = [];
+            
+            const questionEl = box.querySelector('#countingQuestion');
+            const answerInput = box.querySelector('#countingAnswer');
+            const submitBtn = box.querySelector('#countingSubmit');
+            const statusEl = box.querySelector('#countingStatus');
+            const startBtn = box.querySelector('#countingStart');
+            
+            const symbols = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '🔴', '🟢', '🔵', '🟡', '⚫', '⚪'];
+            
+            function generateGrid() {
+                grid.innerHTML = "";
+                items = [];
+                const size = 16;
+                const symbolsToUse = symbols.slice(0, 8);
+                
+                // اختيار هدف عشوائي
+                currentTarget = symbolsToUse[Math.floor(Math.random() * symbolsToUse.length)];
+                currentAnswer = 0;
+                
+                // إنشاء الشبكة
+                for (let i = 0; i < size; i++) {
+                    const symbol = symbolsToUse[Math.floor(Math.random() * symbolsToUse.length)];
+                    items.push(symbol);
+                    
+                    const cell = document.createElement('div');
+                    cell.style.width = "40px";
+                    cell.style.height = "40px";
+                    cell.style.background = "#34495e";
+                    cell.style.border = "2px solid #2c3e50";
+                    cell.style.borderRadius = "4px";
+                    cell.style.display = "flex";
+                    cell.style.alignItems = "center";
+                    cell.style.justifyContent = "center";
+                    cell.style.fontSize = symbol.length > 1 ? "20px" : "18px";
+                    cell.style.fontWeight = "bold";
+                    cell.style.color = "#ecf0f1";
+                    cell.textContent = symbol;
+                    grid.appendChild(cell);
+                    
+                    if (symbol === currentTarget) {
+                        currentAnswer++;
+                    }
+                }
+                
+                questionEl.textContent = `كم مرة يظهر "${currentTarget}" في الشبكة؟`;
+            }
+            
+            function endGame() {
+                running = false;
+                if (timerId) clearInterval(timerId);
+                answerInput.disabled = true;
+                submitBtn.disabled = true;
+                alert(`انتهى الوقت! النقاط: ${score}. سجّل النتيجة للأسرة.`);
+            }
+            
+            submitBtn.addEventListener('click', () => {
+                if (!running) return;
+                const answer = Number(answerInput.value);
+                if (answer === currentAnswer) {
+                    score++;
+                    statusEl.textContent = `النقاط: ${score} | الوقت: ${timeLeft}`;
+                }
+                answerInput.value = "";
+                if (running) {
+                    generateGrid();
+                    answerInput.focus();
+                }
+            });
+            
+            answerInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter' && running) {
+                    submitBtn.click();
+                }
+            });
+            
+            startBtn.addEventListener('click', () => {
+                if (timerId) clearInterval(timerId);
+                score = 0;
+                timeLeft = 20;
+                running = true;
+                answerInput.disabled = false;
+                submitBtn.disabled = false;
+                answerInput.value = "";
+                generateGrid();
+                answerInput.focus();
+                timerId = setInterval(() => {
+                    timeLeft--;
+                    statusEl.textContent = `النقاط: ${score} | الوقت: ${timeLeft}`;
+                    if (timeLeft <= 0) {
+                        endGame();
+                    }
+                }, 1000);
+            });
+            
+            container.appendChild(box);
+            container.appendChild(grid);
         }
 
         // تشغيل أولي

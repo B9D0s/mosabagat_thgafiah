@@ -2,9 +2,14 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
     <title>منصة تخطيط الأسبوع</title>
-    <!-- مكتبات التصدير كصورة (fallback) -->
+    <!-- خط عربي للتصدير -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- مكتبات التصدير -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <style>
@@ -14,12 +19,23 @@
             box-sizing: border-box;
         }
 
+        html {
+            -webkit-text-size-adjust: 100%;
+            overflow-x: hidden;
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Cairo', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
             padding: 20px;
+            padding-top: max(20px, env(safe-area-inset-top));
+            padding-right: max(20px, env(safe-area-inset-right));
+            padding-bottom: max(20px, env(safe-area-inset-bottom));
+            padding-left: max(20px, env(safe-area-inset-left));
             color: #333;
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
         }
 
         .container {
@@ -74,11 +90,13 @@
 
         input, select, button {
             padding: 12px 18px;
+            min-height: 44px;
             border: 2px solid #dee2e6;
             border-radius: 10px;
             font-size: 16px;
             font-family: inherit;
             transition: all 0.3s ease;
+            touch-action: manipulation;
         }
 
         input:focus, select:focus {
@@ -146,14 +164,13 @@
         }
 
         .program-item {
-            padding: 12px 35px 12px 20px;
-            border-radius: 12px;
+            padding: 10px 14px 10px 18px;
+            border-radius: 10px;
             cursor: move;
             user-select: none;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
             font-weight: 500;
-            position: relative;
             display: inline-flex;
             align-items: center;
             gap: 10px;
@@ -163,56 +180,53 @@
             word-break: break-word;
             max-width: 100%;
             width: auto;
-            min-width: 100px;
+            min-width: 80px;
             overflow: hidden;
             line-height: 1.4;
             text-align: right;
-            unicode-bidi: plaintext;
-            direction: ltr;
+            font-size: 14px;
         }
 
-        .program-item > *:first-child {
-            flex: 0 1 auto;
+        .program-item .program-name {
+            flex: 1;
             min-width: 0;
-            overflow-wrap: break-word;
-            word-break: break-word;
-            white-space: normal;
-            text-align: right;
-            unicode-bidi: plaintext;
-            direction: ltr;
-            font-feature-settings: "liga" 1, "kern" 1;
         }
 
         .program-item:hover {
-            transform: translateY(-3px);
+            transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
 
         .program-item.dragging {
-            opacity: 0.5;
-            transform: rotate(5deg);
+            opacity: 0.4;
+            transform: scale(0.98);
         }
 
         .program-item .delete-btn {
-            background: rgba(255, 255, 255, 0.3);
-            color: white;
+            flex-shrink: 0;
+            background: transparent;
+            color: rgba(255, 255, 255, 0.5);
             border: none;
-            border-radius: 50%;
-            width: 24px;
-            height: 24px;
+            border-radius: 4px;
+            width: 22px;
+            height: 22px;
+            min-width: 22px;
+            min-height: 22px;
             cursor: pointer;
             font-size: 16px;
+            font-weight: 400;
+            line-height: 1;
             padding: 0;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-right: auto;
-            transition: all 0.2s ease;
+            transition: all 0.15s ease;
+            touch-action: manipulation;
         }
 
         .program-item .delete-btn:hover {
-            background: rgba(255, 255, 255, 0.5);
-            transform: scale(1.1);
+            color: white;
+            background: rgba(220, 53, 69, 0.8);
         }
 
         .week-container {
@@ -244,13 +258,13 @@
             padding: 20px;
             min-height: 300px;
             border: 2px dashed #dee2e6;
-            transition: all 0.3s ease;
+            transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
         }
 
         .day-column.drag-over {
             border-color: #667eea;
             background: #e7f0ff;
-            transform: scale(1.02);
+            transform: scale(1.01);
         }
 
         .day-header {
@@ -290,74 +304,130 @@
         }
 
         .day-program {
-            padding: 10px 35px 10px 15px;
-            border-radius: 10px;
-            margin-bottom: 8px;
+            padding: 8px 12px 8px 28px;
+            border-radius: 8px;
+            margin-bottom: 6px;
             cursor: move;
             box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, margin 0.15s ease, border 0.15s ease, opacity 0.2s ease;
             position: relative;
             color: white;
             word-wrap: break-word;
             overflow-wrap: break-word;
             word-break: break-word;
             overflow: hidden;
-            line-height: 1.6;
+            line-height: 1.5;
             width: 100%;
             box-sizing: border-box;
             text-align: right;
-            unicode-bidi: plaintext;
-            direction: ltr;
             white-space: normal;
-            hyphens: auto;
-            font-feature-settings: "liga" 1, "kern" 1;
+            font-size: 13px;
+            -webkit-user-select: none;
+            user-select: none;
         }
 
         .day-program.drag-over-top {
-            border-top: 3px solid #667eea;
-            margin-top: 5px;
+            border-top: 4px solid #667eea;
+            margin-top: 8px;
         }
 
         .day-program.drag-over-bottom {
-            border-bottom: 3px solid #667eea;
-            margin-bottom: 5px;
+            border-bottom: 4px solid #667eea;
+            margin-bottom: 8px;
         }
 
         .day-program:hover {
-            transform: translateX(-5px);
+            transform: translateX(-3px);
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
         }
 
         .day-program.dragging {
-            opacity: 0.5;
+            opacity: 0.4;
+            transform: scale(0.98);
         }
 
         .day-program .delete-btn {
             position: absolute;
-            left: 10px;
+            left: 6px;
             top: 50%;
             transform: translateY(-50%);
-            background: rgba(255, 255, 255, 0.3);
-            color: white;
+            background: transparent;
+            color: rgba(255, 255, 255, 0.4);
             border: none;
-            border-radius: 50%;
-            width: 20px;
-            height: 20px;
+            border-radius: 4px;
+            width: 18px;
+            height: 18px;
+            min-width: 18px;
+            min-height: 18px;
             cursor: pointer;
-            font-size: 12px;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 1;
             padding: 0;
             display: none;
             align-items: center;
             justify-content: center;
-            transition: all 0.2s ease;
+            transition: all 0.15s ease;
+            touch-action: manipulation;
         }
 
         .day-program .delete-btn:hover {
-            background: rgba(255, 255, 255, 0.5);
+            color: white;
+            background: rgba(220, 53, 69, 0.8);
         }
 
         .day-program:hover .delete-btn {
             display: flex;
+        }
+
+        /* على الجوال لا يوجد hover فنبين زر الحذف دائماً */
+        @media (hover: none) {
+            .day-program .delete-btn {
+                display: flex !important;
+            }
+            .day-program {
+                padding-left: 30px;
+            }
+        }
+
+        /* أنماط اللمس - تعمل على جميع الشاشات */
+        .program-item.touch-dragging,
+        .day-program.touch-dragging {
+            opacity: 0.6;
+            transform: scale(1.03);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+            z-index: 1000;
+        }
+
+        .day-programs.touch-drop-target {
+            background: rgba(102, 126, 234, 0.12);
+            border: 2px dashed #667eea !important;
+            border-radius: 12px;
+        }
+
+        .day-program.touch-drag-over {
+            border-top: 3px solid #667eea;
+            margin-top: 4px;
+            transition: margin 0.15s ease;
+        }
+
+        /* عنصر الشبح أثناء السحب باللمس */
+        .touch-ghost {
+            position: fixed;
+            pointer-events: none;
+            z-index: 10000;
+            opacity: 0.85;
+            transform: translate(-50%, -50%) scale(1.05);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+            border-radius: 12px;
+            padding: 12px 20px;
+            color: white;
+            font-weight: 500;
+            max-width: 200px;
+            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         .empty-day {
@@ -377,8 +447,35 @@
         }
 
         @media (max-width: 768px) {
+            body {
+                padding: 12px;
+                padding-top: max(12px, env(safe-area-inset-top));
+                padding-right: max(12px, env(safe-area-inset-right));
+                padding-bottom: max(12px, env(safe-area-inset-bottom));
+                padding-left: max(12px, env(safe-area-inset-left));
+            }
+
+            .container {
+                border-radius: 12px;
+            }
+
+            .header {
+                padding: 20px 16px;
+            }
+
             .header h1 {
-                font-size: 1.8em;
+                font-size: 1.5em;
+            }
+
+            .header p {
+                font-size: 0.95em;
+            }
+
+            .controls,
+            .add-program-section,
+            .programs-list,
+            .week-container {
+                padding: 16px;
             }
 
             .control-row {
@@ -391,36 +488,41 @@
                 width: 100%;
             }
 
+            .program-input-container {
+                flex-direction: column;
+            }
+
+            .program-input-container input {
+                min-width: 100%;
+            }
+
             .days-grid {
                 grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .day-column {
+                min-height: 180px;
+                padding: 14px;
+            }
+
+            .day-header {
+                font-size: 1em;
             }
 
             .week-container-header {
                 flex-direction: column;
                 align-items: flex-start;
-                gap: 15px;
+                gap: 12px;
             }
+
         }
 
-        /* CSS مؤقت لضمان RTL أثناء التصوير كصورة (fallback) */
-        body.print-mode.image-export-mode .week-container,
-        body.print-mode.image-export-mode .week-container * {
-            direction: rtl !important;
-            unicode-bidi: plaintext !important;
-        }
-        
-        body.print-mode.image-export-mode .day-program,
-        body.print-mode.image-export-mode .program-item {
-            direction: rtl !important;
-            unicode-bidi: plaintext !important;
-            text-align: right !important;
-        }
-
-        /* Print Styles - Cross-Device Compatible */
+        /* Print Styles - للطباعة المباشرة (Ctrl+P) */
         @media print {
             @page {
                 size: A4 landscape;
-                margin: 12mm;
+                margin: 10mm;
             }
 
             * {
@@ -428,112 +530,54 @@
                 print-color-adjust: exact !important;
             }
 
-            /* إزالة جميع الـ padding والـ margin الكبير */
             body {
                 background: white !important;
-                padding: 0 !important;
+                padding: 10px !important;
                 margin: 0 !important;
-                min-height: auto !important;
-                font-family: 'Cairo', 'Tajawal', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
-                direction: rtl !important;
             }
 
-            /* إخفاء كل شيء إلا في print-mode */
-            body:not(.print-mode) * {
+            .header,
+            .controls,
+            .add-program-section,
+            .programs-list,
+            .week-container-header button,
+            .day-program .delete-btn,
+            .empty-day,
+            .footer {
                 display: none !important;
             }
 
-            /* Container بدون shadow و radius */
-            body.print-mode .container {
+            .container {
                 box-shadow: none !important;
                 max-width: 100% !important;
-                width: 100% !important;
-                margin: 0 !important;
+            }
+
+            .week-container {
                 padding: 0 !important;
-                border-radius: 0 !important;
-                background: white !important;
             }
 
-            /* إخفاء الهيدر الكبير (يسبب صفحة فاضية) */
-            body.print-mode .header {
-                display: none !important;
-            }
-
-            /* عنوان بسيط للطباعة */
-            body.print-mode .print-title {
+            .print-title {
                 display: block !important;
                 text-align: center !important;
                 font-size: 18px !important;
-                font-weight: bold !important;
-                color: #495057 !important;
-                margin: 0 0 15px 0 !important;
-                padding: 0 !important;
+                margin-bottom: 15px !important;
             }
 
-            /* إخفاء العناصر غير المطلوبة */
-            body.print-mode .controls,
-            body.print-mode .add-program-section,
-            body.print-mode .programs-list,
-            body.print-mode .week-container-header button,
-            body.print-mode .program-item .delete-btn,
-            body.print-mode .day-program .delete-btn,
-            body.print-mode .week-container-header h2 {
-                display: none !important;
-            }
-
-            /* Week Container بدون padding */
-            body.print-mode .week-container {
-                padding: 0 !important;
-                margin: 0 !important;
-            }
-
-            /* Grid ثابت بناءً على CSS variable */
-            body.print-mode #daysGrid {
+            #daysGrid {
                 display: grid !important;
-                grid-template-columns: repeat(var(--print-cols, 7), 1fr) !important;
-                gap: 10px !important;
-                page-break-inside: avoid !important;
-                break-inside: avoid !important;
-                width: 100% !important;
-                margin: 0 !important;
-                padding: 0 !important;
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)) !important;
+                gap: 8px !important;
             }
 
-            /* منع تكسير الأعمدة بين الصفحات */
-            body.print-mode .day-column {
+            .day-column {
                 break-inside: avoid !important;
-                page-break-inside: avoid !important;
-                background: #f8f9fa !important;
-                border: 2px solid #dee2e6 !important;
-                border-radius: 8px !important;
-                padding: 12px !important;
                 min-height: auto !important;
-                margin: 0 !important;
+                padding: 10px !important;
             }
 
-            /* منع تكسير البطاقات بين الصفحات */
-            body.print-mode .day-program,
-            body.print-mode .program-item {
-                break-inside: avoid !important;
-                page-break-inside: avoid !important;
-                direction: rtl !important;
-                unicode-bidi: embed !important;
-                text-align: right !important;
-            }
-
-            /* Footer بسيط */
-            body.print-mode .footer {
-                margin-top: 15px !important;
-                padding-top: 10px !important;
-                border-top: 1px solid #e9ecef !important;
-                text-align: center !important;
-                color: #6c757d !important;
-                font-size: 11px !important;
-            }
-
-            /* إخفاء empty-day في الطباعة */
-            body.print-mode .empty-day {
-                display: none !important;
+            .day-program {
+                padding: 6px 10px !important;
+                font-size: 12px !important;
             }
         }
     </style>
@@ -613,7 +657,25 @@
         let draggedFromContainer = null;
         let lastDraggedProgramId = null; // حفظ program-id مؤقتاً لتجنب مشاكل dataTransfer
 
+        // للجوال/الآيباد: سحب باللمس
+        let touchDragProgramId = null;
+        let touchDragDayProgramEl = null;
+        let lastTouchX = 0, lastTouchY = 0;
+
         const dayNames = ['الأحد', 'الإثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة', 'السبت'];
+
+        /** تهريب النص لعرضه في HTML أو في قوالب نصية - يمنع XSS وكسر القوالب */
+        function escapeHtml(str) {
+            if (str == null || typeof str !== 'string') return '';
+            return str
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#39;')
+                .replace(/`/g, '&#96;')
+                .replace(/\$/g, '&#36;');
+        }
 
         // توليد لون داكن عشوائي
         function generateDarkColor() {
@@ -658,11 +720,11 @@
                 <div class="program-item" 
                      draggable="true" 
                      data-program-id="${program.id}"
-                     style="background-color: ${program.color};"
+                     style="background-color: ${escapeHtml(program.color)};"
                      ondragstart="handleDragStart(event)"
                      ondragend="handleDragEnd(event)">
-                    <span style="flex: 1; min-width: 0; overflow-wrap: break-word; word-break: break-word;">${program.name}</span>
-                    <button class="delete-btn" onclick="deleteProgram(${program.id})" title="حذف">×</button>
+                    <button class="delete-btn" onclick="event.stopPropagation(); deleteProgram(${program.id})" title="حذف">✕</button>
+                    <span class="program-name">${escapeHtml(program.name)}</span>
                 </div>
             `).join('');
         }
@@ -851,6 +913,35 @@
                 e.dataTransfer.dropEffect = 'copy';
             }
             
+            // التعامل مع السحب داخل نفس اليوم (day-program إلى day-program)
+            const isDayProgramDrag = draggedElement && draggedElement.classList.contains('day-program');
+            if (isDayProgramDrag) {
+                const sourceDayPrograms = draggedElement.closest('.day-programs');
+                if (dayPrograms === sourceDayPrograms) {
+                    // إعادة ترتيب داخل نفس اليوم
+                    e.dataTransfer.dropEffect = 'move';
+                    const mouseY = e.clientY;
+                    const dayProgramsList = Array.from(dayPrograms.querySelectorAll('.day-program'));
+                    
+                    // إزالة العلامات السابقة
+                    dayProgramsList.forEach(el => el.classList.remove('drag-over-top', 'drag-over-bottom'));
+                    
+                    for (let i = 0; i < dayProgramsList.length; i++) {
+                        if (dayProgramsList[i] === draggedElement) continue;
+                        const rect = dayProgramsList[i].getBoundingClientRect();
+                        const middle = rect.top + rect.height / 2;
+                        if (mouseY < middle) {
+                            dayProgramsList[i].classList.add('drag-over-top');
+                            break;
+                        } else if (i === dayProgramsList.length - 1 || 
+                                   (dayProgramsList[i + 1] === draggedElement && i + 1 === dayProgramsList.length - 1)) {
+                            dayProgramsList[i].classList.add('drag-over-bottom');
+                        }
+                    }
+                    return false;
+                }
+            }
+
             // دائماً نضيف المؤشر إذا كان dropEffect = 'copy' (من القائمة)
             // نتحقق من dropEffect أولاً، ثم من isFromProgramsList و lastDraggedProgramId
             if (e.dataTransfer.dropEffect === 'copy' || isFromProgramsList || lastDraggedProgramId || e.dataTransfer.effectAllowed === 'copy') {
@@ -1057,13 +1148,39 @@
                 return false;
             }
             
-            // إذا كان السحب من داخل نفس اليوم (day-program)، لا نفعل شيء هنا
-            // يتم التعامل معه في setupDayProgramDragAndDrop
+            // إذا كان السحب من داخل نفس اليوم (day-program)
             if (draggedElement && draggedElement.classList.contains('day-program')) {
                 const targetDayPrograms = e.currentTarget;
                 const sourceDayPrograms = draggedElement.closest('.day-programs');
-                // إذا كانا في نفس اليوم، لا نضيف برنامج جديد
+                
+                // إذا كانا في نفس اليوم - إعادة الترتيب
                 if (targetDayPrograms === sourceDayPrograms) {
+                    const dayProgramsList = Array.from(targetDayPrograms.querySelectorAll('.day-program'));
+                    const mouseY = e.clientY;
+                    let insertBefore = null;
+                    
+                    for (let i = 0; i < dayProgramsList.length; i++) {
+                        if (dayProgramsList[i] === draggedElement) continue;
+                        const rect = dayProgramsList[i].getBoundingClientRect();
+                        if (mouseY < rect.top + rect.height / 2) {
+                            insertBefore = dayProgramsList[i];
+                            break;
+                        }
+                    }
+                    
+                    if (insertBefore) {
+                        targetDayPrograms.insertBefore(draggedElement, insertBefore);
+                    } else {
+                        targetDayPrograms.appendChild(draggedElement);
+                    }
+                    
+                    // تنظيف
+                    document.querySelectorAll('.day-program').forEach(el => {
+                        el.classList.remove('drag-over-top', 'drag-over-bottom');
+                    });
+                    document.querySelectorAll('.drop-indicator').forEach(ind => ind.remove());
+                    draggedElement = null;
+                    draggedFromContainer = null;
                     return false;
                 }
             }
@@ -1128,7 +1245,7 @@
             dayProgram.appendChild(textNode);
             const deleteBtn = document.createElement('button');
             deleteBtn.className = 'delete-btn';
-            deleteBtn.textContent = '×';
+            deleteBtn.textContent = '✕';
             deleteBtn.onclick = function() { deleteDayProgram(this, program.id); };
             deleteBtn.title = 'حذف';
             dayProgram.appendChild(deleteBtn);
@@ -1154,6 +1271,28 @@
             lastDraggedProgramId = null; // إعادة تعيين بعد الإضافة الناجحة
             
             return false;
+        }
+
+        // إضافة برنامج إلى يوم (يُستدعى من اللمس على الجوال/الآيباد)
+        function addProgramToDayFromTouch(programId, dayProgramsEl) {
+            const program = programs.find(p => p.id === programId);
+            if (!program || !dayProgramsEl) return;
+            const emptyDay = dayProgramsEl.querySelector('.empty-day');
+            if (emptyDay) emptyDay.remove();
+            const dayProgram = document.createElement('div');
+            dayProgram.className = 'day-program';
+            dayProgram.dataset.programId = program.id.toString();
+            dayProgram.style.backgroundColor = program.color;
+            dayProgram.draggable = true;
+            dayProgram.appendChild(document.createTextNode(program.name));
+            const deleteBtn = document.createElement('button');
+            deleteBtn.className = 'delete-btn';
+            deleteBtn.textContent = '✕';
+            deleteBtn.onclick = function() { deleteDayProgram(this, program.id); };
+            deleteBtn.title = 'حذف';
+            dayProgram.appendChild(deleteBtn);
+            setupDayProgramDragAndDrop(dayProgram, program);
+            dayProgramsEl.appendChild(dayProgram);
         }
 
         function setupDayProgramDragAndDrop(dayProgram, program) {
@@ -1391,6 +1530,247 @@
                 }
             });
             
+            // === نظام اللمس المحسّن للجوال والآيباد ===
+            let touchStartTimer = null;
+            let touchGhost = null;
+            let isTouchDragging = false;
+            let touchStartX = 0, touchStartY = 0;
+            const LONG_PRESS_DURATION = 250; // مدة الضغط المطول (ms)
+            const TOUCH_MOVE_THRESHOLD = 10; // الحد الأدنى للحركة لبدء السحب
+
+            function createTouchGhost(text, color) {
+                if (touchGhost) touchGhost.remove();
+                touchGhost = document.createElement('div');
+                touchGhost.className = 'touch-ghost';
+                touchGhost.textContent = text;
+                touchGhost.style.backgroundColor = color;
+                document.body.appendChild(touchGhost);
+                return touchGhost;
+            }
+
+            function removeTouchGhost() {
+                if (touchGhost) {
+                    touchGhost.remove();
+                    touchGhost = null;
+                }
+            }
+
+            function updateTouchGhostPosition(x, y) {
+                if (touchGhost) {
+                    touchGhost.style.left = x + 'px';
+                    touchGhost.style.top = y + 'px';
+                }
+            }
+
+            function clearTouchState() {
+                if (touchStartTimer) {
+                    clearTimeout(touchStartTimer);
+                    touchStartTimer = null;
+                }
+                removeTouchGhost();
+                isTouchDragging = false;
+                touchDragProgramId = null;
+                touchDragDayProgramEl = null;
+                document.querySelectorAll('.program-item, .day-program').forEach(el => el.classList.remove('touch-dragging'));
+                document.querySelectorAll('.day-programs').forEach(el => el.classList.remove('touch-drop-target'));
+                document.querySelectorAll('.day-program').forEach(el => el.classList.remove('touch-drag-over'));
+            }
+
+            function findInsertPosition(dayProgramsEl, touchY) {
+                const programs = Array.from(dayProgramsEl.querySelectorAll('.day-program:not(.touch-dragging)'));
+                for (let i = 0; i < programs.length; i++) {
+                    const rect = programs[i].getBoundingClientRect();
+                    if (touchY < rect.top + rect.height / 2) {
+                        return { element: programs[i], index: i };
+                    }
+                }
+                return { element: null, index: programs.length };
+            }
+
+            document.addEventListener('touchstart', function(e) {
+                if (e.target.closest('.delete-btn') || e.target.closest('button') || e.target.closest('input') || e.target.closest('select')) return;
+                if (e.touches.length !== 1) return;
+
+                const touch = e.touches[0];
+                touchStartX = touch.clientX;
+                touchStartY = touch.clientY;
+                lastTouchX = touch.clientX;
+                lastTouchY = touch.clientY;
+
+                const programItem = e.target.closest('.program-item');
+                const dayProg = e.target.closest('.day-program');
+
+                if (programItem || dayProg) {
+                    // بدء مؤقت الضغط المطول
+                    touchStartTimer = setTimeout(function() {
+                        isTouchDragging = true;
+                        // اهتزاز خفيف إذا كان متاحاً
+                        if (navigator.vibrate) navigator.vibrate(30);
+
+                        if (programItem) {
+                            touchDragProgramId = parseInt(programItem.dataset.programId);
+                            const prog = programs.find(p => p.id === touchDragProgramId);
+                            if (prog) {
+                                programItem.classList.add('touch-dragging');
+                                createTouchGhost(prog.name, prog.color);
+                                updateTouchGhostPosition(lastTouchX, lastTouchY);
+                            }
+                        } else if (dayProg) {
+                            touchDragDayProgramEl = dayProg;
+                            const progId = parseInt(dayProg.dataset.programId);
+                            const prog = programs.find(p => p.id === progId);
+                            if (prog) {
+                                dayProg.classList.add('touch-dragging');
+                                createTouchGhost(prog.name, prog.color);
+                                updateTouchGhostPosition(lastTouchX, lastTouchY);
+                            }
+                        }
+                    }, LONG_PRESS_DURATION);
+                }
+            }, { passive: true });
+
+            document.addEventListener('touchmove', function(e) {
+                if (e.touches.length !== 1) return;
+                const touch = e.touches[0];
+                lastTouchX = touch.clientX;
+                lastTouchY = touch.clientY;
+
+                // إذا تحرك الإصبع قبل انتهاء الضغط المطول، ألغِ السحب
+                if (touchStartTimer && !isTouchDragging) {
+                    const dx = Math.abs(touch.clientX - touchStartX);
+                    const dy = Math.abs(touch.clientY - touchStartY);
+                    if (dx > TOUCH_MOVE_THRESHOLD || dy > TOUCH_MOVE_THRESHOLD) {
+                        clearTimeout(touchStartTimer);
+                        touchStartTimer = null;
+                    }
+                }
+
+                if (!isTouchDragging) return;
+                e.preventDefault();
+
+                updateTouchGhostPosition(lastTouchX, lastTouchY);
+
+                // البحث عن العنصر تحت الإصبع
+                if (touchGhost) touchGhost.style.display = 'none';
+                const elementUnderFinger = document.elementFromPoint(touch.clientX, touch.clientY);
+                if (touchGhost) touchGhost.style.display = '';
+
+                const dayProgramsTarget = elementUnderFinger && elementUnderFinger.closest('.day-programs');
+
+                // تحديث تمييز المناطق المستهدفة
+                document.querySelectorAll('.day-programs').forEach(el => {
+                    el.classList.toggle('touch-drop-target', el === dayProgramsTarget);
+                });
+
+                // تمييز موقع الإدراج داخل نفس اليوم
+                document.querySelectorAll('.day-program').forEach(el => el.classList.remove('touch-drag-over'));
+                if (dayProgramsTarget && touchDragDayProgramEl) {
+                    const sourceDayPrograms = touchDragDayProgramEl.closest('.day-programs');
+                    if (dayProgramsTarget === sourceDayPrograms) {
+                        // نفس اليوم - إعادة الترتيب
+                        const pos = findInsertPosition(dayProgramsTarget, touch.clientY);
+                        if (pos.element && pos.element !== touchDragDayProgramEl) {
+                            pos.element.classList.add('touch-drag-over');
+                        }
+                    }
+                }
+            }, { passive: false });
+
+            document.addEventListener('touchend', function(e) {
+                if (touchStartTimer) {
+                    clearTimeout(touchStartTimer);
+                    touchStartTimer = null;
+                }
+
+                if (!isTouchDragging) {
+                    clearTouchState();
+                    return;
+                }
+
+                // إخفاء الشبح للعثور على العنصر الصحيح تحته
+                if (touchGhost) touchGhost.style.display = 'none';
+                const elementUnderFinger = document.elementFromPoint(lastTouchX, lastTouchY);
+                if (touchGhost) touchGhost.style.display = '';
+
+                const targetDayPrograms = elementUnderFinger && elementUnderFinger.closest('.day-programs');
+
+                // السحب من قائمة البرامج إلى يوم
+                if (touchDragProgramId && targetDayPrograms) {
+                    const program = programs.find(p => p.id === touchDragProgramId);
+                    if (program) {
+                        const emptyDay = targetDayPrograms.querySelector('.empty-day');
+                        if (emptyDay) emptyDay.remove();
+
+                        const pos = findInsertPosition(targetDayPrograms, lastTouchY);
+
+                        const dayProgram = document.createElement('div');
+                        dayProgram.className = 'day-program';
+                        dayProgram.dataset.programId = program.id.toString();
+                        dayProgram.style.backgroundColor = program.color;
+                        dayProgram.draggable = true;
+                        dayProgram.appendChild(document.createTextNode(program.name));
+                        const deleteBtn = document.createElement('button');
+                        deleteBtn.className = 'delete-btn';
+                        deleteBtn.textContent = '✕';
+                        deleteBtn.onclick = function() { deleteDayProgram(this, program.id); };
+                        deleteBtn.title = 'حذف';
+                        dayProgram.appendChild(deleteBtn);
+                        setupDayProgramDragAndDrop(dayProgram, program);
+
+                        if (pos.element) {
+                            targetDayPrograms.insertBefore(dayProgram, pos.element);
+                        } else {
+                            targetDayPrograms.appendChild(dayProgram);
+                        }
+                    }
+                }
+
+                // السحب من يوم إلى يوم (نقل أو إعادة ترتيب)
+                if (touchDragDayProgramEl && targetDayPrograms) {
+                    const sourceDayPrograms = touchDragDayProgramEl.closest('.day-programs');
+
+                    if (targetDayPrograms === sourceDayPrograms) {
+                        // إعادة الترتيب داخل نفس اليوم
+                        const pos = findInsertPosition(targetDayPrograms, lastTouchY);
+                        if (pos.element && pos.element !== touchDragDayProgramEl) {
+                            targetDayPrograms.insertBefore(touchDragDayProgramEl, pos.element);
+                        } else if (!pos.element) {
+                            // في النهاية
+                            const allProgs = targetDayPrograms.querySelectorAll('.day-program');
+                            const lastProg = allProgs[allProgs.length - 1];
+                            if (lastProg !== touchDragDayProgramEl) {
+                                targetDayPrograms.appendChild(touchDragDayProgramEl);
+                            }
+                        }
+                    } else {
+                        // نقل إلى يوم آخر
+                        const emptyDay = targetDayPrograms.querySelector('.empty-day');
+                        if (emptyDay) emptyDay.remove();
+
+                        const pos = findInsertPosition(targetDayPrograms, lastTouchY);
+                        if (pos.element) {
+                            targetDayPrograms.insertBefore(touchDragDayProgramEl, pos.element);
+                        } else {
+                            targetDayPrograms.appendChild(touchDragDayProgramEl);
+                        }
+
+                        // إضافة رسالة فارغ إذا أصبح اليوم الأصلي فارغاً
+                        if (sourceDayPrograms && sourceDayPrograms.querySelectorAll('.day-program').length === 0) {
+                            const empty = document.createElement('div');
+                            empty.className = 'empty-day';
+                            empty.textContent = 'اسحب البرامج هنا';
+                            sourceDayPrograms.appendChild(empty);
+                        }
+                    }
+                }
+
+                clearTouchState();
+            }, { passive: true });
+
+            document.addEventListener('touchcancel', function() {
+                clearTouchState();
+            }, { passive: true });
+
             // هذا الـ listener فقط للتعامل مع السحب بين الأيام (وليس من القائمة)
             document.addEventListener('drop', function(e) {
                 // فقط إذا كان السحب من يوم إلى يوم آخر (وليس من القائمة)
@@ -1447,7 +1827,7 @@
                         dayProgram.appendChild(textNode);
                         const deleteBtn = document.createElement('button');
                         deleteBtn.className = 'delete-btn';
-                        deleteBtn.textContent = '×';
+                        deleteBtn.textContent = '✕';
                         deleteBtn.onclick = function() { deleteDayProgram(this, program.id); };
                         deleteBtn.title = 'حذف';
                         dayProgram.appendChild(deleteBtn);
@@ -1479,149 +1859,235 @@
             });
         });
 
-        // تصدير إلى PDF باستخدام Print to PDF من المتصفح
+        // === نظام التصدير - يعمل 100% مع العربية ===
         function exportToPDF() {
             const daysGrid = document.getElementById('daysGrid');
+            const dayColumns = daysGrid ? daysGrid.querySelectorAll('.day-column') : [];
             
-            if (!daysGrid || daysGrid.children.length === 0) {
+            if (!daysGrid || dayColumns.length === 0) {
                 alert('الرجاء إنشاء الجدول أولاً');
                 return;
             }
             
-            // حساب عدد الأيام وعدد الأعمدة للطباعة
-            const daysCount = daysGrid.querySelectorAll('.day-column').length;
-            const printCols = Math.min(daysCount, 7);
+            // التحقق من وجود برامج
+            const hasPrograms = Array.from(dayColumns).some(col => 
+                col.querySelector('.day-program') !== null
+            );
             
-            // ضبط CSS variable للـ Grid
-            daysGrid.style.setProperty('--print-cols', printCols);
-            
-            // إضافة class print-mode على body
-            document.body.classList.add('print-mode');
-            
-            // دالة لإزالة print-mode
-            function removePrintMode() {
-                document.body.classList.remove('print-mode');
-                document.body.classList.remove('image-export-mode');
-                daysGrid.style.removeProperty('--print-cols');
+            if (!hasPrograms) {
+                alert('الرجاء إضافة برامج إلى الجدول أولاً');
+                return;
             }
+
+            // فتح نافذة طباعة جديدة
+            openPrintWindow(daysGrid, dayColumns.length);
+        }
+
+        function openPrintWindow(daysGrid, daysCount) {
+            const gridCols = Math.min(daysCount, 7);
             
-            // نظام مراقبة لاكتشاف فشل window.print()
-            let printSucceeded = false;
-            let printCheckTimeout = null;
+            // بناء HTML للبرامج في كل يوم
+            let daysHTML = '';
+            const dayColumns = daysGrid.querySelectorAll('.day-column');
             
-            // استخدام matchMedia للتحقق من وضع الطباعة (يعمل على جميع الأجهزة)
-            const mediaQueryList = window.matchMedia('print');
-            
-            function handlePrintChange(mql) {
-                if (!mql.matches) {
-                    // خرجنا من وضع الطباعة - نجح print
-                    printSucceeded = true;
-                    if (printCheckTimeout) {
-                        clearTimeout(printCheckTimeout);
-                        printCheckTimeout = null;
-                    }
-                    removePrintMode();
-                    mediaQueryList.removeListener(handlePrintChange);
+            dayColumns.forEach(dayCol => {
+                const header = dayCol.querySelector('.day-header');
+                const headerText = header ? escapeHtml(header.textContent) : '';
+                
+                let programsHTML = '';
+                const programs = dayCol.querySelectorAll('.day-program');
+                
+                if (programs.length === 0) {
+                    programsHTML = '<div class="empty-msg">—</div>';
+                } else {
+                    programs.forEach(prog => {
+                        const rawText = prog.childNodes[0].textContent || prog.textContent.replace(/[×✕]/g, '').trim();
+                        const textContent = escapeHtml(rawText);
+                        const bgColor = escapeHtml(prog.style.backgroundColor || '');
+                        programsHTML += `<div class="program" style="background-color: ${bgColor};">${textContent}</div>`;
+                    });
                 }
-            }
-            
-            // إضافة listener لـ matchMedia
-            if (mediaQueryList.addListener) {
-                mediaQueryList.addListener(handlePrintChange);
-            } else if (mediaQueryList.addEventListener) {
-                mediaQueryList.addEventListener('change', handlePrintChange);
-            }
-            
-            // استخدام afterprint كـ fallback
-            function handleAfterPrint() {
-                printSucceeded = true;
-                if (printCheckTimeout) {
-                    clearTimeout(printCheckTimeout);
-                    printCheckTimeout = null;
-                }
-                removePrintMode();
-                window.removeEventListener('afterprint', handleAfterPrint);
-            }
-            window.addEventListener('afterprint', handleAfterPrint);
-            
-            // مراقبة فشل print - إذا لم يحدث afterprint أو matchMedia خلال 1.5 ثانية
-            printCheckTimeout = setTimeout(() => {
-                if (!printSucceeded) {
-                    // فشل print - استخدام fallback
-                    console.log('Print failed, using image export fallback');
-                    exportAsImagePDF(daysGrid, printCols, removePrintMode);
-                }
-            }, 1500);
-            
-            // الانتظار قليلاً لضمان تطبيق CSS ثم استدعاء window.print()
-            setTimeout(() => {
-                window.print();
-            }, 100);
+                
+                daysHTML += `
+                    <div class="day-col">
+                        <div class="day-header">${headerText}</div>
+                        <div class="day-programs">${programsHTML}</div>
+                    </div>
+                `;
+            });
+
+            // إنشاء محتوى الصفحة للطباعة
+            const printContent = `
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>جدول الأسبوع</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
         
-        // دالة Fallback للتصدير كصورة
-        function exportAsImagePDF(daysGrid, printCols, removePrintMode) {
-            // التحقق من وجود المكتبات
-            if (typeof html2canvas === 'undefined' || typeof window.jspdf === 'undefined') {
-                alert('عذراً، التصدير غير متاح في هذا المتصفح. يرجى فتح الملف من Safari أو Chrome.');
-                removePrintMode();
+        @page {
+            size: A4 landscape;
+            margin: 10mm;
+        }
+        
+        body {
+            font-family: 'Cairo', 'Segoe UI', Tahoma, sans-serif;
+            direction: rtl;
+            background: white;
+            padding: 20px;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+        
+        .title {
+            text-align: center;
+            font-size: 28px;
+            font-weight: 700;
+            color: #495057;
+            margin-bottom: 25px;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(${gridCols}, 1fr);
+            gap: 12px;
+        }
+        
+        .day-col {
+            background: #f8f9fa;
+            border: 2px solid #dee2e6;
+            border-radius: 12px;
+            padding: 15px;
+            min-height: 180px;
+        }
+        
+        .day-header {
+            text-align: center;
+            font-weight: 700;
+            font-size: 15px;
+            color: #495057;
+            padding-bottom: 10px;
+            margin-bottom: 12px;
+            border-bottom: 2px solid #dee2e6;
+        }
+        
+        .program {
+            padding: 10px 14px;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            color: white;
+            font-size: 13px;
+            font-weight: 600;
+            line-height: 1.5;
+            word-wrap: break-word;
+            word-break: break-word;
+        }
+        
+        .empty-msg {
+            text-align: center;
+            color: #adb5bd;
+            padding: 30px;
+            font-size: 20px;
+        }
+        
+        .footer {
+            text-align: center;
+            color: #6c757d;
+            font-size: 12px;
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid #e9ecef;
+        }
+        
+        .instructions {
+            background: #e7f3ff;
+            border: 1px solid #b6d4fe;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 14px;
+            color: #084298;
+        }
+        
+        .instructions strong {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 16px;
+        }
+        
+        @media print {
+            .instructions {
+                display: none !important;
+            }
+            
+            body {
+                padding: 0;
+            }
+        }
+        
+        .btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            margin: 5px;
+            font-family: inherit;
+        }
+        
+        .btn:hover {
+            opacity: 0.9;
+        }
+        
+        .btn-close {
+            background: #6c757d;
+        }
+    </style>
+</head>
+<body>
+    <div class="instructions">
+        <strong>📄 لحفظ الجدول كملف PDF:</strong>
+        اضغط على "طباعة" ثم اختر "Microsoft Print to PDF" أو "Save as PDF" من قائمة الطابعات
+        <br><br>
+        <button class="btn" onclick="window.print()">🖨️ طباعة / حفظ PDF</button>
+        <button class="btn btn-close" onclick="window.close()">✕ إغلاق</button>
+    </div>
+    
+    <h1 class="title">🗓️ جدول الأسبوع</h1>
+    
+    <div class="grid">
+        ${daysHTML}
+    </div>
+    
+    <div class="footer">صنع بواسطة مـــداد</div>
+</body>
+</html>`;
+
+            // فتح نافذة جديدة
+            const printWindow = window.open('', '_blank', 'width=1200,height=800');
+            
+            if (!printWindow) {
+                alert('يرجى السماح بالنوافذ المنبثقة (Pop-ups) لتتمكن من التصدير');
                 return;
             }
             
-            const { jsPDF } = window.jspdf;
-            const weekContainer = document.querySelector('.week-container');
+            printWindow.document.write(printContent);
+            printWindow.document.close();
             
-            if (!weekContainer) {
-                alert('خطأ: لم يتم العثور على عنصر الجدول');
-                removePrintMode();
-                return;
-            }
-            
-            // التأكد من أن print-mode مفعّل
-            if (!document.body.classList.contains('print-mode')) {
-                document.body.classList.add('print-mode');
-            }
-            
-            // إضافة image-export-mode لتفعيل CSS الخاص بالتصدير كصورة
-            document.body.classList.add('image-export-mode');
-            
-            // الانتظار قليلاً لضمان تطبيق CSS
-            setTimeout(() => {
-                html2canvas(weekContainer, {
-                    scale: 1.5,
-                    useCORS: true,
-                    logging: false,
-                    backgroundColor: '#ffffff',
-                    width: weekContainer.scrollWidth,
-                    height: weekContainer.scrollHeight,
-                    windowWidth: weekContainer.scrollWidth,
-                    windowHeight: weekContainer.scrollHeight
-                }).then(canvas => {
-                    // إزالة image-export-mode
-                    document.body.classList.remove('image-export-mode');
-                    
-                    const imgData = canvas.toDataURL('image/png');
-                    const pdf = new jsPDF({
-                        orientation: 'landscape',
-                        unit: 'mm',
-                        format: 'a4'
-                    });
-                    
-                    const imgWidth = 297; // A4 landscape width in mm
-                    const imgHeight = (canvas.height * imgWidth) / canvas.width;
-                    
-                    pdf.addImage(imgData, 'PNG', 0, 0, imgWidth, imgHeight);
-                    pdf.save('جدول-الأسبوع.pdf');
-                    
-                    // تنظيف print-mode بعد التصدير
-                    removePrintMode();
-                }).catch(error => {
-                    console.error('خطأ في التصدير:', error);
-                    document.body.classList.remove('image-export-mode');
-                    removePrintMode();
-                    alert('حدث خطأ أثناء التصدير. يرجى المحاولة مرة أخرى.');
-                });
-            }, 500);
+            // انتظار تحميل الخط ثم التركيز على النافذة
+            printWindow.onload = function() {
+                printWindow.focus();
+            };
         }
 
         // إنشاء جدول افتراضي عند تحميل الصفحة
