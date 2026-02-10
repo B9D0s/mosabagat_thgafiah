@@ -300,6 +300,23 @@ button:active{transform:scale(.95)}
       <div class="family-names-container" id="familyNamesContainer"></div>
     </div>
 
+    <!-- مستوى الصعوبة -->
+    <div class="modal-section">
+      <h3>🎯 مستوى الصعوبة</h3>
+      <div class="modal-row">
+        <label>اختر مستوى الأسئلة:</label>
+        <select id="difficultySelect" onchange="updateSetting('difficulty',this.value)">
+          <option value="easy">سهل 🟢</option>
+          <option value="medium">متوسط 🟡</option>
+          <option value="hard">صعب 🔴</option>
+          <option value="extreme">صعب جداً 💀</option>
+        </select>
+      </div>
+      <div class="modal-row" style="opacity:.6;font-size:12px">
+        <label id="difficultyDesc">توزيع الأسئلة حسب المستوى المختار</label>
+      </div>
+    </div>
+
     <!-- عدد الأسئلة -->
     <div class="modal-section">
       <h3>📊 عدد الأسئلة</h3>
@@ -482,6 +499,7 @@ function defaultState(){
       questionOrder:'sequential',
       soundEnabled:true,
       totalQuestions:20,
+      difficulty:'medium',
     },
     families: families,
     questionIndex:-1,
@@ -741,29 +759,54 @@ function toggleHostView(){ state.hostView=!state.hostView; saveState(); render()
 function openSettings(){ syncSettingsUI(); document.getElementById('settingsModal').classList.add('open'); }
 function closeSettings(){ document.getElementById('settingsModal').classList.remove('open'); }
 
+/*
+ توزيع الأسئلة حسب الصعوبة المختارة:
+ - سهل:       easy 60% | medium 30% | hard 10%
+ - متوسط:     easy 20% | medium 55% | hard 25%
+ - صعب:       easy 10% | medium 25% | hard 65%
+ - صعب جداً:  easy 5%  | medium 15% | hard 80%
+*/
+const DIFFICULTY_MIX = {
+  easy:    { easy: 0.60, medium: 0.30, hard: 0.10 },
+  medium:  { easy: 0.20, medium: 0.55, hard: 0.25 },
+  hard:    { easy: 0.10, medium: 0.25, hard: 0.65 },
+  extreme: { easy: 0.05, medium: 0.15, hard: 0.80 }
+};
+const DIFFICULTY_DESC = {
+  easy:    'سهل 🟢 — أغلب الأسئلة سهلة مع شوية متوسطة',
+  medium:  'متوسط 🟡 — مكس متوازن بين السهل والمتوسط والصعب',
+  hard:    'صعب 🔴 — أغلب الأسئلة صعبة مع شوية متوسطة',
+  extreme: 'صعب جداً 💀 — الأغلبية الساحقة صعبة!'
+};
+const MAX_QUESTIONS = 60;
+
 function buildQuestionCountOptions(){
   const sel=document.getElementById('totalQuestionsSelect');
-  const pool=QUESTION_POOL.length;
+  const pool=Math.min(QUESTION_POOL.length, MAX_QUESTIONS);
   sel.innerHTML='';
-  // خيارات ثابتة حتى حجم المتاح
-  const steps=[5,10,15,20,25,30,40,50,75,100,150,200];
+  const steps=[5,10,15,20,25,30,40,50,60];
   steps.forEach(n=>{
-    if(n<pool){
+    if(n<=pool){
       const opt=document.createElement('option');
-      opt.value=n; opt.textContent=n+' سؤال';
+      opt.value=n;
+      opt.textContent= n===pool ? n+' سؤال (الكل)' : n+' سؤال';
       sel.appendChild(opt);
     }
   });
-  // خيار "الكل" دائماً يكون آخر خيار
-  const allOpt=document.createElement('option');
-  allOpt.value=pool; allOpt.textContent=pool+' سؤال (الكل)';
-  sel.appendChild(allOpt);
+  // إذا pool مو من ضمن steps، نضيف خيار "الكل"
+  if(!steps.includes(pool)){
+    const allOpt=document.createElement('option');
+    allOpt.value=pool; allOpt.textContent=pool+' سؤال (الكل)';
+    sel.appendChild(allOpt);
+  }
   // تحديث label
-  document.getElementById('availableCountLabel').textContent='الأسئلة المتاحة: '+pool+' سؤال';
+  document.getElementById('availableCountLabel').textContent='الأسئلة المتاحة: '+pool+' سؤال (بعد المكس حسب الصعوبة)';
+  // تحديث وصف الصعوبة
+  const diff=state.settings.difficulty||'medium';
+  document.getElementById('difficultyDesc').textContent=DIFFICULTY_DESC[diff]||'';
   // تصحيح القيمة الحالية إذا تجاوزت المتاح
   if(state.settings.totalQuestions>pool) { state.settings.totalQuestions=pool; saveState(); }
   sel.value=state.settings.totalQuestions;
-  // إذا القيمة مش موجودة كخيار، اختار أقرب خيار
   if(!sel.value){ sel.value=pool; state.settings.totalQuestions=pool; saveState(); }
 }
 
@@ -771,6 +814,7 @@ function syncSettingsUI(){
   const s=state.settings;
   document.getElementById('gameTitleInput').value=s.gameTitle;
   document.getElementById('familyCount').value=s.familyCount;
+  document.getElementById('difficultySelect').value=s.difficulty||'medium';
   document.getElementById('penaltyMode').value=s.penaltyMode;
   document.getElementById('timerSeconds').value=s.timerSeconds;
   document.getElementById('autoNextDelay').value=s.autoNextDelay;
@@ -805,7 +849,16 @@ function toggleSetting(key){
 }
 
 function updateSetting(key,val){
-  state.settings[key]=val; saveState(); render();
+  state.settings[key]=val; saveState();
+  // إذا غيّر الصعوبة، نعيد بناء المكس (بس إذا اللعبة ما بدأت)
+  if(key==='difficulty' && (!state.questionsPlayed || state.questionsPlayed===0)){
+    buildMixedPool();
+    // نعيد ضبط الأسئلة المستخدمة
+    state.usedQuestions=[];
+    state.questionIndex=-1;
+    saveState();
+  }
+  render();
 }
 
 function updateGameTitle(val){
@@ -984,6 +1037,56 @@ function shuffleArray(arr){
   return arr;
 }
 
+// مخزن الأسئلة الخام مصنّفة بالصعوبة (يتعبأ من CDN أو المحلي)
+let RAW_QUESTIONS_BY_DIFF = { easy:[], medium:[], hard:[] };
+let questionsSource = 'local'; // 'cdn' or 'local'
+
+function buildMixedPool(){
+  const diff = state.settings.difficulty || 'medium';
+  const mix = DIFFICULTY_MIX[diff] || DIFFICULTY_MIX.medium;
+  const target = MAX_QUESTIONS; // 60
+
+  // نحسب كم سؤال من كل مستوى
+  let easyCount  = Math.round(target * mix.easy);
+  let medCount   = Math.round(target * mix.medium);
+  let hardCount  = Math.round(target * mix.hard);
+  // نصحّح المجموع ليساوي 60
+  const total = easyCount + medCount + hardCount;
+  if(total > target) medCount -= (total - target);
+  if(total < target) medCount += (target - total);
+
+  // نسحب من كل مستوى (مع خلط)
+  const pickFrom = (arr, count) => {
+    const shuffled = shuffleArray([...arr]);
+    return shuffled.slice(0, count);
+  };
+
+  let pool = [
+    ...pickFrom(RAW_QUESTIONS_BY_DIFF.easy, easyCount),
+    ...pickFrom(RAW_QUESTIONS_BY_DIFF.medium, medCount),
+    ...pickFrom(RAW_QUESTIONS_BY_DIFF.hard, hardCount)
+  ];
+
+  // إذا ما كفت الأسئلة من مستوى، نعوّض من المستويات الثانية
+  if(pool.length < target){
+    const usedIds = new Set(pool.map(q=>q.q));
+    const allRemaining = [...RAW_QUESTIONS_BY_DIFF.easy,...RAW_QUESTIONS_BY_DIFF.medium,...RAW_QUESTIONS_BY_DIFF.hard]
+      .filter(q=>!usedIds.has(q.q));
+    shuffleArray(allRemaining);
+    pool = [...pool, ...allRemaining.slice(0, target - pool.length)];
+  }
+
+  // خلط نهائي + ترقيم
+  shuffleArray(pool);
+  pool = pool.slice(0, MAX_QUESTIONS);
+  pool.forEach((q,i) => q.id = i + 1);
+
+  QUESTION_POOL = pool;
+  console.log(`🎯 مكس [${diff}]: ${pool.length} سؤال (سهل:${pool.filter(q=>q.diff==='easy').length} متوسط:${pool.filter(q=>q.diff==='medium').length} صعب:${pool.filter(q=>q.diff==='hard').length})`);
+  buildQuestionCountOptions();
+  renderProgress();
+}
+
 async function tryLoadQuestionsFromAPI() {
   try {
     const controller = new AbortController();
@@ -1000,37 +1103,46 @@ async function tryLoadQuestionsFromAPI() {
     // لا نغيّر مصدر الأسئلة إذا كانت اللعبة قد بدأت بالفعل
     if (state && (state.questionsPlayed > 0 || state.currentQuestion)) return;
 
-    // نسحب أسئلة صح/خطأ فقط من الداتابيس
+    // نسحب أسئلة صح/خطأ فقط
     const tfQuestions = allQuestions.filter(q => q.type === 'tf');
+    if (tfQuestions.length === 0) throw new Error('no tf questions');
+
     const DIFF_PTS = { easy: 10, medium: 20, hard: 30, extreme: 50 };
-    const mapped = tfQuestions.map((q, idx) => ({
-      id: idx + 1,
-      q: q.question_ar,
-      a: q.correctBoolean === true,
-      pts: DIFF_PTS[q.difficulty] || 10
-    }));
 
-    if (mapped.length === 0) throw new Error('no tf questions');
+    // نصنّف حسب الصعوبة
+    RAW_QUESTIONS_BY_DIFF = { easy:[], medium:[], hard:[] };
+    tfQuestions.forEach(q => {
+      const mapped = {
+        id: 0,
+        q: q.question_ar,
+        a: q.correctBoolean === true,
+        pts: DIFF_PTS[q.difficulty] || 10,
+        diff: q.difficulty === 'extreme' ? 'hard' : (q.difficulty || 'medium')
+      };
+      // extreme يندمج مع hard
+      const bucket = mapped.diff === 'hard' ? 'hard' : (mapped.diff === 'easy' ? 'easy' : 'medium');
+      if(RAW_QUESTIONS_BY_DIFF[bucket]) RAW_QUESTIONS_BY_DIFF[bucket].push(mapped);
+      else RAW_QUESTIONS_BY_DIFF.medium.push(mapped);
+    });
 
-    // خلط عشوائي كل مرة
-    shuffleArray(mapped);
-    mapped.forEach((q, i) => q.id = i + 1);
-
-    QUESTION_POOL = mapped;
-    console.log(`✅ تم تحميل ${mapped.length} سؤال صح/خطأ من الداتابيس (عشوائي)`);
-    buildQuestionCountOptions();
-    renderProgress();
+    questionsSource = 'cdn';
+    console.log(`✅ تم تحميل ${tfQuestions.length} سؤال من الداتابيس (سهل:${RAW_QUESTIONS_BY_DIFF.easy.length} متوسط:${RAW_QUESTIONS_BY_DIFF.medium.length} صعب:${RAW_QUESTIONS_BY_DIFF.hard.length})`);
+    buildMixedPool();
   } catch (e) {
-    // لا يوجد إنترنت أو فشل التحميل — نستمر على الأسئلة المحلية المدمجة
+    // لا يوجد إنترنت — نصنّف الأسئلة المحلية
     console.warn('📴 استخدام أسئلة محلية (أوفلاين):', e.message || e);
-    buildQuestionCountOptions();
-    renderProgress();
+    RAW_QUESTIONS_BY_DIFF = { easy:[], medium:[], hard:[] };
+    LOCAL_QUESTIONS.forEach(q => {
+      const d = q.pts <= 10 ? 'easy' : q.pts <= 20 ? 'medium' : 'hard';
+      RAW_QUESTIONS_BY_DIFF[d].push({...q, diff: d});
+    });
+    questionsSource = 'local';
+    buildMixedPool();
   }
 }
 
 /* ===== تشغيل ===== */
 loadState();
-buildQuestionCountOptions();
 render();
 // نحاول تحميل أسئلة من الـ API في الخلفية بدون تعطيل الأسئلة المحلية
 tryLoadQuestionsFromAPI();
