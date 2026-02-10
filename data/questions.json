@@ -5687,5 +5687,599 @@
     "correctBoolean": true,
     "source_ar": "أحياء",
     "explanation_ar": "يمكنها شم قطرة دم واحدة في ملايين اللترات من الماء."
+  },
+  {
+    "type": "tf",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "hard",
+    "question_ar": "معركة اليرموك وقعت في عهد أبي بكر الصديق",
+    "correctBoolean": false,
+    "source_ar": "تاريخ",
+    "explanation_ar": "وقعت في عهد عمر بن الخطاب سنة 15 هـ."
+  },
+  {
+    "type": "tf",
+    "category": "إسلامية",
+    "difficulty": "hard",
+    "question_ar": "أول مسجد بُني في الإسلام هو المسجد النبوي",
+    "correctBoolean": false,
+    "source_ar": "سيرة",
+    "explanation_ar": "أول مسجد هو مسجد قباء."
+  },
+  {
+    "type": "tf",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "hard",
+    "question_ar": "صلح الحديبية كان في السنة السادسة للهجرة",
+    "correctBoolean": true,
+    "source_ar": "سيرة",
+    "explanation_ar": "وقع في ذي القعدة سنة 6 هـ."
+  },
+  {
+    "type": "tf",
+    "category": "إسلامية",
+    "difficulty": "hard",
+    "question_ar": "النبي صلى الله عليه وسلم حجّ مرتين",
+    "correctBoolean": false,
+    "source_ar": "سيرة",
+    "explanation_ar": "حجّ مرة واحدة فقط وهي حجة الوداع."
+  },
+  {
+    "type": "tf",
+    "category": "القرآن الكريم",
+    "difficulty": "hard",
+    "question_ar": "عدد الأنبياء المذكورين في القرآن الكريم 25 نبياً",
+    "correctBoolean": true,
+    "source_ar": "علوم القرآن",
+    "explanation_ar": "ذُكروا بأسمائهم في مواضع مختلفة."
+  },
+  {
+    "type": "tf",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "hard",
+    "question_ar": "غزوة الخندق تُسمى أيضاً بغزوة الأحزاب",
+    "correctBoolean": true,
+    "source_ar": "سيرة",
+    "explanation_ar": "لتحزّب القبائل ضد المسلمين."
+  },
+  {
+    "type": "tf",
+    "category": "الصحابة",
+    "difficulty": "hard",
+    "question_ar": "خالد بن الوليد أسلم بعد فتح مكة",
+    "correctBoolean": false,
+    "source_ar": "سيرة",
+    "explanation_ar": "أسلم قبل فتح مكة مع عمرو بن العاص."
+  },
+  {
+    "type": "tf",
+    "category": "الحديث الشريف",
+    "difficulty": "hard",
+    "question_ar": "الصحابي الذي رُوي عنه أكثر الأحاديث هو عبد الله بن عمر",
+    "correctBoolean": false,
+    "source_ar": "حديث",
+    "explanation_ar": "أكثرهم رواية أبو هريرة رضي الله عنه."
+  },
+  {
+    "type": "tf",
+    "category": "علوم",
+    "difficulty": "hard",
+    "question_ar": "الماء يتمدد عندما يتجمّد",
+    "correctBoolean": true,
+    "source_ar": "فيزياء",
+    "explanation_ar": "خاصية فريدة تجعل الثلج يطفو."
+  },
+  {
+    "type": "tf",
+    "category": "علوم",
+    "difficulty": "hard",
+    "question_ar": "الجاذبية على سطح القمر تساوي سُدس جاذبية الأرض",
+    "correctBoolean": true,
+    "source_ar": "فلك",
+    "explanation_ar": "لذلك يقفز رواد الفضاء عالياً."
+  },
+  {
+    "type": "tf",
+    "category": "علوم",
+    "difficulty": "hard",
+    "question_ar": "ذرة الهيدروجين هي أصغر ذرة في الطبيعة",
+    "correctBoolean": true,
+    "source_ar": "كيمياء",
+    "explanation_ar": "بروتون واحد وإلكترون واحد."
+  },
+  {
+    "type": "tf",
+    "category": "علوم",
+    "difficulty": "hard",
+    "question_ar": "سرعة الصوت في الماء أبطأ من سرعته في الهواء",
+    "correctBoolean": false,
+    "source_ar": "فيزياء",
+    "explanation_ar": "الصوت أسرع 4 مرات في الماء."
+  },
+  {
+    "type": "tf",
+    "category": "علوم",
+    "difficulty": "hard",
+    "question_ar": "الحمض النووي DNA يوجد فقط في نواة الخلية",
+    "correctBoolean": false,
+    "source_ar": "أحياء",
+    "explanation_ar": "يوجد أيضاً في الميتوكوندريا."
+  },
+  {
+    "type": "tf",
+    "category": "علوم",
+    "difficulty": "hard",
+    "question_ar": "البلازما هي الحالة الرابعة للمادة",
+    "correctBoolean": true,
+    "source_ar": "فيزياء",
+    "explanation_ar": "إضافة للصلبة والسائلة والغازية."
+  },
+  {
+    "type": "tf",
+    "category": "علوم",
+    "difficulty": "hard",
+    "question_ar": "العظام أقوى من الفولاذ بنسبة الوزن",
+    "correctBoolean": true,
+    "source_ar": "أحياء",
+    "explanation_ar": "قطعة عظم صغيرة تتحمل 9 أطنان ضغط."
+  },
+  {
+    "type": "tf",
+    "category": "علوم",
+    "difficulty": "hard",
+    "question_ar": "دم الحشرات لونه أحمر مثل دم الإنسان",
+    "correctBoolean": false,
+    "source_ar": "أحياء",
+    "explanation_ar": "عديم اللون أو أخضر."
+  },
+  {
+    "type": "tf",
+    "category": "جغرافيا",
+    "difficulty": "hard",
+    "question_ar": "أعمق نقطة في المحيط هي خندق ماريانا",
+    "correctBoolean": true,
+    "source_ar": "جغرافيا",
+    "explanation_ar": "عمقه 11,000 متر."
+  },
+  {
+    "type": "tf",
+    "category": "جغرافيا",
+    "difficulty": "hard",
+    "question_ar": "صحراء الربع الخالي أكبر صحراء رملية متصلة في العالم",
+    "correctBoolean": true,
+    "source_ar": "جغرافيا",
+    "explanation_ar": "مساحتها 650,000 كم²."
+  },
+  {
+    "type": "tf",
+    "category": "جغرافيا",
+    "difficulty": "hard",
+    "question_ar": "جبال الهملايا تقع في قارة أفريقيا",
+    "correctBoolean": false,
+    "source_ar": "جغرافيا",
+    "explanation_ar": "تقع في آسيا."
+  },
+  {
+    "type": "tf",
+    "category": "إسلامية",
+    "difficulty": "hard",
+    "question_ar": "المسجد الأقصى يقع في مدينة الخليل",
+    "correctBoolean": false,
+    "source_ar": "إسلامية",
+    "explanation_ar": "يقع في القدس."
+  },
+  {
+    "type": "tf",
+    "category": "جغرافيا",
+    "difficulty": "hard",
+    "question_ar": "نهر الفرات يمر بثلاث دول",
+    "correctBoolean": true,
+    "source_ar": "جغرافيا",
+    "explanation_ar": "تركيا وسوريا والعراق."
+  },
+  {
+    "type": "tf",
+    "category": "علوم",
+    "difficulty": "hard",
+    "question_ar": "النحلة تموت بعد أن تلسع الإنسان",
+    "correctBoolean": true,
+    "source_ar": "أحياء",
+    "explanation_ar": "إبرتها تنفصل مع أحشائها."
+  },
+  {
+    "type": "tf",
+    "category": "علوم",
+    "difficulty": "hard",
+    "question_ar": "الأرض تكون أقرب إلى الشمس في فصل الصيف",
+    "correctBoolean": false,
+    "source_ar": "فلك",
+    "explanation_ar": "أقرب في يناير (الشتاء)."
+  },
+  {
+    "type": "tf",
+    "category": "علوم",
+    "difficulty": "hard",
+    "question_ar": "عدد فقرات رقبة الزرافة يختلف عن عدد فقرات رقبة الإنسان",
+    "correctBoolean": false,
+    "source_ar": "أحياء",
+    "explanation_ar": "كلاهما 7 فقرات."
+  },
+  {
+    "type": "tf",
+    "category": "ثقافة عامة",
+    "difficulty": "hard",
+    "question_ar": "أول من اخترع الطباعة بالحروف المتحركة هو غوتنبرغ",
+    "correctBoolean": true,
+    "source_ar": "تاريخ",
+    "explanation_ar": "حوالي عام 1440م."
+  },
+  {
+    "type": "tf",
+    "category": "جغرافيا",
+    "difficulty": "hard",
+    "question_ar": "مساحة روسيا أكبر من مساحة قارة أوقيانوسيا",
+    "correctBoolean": true,
+    "source_ar": "جغرافيا",
+    "explanation_ar": "17.1 مقابل 8.5 مليون كم²."
+  },
+  {
+    "type": "tf",
+    "category": "علوم",
+    "difficulty": "hard",
+    "question_ar": "الكربون هو العنصر الأكثر وفرة في جسم الإنسان",
+    "correctBoolean": false,
+    "source_ar": "كيمياء",
+    "explanation_ar": "الأكسجين الأكثر وفرة 65%."
+  },
+  {
+    "type": "tf",
+    "category": "علوم",
+    "difficulty": "hard",
+    "question_ar": "يمكن للضوء أن ينحني حول الأجسام الثقيلة جداً",
+    "correctBoolean": true,
+    "source_ar": "فيزياء",
+    "explanation_ar": "الجاذبية تحني مسار الضوء."
+  },
+  {
+    "type": "tf",
+    "category": "علوم",
+    "difficulty": "hard",
+    "question_ar": "لسان الحوت الأزرق يزن أكثر من وزن فيل",
+    "correctBoolean": true,
+    "source_ar": "أحياء",
+    "explanation_ar": "لسانه 2.7 طن والفيل 2.3 طن."
+  },
+  {
+    "type": "tf",
+    "category": "علوم",
+    "difficulty": "hard",
+    "question_ar": "الحبّار العملاق يملك أكبر عين في مملكة الحيوان",
+    "correctBoolean": true,
+    "source_ar": "أحياء",
+    "explanation_ar": "قطر عينه 27 سم."
+  },
+  {
+    "type": "tf",
+    "category": "إسلامية",
+    "difficulty": "hard",
+    "question_ar": "القدس هي ثاني أقدس مدينة في الإسلام",
+    "correctBoolean": false,
+    "source_ar": "إسلامية",
+    "explanation_ar": "المدينة المنورة الثانية والقدس الثالثة."
+  },
+  {
+    "type": "tf",
+    "category": "القرآن الكريم",
+    "difficulty": "hard",
+    "question_ar": "سورة الرحمن تُسمى عروس القرآن",
+    "correctBoolean": true,
+    "source_ar": "علوم القرآن",
+    "explanation_ar": "لجمالها وتكرار فبأي آلاء ربكما تكذبان 31 مرة."
+  },
+  {
+    "type": "tf",
+    "category": "علوم",
+    "difficulty": "hard",
+    "question_ar": "معدن التيتانيوم أقوى من الفولاذ وأخف وزناً منه",
+    "correctBoolean": true,
+    "source_ar": "كيمياء",
+    "explanation_ar": "يُستخدم في الطائرات."
+  },
+  {
+    "type": "tf",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "hard",
+    "question_ar": "الدولة العثمانية استمرت أكثر من ستة قرون",
+    "correctBoolean": true,
+    "source_ar": "تاريخ",
+    "explanation_ar": "من 1299م حتى 1922م."
+  },
+  {
+    "type": "tf",
+    "category": "جغرافيا",
+    "difficulty": "hard",
+    "question_ar": "البرازيل هي أكبر دولة في أمريكا الجنوبية",
+    "correctBoolean": true,
+    "source_ar": "جغرافيا",
+    "explanation_ar": "مساحتها 8.5 مليون كم²."
+  },
+  {
+    "type": "tf",
+    "category": "إسلامية",
+    "difficulty": "medium",
+    "question_ar": "عدد الصلوات المفروضة في اليوم والليلة خمس صلوات",
+    "correctBoolean": true,
+    "source_ar": "فقه",
+    "explanation_ar": "الفجر والظهر والعصر والمغرب والعشاء."
+  },
+  {
+    "type": "tf",
+    "category": "القرآن الكريم",
+    "difficulty": "medium",
+    "question_ar": "سورة الكهف هي السورة رقم 18 في ترتيب المصحف",
+    "correctBoolean": true,
+    "source_ar": "علوم القرآن",
+    "explanation_ar": "تقع في الجزء 15 و16."
+  },
+  {
+    "type": "tf",
+    "category": "إسلامية",
+    "difficulty": "medium",
+    "question_ar": "موسم الحج يكون في شهر رجب",
+    "correctBoolean": false,
+    "source_ar": "فقه",
+    "explanation_ar": "في شهر ذي الحجة."
+  },
+  {
+    "type": "tf",
+    "category": "العقيدة",
+    "difficulty": "medium",
+    "question_ar": "أركان الإيمان ستة أركان",
+    "correctBoolean": true,
+    "source_ar": "عقيدة",
+    "explanation_ar": "بالله والملائكة والكتب والرسل واليوم الآخر والقدر."
+  },
+  {
+    "type": "tf",
+    "category": "علوم",
+    "difficulty": "medium",
+    "question_ar": "القطب الشمالي أبرد من القطب الجنوبي",
+    "correctBoolean": false,
+    "source_ar": "جغرافيا",
+    "explanation_ar": "القطب الجنوبي أبرد بكثير."
+  },
+  {
+    "type": "tf",
+    "category": "علوم",
+    "difficulty": "medium",
+    "question_ar": "الكبد هو أكبر عضو داخلي في جسم الإنسان",
+    "correctBoolean": true,
+    "source_ar": "أحياء",
+    "explanation_ar": "يزن حوالي 1.5 كيلوغرام."
+  },
+  {
+    "type": "tf",
+    "category": "علوم",
+    "difficulty": "medium",
+    "question_ar": "عدد العظام في جسم الطفل أكثر من عددها في جسم البالغ",
+    "correctBoolean": true,
+    "source_ar": "أحياء",
+    "explanation_ar": "270 عظمة تلتحم لتصبح 206."
+  },
+  {
+    "type": "tf",
+    "category": "علوم",
+    "difficulty": "medium",
+    "question_ar": "الزجاج مصنوع أساساً من الرمل",
+    "correctBoolean": true,
+    "source_ar": "كيمياء",
+    "explanation_ar": "ثاني أكسيد السيليكون."
+  },
+  {
+    "type": "tf",
+    "category": "علوم",
+    "difficulty": "medium",
+    "question_ar": "الأرنب لا يستطيع التقيّؤ",
+    "correctBoolean": true,
+    "source_ar": "أحياء",
+    "explanation_ar": "بسبب تركيب عضلات معدته."
+  },
+  {
+    "type": "tf",
+    "category": "جغرافيا",
+    "difficulty": "medium",
+    "question_ar": "نهر الأمازون يصب في المحيط الأطلسي",
+    "correctBoolean": true,
+    "source_ar": "جغرافيا",
+    "explanation_ar": "ينبع من الأنديز ويصب شرق البرازيل."
+  },
+  {
+    "type": "tf",
+    "category": "ثقافة عامة",
+    "difficulty": "medium",
+    "question_ar": "الصين لديها أكبر عدد سكان في العالم حالياً",
+    "correctBoolean": false,
+    "source_ar": "معلومات عامة",
+    "explanation_ar": "الهند تجاوزت الصين."
+  },
+  {
+    "type": "tf",
+    "category": "جغرافيا",
+    "difficulty": "medium",
+    "question_ar": "عدد دول العالم العربي 22 دولة",
+    "correctBoolean": true,
+    "source_ar": "جغرافيا",
+    "explanation_ar": "أعضاء جامعة الدول العربية."
+  },
+  {
+    "type": "tf",
+    "category": "جغرافيا",
+    "difficulty": "medium",
+    "question_ar": "مملكة البحرين سُمّيت بهذا الاسم لوقوعها بين بحرين",
+    "correctBoolean": true,
+    "source_ar": "جغرافيا",
+    "explanation_ar": "المياه المالحة والعيون العذبة."
+  },
+  {
+    "type": "tf",
+    "category": "ثقافة عامة",
+    "difficulty": "medium",
+    "question_ar": "أول جامعة في العالم هي جامعة أكسفورد",
+    "correctBoolean": false,
+    "source_ar": "تاريخ",
+    "explanation_ar": "جامعة القرويين بفاس 859م."
+  },
+  {
+    "type": "tf",
+    "category": "علوم",
+    "difficulty": "medium",
+    "question_ar": "الشمس نجم وليست كوكباً",
+    "correctBoolean": true,
+    "source_ar": "فلك",
+    "explanation_ar": "نجم قزم أصفر."
+  },
+  {
+    "type": "tf",
+    "category": "ثقافة عامة",
+    "difficulty": "medium",
+    "question_ar": "ساعة بيغ بن موجودة في فرنسا",
+    "correctBoolean": false,
+    "source_ar": "معلومات عامة",
+    "explanation_ar": "في لندن."
+  },
+  {
+    "type": "tf",
+    "category": "جغرافيا",
+    "difficulty": "medium",
+    "question_ar": "عدد دول مجلس التعاون الخليجي ست دول",
+    "correctBoolean": true,
+    "source_ar": "جغرافيا",
+    "explanation_ar": "السعودية والإمارات والكويت والبحرين وقطر وعمان."
+  },
+  {
+    "type": "tf",
+    "category": "علوم",
+    "difficulty": "medium",
+    "question_ar": "فيتامين D يمكن الحصول عليه من أشعة الشمس",
+    "correctBoolean": true,
+    "source_ar": "طب",
+    "explanation_ar": "الجلد ينتجه عند التعرض للأشعة فوق البنفسجية."
+  },
+  {
+    "type": "tf",
+    "category": "ثقافة عامة",
+    "difficulty": "medium",
+    "question_ar": "طوكيو هي أكبر مدينة من حيث عدد السكان في العالم",
+    "correctBoolean": true,
+    "source_ar": "جغرافيا",
+    "explanation_ar": "حوالي 37 مليون نسمة."
+  },
+  {
+    "type": "tf",
+    "category": "ثقافة عامة",
+    "difficulty": "easy",
+    "question_ar": "الشمس تشرق من جهة الشرق",
+    "correctBoolean": true,
+    "source_ar": "معلومات عامة",
+    "explanation_ar": "وتغرب من الغرب."
+  },
+  {
+    "type": "tf",
+    "category": "ثقافة عامة",
+    "difficulty": "easy",
+    "question_ar": "عدد أيام الأسبوع سبعة أيام",
+    "correctBoolean": true,
+    "source_ar": "معلومات عامة",
+    "explanation_ar": "من السبت إلى الجمعة."
+  },
+  {
+    "type": "tf",
+    "category": "علوم",
+    "difficulty": "easy",
+    "question_ar": "النار باردة",
+    "correctBoolean": false,
+    "source_ar": "معلومات عامة",
+    "explanation_ar": "النار حارة جداً."
+  },
+  {
+    "type": "tf",
+    "category": "علوم",
+    "difficulty": "easy",
+    "question_ar": "السمك يعيش في الماء",
+    "correctBoolean": true,
+    "source_ar": "أحياء",
+    "explanation_ar": "يتنفس عبر الخياشيم."
+  },
+  {
+    "type": "tf",
+    "category": "ثقافة عامة",
+    "difficulty": "easy",
+    "question_ar": "عدد أصابع اليد الواحدة خمسة أصابع",
+    "correctBoolean": true,
+    "source_ar": "معلومات عامة",
+    "explanation_ar": "الإبهام والسبابة والوسطى والبنصر والخنصر."
+  },
+  {
+    "type": "tf",
+    "category": "علوم",
+    "difficulty": "easy",
+    "question_ar": "الثلج أبيض اللون",
+    "correctBoolean": true,
+    "source_ar": "فيزياء",
+    "explanation_ar": "بسبب انعكاس الضوء."
+  },
+  {
+    "type": "tf",
+    "category": "علوم",
+    "difficulty": "easy",
+    "question_ar": "القطة من الزواحف",
+    "correctBoolean": false,
+    "source_ar": "أحياء",
+    "explanation_ar": "من الثدييات."
+  },
+  {
+    "type": "tf",
+    "category": "ثقافة عامة",
+    "difficulty": "easy",
+    "question_ar": "الأسد يُسمّى ملك الغابة",
+    "correctBoolean": true,
+    "source_ar": "معلومات عامة",
+    "explanation_ar": "لقوته وهيبته."
+  },
+  {
+    "type": "tf",
+    "category": "ثقافة عامة",
+    "difficulty": "easy",
+    "question_ar": "فصل الشتاء أبرد من فصل الصيف",
+    "correctBoolean": true,
+    "source_ar": "معلومات عامة",
+    "explanation_ar": "بسبب ميل محور الأرض."
+  },
+  {
+    "type": "tf",
+    "category": "علوم",
+    "difficulty": "easy",
+    "question_ar": "الحديد يطفو على سطح الماء",
+    "correctBoolean": false,
+    "source_ar": "فيزياء",
+    "explanation_ar": "أكثر كثافة فيغرق."
+  },
+  {
+    "type": "tf",
+    "category": "ثقافة عامة",
+    "difficulty": "easy",
+    "question_ar": "عدد فصول السنة أربعة فصول",
+    "correctBoolean": true,
+    "source_ar": "معلومات عامة",
+    "explanation_ar": "الربيع والصيف والخريف والشتاء."
+  },
+  {
+    "type": "tf",
+    "category": "ثقافة عامة",
+    "difficulty": "easy",
+    "question_ar": "التفاح فاكهة",
+    "correctBoolean": true,
+    "source_ar": "معلومات عامة",
+    "explanation_ar": "من أكثر الفواكه انتشاراً."
   }
 ]
