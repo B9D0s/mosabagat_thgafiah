@@ -1,0 +1,27 @@
+{
+  "name": "sultan-quiz-api",
+  "version": "1.0.0",
+  "description": "نظام بنك الأسئلة العربية - مسابقات السلطان",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "seed": "node seed/seed_questions.js",
+    "ingest": "node src/services/ingest.js",
+    "extract-pdf": "node src/services/extract_pdf.js",
+    "import:islamic": "node src/services/import_islamic_quiz.js external/islamic_quiz.json data/questions_islamicquiz.json",
+    "seed:islamic": "node seed/seed_questions.js data/questions_islamicquiz.json",
+    "import:bankv1": "node src/services/import_bank_v1.js",
+    "seed:bankv1": "node seed/seed_questions.js data/questions_bank_v1.json",
+    "merge:questions": "node src/services/merge_questions.js",
+    "import:gemini": "node src/services/import_gemini.js"
+  },
+  "keywords": ["quiz", "arabic", "questions", "api"],
+  "author": "Sultan Quiz System",
+  "license": "MIT",
+  "dependencies": {
+    "sql.js": "^1.11.0",
+    "cors": "^2.8.5",
+    "express": "^4.21.0"
+  }
+}

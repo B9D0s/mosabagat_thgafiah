@@ -1,0 +1,5151 @@
+[
+  {
+    "type": "mcq",
+    "category": "السيرة",
+    "difficulty": "medium",
+    "question_ar": "ما هي الغزوة التي حدثت فيها قصة الإفك؟",
+    "options_ar": [
+      "الخندق",
+      "مؤتة",
+      "دومة الجندل",
+      "المريسيع"
+    ],
+    "correctIndex": 3,
+    "source_ar": "مسابقات أهل القرآن - ص 6"
+  },
+  {
+    "type": "mcq",
+    "category": "القرآن الكريم",
+    "difficulty": "hard",
+    "question_ar": "في أي سورة تكررت الآية: «ويل يومئذ للمكذبين»؟",
+    "options_ar": [
+      "القمر",
+      "المرسلات",
+      "الرحمن",
+      "الواقعة"
+    ],
+    "correctIndex": 1,
+    "source_ar": "مسابقات أهل القرآن - ص 6"
+  },
+  {
+    "type": "mcq",
+    "category": "الفقه",
+    "difficulty": "medium",
+    "question_ar": "من هم المستحقون للإرث من النساء؟",
+    "options_ar": [
+      "الزوجات",
+      "الأبناء",
+      "البنات",
+      "الوالدان"
+    ],
+    "correctIndex": 0,
+    "source_ar": "مسابقات أهل القرآن - ص 6"
+  },
+  {
+    "type": "mcq",
+    "category": "القرآن الكريم",
+    "difficulty": "easy",
+    "question_ar": "كم عدد سور جزء تبارك؟",
+    "options_ar": [
+      "11",
+      "13",
+      "15",
+      "10"
+    ],
+    "correctIndex": 0,
+    "source_ar": "مسابقات أهل القرآن - ص 6"
+  },
+  {
+    "type": "mcq",
+    "category": "الفقه",
+    "difficulty": "hard",
+    "question_ar": "امرأة حرام على الزوج نكاحها إلا بمفارقة الزوجة هي:",
+    "options_ar": [
+      "أخت الزوجة",
+      "عمتها",
+      "خالتها",
+      "جميع ما تقدم"
+    ],
+    "correctIndex": 3,
+    "source_ar": "مسابقات أهل القرآن - ص 6"
+  },
+  {
+    "type": "mcq",
+    "category": "السيرة",
+    "difficulty": "medium",
+    "question_ar": "من هي القائلة: (أمسكني يا رسول الله والله ما بي على الأزواج حرص، ولكن يبعثني الله يوم القيامة زوجاً لك)؟",
+    "options_ar": [
+      "سودة بنت زمعة",
+      "صفية بنت حيي بن أخطب",
+      "عائشة بنت أبي بكر",
+      "حفصة بنت عمر"
+    ],
+    "correctIndex": 0,
+    "source_ar": "مسابقات أهل القرآن - ص 6"
+  },
+  {
+    "type": "mcq",
+    "category": "الفقه",
+    "difficulty": "easy",
+    "question_ar": "كم تحد المرأة على زوجها؟",
+    "options_ar": [
+      "أربعة عشر شهراً",
+      "أربعة أشهر وعشراً",
+      "أربعة أشهر",
+      "ستة أشهر"
+    ],
+    "correctIndex": 1,
+    "source_ar": "مسابقات أهل القرآن - ص 6"
+  },
+  {
+    "type": "tf",
+    "category": "السيرة",
+    "difficulty": "easy",
+    "question_ar": "توفي الرسول صلى الله عليه وسلم يوم الاثنين ودفن يوم الثلاثاء.",
+    "correctBoolean": false,
+    "source_ar": "مسابقات أهل القرآن - ص 7"
+  },
+  {
+    "type": "mcq",
+    "category": "الصحابة",
+    "difficulty": "hard",
+    "question_ar": "مؤلف كتاب الإصابة في تمييز الصحابة هو:",
+    "options_ar": [
+      "الإمام الذهبي",
+      "الإمام البغوي",
+      "ابن حجر العسقلاني",
+      "الإمام النووي"
+    ],
+    "correctIndex": 2,
+    "source_ar": "مسابقات أهل القرآن - ص 7"
+  },
+  {
+    "type": "mcq",
+    "category": "القرآن الكريم",
+    "difficulty": "medium",
+    "question_ar": "قال رسول الله صلى الله عليه وسلم: (لقد أنزلت علي الليلة سورة لهي أحب إلي مما طلعت عليه الشمس). ما هي هذه السورة؟",
+    "options_ar": [
+      "الفتح",
+      "النصر",
+      "التوبة",
+      "الإخلاص"
+    ],
+    "correctIndex": 0,
+    "source_ar": "مسابقات أهل القرآن - ص 7"
+  },
+  {
+    "type": "mcq",
+    "category": "القرآن الكريم",
+    "difficulty": "medium",
+    "question_ar": "ما هي السورة التي ورد فيها قصة الإفك؟",
+    "options_ar": [
+      "النساء",
+      "النور",
+      "الأحزاب",
+      "التحريم"
+    ],
+    "correctIndex": 1,
+    "source_ar": "مسابقات أهل القرآن - ص 7"
+  },
+  {
+    "type": "mcq",
+    "category": "السيرة",
+    "difficulty": "hard",
+    "question_ar": "ما هي صفة خاتم النبوة؟",
+    "options_ar": [
+      "شعيرات مجتمعات بين كتفي الرسول بل كبيضة الحمام",
+      "دارة سوداء على كتف الرسول",
+      "نور يسطع من كتفي الرسول",
+      "علامة حمراء"
+    ],
+    "correctIndex": 0,
+    "source_ar": "مسابقات أهل القرآن - ص 7"
+  },
+  {
+    "type": "mcq",
+    "category": "القرآن الكريم",
+    "difficulty": "hard",
+    "question_ar": "الإمام الذي ابتلي بفتنة القول بخلق القرآن هو:",
+    "options_ar": [
+      "ابن القيم",
+      "ابن تيمية",
+      "أحمد بن حنبل",
+      "الشافعي"
+    ],
+    "correctIndex": 2,
+    "source_ar": "مسابقات أهل القرآن - ص 8"
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "medium",
+    "question_ar": "من هو خطيب الأنبياء؟",
+    "options_ar": [
+      "إبراهيم عليه السلام",
+      "نوح عليه السلام",
+      "شعيب عليه السلام",
+      "موسى عليه السلام"
+    ],
+    "correctIndex": 2,
+    "source_ar": "مسابقات أهل القرآن - ص 8"
+  },
+  {
+    "type": "mcq",
+    "category": "الحديث الشريف",
+    "difficulty": "easy",
+    "question_ar": "مؤلف كتاب رياض الصالحين هو:",
+    "options_ar": [
+      "ابن حجر العسقلاني",
+      "السيوطي",
+      "ابن القيم",
+      "الإمام النووي"
+    ],
+    "correctIndex": 3,
+    "source_ar": "مسابقات أهل القرآن - ص 8"
+  },
+  {
+    "type": "mcq",
+    "category": "العقيدة",
+    "difficulty": "medium",
+    "question_ar": "إذا سُئلت أين الله فتكون الإجابة بـ:",
+    "options_ar": [
+      "في كل مكان",
+      "لا يجوز أن يُسأل هذا السؤال",
+      "في السماء",
+      "لا أدري"
+    ],
+    "correctIndex": 2,
+    "source_ar": "مسابقات أهل القرآن - ص 8"
+  },
+  {
+    "type": "mcq",
+    "category": "العقيدة",
+    "difficulty": "hard",
+    "question_ar": "ما هي شروط شهادة أن لا إله إلا الله التي لا تنفع قائلها إلا باجتماعها فيه؟",
+    "options_ar": [
+      "العلم واليقين والصدق والإخلاص",
+      "المحبة والانقياد والقبول",
+      "العمل بمقتضاها",
+      "جميع ما سبق"
+    ],
+    "correctIndex": 3,
+    "source_ar": "مسابقات أهل القرآن - ص 8"
+  },
+  {
+    "type": "mcq",
+    "category": "القرآن الكريم",
+    "difficulty": "medium",
+    "question_ar": "في أي سورة وردت قصة طالوت وجالوت؟",
+    "options_ar": [
+      "المائدة",
+      "البقرة",
+      "آل عمران",
+      "النساء"
+    ],
+    "correctIndex": 1,
+    "source_ar": "مسابقات أهل القرآن - ص 8"
+  },
+  {
+    "type": "mcq",
+    "category": "القرآن الكريم",
+    "difficulty": "extreme",
+    "question_ar": "ذُكر لفظ الأنف مرة واحدة في القرآن وذلك في سورة:",
+    "options_ar": [
+      "المائدة",
+      "البقرة",
+      "آل عمران",
+      "الحج"
+    ],
+    "correctIndex": 0,
+    "source_ar": "مسابقات أهل القرآن - ص 8"
+  },
+  {
+    "type": "mcq",
+    "category": "السيرة",
+    "difficulty": "hard",
+    "question_ar": "أي الخلفاء تولى الخلافة وأربعة من أبنائه تولوا الخلافة من بعده؟",
+    "options_ar": [
+      "عبد الملك بن مروان",
+      "هارون الرشيد",
+      "عمر بن عبد العزيز",
+      "معاوية بن أبي سفيان"
+    ],
+    "correctIndex": 0,
+    "source_ar": "مسابقات أهل القرآن - ص 9"
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "medium",
+    "question_ar": "ما هو العضو الذي يستخدمه الثعبان لحاسة الشم؟",
+    "options_ar": [
+      "الأنف",
+      "اللسان",
+      "الجلد",
+      "العيون"
+    ],
+    "correctIndex": 1,
+    "source_ar": "مسابقات أهل القرآن - ص 9"
+  },
+  {
+    "type": "mcq",
+    "category": "القرآن الكريم",
+    "difficulty": "medium",
+    "question_ar": "أكثر الأنبياء ذكراً في القرآن هو موسى عليه السلام. كم مرة ذُكر؟",
+    "options_ar": [
+      "90 مرة",
+      "111 مرة",
+      "136 مرة",
+      "75 مرة"
+    ],
+    "correctIndex": 2,
+    "source_ar": "مسابقات أهل القرآن - ص 9"
+  },
+  {
+    "type": "mcq",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "medium",
+    "question_ar": "ما هي المعركة الإسلامية التي أطلق عليها القرآن (يوم الفرقان)؟",
+    "options_ar": [
+      "فتح مكة",
+      "أحد",
+      "بدر",
+      "حنين"
+    ],
+    "correctIndex": 2,
+    "source_ar": "مسابقات أهل القرآن - ص 9"
+  },
+  {
+    "type": "mcq",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "medium",
+    "question_ar": "في أي سنة كان فتح خيبر؟",
+    "options_ar": [
+      "السنة 10 هـ",
+      "السنة 5 هـ",
+      "السنة 15 هـ",
+      "السنة 7 هـ"
+    ],
+    "correctIndex": 3,
+    "source_ar": "مسابقات أهل القرآن - ص 9"
+  },
+  {
+    "type": "mcq",
+    "category": "القرآن الكريم",
+    "difficulty": "hard",
+    "question_ar": "مؤلف كتاب البرهان في علوم القرآن هو:",
+    "options_ar": [
+      "السيوطي",
+      "ابن تيمية",
+      "الزركشي",
+      "ابن كثير"
+    ],
+    "correctIndex": 2,
+    "source_ar": "مسابقات أهل القرآن - ص 9"
+  },
+  {
+    "type": "mcq",
+    "category": "الحديث الشريف",
+    "difficulty": "hard",
+    "question_ar": "من هم السبعة الذين يظلهم الله في ظله يوم لا ظل إلا ظله؟ أولهم:",
+    "options_ar": [
+      "إمام عادل",
+      "شاب نشأ في طاعة الله",
+      "رجل قلبه معلق بالمساجد",
+      "رجل تصدق بصدقة فأخفاها"
+    ],
+    "correctIndex": 0,
+    "source_ar": "مسابقات أهل القرآن - ص 9"
+  },
+  {
+    "type": "mcq",
+    "category": "القرآن الكريم",
+    "difficulty": "medium",
+    "question_ar": "كم عدد السور المكية في القرآن الكريم؟",
+    "options_ar": [
+      "86",
+      "75",
+      "28",
+      "114"
+    ],
+    "correctIndex": 0,
+    "source_ar": "مسابقات أهل القرآن - ص 10"
+  },
+  {
+    "type": "mcq",
+    "category": "القرآن الكريم",
+    "difficulty": "hard",
+    "question_ar": "كم سورة في القرآن افتُتحت بـ (حم)؟",
+    "options_ar": [
+      "5",
+      "7",
+      "9",
+      "3"
+    ],
+    "correctIndex": 1,
+    "source_ar": "مسابقات أهل القرآن - ص 10"
+  },
+  {
+    "type": "mcq",
+    "category": "السيرة",
+    "difficulty": "hard",
+    "question_ar": "إحدى زوجات الرسول صلى الله عليه وسلم طلقها طلقة واحدة فأتاه جبريل وقال إن الله يأمرك أن تراجعها فإنها صوامة قوامة. من هي؟",
+    "options_ar": [
+      "حفصة بنت عمر",
+      "عائشة بنت أبي بكر",
+      "زينب المخزومية",
+      "أم سلمة"
+    ],
+    "correctIndex": 0,
+    "source_ar": "مسابقات أهل القرآن - ص 10"
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "easy",
+    "question_ar": "أيهما أكثر وزناً: دماغ الرجل أم دماغ المرأة؟",
+    "options_ar": [
+      "دماغ الرجل",
+      "دماغ المرأة",
+      "متساويان",
+      "يختلف حسب العمر"
+    ],
+    "correctIndex": 0,
+    "source_ar": "مسابقات أهل القرآن - ص 11"
+  },
+  {
+    "type": "mcq",
+    "category": "القرآن الكريم",
+    "difficulty": "hard",
+    "question_ar": "في أي سورة ورد اسم (مالك) خازن النار؟",
+    "options_ar": [
+      "الصافات",
+      "الزخرف",
+      "الجاثية",
+      "الدخان"
+    ],
+    "correctIndex": 1,
+    "source_ar": "مسابقات أهل القرآن - ص 11"
+  },
+  {
+    "type": "mcq",
+    "category": "القرآن الكريم",
+    "difficulty": "extreme",
+    "question_ar": "كم مرة ذُكر لفظ (محمد) صلى الله عليه وسلم في القرآن؟",
+    "options_ar": [
+      "3 مرات",
+      "4 مرات",
+      "5 مرات",
+      "7 مرات"
+    ],
+    "correctIndex": 1,
+    "source_ar": "مسابقات أهل القرآن - ص 11"
+  },
+  {
+    "type": "mcq",
+    "category": "السيرة",
+    "difficulty": "extreme",
+    "question_ar": "صحابية قُتل أبوها وعمها وابن عمها وأخوها في غزوة أحد، فلما بلغها مقتلهم سألت عن سلامة رسول الله فقالت: كل مصيبة بعد رسول الله هينة. من هي؟",
+    "options_ar": [
+      "أم رومان بنت عامر",
+      "كبشة بنت راقع",
+      "أسماء بنت يزيد بن السكن",
+      "نسيبة بنت كعب"
+    ],
+    "correctIndex": 2,
+    "source_ar": "مسابقات أهل القرآن - ص 10"
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "easy",
+    "question_ar": "ماذا يُسمى طعام القادم من السفر؟",
+    "options_ar": [
+      "الوليمة",
+      "الوضيمة",
+      "النقيعة",
+      "التحفة"
+    ],
+    "correctIndex": 2,
+    "source_ar": "مسابقات أهل القرآن - ص 10"
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "easy",
+    "question_ar": "ماذا يُسمى طعام الفراغ من البناء؟",
+    "options_ar": [
+      "المأدبة",
+      "الخرس",
+      "الوضيمة",
+      "الوكيرة"
+    ],
+    "correctIndex": 3,
+    "source_ar": "مسابقات أهل القرآن - ص 12"
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "medium",
+    "question_ar": "ما هي الثمرة التي أطلق عليها العرب (قاتل أبيه)؟",
+    "options_ar": [
+      "الرمان",
+      "الموز",
+      "البرتقال",
+      "الليمون"
+    ],
+    "correctIndex": 1,
+    "source_ar": "مسابقات أهل القرآن - ص 12"
+  },
+  {
+    "type": "mcq",
+    "category": "القرآن الكريم",
+    "difficulty": "medium",
+    "question_ar": "كم عدد السور التي افتُتحت بـ (طسم)؟",
+    "options_ar": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "correctIndex": 1,
+    "source_ar": "مسابقات أهل القرآن - ص 12"
+  },
+  {
+    "type": "tf",
+    "category": "الصحابة",
+    "difficulty": "easy",
+    "question_ar": "أبو بكر الصديق رضي الله عنه هو أول الخلفاء الراشدين.",
+    "correctBoolean": true,
+    "source_ar": "معلومة عامة"
+  },
+  {
+    "type": "tf",
+    "category": "القرآن الكريم",
+    "difficulty": "easy",
+    "question_ar": "سورة البقرة هي أطول سورة في القرآن الكريم.",
+    "correctBoolean": true,
+    "source_ar": "معلومة عامة"
+  },
+  {
+    "type": "tf",
+    "category": "السيرة",
+    "difficulty": "easy",
+    "question_ar": "ولد النبي صلى الله عليه وسلم في المدينة المنورة.",
+    "correctBoolean": false,
+    "source_ar": "معلومة عامة"
+  },
+  {
+    "type": "tf",
+    "category": "القرآن الكريم",
+    "difficulty": "medium",
+    "question_ar": "عدد سور القرآن الكريم 114 سورة.",
+    "correctBoolean": true,
+    "source_ar": "معلومة عامة"
+  },
+  {
+    "type": "tf",
+    "category": "السيرة",
+    "difficulty": "medium",
+    "question_ar": "هاجر النبي صلى الله عليه وسلم من مكة إلى المدينة مع عمر بن الخطاب.",
+    "correctBoolean": false,
+    "source_ar": "معلومة عامة - هاجر مع أبي بكر الصديق"
+  },
+  {
+    "type": "tf",
+    "category": "الفقه",
+    "difficulty": "easy",
+    "question_ar": "عدد ركعات صلاة المغرب ثلاث ركعات.",
+    "correctBoolean": true,
+    "source_ar": "معلومة عامة"
+  },
+  {
+    "type": "tf",
+    "category": "الفقه",
+    "difficulty": "easy",
+    "question_ar": "الزكاة ركن من أركان الإسلام.",
+    "correctBoolean": true,
+    "source_ar": "معلومة عامة"
+  },
+  {
+    "type": "tf",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "medium",
+    "question_ar": "غزوة بدر وقعت في السنة الثالثة للهجرة.",
+    "correctBoolean": false,
+    "source_ar": "معلومة عامة - وقعت في السنة الثانية"
+  },
+  {
+    "type": "tf",
+    "category": "القرآن الكريم",
+    "difficulty": "medium",
+    "question_ar": "سورة يس تُسمى قلب القرآن.",
+    "correctBoolean": true,
+    "source_ar": "معلومة عامة"
+  },
+  {
+    "type": "tf",
+    "category": "السيرة",
+    "difficulty": "hard",
+    "question_ar": "أول من أسلم من الرجال هو علي بن أبي طالب.",
+    "correctBoolean": false,
+    "source_ar": "معلومة عامة - أول من أسلم من الرجال أبو بكر الصديق"
+  },
+  {
+    "type": "tf",
+    "category": "الصحابة",
+    "difficulty": "medium",
+    "question_ar": "عمر بن الخطاب رضي الله عنه لقب بالفاروق.",
+    "correctBoolean": true,
+    "source_ar": "معلومة عامة"
+  },
+  {
+    "type": "tf",
+    "category": "القرآن الكريم",
+    "difficulty": "hard",
+    "question_ar": "أول سورة نزلت كاملة هي سورة الفاتحة.",
+    "correctBoolean": true,
+    "source_ar": "معلومة عامة"
+  },
+  {
+    "type": "tf",
+    "category": "الفقه",
+    "difficulty": "medium",
+    "question_ar": "صيام رمضان فُرض في السنة الأولى من الهجرة.",
+    "correctBoolean": false,
+    "source_ar": "معلومة عامة - فُرض في السنة الثانية"
+  },
+  {
+    "type": "tf",
+    "category": "الثقافة العامة",
+    "difficulty": "easy",
+    "question_ar": "الرياض هي عاصمة المملكة العربية السعودية.",
+    "correctBoolean": true,
+    "source_ar": "معلومة عامة"
+  },
+  {
+    "type": "tf",
+    "category": "الثقافة العامة",
+    "difficulty": "easy",
+    "question_ar": "اللغة العربية تُكتب من اليسار إلى اليمين.",
+    "correctBoolean": false,
+    "source_ar": "معلومة عامة"
+  },
+  {
+    "type": "mcq",
+    "category": "الصحابة",
+    "difficulty": "easy",
+    "question_ar": "من هو أول الخلفاء الراشدين؟",
+    "options_ar": [
+      "عمر بن الخطاب",
+      "عثمان بن عفان",
+      "أبو بكر الصديق",
+      "علي بن أبي طالب"
+    ],
+    "correctIndex": 2,
+    "source_ar": "معلومة عامة"
+  },
+  {
+    "type": "mcq",
+    "category": "القرآن الكريم",
+    "difficulty": "easy",
+    "question_ar": "ما هي أقصر سورة في القرآن الكريم؟",
+    "options_ar": [
+      "الفاتحة",
+      "الإخلاص",
+      "الكوثر",
+      "الناس"
+    ],
+    "correctIndex": 2,
+    "source_ar": "معلومة عامة"
+  },
+  {
+    "type": "mcq",
+    "category": "السيرة",
+    "difficulty": "easy",
+    "question_ar": "ما اسم أم النبي صلى الله عليه وسلم؟",
+    "options_ar": [
+      "خديجة بنت خويلد",
+      "آمنة بنت وهب",
+      "فاطمة بنت أسد",
+      "هالة بنت أبي طالب"
+    ],
+    "correctIndex": 1,
+    "source_ar": "معلومة عامة"
+  },
+  {
+    "type": "mcq",
+    "category": "الفقه",
+    "difficulty": "easy",
+    "question_ar": "كم عدد أركان الإسلام؟",
+    "options_ar": [
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "correctIndex": 1,
+    "source_ar": "معلومة عامة"
+  },
+  {
+    "type": "mcq",
+    "category": "القرآن الكريم",
+    "difficulty": "easy",
+    "question_ar": "ما هي السورة التي تُسمى (سنام القرآن)؟",
+    "options_ar": [
+      "الفاتحة",
+      "البقرة",
+      "آل عمران",
+      "يس"
+    ],
+    "correctIndex": 1,
+    "source_ar": "معلومة عامة"
+  },
+  {
+    "type": "mcq",
+    "category": "الصحابة",
+    "difficulty": "medium",
+    "question_ar": "من هو الصحابي الذي لُقب بـ (سيف الله المسلول)؟",
+    "options_ar": [
+      "علي بن أبي طالب",
+      "خالد بن الوليد",
+      "سعد بن أبي وقاص",
+      "الزبير بن العوام"
+    ],
+    "correctIndex": 1,
+    "source_ar": "معلومة عامة"
+  },
+  {
+    "type": "mcq",
+    "category": "الصحابة",
+    "difficulty": "medium",
+    "question_ar": "من هو الصحابي الذي لُقب بـ (حِبّ رسول الله)؟",
+    "options_ar": [
+      "أبو بكر الصديق",
+      "أسامة بن زيد",
+      "زيد بن حارثة",
+      "أنس بن مالك"
+    ],
+    "correctIndex": 1,
+    "source_ar": "معلومة عامة"
+  },
+  {
+    "type": "mcq",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "easy",
+    "question_ar": "في أي سنة هجرية وقعت غزوة بدر الكبرى؟",
+    "options_ar": [
+      "السنة الأولى",
+      "السنة الثانية",
+      "السنة الثالثة",
+      "السنة الرابعة"
+    ],
+    "correctIndex": 1,
+    "source_ar": "معلومة عامة"
+  },
+  {
+    "type": "mcq",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "medium",
+    "question_ar": "من هو القائد المسلم الذي فتح القسطنطينية؟",
+    "options_ar": [
+      "صلاح الدين الأيوبي",
+      "محمد الفاتح",
+      "طارق بن زياد",
+      "خالد بن الوليد"
+    ],
+    "correctIndex": 1,
+    "source_ar": "معلومة عامة"
+  },
+  {
+    "type": "mcq",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "medium",
+    "question_ar": "من هو القائد المسلم الذي فتح الأندلس؟",
+    "options_ar": [
+      "خالد بن الوليد",
+      "عقبة بن نافع",
+      "طارق بن زياد",
+      "محمد بن القاسم"
+    ],
+    "correctIndex": 2,
+    "source_ar": "معلومة عامة"
+  },
+  {
+    "type": "mcq",
+    "category": "الفقه",
+    "difficulty": "medium",
+    "question_ar": "ما هو النصاب في زكاة الذهب؟",
+    "options_ar": [
+      "20 مثقالاً (85 جرام)",
+      "40 مثقالاً (170 جرام)",
+      "10 مثقالات (42 جرام)",
+      "50 مثقالاً (212 جرام)"
+    ],
+    "correctIndex": 0,
+    "source_ar": "معلومة فقهية"
+  },
+  {
+    "type": "mcq",
+    "category": "القرآن الكريم",
+    "difficulty": "medium",
+    "question_ar": "كم عدد أجزاء القرآن الكريم؟",
+    "options_ar": [
+      "20 جزءاً",
+      "25 جزءاً",
+      "30 جزءاً",
+      "40 جزءاً"
+    ],
+    "correctIndex": 2,
+    "source_ar": "معلومة عامة"
+  },
+  {
+    "type": "mcq",
+    "category": "القرآن الكريم",
+    "difficulty": "hard",
+    "question_ar": "ما هي السورة التي تعدل ثلث القرآن؟",
+    "options_ar": [
+      "الفاتحة",
+      "يس",
+      "الإخلاص",
+      "الملك"
+    ],
+    "correctIndex": 2,
+    "source_ar": "حديث شريف"
+  },
+  {
+    "type": "mcq",
+    "category": "الحديث الشريف",
+    "difficulty": "easy",
+    "question_ar": "ما هو أول حديث في صحيح البخاري؟",
+    "options_ar": [
+      "إنما الأعمال بالنيات",
+      "من حسن إسلام المرء",
+      "الدين النصيحة",
+      "لا يؤمن أحدكم"
+    ],
+    "correctIndex": 0,
+    "source_ar": "صحيح البخاري"
+  },
+  {
+    "type": "mcq",
+    "category": "الحديث الشريف",
+    "difficulty": "medium",
+    "question_ar": "كم عدد الأحاديث في صحيح البخاري (بالمكرر)؟",
+    "options_ar": [
+      "حوالي 4000",
+      "حوالي 7275",
+      "حوالي 9000",
+      "حوالي 12000"
+    ],
+    "correctIndex": 1,
+    "source_ar": "معلومة عامة"
+  },
+  {
+    "type": "mcq",
+    "category": "الصحابة",
+    "difficulty": "hard",
+    "question_ar": "من هو الصحابي الذي جمع القرآن في عهد أبي بكر الصديق؟",
+    "options_ar": [
+      "عبد الله بن مسعود",
+      "زيد بن ثابت",
+      "أبي بن كعب",
+      "عثمان بن عفان"
+    ],
+    "correctIndex": 1,
+    "source_ar": "معلومة تاريخية"
+  },
+  {
+    "type": "mcq",
+    "category": "الجغرافيا",
+    "difficulty": "easy",
+    "question_ar": "ما هو أكبر محيط في العالم؟",
+    "options_ar": [
+      "المحيط الأطلسي",
+      "المحيط الهادئ",
+      "المحيط الهندي",
+      "المحيط المتجمد"
+    ],
+    "correctIndex": 1,
+    "source_ar": "معلومة عامة"
+  },
+  {
+    "type": "mcq",
+    "category": "الجغرافيا",
+    "difficulty": "easy",
+    "question_ar": "ما هو أطول نهر في العالم؟",
+    "options_ar": [
+      "نهر الأمازون",
+      "نهر النيل",
+      "نهر المسيسيبي",
+      "نهر اليانغتسي"
+    ],
+    "correctIndex": 1,
+    "source_ar": "معلومة عامة"
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "medium",
+    "question_ar": "كم عدد عظام جسم الإنسان البالغ؟",
+    "options_ar": [
+      "150 عظمة",
+      "206 عظام",
+      "250 عظمة",
+      "300 عظمة"
+    ],
+    "correctIndex": 1,
+    "source_ar": "معلومة علمية"
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "easy",
+    "question_ar": "ما هي أكبر قارة في العالم؟",
+    "options_ar": [
+      "أفريقيا",
+      "أوروبا",
+      "آسيا",
+      "أمريكا الشمالية"
+    ],
+    "correctIndex": 2,
+    "source_ar": "معلومة عامة"
+  },
+  {
+    "type": "mcq",
+    "category": "اللغة العربية",
+    "difficulty": "easy",
+    "question_ar": "كم عدد حروف اللغة العربية؟",
+    "options_ar": [
+      "26 حرفاً",
+      "28 حرفاً",
+      "30 حرفاً",
+      "32 حرفاً"
+    ],
+    "correctIndex": 1,
+    "source_ar": "معلومة عامة"
+  },
+  {
+    "type": "mcq",
+    "category": "اللغة العربية",
+    "difficulty": "medium",
+    "question_ar": "ما إعراب كلمة (محمداً) في جملة: رأيت محمداً؟",
+    "options_ar": [
+      "فاعل مرفوع",
+      "مفعول به منصوب",
+      "مبتدأ مرفوع",
+      "خبر مرفوع"
+    ],
+    "correctIndex": 1,
+    "source_ar": "قواعد اللغة العربية"
+  },
+  {
+    "type": "mcq",
+    "category": "العقيدة",
+    "difficulty": "easy",
+    "question_ar": "كم عدد أركان الإيمان؟",
+    "options_ar": [
+      "5",
+      "6",
+      "7",
+      "4"
+    ],
+    "correctIndex": 1,
+    "source_ar": "معلومة عامة"
+  },
+  {
+    "type": "mcq",
+    "category": "العقيدة",
+    "difficulty": "medium",
+    "question_ar": "ما هي أول صفة ذكرها الله للمؤمنين في سورة المؤمنون؟",
+    "options_ar": [
+      "الذين هم عن اللغو معرضون",
+      "الذين هم في صلاتهم خاشعون",
+      "الذين هم للزكاة فاعلون",
+      "الذين هم لفروجهم حافظون"
+    ],
+    "correctIndex": 1,
+    "source_ar": "سورة المؤمنون"
+  },
+  {
+    "type": "tf",
+    "category": "الصحابة",
+    "difficulty": "medium",
+    "question_ar": "عثمان بن عفان رضي الله عنه لُقب بذي النورين لأنه تزوج ابنتي رسول الله.",
+    "correctBoolean": true,
+    "source_ar": "معلومة عامة"
+  },
+  {
+    "type": "tf",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "hard",
+    "question_ar": "فُتحت القسطنطينية على يد المسلمين في القرن السابع الهجري.",
+    "correctBoolean": false,
+    "source_ar": "فُتحت سنة 857 هـ (القرن التاسع الهجري)"
+  },
+  {
+    "type": "tf",
+    "category": "الفقه",
+    "difficulty": "easy",
+    "question_ar": "الوضوء شرط من شروط صحة الصلاة.",
+    "correctBoolean": true,
+    "source_ar": "معلومة فقهية"
+  },
+  {
+    "type": "tf",
+    "category": "القرآن الكريم",
+    "difficulty": "medium",
+    "question_ar": "سورة التوبة هي السورة الوحيدة التي لا تبدأ بالبسملة.",
+    "correctBoolean": true,
+    "source_ar": "معلومة قرآنية"
+  },
+  {
+    "type": "tf",
+    "category": "الحديث الشريف",
+    "difficulty": "medium",
+    "question_ar": "صحيح مسلم يحتوي على أحاديث أكثر من صحيح البخاري.",
+    "correctBoolean": false,
+    "source_ar": "معلومة عامة"
+  },
+  {
+    "type": "tf",
+    "category": "الثقافة العامة",
+    "difficulty": "easy",
+    "question_ar": "الماء يغلي عند درجة حرارة 100 مئوية عند مستوى سطح البحر.",
+    "correctBoolean": true,
+    "source_ar": "معلومة علمية"
+  },
+  {
+    "type": "tf",
+    "category": "الجغرافيا",
+    "difficulty": "medium",
+    "question_ar": "البحر الأحمر يفصل بين قارتي آسيا وأفريقيا.",
+    "correctBoolean": true,
+    "source_ar": "معلومة جغرافية"
+  },
+  {
+    "type": "tf",
+    "category": "اللغة العربية",
+    "difficulty": "hard",
+    "question_ar": "الفعل المضارع يُبنى على الفتح إذا اتصلت به نون التوكيد الثقيلة.",
+    "correctBoolean": true,
+    "source_ar": "قواعد اللغة العربية"
+  },
+  {
+    "type": "mcq",
+    "category": "الفقه",
+    "difficulty": "easy",
+    "question_ar": "هِبةُ الوَديعةِ لِمَن هي عِندَه",
+    "options_ar": [
+      "لا تَجوزُ",
+      "تُكرَهُ",
+      "تَجوزُ"
+    ],
+    "correctIndex": 2,
+    "source_ar": "https://www.dorar.net/feqhia/6634"
+  },
+  {
+    "type": "mcq",
+    "category": "القرآن الكريم",
+    "difficulty": "medium",
+    "question_ar": "قُرِئَ \"لِلْعَالِمِينَ\" بكسر اللَّامِ في قَولِه تَعالَى: {إِنَّ فِي ذَلِكَ لَآيَاتٍ لِلْعَالِمِينَ} أي:",
+    "options_ar": [
+      "عَالمُ الأَرضِ وعَالَمُ السَّماءِ",
+      "أَحبارُ اليَهُودِ",
+      "جَمع عالِمٍ"
+    ],
+    "correctIndex": 2,
+    "source_ar": "https://www.dorar.net/tafseer/30/4#tt4"
+  },
+  {
+    "type": "mcq",
+    "category": "العقيدة",
+    "difficulty": "medium",
+    "question_ar": "مَن كَذَب على رَسولِ اللهِ ﷺ في تَحليلِ حَرامٍ أو عَكسِه، فهو:",
+    "options_ar": [
+      "مُنافِقٌ مَعلومُ النِّفاِق",
+      "مُسلِمٌ مُرتكِبٌ لكَبيرةٍ",
+      "كافِرٌ خارِجٌ منَ المِلَّةِ"
+    ],
+    "correctIndex": 2,
+    "source_ar": "https://www.dorar.net/aqeeda/2939"
+  },
+  {
+    "type": "mcq",
+    "category": "الصحابة",
+    "difficulty": "medium",
+    "question_ar": "من هو الصحابي الذي اهتز لموته عرش الرحمن؟",
+    "options_ar": [
+      "سعد بن معاذ",
+      "سعد بن أبي وقاص",
+      "مصعب بن عمير",
+      "حمزة بن عبد المطلب"
+    ],
+    "correctIndex": 0,
+    "source_ar": "Islamic & Cultural Question Bank v1.0",
+    "explanation_ar": "توفي متأثراً بجراحه بعد غزوة الخندق وحكمه في بني قريظة."
+  },
+  {
+    "type": "mcq",
+    "category": "السيرة",
+    "difficulty": "medium",
+    "question_ar": "كم كان عمر النبي صلى الله عليه وسلم عند وفاة أمه آمنة؟",
+    "options_ar": [
+      "6 سنوات",
+      "4 سنوات",
+      "8 سنوات",
+      "سنتان"
+    ],
+    "correctIndex": 0,
+    "source_ar": "Islamic & Cultural Question Bank v1.0",
+    "explanation_ar": "توفيت بالأبواء بين مكة والمدينة وهو ابن ست سنين."
+  },
+  {
+    "type": "mcq",
+    "category": "الحديث الشريف",
+    "difficulty": "hard",
+    "question_ar": "في أي معركة انتصر المسلمون على المغول وأوقفوا زحفهم؟",
+    "options_ar": [
+      "عين جالوت",
+      "حطين",
+      "القادسية",
+      "اليرموك"
+    ],
+    "correctIndex": 0,
+    "source_ar": "Islamic & Cultural Question Bank v1.0",
+    "explanation_ar": "بقيادة سيف الدين قطز عام 658 هـ."
+  },
+  {
+    "type": "mcq",
+    "category": "القرآن الكريم",
+    "difficulty": "hard",
+    "question_ar": "ما هي السورة التي ذكر لفظ الجلالة 'الله' في كل آياتها؟",
+    "options_ar": [
+      "المجادلة",
+      "الملك",
+      "الواقعة",
+      "الحديد"
+    ],
+    "correctIndex": 0,
+    "source_ar": "Islamic & Cultural Question Bank v1.0",
+    "explanation_ar": "هي السورة رقم 58 في ترتيب المصحف."
+  },
+  {
+    "type": "mcq",
+    "category": "الصحابة",
+    "difficulty": "medium",
+    "question_ar": "من هو الصحابي الملقب بـ 'ذو النورين'؟",
+    "options_ar": [
+      "عثمان بن عفان",
+      "علي بن أبي طالب",
+      "أبو بكر الصديق",
+      "طلحة بن عبيد الله"
+    ],
+    "correctIndex": 0,
+    "source_ar": "Islamic & Cultural Question Bank v1.0",
+    "explanation_ar": "لُقب بذلك لزواجه من ابنتي النبي رقية ثم أم كلثوم."
+  },
+  {
+    "type": "mcq",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "medium",
+    "question_ar": "من هو مؤسس الدولة العباسية؟",
+    "options_ar": [
+      "أبو العباس السفاح",
+      "هارون الرشيد",
+      "المأمون",
+      "أبو جعفر المنصور"
+    ],
+    "correctIndex": 0,
+    "source_ar": "Islamic & Cultural Question Bank v1.0",
+    "explanation_ar": "هو عبد الله بن محمد بن علي بن عبد الله بن عباس."
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "medium",
+    "question_ar": "ما هو الحيوان الذي يُعرف بأنه لا يصدر صوتاً؟",
+    "options_ar": [
+      "الزرافة",
+      "السلحفاة",
+      "الأرنب",
+      "الحصان"
+    ],
+    "correctIndex": 0,
+    "source_ar": "Islamic & Cultural Question Bank v1.0",
+    "explanation_ar": "لعدم امتلاكها أحبالاً صوتية تقليدية."
+  },
+  {
+    "type": "mcq",
+    "category": "السيرة",
+    "difficulty": "medium",
+    "question_ar": "ما هي آخر غزوة قادها النبي صلى الله عليه وسلم؟",
+    "options_ar": [
+      "تبوك",
+      "حنين",
+      "مؤتة",
+      "الفتح"
+    ],
+    "correctIndex": 0,
+    "source_ar": "Islamic & Cultural Question Bank v1.0",
+    "explanation_ar": "وقعت في رجب سنة 9 هـ وتسمى غزوة العسرة."
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "extreme",
+    "question_ar": "رجل توفي وترك زوجة وبنت، كم نصيب الزوجة؟",
+    "options_ar": [
+      "الثمن",
+      "الربع",
+      "النصف",
+      "السدس"
+    ],
+    "correctIndex": 0,
+    "source_ar": "Islamic & Cultural Question Bank v1.0",
+    "explanation_ar": "لوجود الفرع الوارث (البنت) يقل نصيب الزوجة من الربع إلى الثمن."
+  },
+  {
+    "type": "mcq",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "hard",
+    "question_ar": "من هو القائد الذي فتح القسطنطينية؟",
+    "options_ar": [
+      "محمد الفاتح",
+      "سليمان القانوني",
+      "سليم الأول",
+      "بايزيد الأول"
+    ],
+    "correctIndex": 0,
+    "source_ar": "Islamic & Cultural Question Bank v1.0",
+    "explanation_ar": "السلطان محمد الثاني عام 1453م، وحقق بذلك البشارة النبوية."
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "medium",
+    "question_ar": "أين يقع مقر محكمة العدل الدولية؟",
+    "options_ar": [
+      "لاهاي",
+      "جنيف",
+      "نيويورك",
+      "باريس"
+    ],
+    "correctIndex": 0,
+    "source_ar": "Islamic & Cultural Question Bank v1.0",
+    "explanation_ar": "تقع في هولندا وهي الذراع القضائي للأمم المتحدة."
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "medium",
+    "question_ar": "من هو أول من رمى سهماً في سبيل الله؟",
+    "options_ar": [
+      "سعد بن أبي وقاص",
+      "الزبير بن العوام",
+      "حمزة بن عبد المطلب",
+      "عمر بن الخطاب"
+    ],
+    "correctIndex": 0,
+    "source_ar": "Islamic & Cultural Question Bank v1.0",
+    "explanation_ar": "وهو خال النبي صلى الله عليه وسلم وأحد العشرة المبشرين بالجنة."
+  },
+  {
+    "type": "mcq",
+    "category": "السيرة",
+    "difficulty": "easy",
+    "question_ar": "في أي عام كانت الهجرة النبوية؟",
+    "options_ar": [
+      "622 م",
+      "610 م",
+      "632 م",
+      "600 م"
+    ],
+    "correctIndex": 0,
+    "source_ar": "Islamic & Cultural Question Bank v1.0",
+    "explanation_ar": "يوافق العام الأول الهجري، وهو بداية التقويم الإسلامي."
+  },
+  {
+    "type": "mcq",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "medium",
+    "question_ar": "ما هي عاصمة الدولة الأموية؟",
+    "options_ar": [
+      "دمشق",
+      "بغداد",
+      "القاهرة",
+      "الكوفة"
+    ],
+    "correctIndex": 0,
+    "source_ar": "Islamic & Cultural Question Bank v1.0",
+    "explanation_ar": "اتخذها معاوية بن أبي سفيان عاصمة له ولملكه."
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "easy",
+    "question_ar": "ما هو المعدن السائل في درجة حرارة الغرفة؟",
+    "options_ar": [
+      "الزئبق",
+      "الحديد",
+      "النحاس",
+      "الألمنيوم"
+    ],
+    "correctIndex": 0,
+    "source_ar": "Islamic & Cultural Question Bank v1.0",
+    "explanation_ar": "يستخدم في مقاييس الحرارة والضغط."
+  },
+  {
+    "type": "mcq",
+    "category": "الصحابة",
+    "difficulty": "hard",
+    "question_ar": "من هو الصحابي الذي أشار بحفر الخندق؟",
+    "options_ar": [
+      "سلمان الفارسي",
+      "عمار بن ياسر",
+      "صهيب الرومي",
+      "أبو ذر الغفاري"
+    ],
+    "correctIndex": 0,
+    "source_ar": "Islamic & Cultural Question Bank v1.0",
+    "explanation_ar": "اقترح الخطة بناءً على خبرته في حروب الفرس."
+  },
+  {
+    "type": "mcq",
+    "category": "السيرة",
+    "difficulty": "medium",
+    "question_ar": "ما اسم ناقة الرسول صلى الله عليه وسلم؟",
+    "options_ar": [
+      "القصواء",
+      "الشهباء",
+      "البراق",
+      "الدهماء"
+    ],
+    "correctIndex": 0,
+    "source_ar": "Islamic & Cultural Question Bank v1.0",
+    "explanation_ar": "هي التي هاجر عليها من مكة إلى المدينة."
+  },
+  {
+    "type": "mcq",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "extreme",
+    "question_ar": "من هو مؤسس دولة الأغالبة في إفريقية؟",
+    "options_ar": [
+      "إبراهيم بن الأغلب",
+      "الأغلب بن سالم",
+      "زيادة الله الأول",
+      "المعز بن باديس"
+    ],
+    "correctIndex": 0,
+    "source_ar": "Islamic & Cultural Question Bank v1.0",
+    "explanation_ar": "تأسست عام 184هـ وكانت تابعة اسمياً للخلافة العباسية."
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "medium",
+    "question_ar": "ما هي أكبر جزيرة في العالم؟",
+    "options_ar": [
+      "جرينلاند",
+      "مدغشقر",
+      "بورنيو",
+      "غينيا الجديدة"
+    ],
+    "correctIndex": 0,
+    "source_ar": "Islamic & Cultural Question Bank v1.0",
+    "explanation_ar": "تعتبر إقليماً دنماركياً ذاتي الحكم."
+  },
+  {
+    "type": "mcq",
+    "category": "الفقه",
+    "difficulty": "hard",
+    "question_ar": "متى فُرض الصيام في الإسلام؟",
+    "options_ar": [
+      "السنة الثانية للهجرة",
+      "السنة الثالثة للهجرة",
+      "السنة الخامسة للهجرة",
+      "السنة العاشرة للبعثة"
+    ],
+    "correctIndex": 0,
+    "source_ar": "Islamic & Cultural Question Bank v1.0",
+    "explanation_ar": "فرض في شهر شعبان من السنة الثانية."
+  },
+  {
+    "type": "mcq",
+    "category": "الصحابة",
+    "difficulty": "extreme",
+    "question_ar": "من هو الصحابي المعروف بـ 'غسيل الملائكة'؟",
+    "options_ar": [
+      "حنظلة بن أبي عامر",
+      "خزيمة بن ثابت",
+      "سعد بن الربيع",
+      "عبدالله بن حرام"
+    ],
+    "correctIndex": 0,
+    "source_ar": "Islamic & Cultural Question Bank v1.0",
+    "explanation_ar": "لأنه استشهد في أحد وهو جنب فغسلته الملائكة."
+  },
+  {
+    "type": "mcq",
+    "category": "الفقه",
+    "difficulty": "hard",
+    "question_ar": "ما هو العام الذي فُرض فيه الحجاب؟",
+    "options_ar": [
+      "السنة الرابعة للهجرة",
+      "السنة الثانية للهجرة",
+      "السنة السادسة للهجرة",
+      "السنة الخامسة للهجرة"
+    ],
+    "correctIndex": 0,
+    "source_ar": "Islamic & Cultural Question Bank v1.0",
+    "explanation_ar": "نزل تشريع الحجاب في المدينة المنورة."
+  },
+  {
+    "type": "mcq",
+    "category": "الصحابة",
+    "difficulty": "hard",
+    "question_ar": "ما هي المعاهدة التي أنهت الحرب العالمية الأولى وأثرت على الدولة العثمانية؟",
+    "options_ar": [
+      "معاهدة سيفر",
+      "معاهدة لوزان",
+      "معاهدة فرساي",
+      "معاهدة سايكس بيكو"
+    ],
+    "correctIndex": 0,
+    "source_ar": "Islamic & Cultural Question Bank v1.0",
+    "explanation_ar": "وقعت عام 1920 وكانت قاسية جداً مما مهد لحرب الاستقلال التركية."
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "hard",
+    "question_ar": "من هو العالم الذي اكتشف الدورة الدموية الكبرى؟",
+    "options_ar": [
+      "ويليام هارفي",
+      "ابن النفيس",
+      "جالينوس",
+      "الرازي"
+    ],
+    "correctIndex": 0,
+    "source_ar": "Islamic & Cultural Question Bank v1.0",
+    "explanation_ar": "بينما اكتشف ابن النفيس الدورة الدموية الصغرى قبله بقرون."
+  },
+  {
+    "type": "mcq",
+    "category": "القرآن الكريم",
+    "difficulty": "medium",
+    "question_ar": "ما هو الكتاب الذي يعتبر أصح الكتب بعد القرآن الكريم؟",
+    "options_ar": [
+      "صحيح البخاري",
+      "صحيح مسلم",
+      "موطأ مالك",
+      "مسند أحمد"
+    ],
+    "correctIndex": 0,
+    "source_ar": "Islamic & Cultural Question Bank v1.0",
+    "explanation_ar": "للالتزامه بأقصى شروط الصحة في قبول الحديث."
+  },
+  {
+    "type": "mcq",
+    "category": "الصحابة",
+    "difficulty": "medium",
+    "question_ar": "من هو الصحابي الذي لُقب بـ 'ترجمان القرآن'؟",
+    "options_ar": [
+      "عبد الله بن عباس",
+      "عبد الله بن مسعود",
+      "أبي بن كعب",
+      "زيد بن ثابت"
+    ],
+    "correctIndex": 0,
+    "source_ar": "Islamic & Cultural Question Bank v1.0",
+    "explanation_ar": "دعا له النبي بالفقه في الدين وتعليم التأويل."
+  },
+  {
+    "type": "mcq",
+    "category": "السيرة",
+    "difficulty": "medium",
+    "question_ar": "من هو رفيق النبي في الهجرة إلى المدينة؟",
+    "options_ar": [
+      "أبو بكر الصديق",
+      "علي بن أبي طالب",
+      "عمر بن الخطاب",
+      "عثمان بن عفان"
+    ],
+    "correctIndex": 0,
+    "source_ar": "Islamic & Cultural Question Bank v1.0",
+    "explanation_ar": "ذكره الله في القرآن بـ 'ثاني اثنين إذ هما في الغار'."
+  },
+  {
+    "type": "mcq",
+    "category": "الحديث الشريف",
+    "difficulty": "hard",
+    "question_ar": "متى سقطت غرناطة، آخر معاقل المسلمين في الأندلس؟",
+    "options_ar": [
+      "1492 م",
+      "1453 م",
+      "1099 م",
+      "1258 م"
+    ],
+    "correctIndex": 0,
+    "source_ar": "Islamic & Cultural Question Bank v1.0",
+    "explanation_ar": "سلمها أبو عبد الله الصغير للملكين فرديناند وإيزابيلا."
+  },
+  {
+    "type": "mcq",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "medium",
+    "question_ar": "ما هي الدولة التي عاصمتها 'مسقط'؟",
+    "options_ar": [
+      "سلطنة عمان",
+      "اليمن",
+      "البحرين",
+      "الأردن"
+    ],
+    "correctIndex": 0,
+    "source_ar": "Islamic & Cultural Question Bank v1.0",
+    "explanation_ar": "تقع في جنوب شرق شبه الجزيرة العربية."
+  },
+  {
+    "type": "mcq",
+    "category": "الصحابة",
+    "difficulty": "hard",
+    "question_ar": "من هو الصحابي الذي جعل الله شهادته بشهادة رجلين؟",
+    "options_ar": [
+      "خزيمة بن ثابت",
+      "أبو أيوب الأنصاري",
+      "عبادة بن الصامت",
+      "أنس بن مالك"
+    ],
+    "correctIndex": 0,
+    "source_ar": "Islamic & Cultural Question Bank v1.0",
+    "explanation_ar": "في قصة شراء النبي للفرس من الأعرابي."
+  },
+  {
+    "type": "mcq",
+    "category": "السيرة",
+    "difficulty": "hard",
+    "question_ar": "ما هي الغزوة التي كُسرت فيها رباعية النبي وشُج وجهه؟",
+    "options_ar": [
+      "أحد",
+      "بدر",
+      "الخندق",
+      "حنين"
+    ],
+    "correctIndex": 0,
+    "source_ar": "Islamic & Cultural Question Bank v1.0",
+    "explanation_ar": "بسبب مخالفة الرماة لأمر النبي ونزولهم عن الجبل."
+  },
+  {
+    "type": "mcq",
+    "category": "القرآن الكريم",
+    "difficulty": "medium",
+    "question_ar": "من هو الخليفة الذي أمر بجمع القرآن في مصحف واحد لأول مرة؟",
+    "options_ar": [
+      "أبو بكر الصديق",
+      "عمر بن الخطاب",
+      "عثمان بن عفان",
+      "علي بن أبي طالب"
+    ],
+    "correctIndex": 0,
+    "source_ar": "Islamic & Cultural Question Bank v1.0",
+    "explanation_ar": "بعد استشهاد عدد كبير من الحفاظ في حروب الردة."
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "medium",
+    "question_ar": "من هو الشاعر الذي لُقب بـ 'أمير الشعراء'؟",
+    "options_ar": [
+      "أحمد شوقي",
+      "حافظ إبراهيم",
+      "المتنبي",
+      "البحتري"
+    ],
+    "correctIndex": 0,
+    "source_ar": "Islamic & Cultural Question Bank v1.0",
+    "explanation_ar": "شاعر مصري يعد من أعظم شعراء العربية في العصر الحديث."
+  },
+  {
+    "type": "mcq",
+    "category": "الحديث الشريف",
+    "difficulty": "extreme",
+    "question_ar": "ما هي الكتب الستة المعتمدة في الحديث؟",
+    "options_ar": [
+      "البخاري، مسلم، الترمذي، النسائي، أبو داود، ابن ماجه",
+      "البخاري، مسلم، الموطأ، المسند، سنن الدارمي، ابن حبان",
+      "البخاري، مسلم، الترمذي، النسائي، أبو داود، الدارقطني",
+      "البخاري، مسلم، المستدرك، المعجم الكبير، البيهقي، الموطأ"
+    ],
+    "correctIndex": 0,
+    "source_ar": "Islamic & Cultural Question Bank v1.0",
+    "explanation_ar": "تعرف بـ 'الكتب الستة' وهي أهم مراجع السنة النبوية."
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "medium",
+    "question_ar": "من هو آخر من توفي من العشرة المبشرين بالجنة؟",
+    "options_ar": [
+      "سعد بن أبي وقاص",
+      "سعيد بن زيد",
+      "طلحة بن عبيد الله",
+      "الزبير بن العوام"
+    ],
+    "correctIndex": 0,
+    "source_ar": "Islamic & Cultural Question Bank v1.0",
+    "explanation_ar": "توفي في قصره بالعقيق وحمل إلى المدينة."
+  },
+  {
+    "type": "mcq",
+    "category": "السيرة",
+    "difficulty": "medium",
+    "question_ar": "ما اسم العام الذي ولد فيه النبي صلى الله عليه وسلم؟",
+    "options_ar": [
+      "عام الفيل",
+      "عام الحزن",
+      "عام الرمادة",
+      "عام الوفود"
+    ],
+    "correctIndex": 0,
+    "source_ar": "Islamic & Cultural Question Bank v1.0",
+    "explanation_ar": "الذي حاول فيه أبرهة هدم الكعبة."
+  },
+  {
+    "type": "mcq",
+    "category": "الصحابة",
+    "difficulty": "hard",
+    "question_ar": "من هو السلطان العثماني الذي انتصر في معركة الريدانية؟",
+    "options_ar": [
+      "سليم الأول",
+      "سليمان القانوني",
+      "بايزيد الثاني",
+      "مراد الرابع"
+    ],
+    "correctIndex": 0,
+    "source_ar": "Islamic & Cultural Question Bank v1.0",
+    "explanation_ar": "أنهى حكم المماليك في مصر عام 1517م."
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "easy",
+    "question_ar": "ما هي عملة المملكة المتحدة؟",
+    "options_ar": [
+      "الجنيه الإسترليني",
+      "اليورو",
+      "الدولار",
+      "الفرنك"
+    ],
+    "correctIndex": 0,
+    "source_ar": "Islamic & Cultural Question Bank v1.0",
+    "explanation_ar": "من أقدم العملات المستمرة في العالم."
+  },
+  {
+    "type": "mcq",
+    "category": "الفقه",
+    "difficulty": "medium",
+    "question_ar": "ما حكم صلاة العيدين؟",
+    "options_ar": [
+      "سنة مؤكدة",
+      "فرض عين",
+      "مباحة",
+      "ركن"
+    ],
+    "correctIndex": 0,
+    "source_ar": "Islamic & Cultural Question Bank v1.0",
+    "explanation_ar": "واظب عليها النبي صلى الله عليه وسلم ولم يتركها."
+  },
+  {
+    "type": "mcq",
+    "category": "الصحابة",
+    "difficulty": "medium",
+    "question_ar": "من هو الصحابي الذي دافع عن النبي في أحد حتى شلت يده؟",
+    "options_ar": [
+      "طلحة بن عبيد الله",
+      "الزبير بن العوام",
+      "سعد بن أبي وقاص",
+      "أبو دجانة"
+    ],
+    "correctIndex": 0,
+    "source_ar": "Islamic & Cultural Question Bank v1.0",
+    "explanation_ar": "لقب بـ 'صقر يوم أحد' لكثرة ما أصابه دفاعاً عن الرسول."
+  },
+  {
+    "type": "mcq",
+    "category": "السيرة",
+    "difficulty": "medium",
+    "question_ar": "كم عدد أولاد النبي صلى الله عليه وسلم من الذكور والإناث؟",
+    "options_ar": [
+      "7",
+      "6",
+      "5",
+      "8"
+    ],
+    "correctIndex": 0,
+    "source_ar": "Islamic & Cultural Question Bank v1.0",
+    "explanation_ar": "القاسم، عبد الله، إبراهيم، زينب، رقية، أم كلثوم، فاطمة."
+  },
+  {
+    "type": "mcq",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "extreme",
+    "question_ar": "من أسس دولة الفونج (السلطنة الزرقاء)؟",
+    "options_ar": [
+      "عمارة بن دنقس",
+      "عبد الله جماع",
+      "عجيب المانجلك",
+      "بادي الرابع"
+    ],
+    "correctIndex": 0,
+    "source_ar": "Islamic & Cultural Question Bank v1.0",
+    "explanation_ar": "أول سلطنة إسلامية كبرى في سنار بالسودان."
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "hard",
+    "question_ar": "من هو مؤلف كتاب 'البخلاء'؟",
+    "options_ar": [
+      "الجاحظ",
+      "الأصمعي",
+      "ابن المقفع",
+      "بديع الزمان الهمذاني"
+    ],
+    "correctIndex": 0,
+    "source_ar": "Islamic & Cultural Question Bank v1.0",
+    "explanation_ar": "من أهم كتب الأدب العربي التي تصور الحياة الاجتماعية في العصر العباسي."
+  },
+  {
+    "type": "mcq",
+    "category": "القرآن الكريم",
+    "difficulty": "medium",
+    "question_ar": "ما هي السورة التي تسمى 'قلب القرآن'؟",
+    "options_ar": [
+      "يس",
+      "الرحمن",
+      "الملك",
+      "الكهف"
+    ],
+    "correctIndex": 0,
+    "source_ar": "Islamic & Cultural Question Bank v1.0",
+    "explanation_ar": "ورد في الأثر: 'إن لكل شيء قلباً، وقلب القرآن يس'."
+  },
+  {
+    "type": "mcq",
+    "category": "الصحابة",
+    "difficulty": "hard",
+    "question_ar": "من هو الصحابي الذي نزل فيه قول الله 'ومن الناس من يشري نفسه ابتغاء مرضات الله'؟",
+    "options_ar": [
+      "صهيب الرومي",
+      "بلال بن رباح",
+      "عمار بن ياسر",
+      "خباب بن الأرت"
+    ],
+    "correctIndex": 0,
+    "source_ar": "Islamic & Cultural Question Bank v1.0",
+    "explanation_ar": "عندما تنازل عن ماله لقريش مقابل السماح له بالهجرة."
+  },
+  {
+    "type": "mcq",
+    "category": "الصحابة",
+    "difficulty": "hard",
+    "question_ar": "من هو الصحابي الذي استخلفه النبي على المدينة في غزوة تبوك؟",
+    "options_ar": [
+      "علي بن أبي طالب",
+      "عثمان بن عفان",
+      "أبو بكر الصديق",
+      "عبد الله بن أم مكتوم"
+    ],
+    "correctIndex": 0,
+    "source_ar": "Islamic & Cultural Question Bank v1.0",
+    "explanation_ar": "قال له النبي: 'ألا ترضى أن تكون مني بمنزلة هارون من موسى'."
+  },
+  {
+    "type": "mcq",
+    "category": "الصحابة",
+    "difficulty": "easy",
+    "question_ar": "من هو الصحابي الذي لقب بالفاروق؟",
+    "options_ar": [
+      "عمر بن الخطاب",
+      "أبو بكر الصديق",
+      "حمزة بن عبد المطلب",
+      "خالد بن الوليد"
+    ],
+    "correctIndex": 0,
+    "source_ar": "سيرة"
+  },
+  {
+    "type": "mcq",
+    "category": "الصحابة",
+    "difficulty": "medium",
+    "question_ar": "من هو الصحابي الملقب بـ ذو النورين؟",
+    "options_ar": [
+      "عثمان بن عفان",
+      "علي بن أبي طالب",
+      "سعد بن أبي وقاص",
+      "الزبير بن العوام"
+    ],
+    "correctIndex": 0,
+    "source_ar": "سيرة"
+  },
+  {
+    "type": "mcq",
+    "category": "الصحابة",
+    "difficulty": "medium",
+    "question_ar": "من هو أمين هذه الأمة؟",
+    "options_ar": [
+      "أبو عبيدة بن الجراح",
+      "أبو ذر الغفاري",
+      "سلمان الفارسي",
+      "عمار بن ياسر"
+    ],
+    "correctIndex": 0,
+    "source_ar": "سيرة"
+  },
+  {
+    "type": "mcq",
+    "category": "الصحابة",
+    "difficulty": "hard",
+    "question_ar": "من هو الصحابي الذي غسلته الملائكة؟",
+    "options_ar": [
+      "حنظلة بن أبي عامر",
+      "خزيمة بن ثابت",
+      "أبي بن كعب",
+      "زيد بن ثابت"
+    ],
+    "correctIndex": 0,
+    "source_ar": "سيرة"
+  },
+  {
+    "type": "mcq",
+    "category": "الصحابة",
+    "difficulty": "extreme",
+    "question_ar": "من هو الصحابي الملقب بـ ذو الشهادتين؟",
+    "options_ar": [
+      "خزيمة بن ثابت",
+      "ثابت بن قيس",
+      "البراء بن عازب",
+      "حذيفة بن اليمان"
+    ],
+    "correctIndex": 0,
+    "source_ar": "سيرة"
+  },
+  {
+    "type": "mcq",
+    "category": "الصحابة",
+    "difficulty": "medium",
+    "question_ar": "من هو حواري رسول الله صلى الله عليه وسلم؟",
+    "options_ar": [
+      "الزبير بن العوام",
+      "طلحة بن عبيد الله",
+      "سعد بن أبي وقاص",
+      "سعيد بن زيد"
+    ],
+    "correctIndex": 0,
+    "source_ar": "سيرة"
+  },
+  {
+    "type": "mcq",
+    "category": "الصحابة",
+    "difficulty": "medium",
+    "question_ar": "من هو مؤذن الرسول صلى الله عليه وسلم؟",
+    "options_ar": [
+      "بلال بن رباح",
+      "عبدالله بن أم مكتوم",
+      "أبو محذورة",
+      "جميع ما سبق"
+    ],
+    "correctIndex": 3,
+    "source_ar": "سيرة"
+  },
+  {
+    "type": "mcq",
+    "category": "الصحابة",
+    "difficulty": "hard",
+    "question_ar": "من هو الصحابي الذي قال عنه النبي: يمشي وحده ويموت وحده ويبعث وحده؟",
+    "options_ar": [
+      "أبو ذر الغفاري",
+      "عمار بن ياسر",
+      "أبو الدرداء",
+      "سلمان الفارسي"
+    ],
+    "correctIndex": 0,
+    "source_ar": "سيرة"
+  },
+  {
+    "type": "mcq",
+    "category": "الصحابة",
+    "difficulty": "extreme",
+    "question_ar": "من هو الصحابي الذي لُقب بـ أسد الله؟",
+    "options_ar": [
+      "حمزة بن عبد المطلب",
+      "علي بن أبي طالب",
+      "خالد بن الوليد",
+      "عمر بن الخطاب"
+    ],
+    "correctIndex": 0,
+    "source_ar": "سيرة"
+  },
+  {
+    "type": "mcq",
+    "category": "الصحابة",
+    "difficulty": "medium",
+    "question_ar": "من هي الصحابية التي لقبت بـ ذات النطاقين؟",
+    "options_ar": [
+      "أسماء بنت أبي بكر",
+      "عائشة بنت أبي بكر",
+      "فاطمة بنت الخطاب",
+      "أسماء بنت عميس"
+    ],
+    "correctIndex": 0,
+    "source_ar": "سيرة"
+  },
+  {
+    "type": "mcq",
+    "category": "الصحابة",
+    "difficulty": "medium",
+    "question_ar": "من هو الصحابي الذي جمع القرآن الكريم في مصحف واحد لأول مرة؟",
+    "options_ar": [
+      "أبو بكر الصديق",
+      "عمر بن الخطاب",
+      "عثمان بن عفان",
+      "علي بن أبي طالب"
+    ],
+    "correctIndex": 0,
+    "source_ar": "تاريخ"
+  },
+  {
+    "type": "mcq",
+    "category": "الصحابة",
+    "difficulty": "hard",
+    "question_ar": "من هو الصحابي الذي نسخ المصاحف ووزعها على الأمصار؟",
+    "options_ar": [
+      "عثمان بن عفان",
+      "أبو بكر الصديق",
+      "زيد بن ثابت",
+      "أبي بن كعب"
+    ],
+    "correctIndex": 0,
+    "source_ar": "تاريخ"
+  },
+  {
+    "type": "mcq",
+    "category": "الصحابة",
+    "difficulty": "medium",
+    "question_ar": "من هو الصحابي الذي نام في فراش النبي ليلة الهجرة؟",
+    "options_ar": [
+      "علي بن أبي طالب",
+      "أبو بكر الصديق",
+      "عمر بن الخطاب",
+      "عثمان بن عفان"
+    ],
+    "correctIndex": 0,
+    "source_ar": "سيرة"
+  },
+  {
+    "type": "mcq",
+    "category": "الصحابة",
+    "difficulty": "hard",
+    "question_ar": "من هو الصحابي الذي كان رفيق النبي في الهجرة؟",
+    "options_ar": [
+      "أبو بكر الصديق",
+      "عمر بن الخطاب",
+      "عثمان بن عفان",
+      "علي بن أبي طالب"
+    ],
+    "correctIndex": 0,
+    "source_ar": "سيرة"
+  },
+  {
+    "type": "mcq",
+    "category": "الصحابة",
+    "difficulty": "extreme",
+    "question_ar": "من هو الصحابي المعروف بـ سيد القراء؟",
+    "options_ar": [
+      "أبي بن كعب",
+      "عبدالله بن مسعود",
+      "زيد بن ثابت",
+      "معاذ بن جبل"
+    ],
+    "correctIndex": 0,
+    "source_ar": "سيرة"
+  },
+  {
+    "type": "mcq",
+    "category": "الصحابة",
+    "difficulty": "hard",
+    "question_ar": "من هو الصحابي الذي قاد جيش المسلمين في معركة القادسية؟",
+    "options_ar": [
+      "سعد بن أبي وقاص",
+      "خالد بن الوليد",
+      "أبو عبيدة بن الجراح",
+      "عمرو بن العاص"
+    ],
+    "correctIndex": 0,
+    "source_ar": "تاريخ"
+  },
+  {
+    "type": "mcq",
+    "category": "الصحابة",
+    "difficulty": "hard",
+    "question_ar": "من هو الصحابي الذي فتح مصر؟",
+    "options_ar": [
+      "عمرو بن العاص",
+      "خالد بن الوليد",
+      "شرحبيل بن حسنة",
+      "يزيد بن أبي سفيان"
+    ],
+    "correctIndex": 0,
+    "source_ar": "تاريخ"
+  },
+  {
+    "type": "mcq",
+    "category": "الصحابة",
+    "difficulty": "medium",
+    "question_ar": "من هو سيف الله المسلول؟",
+    "options_ar": [
+      "خالد بن الوليد",
+      "أبو عبيدة بن الجراح",
+      "علي بن أبي طالب",
+      "حمزة بن عبد المطلب"
+    ],
+    "correctIndex": 0,
+    "source_ar": "سيرة"
+  },
+  {
+    "type": "mcq",
+    "category": "الصحابة",
+    "difficulty": "medium",
+    "question_ar": "من هو الصحابي الذي دعا له النبي بكثرة المال والولد؟",
+    "options_ar": [
+      "أنس بن مالك",
+      "أبو هريرة",
+      "عبدالله بن عباس",
+      "عبدالله بن عمر"
+    ],
+    "correctIndex": 0,
+    "source_ar": "سيرة"
+  },
+  {
+    "type": "mcq",
+    "category": "الصحابة",
+    "difficulty": "hard",
+    "question_ar": "من هو ترجمان القرآن؟",
+    "options_ar": [
+      "عبدالله بن عباس",
+      "عبدالله بن مسعود",
+      "علي بن أبي طالب",
+      "أبي بن كعب"
+    ],
+    "correctIndex": 0,
+    "source_ar": "سيرة"
+  },
+  {
+    "type": "mcq",
+    "category": "الصحابة",
+    "difficulty": "extreme",
+    "question_ar": "من هو الصحابي الذي قتله الجن؟",
+    "options_ar": [
+      "سعد بن عبادة",
+      "سعد بن معاذ",
+      "أسيد بن حضير",
+      "عباد بن بشر"
+    ],
+    "correctIndex": 0,
+    "source_ar": "تاريخ"
+  },
+  {
+    "type": "mcq",
+    "category": "الصحابة",
+    "difficulty": "medium",
+    "question_ar": "من هي أول شهيدة في الإسلام؟",
+    "options_ar": [
+      "سمية بنت خياط",
+      "نسيبة بنت كعب",
+      "أم عمارة",
+      "خولة بنت الأزور"
+    ],
+    "correctIndex": 0,
+    "source_ar": "سيرة"
+  },
+  {
+    "type": "mcq",
+    "category": "الصحابة",
+    "difficulty": "hard",
+    "question_ar": "من هو أول سفير في الإسلام؟",
+    "options_ar": [
+      "مصعب بن عمير",
+      "جعفر بن أبي طالب",
+      "دحية الكلبي",
+      "عثمان بن عفان"
+    ],
+    "correctIndex": 0,
+    "source_ar": "سيرة"
+  },
+  {
+    "type": "mcq",
+    "category": "الصحابة",
+    "difficulty": "hard",
+    "question_ar": "من هو الصحابي الذي تصدق بكل ماله؟",
+    "options_ar": [
+      "أبو بكر الصديق",
+      "عمر بن الخطاب",
+      "عثمان بن عفان",
+      "عبدالرحمن بن عوف"
+    ],
+    "correctIndex": 0,
+    "source_ar": "سيرة"
+  },
+  {
+    "type": "mcq",
+    "category": "الصحابة",
+    "difficulty": "medium",
+    "question_ar": "من هو الصحابي الذي تصدق بنصف ماله؟",
+    "options_ar": [
+      "عمر بن الخطاب",
+      "أبو بكر الصديق",
+      "عثمان بن عفان",
+      "علي بن أبي طالب"
+    ],
+    "correctIndex": 0,
+    "source_ar": "سيرة"
+  },
+  {
+    "type": "mcq",
+    "category": "الصحابة",
+    "difficulty": "hard",
+    "question_ar": "من هو الصحابي الذي جهز جيش العسرة؟",
+    "options_ar": [
+      "عثمان بن عفان",
+      "أبو بكر الصديق",
+      "عبدالرحمن بن عوف",
+      "العباس بن عبد المطلب"
+    ],
+    "correctIndex": 0,
+    "source_ar": "سيرة"
+  },
+  {
+    "type": "mcq",
+    "category": "الصحابة",
+    "difficulty": "medium",
+    "question_ar": "من هو حب رسول الله وابن حبه؟",
+    "options_ar": [
+      "أسامة بن زيد",
+      "زيد بن حارثة",
+      "الحسن بن علي",
+      "الحسين بن علي"
+    ],
+    "correctIndex": 0,
+    "source_ar": "سيرة"
+  },
+  {
+    "type": "mcq",
+    "category": "الصحابة",
+    "difficulty": "hard",
+    "question_ar": "من هو الصحابي الذي ذكر اسمه صراحة في القرآن الكريم؟",
+    "options_ar": [
+      "زيد بن حارثة",
+      "أبو بكر الصديق",
+      "عمر بن الخطاب",
+      "علي بن أبي طالب"
+    ],
+    "correctIndex": 0,
+    "source_ar": "قرآن"
+  },
+  {
+    "type": "mcq",
+    "category": "الصحابة",
+    "difficulty": "extreme",
+    "question_ar": "من هو الصحابي الملقب بـ أرطبون العرب؟",
+    "options_ar": [
+      "عمرو بن العاص",
+      "المغيرة بن شعبة",
+      "معاوية بن أبي سفيان",
+      "زياد بن أبيه"
+    ],
+    "correctIndex": 0,
+    "source_ar": "تاريخ"
+  },
+  {
+    "type": "mcq",
+    "category": "الصحابة",
+    "difficulty": "hard",
+    "question_ar": "من هو الصحابي الذي قاد جيش المسلمين في معركة اليرموك؟",
+    "options_ar": [
+      "خالد بن الوليد",
+      "أبو عبيدة بن الجراح",
+      "شرحبيل بن حسنة",
+      "يزيد بن أبي سفيان"
+    ],
+    "correctIndex": 0,
+    "source_ar": "تاريخ"
+  },
+  {
+    "type": "mcq",
+    "category": "الصحابة",
+    "difficulty": "medium",
+    "question_ar": "من هو الصحابي الذي لقب بـ أمير الأمراء؟",
+    "options_ar": [
+      "أبو عبيدة بن الجراح",
+      "خالد بن الوليد",
+      "سعد بن أبي وقاص",
+      "عمرو بن العاص"
+    ],
+    "correctIndex": 0,
+    "source_ar": "تاريخ"
+  },
+  {
+    "type": "mcq",
+    "category": "الصحابة",
+    "difficulty": "extreme",
+    "question_ar": "من هو الصحابي الذي كان يشبه الرسول صلى الله عليه وسلم في خلقه؟",
+    "options_ar": [
+      "جعفر بن أبي طالب",
+      "الحسن بن علي",
+      "مصعب بن عمير",
+      "الزبير بن العوام"
+    ],
+    "correctIndex": 0,
+    "source_ar": "سيرة"
+  },
+  {
+    "type": "mcq",
+    "category": "الصحابة",
+    "difficulty": "hard",
+    "question_ar": "من هو الصحابي الذي قال عنه النبي: لو كان نبي بعدي لكان هو؟",
+    "options_ar": [
+      "عمر بن الخطاب",
+      "أبو بكر الصديق",
+      "عثمان بن عفان",
+      "علي بن أبي طالب"
+    ],
+    "correctIndex": 0,
+    "source_ar": "سيرة"
+  },
+  {
+    "type": "mcq",
+    "category": "الصحابة",
+    "difficulty": "medium",
+    "question_ar": "من هو شاعر الرسول صلى الله عليه وسلم؟",
+    "options_ar": [
+      "حسان بن ثابت",
+      "كعب بن زهير",
+      "عبدالله بن رواحة",
+      "لبيد بن ربيعة"
+    ],
+    "correctIndex": 0,
+    "source_ar": "أدب"
+  },
+  {
+    "type": "mcq",
+    "category": "الصحابة",
+    "difficulty": "hard",
+    "question_ar": "من هو خطيب رسول الله صلى الله عليه وسلم؟",
+    "options_ar": [
+      "ثابت بن قيس",
+      "حسان بن ثابت",
+      "أبو بكر الصديق",
+      "عمر بن الخطاب"
+    ],
+    "correctIndex": 0,
+    "source_ar": "سيرة"
+  },
+  {
+    "type": "mcq",
+    "category": "الصحابة",
+    "difficulty": "extreme",
+    "question_ar": "من هو الصحابي الذي استشهد يوم أحد وحملته الملائكة؟",
+    "options_ar": [
+      "حنظلة بن أبي عامر",
+      "مصعب بن عمير",
+      "حمزة بن عبد المطلب",
+      "عبدالله بن جحش"
+    ],
+    "correctIndex": 0,
+    "source_ar": "سيرة"
+  },
+  {
+    "type": "mcq",
+    "category": "الصحابة",
+    "difficulty": "medium",
+    "question_ar": "من هو الصحابي الذي أضاءت له عصاه في ليلة مظلمة؟",
+    "options_ar": [
+      "عباد بن بشر",
+      "أسيد بن حضير",
+      "كلاهما",
+      "لا أحد منهما"
+    ],
+    "correctIndex": 2,
+    "source_ar": "سيرة"
+  },
+  {
+    "type": "mcq",
+    "category": "السيرة النبوية",
+    "difficulty": "easy",
+    "question_ar": "في أي عام ولد النبي صلى الله عليه وسلم؟",
+    "options_ar": [
+      "عام الفيل",
+      "عام الحزن",
+      "عام الرمادة",
+      "عام الوفود"
+    ],
+    "correctIndex": 0,
+    "source_ar": "سيرة"
+  },
+  {
+    "type": "mcq",
+    "category": "السيرة النبوية",
+    "difficulty": "easy",
+    "question_ar": "ما اسم والدة النبي صلى الله عليه وسلم؟",
+    "options_ar": [
+      "آمنة بنت وهب",
+      "حليمة السعدية",
+      "فاطمة بنت أسد",
+      "بركة بنت ثعلبة"
+    ],
+    "correctIndex": 0,
+    "source_ar": "سيرة"
+  },
+  {
+    "type": "mcq",
+    "category": "السيرة النبوية",
+    "difficulty": "easy",
+    "question_ar": "من هي مرضعة النبي صلى الله عليه وسلم؟",
+    "options_ar": [
+      "حليمة السعدية",
+      "آمنة بنت وهب",
+      "الشيماء",
+      "ثويبة"
+    ],
+    "correctIndex": 0,
+    "source_ar": "سيرة"
+  },
+  {
+    "type": "mcq",
+    "category": "السيرة النبوية",
+    "difficulty": "medium",
+    "question_ar": "كم كان عمر النبي عند البعثة؟",
+    "options_ar": [
+      "40 سنة",
+      "25 سنة",
+      "50 سنة",
+      "35 سنة"
+    ],
+    "correctIndex": 0,
+    "source_ar": "سيرة"
+  },
+  {
+    "type": "mcq",
+    "category": "السيرة النبوية",
+    "difficulty": "medium",
+    "question_ar": "ما هي أول غزوة في الإسلام؟",
+    "options_ar": [
+      "غزوة ودان (الأبواء)",
+      "غزوة بدر",
+      "غزوة أحد",
+      "غزوة الخندق"
+    ],
+    "correctIndex": 0,
+    "source_ar": "سيرة"
+  },
+  {
+    "type": "mcq",
+    "category": "السيرة النبوية",
+    "difficulty": "medium",
+    "question_ar": "في أي سنة كانت غزوة بدر الكبرى؟",
+    "options_ar": [
+      "2 هـ",
+      "3 هـ",
+      "4 هـ",
+      "5 هـ"
+    ],
+    "correctIndex": 0,
+    "source_ar": "سيرة"
+  },
+  {
+    "type": "mcq",
+    "category": "السيرة النبوية",
+    "difficulty": "medium",
+    "question_ar": "في أي سنة كانت غزوة أحد؟",
+    "options_ar": [
+      "3 هـ",
+      "2 هـ",
+      "4 هـ",
+      "5 هـ"
+    ],
+    "correctIndex": 0,
+    "source_ar": "سيرة"
+  },
+  {
+    "type": "mcq",
+    "category": "السيرة النبوية",
+    "difficulty": "hard",
+    "question_ar": "ما هي الغزوة التي سميت بـ غزوة الأحزاب؟",
+    "options_ar": [
+      "غزوة الخندق",
+      "غزوة بني قريظة",
+      "غزوة خيبر",
+      "غزوة تبوك"
+    ],
+    "correctIndex": 0,
+    "source_ar": "سيرة"
+  },
+  {
+    "type": "mcq",
+    "category": "السيرة النبوية",
+    "difficulty": "medium",
+    "question_ar": "ما هي آخر غزوة غزاها الرسول صلى الله عليه وسلم؟",
+    "options_ar": [
+      "غزوة تبوك",
+      "غزوة حنين",
+      "فتح مكة",
+      "غزوة مؤتة"
+    ],
+    "correctIndex": 0,
+    "source_ar": "سيرة"
+  },
+  {
+    "type": "mcq",
+    "category": "السيرة النبوية",
+    "difficulty": "medium",
+    "question_ar": "في أي سنة كان فتح مكة؟",
+    "options_ar": [
+      "8 هـ",
+      "6 هـ",
+      "9 هـ",
+      "10 هـ"
+    ],
+    "correctIndex": 0,
+    "source_ar": "سيرة"
+  },
+  {
+    "type": "mcq",
+    "category": "السيرة النبوية",
+    "difficulty": "hard",
+    "question_ar": "من هو قائد المشركين في غزوة أحد؟",
+    "options_ar": [
+      "أبو سفيان",
+      "أبو جهل",
+      "أمية بن خلف",
+      "عتبة بن ربيعة"
+    ],
+    "correctIndex": 0,
+    "source_ar": "سيرة"
+  },
+  {
+    "type": "mcq",
+    "category": "السيرة النبوية",
+    "difficulty": "hard",
+    "question_ar": "كم عدد المسلمين في غزوة بدر؟",
+    "options_ar": [
+      "313 (تقريباً)",
+      "1000",
+      "700",
+      "3000"
+    ],
+    "correctIndex": 0,
+    "source_ar": "سيرة"
+  },
+  {
+    "type": "mcq",
+    "category": "السيرة النبوية",
+    "difficulty": "hard",
+    "question_ar": "كم عدد المسلمين في غزوة أحد؟",
+    "options_ar": [
+      "700 (بعد رجوع المنافقين)",
+      "1000",
+      "313",
+      "3000"
+    ],
+    "correctIndex": 0,
+    "source_ar": "سيرة"
+  },
+  {
+    "type": "mcq",
+    "category": "السيرة النبوية",
+    "difficulty": "extreme",
+    "question_ar": "ما اسم الدابة التي ركبها النبي في رحلة الإسراء والمعراج؟",
+    "options_ar": [
+      "البراق",
+      "القصواء",
+      "العضباء",
+      "اليعفور"
+    ],
+    "correctIndex": 0,
+    "source_ar": "سيرة"
+  },
+  {
+    "type": "mcq",
+    "category": "السيرة النبوية",
+    "difficulty": "medium",
+    "question_ar": "أين توفيت آمنة بنت وهب أم النبي؟",
+    "options_ar": [
+      "الأبواء",
+      "مكة",
+      "المدينة",
+      "الطائف"
+    ],
+    "correctIndex": 0,
+    "source_ar": "سيرة"
+  },
+  {
+    "type": "mcq",
+    "category": "السيرة النبوية",
+    "difficulty": "medium",
+    "question_ar": "من هو أول من آمن من الرجال؟",
+    "options_ar": [
+      "أبو بكر الصديق",
+      "علي بن أبي طالب",
+      "زيد بن حارثة",
+      "عثمان بن عفان"
+    ],
+    "correctIndex": 0,
+    "source_ar": "سيرة"
+  },
+  {
+    "type": "mcq",
+    "category": "السيرة النبوية",
+    "difficulty": "medium",
+    "question_ar": "من هو أول من آمن من الصبيان؟",
+    "options_ar": [
+      "علي بن أبي طالب",
+      "زيد بن حارثة",
+      "عبدالله بن الزبير",
+      "الحسن بن علي"
+    ],
+    "correctIndex": 0,
+    "source_ar": "سيرة"
+  },
+  {
+    "type": "mcq",
+    "category": "السيرة النبوية",
+    "difficulty": "hard",
+    "question_ar": "ما هي بيعة العقبة الأولى؟",
+    "options_ar": [
+      "بيعة النساء",
+      "بيعة الرضوان",
+      "بيعة الحرب",
+      "بيعة الشجرة"
+    ],
+    "correctIndex": 0,
+    "source_ar": "سيرة"
+  },
+  {
+    "type": "mcq",
+    "category": "السيرة النبوية",
+    "difficulty": "extreme",
+    "question_ar": "من هو الصحابي الذي نزل عليه جبريل في صورة دحية الكلبي؟",
+    "options_ar": [
+      "دحية الكلبي",
+      "أسامة بن زيد",
+      "زيد بن ثابت",
+      "حسان بن ثابت"
+    ],
+    "correctIndex": 0,
+    "source_ar": "سيرة"
+  },
+  {
+    "type": "mcq",
+    "category": "السيرة النبوية",
+    "difficulty": "medium",
+    "question_ar": "ما هو الغار الذي اختبأ فيه النبي وأبو بكر أثناء الهجرة؟",
+    "options_ar": [
+      "غار ثور",
+      "غار حراء",
+      "غار النور",
+      "غار الكهف"
+    ],
+    "correctIndex": 0,
+    "source_ar": "سيرة"
+  },
+  {
+    "type": "mcq",
+    "category": "السيرة النبوية",
+    "difficulty": "medium",
+    "question_ar": "ما هو الغار الذي كان يتعبد فيه النبي قبل البعثة؟",
+    "options_ar": [
+      "غار حراء",
+      "غار ثور",
+      "غار النور",
+      "غار الكهف"
+    ],
+    "correctIndex": 0,
+    "source_ar": "سيرة"
+  },
+  {
+    "type": "mcq",
+    "category": "السيرة النبوية",
+    "difficulty": "medium",
+    "question_ar": "كم سنة استمرت الدعوة السرية؟",
+    "options_ar": [
+      "3 سنوات",
+      "5 سنوات",
+      "10 سنوات",
+      "سنتان"
+    ],
+    "correctIndex": 0,
+    "source_ar": "سيرة"
+  },
+  {
+    "type": "mcq",
+    "category": "السيرة النبوية",
+    "difficulty": "hard",
+    "question_ar": "من هو عم النبي الذي لقبه الله بـ أبي لهب؟",
+    "options_ar": [
+      "عبدالعزى",
+      "أبو طالب",
+      "العباس",
+      "حمزة"
+    ],
+    "correctIndex": 0,
+    "source_ar": "سيرة"
+  },
+  {
+    "type": "mcq",
+    "category": "السيرة النبوية",
+    "difficulty": "medium",
+    "question_ar": "من هي زوجة النبي التي لقبت بـ خديجة الكبرى؟",
+    "options_ar": [
+      "خديجة بنت خويلد",
+      "عائشة بنت أبي بكر",
+      "حفصة بنت عمر",
+      "أم سلمة"
+    ],
+    "correctIndex": 0,
+    "source_ar": "سيرة"
+  },
+  {
+    "type": "mcq",
+    "category": "السيرة النبوية",
+    "difficulty": "hard",
+    "question_ar": "من هي آخر زوجات النبي وفاة؟",
+    "options_ar": [
+      "أم سلمة",
+      "عائشة",
+      "زينب بنت جحش",
+      "ميمونة بنت الحارث"
+    ],
+    "correctIndex": 0,
+    "source_ar": "سيرة"
+  },
+  {
+    "type": "mcq",
+    "category": "السيرة النبوية",
+    "difficulty": "medium",
+    "question_ar": "من هي ابنة النبي التي لقبت بـ الزهراء؟",
+    "options_ar": [
+      "فاطمة",
+      "زينب",
+      "رقية",
+      "أم كلثوم"
+    ],
+    "correctIndex": 0,
+    "source_ar": "سيرة"
+  },
+  {
+    "type": "mcq",
+    "category": "السيرة النبوية",
+    "difficulty": "hard",
+    "question_ar": "من هي زوجة النبي التي نزلت فيها آية التيمم؟",
+    "options_ar": [
+      "عائشة بنت أبي بكر",
+      "حفصة بنت عمر",
+      "أم سلمة",
+      "زينب بنت جحش"
+    ],
+    "correctIndex": 0,
+    "source_ar": "سيرة"
+  },
+  {
+    "type": "mcq",
+    "category": "السيرة النبوية",
+    "difficulty": "extreme",
+    "question_ar": "من هو اليهودي الذي سحر النبي صلى الله عليه وسلم؟",
+    "options_ar": [
+      "لبيد بن الأعصم",
+      "كعب بن الأشرف",
+      "حيي بن أخطب",
+      "سلام بن مشكم"
+    ],
+    "correctIndex": 0,
+    "source_ar": "سيرة"
+  },
+  {
+    "type": "mcq",
+    "category": "السيرة النبوية",
+    "difficulty": "hard",
+    "question_ar": "ما هو المسجد الذي أسس على التقوى؟",
+    "options_ar": [
+      "مسجد قباء",
+      "المسجد النبوي",
+      "المسجد الحرام",
+      "مسجد القبلتين"
+    ],
+    "correctIndex": 0,
+    "source_ar": "قرآن"
+  },
+  {
+    "type": "mcq",
+    "category": "السيرة النبوية",
+    "difficulty": "medium",
+    "question_ar": "ما هي القبلة الأولى للمسلمين؟",
+    "options_ar": [
+      "المسجد الأقصى",
+      "المسجد الحرام",
+      "الكعبة",
+      "مسجد قباء"
+    ],
+    "correctIndex": 0,
+    "source_ar": "سيرة"
+  },
+  {
+    "type": "mcq",
+    "category": "السيرة النبوية",
+    "difficulty": "hard",
+    "question_ar": "في أي سنة تم تحويل القبلة؟",
+    "options_ar": [
+      "2 هـ",
+      "3 هـ",
+      "1 هـ",
+      "4 هـ"
+    ],
+    "correctIndex": 0,
+    "source_ar": "سيرة"
+  },
+  {
+    "type": "mcq",
+    "category": "السيرة النبوية",
+    "difficulty": "medium",
+    "question_ar": "ما هي الصلاة التي صلاها النبي في رحلة الإسراء والمعراج؟",
+    "options_ar": [
+      "إماماً بالأنبياء",
+      "خلف جبريل",
+      "منفرداً",
+      "خلف إبراهيم"
+    ],
+    "correctIndex": 0,
+    "source_ar": "سيرة"
+  },
+  {
+    "type": "mcq",
+    "category": "السيرة النبوية",
+    "difficulty": "extreme",
+    "question_ar": "من هو الصحابي الذي أرسله النبي إلى اليمن قاضياً ومعلماً؟",
+    "options_ar": [
+      "معاذ بن جبل",
+      "علي بن أبي طالب",
+      "أبو موسى الأشعري",
+      "جميع ما سبق"
+    ],
+    "correctIndex": 3,
+    "source_ar": "سيرة"
+  },
+  {
+    "type": "mcq",
+    "category": "السيرة النبوية",
+    "difficulty": "medium",
+    "question_ar": "ما اسم ناقة النبي صلى الله عليه وسلم؟",
+    "options_ar": [
+      "القصواء",
+      "العضباء",
+      "الجدعاء",
+      "جميع ما سبق"
+    ],
+    "correctIndex": 3,
+    "source_ar": "سيرة"
+  },
+  {
+    "type": "mcq",
+    "category": "السيرة النبوية",
+    "difficulty": "hard",
+    "question_ar": "من هو الصحابي الذي قتل مسيلمة الكذاب؟",
+    "options_ar": [
+      "وحشي بن حرب",
+      "خالد بن الوليد",
+      "أبو دجانة",
+      "البراء بن عازب"
+    ],
+    "correctIndex": 0,
+    "source_ar": "تاريخ"
+  },
+  {
+    "type": "mcq",
+    "category": "السيرة النبوية",
+    "difficulty": "hard",
+    "question_ar": "من هو الصحابي الذي ادعى النبوة وحاربه المسلمون؟",
+    "options_ar": [
+      "مسيلمة الكذاب",
+      "الأسود العنسي",
+      "طليحة الأسدي",
+      "سجاح"
+    ],
+    "correctIndex": 0,
+    "source_ar": "تاريخ"
+  },
+  {
+    "type": "mcq",
+    "category": "السيرة النبوية",
+    "difficulty": "medium",
+    "question_ar": "ما هي الحجة التي حجها النبي صلى الله عليه وسلم؟",
+    "options_ar": [
+      "حجة الوداع",
+      "حجة الإسلام",
+      "حجة البلاغ",
+      "جميع ما سبق"
+    ],
+    "correctIndex": 3,
+    "source_ar": "سيرة"
+  },
+  {
+    "type": "mcq",
+    "category": "السيرة النبوية",
+    "difficulty": "medium",
+    "question_ar": "كم مرة اعتمر النبي صلى الله عليه وسلم؟",
+    "options_ar": [
+      "4 عمرات",
+      "3 عمرات",
+      "عمرة واحدة",
+      "مرتان"
+    ],
+    "correctIndex": 0,
+    "source_ar": "سيرة"
+  },
+  {
+    "type": "mcq",
+    "category": "السيرة النبوية",
+    "difficulty": "hard",
+    "question_ar": "في أي يوم توفي النبي صلى الله عليه وسلم؟",
+    "options_ar": [
+      "الاثنين",
+      "الجمعة",
+      "الخميس",
+      "الأربعاء"
+    ],
+    "correctIndex": 0,
+    "source_ar": "سيرة"
+  },
+  {
+    "type": "mcq",
+    "category": "السيرة النبوية",
+    "difficulty": "medium",
+    "question_ar": "كم كان عمر النبي حين توفي؟",
+    "options_ar": [
+      "63 سنة",
+      "60 سنة",
+      "65 سنة",
+      "40 سنة"
+    ],
+    "correctIndex": 0,
+    "source_ar": "سيرة"
+  },
+  {
+    "type": "mcq",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "easy",
+    "question_ar": "من هو مؤسس الدولة الأموية؟",
+    "options_ar": [
+      "معاوية بن أبي سفيان",
+      "يزيد بن معاوية",
+      "مروان بن الحكم",
+      "عبدالملك بن مروان"
+    ],
+    "correctIndex": 0,
+    "source_ar": "تاريخ"
+  },
+  {
+    "type": "mcq",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "medium",
+    "question_ar": "من هو خامس الخلفاء الراشدين؟",
+    "options_ar": [
+      "عمر بن عبدالعزيز",
+      "معاوية بن أبي سفيان",
+      "الحسن بن علي",
+      "عبدالله بن الزبير"
+    ],
+    "correctIndex": 2,
+    "source_ar": "تاريخ"
+  },
+  {
+    "type": "mcq",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "hard",
+    "question_ar": "من هو الخليفة الأموي الذي أمر بتدوين السنة؟",
+    "options_ar": [
+      "عمر بن عبدالعزيز",
+      "الوليد بن عبدالملك",
+      "سليمان بن عبدالملك",
+      "هشام بن عبدالملك"
+    ],
+    "correctIndex": 0,
+    "source_ar": "تاريخ"
+  },
+  {
+    "type": "mcq",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "medium",
+    "question_ar": "ما هي عاصمة الدولة العباسية؟",
+    "options_ar": [
+      "بغداد",
+      "دمشق",
+      "القاهرة",
+      "البصرة"
+    ],
+    "correctIndex": 0,
+    "source_ar": "تاريخ"
+  },
+  {
+    "type": "mcq",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "medium",
+    "question_ar": "من هو الخليفة الذي بنى بغداد؟",
+    "options_ar": [
+      "أبو جعفر المنصور",
+      "أبو العباس السفاح",
+      "المهدي",
+      "هارون الرشيد"
+    ],
+    "correctIndex": 0,
+    "source_ar": "تاريخ"
+  },
+  {
+    "type": "mcq",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "hard",
+    "question_ar": "في أي عام سقطت الدولة الأموية؟",
+    "options_ar": [
+      "132 هـ",
+      "100 هـ",
+      "150 هـ",
+      "120 هـ"
+    ],
+    "correctIndex": 0,
+    "source_ar": "تاريخ"
+  },
+  {
+    "type": "mcq",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "hard",
+    "question_ar": "في أي عام سقطت الدولة العباسية؟",
+    "options_ar": [
+      "656 هـ",
+      "500 هـ",
+      "700 هـ",
+      "800 هـ"
+    ],
+    "correctIndex": 0,
+    "source_ar": "تاريخ"
+  },
+  {
+    "type": "mcq",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "medium",
+    "question_ar": "من هو القائد الذي فتح الأندلس؟",
+    "options_ar": [
+      "طارق بن زياد",
+      "موسى بن نصير",
+      "عبدالرحمن الداخل",
+      "يوسف بن تاشفين"
+    ],
+    "correctIndex": 0,
+    "source_ar": "تاريخ"
+  },
+  {
+    "type": "mcq",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "medium",
+    "question_ar": "من هو صقر قريش؟",
+    "options_ar": [
+      "عبدالرحمن الداخل",
+      "عبدالملك بن مروان",
+      "هشام بن عبدالملك",
+      "الوليد بن عبدالملك"
+    ],
+    "correctIndex": 0,
+    "source_ar": "تاريخ"
+  },
+  {
+    "type": "mcq",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "hard",
+    "question_ar": "متى سقطت الأندلس (سقوط غرناطة)؟",
+    "options_ar": [
+      "1492 م",
+      "1453 م",
+      "1517 م",
+      "1258 م"
+    ],
+    "correctIndex": 0,
+    "source_ar": "تاريخ"
+  },
+  {
+    "type": "mcq",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "medium",
+    "question_ar": "من هو فاتح القسطنطينية؟",
+    "options_ar": [
+      "محمد الفاتح",
+      "سليمان القانوني",
+      "سليم الأول",
+      "عثمان الأول"
+    ],
+    "correctIndex": 0,
+    "source_ar": "تاريخ"
+  },
+  {
+    "type": "mcq",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "hard",
+    "question_ar": "في أي عام فتحت القسطنطينية؟",
+    "options_ar": [
+      "1453 م",
+      "1492 م",
+      "1517 م",
+      "1299 م"
+    ],
+    "correctIndex": 0,
+    "source_ar": "تاريخ"
+  },
+  {
+    "type": "mcq",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "medium",
+    "question_ar": "من هو السلطان الذي انتصر في معركة عين جالوت؟",
+    "options_ar": [
+      "سيف الدين قطز",
+      "الظاهر بيبرس",
+      "صلاح الدين الأيوبي",
+      "نور الدين زنكي"
+    ],
+    "correctIndex": 0,
+    "source_ar": "تاريخ"
+  },
+  {
+    "type": "mcq",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "medium",
+    "question_ar": "من هو القائد الذي حرر القدس من الصليبيين؟",
+    "options_ar": [
+      "صلاح الدين الأيوبي",
+      "نور الدين زنكي",
+      "عماد الدين زنكي",
+      "بيبرس"
+    ],
+    "correctIndex": 0,
+    "source_ar": "تاريخ"
+  },
+  {
+    "type": "mcq",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "medium",
+    "question_ar": "في أي معركة انتصر صلاح الدين على الصليبيين؟",
+    "options_ar": [
+      "حطين",
+      "عين جالوت",
+      "اليرموك",
+      "القادسية"
+    ],
+    "correctIndex": 0,
+    "source_ar": "تاريخ"
+  },
+  {
+    "type": "mcq",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "hard",
+    "question_ar": "من هو مؤسس الدولة العثمانية؟",
+    "options_ar": [
+      "عثمان بن أرطغرل",
+      "أرطغرل",
+      "أورخان",
+      "مراد الأول"
+    ],
+    "correctIndex": 0,
+    "source_ar": "تاريخ"
+  },
+  {
+    "type": "mcq",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "extreme",
+    "question_ar": "من هو مؤسس دولة المرابطين؟",
+    "options_ar": [
+      "يوسف بن تاشفين",
+      "عبدالله بن ياسين",
+      "أبو بكر بن عمر",
+      "علي بن يوسف"
+    ],
+    "correctIndex": 1,
+    "source_ar": "تاريخ"
+  },
+  {
+    "type": "mcq",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "extreme",
+    "question_ar": "من هو مؤسس دولة الموحدين؟",
+    "options_ar": [
+      "محمد بن تومرت",
+      "عبدالمومن بن علي",
+      "يوسف بن تاشفين",
+      "المنصور الموحدي"
+    ],
+    "correctIndex": 0,
+    "source_ar": "تاريخ"
+  },
+  {
+    "type": "mcq",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "hard",
+    "question_ar": "من هو الخليفة الذي أنشأ أول أسطول بحري إسلامي؟",
+    "options_ar": [
+      "عثمان بن عفان",
+      "معاوية بن أبي سفيان",
+      "عمر بن الخطاب",
+      "علي بن أبي طالب"
+    ],
+    "correctIndex": 0,
+    "source_ar": "تاريخ"
+  },
+  {
+    "type": "mcq",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "medium",
+    "question_ar": "ما هي المعركة التي انتصر فيها المسلمون على الفرس وسميت فتح الفتوح؟",
+    "options_ar": [
+      "نهاوند",
+      "القادسية",
+      "المدائن",
+      "جلولاء"
+    ],
+    "correctIndex": 0,
+    "source_ar": "تاريخ"
+  },
+  {
+    "type": "mcq",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "medium",
+    "question_ar": "ما هي المعركة التي انتصر فيها المسلمون على الروم في الشام؟",
+    "options_ar": [
+      "اليرموك",
+      "أجنادين",
+      "مؤتة",
+      "تبوك"
+    ],
+    "correctIndex": 0,
+    "source_ar": "تاريخ"
+  },
+  {
+    "type": "mcq",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "extreme",
+    "question_ar": "من هو مؤسس دولة الأغالبة؟",
+    "options_ar": [
+      "إبراهيم بن الأغلب",
+      "زيادة الله الأول",
+      "الأغلب بن سالم",
+      "محمد بن الأغلب"
+    ],
+    "correctIndex": 0,
+    "source_ar": "تاريخ"
+  },
+  {
+    "type": "mcq",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "extreme",
+    "question_ar": "من هو مؤسس دولة الفونج (السلطنة الزرقاء)؟",
+    "options_ar": [
+      "عمارة بن دنقس",
+      "عبدالله جماع",
+      "بادي أبو شلوخ",
+      "عجيب المانجلك"
+    ],
+    "correctIndex": 0,
+    "source_ar": "تاريخ"
+  },
+  {
+    "type": "mcq",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "hard",
+    "question_ar": "ما هي الدولة التي قضى عليها صلاح الدين الأيوبي؟",
+    "options_ar": [
+      "الدولة الفاطمية",
+      "الدولة الزنكية",
+      "الدولة الطولونية",
+      "الدولة الإخشيدية"
+    ],
+    "correctIndex": 0,
+    "source_ar": "تاريخ"
+  },
+  {
+    "type": "mcq",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "medium",
+    "question_ar": "من هو الخليفة الذي وضع التاريخ الهجري؟",
+    "options_ar": [
+      "عمر بن الخطاب",
+      "أبو بكر الصديق",
+      "عثمان بن عفان",
+      "علي بن أبي طالب"
+    ],
+    "correctIndex": 0,
+    "source_ar": "تاريخ"
+  },
+  {
+    "type": "mcq",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "hard",
+    "question_ar": "من هو الخليفة الذي أمر بجمع الحديث وتدوينه رسمياً؟",
+    "options_ar": [
+      "عمر بن عبدالعزيز",
+      "معاوية بن أبي سفيان",
+      "هارون الرشيد",
+      "المأمون"
+    ],
+    "correctIndex": 0,
+    "source_ar": "تاريخ"
+  },
+  {
+    "type": "mcq",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "medium",
+    "question_ar": "ما هي أول عاصمة لمصر الإسلامية؟",
+    "options_ar": [
+      "الفسطاط",
+      "القطائع",
+      "العسكر",
+      "القاهرة"
+    ],
+    "correctIndex": 0,
+    "source_ar": "تاريخ"
+  },
+  {
+    "type": "mcq",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "medium",
+    "question_ar": "من هو مؤسس مدينة القاهرة؟",
+    "options_ar": [
+      "جوهر الصقلي",
+      "المعز لدين الله",
+      "صلاح الدين",
+      "عمرو بن العاص"
+    ],
+    "correctIndex": 0,
+    "source_ar": "تاريخ"
+  },
+  {
+    "type": "mcq",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "medium",
+    "question_ar": "من هو مؤسس مدينة القيروان؟",
+    "options_ar": [
+      "عقبة بن نافع",
+      "حسان بن النعمان",
+      "موسى بن نصير",
+      "زهير بن قيس"
+    ],
+    "correctIndex": 0,
+    "source_ar": "تاريخ"
+  },
+  {
+    "type": "mcq",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "hard",
+    "question_ar": "من هو الخليفة الذي لقب بـ المأمون؟",
+    "options_ar": [
+      "عبدالله بن هارون",
+      "محمد بن هارون",
+      "هارون بن المهدي",
+      "العباس بن المأمون"
+    ],
+    "correctIndex": 0,
+    "source_ar": "تاريخ"
+  },
+  {
+    "type": "mcq",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "extreme",
+    "question_ar": "ما هي المعركة التي أوقفت الزحف الإسلامي في فرنسا (بلاط الشهداء)؟",
+    "options_ar": [
+      "بواتييه",
+      "الزلاقة",
+      "الأرك",
+      "العقاب"
+    ],
+    "correctIndex": 0,
+    "source_ar": "تاريخ"
+  },
+  {
+    "type": "mcq",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "extreme",
+    "question_ar": "من هو القائد المسلم في معركة بلاط الشهداء؟",
+    "options_ar": [
+      "عبدالرحمن الغافقي",
+      "السمح بن مالك",
+      "عنبسة بن سحيم",
+      "موسى بن نصير"
+    ],
+    "correctIndex": 0,
+    "source_ar": "تاريخ"
+  },
+  {
+    "type": "mcq",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "hard",
+    "question_ar": "من هو السلطان العثماني الذي لقب بـ القانوني؟",
+    "options_ar": [
+      "سليمان الأول",
+      "سليم الأول",
+      "مراد الرابع",
+      "محمد الفاتح"
+    ],
+    "correctIndex": 0,
+    "source_ar": "تاريخ"
+  },
+  {
+    "type": "mcq",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "hard",
+    "question_ar": "من هو آخر سلاطين الدولة العثمانية الفعليين (قبل الإلغاء)؟",
+    "options_ar": [
+      "محمد السادس",
+      "عبدالحميد الثاني",
+      "محمد الخامس",
+      "عبدالمجيد الثاني"
+    ],
+    "correctIndex": 0,
+    "source_ar": "تاريخ"
+  },
+  {
+    "type": "mcq",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "medium",
+    "question_ar": "ما هي الدولة التي حكمت مصر قبل العثمانيين؟",
+    "options_ar": [
+      "المماليك",
+      "الأيوبيين",
+      "الفاطميين",
+      "العباسيين"
+    ],
+    "correctIndex": 0,
+    "source_ar": "تاريخ"
+  },
+  {
+    "type": "mcq",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "medium",
+    "question_ar": "من هو مؤسس الدولة الطولونية؟",
+    "options_ar": [
+      "أحمد بن طولون",
+      "خمارويه",
+      "كافور",
+      "الإخشيد"
+    ],
+    "correctIndex": 0,
+    "source_ar": "تاريخ"
+  },
+  {
+    "type": "mcq",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "hard",
+    "question_ar": "من هو مؤسس الدولة الإخشيدية؟",
+    "options_ar": [
+      "محمد بن طغج",
+      "كافور الإخشيدي",
+      "أحمد بن طولون",
+      "جوهر الصقلي"
+    ],
+    "correctIndex": 0,
+    "source_ar": "تاريخ"
+  },
+  {
+    "type": "mcq",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "hard",
+    "question_ar": "ما هي المعركة التي انتصر فيها السلاجقة على الروم؟",
+    "options_ar": [
+      "ملاذكرد",
+      "عين جالوت",
+      "حطين",
+      "يرموك"
+    ],
+    "correctIndex": 0,
+    "source_ar": "تاريخ"
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "easy",
+    "question_ar": "ما هي عاصمة المملكة العربية السعودية؟",
+    "options_ar": [
+      "الرياض",
+      "جدة",
+      "مكة",
+      "الدمام"
+    ],
+    "correctIndex": 0,
+    "source_ar": "ثقافة عامة"
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "easy",
+    "question_ar": "ما هي أكبر قارات العالم مساحة؟",
+    "options_ar": [
+      "آسيا",
+      "أفريقيا",
+      "أمريكا الشمالية",
+      "أوروبا"
+    ],
+    "correctIndex": 0,
+    "source_ar": "ثقافة عامة"
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "medium",
+    "question_ar": "ما هي عملة اليابان؟",
+    "options_ar": [
+      "الين",
+      "اليوان",
+      "الروبية",
+      "الدولار"
+    ],
+    "correctIndex": 0,
+    "source_ar": "ثقافة عامة"
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "medium",
+    "question_ar": "ما هي عاصمة البرازيل؟",
+    "options_ar": [
+      "برازيليا",
+      "ريو دي جانيرو",
+      "ساو باولو",
+      "بوينس آيرس"
+    ],
+    "correctIndex": 0,
+    "source_ar": "ثقافة عامة"
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "hard",
+    "question_ar": "ما هي الدولة التي تسمى بلاد الرافدين؟",
+    "options_ar": [
+      "العراق",
+      "مصر",
+      "سوريا",
+      "الأردن"
+    ],
+    "correctIndex": 0,
+    "source_ar": "ثقافة عامة"
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "medium",
+    "question_ar": "كم عدد ألوان قوس قزح؟",
+    "options_ar": [
+      "7",
+      "6",
+      "5",
+      "8"
+    ],
+    "correctIndex": 0,
+    "source_ar": "ثقافة عامة"
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "hard",
+    "question_ar": "من هو مخترع المصباح الكهربائي؟",
+    "options_ar": [
+      "توماس أديسون",
+      "نيكولا تسلا",
+      "جراهام بيل",
+      "أينشتاين"
+    ],
+    "correctIndex": 0,
+    "source_ar": "ثقافة عامة"
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "hard",
+    "question_ar": "من هو مكتشف الدورة الدموية الصغرى؟",
+    "options_ar": [
+      "ابن النفيس",
+      "ويليام هارفي",
+      "ابن سينا",
+      "الرازي"
+    ],
+    "correctIndex": 0,
+    "source_ar": "ثقافة عامة"
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "extreme",
+    "question_ar": "ماذا يسمى صوت النمل؟",
+    "options_ar": [
+      "دبيب",
+      "صرير",
+      "طنين",
+      "فحيح"
+    ],
+    "correctIndex": 0,
+    "source_ar": "لغة"
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "extreme",
+    "question_ar": "ماذا يسمى بيت العنكبوت؟",
+    "options_ar": [
+      "وهن",
+      "عريش",
+      "جحر",
+      "وجار"
+    ],
+    "correctIndex": 0,
+    "source_ar": "لغة"
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "medium",
+    "question_ar": "ما هو المعدن السائل؟",
+    "options_ar": [
+      "الزئبق",
+      "الرصاص",
+      "الحديد",
+      "النحاس"
+    ],
+    "correctIndex": 0,
+    "source_ar": "علوم"
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "medium",
+    "question_ar": "ما هو أسرع حيوان بري؟",
+    "options_ar": [
+      "الفهد",
+      "الأسد",
+      "النمر",
+      "الغزال"
+    ],
+    "correctIndex": 0,
+    "source_ar": "علوم"
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "medium",
+    "question_ar": "ما هو الحيوان الذي ينام وإحدى عينيه مفتوحة؟",
+    "options_ar": [
+      "الدلفين",
+      "القرش",
+      "التمساح",
+      "الثعبان"
+    ],
+    "correctIndex": 0,
+    "source_ar": "علوم"
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "hard",
+    "question_ar": "كم عدد قلوب الأخطبوط؟",
+    "options_ar": [
+      "3",
+      "1",
+      "2",
+      "4"
+    ],
+    "correctIndex": 0,
+    "source_ar": "علوم"
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "medium",
+    "question_ar": "ما هي أكبر دولة عربية مساحة؟",
+    "options_ar": [
+      "الجزائر",
+      "السعودية",
+      "السودان",
+      "مصر"
+    ],
+    "correctIndex": 0,
+    "source_ar": "ثقافة عامة"
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "medium",
+    "question_ar": "ما هي أصغر دولة عربية مساحة؟",
+    "options_ar": [
+      "البحرين",
+      "قطر",
+      "لبنان",
+      "الكويت"
+    ],
+    "correctIndex": 0,
+    "source_ar": "ثقافة عامة"
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "hard",
+    "question_ar": "ما هي عاصمة أستراليا؟",
+    "options_ar": [
+      "كانبرا",
+      "سيدني",
+      "ملبورن",
+      "بيرث"
+    ],
+    "correctIndex": 0,
+    "source_ar": "ثقافة عامة"
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "hard",
+    "question_ar": "ما هي الدولة التي تقع في قارتين؟",
+    "options_ar": [
+      "تركيا",
+      "مصر",
+      "روسيا",
+      "جميع ما سبق"
+    ],
+    "correctIndex": 3,
+    "source_ar": "ثقافة عامة"
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "extreme",
+    "question_ar": "ما هو البحر الذي لا يوجد به شواطئ؟",
+    "options_ar": [
+      "بحر سارجاسو",
+      "البحر الميت",
+      "البحر الأحمر",
+      "بحر قزوين"
+    ],
+    "correctIndex": 0,
+    "source_ar": "ثقافة عامة"
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "medium",
+    "question_ar": "من هو مؤلف كتاب البخلاء؟",
+    "options_ar": [
+      "الجاحظ",
+      "ابن المقفع",
+      "الأصمعي",
+      "بديع الزمان"
+    ],
+    "correctIndex": 0,
+    "source_ar": "أدب"
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "hard",
+    "question_ar": "من هو شاعر النيل؟",
+    "options_ar": [
+      "حافظ إبراهيم",
+      "أحمد شوقي",
+      "محمود درويش",
+      "نزار قباني"
+    ],
+    "correctIndex": 0,
+    "source_ar": "أدب"
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "hard",
+    "question_ar": "من هو أمير الشعراء؟",
+    "options_ar": [
+      "أحمد شوقي",
+      "حافظ إبراهيم",
+      "المتنبي",
+      "البارودي"
+    ],
+    "correctIndex": 0,
+    "source_ar": "أدب"
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "extreme",
+    "question_ar": "ما هو الكتاب الذي ألفه سيبويه في النحو؟",
+    "options_ar": [
+      "الكتاب",
+      "الأصول",
+      "الخصائص",
+      "المقتضب"
+    ],
+    "correctIndex": 0,
+    "source_ar": "أدب"
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "medium",
+    "question_ar": "كم عدد لاعبين فريق كرة القدم؟",
+    "options_ar": [
+      "11",
+      "10",
+      "12",
+      "9"
+    ],
+    "correctIndex": 0,
+    "source_ar": "رياضة"
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "medium",
+    "question_ar": "أين أقيمت أول كأس عالم لكرة القدم؟",
+    "options_ar": [
+      "أوروغواي",
+      "البرازيل",
+      "إيطاليا",
+      "فرنسا"
+    ],
+    "correctIndex": 0,
+    "source_ar": "رياضة"
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "medium",
+    "question_ar": "ما هو الذهب الأسود؟",
+    "options_ar": [
+      "البترول",
+      "الفحم",
+      "الحديد",
+      "القهوة"
+    ],
+    "correctIndex": 0,
+    "source_ar": "ثقافة عامة"
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "medium",
+    "question_ar": "ما هو الذهب الأبيض؟",
+    "options_ar": [
+      "القطن",
+      "البلاتين",
+      "السكر",
+      "الملح"
+    ],
+    "correctIndex": 0,
+    "source_ar": "ثقافة عامة"
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "hard",
+    "question_ar": "ما هو الغاز الذي يستخدم في إطفاء الحرائق؟",
+    "options_ar": [
+      "ثاني أكسيد الكربون",
+      "الأكسجين",
+      "الهيدروجين",
+      "النيتروجين"
+    ],
+    "correctIndex": 0,
+    "source_ar": "علوم"
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "hard",
+    "question_ar": "ما هو العنصر الكيميائي الذي رمزه Fe؟",
+    "options_ar": [
+      "الحديد",
+      "النحاس",
+      "الذهب",
+      "الفضة"
+    ],
+    "correctIndex": 0,
+    "source_ar": "علوم"
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "hard",
+    "question_ar": "ما هو العنصر الكيميائي الذي رمزه Na؟",
+    "options_ar": [
+      "الصوديوم",
+      "النيتروجين",
+      "النيون",
+      "النيكل"
+    ],
+    "correctIndex": 0,
+    "source_ar": "علوم"
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "medium",
+    "question_ar": "ما هي أكبر بحيرة في العالم؟",
+    "options_ar": [
+      "بحر قزوين",
+      "بحيرة فيكتوريا",
+      "بحيرة سوبيريور",
+      "بحيرة بايكال"
+    ],
+    "correctIndex": 0,
+    "source_ar": "ثقافة عامة"
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "medium",
+    "question_ar": "ما هي أعلى قمة في العالم؟",
+    "options_ar": [
+      "إفرست",
+      "كي 2",
+      "كليمنجارو",
+      "فوجي"
+    ],
+    "correctIndex": 0,
+    "source_ar": "ثقافة عامة"
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "medium",
+    "question_ar": "أين تقع حدائق بابل المعلقة؟",
+    "options_ar": [
+      "العراق",
+      "مصر",
+      "اليونان",
+      "إيطاليا"
+    ],
+    "correctIndex": 0,
+    "source_ar": "ثقافة عامة"
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "extreme",
+    "question_ar": "ماذا تعني كلمة عنفقة؟",
+    "options_ar": [
+      "الشعر أسفل الشفة",
+      "مقدمة الأنف",
+      "شحمة الأذن",
+      "باطن الكف"
+    ],
+    "correctIndex": 0,
+    "source_ar": "لغة"
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "extreme",
+    "question_ar": "كم عدد الرهط؟",
+    "options_ar": [
+      "من 10 إلى 30",
+      "من 3 إلى 9",
+      "من 40 إلى 50",
+      "أكثر من 100"
+    ],
+    "correctIndex": 0,
+    "source_ar": "لغة"
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "extreme",
+    "question_ar": "ما هو الفرصاد؟",
+    "options_ar": [
+      "التوت",
+      "العنب",
+      "التين",
+      "الرمان"
+    ],
+    "correctIndex": 0,
+    "source_ar": "لغة"
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "extreme",
+    "question_ar": "ما هو الأدهم من الخيل؟",
+    "options_ar": [
+      "الأسود",
+      "الأبيض",
+      "الأحمر",
+      "الأشقر"
+    ],
+    "correctIndex": 0,
+    "source_ar": "لغة"
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "hard",
+    "question_ar": "من هو صاحب معجم لسان العرب؟",
+    "options_ar": [
+      "ابن منظور",
+      "الفيروزآبادي",
+      "الجوهري",
+      "الخليل بن أحمد"
+    ],
+    "correctIndex": 0,
+    "source_ar": "لغة"
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "hard",
+    "question_ar": "من هو واضع علم العروض؟",
+    "options_ar": [
+      "الخليل بن أحمد",
+      "سيبويه",
+      "أبو الأسود الدؤلي",
+      "ابن جني"
+    ],
+    "correctIndex": 0,
+    "source_ar": "لغة"
+  },
+  {
+    "type": "mcq",
+    "category": "معلومات إسلامية",
+    "difficulty": "easy",
+    "question_ar": "كم عدد سور القرآن الكريم؟",
+    "options_ar": [
+      "114",
+      "110",
+      "120",
+      "100"
+    ],
+    "correctIndex": 0,
+    "source_ar": "قرآن"
+  },
+  {
+    "type": "mcq",
+    "category": "معلومات إسلامية",
+    "difficulty": "easy",
+    "question_ar": "ما هي أطول سورة في القرآن؟",
+    "options_ar": [
+      "البقرة",
+      "آل عمران",
+      "النساء",
+      "المائدة"
+    ],
+    "correctIndex": 0,
+    "source_ar": "قرآن"
+  },
+  {
+    "type": "mcq",
+    "category": "معلومات إسلامية",
+    "difficulty": "easy",
+    "question_ar": "ما هي أقصر سورة في القرآن؟",
+    "options_ar": [
+      "الكوثر",
+      "الإخلاص",
+      "الفلق",
+      "الناس"
+    ],
+    "correctIndex": 0,
+    "source_ar": "قرآن"
+  },
+  {
+    "type": "mcq",
+    "category": "معلومات إسلامية",
+    "difficulty": "medium",
+    "question_ar": "ما هي السورة التي لا تبدأ بالبسملة؟",
+    "options_ar": [
+      "التوبة",
+      "الأنفال",
+      "يونس",
+      "هود"
+    ],
+    "correctIndex": 0,
+    "source_ar": "قرآن"
+  },
+  {
+    "type": "mcq",
+    "category": "معلومات إسلامية",
+    "difficulty": "medium",
+    "question_ar": "ما هي السورة التي فيها بسملتان؟",
+    "options_ar": [
+      "النمل",
+      "النحل",
+      "النجم",
+      "النساء"
+    ],
+    "correctIndex": 0,
+    "source_ar": "قرآن"
+  },
+  {
+    "type": "mcq",
+    "category": "معلومات إسلامية",
+    "difficulty": "hard",
+    "question_ar": "كم عدد سجدات التلاوة في القرآن؟",
+    "options_ar": [
+      "15 (على المشهور)",
+      "14",
+      "10",
+      "12"
+    ],
+    "correctIndex": 0,
+    "source_ar": "قرآن"
+  },
+  {
+    "type": "mcq",
+    "category": "معلومات إسلامية",
+    "difficulty": "extreme",
+    "question_ar": "ما هي السورة التي تسمى الفاضحة؟",
+    "options_ar": [
+      "التوبة",
+      "المنافقون",
+      "الأحزاب",
+      "التحريم"
+    ],
+    "correctIndex": 0,
+    "source_ar": "قرآن"
+  },
+  {
+    "type": "mcq",
+    "category": "معلومات إسلامية",
+    "difficulty": "extreme",
+    "question_ar": "ما هي السورة التي تسمى بني إسرائيل؟",
+    "options_ar": [
+      "الإسراء",
+      "البقرة",
+      "آل عمران",
+      "يوسف"
+    ],
+    "correctIndex": 0,
+    "source_ar": "قرآن"
+  },
+  {
+    "type": "mcq",
+    "category": "معلومات إسلامية",
+    "difficulty": "medium",
+    "question_ar": "ما هو الركن الثاني من أركان الإسلام؟",
+    "options_ar": [
+      "الصلاة",
+      "الزكاة",
+      "الصوم",
+      "الحج"
+    ],
+    "correctIndex": 0,
+    "source_ar": "فقه"
+  },
+  {
+    "type": "mcq",
+    "category": "معلومات إسلامية",
+    "difficulty": "medium",
+    "question_ar": "ما هي صلاة البردين؟",
+    "options_ar": [
+      "الفجر والعصر",
+      "الظهر والعصر",
+      "المغرب والعشاء",
+      "الفجر والعشاء"
+    ],
+    "correctIndex": 0,
+    "source_ar": "فقه"
+  },
+  {
+    "type": "mcq",
+    "category": "معلومات إسلامية",
+    "difficulty": "hard",
+    "question_ar": "ما هو الوِتر؟",
+    "options_ar": [
+      "صلاة تختم صلاة الليل",
+      "صلاة الظهر",
+      "صلاة الفجر",
+      "صلاة الضحى"
+    ],
+    "correctIndex": 0,
+    "source_ar": "فقه"
+  },
+  {
+    "type": "mcq",
+    "category": "معلومات إسلامية",
+    "difficulty": "hard",
+    "question_ar": "كم عدد تكبيرات صلاة الجنازة؟",
+    "options_ar": [
+      "4",
+      "3",
+      "5",
+      "2"
+    ],
+    "correctIndex": 0,
+    "source_ar": "فقه"
+  },
+  {
+    "type": "mcq",
+    "category": "معلومات إسلامية",
+    "difficulty": "extreme",
+    "question_ar": "توفي رجل وترك زوجة وبنت، كم نصيب الزوجة؟",
+    "options_ar": [
+      "الثمن",
+      "الربع",
+      "النصف",
+      "السدس"
+    ],
+    "correctIndex": 0,
+    "source_ar": "مواريث"
+  },
+  {
+    "type": "mcq",
+    "category": "معلومات إسلامية",
+    "difficulty": "extreme",
+    "question_ar": "توفي رجل وترك بنت وأخ شقيق، كم نصيب البنت؟",
+    "options_ar": [
+      "النصف",
+      "الربع",
+      "الثلث",
+      "الثلثان"
+    ],
+    "correctIndex": 0,
+    "source_ar": "مواريث"
+  },
+  {
+    "type": "mcq",
+    "category": "معلومات إسلامية",
+    "difficulty": "hard",
+    "question_ar": "ما هي الكتب الستة؟",
+    "options_ar": [
+      "البخاري ومسلم والترمذي والنسائي وأبو داود وابن ماجه",
+      "البخاري ومسلم ومالك وأحمد والشافعي وأبو حنيفة",
+      "البخاري ومسلم والترمذي والنسائي والدارمي والبيهقي",
+      "غير ذلك"
+    ],
+    "correctIndex": 0,
+    "source_ar": "حديث"
+  },
+  {
+    "type": "mcq",
+    "category": "معلومات إسلامية",
+    "difficulty": "medium",
+    "question_ar": "من هو مؤلف كتاب الموطأ؟",
+    "options_ar": [
+      "الإمام مالك",
+      "الإمام الشافعي",
+      "الإمام أحمد",
+      "الإمام أبو حنيفة"
+    ],
+    "correctIndex": 0,
+    "source_ar": "حديث"
+  },
+  {
+    "type": "mcq",
+    "category": "معلومات إسلامية",
+    "difficulty": "hard",
+    "question_ar": "ما هو الحديث القدسي؟",
+    "options_ar": [
+      "ما رواه النبي عن ربه",
+      "ما رواه النبي عن جبريل",
+      "قول الصحابي",
+      "قول التابعي"
+    ],
+    "correctIndex": 0,
+    "source_ar": "حديث"
+  },
+  {
+    "type": "mcq",
+    "category": "معلومات إسلامية",
+    "difficulty": "medium",
+    "question_ar": "ما هو يوم عرفة؟",
+    "options_ar": [
+      "9 ذو الحجة",
+      "10 ذو الحجة",
+      "8 ذو الحجة",
+      "11 ذو الحجة"
+    ],
+    "correctIndex": 0,
+    "source_ar": "فقه"
+  },
+  {
+    "type": "mcq",
+    "category": "معلومات إسلامية",
+    "difficulty": "medium",
+    "question_ar": "ما هو يوم النحر؟",
+    "options_ar": [
+      "10 ذو الحجة",
+      "9 ذو الحجة",
+      "11 ذو الحجة",
+      "12 ذو الحجة"
+    ],
+    "correctIndex": 0,
+    "source_ar": "فقه"
+  },
+  {
+    "type": "mcq",
+    "category": "معلومات إسلامية",
+    "difficulty": "hard",
+    "question_ar": "ما هي أيام التشريق؟",
+    "options_ar": [
+      "11 و 12 و 13 ذو الحجة",
+      "9 و 10 و 11 ذو الحجة",
+      "1 و 2 و 3 شوال",
+      "العشر الأواخر من رمضان"
+    ],
+    "correctIndex": 0,
+    "source_ar": "فقه"
+  },
+  {
+    "type": "mcq",
+    "category": "معلومات إسلامية",
+    "difficulty": "medium",
+    "question_ar": "ما هو الميقات المكاني لأهل المدينة؟",
+    "options_ar": [
+      "ذو الحليفة (أبيار علي)",
+      "الجحفة",
+      "قرن المنازل",
+      "يلملم"
+    ],
+    "correctIndex": 0,
+    "source_ar": "فقه"
+  },
+  {
+    "type": "mcq",
+    "category": "معلومات إسلامية",
+    "difficulty": "medium",
+    "question_ar": "ما هو الميقات المكاني لأهل نجد؟",
+    "options_ar": [
+      "قرن المنازل (السيل الكبير)",
+      "يلملم",
+      "ذو الحليفة",
+      "ذات عرق"
+    ],
+    "correctIndex": 0,
+    "source_ar": "فقه"
+  },
+  {
+    "type": "mcq",
+    "category": "معلومات إسلامية",
+    "difficulty": "hard",
+    "question_ar": "من هو النبي الذي ابتلعه الحوت؟",
+    "options_ar": [
+      "يونس",
+      "يوسف",
+      "موسى",
+      "عيسى"
+    ],
+    "correctIndex": 0,
+    "source_ar": "قصص الأنبياء"
+  },
+  {
+    "type": "mcq",
+    "category": "معلومات إسلامية",
+    "difficulty": "medium",
+    "question_ar": "من هو النبي الذي كلم الله؟",
+    "options_ar": [
+      "موسى",
+      "عيسى",
+      "إبراهيم",
+      "نوح"
+    ],
+    "correctIndex": 0,
+    "source_ar": "قصص الأنبياء"
+  },
+  {
+    "type": "mcq",
+    "category": "معلومات إسلامية",
+    "difficulty": "medium",
+    "question_ar": "من هو النبي الذي ألقي في النار؟",
+    "options_ar": [
+      "إبراهيم",
+      "موسى",
+      "عيسى",
+      "يحيى"
+    ],
+    "correctIndex": 0,
+    "source_ar": "قصص الأنبياء"
+  },
+  {
+    "type": "mcq",
+    "category": "معلومات إسلامية",
+    "difficulty": "hard",
+    "question_ar": "من هو النبي الذي سخر له الجن والريح؟",
+    "options_ar": [
+      "سليمان",
+      "داود",
+      "يوسف",
+      "أيوب"
+    ],
+    "correctIndex": 0,
+    "source_ar": "قصص الأنبياء"
+  },
+  {
+    "type": "mcq",
+    "category": "معلومات إسلامية",
+    "difficulty": "hard",
+    "question_ar": "من هو النبي الذي صبر على المرض؟",
+    "options_ar": [
+      "أيوب",
+      "يونس",
+      "يعقوب",
+      "إسحاق"
+    ],
+    "correctIndex": 0,
+    "source_ar": "قصص الأنبياء"
+  },
+  {
+    "type": "mcq",
+    "category": "معلومات إسلامية",
+    "difficulty": "extreme",
+    "question_ar": "من هو النبي الذي رفعه الله إليه؟",
+    "options_ar": [
+      "إدريس وعيسى",
+      "عيسى فقط",
+      "إدريس فقط",
+      "إلياس"
+    ],
+    "correctIndex": 0,
+    "source_ar": "قصص الأنبياء"
+  },
+  {
+    "type": "mcq",
+    "category": "معلومات إسلامية",
+    "difficulty": "hard",
+    "question_ar": "كم عدد الأنبياء والرسل المذكورين في القرآن؟",
+    "options_ar": [
+      "25",
+      "20",
+      "30",
+      "15"
+    ],
+    "correctIndex": 0,
+    "source_ar": "قرآن"
+  },
+  {
+    "type": "mcq",
+    "category": "معلومات إسلامية",
+    "difficulty": "medium",
+    "question_ar": "ما هو الكتاب الذي أنزل على داود؟",
+    "options_ar": [
+      "الزبور",
+      "التوراة",
+      "الإنجيل",
+      "الصحف"
+    ],
+    "correctIndex": 0,
+    "source_ar": "عقيدة"
+  },
+  {
+    "type": "mcq",
+    "category": "معلومات إسلامية",
+    "difficulty": "medium",
+    "question_ar": "ما هو الكتاب الذي أنزل على موسى؟",
+    "options_ar": [
+      "التوراة",
+      "الإنجيل",
+      "الزبور",
+      "الفرقان"
+    ],
+    "correctIndex": 0,
+    "source_ar": "عقيدة"
+  },
+  {
+    "type": "mcq",
+    "category": "معلومات إسلامية",
+    "difficulty": "medium",
+    "question_ar": "ما هو الكتاب الذي أنزل على عيسى؟",
+    "options_ar": [
+      "الإنجيل",
+      "التوراة",
+      "الزبور",
+      "الصحف"
+    ],
+    "correctIndex": 0,
+    "source_ar": "عقيدة"
+  },
+  {
+    "type": "mcq",
+    "category": "معلومات إسلامية",
+    "difficulty": "hard",
+    "question_ar": "ما هي الحطمة؟",
+    "options_ar": [
+      "النار",
+      "الجنة",
+      "السماء",
+      "الأرض"
+    ],
+    "correctIndex": 0,
+    "source_ar": "قرآن"
+  },
+  {
+    "type": "mcq",
+    "category": "معلومات إسلامية",
+    "difficulty": "medium",
+    "question_ar": "من هم أولو العزم من الرسل؟",
+    "options_ar": [
+      "نوح، إبراهيم، موسى، عيسى، محمد",
+      "آدم، نوح، إبراهيم، موسى، عيسى",
+      "محمد، إبراهيم، إسماعيل، إسحاق، يعقوب",
+      "نوح، هود، صالح، شعيب، محمد"
+    ],
+    "correctIndex": 0,
+    "source_ar": "عقيدة"
+  },
+  {
+    "type": "mcq",
+    "category": "معلومات إسلامية",
+    "difficulty": "extreme",
+    "question_ar": "ما معنى الكلالة في الميراث؟",
+    "options_ar": [
+      "من مات وليس له والد ولا ولد",
+      "من مات وله زوجة فقط",
+      "من مات وعليه دين",
+      "من مات غريقاً"
+    ],
+    "correctIndex": 0,
+    "source_ar": "مواريث"
+  },
+  {
+    "type": "mcq",
+    "category": "معلومات إسلامية",
+    "difficulty": "extreme",
+    "question_ar": "ما هي المسألة المشتركة (الحمارية) في الميراث؟",
+    "options_ar": [
+      "اشتراك الإخوة الأشقاء مع الإخوة لأم في الثلث",
+      "اشتراك الزوج مع الأب",
+      "اشتراك الجد مع الإخوة",
+      "لا شيء مما ذكر"
+    ],
+    "correctIndex": 0,
+    "source_ar": "مواريث"
+  },
+  {
+    "type": "mcq",
+    "category": "معلومات إسلامية",
+    "difficulty": "medium",
+    "question_ar": "ما هو حد القذف؟",
+    "options_ar": [
+      "80 جلدة",
+      "100 جلدة",
+      "الرجم",
+      "القتل"
+    ],
+    "correctIndex": 0,
+    "source_ar": "فقه"
+  },
+  {
+    "type": "mcq",
+    "category": "معلومات إسلامية",
+    "difficulty": "hard",
+    "question_ar": "ما هو الرهن؟",
+    "options_ar": [
+      "حبس عين مالية وثيقة بدين",
+      "بيع العينة",
+      "القرض الحسن",
+      "الصدقة"
+    ],
+    "correctIndex": 0,
+    "source_ar": "فقه"
+  },
+  {
+    "type": "mcq",
+    "category": "الصحابة",
+    "difficulty": "hard",
+    "question_ar": "من هو الصحابي الذي نزلت الملائكة تستمع لقراءته؟",
+    "options_ar": [
+      "أسيد بن حضير",
+      "أبي بن كعب",
+      "البراء بن عازب",
+      "سعد بن معاذ"
+    ],
+    "correctIndex": 0,
+    "source_ar": "سيرة"
+  },
+  {
+    "type": "mcq",
+    "category": "الصحابة",
+    "difficulty": "medium",
+    "question_ar": "من هو الصحابي الذي قال: فزت ورب الكعبة؟",
+    "options_ar": [
+      "حرام بن ملحان",
+      "عامر بن فهيرة",
+      "خباب بن الأرت",
+      "عمار بن ياسر"
+    ],
+    "correctIndex": 0,
+    "source_ar": "سيرة"
+  },
+  {
+    "type": "mcq",
+    "category": "الصحابة",
+    "difficulty": "hard",
+    "question_ar": "من هي زوجة أبي بكر الصديق وأم عائشة؟",
+    "options_ar": [
+      "أم رومان",
+      "أسماء بنت عميس",
+      "حبيبة بنت خارجة",
+      "قتيلة بنت عبدالعزى"
+    ],
+    "correctIndex": 0,
+    "source_ar": "سيرة"
+  },
+  {
+    "type": "mcq",
+    "category": "الصحابة",
+    "difficulty": "extreme",
+    "question_ar": "من هو الصحابي الذي قتل أباه في معركة بدر؟",
+    "options_ar": [
+      "أبو عبيدة بن الجراح",
+      "مصعب بن عمير",
+      "أبو حذيفة بن عتبة",
+      "سالم مولى أبي حذيفة"
+    ],
+    "correctIndex": 0,
+    "source_ar": "سيرة"
+  },
+  {
+    "type": "mcq",
+    "category": "السيرة النبوية",
+    "difficulty": "hard",
+    "question_ar": "ما هو اسم ملك الروم الذي أرسل له النبي رسالة؟",
+    "options_ar": [
+      "هرقل",
+      "كسرى",
+      "المقوقس",
+      "النجاشي"
+    ],
+    "correctIndex": 0,
+    "source_ar": "سيرة"
+  },
+  {
+    "type": "mcq",
+    "category": "السيرة النبوية",
+    "difficulty": "hard",
+    "question_ar": "ما هو اسم ملك الفرس الذي مزق رسالة النبي؟",
+    "options_ar": [
+      "كسرى",
+      "هرقل",
+      "المقوقس",
+      "النجاشي"
+    ],
+    "correctIndex": 0,
+    "source_ar": "سيرة"
+  },
+  {
+    "type": "mcq",
+    "category": "السيرة النبوية",
+    "difficulty": "hard",
+    "question_ar": "ما هو اسم ملك الحبشة الذي آمن بالنبي؟",
+    "options_ar": [
+      "أصحمة النجاشي",
+      "أبرهة",
+      "هرقل",
+      "كسرى"
+    ],
+    "correctIndex": 0,
+    "source_ar": "سيرة"
+  },
+  {
+    "type": "mcq",
+    "category": "السيرة النبوية",
+    "difficulty": "extreme",
+    "question_ar": "من هو الصحابي الذي أرسله النبي إلى النجاشي؟",
+    "options_ar": [
+      "عمرو بن أمية الضمري",
+      "دحية الكلبي",
+      "عبدالله بن حذافة",
+      "حاطب بن أبي بلتعة"
+    ],
+    "correctIndex": 0,
+    "source_ar": "سيرة"
+  },
+  {
+    "type": "mcq",
+    "category": "السيرة النبوية",
+    "difficulty": "extreme",
+    "question_ar": "من هو الصحابي الذي أرسله النبي إلى المقوقس؟",
+    "options_ar": [
+      "حاطب بن أبي بلتعة",
+      "دحية الكلبي",
+      "عمرو بن العاص",
+      "شجاع بن وهب"
+    ],
+    "correctIndex": 0,
+    "source_ar": "سيرة"
+  },
+  {
+    "type": "mcq",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "medium",
+    "question_ar": "من هو الخليفة الذي عرب الدواوين؟",
+    "options_ar": [
+      "عبدالملك بن مروان",
+      "معاوية بن أبي سفيان",
+      "عمر بن عبدالعزيز",
+      "الوليد بن عبدالملك"
+    ],
+    "correctIndex": 0,
+    "source_ar": "تاريخ"
+  },
+  {
+    "type": "mcq",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "hard",
+    "question_ar": "من هو القائد الذي فتح بلاد السند؟",
+    "options_ar": [
+      "محمد بن القاسم",
+      "قتيبة بن مسلم",
+      "موسى بن نصير",
+      "طارق بن زياد"
+    ],
+    "correctIndex": 0,
+    "source_ar": "تاريخ"
+  },
+  {
+    "type": "mcq",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "hard",
+    "question_ar": "من هو القائد الذي فتح بلاد ما وراء النهر؟",
+    "options_ar": [
+      "قتيبة بن مسلم",
+      "محمد بن القاسم",
+      "المهلب بن أبي صفرة",
+      "مسلمة بن عبدالملك"
+    ],
+    "correctIndex": 0,
+    "source_ar": "تاريخ"
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "medium",
+    "question_ar": "ما هي عملة بريطانيا؟",
+    "options_ar": [
+      "الجنيه الإسترليني",
+      "اليورو",
+      "الدولار",
+      "الفرنك"
+    ],
+    "correctIndex": 0,
+    "source_ar": "ثقافة عامة"
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "medium",
+    "question_ar": "ما هي عملة روسيا؟",
+    "options_ar": [
+      "الروبل",
+      "اليورو",
+      "الدولار",
+      "الين"
+    ],
+    "correctIndex": 0,
+    "source_ar": "ثقافة عامة"
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "hard",
+    "question_ar": "ما هي عاصمة كندا؟",
+    "options_ar": [
+      "أوتاوا",
+      "تورنتو",
+      "مونتريال",
+      "فانكوفر"
+    ],
+    "correctIndex": 0,
+    "source_ar": "ثقافة عامة"
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "hard",
+    "question_ar": "ما هي عاصمة الصين؟",
+    "options_ar": [
+      "بكين",
+      "شنغهاي",
+      "هونغ كونغ",
+      "ووهان"
+    ],
+    "correctIndex": 0,
+    "source_ar": "ثقافة عامة"
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "hard",
+    "question_ar": "ما هو الاسم القديم لتايلاند؟",
+    "options_ar": [
+      "سيام",
+      "بورما",
+      "سيلان",
+      "فارس"
+    ],
+    "correctIndex": 0,
+    "source_ar": "ثقافة عامة"
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "hard",
+    "question_ar": "ما هو الاسم القديم لإيران؟",
+    "options_ar": [
+      "فارس",
+      "بابل",
+      "خراسان",
+      "بيزنطة"
+    ],
+    "correctIndex": 0,
+    "source_ar": "ثقافة عامة"
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "extreme",
+    "question_ar": "ما هو الشادوف؟",
+    "options_ar": [
+      "أداة لرفع الماء",
+      "نوع من السفن",
+      "سلاح قديم",
+      "آلة موسيقية"
+    ],
+    "correctIndex": 0,
+    "source_ar": "لغة"
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "extreme",
+    "question_ar": "ما هو الوبل؟",
+    "options_ar": [
+      "المطر الغزير",
+      "المطر الخفيف",
+      "الريح الشديدة",
+      "الحر الشديد"
+    ],
+    "correctIndex": 0,
+    "source_ar": "لغة"
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "extreme",
+    "question_ar": "ما هو الطل؟",
+    "options_ar": [
+      "المطر الخفيف",
+      "المطر الغزير",
+      "الندى",
+      "الضباب"
+    ],
+    "correctIndex": 0,
+    "source_ar": "لغة"
+  },
+  {
+    "type": "mcq",
+    "category": "معلومات إسلامية",
+    "difficulty": "medium",
+    "question_ar": "ما هي صلاة الخوف؟",
+    "options_ar": [
+      "صلاة مشروعة في الحرب",
+      "صلاة عند الكسوف",
+      "صلاة عند الزلازل",
+      "صلاة الاستسقاء"
+    ],
+    "correctIndex": 0,
+    "source_ar": "فقه"
+  },
+  {
+    "type": "mcq",
+    "category": "معلومات إسلامية",
+    "difficulty": "medium",
+    "question_ar": "ما هي صلاة الكسوف؟",
+    "options_ar": [
+      "صلاة عند ذهاب ضوء الشمس",
+      "صلاة عند ذهاب ضوء القمر",
+      "صلاة طلب المطر",
+      "صلاة العيد"
+    ],
+    "correctIndex": 0,
+    "source_ar": "فقه"
+  },
+  {
+    "type": "mcq",
+    "category": "معلومات إسلامية",
+    "difficulty": "medium",
+    "question_ar": "ما هي صلاة الخسوف؟",
+    "options_ar": [
+      "صلاة عند ذهاب ضوء القمر",
+      "صلاة عند ذهاب ضوء الشمس",
+      "صلاة الليل",
+      "صلاة السفر"
+    ],
+    "correctIndex": 0,
+    "source_ar": "فقه"
+  },
+  {
+    "type": "mcq",
+    "category": "معلومات إسلامية",
+    "difficulty": "hard",
+    "question_ar": "كم عدد آيات سورة البقرة؟",
+    "options_ar": [
+      "286",
+      "285",
+      "200",
+      "300"
+    ],
+    "correctIndex": 0,
+    "source_ar": "قرآن"
+  },
+  {
+    "type": "mcq",
+    "category": "معلومات إسلامية",
+    "difficulty": "hard",
+    "question_ar": "كم عدد آيات سورة آل عمران؟",
+    "options_ar": [
+      "200",
+      "286",
+      "176",
+      "120"
+    ],
+    "correctIndex": 0,
+    "source_ar": "قرآن"
+  },
+  {
+    "type": "mcq",
+    "category": "معلومات إسلامية",
+    "difficulty": "hard",
+    "question_ar": "كم عدد آيات سورة النساء؟",
+    "options_ar": [
+      "176",
+      "200",
+      "150",
+      "130"
+    ],
+    "correctIndex": 0,
+    "source_ar": "قرآن"
+  },
+  {
+    "type": "mcq",
+    "category": "معلومات إسلامية",
+    "difficulty": "extreme",
+    "question_ar": "ما هي السورة التي تسمى سورة التوديع؟",
+    "options_ar": [
+      "النصر",
+      "الناس",
+      "الفلق",
+      "الكافرون"
+    ],
+    "correctIndex": 0,
+    "source_ar": "قرآن"
+  },
+  {
+    "type": "mcq",
+    "category": "معلومات إسلامية",
+    "difficulty": "extreme",
+    "question_ar": "ما هي السورة التي تسمى سورة النعم؟",
+    "options_ar": [
+      "النحل",
+      "النمل",
+      "الأنعام",
+      "المائدة"
+    ],
+    "correctIndex": 0,
+    "source_ar": "قرآن"
+  },
+  {
+    "type": "mcq",
+    "category": "الصحابة",
+    "difficulty": "easy",
+    "question_ar": "من هو رابع الخلفاء الراشدين؟",
+    "options_ar": [
+      "علي بن أبي طالب",
+      "عثمان بن عفان",
+      "عمر بن الخطاب",
+      "أبو بكر الصديق"
+    ],
+    "correctIndex": 0,
+    "source_ar": "سيرة"
+  },
+  {
+    "type": "mcq",
+    "category": "الصحابة",
+    "difficulty": "medium",
+    "question_ar": "من هي أم المؤمنين التي كانت تحفظ الطب؟",
+    "options_ar": [
+      "عائشة بنت أبي بكر",
+      "أم سلمة",
+      "حفصة",
+      "زينب بنت جحش"
+    ],
+    "correctIndex": 0,
+    "source_ar": "سيرة"
+  },
+  {
+    "type": "mcq",
+    "category": "الصحابة",
+    "difficulty": "hard",
+    "question_ar": "من هو الصحابي الذي نزل فيه قول الله: (وَيُؤْثِرُونَ عَلَى أَنفُسِهِمْ وَلَوْ كَانَ بِهِمْ خَصَاصَةٌ)؟",
+    "options_ar": [
+      "أبو طلحة الأنصاري",
+      "أبو هريرة",
+      "أبو بكر الصديق",
+      "عمر بن الخطاب"
+    ],
+    "correctIndex": 0,
+    "source_ar": "قرآن"
+  },
+  {
+    "type": "mcq",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "hard",
+    "question_ar": "من هو الخليفة العباسي الذي أسس بيت الحكمة؟",
+    "options_ar": [
+      "هارون الرشيد (ووسعه المأمون)",
+      "أبو جعفر المنصور",
+      "المهدي",
+      "المعتصم"
+    ],
+    "correctIndex": 0,
+    "source_ar": "تاريخ"
+  },
+  {
+    "type": "mcq",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "hard",
+    "question_ar": "من هو الخليفة الذي بنى مدينة سامراء؟",
+    "options_ar": [
+      "المعتصم بالله",
+      "المتوكل",
+      "الواثق",
+      "الرشيد"
+    ],
+    "correctIndex": 0,
+    "source_ar": "تاريخ"
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "medium",
+    "question_ar": "ما هي الدولة التي تمتلك أكبر عدد من البراكين؟",
+    "options_ar": [
+      "إندونيسيا",
+      "اليابان",
+      "أمريكا",
+      "الفلبين"
+    ],
+    "correctIndex": 0,
+    "source_ar": "ثقافة عامة"
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "hard",
+    "question_ar": "ما هو الاسم العلمي للماء الثقيل؟",
+    "options_ar": [
+      "أكسيد الديوتيريوم",
+      "أكسيد الهيدروجين",
+      "بيروكسيد",
+      "أوزون"
+    ],
+    "correctIndex": 0,
+    "source_ar": "علوم"
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "medium",
+    "question_ar": "ما هو الحيوان الذي يصاب بالحصبة كالإنسان؟",
+    "options_ar": [
+      "القرد",
+      "الكلب",
+      "القط",
+      "الحصان"
+    ],
+    "correctIndex": 0,
+    "source_ar": "علوم"
+  },
+  {
+    "type": "mcq",
+    "category": "معلومات إسلامية",
+    "difficulty": "medium",
+    "question_ar": "ما هي كفارة اليمين؟",
+    "options_ar": [
+      "إطعام 10 مساكين أو كسوتهم أو تحرير رقبة",
+      "صيام 3 أيام مباشرة",
+      "إطعام 60 مسكيناً",
+      "ذبح شاة"
+    ],
+    "correctIndex": 0,
+    "source_ar": "فقه"
+  },
+  {
+    "type": "mcq",
+    "category": "معلومات إسلامية",
+    "difficulty": "hard",
+    "question_ar": "ما هي عدة المرأة المتوفى عنها زوجها؟",
+    "options_ar": [
+      "4 أشهر و10 أيام",
+      "3 قروء",
+      "3 أشهر",
+      "حتى تضع حملها (لغير الحامل)"
+    ],
+    "correctIndex": 0,
+    "source_ar": "فقه"
+  },
+  {
+    "type": "mcq",
+    "category": "معلومات إسلامية",
+    "difficulty": "hard",
+    "question_ar": "ما هي عدة المرأة المطلقة (التي تحيض)؟",
+    "options_ar": [
+      "3 قروء (حيضات)",
+      "3 أشهر",
+      "4 أشهر و10 أيام",
+      "شهر واحد"
+    ],
+    "correctIndex": 0,
+    "source_ar": "فقه"
+  },
+  {
+    "type": "mcq",
+    "category": "الصحابة",
+    "difficulty": "hard",
+    "question_ar": "من هو الصحابي الذي نزل فيه قول الله: (يَا أَيُّهَا الَّذِينَ آمَنُوا لَا تَتَّخِذُوا عَدُوِّي وَعَدُوَّكُمْ أَوْلِيَاء)؟",
+    "options_ar": [
+      "حاطب بن أبي بلتعة",
+      "أبو لبابة",
+      "كعب بن مالك",
+      "حسان بن ثابت"
+    ],
+    "correctIndex": 0,
+    "source_ar": "قرآن"
+  },
+  {
+    "type": "mcq",
+    "category": "السيرة النبوية",
+    "difficulty": "hard",
+    "question_ar": "من هو الصحابي الذي أسر العباس يوم بدر؟",
+    "options_ar": [
+      "أبو اليسر كعب بن عمرو",
+      "علي بن أبي طالب",
+      "الزبير بن العوام",
+      "سعد بن أبي وقاص"
+    ],
+    "correctIndex": 0,
+    "source_ar": "سيرة"
+  },
+  {
+    "type": "mcq",
+    "category": "السيرة النبوية",
+    "difficulty": "hard",
+    "question_ar": "من هو قتيل الجن؟",
+    "options_ar": [
+      "سعد بن عبادة",
+      "سعد بن معاذ",
+      "عمير بن الحمام",
+      "خبيب بن عدي"
+    ],
+    "correctIndex": 0,
+    "source_ar": "سيرة"
+  },
+  {
+    "type": "mcq",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "hard",
+    "question_ar": "من هو الخليفة الذي لقب بـ الخليفة المثمن؟",
+    "options_ar": [
+      "المعتصم بالله",
+      "الرشيد",
+      "الواثق",
+      "المتوكل"
+    ],
+    "correctIndex": 0,
+    "source_ar": "تاريخ"
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "medium",
+    "question_ar": "ما هو أقرب كوكب للشمس؟",
+    "options_ar": [
+      "عطارد",
+      "الزهرة",
+      "المريخ",
+      "الأرض"
+    ],
+    "correctIndex": 0,
+    "source_ar": "علوم"
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "medium",
+    "question_ar": "ما هو الكوكب الأحمر؟",
+    "options_ar": [
+      "المريخ",
+      "عطارد",
+      "المشتري",
+      "زحل"
+    ],
+    "correctIndex": 0,
+    "source_ar": "علوم"
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "medium",
+    "question_ar": "ما هو أكبر كواكب المجموعة الشمسية؟",
+    "options_ar": [
+      "المشتري",
+      "زحل",
+      "أورانوس",
+      "نبتون"
+    ],
+    "correctIndex": 0,
+    "source_ar": "علوم"
+  },
+  {
+    "type": "mcq",
+    "category": "معلومات إسلامية",
+    "difficulty": "medium",
+    "question_ar": "من هو النبي الذي ابنه كافر؟",
+    "options_ar": [
+      "نوح",
+      "إبراهيم",
+      "لوط",
+      "صالح"
+    ],
+    "correctIndex": 0,
+    "source_ar": "قصص الأنبياء"
+  },
+  {
+    "type": "mcq",
+    "category": "معلومات إسلامية",
+    "difficulty": "medium",
+    "question_ar": "من هو النبي الذي أبوه كافر؟",
+    "options_ar": [
+      "إبراهيم",
+      "نوح",
+      "لوط",
+      "يوسف"
+    ],
+    "correctIndex": 0,
+    "source_ar": "قصص الأنبياء"
+  },
+  {
+    "type": "mcq",
+    "category": "معلومات إسلامية",
+    "difficulty": "medium",
+    "question_ar": "من هو النبي الذي زوجته كافرة؟",
+    "options_ar": [
+      "لوط ونوح",
+      "إبراهيم",
+      "موسى",
+      "عيسى"
+    ],
+    "correctIndex": 0,
+    "source_ar": "قصص الأنبياء"
+  }
+]

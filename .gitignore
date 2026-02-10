@@ -1,0 +1,8 @@
+node_modules/
+data/quiz.db
+.env
+.DS_Store
+Thumbs.db
+nul
+*.log
+.cursor/
