@@ -1042,6 +1042,17 @@ let RAW_QUESTIONS_BY_DIFF = { easy:[], medium:[], hard:[] };
 let questionsSource = 'local'; // 'cdn' or 'local'
 
 function buildMixedPool(){
+  // إذا الداتا ما جاءت بعد (مثلاً غيّر الصعوبة قبل ما يخلص التحميل)، نستخدم الأسئلة المحلية
+  const totalRaw = (RAW_QUESTIONS_BY_DIFF.easy||[]).length + (RAW_QUESTIONS_BY_DIFF.medium||[]).length + (RAW_QUESTIONS_BY_DIFF.hard||[]).length;
+  if (totalRaw === 0) {
+    RAW_QUESTIONS_BY_DIFF = { easy: [], medium: [], hard: [] };
+    LOCAL_QUESTIONS.forEach(q => {
+      const d = q.pts <= 10 ? 'easy' : q.pts <= 20 ? 'medium' : 'hard';
+      RAW_QUESTIONS_BY_DIFF[d].push({ ...q, diff: d });
+    });
+    questionsSource = 'local';
+  }
+
   const diff = state.settings.difficulty || 'medium';
   const mix = DIFFICULTY_MIX[diff] || DIFFICULTY_MIX.medium;
   const target = MAX_QUESTIONS; // 60
@@ -1081,8 +1092,14 @@ function buildMixedPool(){
   pool = pool.slice(0, MAX_QUESTIONS);
   pool.forEach((q,i) => q.id = i + 1);
 
-  QUESTION_POOL = pool;
-  console.log(`🎯 مكس [${diff}]: ${pool.length} سؤال (سهل:${pool.filter(q=>q.diff==='easy').length} متوسط:${pool.filter(q=>q.diff==='medium').length} صعب:${pool.filter(q=>q.diff==='hard').length})`);
+  // لو المجموعة فاضية، نستخدم الأسئلة المحلية كاملة
+  if (pool.length === 0) {
+    QUESTION_POOL = LOCAL_QUESTIONS.map((q, i) => ({ ...q, id: i + 1, diff: q.pts <= 10 ? 'easy' : q.pts <= 20 ? 'medium' : 'hard' }));
+    console.warn('⚠️ لم تُحمّل أسئلة — استخدام الأسئلة المحلية');
+  } else {
+    QUESTION_POOL = pool;
+  }
+  console.log(`🎯 مكس [${diff}]: ${QUESTION_POOL.length} سؤال (سهل:${QUESTION_POOL.filter(q=>q.diff==='easy').length} متوسط:${QUESTION_POOL.filter(q=>q.diff==='medium').length} صعب:${QUESTION_POOL.filter(q=>q.diff==='hard').length})`);
   buildQuestionCountOptions();
   renderProgress();
 }
@@ -1128,9 +1145,39 @@ async function tryLoadQuestionsFromAPI() {
     questionsSource = 'cdn';
     console.log(`✅ تم تحميل ${tfQuestions.length} سؤال من الداتابيس (سهل:${RAW_QUESTIONS_BY_DIFF.easy.length} متوسط:${RAW_QUESTIONS_BY_DIFF.medium.length} صعب:${RAW_QUESTIONS_BY_DIFF.hard.length})`);
     buildMixedPool();
-  } catch (e) {
-    // لا يوجد إنترنت — نصنّف الأسئلة المحلية
-    console.warn('📴 استخدام أسئلة محلية (أوفلاين):', e.message || e);
+  } catch (e1) {
+    // محاولة ثانية: تحميل من الملف المحلي data/questions.json (مفيد عند فتح الصفحة محلياً)
+    try {
+      const resLocal = await fetch('data/questions.json');
+      if (!resLocal.ok) throw new Error('HTTP ' + resLocal.status);
+      const allQuestions = await resLocal.json();
+      if (!Array.isArray(allQuestions) || allQuestions.length === 0) throw new Error('empty');
+      if (state && (state.questionsPlayed > 0 || state.currentQuestion)) return;
+
+      const tfQuestions = allQuestions.filter(q => q.type === 'tf');
+      if (tfQuestions.length === 0) throw new Error('no tf questions');
+
+      const DIFF_PTS = { easy: 10, medium: 20, hard: 30, extreme: 50 };
+      RAW_QUESTIONS_BY_DIFF = { easy:[], medium:[], hard:[] };
+      tfQuestions.forEach(q => {
+        const mapped = {
+          id: 0,
+          q: q.question_ar,
+          a: q.correctBoolean === true,
+          pts: DIFF_PTS[q.difficulty] || 10,
+          diff: q.difficulty === 'extreme' ? 'hard' : (q.difficulty || 'medium')
+        };
+        const bucket = mapped.diff === 'hard' ? 'hard' : (mapped.diff === 'easy' ? 'easy' : 'medium');
+        if (RAW_QUESTIONS_BY_DIFF[bucket]) RAW_QUESTIONS_BY_DIFF[bucket].push(mapped);
+        else RAW_QUESTIONS_BY_DIFF.medium.push(mapped);
+      });
+      questionsSource = 'local';
+      console.log(`✅ تم تحميل ${tfQuestions.length} سؤال من data/questions.json (سهل:${RAW_QUESTIONS_BY_DIFF.easy.length} متوسط:${RAW_QUESTIONS_BY_DIFF.medium.length} صعب:${RAW_QUESTIONS_BY_DIFF.hard.length})`);
+      buildMixedPool();
+      return;
+    } catch (e2) {
+      console.warn('📴 CDN والملف المحلي فشلا — استخدام الأسئلة المضمّنة:', e1.message || e1, e2.message || e2);
+    }
     RAW_QUESTIONS_BY_DIFF = { easy:[], medium:[], hard:[] };
     LOCAL_QUESTIONS.forEach(q => {
       const d = q.pts <= 10 ? 'easy' : q.pts <= 20 ? 'medium' : 'hard';
