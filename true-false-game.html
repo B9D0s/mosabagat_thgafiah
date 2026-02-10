@@ -306,16 +306,10 @@ button:active{transform:scale(.95)}
       <div class="modal-row">
         <label>كم سؤال تبي تلعب؟</label>
         <select id="totalQuestionsSelect" onchange="updateSetting('totalQuestions',parseInt(this.value))">
-          <option value="5">٥ أسئلة</option>
-          <option value="10">١٠ أسئلة</option>
-          <option value="15">١٥ سؤال</option>
-          <option value="20">٢٠ سؤال</option>
-          <option value="25">٢٥ سؤال</option>
-          <option value="30">٣٠ سؤال</option>
-          <option value="40">٤٠ سؤال</option>
-          <option value="50">٥٠ سؤال</option>
-          <option value="60">٦٠ سؤال (الكل)</option>
         </select>
+      </div>
+      <div class="modal-row" style="opacity:.6;font-size:12px">
+        <label id="availableCountLabel">الأسئلة المتاحة: تحميل...</label>
       </div>
     </div>
 
@@ -747,6 +741,32 @@ function toggleHostView(){ state.hostView=!state.hostView; saveState(); render()
 function openSettings(){ syncSettingsUI(); document.getElementById('settingsModal').classList.add('open'); }
 function closeSettings(){ document.getElementById('settingsModal').classList.remove('open'); }
 
+function buildQuestionCountOptions(){
+  const sel=document.getElementById('totalQuestionsSelect');
+  const pool=QUESTION_POOL.length;
+  sel.innerHTML='';
+  // خيارات ثابتة حتى حجم المتاح
+  const steps=[5,10,15,20,25,30,40,50,75,100,150,200];
+  steps.forEach(n=>{
+    if(n<pool){
+      const opt=document.createElement('option');
+      opt.value=n; opt.textContent=n+' سؤال';
+      sel.appendChild(opt);
+    }
+  });
+  // خيار "الكل" دائماً يكون آخر خيار
+  const allOpt=document.createElement('option');
+  allOpt.value=pool; allOpt.textContent=pool+' سؤال (الكل)';
+  sel.appendChild(allOpt);
+  // تحديث label
+  document.getElementById('availableCountLabel').textContent='الأسئلة المتاحة: '+pool+' سؤال';
+  // تصحيح القيمة الحالية إذا تجاوزت المتاح
+  if(state.settings.totalQuestions>pool) { state.settings.totalQuestions=pool; saveState(); }
+  sel.value=state.settings.totalQuestions;
+  // إذا القيمة مش موجودة كخيار، اختار أقرب خيار
+  if(!sel.value){ sel.value=pool; state.settings.totalQuestions=pool; saveState(); }
+}
+
 function syncSettingsUI(){
   const s=state.settings;
   document.getElementById('gameTitleInput').value=s.gameTitle;
@@ -755,7 +775,7 @@ function syncSettingsUI(){
   document.getElementById('timerSeconds').value=s.timerSeconds;
   document.getElementById('autoNextDelay').value=s.autoNextDelay;
   document.getElementById('questionOrder').value=s.questionOrder;
-  document.getElementById('totalQuestionsSelect').value=s.totalQuestions;
+  buildQuestionCountOptions();
   setToggle('toggleTimer',s.timerEnabled);
   setToggle('toggleAutoLock',s.autoLockWhenAllAnswered);
   setToggle('toggleAutoNext',s.autoNextAfterReveal);
@@ -955,6 +975,15 @@ function esc(str){ const d=document.createElement('div'); d.textContent=str; ret
 const QUESTIONS_CDN = 'https://cdn.jsdelivr.net/gh/B9D0s/mosabagat_thgafiah@main/data/questions.json';
 
 /* ===== تحميل أسئلة من الأونلاين عند توفر الإنترنت ===== */
+/* ===== خلط مصفوفة (Fisher-Yates) ===== */
+function shuffleArray(arr){
+  for(let i=arr.length-1;i>0;i--){
+    const j=Math.floor(Math.random()*(i+1));
+    [arr[i],arr[j]]=[arr[j],arr[i]];
+  }
+  return arr;
+}
+
 async function tryLoadQuestionsFromAPI() {
   try {
     const controller = new AbortController();
@@ -968,10 +997,11 @@ async function tryLoadQuestionsFromAPI() {
 
     if (!Array.isArray(allQuestions) || allQuestions.length === 0) throw new Error('empty');
 
-    // نصفّي أسئلة صح/خطأ فقط لهذه اللعبة
-    const tfQuestions = allQuestions.filter(q => q.type === 'tf');
+    // لا نغيّر مصدر الأسئلة إذا كانت اللعبة قد بدأت بالفعل
+    if (state && (state.questionsPlayed > 0 || state.currentQuestion)) return;
 
-    // نحوّلها لصيغة اللعبة
+    // نسحب أسئلة صح/خطأ فقط من الداتابيس
+    const tfQuestions = allQuestions.filter(q => q.type === 'tf');
     const DIFF_PTS = { easy: 10, medium: 20, hard: 30, extreme: 50 };
     const mapped = tfQuestions.map((q, idx) => ({
       id: idx + 1,
@@ -982,19 +1012,25 @@ async function tryLoadQuestionsFromAPI() {
 
     if (mapped.length === 0) throw new Error('no tf questions');
 
-    // لا نغيّر مصدر الأسئلة إذا كانت اللعبة قد بدأت بالفعل
-    if (state && (state.questionsPlayed > 0 || state.currentQuestion)) return;
+    // خلط عشوائي كل مرة
+    shuffleArray(mapped);
+    mapped.forEach((q, i) => q.id = i + 1);
 
     QUESTION_POOL = mapped;
-    console.log(`✅ تم تحميل ${mapped.length} سؤال صح/خطأ من الأونلاين (CDN)`);
+    console.log(`✅ تم تحميل ${mapped.length} سؤال صح/خطأ من الداتابيس (عشوائي)`);
+    buildQuestionCountOptions();
+    renderProgress();
   } catch (e) {
     // لا يوجد إنترنت أو فشل التحميل — نستمر على الأسئلة المحلية المدمجة
     console.warn('📴 استخدام أسئلة محلية (أوفلاين):', e.message || e);
+    buildQuestionCountOptions();
+    renderProgress();
   }
 }
 
 /* ===== تشغيل ===== */
 loadState();
+buildQuestionCountOptions();
 render();
 // نحاول تحميل أسئلة من الـ API في الخلفية بدون تعطيل الأسئلة المحلية
 tryLoadQuestionsFromAPI();

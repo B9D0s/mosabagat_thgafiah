@@ -6,3 +6,19 @@ Thumbs.db
 nul
 *.log
 .cursor/
+.claude/
+external/
+
+# ملفات PDF المصدرية
+*.pdf
+
+# ملفات الـ API السيرفر (مانحتاجها - نستخدم CDN)
+seed/
+src/db/
+src/routes/
+src/validators/
+src/services/
+src/server.js
+render.yaml
+package-lock.json
+content/

@@ -5147,5 +5147,545 @@
     ],
     "correctIndex": 0,
     "source_ar": "قصص الأنبياء"
+  },
+  {
+    "type": "tf",
+    "category": "علوم",
+    "difficulty": "easy",
+    "question_ar": "الأرض تدور حول الشمس",
+    "correctBoolean": true,
+    "source_ar": "معلومات عامة",
+    "explanation_ar": "الأرض تدور حول الشمس في مدار إهليلجي مرة كل 365.25 يوم."
+  },
+  {
+    "type": "tf",
+    "category": "علوم",
+    "difficulty": "easy",
+    "question_ar": "عدد أيام السنة الميلادية 360 يوماً",
+    "correctBoolean": false,
+    "source_ar": "معلومات عامة",
+    "explanation_ar": "عدد أيام السنة الميلادية 365 يوماً أو 366 في السنة الكبيسة."
+  },
+  {
+    "type": "tf",
+    "category": "علوم",
+    "difficulty": "easy",
+    "question_ar": "الحوت هو أكبر حيوان على وجه الأرض",
+    "correctBoolean": true,
+    "source_ar": "معلومات عامة",
+    "explanation_ar": "الحوت الأزرق هو أكبر حيوان عاش على الأرض على الإطلاق."
+  },
+  {
+    "type": "tf",
+    "category": "جغرافيا",
+    "difficulty": "easy",
+    "question_ar": "عاصمة اليابان هي بكين",
+    "correctBoolean": false,
+    "source_ar": "معلومات عامة",
+    "explanation_ar": "عاصمة اليابان هي طوكيو، أما بكين فهي عاصمة الصين."
+  },
+  {
+    "type": "tf",
+    "category": "علوم",
+    "difficulty": "easy",
+    "question_ar": "الماء يتكون من ذرتي هيدروجين وذرة أكسجين",
+    "correctBoolean": true,
+    "source_ar": "كيمياء",
+    "explanation_ar": "الصيغة الكيميائية للماء H₂O."
+  },
+  {
+    "type": "tf",
+    "category": "علوم",
+    "difficulty": "easy",
+    "question_ar": "القمر ينتج ضوءه الخاص",
+    "correctBoolean": false,
+    "source_ar": "فلك",
+    "explanation_ar": "القمر يعكس ضوء الشمس ولا ينتج ضوءاً بنفسه."
+  },
+  {
+    "type": "tf",
+    "category": "جغرافيا",
+    "difficulty": "medium",
+    "question_ar": "أطول نهر في العالم هو نهر النيل",
+    "correctBoolean": true,
+    "source_ar": "جغرافيا",
+    "explanation_ar": "يبلغ طول نهر النيل حوالي 6,650 كم."
+  },
+  {
+    "type": "tf",
+    "category": "جغرافيا",
+    "difficulty": "easy",
+    "question_ar": "عدد قارات العالم خمس قارات",
+    "correctBoolean": false,
+    "source_ar": "جغرافيا",
+    "explanation_ar": "عدد قارات العالم سبع قارات."
+  },
+  {
+    "type": "tf",
+    "category": "علوم",
+    "difficulty": "easy",
+    "question_ar": "النحل يصنع العسل",
+    "correctBoolean": true,
+    "source_ar": "أحياء",
+    "explanation_ar": "النحل يجمع الرحيق من الأزهار ويحوله إلى عسل."
+  },
+  {
+    "type": "tf",
+    "category": "علوم",
+    "difficulty": "medium",
+    "question_ar": "الصوت ينتقل في الفضاء الخارجي",
+    "correctBoolean": false,
+    "source_ar": "فيزياء",
+    "explanation_ar": "الصوت يحتاج وسطاً مادياً للانتقال والفضاء فراغ."
+  },
+  {
+    "type": "tf",
+    "category": "جغرافيا",
+    "difficulty": "easy",
+    "question_ar": "جبل إيفرست هو أعلى جبل في العالم",
+    "correctBoolean": true,
+    "source_ar": "جغرافيا",
+    "explanation_ar": "يبلغ ارتفاعه 8,848 متراً فوق سطح البحر."
+  },
+  {
+    "type": "tf",
+    "category": "علوم",
+    "difficulty": "medium",
+    "question_ar": "الخفاش من الطيور",
+    "correctBoolean": false,
+    "source_ar": "أحياء",
+    "explanation_ar": "الخفاش من الثدييات وهو الثديي الوحيد القادر على الطيران."
+  },
+  {
+    "type": "tf",
+    "category": "علوم",
+    "difficulty": "medium",
+    "question_ar": "الذهب لا يصدأ",
+    "correctBoolean": true,
+    "source_ar": "كيمياء",
+    "explanation_ar": "الذهب لا يتأكسد ولا يتفاعل مع الأكسجين في الظروف العادية."
+  },
+  {
+    "type": "tf",
+    "category": "علوم",
+    "difficulty": "easy",
+    "question_ar": "كوكب المريخ يُلقب بالكوكب الأحمر",
+    "correctBoolean": true,
+    "source_ar": "فلك",
+    "explanation_ar": "بسبب لونه الأحمر الناتج عن أكسيد الحديد على سطحه."
+  },
+  {
+    "type": "tf",
+    "category": "علوم",
+    "difficulty": "easy",
+    "question_ar": "البطريق يستطيع الطيران",
+    "correctBoolean": false,
+    "source_ar": "أحياء",
+    "explanation_ar": "البطريق طائر لا يطير لكنه سباح ماهر."
+  },
+  {
+    "type": "tf",
+    "category": "جغرافيا",
+    "difficulty": "medium",
+    "question_ar": "المحيط الهادئ هو أكبر محيطات العالم",
+    "correctBoolean": true,
+    "source_ar": "جغرافيا",
+    "explanation_ar": "يغطي مساحة أكبر من جميع اليابسة مجتمعة."
+  },
+  {
+    "type": "tf",
+    "category": "علوم",
+    "difficulty": "medium",
+    "question_ar": "الألماس مصنوع من الكربون",
+    "correctBoolean": true,
+    "source_ar": "كيمياء",
+    "explanation_ar": "الألماس هو شكل بلوري من الكربون النقي."
+  },
+  {
+    "type": "tf",
+    "category": "علوم",
+    "difficulty": "hard",
+    "question_ar": "الإنسان يستخدم 10% فقط من دماغه",
+    "correctBoolean": false,
+    "source_ar": "أحياء",
+    "explanation_ar": "خرافة شائعة، الإنسان يستخدم كامل دماغه لكن ليس كل الأجزاء في نفس الوقت."
+  },
+  {
+    "type": "tf",
+    "category": "ثقافة عامة",
+    "difficulty": "hard",
+    "question_ar": "سور الصين العظيم يمكن رؤيته من الفضاء بالعين المجردة",
+    "correctBoolean": false,
+    "source_ar": "خرافات شائعة",
+    "explanation_ar": "لا يمكن رؤيته بالعين المجردة من الفضاء، وأكد ذلك رواد الفضاء."
+  },
+  {
+    "type": "tf",
+    "category": "علوم",
+    "difficulty": "hard",
+    "question_ar": "الأخطبوط لديه ثلاثة قلوب",
+    "correctBoolean": true,
+    "source_ar": "أحياء",
+    "explanation_ar": "قلبان لضخ الدم للخياشيم وقلب واحد لضخه لباقي الجسم."
+  },
+  {
+    "type": "tf",
+    "category": "علوم",
+    "difficulty": "easy",
+    "question_ar": "درجة غليان الماء هي 100 درجة مئوية",
+    "correctBoolean": true,
+    "source_ar": "فيزياء",
+    "explanation_ar": "عند الضغط الجوي القياسي (مستوى سطح البحر)."
+  },
+  {
+    "type": "tf",
+    "category": "جغرافيا",
+    "difficulty": "medium",
+    "question_ar": "أستراليا هي أصغر قارة في العالم",
+    "correctBoolean": true,
+    "source_ar": "جغرافيا",
+    "explanation_ar": "أستراليا هي أصغر قارة وأكبر جزيرة."
+  },
+  {
+    "type": "tf",
+    "category": "علوم",
+    "difficulty": "hard",
+    "question_ar": "البرق والرعد يحدثان في نفس اللحظة",
+    "correctBoolean": true,
+    "source_ar": "فيزياء",
+    "explanation_ar": "يحدثان معاً لكن نرى البرق أولاً لأن الضوء أسرع من الصوت."
+  },
+  {
+    "type": "tf",
+    "category": "علوم",
+    "difficulty": "easy",
+    "question_ar": "الضوء أسرع من الصوت",
+    "correctBoolean": true,
+    "source_ar": "فيزياء",
+    "explanation_ar": "سرعة الضوء حوالي 300,000 كم/ث بينما الصوت 343 م/ث."
+  },
+  {
+    "type": "tf",
+    "category": "علوم",
+    "difficulty": "medium",
+    "question_ar": "عدد ألوان قوس قزح ستة ألوان",
+    "correctBoolean": false,
+    "source_ar": "فيزياء",
+    "explanation_ar": "عدد ألوان قوس قزح سبعة ألوان."
+  },
+  {
+    "type": "tf",
+    "category": "جغرافيا",
+    "difficulty": "easy",
+    "question_ar": "المملكة العربية السعودية أكبر دولة في شبه الجزيرة العربية",
+    "correctBoolean": true,
+    "source_ar": "جغرافيا",
+    "explanation_ar": "تحتل معظم مساحة شبه الجزيرة العربية."
+  },
+  {
+    "type": "tf",
+    "category": "علوم",
+    "difficulty": "medium",
+    "question_ar": "الفيل يخاف من الفأر",
+    "correctBoolean": false,
+    "source_ar": "خرافات شائعة",
+    "explanation_ar": "خرافة شائعة لا أساس علمي لها."
+  },
+  {
+    "type": "tf",
+    "category": "علوم",
+    "difficulty": "easy",
+    "question_ar": "كوكب زحل لديه حلقات",
+    "correctBoolean": true,
+    "source_ar": "فلك",
+    "explanation_ar": "حلقات زحل تتكون من جليد وصخور تدور حوله."
+  },
+  {
+    "type": "tf",
+    "category": "علوم",
+    "difficulty": "hard",
+    "question_ar": "الطماطم من الفواكه وليست من الخضروات",
+    "correctBoolean": true,
+    "source_ar": "أحياء",
+    "explanation_ar": "نباتياً تُصنف كفاكهة لأنها تنمو من زهرة وتحتوي بذوراً."
+  },
+  {
+    "type": "tf",
+    "category": "علوم",
+    "difficulty": "easy",
+    "question_ar": "عدد أسنان الإنسان البالغ 32 سناً",
+    "correctBoolean": true,
+    "source_ar": "أحياء",
+    "explanation_ar": "تشمل القواطع والأنياب والطواحن وضرس العقل."
+  },
+  {
+    "type": "tf",
+    "category": "علوم",
+    "difficulty": "medium",
+    "question_ar": "النعامة تدفن رأسها في الرمال عند الخوف",
+    "correctBoolean": false,
+    "source_ar": "خرافات شائعة",
+    "explanation_ar": "خرافة شائعة، النعامة تنبطح وتمد رقبتها على الأرض للتمويه."
+  },
+  {
+    "type": "tf",
+    "category": "علوم",
+    "difficulty": "hard",
+    "question_ar": "الزرافة ليس لها صوت",
+    "correctBoolean": false,
+    "source_ar": "أحياء",
+    "explanation_ar": "الزرافة تصدر أصواتاً منخفضة التردد لا يسمعها البشر عادة."
+  },
+  {
+    "type": "tf",
+    "category": "ثقافة عامة",
+    "difficulty": "easy",
+    "question_ar": "عدد حروف اللغة العربية 28 حرفاً",
+    "correctBoolean": true,
+    "source_ar": "لغة عربية",
+    "explanation_ar": "من الألف إلى الياء."
+  },
+  {
+    "type": "tf",
+    "category": "ثقافة عامة",
+    "difficulty": "easy",
+    "question_ar": "أول من مشى على سطح القمر هو نيل أرمسترونغ",
+    "correctBoolean": true,
+    "source_ar": "تاريخ",
+    "explanation_ar": "في 20 يوليو 1969 ضمن مهمة أبولو 11."
+  },
+  {
+    "type": "tf",
+    "category": "علوم",
+    "difficulty": "medium",
+    "question_ar": "يستطيع الإنسان العيش بدون ماء لمدة شهر",
+    "correctBoolean": false,
+    "source_ar": "أحياء",
+    "explanation_ar": "الإنسان يعيش بدون ماء 3-5 أيام فقط تقريباً."
+  },
+  {
+    "type": "tf",
+    "category": "علوم",
+    "difficulty": "hard",
+    "question_ar": "الكلب يرى بالأبيض والأسود فقط",
+    "correctBoolean": false,
+    "source_ar": "أحياء",
+    "explanation_ar": "الكلب يرى بعض الألوان لكن طيفه اللوني محدود مقارنة بالإنسان."
+  },
+  {
+    "type": "tf",
+    "category": "علوم",
+    "difficulty": "easy",
+    "question_ar": "عدد أرجل العنكبوت ثمانية",
+    "correctBoolean": true,
+    "source_ar": "أحياء",
+    "explanation_ar": "العنكبوت من العنكبوتيات وليس من الحشرات."
+  },
+  {
+    "type": "tf",
+    "category": "علوم",
+    "difficulty": "medium",
+    "question_ar": "الحليب حمضي",
+    "correctBoolean": false,
+    "source_ar": "كيمياء",
+    "explanation_ar": "الحليب الطازج قلوي قليلاً (pH حوالي 6.5-6.7)."
+  },
+  {
+    "type": "tf",
+    "category": "علوم",
+    "difficulty": "hard",
+    "question_ar": "القلب يقع في الجهة اليسرى من الصدر",
+    "correctBoolean": false,
+    "source_ar": "أحياء",
+    "explanation_ar": "القلب يقع في منتصف الصدر مع ميل طفيف لليسار."
+  },
+  {
+    "type": "tf",
+    "category": "جغرافيا",
+    "difficulty": "medium",
+    "question_ar": "البحر الميت هو أخفض نقطة على سطح الأرض",
+    "correctBoolean": true,
+    "source_ar": "جغرافيا",
+    "explanation_ar": "يقع على عمق حوالي 430 متراً تحت مستوى سطح البحر."
+  },
+  {
+    "type": "tf",
+    "category": "علوم",
+    "difficulty": "medium",
+    "question_ar": "سرعة الضوء حوالي 300 ألف كيلومتر في الثانية",
+    "correctBoolean": true,
+    "source_ar": "فيزياء",
+    "explanation_ar": "تحديداً 299,792 كم/ث في الفراغ."
+  },
+  {
+    "type": "tf",
+    "category": "علوم",
+    "difficulty": "medium",
+    "question_ar": "يمكن للإنسان أن يعطس وعيناه مفتوحتان",
+    "correctBoolean": false,
+    "source_ar": "أحياء",
+    "explanation_ar": "إغلاق العينين أثناء العطس رد فعل لا إرادي."
+  },
+  {
+    "type": "tf",
+    "category": "ثقافة عامة",
+    "difficulty": "medium",
+    "question_ar": "اللغة الصينية هي أكثر لغة يتحدث بها سكان العالم",
+    "correctBoolean": true,
+    "source_ar": "معلومات عامة",
+    "explanation_ar": "الماندرين الصينية بعدد متحدثين يتجاوز المليار."
+  },
+  {
+    "type": "tf",
+    "category": "علوم",
+    "difficulty": "medium",
+    "question_ar": "عدد كواكب المجموعة الشمسية تسعة كواكب",
+    "correctBoolean": false,
+    "source_ar": "فلك",
+    "explanation_ar": "ثمانية كواكب بعد إعادة تصنيف بلوتو ككوكب قزم عام 2006."
+  },
+  {
+    "type": "tf",
+    "category": "علوم",
+    "difficulty": "hard",
+    "question_ar": "الجمل يخزن الماء في سنامه",
+    "correctBoolean": false,
+    "source_ar": "أحياء",
+    "explanation_ar": "السنام يخزن الدهون وليس الماء."
+  },
+  {
+    "type": "tf",
+    "category": "علوم",
+    "difficulty": "easy",
+    "question_ar": "حاسة الشم عند الكلاب أقوى من الإنسان",
+    "correctBoolean": true,
+    "source_ar": "أحياء",
+    "explanation_ar": "حاسة الشم عند الكلب أقوى 10,000-100,000 مرة من الإنسان."
+  },
+  {
+    "type": "tf",
+    "category": "جغرافيا",
+    "difficulty": "easy",
+    "question_ar": "مصر تقع في قارة آسيا",
+    "correctBoolean": false,
+    "source_ar": "جغرافيا",
+    "explanation_ar": "مصر تقع في قارة أفريقيا مع جزء صغير (سيناء) في آسيا."
+  },
+  {
+    "type": "tf",
+    "category": "ثقافة عامة",
+    "difficulty": "easy",
+    "question_ar": "عدد أيام شهر فبراير دائماً 28 يوماً",
+    "correctBoolean": false,
+    "source_ar": "معلومات عامة",
+    "explanation_ar": "في السنة الكبيسة يكون 29 يوماً."
+  },
+  {
+    "type": "tf",
+    "category": "علوم",
+    "difficulty": "easy",
+    "question_ar": "السكر الأبيض مصدره نبات قصب السكر أو البنجر",
+    "correctBoolean": true,
+    "source_ar": "زراعة",
+    "explanation_ar": "يُستخرج من قصب السكر أو بنجر السكر."
+  },
+  {
+    "type": "tf",
+    "category": "علوم",
+    "difficulty": "medium",
+    "question_ar": "الأذن هي أصغر عظمة في جسم الإنسان",
+    "correctBoolean": true,
+    "source_ar": "أحياء",
+    "explanation_ar": "عظمة الركاب في الأذن الوسطى هي أصغر عظمة."
+  },
+  {
+    "type": "tf",
+    "category": "علوم",
+    "difficulty": "easy",
+    "question_ar": "البصل يسبب البكاء بسبب مادة كيميائية تتطاير عند تقطيعه",
+    "correctBoolean": true,
+    "source_ar": "كيمياء",
+    "explanation_ar": "مادة syn-propanethial-S-oxide تهيّج العينين."
+  },
+  {
+    "type": "tf",
+    "category": "علوم",
+    "difficulty": "easy",
+    "question_ar": "الثلج يغرق في الماء",
+    "correctBoolean": false,
+    "source_ar": "فيزياء",
+    "explanation_ar": "الثلج أقل كثافة من الماء لذلك يطفو."
+  },
+  {
+    "type": "tf",
+    "category": "علوم",
+    "difficulty": "hard",
+    "question_ar": "يتغير لون دم الإنسان إلى أزرق داخل الجسم",
+    "correctBoolean": false,
+    "source_ar": "أحياء",
+    "explanation_ar": "الدم دائماً أحمر، لكنه أغمق عندما يكون غير مؤكسد."
+  },
+  {
+    "type": "tf",
+    "category": "علوم",
+    "difficulty": "hard",
+    "question_ar": "الموز ينمو على أشجار",
+    "correctBoolean": false,
+    "source_ar": "أحياء",
+    "explanation_ar": "الموز ينمو على نبتة عشبية عملاقة وليست شجرة حقيقية."
+  },
+  {
+    "type": "tf",
+    "category": "إسلامية",
+    "difficulty": "easy",
+    "question_ar": "الكعبة المشرفة تقع في مدينة مكة المكرمة",
+    "correctBoolean": true,
+    "source_ar": "معلومات إسلامية",
+    "explanation_ar": "في المسجد الحرام بمكة المكرمة."
+  },
+  {
+    "type": "tf",
+    "category": "علوم",
+    "difficulty": "medium",
+    "question_ar": "الحصان ينام واقفاً",
+    "correctBoolean": true,
+    "source_ar": "أحياء",
+    "explanation_ar": "بفضل آلية تثبيت في أرجله تسمح بالنوم واقفاً."
+  },
+  {
+    "type": "tf",
+    "category": "رياضيات",
+    "difficulty": "easy",
+    "question_ar": "عدد أضلاع المثلث أربعة",
+    "correctBoolean": false,
+    "source_ar": "رياضيات",
+    "explanation_ar": "المثلث له ثلاثة أضلاع."
+  },
+  {
+    "type": "tf",
+    "category": "علوم",
+    "difficulty": "medium",
+    "question_ar": "فصيلة الدم الأكثر شيوعاً في العالم هي O+",
+    "correctBoolean": true,
+    "source_ar": "طب",
+    "explanation_ar": "حوالي 38% من سكان العالم يحملون هذه الفصيلة."
+  },
+  {
+    "type": "tf",
+    "category": "علوم",
+    "difficulty": "easy",
+    "question_ar": "الأرض أقرب كوكب إلى الشمس",
+    "correctBoolean": false,
+    "source_ar": "فلك",
+    "explanation_ar": "عطارد هو أقرب كوكب إلى الشمس."
+  },
+  {
+    "type": "tf",
+    "category": "علوم",
+    "difficulty": "medium",
+    "question_ar": "يمكن لسمكة القرش أن تشم الدم من مسافة بعيدة",
+    "correctBoolean": true,
+    "source_ar": "أحياء",
+    "explanation_ar": "يمكنها شم قطرة دم واحدة في ملايين اللترات من الماء."
   }
 ]
