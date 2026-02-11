@@ -5,7 +5,9 @@
   "private": true,
   "scripts": {
     "gen": "node scripts/gen_questions_gemini.mjs",
-    "merge": "node tests/merge-questions.js"
+    "merge": "node tests/merge-questions.js",
+    "serve": "npx serve . -p 3333",
+    "preview": "npx serve . -p 3333"
   },
   "dependencies": {
     "dotenv": "^16.4.5",

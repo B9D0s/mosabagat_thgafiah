@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>بطولة السلسلة</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --primary:#BF4646;
+  --primary-dark:#a33b3b;
+  --primary-light:#d45a5a;
+  --secondary:#7EACB5;
+  --secondary-dark:#6a9aa3;
+  --secondary-light:#96c0c8;
+  --bg:#FFF4EA;
+  --bg-block:#EDDCC6;
+  --bg-card:#ffffff;
+  --text:#2d2d2d;
+  --text-light:#7a7a7a;
+  --text-on-primary:#ffffff;
+  --green:#4CAF50;
+  --green-light:#e8f5e9;
+  --red:#e74c3c;
+  --red-light:#fdeaea;
+  --amber:#FF9800;
+  --radius:16px;
+  --radius-sm:10px;
+  --radius-xs:6px;
+  --shadow:0 4px 20px rgba(0,0,0,0.08);
+  --shadow-lg:0 8px 32px rgba(0,0,0,0.12);
+  --shadow-sm:0 2px 8px rgba(0,0,0,0.06);
+  --transition:all .25s ease;
+  --font:"Segoe UI",Tahoma,Arial,sans-serif;
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--font);
+  background:var(--bg);
+  color:var(--text);
+  min-height:100vh;
+  line-height:1.6;
+  overflow-x:hidden;
+}
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:var(--bg-block)}
+::-webkit-scrollbar-thumb{background:var(--secondary);border-radius:3px}
+
+/* ===== أعلى الصفحة ===== */
+.top-bar{
+  position:sticky;top:0;z-index:100;
+  background:var(--bg-card);
+  border-bottom:2px solid var(--bg-block);
+  box-shadow:var(--shadow-sm);
+  padding:12px 24px;
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:10px;
+}
+.top-bar .title-section{display:flex;align-items:center;gap:12px}
+.top-bar h1{font-size:22px;color:var(--primary);font-weight:700}
+.top-bar .info{display:flex;align-items:center;gap:16px;font-size:14px;color:var(--text-light)}
+.top-bar .info .round-badge{
+  background:var(--bg-block);padding:4px 14px;border-radius:20px;font-weight:600;color:var(--text)
+}
+.top-bar .info .turn-badge{
+  background:var(--primary);color:#fff;padding:4px 14px;border-radius:20px;font-weight:600
+}
+.connection-dot{
+  width:10px;height:10px;border-radius:50%;display:inline-block;
+  background:#ccc;transition:var(--transition);
+}
+.connection-dot.cdn{background:var(--green)}
+.connection-dot.cached{background:var(--amber)}
+.connection-dot.embedded{background:var(--red)}
+.top-bar .bar-btns{display:flex;gap:8px}
+.top-bar .bar-btns button{
+  background:var(--bg-block);border:none;border-radius:var(--radius-sm);
+  padding:8px 16px;cursor:pointer;font-family:var(--font);font-size:13px;
+  color:var(--text);transition:var(--transition);font-weight:600;
+}
+.top-bar .bar-btns button:hover{background:var(--secondary);color:#fff}
+
+/* ===== شريط المؤقت ===== */
+.timer-container{
+  height:6px;background:var(--bg-block);overflow:hidden;
+  opacity:0;transition:opacity .3s;
+}
+.timer-container.visible{opacity:1}
+.timer-bar{
+  height:100%;background:var(--secondary);
+  transition:width 1s linear;border-radius:0 0 3px 3px;
+}
+.timer-bar.warning{background:var(--primary);animation:pulse 0.5s infinite alternate}
+
+/* ===== بطاقة السؤال ===== */
+.question-area{
+  max-width:850px;margin:24px auto;padding:0 16px;
+}
+.question-box{
+  background:var(--bg-card);border-radius:var(--radius);
+  padding:32px 28px;box-shadow:var(--shadow-lg);
+  animation:fadeIn .4s ease;
+}
+.q-meta{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:20px}
+.badge{
+  padding:5px 14px;border-radius:20px;font-size:13px;font-weight:600;
+  display:inline-flex;align-items:center;gap:4px;
+}
+.category-badge{background:var(--secondary);color:#fff}
+.difficulty-badge{color:#fff}
+.difficulty-badge.easy{background:var(--green)}
+.difficulty-badge.medium{background:var(--amber)}
+.difficulty-badge.hard{background:#e67e22}
+.difficulty-badge.extreme{background:var(--primary)}
+.timer-text{
+  margin-right:auto;font-size:20px;font-weight:700;
+  color:var(--secondary);min-width:36px;text-align:center;
+}
+.timer-text.warning{color:var(--primary);animation:pulse .5s infinite alternate}
+.q-text{
+  font-size:24px;font-weight:700;text-align:center;
+  line-height:1.8;margin-bottom:8px;color:var(--text);
+}
+.q-source{
+  font-size:12px;color:var(--text-light);text-align:center;margin-bottom:20px;
+}
+.options-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px;
+}
+.options-grid.tf-grid{grid-template-columns:1fr 1fr}
+.option-btn{
+  background:var(--bg-block);border:3px solid transparent;
+  border-radius:var(--radius-sm);padding:16px 20px;
+  font-size:17px;font-weight:600;cursor:pointer;
+  font-family:var(--font);transition:var(--transition);
+  display:flex;align-items:center;gap:10px;text-align:right;
+  color:var(--text);
+}
+.option-btn:hover:not(:disabled){
+  border-color:var(--secondary);background:rgba(126,172,181,0.1);
+  transform:translateY(-2px);box-shadow:var(--shadow-sm);
+}
+.option-btn:active:not(:disabled){transform:scale(.97)}
+.option-btn.selected{
+  border-color:var(--secondary);background:rgba(126,172,181,0.15);
+  box-shadow:0 0 12px rgba(126,172,181,0.2);
+}
+.option-btn.correct{
+  border-color:var(--green);background:var(--green-light);
+  box-shadow:0 0 16px rgba(76,175,80,0.3);
+}
+.option-btn.wrong{
+  border-color:var(--red);background:var(--red-light);
+  box-shadow:0 0 16px rgba(231,76,60,0.3);
+}
+.option-btn:disabled{cursor:default;opacity:.85}
+.option-label{
+  background:var(--secondary);color:#fff;
+  width:28px;height:28px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:14px;flex-shrink:0;
+}
+.option-text{flex:1}
+
+.answer-reveal{
+  text-align:center;font-size:20px;font-weight:700;
+  padding:16px;border-radius:var(--radius-sm);
+  animation:fadeIn .3s ease;margin-top:8px;
+}
+.answer-correct{background:var(--green-light);color:var(--green)}
+.answer-wrong{background:var(--red-light);color:var(--red)}
+
+.placeholder-text{
+  text-align:center;font-size:20px;color:var(--text-light);padding:40px 0;
+}
+
+/* ===== أزرار التحكم ===== */
+.host-controls{
+  max-width:850px;margin:16px auto;padding:0 16px;
+  display:flex;gap:10px;flex-wrap:wrap;justify-content:center;
+}
+.host-controls button{
+  padding:12px 24px;border:none;border-radius:var(--radius-sm);
+  font-family:var(--font);font-size:15px;font-weight:600;
+  cursor:pointer;transition:var(--transition);
+}
+.host-controls button:active:not(:disabled){transform:scale(.95)}
+.host-controls button:disabled{opacity:.4;cursor:not-allowed}
+.btn-confirm{background:var(--secondary);color:#fff}
+.btn-confirm:hover:not(:disabled){background:var(--secondary-dark)}
+.btn-reveal{background:var(--primary);color:#fff}
+.btn-reveal:hover:not(:disabled){background:var(--primary-dark)}
+.btn-undo{background:var(--bg-block);color:var(--text)}
+.btn-undo:hover:not(:disabled){background:#ddd}
+.btn-next{background:var(--secondary);color:#fff}
+.btn-next:hover:not(:disabled){background:var(--secondary-dark)}
+
+/* ===== بطاقات الأسر ===== */
+.families-row{
+  max-width:1100px;margin:24px auto;padding:0 16px;
+  display:grid;grid-template-columns:repeat(4,1fr);gap:14px;
+}
+.family-card{
+  background:var(--bg-card);border-radius:var(--radius);
+  padding:18px 16px;border:3px solid transparent;
+  box-shadow:var(--shadow);transition:var(--transition);
+  text-align:center;position:relative;
+}
+.family-card.active{
+  border-color:var(--primary);
+  box-shadow:0 0 24px rgba(191,70,70,0.2);
+}
+.family-card.active::before{
+  content:'';position:absolute;top:-2px;right:50%;transform:translateX(50%);
+  width:40px;height:4px;background:var(--primary);border-radius:0 0 4px 4px;
+}
+.family-name{
+  font-size:16px;font-weight:700;color:var(--text);
+  padding:4px 8px;border-radius:var(--radius-xs);
+  outline:none;margin-bottom:8px;
+  border:2px solid transparent;transition:var(--transition);
+  min-height:28px;
+}
+.family-name:focus{border-color:var(--secondary);background:rgba(126,172,181,0.05)}
+.family-score{
+  font-size:36px;font-weight:800;color:var(--primary);
+  margin-bottom:6px;transition:var(--transition);
+}
+.family-score.score-up{animation:scoreUp .6s ease}
+.family-score.score-down{animation:scoreDown .6s ease}
+.family-stats{
+  display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin-bottom:10px;
+}
+.stat-badge{
+  font-size:11px;padding:3px 8px;border-radius:12px;
+  background:var(--bg-block);color:var(--text-light);font-weight:600;
+}
+.stat-badge.streak-high{
+  background:rgba(191,70,70,0.1);color:var(--primary);
+  animation:streakGlow 1s infinite alternate;
+}
+.btn-double{
+  background:var(--amber);color:#fff;border:none;
+  border-radius:var(--radius-xs);padding:6px 14px;
+  font-family:var(--font);font-size:13px;font-weight:700;
+  cursor:pointer;transition:var(--transition);width:100%;
+}
+.btn-double:hover{background:#e68a00;transform:scale(1.03)}
+.btn-double.activated{
+  background:var(--primary);animation:pulse .8s infinite alternate;
+}
+.double-used{
+  font-size:12px;color:var(--text-light);font-style:italic;
+}
+
+/* ===== نهاية اللعبة ===== */
+.game-over-banner{
+  max-width:850px;margin:24px auto;padding:0 16px;
+  animation:fadeIn .5s ease;
+}
+.game-over-banner .banner-content{
+  background:var(--bg-card);border-radius:var(--radius);
+  padding:32px;box-shadow:var(--shadow-lg);text-align:center;
+}
+.game-over-banner h2{font-size:28px;color:var(--primary);margin-bottom:20px}
+.ranking-table{
+  width:100%;border-collapse:separate;border-spacing:0 8px;
+  margin-bottom:20px;
+}
+.ranking-table th{
+  font-size:13px;color:var(--text-light);padding:8px 12px;
+  text-align:center;font-weight:600;
+}
+.ranking-table td{
+  padding:12px;text-align:center;background:var(--bg-block);
+  font-weight:600;
+}
+.ranking-table tr td:first-child{border-radius:0 var(--radius-sm) var(--radius-sm) 0}
+.ranking-table tr td:last-child{border-radius:var(--radius-sm) 0 0 var(--radius-sm)}
+.ranking-table .rank-1 td{background:rgba(255,215,0,0.15);color:#b8860b}
+.ranking-table .rank-2 td{background:rgba(192,192,192,0.15);color:#6b6b6b}
+.ranking-table .rank-3 td{background:rgba(205,127,50,0.15);color:#8b5e3c}
+.medal{font-size:24px;margin-left:6px}
+
+/* ===== النافذة المنبثقة ===== */
+.modal-overlay{
+  display:none;position:fixed;inset:0;
+  background:rgba(0,0,0,0.5);z-index:200;
+  justify-content:center;align-items:center;
+  padding:20px;
+}
+.modal-overlay.open{display:flex}
+.modal{
+  background:var(--bg-card);border-radius:var(--radius);
+  padding:28px;max-width:500px;width:100%;
+  box-shadow:var(--shadow-lg);animation:modalIn .3s ease;
+  max-height:90vh;overflow-y:auto;
+}
+.modal h2{font-size:22px;color:var(--primary);margin-bottom:20px;text-align:center}
+.modal label{
+  display:block;font-size:14px;font-weight:600;
+  color:var(--text);margin-bottom:6px;margin-top:14px;
+}
+.modal input,.modal select{
+  width:100%;padding:10px 14px;border:2px solid var(--bg-block);
+  border-radius:var(--radius-sm);font-family:var(--font);
+  font-size:15px;background:var(--bg);color:var(--text);
+  transition:var(--transition);
+}
+.modal input:focus,.modal select:focus{
+  outline:none;border-color:var(--secondary);
+}
+.modal-btns{
+  display:flex;gap:10px;margin-top:24px;justify-content:center;
+}
+.modal-btns button{
+  padding:10px 28px;border:none;border-radius:var(--radius-sm);
+  font-family:var(--font);font-size:15px;font-weight:600;
+  cursor:pointer;transition:var(--transition);
+}
+.modal-btns .btn-primary{background:var(--secondary);color:#fff}
+.modal-btns .btn-primary:hover{background:var(--secondary-dark)}
+.modal-btns .btn-danger{background:var(--primary);color:#fff}
+.modal-btns .btn-danger:hover{background:var(--primary-dark)}
+.modal-btns .btn-secondary{background:var(--bg-block);color:var(--text)}
+.modal-btns .btn-secondary:hover{background:#ddd}
+
+/* ===== التذييل ===== */
+.footer{
+  text-align:center;padding:20px;font-size:12px;
+  color:var(--text-light);margin-top:20px;
+}
+
+/* ===== الحركات ===== */
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+@keyframes modalIn{from{opacity:0;transform:scale(.92)}to{opacity:1;transform:scale(1)}}
+@keyframes pulse{from{opacity:1}to{opacity:.4}}
+@keyframes scoreUp{0%{transform:scale(1)}50%{transform:scale(1.25);color:var(--green)}100%{transform:scale(1)}}
+@keyframes scoreDown{0%{transform:scale(1)}50%{transform:scale(1.25);color:var(--red)}100%{transform:scale(1)}}
+@keyframes streakGlow{from{box-shadow:0 0 6px rgba(191,70,70,0.2)}to{box-shadow:0 0 18px rgba(191,70,70,0.5)}}
+@keyframes slideIn{from{opacity:0;transform:translateX(30px)}to{opacity:1;transform:translateX(0)}}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+
+/* ===== الاستجابة ===== */
+@media(max-width:768px){
+  .families-row{grid-template-columns:1fr 1fr}
+  .q-text{font-size:20px}
+  .host-controls{gap:8px}
+  .host-controls button{flex:1 1 45%;font-size:14px;padding:10px 16px}
+  .top-bar{padding:10px 16px}
+  .top-bar h1{font-size:18px}
+}
+@media(max-width:520px){
+  .families-row{grid-template-columns:1fr}
+  .options-grid{grid-template-columns:1fr}
+  .top-bar{flex-direction:column;text-align:center}
+  .question-box{padding:20px 16px}
+  .family-score{font-size:28px}
+}
+</style>
+</head>
+<body>
+
+<!-- أعلى الصفحة -->
+<div class="top-bar">
+  <div class="bar-btns">
+    <button onclick="openSettings()">الإعدادات</button>
+  </div>
+  <div class="title-section">
+    <h1 id="gameTitle">بطولة السلسلة</h1>
+  </div>
+  <div class="info">
+    <span class="round-badge" id="roundInfo">الجولة ١ / ٤</span>
+    <span class="turn-badge" id="turnInfo">الاستعداد</span>
+    <span class="connection-dot" id="connectionDot" title="حالة الاتصال"></span>
+  </div>
+</div>
+
+<!-- شريط المؤقت -->
+<div class="timer-container" id="timerContainer">
+  <div class="timer-bar" id="timerBar"></div>
+</div>
+
+<!-- بطاقة السؤال -->
+<div class="question-area" id="questionArea">
+  <div class="question-box" id="questionBox">
+    <div class="q-meta" id="qMeta" style="display:none">
+      <span class="badge category-badge" id="qCategory"></span>
+      <span class="badge difficulty-badge" id="qDifficulty"></span>
+      <span class="timer-text" id="timerText">٣٠</span>
+    </div>
+    <div class="q-text" id="qText">اضغط «الدور التالي» لبدء اللعبة</div>
+    <div class="q-source" id="qSource"></div>
+    <div class="options-grid" id="optionsGrid"></div>
+    <div id="answerArea"></div>
+  </div>
+</div>
+
+<!-- أزرار التحكم -->
+<div class="host-controls" id="hostControls">
+  <button class="btn-confirm" id="btnConfirm" onclick="confirmAnswer()" disabled>تأكيد الإجابة</button>
+  <button class="btn-reveal" id="btnReveal" onclick="revealAnswer()" disabled>إظهار الإجابة وحساب النقاط</button>
+  <button class="btn-undo" id="btnUndo" onclick="undoLastReveal()" disabled>تراجع عن آخر كشف</button>
+  <button class="btn-next" id="btnNext" onclick="nextTurn()">الدور التالي</button>
+</div>
+
+<!-- بطاقات الأسر -->
+<div class="families-row" id="familiesRow"></div>
+
+<!-- نهاية اللعبة -->
+<div id="gameOverBanner"></div>
+
+<!-- نافذة الإعدادات -->
+<div class="modal-overlay" id="settingsModal">
+  <div class="modal">
+    <h2>إعدادات اللعبة</h2>
+    <label>عنوان اللعبة</label>
+    <input type="text" id="setTitle" value="بطولة السلسلة">
+    <label>عدد الجولات</label>
+    <select id="setRounds">
+      <option value="2">٢ جولات</option>
+      <option value="3">٣ جولات</option>
+      <option value="4" selected>٤ جولات</option>
+      <option value="5">٥ جولات</option>
+      <option value="6">٦ جولات</option>
+      <option value="8">٨ جولات</option>
+    </select>
+    <label>عدد الأسر المشاركة</label>
+    <select id="setFamilyCount">
+      <option value="2">أسرتان (٢)</option>
+      <option value="3">٣ أسر</option>
+      <option value="4" selected>٤ أسر</option>
+      <option value="5">٥ أسر</option>
+      <option value="6">٦ أسر</option>
+      <option value="7">٧ أسر</option>
+      <option value="8">٨ أسر</option>
+      <option value="9">٩ أسر</option>
+      <option value="10">١٠ أسر</option>
+    </select>
+    <label>اسم الأسرة الأولى</label>
+    <input type="text" id="setName0" value="الأسرة الأولى">
+    <label>اسم الأسرة الثانية</label>
+    <input type="text" id="setName1" value="الأسرة الثانية">
+    <label>اسم الأسرة الثالثة</label>
+    <input type="text" id="setName2" value="الأسرة الثالثة">
+    <label>اسم الأسرة الرابعة</label>
+    <input type="text" id="setName3" value="الأسرة الرابعة">
+    <div class="modal-btns">
+      <button class="btn-primary" onclick="applySettings()">حفظ</button>
+      <button class="btn-danger" onclick="resetGame()">لعبة جديدة</button>
+      <button class="btn-secondary" onclick="closeSettings()">إلغاء</button>
+    </div>
+  </div>
+</div>
+
+<!-- التذييل -->
+<div class="footer">بطولة السلسلة — السلطان</div>
+
+<script>
+/* ===== ثوابت ===== */
+var STORAGE_KEY = 'streak_tournament_v1';
+var CACHE_KEY = 'streak_cached_questions';
+var CDN_URL = 'https://raw.githubusercontent.com/B9D0s/mosabagat_thgafiah/main/data/questions.json';
+var FAMILIES_KEYS = ['A','B','C','D'];
+var TURN_ORDER = ['A','B','C','D'];
+var BASE_POINTS = {easy:10, medium:30, hard:60, extreme:120};
+var PENALTY_POINTS = {easy:5, medium:20, hard:40, extreme:80};
+var DIFF_LABELS = {easy:'سهل', medium:'متوسط', hard:'صعب', extreme:'صعب جداً'};
+var OPTION_LABELS = ['أ','ب','ج','د'];
+var toArabicNum = function(n){ return String(n).replace(/\d/g, function(d){ return '٠١٢٣٤٥٦٧٨٩'[d]; }); };
+
+/* دعم حتى ١٠ أسر (A–J)، مع إمكانية اختيار العدد من الإعدادات */
+var ALL_FAMILIES_KEYS = ['A','B','C','D','E','F','G','H','I','J'];
+
+function getActiveFamilyKeys(){
+  var count = state && state.settings && state.settings.familyCount ? state.settings.familyCount : 4;
+  if(count < 2) count = 2;
+  if(count > ALL_FAMILIES_KEYS.length) count = ALL_FAMILIES_KEYS.length;
+  return ALL_FAMILIES_KEYS.slice(0, count);
+}
+
+/* ===== أسئلة احتياطية مدمجة ===== */
+var localQuestions = [
+{type:"mcq",category:"الثقافة العامة",difficulty:"easy",question_ar:"ما هي عاصمة المملكة العربية السعودية؟",options_ar:["جدة","الرياض","مكة المكرمة","المدينة المنورة"],correctIndex:1,id:9001},
+{type:"mcq",category:"الثقافة العامة",difficulty:"easy",question_ar:"كم عدد أيام الأسبوع؟",options_ar:["خمسة","ستة","سبعة","ثمانية"],correctIndex:2,id:9002},
+{type:"mcq",category:"العلوم",difficulty:"easy",question_ar:"ما هو الغاز الذي نتنفسه؟",options_ar:["النيتروجين","الأكسجين","ثاني أكسيد الكربون","الهيدروجين"],correctIndex:1,id:9003},
+{type:"mcq",category:"الجغرافيا",difficulty:"easy",question_ar:"ما هو أكبر محيط في العالم؟",options_ar:["الأطلسي","الهندي","الهادئ","المتجمد"],correctIndex:2,id:9004},
+{type:"mcq",category:"الثقافة العامة",difficulty:"medium",question_ar:"ما هي أطول سورة في القرآن الكريم؟",options_ar:["آل عمران","البقرة","النساء","المائدة"],correctIndex:1,id:9005},
+{type:"mcq",category:"السيرة",difficulty:"medium",question_ar:"في أي عام هاجر النبي صلى الله عليه وسلم إلى المدينة؟",options_ar:["610 م","620 م","622 م","625 م"],correctIndex:2,id:9006},
+{type:"mcq",category:"العلوم",difficulty:"medium",question_ar:"ما هو أقرب كوكب للشمس؟",options_ar:["الزهرة","عطارد","الأرض","المريخ"],correctIndex:1,id:9007},
+{type:"mcq",category:"التاريخ الإسلامي",difficulty:"medium",question_ar:"من هو فاتح مصر؟",options_ar:["خالد بن الوليد","سعد بن أبي وقاص","عمرو بن العاص","طارق بن زياد"],correctIndex:2,id:9008},
+{type:"mcq",category:"اللغة العربية",difficulty:"medium",question_ar:"ما هو جمع كلمة «كتاب»؟",options_ar:["كتابات","كتب","مكاتب","كاتبون"],correctIndex:1,id:9009},
+{type:"mcq",category:"الفقه",difficulty:"medium",question_ar:"كم عدد أركان الإسلام؟",options_ar:["أربعة","خمسة","ستة","سبعة"],correctIndex:1,id:9010},
+{type:"mcq",category:"القرآن الكريم",difficulty:"hard",question_ar:"كم مرة ذُكر اسم «محمد» في القرآن الكريم؟",options_ar:["مرتين","ثلاث مرات","أربع مرات","خمس مرات"],correctIndex:2,id:9011},
+{type:"mcq",category:"الصحابة",difficulty:"hard",question_ar:"من هو الصحابي الملقب بـ«ذو النورين»؟",options_ar:["أبو بكر","عمر بن الخطاب","عثمان بن عفان","علي بن أبي طالب"],correctIndex:2,id:9012},
+{type:"mcq",category:"الجغرافيا",difficulty:"hard",question_ar:"ما هي أعلى قمة جبلية في العالم؟",options_ar:["كي 2","إيفرست","كلمنجارو","مون بلان"],correctIndex:1,id:9013},
+{type:"mcq",category:"العلوم",difficulty:"hard",question_ar:"ما هو العنصر الأكثر وفرة في الكون؟",options_ar:["الأكسجين","الكربون","الهيدروجين","الهيليوم"],correctIndex:2,id:9014},
+{type:"mcq",category:"التاريخ الإسلامي",difficulty:"hard",question_ar:"في أي عام فُتحت القسطنطينية؟",options_ar:["1453 م","1492 م","1389 م","1517 م"],correctIndex:0,id:9015},
+{type:"mcq",category:"الحديث الشريف",difficulty:"extreme",question_ar:"كم عدد الأحاديث في صحيح البخاري بدون المكرر؟",options_ar:["2602","4000","7275","9082"],correctIndex:0,id:9016},
+{type:"mcq",category:"العقيدة",difficulty:"extreme",question_ar:"ما هو أول واجب على المكلف عند أهل العلم؟",options_ar:["الصلاة","الشهادتان","معرفة الله","طلب العلم"],correctIndex:2,id:9017},
+{type:"mcq",category:"القرآن الكريم",difficulty:"easy",question_ar:"ما هي أقصر سورة في القرآن؟",options_ar:["الإخلاص","الفلق","الكوثر","الناس"],correctIndex:2,id:9018},
+{type:"mcq",category:"السيرة",difficulty:"easy",question_ar:"ما اسم أم النبي صلى الله عليه وسلم؟",options_ar:["خديجة","آمنة","فاطمة","عائشة"],correctIndex:1,id:9019},
+{type:"mcq",category:"الجغرافيا",difficulty:"medium",question_ar:"ما هي عاصمة تركيا؟",options_ar:["إسطنبول","أنقرة","إزمير","أنطاليا"],correctIndex:1,id:9020},
+{type:"tf",category:"الثقافة العامة",difficulty:"easy",question_ar:"الشمس تدور حول الأرض.",correctBoolean:false,id:9021},
+{type:"tf",category:"العلوم",difficulty:"easy",question_ar:"الماء يتكون من ذرتي هيدروجين وذرة أكسجين.",correctBoolean:true,id:9022},
+{type:"tf",category:"السيرة",difficulty:"easy",question_ar:"ولد النبي صلى الله عليه وسلم في عام الفيل.",correctBoolean:true,id:9023},
+{type:"tf",category:"الجغرافيا",difficulty:"easy",question_ar:"نهر النيل هو أطول نهر في العالم.",correctBoolean:true,id:9024},
+{type:"tf",category:"الفقه",difficulty:"medium",question_ar:"عدد ركعات صلاة المغرب أربع ركعات.",correctBoolean:false,id:9025},
+{type:"tf",category:"القرآن الكريم",difficulty:"medium",question_ar:"عدد أجزاء القرآن الكريم ثلاثون جزءاً.",correctBoolean:true,id:9026},
+{type:"tf",category:"التاريخ الإسلامي",difficulty:"medium",question_ar:"غزوة بدر وقعت في السنة الثانية للهجرة.",correctBoolean:true,id:9027},
+{type:"tf",category:"اللغة العربية",difficulty:"medium",question_ar:"الفعل المضارع دائماً مرفوع.",correctBoolean:false,id:9028},
+{type:"tf",category:"العلوم",difficulty:"medium",question_ar:"سرعة الضوء أسرع من سرعة الصوت.",correctBoolean:true,id:9029},
+{type:"tf",category:"الصحابة",difficulty:"hard",question_ar:"أبو بكر الصديق أول من أسلم من الرجال.",correctBoolean:true,id:9030},
+{type:"tf",category:"الحديث الشريف",difficulty:"hard",question_ar:"الكتب الستة في الحديث تشمل صحيح البخاري وصحيح مسلم.",correctBoolean:true,id:9031},
+{type:"tf",category:"العقيدة",difficulty:"hard",question_ar:"الإيمان بالقدر ليس من أركان الإيمان.",correctBoolean:false,id:9032},
+{type:"tf",category:"القرآن الكريم",difficulty:"hard",question_ar:"سورة يس تسمى قلب القرآن.",correctBoolean:true,id:9033},
+{type:"tf",category:"الثقافة العامة",difficulty:"extreme",question_ar:"عدد دول العالم يتجاوز 250 دولة.",correctBoolean:false,id:9034},
+{type:"tf",category:"العلوم",difficulty:"extreme",question_ar:"الذهب أثقل من الحديد.",correctBoolean:true,id:9035},
+{type:"mcq",category:"الرياضيات",difficulty:"easy",question_ar:"ما هو ناتج 7 × 8 ؟",options_ar:["54","56","58","64"],correctIndex:1,id:9036},
+{type:"mcq",category:"الرياضيات",difficulty:"medium",question_ar:"ما هو الجذر التربيعي للعدد 144؟",options_ar:["10","11","12","14"],correctIndex:2,id:9037},
+{type:"mcq",category:"الثقافة العامة",difficulty:"medium",question_ar:"ما هي أكبر دولة عربية مساحة؟",options_ar:["السعودية","الجزائر","مصر","السودان"],correctIndex:1,id:9038},
+{type:"mcq",category:"العلوم",difficulty:"hard",question_ar:"ما هي وحدة قياس شدة التيار الكهربائي؟",options_ar:["فولت","أوم","أمبير","واط"],correctIndex:2,id:9039},
+{type:"mcq",category:"الجغرافيا",difficulty:"extreme",question_ar:"ما هو أعمق نقطة في محيطات العالم؟",options_ar:["خندق ماريانا","خندق تونغا","خندق كيرماديك","خندق بورتوريكو"],correctIndex:0,id:9040},
+{type:"tf",category:"الثقافة العامة",difficulty:"medium",question_ar:"اليابان تقع في قارة أوروبا.",correctBoolean:false,id:9041},
+{type:"tf",category:"العلوم",difficulty:"hard",question_ar:"درجة غليان الماء هي 100 درجة مئوية عند مستوى سطح البحر.",correctBoolean:true,id:9042},
+{type:"mcq",category:"السيرة",difficulty:"hard",question_ar:"كم عدد غزوات النبي صلى الله عليه وسلم؟",options_ar:["19","25","27","29"],correctIndex:2,id:9043},
+{type:"mcq",category:"الفقه",difficulty:"easy",question_ar:"ما هو أول ركن من أركان الإسلام؟",options_ar:["الصلاة","الشهادتان","الزكاة","الصوم"],correctIndex:1,id:9044},
+{type:"tf",category:"الرياضيات",difficulty:"easy",question_ar:"مجموع زوايا المثلث 180 درجة.",correctBoolean:true,id:9045}
+];
+
+/* ===== حالة اللعبة ===== */
+var ALL_QUESTIONS = [];
+var state;
+var timerInterval = null;
+var timerRemaining = 30;
+var audioCtx = null;
+
+function defaultState(){
+  return {
+    settings:{
+      gameTitle:'بطولة السلسلة',
+      rounds:4,
+      familyCount:4
+    },
+    families:{
+      A:{name:'الأسرة الأولى',score:0,streak:0,maxStreak:0,doubleUsed:false,totalTime:0,answered:0},
+      B:{name:'الأسرة الثانية',score:0,streak:0,maxStreak:0,doubleUsed:false,totalTime:0,answered:0},
+      C:{name:'الأسرة الثالثة',score:0,streak:0,maxStreak:0,doubleUsed:false,totalTime:0,answered:0},
+      D:{name:'الأسرة الرابعة',score:0,streak:0,maxStreak:0,doubleUsed:false,totalTime:0,answered:0},
+      E:{name:'الأسرة الخامسة',score:0,streak:0,maxStreak:0,doubleUsed:false,totalTime:0,answered:0},
+      F:{name:'الأسرة السادسة',score:0,streak:0,maxStreak:0,doubleUsed:false,totalTime:0,answered:0},
+      G:{name:'الأسرة السابعة',score:0,streak:0,maxStreak:0,doubleUsed:false,totalTime:0,answered:0},
+      H:{name:'الأسرة الثامنة',score:0,streak:0,maxStreak:0,doubleUsed:false,totalTime:0,answered:0},
+      I:{name:'الأسرة التاسعة',score:0,streak:0,maxStreak:0,doubleUsed:false,totalTime:0,answered:0},
+      J:{name:'الأسرة العاشرة',score:0,streak:0,maxStreak:0,doubleUsed:false,totalTime:0,answered:0}
+    },
+    phase:'setup',
+    currentTurnIndex:0,
+    currentQuestion:null,
+    selectedIndex:null,
+    doubleActivated:false,
+    answerTimestamp:null,
+    answerDuration:null,
+    usedIds:[],
+    recentCategories:[],
+    historyStack:[],
+    gameFinished:false,
+    questionsSource:'loading',
+    lastPts:0,
+    lastCorrect:false
+  };
+}
+
+function loadState(){
+  try{
+    var saved = localStorage.getItem(STORAGE_KEY);
+    if(saved){
+      state = JSON.parse(saved);
+      var def = defaultState();
+      if(!state.settings) state.settings = def.settings;
+      if(state.settings.familyCount === undefined) state.settings.familyCount = 4;
+      if(!state.families) state.families = def.families;
+      ALL_FAMILIES_KEYS.forEach(function(k){
+        if(!state.families[k]) state.families[k] = def.families[k];
+        if(state.families[k].totalTime === undefined) state.families[k].totalTime = 0;
+        if(state.families[k].answered === undefined) state.families[k].answered = 0;
+      });
+      if(!state.historyStack) state.historyStack = [];
+      if(!state.usedIds) state.usedIds = [];
+      if(!state.recentCategories) state.recentCategories = [];
+      if(state.phase === undefined) state.phase = 'setup';
+      if(state.lastPts === undefined) state.lastPts = 0;
+      if(state.lastCorrect === undefined) state.lastCorrect = false;
+    } else {
+      state = defaultState();
+    }
+  } catch(e){
+    state = defaultState();
+  }
+}
+
+function saveState(){
+  try{ localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch(e){}
+}
+
+/* ===== تطبيع الأسئلة ===== */
+function normalizeQuestion(raw){
+  if(!raw || !raw.type || !raw.question_ar) return null;
+  if(raw.type === 'mcq'){
+    if(!raw.options_ar || raw.options_ar.length !== 4) return null;
+    if(raw.correctIndex === undefined || raw.correctIndex < 0 || raw.correctIndex > 3) return null;
+    return {
+      id: raw.id,
+      type: 'mcq',
+      category: raw.category || 'عام',
+      difficulty: raw.difficulty || 'medium',
+      question: raw.question_ar,
+      options: raw.options_ar.slice(),
+      correctIndex: raw.correctIndex,
+      source: raw.source_ar || ''
+    };
+  }
+  if(raw.type === 'tf'){
+    return {
+      id: raw.id,
+      type: 'tf',
+      category: raw.category || 'عام',
+      difficulty: raw.difficulty || 'medium',
+      question: raw.question_ar,
+      options: ['صح','خطأ'],
+      correctIndex: raw.correctBoolean === true ? 0 : 1,
+      source: raw.source_ar || ''
+    };
+  }
+  return null;
+}
+
+/* ===== تحميل الأسئلة ===== */
+function updateConnectionDot(src){
+  var dot = document.getElementById('connectionDot');
+  dot.className = 'connection-dot ' + src;
+  dot.title = src === 'cdn' ? 'متصل بالإنترنت' : src === 'cached' ? 'أسئلة مخزنة' : 'أسئلة مدمجة';
+}
+
+async function loadQuestions(){
+  /* المحاولة الأولى: من الإنترنت */
+  try{
+    var controller = new AbortController();
+    var tm = setTimeout(function(){ controller.abort(); }, 6000);
+    var res = await fetch(CDN_URL, {signal: controller.signal});
+    clearTimeout(tm);
+    if(!res.ok) throw new Error('HTTP ' + res.status);
+    var raw = await res.json();
+    if(!Array.isArray(raw) || raw.length === 0) throw new Error('فارغ');
+    try{ localStorage.setItem(CACHE_KEY, JSON.stringify(raw)); } catch(e){}
+    ALL_QUESTIONS = raw.map(normalizeQuestion).filter(Boolean);
+    state.questionsSource = 'cdn';
+    updateConnectionDot('cdn');
+    return;
+  } catch(e){}
+
+  /* المحاولة الثانية: من التخزين المحلي */
+  try{
+    var cached = localStorage.getItem(CACHE_KEY);
+    if(cached){
+      var raw2 = JSON.parse(cached);
+      if(Array.isArray(raw2) && raw2.length > 0){
+        ALL_QUESTIONS = raw2.map(normalizeQuestion).filter(Boolean);
+        state.questionsSource = 'cached';
+        updateConnectionDot('cached');
+        return;
+      }
+    }
+  } catch(e){}
+
+  /* المحاولة الثالثة: من الملف المحلي */
+  try{
+    var res2 = await fetch('data/questions.json');
+    if(res2.ok){
+      var raw3 = await res2.json();
+      if(Array.isArray(raw3) && raw3.length > 0){
+        ALL_QUESTIONS = raw3.map(normalizeQuestion).filter(Boolean);
+        state.questionsSource = 'cached';
+        updateConnectionDot('cached');
+        return;
+      }
+    }
+  } catch(e){}
+
+  /* الملاذ الأخير: الأسئلة المدمجة */
+  ALL_QUESTIONS = localQuestions.map(normalizeQuestion).filter(Boolean);
+  state.questionsSource = 'embedded';
+  updateConnectionDot('embedded');
+}
+
+/* ===== اختيار سؤال عشوائي ===== */
+function pickQuestion(){
+  var available = ALL_QUESTIONS.filter(function(q){
+    if(state.usedIds.indexOf(q.id) !== -1) return false;
+    if(state.recentCategories.length >= 2 &&
+       state.recentCategories[0] === q.category &&
+       state.recentCategories[1] === q.category) return false;
+    return true;
+  });
+  if(available.length === 0){
+    state.usedIds = [];
+    available = ALL_QUESTIONS.filter(function(q){
+      if(state.recentCategories.length >= 2 &&
+         state.recentCategories[0] === q.category &&
+         state.recentCategories[1] === q.category) return false;
+      return true;
+    });
+    if(available.length === 0) available = ALL_QUESTIONS.slice();
+  }
+  var idx = Math.floor(Math.random() * available.length);
+  var q = available[idx];
+  state.usedIds.push(q.id);
+  state.recentCategories.push(q.category);
+  if(state.recentCategories.length > 2) state.recentCategories.shift();
+  return q;
+}
+
+/* ===== الأسرة الحالية ===== */
+function activeKey(){
+  var keys = getActiveFamilyKeys();
+  if(keys.length === 0) keys = ['A'];
+  return keys[state.currentTurnIndex % keys.length];
+}
+function currentRound(){
+  var perRound = getActiveFamilyKeys().length || 1;
+  return Math.floor(state.currentTurnIndex / perRound) + 1;
+}
+function totalTurns(){
+  var perRound = getActiveFamilyKeys().length || 1;
+  return state.settings.rounds * perRound;
+}
+
+/* ===== نظام النقاط ===== */
+function calculateScore(famKey, isCorrect, difficulty, seconds, isDouble){
+  var f = state.families[famKey];
+  var pts = 0;
+  if(isCorrect){
+    f.streak += 1;
+    if(f.streak > f.maxStreak) f.maxStreak = f.streak;
+    var streakMult = 1 + (f.streak * 0.3);
+    var speedMult = 1;
+    if(seconds <= 5) speedMult = 1.6;
+    else if(seconds <= 10) speedMult = 1.4;
+    else if(seconds <= 20) speedMult = 1.2;
+    var base = BASE_POINTS[difficulty] || 10;
+    pts = Math.round(base * streakMult * speedMult);
+    if(isDouble) pts *= 2;
+  } else {
+    f.streak = 0;
+    var pen = PENALTY_POINTS[difficulty] || 5;
+    pts = -pen;
+    if(isDouble) pts *= 2;
+  }
+  f.score += pts;
+  f.totalTime += seconds;
+  f.answered += 1;
+  if(isDouble) f.doubleUsed = true;
+  return pts;
+}
+
+/* ===== ترتيب الأسر ===== */
+function getRanking(){
+  var keys = getActiveFamilyKeys().slice();
+  keys.sort(function(a, b){
+    var fa = state.families[a], fb = state.families[b];
+    if(fb.score !== fa.score) return fb.score - fa.score;
+    if(fb.maxStreak !== fa.maxStreak) return fb.maxStreak - fa.maxStreak;
+    var avgA = fa.answered > 0 ? fa.totalTime / fa.answered : 999;
+    var avgB = fb.answered > 0 ? fb.totalTime / fb.answered : 999;
+    return avgA - avgB;
+  });
+  return keys;
+}
+
+/* ===== المؤقت ===== */
+function startTimer(){
+  stopTimer();
+  timerRemaining = 30;
+  var bar = document.getElementById('timerBar');
+  var txt = document.getElementById('timerText');
+  var container = document.getElementById('timerContainer');
+  bar.style.width = '100%';
+  bar.classList.remove('warning');
+  txt.classList.remove('warning');
+  txt.textContent = toArabicNum(30);
+  container.classList.add('visible');
+  timerInterval = setInterval(function(){
+    timerRemaining--;
+    if(timerRemaining <= 0){
+      timerRemaining = 0;
+      txt.textContent = toArabicNum(0);
+      bar.style.width = '0%';
+      stopTimer();
+      bar.classList.add('warning');
+      txt.classList.add('warning');
+      /* المؤقت لا يقفل الإجابة */
+      playBeep(200, 0.3, 'square');
+      var qBox = document.getElementById('questionBox');
+      qBox.style.animation = 'shake 0.4s ease';
+      setTimeout(function(){ qBox.style.animation = ''; }, 500);
+      return;
+    }
+    txt.textContent = toArabicNum(timerRemaining);
+    bar.style.width = (timerRemaining / 30 * 100) + '%';
+    if(timerRemaining <= 5){
+      bar.classList.add('warning');
+      txt.classList.add('warning');
+      playBeep(800, 0.05, 'sine');
+    }
+  }, 1000);
+}
+
+function stopTimer(){
+  if(timerInterval){ clearInterval(timerInterval); timerInterval = null; }
+}
+
+/* ===== الصوت ===== */
+function getAudioCtx(){
+  if(!audioCtx){
+    try{ audioCtx = new (window.AudioContext || window.webkitAudioContext)(); } catch(e){}
+  }
+  return audioCtx;
+}
+
+function playBeep(freq, dur, type){
+  var ctx = getAudioCtx();
+  if(!ctx) return;
+  try{
+    var osc = ctx.createOscillator();
+    var gain = ctx.createGain();
+    osc.type = type || 'sine';
+    osc.frequency.value = freq;
+    gain.gain.value = 0.15;
+    gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + dur);
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+    osc.start();
+    osc.stop(ctx.currentTime + dur);
+  } catch(e){}
+}
+
+function soundCorrect(){ playBeep(880, 0.2, 'sine'); setTimeout(function(){ playBeep(1100, 0.3, 'sine'); }, 150); }
+function soundWrong(){ playBeep(200, 0.4, 'sawtooth'); }
+function soundNewTurn(){ playBeep(660, 0.15, 'sine'); }
+
+/* ===== وظائف اللعب ===== */
+function selectOption(idx){
+  if(state.phase !== 'playing') return;
+  state.selectedIndex = idx;
+  saveState();
+  render();
+}
+
+function toggleDouble(){
+  if(state.phase !== 'playing') return;
+  var f = state.families[activeKey()];
+  if(f.doubleUsed) return;
+  state.doubleActivated = !state.doubleActivated;
+  saveState();
+  render();
+}
+
+function confirmAnswer(){
+  if(state.phase !== 'playing') return;
+  if(state.selectedIndex === null) return;
+  var elapsed = (Date.now() - state.answerTimestamp) / 1000;
+  state.answerDuration = Math.round(elapsed * 10) / 10;
+  state.phase = 'confirmed';
+  stopTimer();
+  saveState();
+  render();
+}
+
+function revealAnswer(){
+  if(state.phase !== 'confirmed') return;
+  /* حفظ لقطة للتراجع */
+  var snapshot = {
+    families: JSON.parse(JSON.stringify(state.families)),
+    currentTurnIndex: state.currentTurnIndex,
+    currentQuestion: JSON.parse(JSON.stringify(state.currentQuestion)),
+    selectedIndex: state.selectedIndex,
+    doubleActivated: state.doubleActivated,
+    answerDuration: state.answerDuration,
+    recentCategories: state.recentCategories.slice(),
+    usedIds: state.usedIds.slice(),
+    gameFinished: state.gameFinished,
+    phase: state.phase
+  };
+  state.historyStack.push(snapshot);
+
+  var q = state.currentQuestion;
+  var isCorrect = state.selectedIndex === q.correctIndex;
+  var pts = calculateScore(activeKey(), isCorrect, q.difficulty, state.answerDuration, state.doubleActivated);
+
+  state.lastPts = pts;
+  state.lastCorrect = isCorrect;
+  state.phase = 'revealed';
+
+  saveState();
+  render();
+
+  if(isCorrect) soundCorrect(); else soundWrong();
+
+  /* حركة النتيجة */
+  var scoreEl = document.getElementById('fscore-' + activeKey());
+  if(scoreEl){
+    scoreEl.classList.remove('score-up','score-down');
+    void scoreEl.offsetWidth;
+    scoreEl.classList.add(isCorrect ? 'score-up' : 'score-down');
+  }
+}
+
+function undoLastReveal(){
+  if(state.historyStack.length === 0) return;
+  var snap = state.historyStack.pop();
+  state.families = snap.families;
+  state.currentTurnIndex = snap.currentTurnIndex;
+  state.currentQuestion = snap.currentQuestion;
+  state.selectedIndex = snap.selectedIndex;
+  state.doubleActivated = snap.doubleActivated;
+  state.answerDuration = snap.answerDuration;
+  state.recentCategories = snap.recentCategories;
+  state.usedIds = snap.usedIds;
+  state.gameFinished = snap.gameFinished;
+  state.phase = 'confirmed';
+  saveState();
+  render();
+}
+
+function nextTurn(){
+  if(state.phase !== 'setup' && state.phase !== 'revealed') return;
+
+  if(state.phase === 'revealed'){
+    state.currentTurnIndex++;
+  }
+
+  if(state.currentTurnIndex >= totalTurns()){
+    finishGame();
+    return;
+  }
+
+  if(ALL_QUESTIONS.length === 0){
+    state.currentQuestion = null;
+    state.phase = 'setup';
+    saveState();
+    render();
+    return;
+  }
+
+  state.currentQuestion = pickQuestion();
+  state.selectedIndex = null;
+  state.doubleActivated = false;
+  state.answerTimestamp = Date.now();
+  state.answerDuration = null;
+  state.lastPts = 0;
+  state.lastCorrect = false;
+  state.phase = 'playing';
+
+  saveState();
+  render();
+  startTimer();
+  soundNewTurn();
+}
+
+function finishGame(){
+  state.phase = 'end';
+  state.gameFinished = true;
+  stopTimer();
+  saveState();
+  render();
+  playBeep(523, 0.2, 'sine');
+  setTimeout(function(){ playBeep(659, 0.2, 'sine'); }, 200);
+  setTimeout(function(){ playBeep(784, 0.4, 'sine'); }, 400);
+}
+
+/* ===== الإعدادات ===== */
+function openSettings(){
+  document.getElementById('setTitle').value = state.settings.gameTitle;
+  document.getElementById('setRounds').value = state.settings.rounds;
+  var fc = state.settings.familyCount || 4;
+  var fcEl = document.getElementById('setFamilyCount');
+  if(fcEl) fcEl.value = String(fc);
+  FAMILIES_KEYS.forEach(function(k, i){
+    document.getElementById('setName' + i).value = state.families[k].name;
+  });
+  document.getElementById('settingsModal').classList.add('open');
+}
+
+function closeSettings(){
+  document.getElementById('settingsModal').classList.remove('open');
+}
+
+function applySettings(){
+  state.settings.gameTitle = document.getElementById('setTitle').value.trim() || 'بطولة السلسلة';
+  state.settings.rounds = parseInt(document.getElementById('setRounds').value) || 4;
+  var fcEl = document.getElementById('setFamilyCount');
+  if(fcEl){
+    var fc = parseInt(fcEl.value, 10) || 4;
+    if(fc < 2) fc = 2;
+    if(fc > 10) fc = 10;
+    state.settings.familyCount = fc;
+  }
+  FAMILIES_KEYS.forEach(function(k, i){
+    var val = document.getElementById('setName' + i).value.trim();
+    if(val) state.families[k].name = val;
+  });
+  saveState();
+  closeSettings();
+  render();
+}
+
+function resetGame(){
+  if(!confirm('هل أنت متأكد من بدء لعبة جديدة؟ سيتم مسح جميع البيانات.')) return;
+  stopTimer();
+  state = defaultState();
+  saveState();
+  closeSettings();
+  render();
+}
+
+function updateFamilyName(key, newName){
+  var val = newName.trim();
+  if(val && val !== state.families[key].name){
+    state.families[key].name = val;
+    saveState();
+  }
+}
+
+/* ===== حماية النص ===== */
+function esc(str){
+  var d = document.createElement('div');
+  d.textContent = str;
+  return d.innerHTML;
+}
+
+/* ===== العرض ===== */
+function render(){
+  renderTopBar();
+  renderQuestion();
+  renderControls();
+  renderFamilies();
+  renderGameOver();
+}
+
+function renderTopBar(){
+  document.getElementById('gameTitle').textContent = state.settings.gameTitle;
+  document.title = state.settings.gameTitle;
+  var round = currentRound();
+  var total = state.settings.rounds;
+  document.getElementById('roundInfo').textContent = 'الجولة ' + toArabicNum(Math.min(round, total)) + ' / ' + toArabicNum(total);
+  var ak = activeKey();
+  if(state.phase === 'setup'){
+    document.getElementById('turnInfo').textContent = 'الاستعداد';
+  } else if(state.phase === 'end'){
+    document.getElementById('turnInfo').textContent = 'انتهت اللعبة';
+  } else {
+    document.getElementById('turnInfo').textContent = 'دور: ' + esc(state.families[ak].name);
+  }
+}
+
+function renderQuestion(){
+  var q = state.currentQuestion;
+  var meta = document.getElementById('qMeta');
+  var text = document.getElementById('qText');
+  var source = document.getElementById('qSource');
+  var grid = document.getElementById('optionsGrid');
+  var ansArea = document.getElementById('answerArea');
+
+  if(!q || state.phase === 'setup' || state.phase === 'end'){
+    meta.style.display = 'none';
+    text.textContent = state.phase === 'end' ? 'انتهت اللعبة!' : 'اضغط «الدور التالي» لبدء اللعبة';
+    text.className = 'q-text';
+    source.textContent = '';
+    grid.innerHTML = '';
+    ansArea.innerHTML = '';
+    document.getElementById('timerContainer').classList.remove('visible');
+    return;
+  }
+
+  meta.style.display = 'flex';
+  document.getElementById('qCategory').textContent = q.category;
+  var diffEl = document.getElementById('qDifficulty');
+  diffEl.textContent = DIFF_LABELS[q.difficulty] || q.difficulty;
+  diffEl.className = 'badge difficulty-badge ' + q.difficulty;
+
+  text.textContent = q.question;
+  text.className = 'q-text';
+  source.textContent = q.source || '';
+
+  var gridClass = q.type === 'tf' ? 'options-grid tf-grid' : 'options-grid';
+  var html = '';
+  q.options.forEach(function(opt, i){
+    var cls = 'option-btn';
+    var disabled = '';
+    if(state.selectedIndex === i && (state.phase === 'playing' || state.phase === 'confirmed')) cls += ' selected';
+    if(state.phase === 'revealed'){
+      if(i === q.correctIndex) cls += ' correct';
+      else if(i === state.selectedIndex && i !== q.correctIndex) cls += ' wrong';
+      disabled = ' disabled';
+    }
+    if(state.phase === 'confirmed') disabled = ' disabled';
+    var label = q.type === 'mcq' ? '<span class="option-label">' + OPTION_LABELS[i] + '</span>' : '';
+    html += '<button class="' + cls + '"' + disabled + ' onclick="selectOption(' + i + ')">' + label + '<span class="option-text">' + esc(opt) + '</span></button>';
+  });
+  grid.className = gridClass;
+  grid.innerHTML = html;
+
+  /* منطقة النتيجة */
+  if(state.phase === 'revealed'){
+    var isC = state.lastCorrect;
+    var p = state.lastPts;
+    var cls2 = isC ? 'answer-reveal answer-correct' : 'answer-reveal answer-wrong';
+    var sign = p >= 0 ? '+' : '';
+    var speedLabel = '';
+    if(state.answerDuration !== null){
+      var spd = 1;
+      if(state.answerDuration <= 5) spd = 1.6;
+      else if(state.answerDuration <= 10) spd = 1.4;
+      else if(state.answerDuration <= 20) spd = 1.2;
+      speedLabel = ' (×' + toArabicNum(spd) + ' سرعة)';
+    }
+    var streakInfo = '';
+    var f = state.families[activeKey()];
+    if(isC && f.streak >= 2){
+      streakInfo = ' | سلسلة: ' + toArabicNum(f.streak);
+    }
+    var doubleInfo = state.doubleActivated ? ' | مضاعفة!' : '';
+    var msg = isC
+      ? 'إجابة صحيحة! ' + sign + toArabicNum(p) + ' نقطة' + speedLabel + streakInfo + doubleInfo
+      : 'إجابة خاطئة! ' + toArabicNum(p) + ' نقطة' + doubleInfo;
+    ansArea.innerHTML = '<div class="' + cls2 + '">' + msg + '</div>';
+  } else {
+    ansArea.innerHTML = '';
+  }
+}
+
+function renderControls(){
+  var bc = document.getElementById('btnConfirm');
+  var br = document.getElementById('btnReveal');
+  var bu = document.getElementById('btnUndo');
+  var bn = document.getElementById('btnNext');
+
+  bc.disabled = !(state.phase === 'playing' && state.selectedIndex !== null);
+  br.disabled = !(state.phase === 'confirmed');
+  bu.disabled = state.historyStack.length === 0;
+  bn.disabled = !(state.phase === 'setup' || state.phase === 'revealed');
+
+  if(state.gameFinished){
+    bc.disabled = true;
+    br.disabled = true;
+    bn.disabled = true;
+  }
+}
+
+function renderFamilies(){
+  var container = document.getElementById('familiesRow');
+  var ak = activeKey();
+  var html = '';
+
+  getActiveFamilyKeys().forEach(function(k){
+    var f = state.families[k];
+    var isActive = (k === ak && !state.gameFinished && state.phase !== 'setup');
+    var avg = f.answered > 0 ? (f.totalTime / f.answered).toFixed(1) : '—';
+    var streakCls = f.streak >= 3 ? 'stat-badge streak-high' : 'stat-badge';
+
+    var doubleHtml = '';
+    if(isActive && state.phase === 'playing' && !f.doubleUsed){
+      var dCls = state.doubleActivated ? 'btn-double activated' : 'btn-double';
+      doubleHtml = '<button class="' + dCls + '" onclick="toggleDouble()">مضاعفة ×٢</button>';
+    } else if(f.doubleUsed){
+      doubleHtml = '<span class="double-used">×٢ مستخدمة</span>';
+    } else if(!isActive && !f.doubleUsed){
+      doubleHtml = '<span class="double-used">×٢ متاحة</span>';
+    }
+
+    html += '<div class="family-card' + (isActive ? ' active' : '') + '">'
+      + '<div class="family-name" contenteditable="true" onblur="updateFamilyName(\'' + k + '\',this.textContent)">' + esc(f.name) + '</div>'
+      + '<div class="family-score" id="fscore-' + k + '">' + toArabicNum(f.score) + '</div>'
+      + '<div class="family-stats">'
+      + '<span class="' + streakCls + '">سلسلة: ' + toArabicNum(f.streak) + '</span>'
+      + '<span class="stat-badge">أقصى: ' + toArabicNum(f.maxStreak) + '</span>'
+      + '<span class="stat-badge">متوسط: ' + (avg === '—' ? avg : toArabicNum(parseFloat(avg)) + ' ث') + '</span>'
+      + '</div>'
+      + doubleHtml
+      + '</div>';
+  });
+  container.innerHTML = html;
+}
+
+function renderGameOver(){
+  var banner = document.getElementById('gameOverBanner');
+  if(!state.gameFinished){
+    banner.innerHTML = '';
+    return;
+  }
+
+  var ranking = getRanking();
+  var medals = ['\uD83E\uDD47','\uD83E\uDD48','\uD83E\uDD49',''];
+  var rows = '';
+  ranking.forEach(function(k, i){
+    var f = state.families[k];
+    var avg = f.answered > 0 ? (f.totalTime / f.answered).toFixed(1) : '—';
+    var rankCls = i < 3 ? ' rank-' + (i+1) : '';
+    rows += '<tr class="' + rankCls + '">'
+      + '<td>' + (medals[i] || '') + ' ' + toArabicNum(i+1) + '</td>'
+      + '<td>' + esc(f.name) + '</td>'
+      + '<td>' + toArabicNum(f.score) + '</td>'
+      + '<td>' + toArabicNum(f.maxStreak) + '</td>'
+      + '<td>' + (avg === '—' ? avg : toArabicNum(parseFloat(avg)) + ' ث') + '</td>'
+      + '</tr>';
+  });
+
+  banner.innerHTML = '<div class="game-over-banner"><div class="banner-content">'
+    + '<h2>انتهت البطولة!</h2>'
+    + '<table class="ranking-table"><thead><tr>'
+    + '<th>المركز</th><th>الأسرة</th><th>النقاط</th><th>أطول سلسلة</th><th>متوسط الوقت</th>'
+    + '</tr></thead><tbody>' + rows + '</tbody></table>'
+    + '<div class="modal-btns">'
+    + '<button class="btn-danger" onclick="resetGame()">لعبة جديدة</button>'
+    + '</div></div></div>';
+}
+
+/* ===== اختصارات لوحة المفاتيح ===== */
+document.addEventListener('keydown', function(e){
+  if(document.getElementById('settingsModal').classList.contains('open')) return;
+  if(document.activeElement && document.activeElement.getAttribute('contenteditable') === 'true') return;
+  if(document.activeElement && (document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'SELECT')) return;
+  var k = e.key;
+  if(k === '1' || k === '٫') selectOption(0);
+  if(k === '2') selectOption(1);
+  if(k === '3') selectOption(2);
+  if(k === '4') selectOption(3);
+  if(k === 'Enter' || k === 'c' || k === 'C') confirmAnswer();
+  if(k === 'r' || k === 'R') revealAnswer();
+  if(k === 'n' || k === 'N' || k === ' ') nextTurn();
+  if(k === 'z' || k === 'Z') undoLastReveal();
+  if(k === 'd' || k === 'D') toggleDouble();
+});
+
+/* إغلاق النافذة بالنقر خارجها */
+document.getElementById('settingsModal').addEventListener('click', function(e){
+  if(e.target === this) closeSettings();
+});
+
+/* ===== التهيئة ===== */
+loadState();
+render();
+loadQuestions().then(function(){
+  if(ALL_QUESTIONS.length > 0 && state.phase === 'playing' && !state.currentQuestion){
+    state.phase = 'setup';
+    saveState();
+    render();
+  }
+});
+</script>
+</body>
+</html>

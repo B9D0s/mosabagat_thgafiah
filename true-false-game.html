@@ -189,7 +189,8 @@ button:active{transform:scale(.95)}
 .modal .btn-close{display:block;margin:12px auto 0;background:var(--accent);color:var(--text-dark);padding:10px 30px;font-size:16px}
 .modal .btn-reset-all{display:block;margin:8px auto 0;background:var(--red);color:#fff;padding:8px 20px;font-size:13px}
 .family-names-container{max-height:200px;overflow-y:auto}
-.footer{text-align:center;padding:16px;font-size:12px;opacity:.4}
+.footer{text-align:center;padding:16px;font-size:12px;opacity:.5;line-height:1.6}
+.footer .credit-rights{font-size:11px;opacity:.9}
 
 @media(max-width:768px){
   .scoreboard{grid-template-columns:repeat(2,1fr)!important}
@@ -262,7 +263,7 @@ button:active{transform:scale(.95)}
   <button onclick="resetScores()" class="btn-danger">🔄 صفر النقاط</button>
 </div>
 
-<div class="footer" id="footerText">صح أو خطأ × مضاعفة — السلطان</div>
+<div class="footer" id="footerText">صنع بواسطة مــداد — 0534349939<br><span class="credit-rights">جميع الحقوق محفوظة</span></div>
 
 <!-- ===== نافذة الإعدادات ===== -->
 <div class="modal-overlay" id="settingsModal">
@@ -892,7 +893,7 @@ function render(){
 function renderTitle(){
   document.getElementById('gameTitle').textContent=state.settings.gameTitle;
   document.title=state.settings.gameTitle;
-  document.getElementById('footerText').textContent=state.settings.gameTitle+' — السلطان';
+  document.getElementById('footerText').innerHTML='صنع بواسطة مــداد — 0534349939<br><span class="credit-rights">جميع الحقوق محفوظة</span>';
 }
 
 function renderScoreboard(){

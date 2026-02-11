@@ -439,11 +439,21 @@
 
         .footer {
             background: #f8f9fa;
-            padding: 20px;
+            padding: 16px 20px;
             text-align: center;
             border-top: 2px solid #e9ecef;
             color: #6c757d;
-            font-size: 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            font-size: 13px;
+        }
+        .footer .credit-by {
+            font-weight: 600;
+        }
+        .footer .credit-rights {
+            font-size: 11px;
+            opacity: 0.9;
         }
 
         @media (max-width: 768px) {
@@ -647,7 +657,8 @@
         </div>
 
         <div class="footer">
-            صنع بواسطة مـــداد
+            <span class="credit-by">صنع بواسطة مــداد — 0534349939</span>
+            <span class="credit-rights">جميع الحقوق محفوظة</span>
         </div>
     </div>
 
@@ -2069,7 +2080,7 @@
         ${daysHTML}
     </div>
     
-    <div class="footer">صنع بواسطة مـــداد</div>
+    <div class="footer"><span class="credit-by">صنع بواسطة مــداد — 0534349939</span><span class="credit-rights">جميع الحقوق محفوظة</span></div>
 </body>
 </html>`;
 
