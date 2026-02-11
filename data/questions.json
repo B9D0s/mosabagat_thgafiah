@@ -12338,5 +12338,5511 @@
     "correctBoolean": true,
     "source_ar": "قواعد النحو",
     "id": 949
+  },
+  {
+    "type": "tf",
+    "category": "القرآن الكريم",
+    "difficulty": "easy",
+    "question_ar": "هل ورد لفظ \"الرب\" في القرآن الكريم أكثر من 400 مرة؟",
+    "correctBoolean": true,
+    "id": 950
+  },
+  {
+    "type": "mcq",
+    "category": "السيرة",
+    "difficulty": "medium",
+    "question_ar": "ما هو الاسم الحقيقي للرسول محمد صلى الله عليه وسلم؟",
+    "options_ar": [
+      "أحمد",
+      "إبراهيم",
+      "علي",
+      "محمد"
+    ],
+    "correctIndex": 3,
+    "id": 951
+  },
+  {
+    "type": "mcq",
+    "category": "الفقه",
+    "difficulty": "medium",
+    "question_ar": "أي من هذه الصلوات تُعتبر فريضة ليست من الخمس صلوات؟",
+    "options_ar": [
+      "الوتر",
+      "الصلاة الغائبة",
+      "صلاة العيد",
+      "صلاة التسبيح"
+    ],
+    "correctIndex": 2,
+    "id": 952
+  },
+  {
+    "type": "mcq",
+    "category": "الحديث الشريف",
+    "difficulty": "hard",
+    "question_ar": "ما هو الحديث الذي يُعرف بحديث \"الإنذار\"؟",
+    "options_ar": [
+      "حديث غدير خم",
+      "حديث النذر",
+      "حديث الآيات",
+      "حديث إنما الأعمال بالنيات"
+    ],
+    "correctIndex": 3,
+    "id": 953
+  },
+  {
+    "type": "tf",
+    "category": "الصحابة",
+    "difficulty": "hard",
+    "question_ar": "أول من أسلم من الصبية هو علي بن أبي طالب رضي الله عنه؟",
+    "correctBoolean": true,
+    "id": 954
+  },
+  {
+    "type": "mcq",
+    "category": "العقيدة",
+    "difficulty": "hard",
+    "question_ar": "ما عدد الصفات السلبية لله تعالى في علم الكلام؟",
+    "options_ar": [
+      "عشرة",
+      "ستة",
+      "خمسة",
+      "أربعة"
+    ],
+    "correctIndex": 1,
+    "id": 955
+  },
+  {
+    "type": "mcq",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "hard",
+    "question_ar": "أي من الفتوحات الإسلامية كان في زمن الخليفة الثاني عمر بن الخطاب رضي الله عنه؟",
+    "options_ar": [
+      "فتح مكة",
+      "فتح خراسان",
+      "فتح دمشق",
+      "فتح القسطنطينية"
+    ],
+    "correctIndex": 2,
+    "id": 956
+  },
+  {
+    "type": "tf",
+    "category": "الثقافة العامة",
+    "difficulty": "hard",
+    "question_ar": "تعتبر اللغة العربية لغة الضاد؟",
+    "correctBoolean": true,
+    "id": 957
+  },
+  {
+    "type": "mcq",
+    "category": "الجغرافيا",
+    "difficulty": "hard",
+    "question_ar": "أي من هذه الدول يُعتبر أكبر دولة من حيث المساحة في العالم العربي؟",
+    "options_ar": [
+      "مصر",
+      "السودان",
+      "عراق",
+      "المغرب"
+    ],
+    "correctIndex": 1,
+    "id": 958
+  },
+  {
+    "type": "mcq",
+    "category": "اللغة العربية",
+    "difficulty": "medium",
+    "question_ar": "ما هي الأوزان الخمسة المشتركة بين الأسماء العربية؟",
+    "options_ar": [
+      "فاعِل، مفعول، مفعِل، مفعلة، فاعلة",
+      "فعيل، فاعل، مفعول، مفعِل، مفعلة",
+      "مفعول، مفعولة، فاعل، فاعلة، فاعيل",
+      "فاعِل، فاعلة، مفعول، مفعِل، مفعل"
+    ],
+    "correctIndex": 1,
+    "id": 959
+  },
+  {
+    "type": "tf",
+    "category": "العلوم",
+    "difficulty": "extreme",
+    "question_ar": "تعتبر نظرية النسبية لأينشتاين نظرية فيزياء خاصة فقط؟",
+    "correctBoolean": false,
+    "id": 960
+  },
+  {
+    "type": "mcq",
+    "category": "معلومات إسلامية",
+    "difficulty": "extreme",
+    "question_ar": "من الذي كتب الكتاب \"الفتح المبين\" في نطاق العروض القرآني؟",
+    "options_ar": [
+      "أبو الحسن الندوي",
+      "عبد القادر الجيلاني",
+      "ابن تيمية",
+      "الطبري"
+    ],
+    "correctIndex": 0,
+    "id": 961
+  },
+  {
+    "type": "tf",
+    "category": "الأحياء",
+    "difficulty": "extreme",
+    "question_ar": "الحمض النووي DNA يتواجد في الخلايا الحية فقط؟",
+    "correctBoolean": true,
+    "id": 962
+  },
+  {
+    "type": "mcq",
+    "category": "من القائل",
+    "difficulty": "hard",
+    "question_ar": "من قال: \"المعرفة قوة\"؟",
+    "options_ar": [
+      "شيشرون",
+      "فولتير",
+      "فرانسيس بيكون",
+      "توماس جيفرسون"
+    ],
+    "correctIndex": 2,
+    "id": 963
+  },
+  {
+    "type": "mcq",
+    "category": "العقيدة",
+    "difficulty": "extreme",
+    "question_ar": "ما هو الاسم الذي يُطلق على العقيدة الكاثوليكية في إيمان المسيح الواحد؟",
+    "options_ar": [
+      "التوحيد",
+      "التثليث",
+      "الإكليركية",
+      "السكون"
+    ],
+    "correctIndex": 1,
+    "id": 964
+  },
+  {
+    "type": "mcq",
+    "category": "القرآن الكريم",
+    "difficulty": "extreme",
+    "question_ar": "في أي سنة هجرية نزلت سورة الفاتحة؟",
+    "options_ar": [
+      "1 هجرية",
+      "2 هجرية",
+      "3 هجرية",
+      "5 هجرية"
+    ],
+    "correctIndex": 0,
+    "id": 965
+  },
+  {
+    "type": "tf",
+    "category": "الحديث الشريف",
+    "difficulty": "extreme",
+    "question_ar": "الحديث القدسي هو حديث ينسب إلى الله تعالى لكنه ليس من القرآن؟",
+    "correctBoolean": true,
+    "id": 966
+  },
+  {
+    "type": "mcq",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "medium",
+    "question_ar": "ما هو لقب عمر بن الخطاب رضي الله عنه؟",
+    "options_ar": [
+      "الفاروق",
+      "العدل",
+      "الأسد",
+      "العباسي"
+    ],
+    "correctIndex": 0,
+    "id": 967
+  },
+  {
+    "type": "tf",
+    "category": "القرآن الكريم",
+    "difficulty": "easy",
+    "question_ar": "قصة يوسف توجد في سورة النمل.",
+    "correctBoolean": false,
+    "id": 968
+  },
+  {
+    "type": "tf",
+    "category": "السيرة",
+    "difficulty": "hard",
+    "question_ar": "توفي النبي محمد صلى الله عليه وسلم في المدينة المنورة.",
+    "correctBoolean": true,
+    "id": 969
+  },
+  {
+    "type": "tf",
+    "category": "الفقه",
+    "difficulty": "medium",
+    "question_ar": "يجوز أخذ الأجرة على تعليم القرآن.",
+    "correctBoolean": true,
+    "id": 970
+  },
+  {
+    "type": "tf",
+    "category": "الحديث الشريف",
+    "difficulty": "hard",
+    "question_ar": "حديث \"إنما الأعمال بالنيات\" مروي في كتب الأحاديث الستة.",
+    "correctBoolean": false,
+    "id": 971
+  },
+  {
+    "type": "tf",
+    "category": "الصحابة",
+    "difficulty": "hard",
+    "question_ar": "أول من أسلم من النساء هو خديجة بنت خويلد.",
+    "correctBoolean": true,
+    "id": 972
+  },
+  {
+    "type": "tf",
+    "category": "العقيدة",
+    "difficulty": "medium",
+    "question_ar": "مفهوم التوحيد ينقسم إلى ثلاثة أقسام رئيسية.",
+    "correctBoolean": true,
+    "id": 973
+  },
+  {
+    "type": "tf",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "extreme",
+    "question_ar": "معركة بدر وقعت في السنة الثانية للهجرة.",
+    "correctBoolean": true,
+    "id": 974
+  },
+  {
+    "type": "tf",
+    "category": "الثقافة العامة",
+    "difficulty": "medium",
+    "question_ar": "أول عملة إسلامية كانت الدينار.",
+    "correctBoolean": false,
+    "id": 975
+  },
+  {
+    "type": "tf",
+    "category": "الجغرافيا",
+    "difficulty": "extreme",
+    "question_ar": "أطول نهر في العالم هو نهر النيل.",
+    "correctBoolean": false,
+    "id": 976
+  },
+  {
+    "type": "tf",
+    "category": "اللغة العربية",
+    "difficulty": "hard",
+    "question_ar": "أوزان الشعر العربي تنقسم إلى خمسة عشر وزناً.",
+    "correctBoolean": false,
+    "id": 977
+  },
+  {
+    "type": "mcq",
+    "category": "القرآن الكريم",
+    "difficulty": "medium",
+    "question_ar": "في أي سورة ذكرت قصة أصحاب الكهف؟",
+    "options_ar": [
+      "سورة البقرة",
+      "سورة الكهف",
+      "سورة العنكبوت",
+      "سورة الأنعام"
+    ],
+    "correctIndex": 1,
+    "id": 978
+  },
+  {
+    "type": "mcq",
+    "category": "الفقه",
+    "difficulty": "hard",
+    "question_ar": "كم عدد شروط الصلاة؟",
+    "options_ar": [
+      "خمسة",
+      "ستة",
+      "سبعة",
+      "ثمانية"
+    ],
+    "correctIndex": 2,
+    "id": 979
+  },
+  {
+    "type": "mcq",
+    "category": "الحديث الشريف",
+    "difficulty": "hard",
+    "question_ar": "من روى حديث \"من لا يؤمن بالقدر خيره وشره\"؟",
+    "options_ar": [
+      "أبي هريرة",
+      "علي بن أبي طالب",
+      "عبد الله بن عمر",
+      "أنس بن مالك"
+    ],
+    "correctIndex": 0,
+    "id": 980
+  },
+  {
+    "type": "mcq",
+    "category": "الصحابة",
+    "difficulty": "hard",
+    "question_ar": "من هو الصحابي الذي لقب بأمين الأمة؟",
+    "options_ar": [
+      "أبو بكر الصديق",
+      "عمر بن الخطاب",
+      "عثمان بن عفان",
+      "أبو عبيدة بن الجراح"
+    ],
+    "correctIndex": 3,
+    "id": 981
+  },
+  {
+    "type": "mcq",
+    "category": "العقيدة",
+    "difficulty": "medium",
+    "question_ar": "ما هي أركان الإيمان في الإسلام؟",
+    "options_ar": [
+      "خمسة",
+      "ستة",
+      "سبعة",
+      "خمسة عشر"
+    ],
+    "correctIndex": 1,
+    "id": 982
+  },
+  {
+    "type": "mcq",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "extreme",
+    "question_ar": "متى تأسست الدولة العباسية؟",
+    "options_ar": [
+      "750م",
+      "250م",
+      "570م",
+      "632م"
+    ],
+    "correctIndex": 0,
+    "id": 983
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "hard",
+    "question_ar": "من هو مؤلف كتاب \"في ظلال القرآن\"؟",
+    "options_ar": [
+      "محمد حسين هيكل",
+      "سيد قطب",
+      "طه حسين",
+      "أحمد أمين"
+    ],
+    "correctIndex": 1,
+    "id": 984
+  },
+  {
+    "type": "mcq",
+    "category": "اللغة العربية",
+    "difficulty": "extreme",
+    "question_ar": "ما هو وزن الفعل \"كتب\" في اللغة العربية؟",
+    "options_ar": [
+      "مفعول",
+      "مفتعل",
+      "مطابقة",
+      "مفعلة"
+    ],
+    "correctIndex": 0,
+    "id": 985
+  },
+  {
+    "type": "mcq",
+    "category": "العلوم",
+    "difficulty": "extreme",
+    "question_ar": "ما هي وحدة قياس القوة في النظام الدولي؟",
+    "options_ar": [
+      "الكيلوغرام",
+      "المتر",
+      "الجول",
+      "النيوتن"
+    ],
+    "correctIndex": 3,
+    "id": 986
+  },
+  {
+    "type": "mcq",
+    "category": "الرياضيات",
+    "difficulty": "extreme",
+    "question_ar": "ما هي صيغة قانون بيثاغورس؟",
+    "options_ar": [
+      "أ^2 + ب^2 = ج^2",
+      "أ + ب = ج",
+      "ج = أ × ب",
+      "أ^3 + ب^3 = ج^3"
+    ],
+    "correctIndex": 0,
+    "id": 987
+  },
+  {
+    "type": "mcq",
+    "category": "معلومات إسلامية",
+    "difficulty": "hard",
+    "question_ar": "من هو أول خليفة للمسلمين؟",
+    "options_ar": [
+      "علي بن أبي طالب",
+      "العباس",
+      "أبو بكر الصديق",
+      "عمر بن الخطاب"
+    ],
+    "correctIndex": 2,
+    "id": 988
+  },
+  {
+    "type": "mcq",
+    "category": "الأحياء",
+    "difficulty": "hard",
+    "question_ar": "ما هو العضو الوحيد في جسم الإنسان الذي لا يزود بالدم؟",
+    "options_ar": [
+      "القرنية",
+      "الأذنين",
+      "الأظافر",
+      "الشعر"
+    ],
+    "correctIndex": 0,
+    "id": 989
+  },
+  {
+    "type": "tf",
+    "category": "القرآن الكريم",
+    "difficulty": "easy",
+    "question_ar": "القرآن الكريم مكتوب باللغة العربية فقط.",
+    "correctBoolean": true,
+    "id": 990
+  },
+  {
+    "type": "tf",
+    "category": "السيرة",
+    "difficulty": "hard",
+    "question_ar": "توفي النبي محمد صلى الله عليه وسلم في السنة 10 هـ.",
+    "correctBoolean": false,
+    "id": 991
+  },
+  {
+    "type": "tf",
+    "category": "الفقه",
+    "difficulty": "medium",
+    "question_ar": "تعتبر صلاة الجنازة من الصلوات الواجبة.",
+    "correctBoolean": false,
+    "id": 992
+  },
+  {
+    "type": "tf",
+    "category": "الحديث الشريف",
+    "difficulty": "hard",
+    "question_ar": "الحديث الصحيح هو ما رواه واحد فقط من الرواة.",
+    "correctBoolean": false,
+    "id": 993
+  },
+  {
+    "type": "tf",
+    "category": "الصحابة",
+    "difficulty": "extreme",
+    "question_ar": "عُرف الصحابي أبو هريرة رضي الله عنه بلقب \"أسد الله\".",
+    "correctBoolean": false,
+    "id": 994
+  },
+  {
+    "type": "tf",
+    "category": "العقيدة",
+    "difficulty": "medium",
+    "question_ar": "أساس العقيدة الإسلامية هو الإيمان بالرسل فقط.",
+    "correctBoolean": false,
+    "id": 995
+  },
+  {
+    "type": "tf",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "hard",
+    "question_ar": "تأسست الدولة الأموية في 661م.",
+    "correctBoolean": true,
+    "id": 996
+  },
+  {
+    "type": "tf",
+    "category": "الثقافة العامة",
+    "difficulty": "extreme",
+    "question_ar": "قُتِل الخليفة عثمان بن عفان رضي الله عنه في 35 هـ.",
+    "correctBoolean": true,
+    "id": 997
+  },
+  {
+    "type": "tf",
+    "category": "الجغرافيا",
+    "difficulty": "hard",
+    "question_ar": "أكبر دولة إسلامية من حيث المساحة هي السودان.",
+    "correctBoolean": false,
+    "id": 998
+  },
+  {
+    "type": "tf",
+    "category": "اللغة العربية",
+    "difficulty": "extreme",
+    "question_ar": "كلمة \"قائم\" تعني \"مستقيم\" في اللغة العربية.",
+    "correctBoolean": false,
+    "id": 999
+  },
+  {
+    "type": "mcq",
+    "category": "القرآن الكريم",
+    "difficulty": "medium",
+    "question_ar": "ما هي السورة التي تحتوي على آية الكرسي؟",
+    "options_ar": [
+      "سورة البقرة",
+      "سورة آل عمران",
+      "سورة غافر",
+      "سورة النساء"
+    ],
+    "correctIndex": 0,
+    "id": 1000
+  },
+  {
+    "type": "mcq",
+    "category": "السيرة",
+    "difficulty": "hard",
+    "question_ar": "من هو الصحابي المعروف بلقب \"الفاروق\"؟",
+    "options_ar": [
+      "علي بن أبي طالب",
+      "عمر بن الخطاب",
+      "حذيفة بن اليمان",
+      "عبد الله بن مسعود"
+    ],
+    "correctIndex": 1,
+    "id": 1001
+  },
+  {
+    "type": "mcq",
+    "category": "الصحابة",
+    "difficulty": "extreme",
+    "question_ar": "من الصحابي الذي كان يكنى بأبي سليمان؟",
+    "options_ar": [
+      "العباس بن عبد المطلب",
+      "أنس بن مالك",
+      "سلمان الفارسي",
+      "بدر بن عبد الله"
+    ],
+    "correctIndex": 2,
+    "id": 1002
+  },
+  {
+    "type": "mcq",
+    "category": "العقيدة",
+    "difficulty": "hard",
+    "question_ar": "أي من الأمور التالية لا يعتبر ركنًا من أركان الإيمان؟",
+    "options_ar": [
+      "الإيمان بالله",
+      "الإيمان بالملائكة",
+      "الإيمان بالكتب السماوية",
+      "الإيمان بالأدعية"
+    ],
+    "correctIndex": 3,
+    "id": 1003
+  },
+  {
+    "type": "mcq",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "medium",
+    "question_ar": "ما هو العام الذي هاجر فيه النبي محمد صلى الله عليه وسلم إلى المدينة؟",
+    "options_ar": [
+      "620م",
+      "622م",
+      "624م",
+      "630م"
+    ],
+    "correctIndex": 1,
+    "id": 1004
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "hard",
+    "question_ar": "أي من الخلافة الإسلامية تميزت بتأسيس دار الحكمة؟",
+    "options_ar": [
+      "الخلافة العباسية",
+      "الخلافة الأموية",
+      "الخلافة الراشدة",
+      "خلافة الفاطميين"
+    ],
+    "correctIndex": 0,
+    "id": 1005
+  },
+  {
+    "type": "mcq",
+    "category": "الجغرافيا",
+    "difficulty": "extreme",
+    "question_ar": "أي من الدول التالية تقع على حدود الدولة الإسلامية الأندلس السابقة؟",
+    "options_ar": [
+      "فرنسا",
+      "المغرب",
+      "إيطاليا",
+      "البرتغال"
+    ],
+    "correctIndex": 1,
+    "id": 1006
+  },
+  {
+    "type": "mcq",
+    "category": "اللغة العربية",
+    "difficulty": "hard",
+    "question_ar": "أي من المصطلحات التالية تعني \"الأسلوب\" في اللغة العربية؟",
+    "options_ar": [
+      "الحبكة",
+      "المضمون",
+      "الأسلوب الأدبي",
+      "التقنية"
+    ],
+    "correctIndex": 2,
+    "id": 1007
+  },
+  {
+    "type": "mcq",
+    "category": "علوم الفضاء",
+    "difficulty": "hard",
+    "question_ar": "ما هو اسم الكوكب الخامس في المجموعة الشمسية؟",
+    "options_ar": [
+      "زحل",
+      "مشتري",
+      "أرض",
+      "عطارد"
+    ],
+    "correctIndex": 1,
+    "id": 1008
+  },
+  {
+    "type": "tf",
+    "category": "القرآن الكريم",
+    "difficulty": "easy",
+    "question_ar": "عدد سور القرآن الكريم هو 114.",
+    "correctBoolean": true,
+    "id": 1009
+  },
+  {
+    "type": "tf",
+    "category": "السيرة",
+    "difficulty": "hard",
+    "question_ar": "النبي محمد صلى الله عليه وسلم ولد في المدينة.",
+    "correctBoolean": false,
+    "id": 1010
+  },
+  {
+    "type": "tf",
+    "category": "الفقه",
+    "difficulty": "medium",
+    "question_ar": "الزكاة تجب في الأموال النقدية فقط.",
+    "correctBoolean": false,
+    "id": 1011
+  },
+  {
+    "type": "tf",
+    "category": "الحديث الشريف",
+    "difficulty": "hard",
+    "question_ar": "حديث \"إنما الأعمال بالنيات\" هو حديث صحيح.",
+    "correctBoolean": true,
+    "id": 1012
+  },
+  {
+    "type": "tf",
+    "category": "الصحابة",
+    "difficulty": "medium",
+    "question_ar": "الصحابي أبو بكر الصديق توفي في سنة 13 هـ.",
+    "correctBoolean": false,
+    "id": 1013
+  },
+  {
+    "type": "tf",
+    "category": "العقيدة",
+    "difficulty": "hard",
+    "question_ar": "الإيمان بالملائكة هو ركن من أركان الإيمان.",
+    "correctBoolean": true,
+    "id": 1014
+  },
+  {
+    "type": "tf",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "hard",
+    "question_ar": "فتح مكة حدث في السنة السابعة للهجرة.",
+    "correctBoolean": false,
+    "id": 1015
+  },
+  {
+    "type": "tf",
+    "category": "الثقافة العامة",
+    "difficulty": "extreme",
+    "question_ar": "الشعر العربي الفصيح ظهر في العصر الجاهلي بشكل واضح.",
+    "correctBoolean": true,
+    "id": 1016
+  },
+  {
+    "type": "tf",
+    "category": "الجغرافيا",
+    "difficulty": "extreme",
+    "question_ar": "النيل هو أطول نهر في العالم.",
+    "correctBoolean": true,
+    "id": 1017
+  },
+  {
+    "type": "tf",
+    "category": "اللغة العربية",
+    "difficulty": "medium",
+    "question_ar": "اللغة العربية تحتوي على 28 حرفًا.",
+    "correctBoolean": false,
+    "id": 1018
+  },
+  {
+    "type": "mcq",
+    "category": "السيرة",
+    "difficulty": "medium",
+    "question_ar": "في أي عام هجر النبي إلى المدينة؟",
+    "options_ar": [
+      "622 م",
+      "620 م",
+      "615 م",
+      "630 م"
+    ],
+    "correctIndex": 0,
+    "id": 1019
+  },
+  {
+    "type": "mcq",
+    "category": "الفقه",
+    "difficulty": "hard",
+    "question_ar": "ما هو النص الإسلامي الذي يبين زكاة الفطر؟",
+    "options_ar": [
+      "في صحيح مسلم",
+      "في القرآن الكريم",
+      "في سنن الترمذي",
+      "في الموطأ"
+    ],
+    "correctIndex": 3,
+    "id": 1020
+  },
+  {
+    "type": "mcq",
+    "category": "الحديث الشريف",
+    "difficulty": "extreme",
+    "question_ar": "ما هو حديث الأعمى في البخاري عن حكم القراءة في الصلاة؟",
+    "options_ar": [
+      "حديث صحيح",
+      "حديث ضعيف",
+      "حديث حسن",
+      "لا يوجد حديث"
+    ],
+    "correctIndex": 0,
+    "id": 1021
+  },
+  {
+    "type": "mcq",
+    "category": "الصحابة",
+    "difficulty": "hard",
+    "question_ar": "من الصحابي الذي قاتل في معركة مؤتة؟",
+    "options_ar": [
+      "عبد الله بن عمر",
+      "خالد بن الوليد",
+      "جعفر بن أبي طالب",
+      "أسامة بن زيد"
+    ],
+    "correctIndex": 2,
+    "id": 1022
+  },
+  {
+    "type": "mcq",
+    "category": "العقيدة",
+    "difficulty": "medium",
+    "question_ar": "ما هو الركن الثاني من أركان الإيمان؟",
+    "options_ar": [
+      "الإيمان بالله",
+      "الإيمان بالملائكة",
+      "الإيمان بالرسل",
+      "الإيمان بالكتب"
+    ],
+    "correctIndex": 1,
+    "id": 1023
+  },
+  {
+    "type": "mcq",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "extreme",
+    "question_ar": "في أي عام كانت معركة بدر الكبرى؟",
+    "options_ar": [
+      "2 هـ",
+      "1 هـ",
+      "3 هـ",
+      "4 هـ"
+    ],
+    "correctIndex": 0,
+    "id": 1024
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "medium",
+    "question_ar": "ما هو أول كتاب في التفسير بالأسلوب الموضوعي؟",
+    "options_ar": [
+      "تفسير ابن كثير",
+      "تفسير الطبري",
+      "تفسير القرطبي",
+      "تفسير الجلالين"
+    ],
+    "correctIndex": 1,
+    "id": 1025
+  },
+  {
+    "type": "mcq",
+    "category": "الجغرافيا",
+    "difficulty": "hard",
+    "question_ar": "أي من الدول التالية تملك أكبر مساحة جغرافية؟",
+    "options_ar": [
+      "السعودية",
+      "إيران",
+      "مصر",
+      "العراق"
+    ],
+    "correctIndex": 0,
+    "id": 1026
+  },
+  {
+    "type": "mcq",
+    "category": "اللغة العربية",
+    "difficulty": "hard",
+    "question_ar": "كم عدد الأوزان في باب وزن \"مفعلا\" عند العروض؟",
+    "options_ar": [
+      "خمسة",
+      "ستة",
+      "سبعة",
+      "ثلاثة"
+    ],
+    "correctIndex": 1,
+    "id": 1027
+  },
+  {
+    "type": "mcq",
+    "category": "العلوم",
+    "difficulty": "extreme",
+    "question_ar": "ماذا يُسمى التفاعل النووي الذي ينجم عنه انشطار ذرات الحديد؟",
+    "options_ar": [
+      "الانشطار النووي",
+      "الاندماج النووي",
+      "التفاعل الكهربائي",
+      "التفاعل الجرثومي"
+    ],
+    "correctIndex": 0,
+    "id": 1028
+  },
+  {
+    "type": "mcq",
+    "category": "معلومات إسلامية",
+    "difficulty": "extreme",
+    "question_ar": "في أي معركة استُشهد صاحبا النبي هناك 70 من القراء؟",
+    "options_ar": [
+      "حرب الجمل",
+      "معركة أحد",
+      "معركة مؤتة",
+      "معركة اليرموك"
+    ],
+    "correctIndex": 2,
+    "id": 1029
+  },
+  {
+    "type": "mcq",
+    "category": "الأحياء",
+    "difficulty": "extreme",
+    "question_ar": "ما هو متوسط عمر نحل العسل في ظروف طبيعية؟",
+    "options_ar": [
+      "4-6 أسابيع",
+      "6-8 أسابيع",
+      "3-5 أشهر",
+      "2-3 أشهر"
+    ],
+    "correctIndex": 0,
+    "id": 1030
+  },
+  {
+    "type": "mcq",
+    "category": "علوم الفضاء",
+    "difficulty": "extreme",
+    "question_ar": "النظام الشمسي يضم كم كوكب رئيسي في العلم الحديث؟",
+    "options_ar": [
+      "8 كواكب",
+      "9 كواكب",
+      "7 كواكب",
+      "6 كواكب"
+    ],
+    "correctIndex": 0,
+    "id": 1031
+  },
+  {
+    "type": "tf",
+    "category": "القرآن الكريم",
+    "difficulty": "easy",
+    "question_ar": "آية الكرسي هي في سورة البقرة.",
+    "correctBoolean": true,
+    "id": 1032
+  },
+  {
+    "type": "tf",
+    "category": "السيرة",
+    "difficulty": "hard",
+    "question_ar": "تعود فراق النبي ﷺ لزوجة زينب بنت خزيمة إلى زمن الجاهلية.",
+    "correctBoolean": false,
+    "id": 1033
+  },
+  {
+    "type": "tf",
+    "category": "الفقه",
+    "difficulty": "medium",
+    "question_ar": "الركعة الرابعة في صلاة الظهر تكون بشكل مختصر.",
+    "correctBoolean": false,
+    "id": 1034
+  },
+  {
+    "type": "tf",
+    "category": "الحديث الشريف",
+    "difficulty": "hard",
+    "question_ar": "رواية حديث \"إنما الأعمال بالنيات\" يحتاج إلى تصحيح.",
+    "correctBoolean": false,
+    "id": 1035
+  },
+  {
+    "type": "tf",
+    "category": "الصحابة",
+    "difficulty": "extreme",
+    "question_ar": "الحارث بن الصمة هو من شهد جميع الغزوات مع النبي ﷺ.",
+    "correctBoolean": true,
+    "id": 1036
+  },
+  {
+    "type": "mcq",
+    "category": "العقيدة",
+    "difficulty": "medium",
+    "question_ar": "ما الآية التي تتحدث عن الكفار وهم في النار؟",
+    "options_ar": [
+      "وإذا رأوا ما فيه جُمعوا",
+      "وإذا أُلقوا فيها سمعوا لها شهيقاً",
+      "إن الذين كفروا لهم عذاب شديد",
+      "أولئك هم الكافرون"
+    ],
+    "correctIndex": 3,
+    "id": 1037
+  },
+  {
+    "type": "mcq",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "hard",
+    "question_ar": "في أي عام هجري تم فتح مكة؟",
+    "options_ar": [
+      "8 هـ",
+      "9 هـ",
+      "7 هـ",
+      "10 هـ"
+    ],
+    "correctIndex": 0,
+    "id": 1038
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "easy",
+    "question_ar": "ما هي عاصمة الدولة العثمانية؟",
+    "options_ar": [
+      "مكة المكرمة",
+      "إسطنبول",
+      "القاهرة",
+      "بغداد"
+    ],
+    "correctIndex": 1,
+    "id": 1039
+  },
+  {
+    "type": "mcq",
+    "category": "الجغرافيا",
+    "difficulty": "hard",
+    "question_ar": "ما هو أعلى جبل في العالم الإسلامي؟",
+    "options_ar": [
+      "جبل إيفرست",
+      "جبل توبقال",
+      "جبل النبي شعيب",
+      "جبل سمعان"
+    ],
+    "correctIndex": 0,
+    "id": 1040
+  },
+  {
+    "type": "mcq",
+    "category": "اللغة العربية",
+    "difficulty": "medium",
+    "question_ar": "ما الوزن العروضي لكلمة \"سعاد\"؟",
+    "options_ar": [
+      "مفاعيلن",
+      "مفاعيل",
+      "مفاعيلن مفاعيلن",
+      "مفاعيل مفاعيلن"
+    ],
+    "correctIndex": 0,
+    "id": 1041
+  },
+  {
+    "type": "tf",
+    "category": "الرياضيات",
+    "difficulty": "extreme",
+    "question_ar": "العدد 1729 هو العدد الذي عرف بأنه \"عدد عجيب\".",
+    "correctBoolean": true,
+    "id": 1042
+  },
+  {
+    "type": "mcq",
+    "category": "معلومات إسلامية",
+    "difficulty": "hard",
+    "question_ar": "ما هو أول حديث تم تدوينه بعد وفاة النبي ﷺ؟",
+    "options_ar": [
+      "حديث الرؤيا",
+      "حديث الجهاد",
+      "حديث الأمر بالمعروف",
+      "حديث النية"
+    ],
+    "correctIndex": 0,
+    "id": 1043
+  },
+  {
+    "type": "tf",
+    "category": "الحديث الشريف",
+    "difficulty": "extreme",
+    "question_ar": "الحديث الذي يحذر من الغيبة هو \"كل المسلم على المسلم حرام\".",
+    "correctBoolean": false,
+    "id": 1044
+  },
+  {
+    "type": "mcq",
+    "category": "الأحياء",
+    "difficulty": "hard",
+    "question_ar": "ما هي الوظيفة الأساسية لخلايا الدم الحمراء؟",
+    "options_ar": [
+      "نقل الغذاء",
+      "نقل الأكسجين",
+      "محاربة الجراثيم",
+      "تخثر الدم"
+    ],
+    "correctIndex": 1,
+    "id": 1045
+  },
+  {
+    "type": "mcq",
+    "category": "علوم الفضاء",
+    "difficulty": "extreme",
+    "question_ar": "ما هو متوسط المسافة بين الأرض والشمس؟",
+    "options_ar": [
+      "93 مليون ميل",
+      "150 مليون كيلو",
+      "500 مليون ميل",
+      "250 مليون كيلو"
+    ],
+    "correctIndex": 1,
+    "id": 1046
+  },
+  {
+    "type": "tf",
+    "category": "القرآن الكريم",
+    "difficulty": "hard",
+    "question_ar": "أطول سورة في القرآن هي سورة آل عمران.",
+    "correctBoolean": false,
+    "id": 1047
+  },
+  {
+    "type": "mcq",
+    "category": "السيرة",
+    "difficulty": "extreme",
+    "question_ar": "ما هو العام الذي ولد فيه النبي محمد ﷺ؟",
+    "options_ar": [
+      "570م",
+      "580م",
+      "590م",
+      "600م"
+    ],
+    "correctIndex": 0,
+    "id": 1048
+  },
+  {
+    "type": "tf",
+    "category": "الفقه",
+    "difficulty": "hard",
+    "question_ar": "صلاة الوتر تُصلى بعد صلاة العشاء في أي وقت.",
+    "correctBoolean": false,
+    "id": 1049
+  },
+  {
+    "type": "mcq",
+    "category": "الصحابة",
+    "difficulty": "medium",
+    "question_ar": "الذي لقب بأمين هذه الأمة هو؟",
+    "options_ar": [
+      "أبو بكر الصديق",
+      "عمر بن الخطاب",
+      "عثمان بن عفان",
+      "علي بن أبي طالب"
+    ],
+    "correctIndex": 0,
+    "id": 1050
+  },
+  {
+    "type": "tf",
+    "category": "العقيدة",
+    "difficulty": "extreme",
+    "question_ar": "آيات الشك تحوي على الشك في الإيمان.",
+    "correctBoolean": false,
+    "id": 1051
+  },
+  {
+    "type": "mcq",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "hard",
+    "question_ar": "ما هو الاسم الحقيقي للصحابي الجليل أبو هريرة؟",
+    "options_ar": [
+      "عبد الرحمن بن صخر",
+      "عبد الله بن عمر",
+      "عمر بن الخطاب",
+      "حمزة بن عبد المطلب"
+    ],
+    "correctIndex": 0,
+    "id": 1052
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "extreme",
+    "question_ar": "ما هي النسخة الأكثر شهرة من القرآن الكريم في العالم؟",
+    "options_ar": [
+      "المدينة المنورة",
+      "مصر",
+      "التركيا",
+      "الهند"
+    ],
+    "correctIndex": 1,
+    "id": 1053
+  },
+  {
+    "type": "tf",
+    "category": "السيرة",
+    "difficulty": "medium",
+    "question_ar": "ولد النبي محمد صلى الله عليه وسلم في المدينة المنورة.",
+    "correctBoolean": false,
+    "id": 1054
+  },
+  {
+    "type": "tf",
+    "category": "الفقه",
+    "difficulty": "hard",
+    "question_ar": "عمر بن الخطاب رضي الله عنه هو الذي جمع القرآن الكريم في مصحف واحد.",
+    "correctBoolean": true,
+    "id": 1055
+  },
+  {
+    "type": "tf",
+    "category": "الحديث الشريف",
+    "difficulty": "hard",
+    "question_ar": "حديث \"إنما الأعمال بالنيات\" هو من أحاديث ابن ماجه.",
+    "correctBoolean": false,
+    "id": 1056
+  },
+  {
+    "type": "tf",
+    "category": "الصحابة",
+    "difficulty": "medium",
+    "question_ar": "أبو بكر الصديق رضي الله عنه توفي بعد وفاة النبي بخمسة عشر عاماً.",
+    "correctBoolean": false,
+    "id": 1057
+  },
+  {
+    "type": "tf",
+    "category": "العقيدة",
+    "difficulty": "hard",
+    "question_ar": "الإيمان بالقدر هو من أركان الإيمان.",
+    "correctBoolean": true,
+    "id": 1058
+  },
+  {
+    "type": "tf",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "extreme",
+    "question_ar": "معركة بدر الكبرى وقعت في العام الثاني للهجرة.",
+    "correctBoolean": true,
+    "id": 1059
+  },
+  {
+    "type": "tf",
+    "category": "الثقافة العامة",
+    "difficulty": "hard",
+    "question_ar": "تأسيس الدولة الأموية كان في عام 661م.",
+    "correctBoolean": true,
+    "id": 1060
+  },
+  {
+    "type": "tf",
+    "category": "الجغرافيا",
+    "difficulty": "easy",
+    "question_ar": "تعتبر مكة المكرمة هي العاصمة الدينية للمسلمين.",
+    "correctBoolean": true,
+    "id": 1061
+  },
+  {
+    "type": "tf",
+    "category": "العلوم",
+    "difficulty": "medium",
+    "question_ar": "الزراعة المائية لا تعتمد على التربة.",
+    "correctBoolean": true,
+    "id": 1062
+  },
+  {
+    "type": "tf",
+    "category": "الرياضيات",
+    "difficulty": "extreme",
+    "question_ar": "صيغ المعادلة التربيعية يمكن كتابتها بصيغة (ax^2 + bx + c = 0).",
+    "correctBoolean": true,
+    "id": 1063
+  },
+  {
+    "type": "mcq",
+    "category": "معلومات إسلامية",
+    "difficulty": "hard",
+    "question_ar": "ما هو المدني الذي شهد غزوة أحد؟",
+    "options_ar": [
+      "حمزة بن عبد المطلب",
+      "عبد الله بن عباس",
+      "عبيدة بن الحارث",
+      "أسامة بن زيد"
+    ],
+    "correctIndex": 0,
+    "id": 1064
+  },
+  {
+    "type": "mcq",
+    "category": "الحديث الشريف",
+    "difficulty": "medium",
+    "question_ar": "ما هو كتاب الحديث الذي يُعتبر الأكثر صحة؟",
+    "options_ar": [
+      "صحيح مسلم",
+      "سنن أبي داود",
+      "صحيح البخاري",
+      "الجامع الترمذي"
+    ],
+    "correctIndex": 2,
+    "id": 1065
+  },
+  {
+    "type": "mcq",
+    "category": "الصحابة",
+    "difficulty": "hard",
+    "question_ar": "من هو الصحابي الذي لقب بـ\"أسد الله\"؟",
+    "options_ar": [
+      "علي بن أبي طالب",
+      "حمزة بن عبد المطلب",
+      "البراء بن مالك",
+      "الزبير بن العوام"
+    ],
+    "correctIndex": 1,
+    "id": 1066
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "medium",
+    "question_ar": "أين وثيقة المدينة التي أبرمها النبي محمد صلى الله عليه وسلم؟",
+    "options_ar": [
+      "مكة",
+      "المدينة",
+      "الطائف",
+      "القدس"
+    ],
+    "correctIndex": 1,
+    "id": 1067
+  },
+  {
+    "type": "mcq",
+    "category": "الجغرافيا",
+    "difficulty": "extreme",
+    "question_ar": "ما هو أعلى جبل في الوطن العربي؟",
+    "options_ar": [
+      "جبل النبي شعيب",
+      "جبل الهملايا",
+      "جبل الأطلس",
+      "جبل عسيب"
+    ],
+    "correctIndex": 0,
+    "id": 1068
+  },
+  {
+    "type": "mcq",
+    "category": "اللغة العربية",
+    "difficulty": "hard",
+    "question_ar": "ما هو وزن كلمة \"مكتبة\" في اللغة العربية؟",
+    "options_ar": [
+      "مفعلة",
+      "مكتوب",
+      "مفعل",
+      "مكتف"
+    ],
+    "correctIndex": 1,
+    "id": 1069
+  },
+  {
+    "type": "mcq",
+    "category": "العلوم",
+    "difficulty": "hard",
+    "question_ar": "ما هو العنصر الكيميائي الذي يتواجد بكثرة في الفضاء؟",
+    "options_ar": [
+      "الأكسجين",
+      "الهيدروجين",
+      "الهيليوم",
+      "الكربون"
+    ],
+    "correctIndex": 2,
+    "id": 1070
+  },
+  {
+    "type": "tf",
+    "category": "القرآن الكريم",
+    "difficulty": "easy",
+    "question_ar": "هل سورة البقرة هي أطول سور القرآن؟",
+    "correctBoolean": true,
+    "id": 1071
+  },
+  {
+    "type": "tf",
+    "category": "السيرة",
+    "difficulty": "medium",
+    "question_ar": "هل كانت السيدة خديجة رضي الله عنها أكبر من النبي محمد صلى الله عليه وسلم؟",
+    "correctBoolean": true,
+    "id": 1072
+  },
+  {
+    "type": "tf",
+    "category": "الفقه",
+    "difficulty": "hard",
+    "question_ar": "هل الجزية تؤخذ من المسلمين كما تؤخذ من غير المسلمين في الدولة الإسلامية؟",
+    "correctBoolean": false,
+    "id": 1073
+  },
+  {
+    "type": "tf",
+    "category": "الحديث الشريف",
+    "difficulty": "hard",
+    "question_ar": "هل حديث \"إنما الأعمال بالنيات\" رواه الإمام البخاري فقط؟",
+    "correctBoolean": false,
+    "id": 1074
+  },
+  {
+    "type": "tf",
+    "category": "الصحابة",
+    "difficulty": "medium",
+    "question_ar": "هل عمير بن وهب رضي الله عنه كان من الصحابة الذين أسلموا قبل الهجرة؟",
+    "correctBoolean": false,
+    "id": 1075
+  },
+  {
+    "type": "tf",
+    "category": "العقيدة",
+    "difficulty": "hard",
+    "question_ar": "هل يؤمن المسلمون بأن عذاب القبر هو جزء من العقيدة الإسلامية؟",
+    "correctBoolean": true,
+    "id": 1076
+  },
+  {
+    "type": "tf",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "extreme",
+    "question_ar": "هل تم تحديد يوم عرفات في السنة الميلادية 622م؟",
+    "correctBoolean": false,
+    "id": 1077
+  },
+  {
+    "type": "tf",
+    "category": "الثقافة العامة",
+    "difficulty": "extreme",
+    "question_ar": "هل كانت الخلافة العباسية تبدأ في السنة 750م وتستمر حتى 1258م؟",
+    "correctBoolean": true,
+    "id": 1078
+  },
+  {
+    "type": "mcq",
+    "category": "الجغرافيا",
+    "difficulty": "hard",
+    "question_ar": "ما هو أقرب جبل للمدينة المنورة؟",
+    "options_ar": [
+      "جبل أحد",
+      "جبل النور",
+      "جبل ثور",
+      "جبل عرفة"
+    ],
+    "correctIndex": 0,
+    "id": 1079
+  },
+  {
+    "type": "mcq",
+    "category": "اللغة العربية",
+    "difficulty": "medium",
+    "question_ar": "ما هو جمع كلمة \"نجم\"؟",
+    "options_ar": [
+      "نجوم",
+      "نجمات",
+      "نجوميات",
+      "نجومٍ"
+    ],
+    "correctIndex": 1,
+    "id": 1080
+  },
+  {
+    "type": "mcq",
+    "category": "علوم الفضاء",
+    "difficulty": "extreme",
+    "question_ar": "ما هو أصغر كوكب في نظامنا الشمسي؟",
+    "options_ar": [
+      "عطارد",
+      "نبتون",
+      "المريخ",
+      "زحل"
+    ],
+    "correctIndex": 0,
+    "id": 1081
+  },
+  {
+    "type": "mcq",
+    "category": "علوم الفضاء",
+    "difficulty": "hard",
+    "question_ar": "ما هو الكوكب المعروف بكوكب \"الأرض الثانية\"؟",
+    "options_ar": [
+      "الزهرة",
+      "المريخ",
+      "المشتري",
+      "زحل"
+    ],
+    "correctIndex": 1,
+    "id": 1082
+  },
+  {
+    "type": "mcq",
+    "category": "الأحياء",
+    "difficulty": "hard",
+    "question_ar": "ما هي العملية المسؤولة عن كيفية تحويل النبات للضوء إلى طاقة؟",
+    "options_ar": [
+      "التمثيل الضوئي",
+      "التنفس الخلوي",
+      "الانشطار الضوئي",
+      "التكاثر اللاجنسي"
+    ],
+    "correctIndex": 0,
+    "id": 1083
+  },
+  {
+    "type": "mcq",
+    "category": "معلومات إسلامية",
+    "difficulty": "medium",
+    "question_ar": "متى كان غزوة بدر الكبرى؟",
+    "options_ar": [
+      "2 هجري",
+      "3 هجري",
+      "1 هجري",
+      "5 هجري"
+    ],
+    "correctIndex": 0,
+    "id": 1084
+  },
+  {
+    "type": "mcq",
+    "category": "الحديث الشريف",
+    "difficulty": "extreme",
+    "question_ar": "من هو الصحابي الذي رواه حديث \"فضائل سور القرآن\"؟",
+    "options_ar": [
+      "علي بن أبي طالب",
+      "زيد بن ثابت",
+      "ابن مسعود",
+      "أبو هريرة"
+    ],
+    "correctIndex": 1,
+    "id": 1085
+  },
+  {
+    "type": "mcq",
+    "category": "الفقه",
+    "difficulty": "extreme",
+    "question_ar": "هل تجب الزكاة على المال المدخر لمدة أقل من سنة كاملة؟",
+    "options_ar": [
+      "نعم",
+      "لا",
+      "فقط إذا كان أقل من خمسين درهماً",
+      "حسب نوع المال"
+    ],
+    "correctIndex": 1,
+    "id": 1086
+  },
+  {
+    "type": "mcq",
+    "category": "العلوم",
+    "difficulty": "hard",
+    "question_ar": "ما هي الوحدة الأساسية لبناء البروتينات في الكائنات الحية؟",
+    "options_ar": [
+      "الأحماض الأمينية",
+      "السكريات",
+      "الأحماض النووية",
+      "المركبات العضوية"
+    ],
+    "correctIndex": 0,
+    "id": 1087
+  },
+  {
+    "type": "mcq",
+    "category": "العقيدة",
+    "difficulty": "hard",
+    "question_ar": "كم مرة ذُكرت كلمة \"الجنة\" في القرآن الكريم؟",
+    "options_ar": [
+      "بـ 128 مرة",
+      "بـ 77 مرة",
+      "بـ 98 مرة",
+      "بـ 105 مرات"
+    ],
+    "correctIndex": 1,
+    "id": 1088
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "medium",
+    "question_ar": "أين تقع أول جامعة في التاريخ الإسلامي؟",
+    "options_ar": [
+      "بغداد",
+      "القيروان",
+      "جدة",
+      "دمشق"
+    ],
+    "correctIndex": 0,
+    "id": 1089
+  },
+  {
+    "type": "tf",
+    "category": "القرآن الكريم",
+    "difficulty": "easy",
+    "question_ar": "تحتوي سورة البقرة على 286 آية.",
+    "correctBoolean": true,
+    "id": 1090
+  },
+  {
+    "type": "tf",
+    "category": "السيرة",
+    "difficulty": "medium",
+    "question_ar": "ولدت السيدة فاطمة الزهراء في السنة الأولى من البعثة.",
+    "correctBoolean": false,
+    "id": 1091
+  },
+  {
+    "type": "tf",
+    "category": "الفقه",
+    "difficulty": "hard",
+    "question_ar": "الزكاة في المال تُحتسب بنسبة 2.5%.",
+    "correctBoolean": true,
+    "id": 1092
+  },
+  {
+    "type": "tf",
+    "category": "الحديث الشريف",
+    "difficulty": "hard",
+    "question_ar": "حديث 'من كذب علي متعمدًا فليتبوأ مقعده من النار' رواه البخاري فقط.",
+    "correctBoolean": false,
+    "id": 1093
+  },
+  {
+    "type": "tf",
+    "category": "الصحابة",
+    "difficulty": "hard",
+    "question_ar": "الصحابي سعد بن أبي وقاص هو أحد العشرة المبشرين بالجنة.",
+    "correctBoolean": true,
+    "id": 1094
+  },
+  {
+    "type": "tf",
+    "category": "العقيدة",
+    "difficulty": "hard",
+    "question_ar": "عدد الأركان الستة للإيمان هو أربعة.",
+    "correctBoolean": false,
+    "id": 1095
+  },
+  {
+    "type": "tf",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "extreme",
+    "question_ar": "معركة حنين حدثت في السنة العاشرة للهجرة.",
+    "correctBoolean": false,
+    "id": 1096
+  },
+  {
+    "type": "tf",
+    "category": "الثقافة العامة",
+    "difficulty": "medium",
+    "question_ar": "مدينة بغداد تأسست في عهد الخليفة العباسي الرشيد.",
+    "correctBoolean": false,
+    "id": 1097
+  },
+  {
+    "type": "tf",
+    "category": "الجغرافيا",
+    "difficulty": "hard",
+    "question_ar": "يوجد المسجد الأقصى في المدينة المنورة.",
+    "correctBoolean": false,
+    "id": 1098
+  },
+  {
+    "type": "tf",
+    "category": "اللغة العربية",
+    "difficulty": "extreme",
+    "question_ar": "الشعر الجاهلي يشمل الموشحات.",
+    "correctBoolean": false,
+    "id": 1099
+  },
+  {
+    "type": "mcq",
+    "category": "القرآن الكريم",
+    "difficulty": "medium",
+    "question_ar": "ما هي أطول سورة في القرآن الكريم؟",
+    "options_ar": [
+      "سورة آل عمران",
+      "سورة البقرة",
+      "سورة النساء",
+      "سورة النور"
+    ],
+    "correctIndex": 1,
+    "id": 1100
+  },
+  {
+    "type": "mcq",
+    "category": "السيرة",
+    "difficulty": "hard",
+    "question_ar": "في أي سنة توفي النبي محمد صلى الله عليه وسلم؟",
+    "options_ar": [
+      "632م",
+      "630م",
+      "631م",
+      "634م"
+    ],
+    "correctIndex": 0,
+    "id": 1101
+  },
+  {
+    "type": "mcq",
+    "category": "الفقه",
+    "difficulty": "extreme",
+    "question_ar": "ما مقدار نصاب زكاة الفطر؟",
+    "options_ar": [
+      "250 جرام من القمح",
+      "350 جرام من التمر",
+      "500 جرام من الأرز",
+      "400 جرام من الشعير"
+    ],
+    "correctIndex": 0,
+    "id": 1102
+  },
+  {
+    "type": "mcq",
+    "category": "الحديث الشريف",
+    "difficulty": "medium",
+    "question_ar": "ما هو أشهر وأصح كتب الحديث؟",
+    "options_ar": [
+      "صحيح مسلم",
+      "صحيح البخاري",
+      "سنن أبي داود",
+      "الموطأ"
+    ],
+    "correctIndex": 1,
+    "id": 1103
+  },
+  {
+    "type": "mcq",
+    "category": "الصحابة",
+    "difficulty": "extreme",
+    "question_ar": "من هو الصحابي الذي أذن في الأول من أيام الخندق؟",
+    "options_ar": [
+      "علي بن أبي طالب",
+      "بلال بن رباح",
+      "عبد الله بن أم مكتوم",
+      "سعد بن أبي وقاص"
+    ],
+    "correctIndex": 2,
+    "id": 1104
+  },
+  {
+    "type": "mcq",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "extreme",
+    "question_ar": "ما تاريخ معركة بدر؟",
+    "options_ar": [
+      "624م",
+      "623م",
+      "625م",
+      "622م"
+    ],
+    "correctIndex": 0,
+    "id": 1105
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "medium",
+    "question_ar": "ما هي المدينة التي يُعتبر مؤسسها هو الفاتح صلاح الدين؟",
+    "options_ar": [
+      "دمشق",
+      "بغداد",
+      "القدس",
+      "القاهرة"
+    ],
+    "correctIndex": 2,
+    "id": 1106
+  },
+  {
+    "type": "mcq",
+    "category": "الجغرافيا",
+    "difficulty": "hard",
+    "question_ar": "ما هو أكبر خليج في العالم؟",
+    "options_ar": [
+      "خليج المكسيك",
+      "خليج عدن",
+      "خليج عمان",
+      "خليج كالفورنيا"
+    ],
+    "correctIndex": 0,
+    "id": 1107
+  },
+  {
+    "type": "mcq",
+    "category": "العلوم",
+    "difficulty": "hard",
+    "question_ar": "ما الوحدة الأساسية لقياس الشحنة الكهربائية؟",
+    "options_ar": [
+      "الجول",
+      "الكولوم",
+      "الأمبير",
+      "الواط"
+    ],
+    "correctIndex": 1,
+    "id": 1108
+  },
+  {
+    "type": "mcq",
+    "category": "الرياضيات",
+    "difficulty": "extreme",
+    "question_ar": "ما هو مجموع زوايا مثلث؟",
+    "options_ar": [
+      "180 درجة",
+      "360 درجة",
+      "90 درجة",
+      "270 درجة"
+    ],
+    "correctIndex": 0,
+    "id": 1109
+  },
+  {
+    "type": "mcq",
+    "category": "معلومات إسلامية",
+    "difficulty": "hard",
+    "question_ar": "ما هو الاسم الحقيقي لعمر بن الخطاب؟",
+    "options_ar": [
+      "عمر بن عبد الله",
+      "عمر بن الفاروق",
+      "عمر بن الخطاب",
+      "عمر بن الإمام"
+    ],
+    "correctIndex": 2,
+    "id": 1110
+  },
+  {
+    "type": "mcq",
+    "category": "الأحياء",
+    "difficulty": "medium",
+    "question_ar": "ما العضو الذي يعتبر مسؤولاً عن ضخ الدم في الجسم؟",
+    "options_ar": [
+      "الرئة",
+      "القلب",
+      "الكبد",
+      "الكلى"
+    ],
+    "correctIndex": 1,
+    "id": 1111
+  },
+  {
+    "type": "mcq",
+    "category": "علوم الفضاء",
+    "difficulty": "extreme",
+    "question_ar": "ما هو أقرب كوكب إلى الشمس؟",
+    "options_ar": [
+      "الأرض",
+      "فينوس",
+      "عطارد",
+      "المريخ"
+    ],
+    "correctIndex": 2,
+    "id": 1112
+  },
+  {
+    "type": "tf",
+    "category": "القرآن الكريم",
+    "difficulty": "easy",
+    "question_ar": "القرآن الكريم نزل عندما كان محمد عليه الصلاة والسلام في المدينة المنورة.",
+    "correctBoolean": false,
+    "id": 1113
+  },
+  {
+    "type": "mcq",
+    "category": "السيرة",
+    "difficulty": "medium",
+    "question_ar": "ما هو اسم والدة النبي محمد صلى الله عليه وسلم؟",
+    "options_ar": [
+      "آمنة بنت وهب",
+      "فاطمة الزهراء",
+      "حليمة السعدية",
+      "عائشة بنت أبي بكر"
+    ],
+    "correctIndex": 0,
+    "id": 1114
+  },
+  {
+    "type": "mcq",
+    "category": "الفقه",
+    "difficulty": "hard",
+    "question_ar": "ما هي الأركان الأساسية في الصلاة؟",
+    "options_ar": [
+      "النية والتكبير والقيام",
+      "الركوع والسجود والقراءة",
+      "النية والتكبير والركوع والسجود",
+      "التشهد والتسليم"
+    ],
+    "correctIndex": 2,
+    "id": 1115
+  },
+  {
+    "type": "tf",
+    "category": "الحديث الشريف",
+    "difficulty": "medium",
+    "question_ar": "حديث \"إنما الأعمال بالنيات\" رواه البخاري ومسلم.",
+    "correctBoolean": true,
+    "id": 1116
+  },
+  {
+    "type": "mcq",
+    "category": "الصحابة",
+    "difficulty": "hard",
+    "question_ar": "مَن هو الصحابي الذي لقّب بـ \"أسد الله\"؟",
+    "options_ar": [
+      "علي بن أبي طالب",
+      "حمزة بن عبد المطلب",
+      "جعفر الطيار",
+      "أبو بكر الصديق"
+    ],
+    "correctIndex": 1,
+    "id": 1117
+  },
+  {
+    "type": "mcq",
+    "category": "العقيدة",
+    "difficulty": "hard",
+    "question_ar": "ما هو معنى كلمة \"توحيد\" في الإسلام؟",
+    "options_ar": [
+      "الإيمان بوجود الله فقط",
+      "الإيمان برسل الله فقط",
+      "الإيمان بكتب الله فقط",
+      "الإيمان بوحدانية الله في الألوهية والربوبية"
+    ],
+    "correctIndex": 3,
+    "id": 1118
+  },
+  {
+    "type": "tf",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "hard",
+    "question_ar": "معركة بدر كانت في السنة الثانية للهجرة.",
+    "correctBoolean": true,
+    "id": 1119
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "extreme",
+    "question_ar": "ما هو المقياس المستخدم للتمييز بين المذاهب الأربعة في الفقه الإسلامي؟",
+    "options_ar": [
+      "الفهم العقلاني",
+      "التقليد الأعمى",
+      "الاستنباط الشرعي",
+      "التحليل الفقهي المقرون بالأدلة"
+    ],
+    "correctIndex": 3,
+    "id": 1120
+  },
+  {
+    "type": "mcq",
+    "category": "الجغرافيا",
+    "difficulty": "extreme",
+    "question_ar": "أي مدينة كانت تُعرف قديماً باسم \"إيلياء\"؟",
+    "options_ar": [
+      "دمشق",
+      "مكة",
+      "القدس",
+      "القاهرة"
+    ],
+    "correctIndex": 2,
+    "id": 1121
+  },
+  {
+    "type": "tf",
+    "category": "اللغة العربية",
+    "difficulty": "hard",
+    "question_ar": "اللغة العربية تحتوي على 28 حرفاً.",
+    "correctBoolean": false,
+    "id": 1122
+  },
+  {
+    "type": "tf",
+    "category": "معلومات إسلامية",
+    "difficulty": "hard",
+    "question_ar": "الحج هو أحد الأركان الخمسة للإسلام.",
+    "correctBoolean": true,
+    "id": 1123
+  },
+  {
+    "type": "mcq",
+    "category": "الأحياء",
+    "difficulty": "hard",
+    "question_ar": "ما هي الوحدة الأساسية للبناء الفسيولوجي في الكائنات الحية؟",
+    "options_ar": [
+      "الأنسجة",
+      "الأعضاء",
+      "الخلايا",
+      "الأنظمة الحيوية"
+    ],
+    "correctIndex": 2,
+    "id": 1124
+  },
+  {
+    "type": "mcq",
+    "category": "علوم الفضاء",
+    "difficulty": "extreme",
+    "question_ar": "ما هو اسم أول قمر صناعي أطلقه الاتحاد السوفييتي؟",
+    "options_ar": [
+      "فوتون",
+      "سبوتنيك 1",
+      "تيتانيوم",
+      "أبولون"
+    ],
+    "correctIndex": 1,
+    "id": 1125
+  },
+  {
+    "type": "tf",
+    "category": "القرآن الكريم",
+    "difficulty": "hard",
+    "question_ar": "آية الكرسي هي جزء من سورة البقرة.",
+    "correctBoolean": true,
+    "id": 1126
+  },
+  {
+    "type": "tf",
+    "category": "الحديث الشريف",
+    "difficulty": "hard",
+    "question_ar": "الحديث الشريف \"لا يؤمن أحدكم حتى يحب لأخيه ما يحب لنفسه\" رواه الإمام أحمد فقط.",
+    "correctBoolean": false,
+    "id": 1127
+  },
+  {
+    "type": "mcq",
+    "category": "الصحابة",
+    "difficulty": "easy",
+    "question_ar": "مَن يحمل لقب \"الذبيح\" في التاريخ الإسلامي؟",
+    "options_ar": [
+      "إسماعيل",
+      "يوسف",
+      "إبراهيم",
+      "عيسى"
+    ],
+    "correctIndex": 0,
+    "id": 1128
+  },
+  {
+    "type": "mcq",
+    "category": "العقيدة",
+    "difficulty": "extreme",
+    "question_ar": "المرجئة هم مجموعة من المسلمين أنكروا معنى التأثيم في الذنوب.",
+    "options_ar": [
+      "صحيح",
+      "خطأ",
+      "يمكن الجدل",
+      "ليس من الضروري"
+    ],
+    "correctIndex": 0,
+    "id": 1129
+  },
+  {
+    "type": "tf",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "hard",
+    "question_ar": "الخلافة الأموية كانت آخر خلافة في التاريخ الإسلامي.",
+    "correctBoolean": false,
+    "id": 1130
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "hard",
+    "question_ar": "في أي كتاب تم تجميع الأحاديث النبوية المعروفة بالسنن؟",
+    "options_ar": [
+      "صحيح مسلم",
+      "سنن الترمذي",
+      "سنن أبو داود",
+      "سنن النسائي"
+    ],
+    "correctIndex": 0,
+    "id": 1131
+  },
+  {
+    "type": "tf",
+    "category": "القرآن الكريم",
+    "difficulty": "easy",
+    "question_ar": "تتكون كلمة \"الله\" في القرآن الكريم من أربعة أحرف.",
+    "correctBoolean": false,
+    "id": 1132
+  },
+  {
+    "type": "tf",
+    "category": "السيرة",
+    "difficulty": "medium",
+    "question_ar": "توفي النبي محمد صلى الله عليه وسلم عن عمر يناهز الستين عاماً.",
+    "correctBoolean": true,
+    "id": 1133
+  },
+  {
+    "type": "tf",
+    "category": "الفقه",
+    "difficulty": "hard",
+    "question_ar": "شروط صحة العبادة في الإسلام لا تشمل النية.",
+    "correctBoolean": false,
+    "id": 1134
+  },
+  {
+    "type": "tf",
+    "category": "الحديث الشريف",
+    "difficulty": "hard",
+    "question_ar": "حديث \"إنما الأعمال بالنيات\" هو حديث ضعيف.",
+    "correctBoolean": false,
+    "id": 1135
+  },
+  {
+    "type": "tf",
+    "category": "الصحابة",
+    "difficulty": "hard",
+    "question_ar": "الصحابي \"عمر بن الخطاب\" كان من أوائل من أسلم.",
+    "correctBoolean": true,
+    "id": 1136
+  },
+  {
+    "type": "tf",
+    "category": "العقيدة",
+    "difficulty": "hard",
+    "question_ar": "الإيمان بالقضاء والقدر يتضمن الإيمان بوجود خطيئة مسبوقة بشر.",
+    "correctBoolean": false,
+    "id": 1137
+  },
+  {
+    "type": "tf",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "extreme",
+    "question_ar": "خلافة هارون الرشيد استمرت 50 عاماً.",
+    "correctBoolean": false,
+    "id": 1138
+  },
+  {
+    "type": "tf",
+    "category": "الثقافة العامة",
+    "difficulty": "extreme",
+    "question_ar": "أول من جهر بالقرآن في مكة كان أبو بكر الصديق.",
+    "correctBoolean": false,
+    "id": 1139
+  },
+  {
+    "type": "tf",
+    "category": "الجغرافيا",
+    "difficulty": "extreme",
+    "question_ar": "المدينة المنورة تقع شمال مكة المكرمة.",
+    "correctBoolean": false,
+    "id": 1140
+  },
+  {
+    "type": "tf",
+    "category": "اللغة العربية",
+    "difficulty": "extreme",
+    "question_ar": "كلمة \"الأسد\" في اللغة العربية تتكون من ثلاثة أحرف نحوية.",
+    "correctBoolean": true,
+    "id": 1141
+  },
+  {
+    "type": "mcq",
+    "category": "القرآن الكريم",
+    "difficulty": "medium",
+    "question_ar": "أين نزلت سورة البقرة؟",
+    "options_ar": [
+      "مكة",
+      "المدينة",
+      "الشام",
+      "بغداد"
+    ],
+    "correctIndex": 1,
+    "id": 1142
+  },
+  {
+    "type": "mcq",
+    "category": "السيرة",
+    "difficulty": "hard",
+    "question_ar": "من كان أول من أسلم من النساء؟",
+    "options_ar": [
+      "خديجة بنت خويلد",
+      "فاطمة الزهراء",
+      "عائشة بنت أبي بكر",
+      "سمية بنت الخياط"
+    ],
+    "correctIndex": 0,
+    "id": 1143
+  },
+  {
+    "type": "mcq",
+    "category": "الفقه",
+    "difficulty": "hard",
+    "question_ar": "كم عدد فروض الصلاة؟",
+    "options_ar": [
+      "ثلاث",
+      "خمسة",
+      "أربعة",
+      "ستة"
+    ],
+    "correctIndex": 1,
+    "id": 1144
+  },
+  {
+    "type": "mcq",
+    "category": "الصحابة",
+    "difficulty": "extreme",
+    "question_ar": "ما هو لقب الصحابي \"علي بن أبي طالب\" المعروف به؟",
+    "options_ar": [
+      "الأسد",
+      "الهاشمي",
+      "الأُمرُد",
+      "أبو الحسن"
+    ],
+    "correctIndex": 3,
+    "id": 1145
+  },
+  {
+    "type": "mcq",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "extreme",
+    "question_ar": "في أي سنة هجرت معركة بدر؟",
+    "options_ar": [
+      "1 هجري",
+      "2 هجري",
+      "3 هجري",
+      "4 هجري"
+    ],
+    "correctIndex": 1,
+    "id": 1146
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "extreme",
+    "question_ar": "أين تم إنشاء أول محطة إذاعية في العالم الإسلامي؟",
+    "options_ar": [
+      "مكة",
+      "القاهرة",
+      "بغداد",
+      "الجزائر"
+    ],
+    "correctIndex": 1,
+    "id": 1147
+  },
+  {
+    "type": "mcq",
+    "category": "الجغرافيا",
+    "difficulty": "extreme",
+    "question_ar": "تعتبر أي مدينة معروفة بكونها عاصمة الدولة الأموية؟",
+    "options_ar": [
+      "مكة",
+      "المدينة",
+      "دمشق",
+      "بغداد"
+    ],
+    "correctIndex": 2,
+    "id": 1148
+  },
+  {
+    "type": "mcq",
+    "category": "اللغة العربية",
+    "difficulty": "hard",
+    "question_ar": "ما هو وزن كلمة \"كَتَبَ\" في اللغة العربية؟",
+    "options_ar": [
+      "فَعَلَ",
+      "مَفْعَلَ",
+      "مَفْعُلَ",
+      "مُفْعِلٌ"
+    ],
+    "correctIndex": 0,
+    "id": 1149
+  },
+  {
+    "type": "mcq",
+    "category": "العلوم",
+    "difficulty": "extreme",
+    "question_ar": "ما هو أقرب كوكب إلى الأرض؟",
+    "options_ar": [
+      "عطارد",
+      "المريخ",
+      "الزهرة",
+      "زحل"
+    ],
+    "correctIndex": 2,
+    "id": 1150
+  },
+  {
+    "type": "mcq",
+    "category": "الأحياء",
+    "difficulty": "extreme",
+    "question_ar": "ما هو أقصى عمر يمكن أن تصل إليه السلحفاة في البرية؟",
+    "options_ar": [
+      "50 عاماً",
+      "100 عاماً",
+      "150 عاماً",
+      "200 عاماً"
+    ],
+    "correctIndex": 3,
+    "id": 1151
+  },
+  {
+    "type": "mcq",
+    "category": "علوم الفضاء",
+    "difficulty": "extreme",
+    "question_ar": "ما هو متوسط بعد الشمس عن الأرض؟",
+    "options_ar": [
+      "93 مليون ميل",
+      "92 مليون ميل",
+      "91 مليون ميل",
+      "94 مليون ميل"
+    ],
+    "correctIndex": 0,
+    "id": 1152
+  },
+  {
+    "type": "tf",
+    "category": "القرآن الكريم",
+    "difficulty": "easy",
+    "question_ar": "القرآن الكريم يتكون من 114 سورة.",
+    "correctBoolean": true,
+    "id": 1153
+  },
+  {
+    "type": "tf",
+    "category": "السيرة",
+    "difficulty": "medium",
+    "question_ar": "ولد النبي محمد صلى الله عليه وسلم في عام 570 ميلادية.",
+    "correctBoolean": false,
+    "id": 1154
+  },
+  {
+    "type": "tf",
+    "category": "الفقه",
+    "difficulty": "hard",
+    "question_ar": "إذا مات شخص وعليه دين، فإن الدين يُقضى من الميراث قبل تقسيمه.",
+    "correctBoolean": true,
+    "id": 1155
+  },
+  {
+    "type": "tf",
+    "category": "الحديث الشريف",
+    "difficulty": "hard",
+    "question_ar": "حديث في الصحيحين يجب أن يتواجد في كتب الحديث الأخرى.",
+    "correctBoolean": false,
+    "id": 1156
+  },
+  {
+    "type": "tf",
+    "category": "الصحابة",
+    "difficulty": "hard",
+    "question_ar": "الخليفة الراشد الثالث هو علي بن أبي طالب.",
+    "correctBoolean": false,
+    "id": 1157
+  },
+  {
+    "type": "tf",
+    "category": "العقيدة",
+    "difficulty": "medium",
+    "question_ar": "يؤمن المسلمون بوجود ملَكٌ يحرسهم في حياتهم.",
+    "correctBoolean": true,
+    "id": 1158
+  },
+  {
+    "type": "tf",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "extreme",
+    "question_ar": "تأسست الدولة الأموية في عام 661 ميلادية.",
+    "correctBoolean": true,
+    "id": 1159
+  },
+  {
+    "type": "tf",
+    "category": "الثقافة العامة",
+    "difficulty": "medium",
+    "question_ar": "يُعتبر الكتاب \"الف ليلة وليلة\" مُصنفًا في الأدب العربي القديم.",
+    "correctBoolean": true,
+    "id": 1160
+  },
+  {
+    "type": "tf",
+    "category": "الجغرافيا",
+    "difficulty": "extreme",
+    "question_ar": "تعتبر مدينة مكة هي العاصمة في الدولة السعودية الأولى.",
+    "correctBoolean": false,
+    "id": 1161
+  },
+  {
+    "type": "tf",
+    "category": "اللغة العربية",
+    "difficulty": "medium",
+    "question_ar": "عُرف أبو الطيب المتنبي بكونه شاعر من العصر الحديث.",
+    "correctBoolean": false,
+    "id": 1162
+  },
+  {
+    "type": "mcq",
+    "category": "القرآن الكريم",
+    "difficulty": "hard",
+    "question_ar": "ما هي السورة التي أُخبر فيها النبي محمد صلى الله عليه وسلم بالتحذير من الفتن؟",
+    "options_ar": [
+      "الأنفال",
+      "آل عمران",
+      "المائدة",
+      "الحجر"
+    ],
+    "correctIndex": 1,
+    "id": 1163
+  },
+  {
+    "type": "mcq",
+    "category": "السيرة",
+    "difficulty": "extreme",
+    "question_ar": "في أي عام هاجر النبي محمد صلى الله عليه وسلم إلى المدينة المنورة؟",
+    "options_ar": [
+      "622م",
+      "623م",
+      "624م",
+      "625م"
+    ],
+    "correctIndex": 0,
+    "id": 1164
+  },
+  {
+    "type": "mcq",
+    "category": "الفقه",
+    "difficulty": "hard",
+    "question_ar": "ما هو العدد الأدنى للنساء في الشهادة الخاصة بانتزاع الميراث؟",
+    "options_ar": [
+      "واحدة",
+      "ثلاث",
+      "أثنتان",
+      "أربع"
+    ],
+    "correctIndex": 2,
+    "id": 1165
+  },
+  {
+    "type": "mcq",
+    "category": "الحديث الشريف",
+    "difficulty": "medium",
+    "question_ar": "أي من الأحاديث يُعتبر من الأحاديث القدسية؟",
+    "options_ar": [
+      "حديث \"صنفان من أهل النار لم أرهما\"",
+      "حديث \"إنما الأعمال بالنيات\"",
+      "حديث \"من فرج عن مسلم كربة\"",
+      "حديث \"إذا مرض العبد أرسل الله إليه ملكاً\""
+    ],
+    "correctIndex": 3,
+    "id": 1166
+  },
+  {
+    "type": "mcq",
+    "category": "الصحابة",
+    "difficulty": "extreme",
+    "question_ar": "من هو الصحابي الذي أُلقي عليه القبض لمدة تزيد عن 2 سنة بسبب الدعوة؟",
+    "options_ar": [
+      "البراء بن مالك",
+      "عبد الله بن مسعود",
+      "الفضل بن العباس",
+      "الأسود بن سريع"
+    ],
+    "correctIndex": 2,
+    "id": 1167
+  },
+  {
+    "type": "mcq",
+    "category": "العقيدة",
+    "difficulty": "hard",
+    "question_ar": "ما هو الاسم الخاص بالكتب التي يكتبها الملائكة عن أعمال البشر؟",
+    "options_ar": [
+      "الصحف",
+      "التوراة",
+      "اللوح المحفوظ",
+      "كتب الأجل"
+    ],
+    "correctIndex": 2,
+    "id": 1168
+  },
+  {
+    "type": "mcq",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "medium",
+    "question_ar": "متى تم تدمير الكعبة المشرفة لأول مرة؟",
+    "options_ar": [
+      "580م",
+      "600م",
+      "610م",
+      "630م"
+    ],
+    "correctIndex": 0,
+    "id": 1169
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "hard",
+    "question_ar": "ما هو الكتاب الذي يُعتبر أساساً لعلم البلاغة؟",
+    "options_ar": [
+      "ديوان المعاني",
+      "أسرار البلاغة",
+      "الكتاب",
+      "تحصيل المنافع"
+    ],
+    "correctIndex": 1,
+    "id": 1170
+  },
+  {
+    "type": "mcq",
+    "category": "الجغرافيا",
+    "difficulty": "extreme",
+    "question_ar": "ما هو أطول نهر في الدول العربية؟",
+    "options_ar": [
+      "نهر النيل",
+      "نهر دجلة",
+      "نهر الفرات",
+      "نهر الأردن"
+    ],
+    "correctIndex": 0,
+    "id": 1171
+  },
+  {
+    "type": "mcq",
+    "category": "اللغة العربية",
+    "difficulty": "hard",
+    "question_ar": "ما هي اللغة التي تعتبر لغة الأدب العربي الكلاسيكي؟",
+    "options_ar": [
+      "اللهجة المصرية",
+      "الفصحى",
+      "اللهجة المغربية",
+      "اللغة الإنجليزية"
+    ],
+    "correctIndex": 1,
+    "id": 1172
+  },
+  {
+    "type": "mcq",
+    "category": "العلوم",
+    "difficulty": "extreme",
+    "question_ar": "ما هو العنصر الكيميائي الذي يُعتبر أساسياً في التركيب الحيوي للجينات؟",
+    "options_ar": [
+      "الكربون",
+      "الأكسجين",
+      "النيتروجين",
+      "الهيدروجين"
+    ],
+    "correctIndex": 2,
+    "id": 1173
+  },
+  {
+    "type": "mcq",
+    "category": "معلومات إسلامية",
+    "difficulty": "extreme",
+    "question_ar": "متى نزلت سورة البقرة بالكامل؟",
+    "options_ar": [
+      "بعد الهجرة",
+      "في معركة بدر",
+      "في غزوة أحد",
+      "في السنة السابعة"
+    ],
+    "correctIndex": 0,
+    "id": 1174
+  },
+  {
+    "type": "mcq",
+    "category": "الأحياء",
+    "difficulty": "hard",
+    "question_ar": "ما هو الجزء من الخلية الذي يُعتبر مركز السيطرة والتحكم؟",
+    "options_ar": [
+      "المادة الوراثية",
+      "الشبكة الإندوبلازمية",
+      "المركب النووي",
+      "السيتوبلازم"
+    ],
+    "correctIndex": 2,
+    "id": 1175
+  },
+  {
+    "type": "mcq",
+    "category": "علوم الفضاء",
+    "difficulty": "extreme",
+    "question_ar": "ما هو أطول تردد لعملية انتقال الضوء في الفضاء؟",
+    "options_ar": [
+      "2400 نانومتر",
+      "3000 نانومتر",
+      "5000 نانومتر",
+      "10,000 نانومتر"
+    ],
+    "correctIndex": 1,
+    "id": 1176
+  },
+  {
+    "type": "tf",
+    "category": "القرآن الكريم",
+    "difficulty": "easy",
+    "question_ar": "أُنزِلَ القرآن الكريم في المدينة المنورة.",
+    "correctBoolean": false,
+    "id": 1177
+  },
+  {
+    "type": "tf",
+    "category": "السيرة",
+    "difficulty": "medium",
+    "question_ar": "توفي النبي محمد صلى الله عليه وسلم في العام الحادي عشر للهجرة.",
+    "correctBoolean": true,
+    "id": 1178
+  },
+  {
+    "type": "tf",
+    "category": "الفقه",
+    "difficulty": "hard",
+    "question_ar": "مقدار زكاة الفطر هو صاع من التمر أو الشعير.",
+    "correctBoolean": true,
+    "id": 1179
+  },
+  {
+    "type": "tf",
+    "category": "الحديث الشريف",
+    "difficulty": "hard",
+    "question_ar": "الحديث الشريف يتكون من سند ومتن.",
+    "correctBoolean": true,
+    "id": 1180
+  },
+  {
+    "type": "tf",
+    "category": "الصحابة",
+    "difficulty": "hard",
+    "question_ar": "عبد الله بن عباس هو ابن عم النبي محمد صلى الله عليه وسلم.",
+    "correctBoolean": true,
+    "id": 1181
+  },
+  {
+    "type": "tf",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "extreme",
+    "question_ar": "فترة الخلافة الأموية استمرت 91 عامًا.",
+    "correctBoolean": true,
+    "id": 1182
+  },
+  {
+    "type": "tf",
+    "category": "الثقافة العامة",
+    "difficulty": "hard",
+    "question_ar": "اللغة العربية تحتوي على 28 حرفًا أساسيًا.",
+    "correctBoolean": true,
+    "id": 1183
+  },
+  {
+    "type": "tf",
+    "category": "الجغرافيا",
+    "difficulty": "medium",
+    "question_ar": "تعدّ مكة المكرمة من أكبر مدن المملكة العربية السعودية.",
+    "correctBoolean": false,
+    "id": 1184
+  },
+  {
+    "type": "tf",
+    "category": "اللغة العربية",
+    "difficulty": "hard",
+    "question_ar": "الكلمة تمييز في اللغة العربية يمكن أن يكون اسمًا أو فعلًا.",
+    "correctBoolean": false,
+    "id": 1185
+  },
+  {
+    "type": "mcq",
+    "category": "القرآن الكريم",
+    "difficulty": "medium",
+    "question_ar": "ما السورة التي تُعرف بأنها قلب القرآن؟",
+    "options_ar": [
+      "سورة البقرة",
+      "سورة يس",
+      "سورة الفاتحة",
+      "سورة الإخلاص"
+    ],
+    "correctIndex": 1,
+    "id": 1186
+  },
+  {
+    "type": "mcq",
+    "category": "السيرة",
+    "difficulty": "hard",
+    "question_ar": "متى كانت غزوة بدر؟",
+    "options_ar": [
+      "العام الثاني للهجرة",
+      "العام الثالث للهجرة",
+      "العام الخامس للهجرة",
+      "العام الرابع للهجرة"
+    ],
+    "correctIndex": 0,
+    "id": 1187
+  },
+  {
+    "type": "mcq",
+    "category": "الفقه",
+    "difficulty": "extreme",
+    "question_ar": "كم مقدار الأوقية في زكاة المال؟",
+    "options_ar": [
+      "40 درهم",
+      "60 درهم",
+      "50 درهم",
+      "30 درهم"
+    ],
+    "correctIndex": 0,
+    "id": 1188
+  },
+  {
+    "type": "mcq",
+    "category": "الحديث الشريف",
+    "difficulty": "hard",
+    "question_ar": "ما هو اسم حديث البخاري المشهور؟",
+    "options_ar": [
+      "الصحيح",
+      "الجامع",
+      "النسائي",
+      "المسند"
+    ],
+    "correctIndex": 0,
+    "id": 1189
+  },
+  {
+    "type": "mcq",
+    "category": "الصحابة",
+    "difficulty": "extreme",
+    "question_ar": "من هو الصحابي الذي اشتهر بلقب 'أسد الله'؟",
+    "options_ar": [
+      "حمزة بن عبد المطلب",
+      "علي بن أبي طالب",
+      "عباس بن عبد المطلب",
+      "سعد بن أبي وقاص"
+    ],
+    "correctIndex": 0,
+    "id": 1190
+  },
+  {
+    "type": "mcq",
+    "category": "العقيدة",
+    "difficulty": "medium",
+    "question_ar": "أي من هذه الفرق تُعرف بإنكار الصفات؟",
+    "options_ar": [
+      "السنة",
+      "المعتزلة",
+      "الشيعة",
+      "الأشاعرة"
+    ],
+    "correctIndex": 1,
+    "id": 1191
+  },
+  {
+    "type": "mcq",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "extreme",
+    "question_ar": "ما هو تاريخ موقعة حطين؟",
+    "options_ar": [
+      "1187م",
+      "1191م",
+      "1169م",
+      "1200م"
+    ],
+    "correctIndex": 0,
+    "id": 1192
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "hard",
+    "question_ar": "ما هو اسم أطول نهر في العالم؟",
+    "options_ar": [
+      "النيل",
+      "الأمازون",
+      "الميسيسيبي",
+      "الفرات"
+    ],
+    "correctIndex": 1,
+    "id": 1193
+  },
+  {
+    "type": "tf",
+    "category": "القرآن الكريم",
+    "difficulty": "easy",
+    "question_ar": "القرآن الكريم يتكون من 30 جزءاً.",
+    "correctBoolean": true,
+    "id": 1194
+  },
+  {
+    "type": "tf",
+    "category": "السيرة",
+    "difficulty": "medium",
+    "question_ar": "أسلم أبو بكر الصديق قبل الدعوة العلنية للنبي محمد.",
+    "correctBoolean": true,
+    "id": 1195
+  },
+  {
+    "type": "tf",
+    "category": "الفقه",
+    "difficulty": "hard",
+    "question_ar": "المرأة الحامل لا يجب عليها صيام رمضان إذا كان يحظر عليها صحة جنينها.",
+    "correctBoolean": true,
+    "id": 1196
+  },
+  {
+    "type": "tf",
+    "category": "الحديث الشريف",
+    "difficulty": "hard",
+    "question_ar": "حديث 'إنما الأعمال بالنيات' هو حديث صحيح متفق عليه.",
+    "correctBoolean": true,
+    "id": 1197
+  },
+  {
+    "type": "tf",
+    "category": "الصحابة",
+    "difficulty": "hard",
+    "question_ar": "عبد الله بن عباس كان من أوائل من أسلم من الشباب.",
+    "correctBoolean": true,
+    "id": 1198
+  },
+  {
+    "type": "tf",
+    "category": "العقيدة",
+    "difficulty": "medium",
+    "question_ar": "الإيمان بالملائكة هو أحد أركان الإيمان الستة.",
+    "correctBoolean": true,
+    "id": 1199
+  },
+  {
+    "type": "tf",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "hard",
+    "question_ar": "الخلفاء الراشدون هم أربعة فقط، وليس خمسة.",
+    "correctBoolean": true,
+    "id": 1200
+  },
+  {
+    "type": "tf",
+    "category": "الثقافة العامة",
+    "difficulty": "extreme",
+    "question_ar": "الجغرافيا السياسية ليست مرتبطة تاريخياً فقط، بل علمياً أيضاً.",
+    "correctBoolean": true,
+    "id": 1201
+  },
+  {
+    "type": "tf",
+    "category": "الجغرافيا",
+    "difficulty": "extreme",
+    "question_ar": "عاصمة العراق هي بغداد وليست أربيل.",
+    "correctBoolean": true,
+    "id": 1202
+  },
+  {
+    "type": "tf",
+    "category": "اللغة العربية",
+    "difficulty": "hard",
+    "question_ar": "اللغة العربية تحتوي على 28 حرفاً فقط.",
+    "correctBoolean": true,
+    "id": 1203
+  },
+  {
+    "type": "mcq",
+    "category": "القرآن الكريم",
+    "difficulty": "medium",
+    "question_ar": "ما هو اسم السورة التي تُعد أطول سور القرآن؟",
+    "options_ar": [
+      "سورة البقرة",
+      "سورة آل عمران",
+      "سورة النساء",
+      "سورة المائدة"
+    ],
+    "correctIndex": 0,
+    "id": 1204
+  },
+  {
+    "type": "mcq",
+    "category": "السيرة",
+    "difficulty": "hard",
+    "question_ar": "ما هو لقب النبي محمد الذي أطلق عليه في مكة بعد الهجرة؟",
+    "options_ar": [
+      "الأمين",
+      "الهاشمي",
+      "الفاتح",
+      "الرسول"
+    ],
+    "correctIndex": 0,
+    "id": 1205
+  },
+  {
+    "type": "mcq",
+    "category": "الحديث الشريف",
+    "difficulty": "extreme",
+    "question_ar": "من هو الصحابي الذي روى حديث 'إنما الأعمال بالنيات'؟",
+    "options_ar": [
+      "عمر بن الخطاب",
+      "أبو هريرة",
+      "عائشة",
+      "عبد الله بن عمر"
+    ],
+    "correctIndex": 1,
+    "id": 1206
+  },
+  {
+    "type": "mcq",
+    "category": "الصحابة",
+    "difficulty": "extreme",
+    "question_ar": "في أي عام استشهد أبو بكر الصديق؟",
+    "options_ar": [
+      "13 هـ",
+      "12 هـ",
+      "14 هـ",
+      "11 هـ"
+    ],
+    "correctIndex": 0,
+    "id": 1207
+  },
+  {
+    "type": "mcq",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "medium",
+    "question_ar": "في أي عام كانت غزوة بدر؟",
+    "options_ar": [
+      "2 هـ",
+      "3 هـ",
+      "1 هـ",
+      "4 هـ"
+    ],
+    "correctIndex": 0,
+    "id": 1208
+  },
+  {
+    "type": "mcq",
+    "category": "العلوم",
+    "difficulty": "medium",
+    "question_ar": "ماذا يسمى التيار الكهربائي الذي يتدفق في دائرة تقليدية؟",
+    "options_ar": [
+      "التيار المتناوب",
+      "التيار المستمر",
+      "التيار الانتقالي",
+      "التيار الفجائي"
+    ],
+    "correctIndex": 1,
+    "id": 1209
+  },
+  {
+    "type": "mcq",
+    "category": "الأحياء",
+    "difficulty": "hard",
+    "question_ar": "ما هو العضو المسؤول عن ضخ الدم في الجسم؟",
+    "options_ar": [
+      "الكبد",
+      "الرئة",
+      "القلب",
+      "الطحال"
+    ],
+    "correctIndex": 2,
+    "id": 1210
+  },
+  {
+    "type": "tf",
+    "category": "القرآن الكريم",
+    "difficulty": "easy",
+    "question_ar": "القرآن الكريم يحتوي على 114 سورة.",
+    "correctBoolean": true,
+    "id": 1211
+  },
+  {
+    "type": "tf",
+    "category": "السيرة",
+    "difficulty": "medium",
+    "question_ar": "ولد النبي محمد في عام 570 ميلادية.",
+    "correctBoolean": true,
+    "id": 1212
+  },
+  {
+    "type": "tf",
+    "category": "الحديث الشريف",
+    "difficulty": "medium",
+    "question_ar": "الحديث القدسي هو حديث يرويه النبي عن الله مباشرة.",
+    "correctBoolean": true,
+    "id": 1213
+  },
+  {
+    "type": "tf",
+    "category": "الفقه",
+    "difficulty": "hard",
+    "question_ar": "الزكاة واجبة على جميع المسلمين بغض النظر عن الثروة.",
+    "correctBoolean": false,
+    "id": 1214
+  },
+  {
+    "type": "tf",
+    "category": "العقيدة",
+    "difficulty": "medium",
+    "question_ar": "الأركان الستة للإيمان تشمل الإيمان بالملائكة والكتب والرسل.",
+    "correctBoolean": true,
+    "id": 1215
+  },
+  {
+    "type": "tf",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "hard",
+    "question_ar": "خلافة عثمان بن عفان استمرت لمدة 12 عامًا.",
+    "correctBoolean": true,
+    "id": 1216
+  },
+  {
+    "type": "tf",
+    "category": "اللغة العربية",
+    "difficulty": "hard",
+    "question_ar": "اللغة العربية تحتوي على أربعة عشر حرفًا من حروف الجر.",
+    "correctBoolean": false,
+    "id": 1217
+  },
+  {
+    "type": "mcq",
+    "category": "الفقه",
+    "difficulty": "medium",
+    "question_ar": "في أي من العبادات يجب إخراج الزكاة؟",
+    "options_ar": [
+      "صلاة",
+      "صوم",
+      "حج",
+      "مال"
+    ],
+    "correctIndex": 3,
+    "id": 1218
+  },
+  {
+    "type": "mcq",
+    "category": "السيرة",
+    "difficulty": "hard",
+    "question_ar": "ما هو اسم الغزوة التي وقع فيها حادثة الإفك؟",
+    "options_ar": [
+      "غزوة بدر",
+      "غزوة أحد",
+      "غزوة بني المصطلق",
+      "غزوة الخندق"
+    ],
+    "correctIndex": 2,
+    "id": 1219
+  },
+  {
+    "type": "mcq",
+    "category": "الحديث الشريف",
+    "difficulty": "extreme",
+    "question_ar": "أي من الأحاديث التالية هو حديث صحيح وفقًا لشروط البخاري؟",
+    "options_ar": [
+      "حديث عن الفتن",
+      "حديث السعديل",
+      "حديث إنما الأعمال بالنيات",
+      "حديث في الجهاد"
+    ],
+    "correctIndex": 2,
+    "id": 1220
+  },
+  {
+    "type": "mcq",
+    "category": "الصحابة",
+    "difficulty": "hard",
+    "question_ar": "من كان أول من آمن من الرجال بنبوة النبي محمد؟",
+    "options_ar": [
+      "أبو بكر الصديق",
+      "علي بن أبي طالب",
+      "حمزة بن عبد المطلب",
+      "عثمان بن عفان"
+    ],
+    "correctIndex": 1,
+    "id": 1221
+  },
+  {
+    "type": "mcq",
+    "category": "العقيدة",
+    "difficulty": "extreme",
+    "question_ar": "ما هي درجة الإيمان في الإيمان بالقدر؟",
+    "options_ar": [
+      "ركيزة",
+      "من الأركان",
+      "فنة",
+      "شعبة من العلم"
+    ],
+    "correctIndex": 1,
+    "id": 1222
+  },
+  {
+    "type": "mcq",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "extreme",
+    "question_ar": "متى كان تاريخ معركة حطين؟",
+    "options_ar": [
+      "1110 م",
+      "1187 م",
+      "1219 م",
+      "1145 م"
+    ],
+    "correctIndex": 1,
+    "id": 1223
+  },
+  {
+    "type": "mcq",
+    "category": "الأحياء",
+    "difficulty": "medium",
+    "question_ar": "ما هو العضو الرئيسي في جسم الإنسان المسؤول عن ضخ الدم؟",
+    "options_ar": [
+      "الكبد",
+      "الرئتين",
+      "المخ",
+      "القلب"
+    ],
+    "correctIndex": 3,
+    "id": 1224
+  },
+  {
+    "type": "mcq",
+    "category": "علوم الفضاء",
+    "difficulty": "hard",
+    "question_ar": "ما هو الكوكب الذي يُعرف بـ\"الكوكب الأحمر\"؟",
+    "options_ar": [
+      "الأرض",
+      "المريخ",
+      "زحل",
+      "المشتري"
+    ],
+    "correctIndex": 1,
+    "id": 1225
+  },
+  {
+    "type": "mcq",
+    "category": "اللغة العربية",
+    "difficulty": "extreme",
+    "question_ar": "ما هو الوزن العروضي الذي يُستخدم في شعر المديح؟",
+    "options_ar": [
+      "مفاعيلن",
+      "مفتعلن",
+      "مفاعيلن مفاعيلن",
+      "مفاعيلن مفاعيلن مفاعيلن"
+    ],
+    "correctIndex": 0,
+    "id": 1226
+  },
+  {
+    "type": "mcq",
+    "category": "العلوم",
+    "difficulty": "hard",
+    "question_ar": "ما هي الوحدة الأساسية لقياس شدة التيار الكهربائي؟",
+    "options_ar": [
+      "الفولت",
+      "الأوم",
+      "الأمبير",
+      "الواط"
+    ],
+    "correctIndex": 2,
+    "id": 1227
+  },
+  {
+    "type": "mcq",
+    "category": "الجغرافيا",
+    "difficulty": "medium",
+    "question_ar": "ما هي عاصمة اليابان؟",
+    "options_ar": [
+      "سيول",
+      "بكين",
+      "طوكيو",
+      "بانكوك"
+    ],
+    "correctIndex": 2,
+    "id": 1228
+  },
+  {
+    "type": "mcq",
+    "category": "معلومات إسلامية",
+    "difficulty": "extreme",
+    "question_ar": "ما هو تاريخ وفاة النبي محمد بالميلادي؟",
+    "options_ar": [
+      "570 م",
+      "632 م",
+      "622 م",
+      "610 م"
+    ],
+    "correctIndex": 1,
+    "id": 1229
+  },
+  {
+    "type": "tf",
+    "category": "السيرة",
+    "difficulty": "medium",
+    "question_ar": "النبي محمد صلى الله عليه وسلم ولد في عام الفيل.",
+    "correctBoolean": false,
+    "id": 1230
+  },
+  {
+    "type": "tf",
+    "category": "الفقه",
+    "difficulty": "hard",
+    "question_ar": "تتعلق أركان الصلاة بعددها، وعددها ستة.",
+    "correctBoolean": false,
+    "id": 1231
+  },
+  {
+    "type": "tf",
+    "category": "الحديث الشريف",
+    "difficulty": "hard",
+    "question_ar": "حديث \"إنما بعثت لأتمم مكارم الأخلاق\" هو حديث صحيح.",
+    "correctBoolean": true,
+    "id": 1232
+  },
+  {
+    "type": "tf",
+    "category": "الصحابة",
+    "difficulty": "medium",
+    "question_ar": "أول من أسلم من الذكور هو الصحابي أبو بكر الصديق.",
+    "correctBoolean": false,
+    "id": 1233
+  },
+  {
+    "type": "tf",
+    "category": "العقيدة",
+    "difficulty": "medium",
+    "question_ar": "مفهوم الإيمان في الإسلام يشمل ستة أركان.",
+    "correctBoolean": true,
+    "id": 1234
+  },
+  {
+    "type": "tf",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "hard",
+    "question_ar": "معركة بدر كانت في السنة الثانية من الهجرة.",
+    "correctBoolean": true,
+    "id": 1235
+  },
+  {
+    "type": "tf",
+    "category": "الثقافة العامة",
+    "difficulty": "medium",
+    "question_ar": "العالم الإسلامي القديم كان يُعرف بـ \"دار الإسلام\".",
+    "correctBoolean": true,
+    "id": 1236
+  },
+  {
+    "type": "tf",
+    "category": "الجغرافيا",
+    "difficulty": "hard",
+    "question_ar": "عاصمة الدولة الأموية كانت في بيت المقدس.",
+    "correctBoolean": false,
+    "id": 1237
+  },
+  {
+    "type": "tf",
+    "category": "اللغة العربية",
+    "difficulty": "hard",
+    "question_ar": "يُعتبر الخليل بن أحمد الفراهيدي هو مؤسس علم العروض.",
+    "correctBoolean": true,
+    "id": 1238
+  },
+  {
+    "type": "mcq",
+    "category": "القرآن الكريم",
+    "difficulty": "medium",
+    "question_ar": "في أي سورة ذُكرت البسملة 22 مرة؟",
+    "options_ar": [
+      "سورة النمل",
+      "سورة الرحمن",
+      "سورة الإسراء",
+      "سورة يوسف"
+    ],
+    "correctIndex": 0,
+    "id": 1239
+  },
+  {
+    "type": "mcq",
+    "category": "السيرة",
+    "difficulty": "hard",
+    "question_ar": "ما اسم أم النبي محمد صلى الله عليه وسلم؟",
+    "options_ar": [
+      "آمنة بنت وهب",
+      "فاطمة بنت أسد",
+      "حمالة بنت عوف",
+      "خديجة بنت خويلد"
+    ],
+    "correctIndex": 0,
+    "id": 1240
+  },
+  {
+    "type": "mcq",
+    "category": "الفقه",
+    "difficulty": "hard",
+    "question_ar": "من هي الأمة التي تزوجها النبي محمد صلى الله عليه وسلم بعد وفاة خديجة؟",
+    "options_ar": [
+      "زینب بنت خزيمة",
+      "سودة بنت زمعة",
+      "حفصة بنت عمر",
+      "أم سلمة"
+    ],
+    "correctIndex": 1,
+    "id": 1241
+  },
+  {
+    "type": "mcq",
+    "category": "الحديث الشريف",
+    "difficulty": "extreme",
+    "question_ar": "ما عدد الروايات الصحيحة التي نقلت عن حديث \"من غشنا فليس منا\"؟",
+    "options_ar": [
+      "رواية واحدة",
+      "اثنتان",
+      "ثلاث",
+      "أكثر من ثلاث"
+    ],
+    "correctIndex": 3,
+    "id": 1242
+  },
+  {
+    "type": "mcq",
+    "category": "الصحابة",
+    "difficulty": "hard",
+    "question_ar": "الصحابي الذي لقب بـ \"أسد الله\" هو؟",
+    "options_ar": [
+      "حمزة بن عبد المطلب",
+      "علي بن أبي طالب",
+      "أسامة بن زيد",
+      "جابر بن عبد الله"
+    ],
+    "correctIndex": 0,
+    "id": 1243
+  },
+  {
+    "type": "mcq",
+    "category": "العقيدة",
+    "difficulty": "extreme",
+    "question_ar": "بحث الأسماء والصفات في العقيدة الإسلامية يُعرف بعلم؟",
+    "options_ar": [
+      "التوحيد",
+      "الكلام",
+      "الفقه",
+      "العقيدة"
+    ],
+    "correctIndex": 1,
+    "id": 1244
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "hard",
+    "question_ar": "ما اسم المدينة التي عُرفت بمكتبتها الكبيرة خلال العصر العباسي؟",
+    "options_ar": [
+      "بغداد",
+      "دمشق",
+      "القاهرة",
+      "قرطبة"
+    ],
+    "correctIndex": 0,
+    "id": 1245
+  },
+  {
+    "type": "mcq",
+    "category": "الجغرافيا",
+    "difficulty": "hard",
+    "question_ar": "أين يقع المسجد الأقصى؟",
+    "options_ar": [
+      "الأردن",
+      "فلسطين",
+      "مصر",
+      "العراق"
+    ],
+    "correctIndex": 1,
+    "id": 1246
+  },
+  {
+    "type": "mcq",
+    "category": "اللغة العربية",
+    "difficulty": "extreme",
+    "question_ar": "ما الوزن الذي يُشتق منه اسم فاعل في مصدر الفعل الرباعي؟",
+    "options_ar": [
+      "مفعل",
+      "مفاعل",
+      "مافعل",
+      "مفعول"
+    ],
+    "correctIndex": 1,
+    "id": 1247
+  },
+  {
+    "type": "mcq",
+    "category": "العلوم",
+    "difficulty": "hard",
+    "question_ar": "ما هو العنصر الأكثر وفرة في قشرة الأرض؟",
+    "options_ar": [
+      "الأكسجين",
+      "الحديد",
+      "السيليكون",
+      "الألمنيوم"
+    ],
+    "correctIndex": 2,
+    "id": 1248
+  },
+  {
+    "type": "mcq",
+    "category": "معلومات إسلامية",
+    "difficulty": "extreme",
+    "question_ar": "في أي سنة هجري تم بناء الكعبة بعد الترميم الأول؟",
+    "options_ar": [
+      "5 قبل الهجرة",
+      "10 بعد الهجرة",
+      "15 بعد الهجرة",
+      "20 بعد الهجرة"
+    ],
+    "correctIndex": 2,
+    "id": 1249
+  },
+  {
+    "type": "mcq",
+    "category": "الأحياء",
+    "difficulty": "hard",
+    "question_ar": "ما هو أقصى عدد للخلايا في جسم الإنسان؟",
+    "options_ar": [
+      "10 تريليون",
+      "50 تريليون",
+      "100 تريليون",
+      "200 تريليون"
+    ],
+    "correctIndex": 2,
+    "id": 1250
+  },
+  {
+    "type": "mcq",
+    "category": "علوم الفضاء",
+    "difficulty": "extreme",
+    "question_ar": "ما هو أقرب نجم إلى الأرض بعد الشمس؟",
+    "options_ar": [
+      "نجم الشعري",
+      "ألفا قنطورس",
+      "بيتساي",
+      "نجوم ثنائية"
+    ],
+    "correctIndex": 1,
+    "id": 1251
+  },
+  {
+    "type": "tf",
+    "category": "القرآن الكريم",
+    "difficulty": "easy",
+    "question_ar": "الآية \"إنما المؤمنون إخوة\" من سورة الحجرات.",
+    "correctBoolean": true,
+    "id": 1252
+  },
+  {
+    "type": "tf",
+    "category": "الفقه",
+    "difficulty": "hard",
+    "question_ar": "الزكاة واجبة على جميع أنواع الأموال.",
+    "correctBoolean": false,
+    "id": 1253
+  },
+  {
+    "type": "tf",
+    "category": "الحديث الشريف",
+    "difficulty": "hard",
+    "question_ar": "حديث \"إنما الأعمال بالنيات\" وروده في صحيح مسلم.",
+    "correctBoolean": true,
+    "id": 1254
+  },
+  {
+    "type": "tf",
+    "category": "الصحابة",
+    "difficulty": "hard",
+    "question_ar": "عمر بن الخطاب رضي الله عنه هو الصحابي الوحيد الذي لقب بالفاروق.",
+    "correctBoolean": true,
+    "id": 1255
+  },
+  {
+    "type": "tf",
+    "category": "العقيدة",
+    "difficulty": "hard",
+    "question_ar": "الحديث الشريف يؤكد أن الإيمان يزيد وينقص.",
+    "correctBoolean": true,
+    "id": 1256
+  },
+  {
+    "type": "tf",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "extreme",
+    "question_ar": "معركة بدر وقعت في العام الثاني للهجرة.",
+    "correctBoolean": true,
+    "id": 1257
+  },
+  {
+    "type": "tf",
+    "category": "الثقافة العامة",
+    "difficulty": "medium",
+    "question_ar": "الجائزة العالمية للرواية العربية تعرف بـ\"جائزة البوكر\".",
+    "correctBoolean": true,
+    "id": 1258
+  },
+  {
+    "type": "tf",
+    "category": "الجغرافيا",
+    "difficulty": "extreme",
+    "question_ar": "أعلى قمة جبلية في العالم هي قمة إيفرست، وارتفاعها 8848 متراً.",
+    "correctBoolean": true,
+    "id": 1259
+  },
+  {
+    "type": "mcq",
+    "category": "الأحياء",
+    "difficulty": "hard",
+    "question_ar": "ما هي أكبر الحيوانات البحرية؟",
+    "options_ar": [
+      "الحوت الأزرق",
+      "القرش الأبيض الكبير",
+      "الحوت القاتل",
+      "الدلفين"
+    ],
+    "correctIndex": 0,
+    "id": 1260
+  },
+  {
+    "type": "mcq",
+    "category": "الجغرافيا",
+    "difficulty": "hard",
+    "question_ar": "أي من هذه الدول ليست في قارة أفريقيا؟",
+    "options_ar": [
+      "مصر",
+      "جنوب أفريقيا",
+      "البرازيل",
+      "كينيا"
+    ],
+    "correctIndex": 2,
+    "id": 1261
+  },
+  {
+    "type": "mcq",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "extreme",
+    "question_ar": "متى توفي النبي محمد صلى الله عليه وسلم؟",
+    "options_ar": [
+      "632م",
+      "630م",
+      "625م",
+      "634م"
+    ],
+    "correctIndex": 0,
+    "id": 1262
+  },
+  {
+    "type": "mcq",
+    "category": "اللغة العربية",
+    "difficulty": "hard",
+    "question_ar": "ما مفرد كلمة \"أشجار\"؟",
+    "options_ar": [
+      "شجرة",
+      "شجر",
+      "شجرة واحدة",
+      "شجري"
+    ],
+    "correctIndex": 0,
+    "id": 1263
+  },
+  {
+    "type": "mcq",
+    "category": "الصحابة",
+    "difficulty": "medium",
+    "question_ar": "من هو الصحابي الذي أسلم في عمر مبكر هو زيد بن حارثة؟",
+    "options_ar": [
+      "أبو بكر الصديق",
+      "علي بن أبي طالب",
+      "زيد بن حارثة",
+      "عثمان بن عفان"
+    ],
+    "correctIndex": 2,
+    "id": 1264
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "medium",
+    "question_ar": "ما هي عاصمة لبنان؟",
+    "options_ar": [
+      "القاهرة",
+      "دمشق",
+      "بيروت",
+      "عمان"
+    ],
+    "correctIndex": 2,
+    "id": 1265
+  },
+  {
+    "type": "tf",
+    "category": "السيرة",
+    "difficulty": "medium",
+    "question_ar": "أول غزوة خاضها النبي محمد صلى الله عليه وسلم كانت غزوة بدر.",
+    "correctBoolean": false,
+    "id": 1266
+  },
+  {
+    "type": "mcq",
+    "category": "الفقه",
+    "difficulty": "medium",
+    "question_ar": "ما هي المدة التي يجب أن ينتظرها الشخص قبل أن يسلم في صلاة الجنازة؟",
+    "options_ar": [
+      "30 دقيقة",
+      "1 ساعة",
+      "40 دقيقة",
+      "60 دقيقة"
+    ],
+    "correctIndex": 2,
+    "id": 1267
+  },
+  {
+    "type": "mcq",
+    "category": "الحديث الشريف",
+    "difficulty": "hard",
+    "question_ar": "كم عدد أحاديث صحيح مسلم؟",
+    "options_ar": [
+      "4000 حديث",
+      "5000 حديث",
+      "7000 حديث",
+      "8000 حديث"
+    ],
+    "correctIndex": 1,
+    "id": 1268
+  },
+  {
+    "type": "mcq",
+    "category": "الصحابة",
+    "difficulty": "hard",
+    "question_ar": "من هو الصحابي الذي كانت له صلة قرابة بالنبي محمد صلى الله عليه وسلم وكان أحد كتبة الوحي؟",
+    "options_ar": [
+      "عبد الله بن عباس",
+      "زيد بن ثابت",
+      "أبو هريرة",
+      "علي بن أبي طالب"
+    ],
+    "correctIndex": 1,
+    "id": 1269
+  },
+  {
+    "type": "mcq",
+    "category": "العقيدة",
+    "difficulty": "hard",
+    "question_ar": "ما هو الاسم الآخر للملائكة الذين يحملون العرش؟",
+    "options_ar": [
+      "الملائكة المقربون",
+      "الملائكة الموكلون",
+      "الملائكة الرسل",
+      "الملائكة الجبارون"
+    ],
+    "correctIndex": 0,
+    "id": 1270
+  },
+  {
+    "type": "tf",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "medium",
+    "question_ar": "تأسيس الدولة الأموية عام 661 ميلادي صح أو خطأ؟",
+    "correctBoolean": true,
+    "id": 1271
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "hard",
+    "question_ar": "من هو الشاعر الذي قال \"إذا كانت النفوس كبارًا تعبت في مرادها الأجسام\"؟",
+    "options_ar": [
+      "المتنبي",
+      "نزار قباني",
+      "أحمد شوقي",
+      "إيليا أبو ماضي"
+    ],
+    "correctIndex": 0,
+    "id": 1272
+  },
+  {
+    "type": "mcq",
+    "category": "الجغرافيا",
+    "difficulty": "hard",
+    "question_ar": "ما هي المدينة التي تُعتبر العاصمة التاريخية للعراق في العصور الإسلامية؟",
+    "options_ar": [
+      "بغداد",
+      "الكوفة",
+      "بصرة",
+      "سامراء"
+    ],
+    "correctIndex": 0,
+    "id": 1273
+  },
+  {
+    "type": "mcq",
+    "category": "اللغة العربية",
+    "difficulty": "extreme",
+    "question_ar": "ما هو الوزن العروضي للبيت الذي يبدأ بكلمة \"يا ليل\" في قصيدة يا ليل؟",
+    "options_ar": [
+      "مفاعيلن",
+      "مفاعيل",
+      "مفاعيلن مفاعيلن",
+      "مفعولاتن مفعولاتن"
+    ],
+    "correctIndex": 0,
+    "id": 1274
+  },
+  {
+    "type": "tf",
+    "category": "العلوم",
+    "difficulty": "hard",
+    "question_ar": "الذرة تحتوي على بروتونات ونيوترونات وإلكترونات فقط.",
+    "correctBoolean": false,
+    "id": 1275
+  },
+  {
+    "type": "mcq",
+    "category": "الرياضيات",
+    "difficulty": "extreme",
+    "question_ar": "إذا كان مجموع زوايا مثلث 180 درجة، فما هي الزاوية الداخلية للزاوية التي قياسها 60 درجة إذا كان هناك زاويتان ما؟",
+    "options_ar": [
+      "90 درجة",
+      "60 درجة",
+      "30 درجة",
+      "150 درجة"
+    ],
+    "correctIndex": 2,
+    "id": 1276
+  },
+  {
+    "type": "tf",
+    "category": "معلومات إسلامية",
+    "difficulty": "medium",
+    "question_ar": "الصفة التي يُعرف بها فرس النبي محمد صلى الله عليه وسلم هي الصهباء.",
+    "correctBoolean": false,
+    "id": 1277
+  },
+  {
+    "type": "mcq",
+    "category": "الأحياء",
+    "difficulty": "extreme",
+    "question_ar": "ما هو الرقم الجيني للتركيب الوراثي لجينوم الإنسان؟",
+    "options_ar": [
+      "23 كروموسوم",
+      "46 كروموسوم",
+      "32 كروموسوم",
+      "22 كروموسوم"
+    ],
+    "correctIndex": 1,
+    "id": 1278
+  },
+  {
+    "type": "mcq",
+    "category": "علوم الفضاء",
+    "difficulty": "hard",
+    "question_ar": "ما هو الكوكب الأكثر كثافة في نظامنا الشمسي؟",
+    "options_ar": [
+      "الأرض",
+      "المريخ",
+      "زهرة",
+      "عطارد"
+    ],
+    "correctIndex": 3,
+    "id": 1279
+  },
+  {
+    "type": "mcq",
+    "category": "من القائل",
+    "difficulty": "extreme",
+    "question_ar": "من القائل: \"أنا الذي نظر الأعمى إلى أدبي\"؟",
+    "options_ar": [
+      "المتنبي",
+      "أبو نواس",
+      "شوقي",
+      "جبران"
+    ],
+    "correctIndex": 0,
+    "id": 1280
+  },
+  {
+    "type": "tf",
+    "category": "القرآن الكريم",
+    "difficulty": "medium",
+    "question_ar": "هناك سورة من سور القرآن تبدأ باسم الجلالة \"الله\".",
+    "correctBoolean": false,
+    "id": 1281
+  },
+  {
+    "type": "mcq",
+    "category": "الحديث الشريف",
+    "difficulty": "medium",
+    "question_ar": "ما اسم الكتاب الذي جمع فيه الإمام البخاري أحاديث النبي محمد صلى الله عليه وسلم؟",
+    "options_ar": [
+      "صحيح مسلم",
+      "صحيح البخاري",
+      "سنن أبي داود",
+      "موطأ مالك"
+    ],
+    "correctIndex": 1,
+    "id": 1282
+  },
+  {
+    "type": "mcq",
+    "category": "الفقه",
+    "difficulty": "hard",
+    "question_ar": "ما هي الهيئة التي يجب أن يكون عليها الشخص عند بدء الصلاة؟",
+    "options_ar": [
+      "منصب",
+      "وقوف",
+      "جلوس",
+      "استلقاء"
+    ],
+    "correctIndex": 1,
+    "id": 1283
+  },
+  {
+    "type": "mcq",
+    "category": "العقيدة",
+    "difficulty": "extreme",
+    "question_ar": "ما هو الاسم الذي يُطلق على المرحلة الثانية من مراحل حياة الإنسان في العقيدة الإسلامية؟",
+    "options_ar": [
+      "البرزخ",
+      "الآخرة",
+      "الدنيا",
+      "الحياة النشطة"
+    ],
+    "correctIndex": 0,
+    "id": 1284
+  },
+  {
+    "type": "mcq",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "hard",
+    "question_ar": "من هو الخليفة الراشدي الذي دامت خلافته أقل من 3 سنوات؟",
+    "options_ar": [
+      "أبو بكر الصديق",
+      "عمر بن الخطاب",
+      "عثمان بن عفان",
+      "علي بن أبي طالب"
+    ],
+    "correctIndex": 2,
+    "id": 1285
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "hard",
+    "question_ar": "ما هو الفيلسوف المسلم الذي عرف باسم \"شيخ الفلاسفة\"؟",
+    "options_ar": [
+      "ابن رشد",
+      "الفارابي",
+      "ابن سينا",
+      "الغزالي"
+    ],
+    "correctIndex": 0,
+    "id": 1286
+  },
+  {
+    "type": "mcq",
+    "category": "الجغرافيا",
+    "difficulty": "extreme",
+    "question_ar": "أي من التالية تعد المضيق الأكثر ضيقًا في العالم؟",
+    "options_ar": [
+      "مضيق هرمز",
+      "مضيق جبل طارق",
+      "مضيق بينما",
+      "مضيق داريان"
+    ],
+    "correctIndex": 0,
+    "id": 1287
+  },
+  {
+    "type": "tf",
+    "category": "القرآن الكريم",
+    "difficulty": "easy",
+    "question_ar": "ما هي السورة التي تذكر اسم الله في كل آية منها؟",
+    "correctBoolean": true,
+    "id": 1288
+  },
+  {
+    "type": "tf",
+    "category": "السيرة",
+    "difficulty": "medium",
+    "question_ar": "هل يعتقد أن رسول الله صلى الله عليه وسلم ولد في العام الفيل؟",
+    "correctBoolean": true,
+    "id": 1289
+  },
+  {
+    "type": "tf",
+    "category": "الفقه",
+    "difficulty": "medium",
+    "question_ar": "قام الرسول صلى الله عليه وسلم بجمع الصلاة في المدينة قبل فرضها؟",
+    "correctBoolean": false,
+    "id": 1290
+  },
+  {
+    "type": "tf",
+    "category": "الحديث الشريف",
+    "difficulty": "hard",
+    "question_ar": "ما الاسم الذي يشير إلى الحديث الذي يتم نقله بالمعنى فقط؟",
+    "correctBoolean": false,
+    "id": 1291
+  },
+  {
+    "type": "tf",
+    "category": "الصحابة",
+    "difficulty": "hard",
+    "question_ar": "هل كان عبد الله بن عباس من الخلفاء الراشدين؟",
+    "correctBoolean": false,
+    "id": 1292
+  },
+  {
+    "type": "tf",
+    "category": "العقيدة",
+    "difficulty": "hard",
+    "question_ar": "الإيمان بالملائكة ركن من أركان الإيمان؟",
+    "correctBoolean": true,
+    "id": 1293
+  },
+  {
+    "type": "tf",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "extreme",
+    "question_ar": "أول معركة بحرية في التاريخ الإسلامي كانت في عام كم؟",
+    "correctBoolean": true,
+    "id": 1294
+  },
+  {
+    "type": "tf",
+    "category": "الثقافة العامة",
+    "difficulty": "extreme",
+    "question_ar": "أين أقيمت أول جامعة إسلامية رسمية في التاريخ؟",
+    "correctBoolean": true,
+    "id": 1295
+  },
+  {
+    "type": "tf",
+    "category": "الجغرافيا",
+    "difficulty": "extreme",
+    "question_ar": "أطول نهر في العالم هو النيل؟",
+    "correctBoolean": false,
+    "id": 1296
+  },
+  {
+    "type": "tf",
+    "category": "اللغة العربية",
+    "difficulty": "extreme",
+    "question_ar": "حروف الجر في اللغة العربية تتجاوز الألف حرف؟",
+    "correctBoolean": false,
+    "id": 1297
+  },
+  {
+    "type": "mcq",
+    "category": "القرآن الكريم",
+    "difficulty": "medium",
+    "question_ar": "ما هي السورة التي تعرف بسورة القتال؟",
+    "options_ar": [
+      "الأحزاب",
+      "البقرة",
+      "محمد",
+      "الأنفال"
+    ],
+    "correctIndex": 2,
+    "id": 1298
+  },
+  {
+    "type": "mcq",
+    "category": "السيرة",
+    "difficulty": "hard",
+    "question_ar": "متى كانت غزوة أحد؟",
+    "options_ar": [
+      "624م",
+      "625م",
+      "627م",
+      "629م"
+    ],
+    "correctIndex": 0,
+    "id": 1299
+  },
+  {
+    "type": "mcq",
+    "category": "الفقه",
+    "difficulty": "hard",
+    "question_ar": "ما عدد الركعات المفروضة في اليوم والليلة؟",
+    "options_ar": [
+      "15 ركعة",
+      "17 ركعة",
+      "20 ركعة",
+      "12 ركعة"
+    ],
+    "correctIndex": 1,
+    "id": 1300
+  },
+  {
+    "type": "mcq",
+    "category": "الحديث الشريف",
+    "difficulty": "hard",
+    "question_ar": "أي من هذه الكتب يُعتبر أحد الصحيحين؟",
+    "options_ar": [
+      "سنن أبو داود",
+      "صحيح مسلم",
+      "سنن الترمذي",
+      "موطأ مالك"
+    ],
+    "correctIndex": 1,
+    "id": 1301
+  },
+  {
+    "type": "mcq",
+    "category": "الصحابة",
+    "difficulty": "hard",
+    "question_ar": "أحد الصحابة لقب بذي النورين؟",
+    "options_ar": [
+      "علي بن أبي طالب",
+      "عثمان بن عفان",
+      "عبد الرحمن بن عوف",
+      "أبو بكر الصديق"
+    ],
+    "correctIndex": 1,
+    "id": 1302
+  },
+  {
+    "type": "mcq",
+    "category": "العقيدة",
+    "difficulty": "medium",
+    "question_ar": "ما هو أفضل أيام السنة عند المسلمين؟",
+    "options_ar": [
+      "يوم الجمعة",
+      "يوم عرفة",
+      "عيد الأضحى",
+      "عيد الفطر"
+    ],
+    "correctIndex": 1,
+    "id": 1303
+  },
+  {
+    "type": "mcq",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "extreme",
+    "question_ar": "كم كان عمر رسول الله صلى الله عليه وسلم عند وفاته؟",
+    "options_ar": [
+      "60 سنة",
+      "63 سنة",
+      "55 سنة",
+      "65 سنة"
+    ],
+    "correctIndex": 1,
+    "id": 1304
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "extreme",
+    "question_ar": "أين وقعت معركة حطين؟",
+    "options_ar": [
+      "فلسطين",
+      "الأردن",
+      "سوريا",
+      "مصر"
+    ],
+    "correctIndex": 0,
+    "id": 1305
+  },
+  {
+    "type": "mcq",
+    "category": "معلومات إسلامية",
+    "difficulty": "extreme",
+    "question_ar": "كم مرة تم ذكر اسم السيدة مريم في القرآن؟",
+    "options_ar": [
+      "4 مرات",
+      "5 مرات",
+      "3 مرات",
+      "6 مرات"
+    ],
+    "correctIndex": 1,
+    "id": 1306
+  },
+  {
+    "type": "mcq",
+    "category": "الأحياء",
+    "difficulty": "extreme",
+    "question_ar": "ما هو أكبر عضو في جسم الإنسان؟",
+    "options_ar": [
+      "الكبد",
+      "الجلد",
+      "الرئتين",
+      "القلب"
+    ],
+    "correctIndex": 1,
+    "id": 1307
+  },
+  {
+    "type": "mcq",
+    "category": "علوم الفضاء",
+    "difficulty": "extreme",
+    "question_ar": "كم عدد الكواكب في النظام الشمسي؟",
+    "options_ar": [
+      "7 كواكب",
+      "8 كواكب",
+      "9 كواكب",
+      "10 كواكب"
+    ],
+    "correctIndex": 1,
+    "id": 1308
+  },
+  {
+    "type": "tf",
+    "category": "القرآن الكريم",
+    "difficulty": "easy",
+    "question_ar": "الآية \"إِنَّ اللَّهَ يُدَافِعُ عَنِ الَّذِينَ آمَنُوا\" هي من سورة الحَجّ.",
+    "correctBoolean": false,
+    "id": 1309
+  },
+  {
+    "type": "tf",
+    "category": "السيرة",
+    "difficulty": "medium",
+    "question_ar": "المعركة التي وقعت في السنة الرابعة للهجرة هي معركة أحد.",
+    "correctBoolean": false,
+    "id": 1310
+  },
+  {
+    "type": "tf",
+    "category": "الفقه",
+    "difficulty": "hard",
+    "question_ar": "إن السائل إذا لم يجد ماءً طاهراً فإنه يُصلي بالتيمم فقط ولا يُعفى عن الصلاة في حالة عدم وجود الماء.",
+    "correctBoolean": false,
+    "id": 1311
+  },
+  {
+    "type": "tf",
+    "category": "الحديث الشريف",
+    "difficulty": "hard",
+    "question_ar": "حديث \"إنما الأعمال بالنيات\" روي عن الصحابي عمر بن الخطاب فقط.",
+    "correctBoolean": false,
+    "id": 1312
+  },
+  {
+    "type": "tf",
+    "category": "الصحابة",
+    "difficulty": "extreme",
+    "question_ar": "الصحابي جرير بن عبدالله دخل الإسلام في السنة الخامسة للهجرة.",
+    "correctBoolean": false,
+    "id": 1313
+  },
+  {
+    "type": "tf",
+    "category": "العقيدة",
+    "difficulty": "medium",
+    "question_ar": "الإيمان بالملائكة ركن من أركان الإيمان ويشمل الإيمان بكل الملائكة دون استثناء.",
+    "correctBoolean": true,
+    "id": 1314
+  },
+  {
+    "type": "tf",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "hard",
+    "question_ar": "الفترة التي بين وفاة النبي محمد صلى الله عليه وسلم وظهور الدولة الأموية هي 50 سنة.",
+    "correctBoolean": true,
+    "id": 1315
+  },
+  {
+    "type": "tf",
+    "category": "الثقافة العامة",
+    "difficulty": "extreme",
+    "question_ar": "أول مجموعة إسلامية حصلت على المرتبة الأولى في مسابقة القرآن الكريم الدولية كانت في عام 1979.",
+    "correctBoolean": true,
+    "id": 1316
+  },
+  {
+    "type": "mcq",
+    "category": "الجغرافيا",
+    "difficulty": "medium",
+    "question_ar": "أي من الدول العربية تعتبر أكبر من حيث المساحة؟",
+    "options_ar": [
+      "مصر",
+      "السعودية",
+      "الجزائر",
+      "العراق"
+    ],
+    "correctIndex": 2,
+    "id": 1317
+  },
+  {
+    "type": "mcq",
+    "category": "اللغة العربية",
+    "difficulty": "hard",
+    "question_ar": "ما هو الوزن الصرفي لكلمة \"مكتوب\"؟",
+    "options_ar": [
+      "مفعول",
+      "مفعلة",
+      "مفتعل",
+      "مفعُول"
+    ],
+    "correctIndex": 3,
+    "id": 1318
+  },
+  {
+    "type": "mcq",
+    "category": "العلوم",
+    "difficulty": "extreme",
+    "question_ar": "ما هو العنصر الكيميائي الذي يُستخدم غالباً في تركيب الأدوية لعلاج السرطان؟",
+    "options_ar": [
+      "الأكسجين",
+      "الكروم",
+      "البزموت",
+      "الزرنيخ"
+    ],
+    "correctIndex": 3,
+    "id": 1319
+  },
+  {
+    "type": "mcq",
+    "category": "العلوم",
+    "difficulty": "extreme",
+    "question_ar": "أي من العناصر التالية هو الأكثر وفرة في الكون؟",
+    "options_ar": [
+      "الهيليوم",
+      "الأوكسجين",
+      "الهيدروجين",
+      "الكربون"
+    ],
+    "correctIndex": 2,
+    "id": 1320
+  },
+  {
+    "type": "mcq",
+    "category": "معلومات إسلامية",
+    "difficulty": "extreme",
+    "question_ar": "أول آية نزلت في المدينة المنورة هي آية \"يَا أَيُّهَا الَّذِينَ آمَنُوا\".",
+    "options_ar": [
+      "التحريم",
+      "الأنفال",
+      "البقرة",
+      "المطففين"
+    ],
+    "correctIndex": 2,
+    "id": 1321
+  },
+  {
+    "type": "mcq",
+    "category": "علوم الفضاء",
+    "difficulty": "extreme",
+    "question_ar": "ما اسم الكوكب الذي يُعتبر الأكثر حرارة في المجموعة الشمسية؟",
+    "options_ar": [
+      "الأرض",
+      "عطارد",
+      "المريخ",
+      "فينوس"
+    ],
+    "correctIndex": 3,
+    "id": 1322
+  },
+  {
+    "type": "mcq",
+    "category": "الحديث الشريف",
+    "difficulty": "hard",
+    "question_ar": "أي من الأحاديث التالية هو حديث صحيح؟",
+    "options_ar": [
+      "حديث السبعين الف حديث",
+      "حديث الخمسة والخمسين",
+      "حديث إنما الأعمال بالنيات",
+      "حديث على كذا وكذا"
+    ],
+    "correctIndex": 2,
+    "id": 1323
+  },
+  {
+    "type": "mcq",
+    "category": "العقيدة",
+    "difficulty": "extreme",
+    "question_ar": "ما اسم أول سورة نزلت في مكة؟",
+    "options_ar": [
+      "المدثر",
+      "العلق",
+      "الفاتحة",
+      "القدر"
+    ],
+    "correctIndex": 1,
+    "id": 1324
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "medium",
+    "question_ar": "من هو مكتشف قانون الجاذبية؟",
+    "options_ar": [
+      "أينشتاين",
+      "غاليليو",
+      "نيوتن",
+      "داروين"
+    ],
+    "correctIndex": 2,
+    "id": 1325
+  },
+  {
+    "type": "tf",
+    "category": "السيرة",
+    "difficulty": "medium",
+    "question_ar": "هل ولد النبي محمد صلى الله عليه وسلم في المدينة المنورة؟",
+    "correctBoolean": false,
+    "id": 1326
+  },
+  {
+    "type": "tf",
+    "category": "الفقه",
+    "difficulty": "hard",
+    "question_ar": "هل عدد الركعات في صلاة الوتر هو دائمًا 3 ركعات؟",
+    "correctBoolean": false,
+    "id": 1327
+  },
+  {
+    "type": "tf",
+    "category": "الحديث الشريف",
+    "difficulty": "hard",
+    "question_ar": "هل حديث \"من كذب علي متعمدًا فليتبوأ مقعده من النار\" صحيح؟",
+    "correctBoolean": true,
+    "id": 1328
+  },
+  {
+    "type": "tf",
+    "category": "الصحابة",
+    "difficulty": "medium",
+    "question_ar": "هل علي بن أبي طالب رضي الله عنه هو أول من أسلم من الرجال؟",
+    "correctBoolean": true,
+    "id": 1329
+  },
+  {
+    "type": "tf",
+    "category": "العقيدة",
+    "difficulty": "hard",
+    "question_ar": "هل إيمان المهدي المنتظر هو جزء من عقيدة أهل السنة والجماعة؟",
+    "correctBoolean": true,
+    "id": 1330
+  },
+  {
+    "type": "tf",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "extreme",
+    "question_ar": "هل معركة حنين حدثت في السنة 8 هـ؟",
+    "correctBoolean": true,
+    "id": 1331
+  },
+  {
+    "type": "tf",
+    "category": "الثقافة العامة",
+    "difficulty": "medium",
+    "question_ar": "هل فقه المذاهب الأربعة يشمل المذهب الحنفي والمالكي والشافعي والحنبلي؟",
+    "correctBoolean": true,
+    "id": 1332
+  },
+  {
+    "type": "tf",
+    "category": "الجغرافيا",
+    "difficulty": "hard",
+    "question_ar": "هل جبل أحد يقع في المدينة المنورة؟",
+    "correctBoolean": true,
+    "id": 1333
+  },
+  {
+    "type": "tf",
+    "category": "اللغة العربية",
+    "difficulty": "medium",
+    "question_ar": "هل يُعتبر النحو من علوم اللغة العربية الأساسية؟",
+    "correctBoolean": true,
+    "id": 1334
+  },
+  {
+    "type": "mcq",
+    "category": "القرآن الكريم",
+    "difficulty": "medium",
+    "question_ar": "ما هي السورة التي تُسمى بسورة الحسبة؟",
+    "options_ar": [
+      "سورة النور",
+      "سورة المائدة",
+      "سورة الأحزاب",
+      "سورة التوبة"
+    ],
+    "correctIndex": 3,
+    "id": 1335
+  },
+  {
+    "type": "mcq",
+    "category": "السيرة",
+    "difficulty": "hard",
+    "question_ar": "ما هو اسم القلعة التي اختبأ فيها الرسول صلى الله عليه وسلم خلال الهجرة؟",
+    "options_ar": [
+      "غار حراء",
+      "غار ثور",
+      "غار عفف",
+      "غار الصفا"
+    ],
+    "correctIndex": 1,
+    "id": 1336
+  },
+  {
+    "type": "mcq",
+    "category": "الفقه",
+    "difficulty": "hard",
+    "question_ar": "كم تبلغ زكاة الفطر بالكيلو غرام لكل فرد؟",
+    "options_ar": [
+      "1.5 كيلو",
+      "2.5 كيلو",
+      "3.5 كيلو",
+      "4.5 كيلو"
+    ],
+    "correctIndex": 1,
+    "id": 1337
+  },
+  {
+    "type": "mcq",
+    "category": "الحديث الشريف",
+    "difficulty": "medium",
+    "question_ar": "أي من هذه الأحاديث يعتبر حديث قدسي؟",
+    "options_ar": [
+      "إنما الأعمال بالنيات",
+      "كلكم راع وكلكم مسؤل عن رعيته",
+      "إذا لم تستح فاصنع ما شئت",
+      "طلب العلم فريضة على كل مسلم"
+    ],
+    "correctIndex": 0,
+    "id": 1338
+  },
+  {
+    "type": "mcq",
+    "category": "العقيدة",
+    "difficulty": "hard",
+    "question_ar": "أي من المذاهب التالية يعتبر من المذاهب الإسلامية التي تُؤمن بالجبر؟",
+    "options_ar": [
+      "الحنفي",
+      "المالكي",
+      "الاعتزالي",
+      "الأشعري"
+    ],
+    "correctIndex": 3,
+    "id": 1339
+  },
+  {
+    "type": "mcq",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "extreme",
+    "question_ar": "ما هو التاريخ الدقيق لمعركة بدر الكبرى؟",
+    "options_ar": [
+      "12 هـ",
+      "10 هـ",
+      "3 هـ",
+      "2 هـ"
+    ],
+    "correctIndex": 3,
+    "id": 1340
+  },
+  {
+    "type": "mcq",
+    "category": "الجغرافيا",
+    "difficulty": "extreme",
+    "question_ar": "ما هو اسم النهر الذي يعبر العراق ويُعتبر من أقدم الأنهار في التاريخ؟",
+    "options_ar": [
+      "دجلة",
+      "الفرات",
+      "اليرموك",
+      "العاصي"
+    ],
+    "correctIndex": 1,
+    "id": 1341
+  },
+  {
+    "type": "mcq",
+    "category": "اللغة العربية",
+    "difficulty": "medium",
+    "question_ar": "ما هو الوزن الشعري الذي يُستخدم كثيرًا في قصائد المدح القديم؟",
+    "options_ar": [
+      "مفاعيلن",
+      "مفاعيلن مفاعيلن",
+      "مفاعيلن مفاعيلن مفاعيلن",
+      "مفاعيلن مفاعيلن مفاعيلن مفاعيلن"
+    ],
+    "correctIndex": 0,
+    "id": 1342
+  },
+  {
+    "type": "mcq",
+    "category": "العلوم",
+    "difficulty": "extreme",
+    "question_ar": "ما هو اسم الفطر الذي يُستخدم في علم الأحياء لاختبار السمية؟",
+    "options_ar": [
+      "جينوس فوساريا",
+      "جينوس تريكميس",
+      "جينوس بوتريوس",
+      "جينوس كلوستريديوم"
+    ],
+    "correctIndex": 1,
+    "id": 1343
+  },
+  {
+    "type": "mcq",
+    "category": "الأحياء",
+    "difficulty": "extreme",
+    "question_ar": "ما هو العضو الذي يُعتبر بمثابة \"محطة تحويل\" في الجهاز العصبي؟",
+    "options_ar": [
+      "المخيخ",
+      "المهاد",
+      "الجهاز العصبي المركزي",
+      "الحبل الشوكي"
+    ],
+    "correctIndex": 1,
+    "id": 1344
+  },
+  {
+    "type": "mcq",
+    "category": "علوم الفضاء",
+    "difficulty": "extreme",
+    "question_ar": "ما هو الاسم الذي يُطلق على هوالة الغاز الكبرى التي تمثل أكبر الكواكب في مجموعتنا الشمسية؟",
+    "options_ar": [
+      "نجم القطب",
+      "عملاق الغاز",
+      "المشتري",
+      "الأرض"
+    ],
+    "correctIndex": 2,
+    "id": 1345
+  },
+  {
+    "type": "tf",
+    "category": "القرآن الكريم",
+    "difficulty": "easy",
+    "question_ar": "الآية الكريمة \"إنا فتحنا لك فتحاً مبيناً\" هي من سورة الفتح.",
+    "correctBoolean": true,
+    "id": 1346
+  },
+  {
+    "type": "tf",
+    "category": "السيرة",
+    "difficulty": "medium",
+    "question_ar": "شهدت غزوة بدر الكبرى في السنة الثالثة للهجرة.",
+    "correctBoolean": true,
+    "id": 1347
+  },
+  {
+    "type": "tf",
+    "category": "الفقه",
+    "difficulty": "medium",
+    "question_ar": "الزكاة ركن من أركان الإسلام، ولكنها ليست واجبة على كل مسلم.",
+    "correctBoolean": false,
+    "id": 1348
+  },
+  {
+    "type": "tf",
+    "category": "الحديث الشريف",
+    "difficulty": "hard",
+    "question_ar": "حديث \"إنما الأعمال بالنيات\" ورد في صحيح مسلم فقط.",
+    "correctBoolean": false,
+    "id": 1349
+  },
+  {
+    "type": "tf",
+    "category": "الصحابة",
+    "difficulty": "hard",
+    "question_ar": "عبد الله بن عباس توفي في السنة 68 هجري.",
+    "correctBoolean": true,
+    "id": 1350
+  },
+  {
+    "type": "tf",
+    "category": "العقيدة",
+    "difficulty": "hard",
+    "question_ar": "القول بأن الله يجلس على العرش هو قول مكفر.",
+    "correctBoolean": false,
+    "id": 1351
+  },
+  {
+    "type": "tf",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "hard",
+    "question_ar": "أسلم أبو بكر الصديق بعد خمسة من الرجال.",
+    "correctBoolean": true,
+    "id": 1352
+  },
+  {
+    "type": "tf",
+    "category": "الثقافة العامة",
+    "difficulty": "hard",
+    "question_ar": "يُعتبر ابن رشد أحد أعظم الفلاسفة المسلمين في القرن الخامس الهجري.",
+    "correctBoolean": true,
+    "id": 1353
+  },
+  {
+    "type": "tf",
+    "category": "الجغرافيا",
+    "difficulty": "hard",
+    "question_ar": "المدينة المنورة عاصمة الدولة الإسلامية الأولى.",
+    "correctBoolean": true,
+    "id": 1354
+  },
+  {
+    "type": "tf",
+    "category": "اللغة العربية",
+    "difficulty": "hard",
+    "question_ar": "كلمة \"القمر\" تحمل جذر ثلاثي وهو \"ق م ر\".",
+    "correctBoolean": true,
+    "id": 1355
+  },
+  {
+    "type": "tf",
+    "category": "العلوم",
+    "difficulty": "hard",
+    "question_ar": "الإنسان يحتوي على 46 كروموسوم في كل خلية جسمه.",
+    "correctBoolean": true,
+    "id": 1356
+  },
+  {
+    "type": "tf",
+    "category": "الرياضيات",
+    "difficulty": "hard",
+    "question_ar": "صفر هو عدد أولي.",
+    "correctBoolean": false,
+    "id": 1357
+  },
+  {
+    "type": "mcq",
+    "category": "معلومات إسلامية",
+    "difficulty": "medium",
+    "question_ar": "ما هو أول كتاب في تفسير القرآن الكريم؟",
+    "options_ar": [
+      "تفسير الطبري",
+      "تفسير ابن كثير",
+      "تفسير القرطبي",
+      "تفسير السدي"
+    ],
+    "correctIndex": 0,
+    "id": 1358
+  },
+  {
+    "type": "mcq",
+    "category": "الحديث الشريف",
+    "difficulty": "hard",
+    "question_ar": "أي من الأحاديث يعتبر حديثاً قدسياً؟",
+    "options_ar": [
+      "أنت على دين خليلك",
+      "إنما الأعمال بالنيات",
+      "لا ضرر ولا ضرار",
+      "كل سلامى من الناس عليه صدقة"
+    ],
+    "correctIndex": 3,
+    "id": 1359
+  },
+  {
+    "type": "mcq",
+    "category": "الصحابة",
+    "difficulty": "hard",
+    "question_ar": "من هو أول من أسلم من الصحابة؟",
+    "options_ar": [
+      "أبو بكر الصديق",
+      "علي بن أبي طالب",
+      "خديجة بنت خويلد",
+      "زيد بن حارثة"
+    ],
+    "correctIndex": 2,
+    "id": 1360
+  },
+  {
+    "type": "mcq",
+    "category": "العقيدة",
+    "difficulty": "hard",
+    "question_ar": "أنكر من هو الذي أنكر صفات الله في القرن الثاني الهجري؟",
+    "options_ar": [
+      "الجهمية",
+      "المعتزلة",
+      "الشيعة",
+      "السلفية"
+    ],
+    "correctIndex": 0,
+    "id": 1361
+  },
+  {
+    "type": "mcq",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "hard",
+    "question_ar": "أي من المعارك الكبرى وقعت في سنة 624 ميلادي؟",
+    "options_ar": [
+      "غزوة أحد",
+      "غزوة بدر",
+      "غزوة الأحزاب",
+      "غزوة تبوك"
+    ],
+    "correctIndex": 1,
+    "id": 1362
+  },
+  {
+    "type": "mcq",
+    "category": "الجغرافيا",
+    "difficulty": "extreme",
+    "question_ar": "أي من الدول تحتوي على أكبر عدد من السكان المسلمين؟",
+    "options_ar": [
+      "إندونيسيا",
+      "باكستان",
+      "بنسلفانيا",
+      "مصر"
+    ],
+    "correctIndex": 0,
+    "id": 1363
+  },
+  {
+    "type": "mcq",
+    "category": "اللغة العربية",
+    "difficulty": "extreme",
+    "question_ar": "ما هو وزن كلمة \"فَعَال\" في علم العروض؟",
+    "options_ar": [
+      "مفعول",
+      "مفعل",
+      "فعيل",
+      "مفاعل"
+    ],
+    "correctIndex": 1,
+    "id": 1364
+  },
+  {
+    "type": "mcq",
+    "category": "العلوم",
+    "difficulty": "extreme",
+    "question_ar": "أي من الأجرام السماوية يعد كوكب قزم؟",
+    "options_ar": [
+      "المشترى",
+      "بلوتو",
+      "زهرة",
+      "الأرض"
+    ],
+    "correctIndex": 1,
+    "id": 1365
+  },
+  {
+    "type": "tf",
+    "category": "السيرة",
+    "difficulty": "medium",
+    "question_ar": "النبي محمد صلى الله عليه وسلم وُلد في مكة المكرمة؟",
+    "correctBoolean": true,
+    "id": 1366
+  },
+  {
+    "type": "tf",
+    "category": "الفقه",
+    "difficulty": "medium",
+    "question_ar": "الوضوء واجب عند كل صلاة؟",
+    "correctBoolean": false,
+    "id": 1367
+  },
+  {
+    "type": "tf",
+    "category": "الحديث الشريف",
+    "difficulty": "medium",
+    "question_ar": "حديث نبوي لا يُعتبر من الصحيح في كتب الحديث؟",
+    "correctBoolean": false,
+    "id": 1368
+  },
+  {
+    "type": "tf",
+    "category": "الصحابة",
+    "difficulty": "hard",
+    "question_ar": "عدد الصحابة الذين طعنوا في النبي أثناء الغزوات هو ثلاثة؟",
+    "correctBoolean": false,
+    "id": 1369
+  },
+  {
+    "type": "tf",
+    "category": "العقيدة",
+    "difficulty": "hard",
+    "question_ar": "الإيمان بالملائكة يأتي بعد الإيمان بالله في أركان الإيمان؟",
+    "correctBoolean": true,
+    "id": 1370
+  },
+  {
+    "type": "tf",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "hard",
+    "question_ar": "وقعت معركة بدر في السنة الثانية من الهجرة؟",
+    "correctBoolean": true,
+    "id": 1371
+  },
+  {
+    "type": "tf",
+    "category": "الثقافة العامة",
+    "difficulty": "hard",
+    "question_ar": "تأسيس الدولة الأموية كان عام 661 ميلادي؟",
+    "correctBoolean": true,
+    "id": 1372
+  },
+  {
+    "type": "tf",
+    "category": "الجغرافيا",
+    "difficulty": "extreme",
+    "question_ar": "نهر النيل هو أطول نهر في العالم بمسافة 6853 كيلومتر؟",
+    "correctBoolean": false,
+    "id": 1373
+  },
+  {
+    "type": "tf",
+    "category": "اللغة العربية",
+    "difficulty": "extreme",
+    "question_ar": "أطول كلمة في القرآن الكريم هي \"فأسقيناكموه\"؟",
+    "correctBoolean": false,
+    "id": 1374
+  },
+  {
+    "type": "mcq",
+    "category": "الفقه",
+    "difficulty": "medium",
+    "question_ar": "ما هو الحكم الشرعي لتدخين السجائر؟",
+    "options_ar": [
+      "واجب",
+      "مستحب",
+      "مكروه",
+      "محرم"
+    ],
+    "correctIndex": 3,
+    "id": 1375
+  },
+  {
+    "type": "mcq",
+    "category": "الحديث الشريف",
+    "difficulty": "hard",
+    "question_ar": "أي من هذه الأحاديث يُعرف بحديث الآحاد؟",
+    "options_ar": [
+      "حديث الصحيحين",
+      "حديث ضعيف",
+      "حديث الغريب",
+      "حديث الآحاد"
+    ],
+    "correctIndex": 3,
+    "id": 1376
+  },
+  {
+    "type": "mcq",
+    "category": "الصحابة",
+    "difficulty": "hard",
+    "question_ar": "من هو الصحابي الذي لقب بسيف الله المسلول؟",
+    "options_ar": [
+      "حمزة بن عبد المطلب",
+      "خالد بن الوليد",
+      "عبد الرحمن بن عوف",
+      "علي بن أبي طالب"
+    ],
+    "correctIndex": 1,
+    "id": 1377
+  },
+  {
+    "type": "mcq",
+    "category": "العقيدة",
+    "difficulty": "hard",
+    "question_ar": "ما هو عدد أركان الإيمان؟",
+    "options_ar": [
+      "خمسة",
+      "ستة",
+      "سبعة",
+      "أربعة"
+    ],
+    "correctIndex": 1,
+    "id": 1378
+  },
+  {
+    "type": "mcq",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "hard",
+    "question_ar": "في أي عام كانت غزوة الخندق؟",
+    "options_ar": [
+      "624م",
+      "625م",
+      "627م",
+      "629م"
+    ],
+    "correctIndex": 0,
+    "id": 1379
+  },
+  {
+    "type": "mcq",
+    "category": "علوم الفضاء",
+    "difficulty": "extreme",
+    "question_ar": "ما هو اسم الكوكب الذي يُلقب بالكوكب الأحمر؟",
+    "options_ar": [
+      "الأرض",
+      "المريخ",
+      "المشتري",
+      "زحل"
+    ],
+    "correctIndex": 1,
+    "id": 1380
+  },
+  {
+    "type": "mcq",
+    "category": "اللغة العربية",
+    "difficulty": "extreme",
+    "question_ar": "ما هو وزن كلمة \"فَعِل\" في اللغة العربية؟",
+    "options_ar": [
+      "فَعِل",
+      "مَفعَل",
+      "مَفعِل",
+      "مفعُل"
+    ],
+    "correctIndex": 1,
+    "id": 1381
+  },
+  {
+    "type": "mcq",
+    "category": "الجغرافيا",
+    "difficulty": "extreme",
+    "question_ar": "ما هو أكبر محيط على وجه الأرض؟",
+    "options_ar": [
+      "المحيط الأطلسي",
+      "المحيط الهادئ",
+      "المحيط الهندي",
+      "المحيط المتجمد الشمالي"
+    ],
+    "correctIndex": 1,
+    "id": 1382
+  },
+  {
+    "type": "mcq",
+    "category": "العلوم",
+    "difficulty": "extreme",
+    "question_ar": "أي من العناصر التالية هو عنصر غازي في درجة حرارة الغرفة؟",
+    "options_ar": [
+      "الأكسجين",
+      "الحديد",
+      "الزئبق",
+      "الرصاص"
+    ],
+    "correctIndex": 0,
+    "id": 1383
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "extreme",
+    "question_ar": "ما هو أكبر بلد من حيث المساحة في العالم؟",
+    "options_ar": [
+      "الولايات المتحدة",
+      "كندا",
+      "روسيا",
+      "الصين"
+    ],
+    "correctIndex": 2,
+    "id": 1384
+  },
+  {
+    "type": "mcq",
+    "category": "معلومات إسلامية",
+    "difficulty": "extreme",
+    "question_ar": "ما هي السورة التي تُعرف بأنها \"قلب القرآن\"؟",
+    "options_ar": [
+      "السجدة",
+      "يس",
+      "البقرة",
+      "الإخلاص"
+    ],
+    "correctIndex": 1,
+    "id": 1385
+  },
+  {
+    "type": "tf",
+    "category": "السيرة",
+    "difficulty": "medium",
+    "question_ar": "هجرة النبي محمد صلى الله عليه وسلم إلى المدينة كانت في السنة الرابعة عشرة من البعثة.",
+    "correctBoolean": false,
+    "id": 1386
+  },
+  {
+    "type": "tf",
+    "category": "الفقه",
+    "difficulty": "hard",
+    "question_ar": "يجوز للمسلم أن يصلي قصر في سفره حتى يعود إلى بلده.",
+    "correctBoolean": true,
+    "id": 1387
+  },
+  {
+    "type": "tf",
+    "category": "الحديث الشريف",
+    "difficulty": "hard",
+    "question_ar": "حديث \"إنما الأعمال بالنيات\" هو حديث متفق عليه.",
+    "correctBoolean": true,
+    "id": 1388
+  },
+  {
+    "type": "tf",
+    "category": "الصحابة",
+    "difficulty": "extreme",
+    "question_ar": "سعد بن أبي وقاص هو الذي شهد غزوة بدر وحده.",
+    "correctBoolean": false,
+    "id": 1389
+  },
+  {
+    "type": "tf",
+    "category": "العقيدة",
+    "difficulty": "extreme",
+    "question_ar": "الإيمان بالملائكة يعد من أركان الإيمان وليس من فروعه.",
+    "correctBoolean": true,
+    "id": 1390
+  },
+  {
+    "type": "tf",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "extreme",
+    "question_ar": "توفي عمر بن الخطاب رضي الله عنه في سنة 23 هجرية.",
+    "correctBoolean": true,
+    "id": 1391
+  },
+  {
+    "type": "tf",
+    "category": "الثقافة العامة",
+    "difficulty": "medium",
+    "question_ar": "أطول نهر في العالم هو نهر الأمازون.",
+    "correctBoolean": false,
+    "id": 1392
+  },
+  {
+    "type": "tf",
+    "category": "الجغرافيا",
+    "difficulty": "hard",
+    "question_ar": "أكبر قارة في العالم من حيث المساحة هي أفريقيا.",
+    "correctBoolean": false,
+    "id": 1393
+  },
+  {
+    "type": "tf",
+    "category": "اللغة العربية",
+    "difficulty": "hard",
+    "question_ar": "اسم \"هيئة\" في اللغة العربية هو مفرد وليس جمع.",
+    "correctBoolean": true,
+    "id": 1394
+  },
+  {
+    "type": "mcq",
+    "category": "القرآن الكريم",
+    "difficulty": "medium",
+    "question_ar": "ما هو الاسم الآخر لسورة الفاتحة؟",
+    "options_ar": [
+      "سورة الصلاة",
+      "سورة الشفاء",
+      "سورة السبع المثاني",
+      "سورة الكنز"
+    ],
+    "correctIndex": 2,
+    "id": 1395
+  },
+  {
+    "type": "mcq",
+    "category": "السيرة",
+    "difficulty": "hard",
+    "question_ar": "في أي عام كانت غزوة الأحزاب؟",
+    "options_ar": [
+      "السنة 3 هجرية",
+      "السنة 4 هجرية",
+      "السنة 5 هجرية",
+      "السنة 6 هجرية"
+    ],
+    "correctIndex": 2,
+    "id": 1396
+  },
+  {
+    "type": "mcq",
+    "category": "الفقه",
+    "difficulty": "hard",
+    "question_ar": "كم عدد الفرائض في الصلاة؟",
+    "options_ar": [
+      "ستة",
+      "خمسة",
+      "أربعة",
+      "سبعة"
+    ],
+    "correctIndex": 2,
+    "id": 1397
+  },
+  {
+    "type": "mcq",
+    "category": "الحديث الشريف",
+    "difficulty": "extreme",
+    "question_ar": "ما هو الحديث الذي يتحدث عن الغيبة والنميمة؟",
+    "options_ar": [
+      "حديث \"كل المسلم على المسلم حرام\"",
+      "حديث \"إنما الأعمال بالنيات\"",
+      "حديث \"من لا يؤثّر في أهله، لم يؤثّر\"",
+      "حديث \"الراحمون يرحمهم الرحمن\""
+    ],
+    "correctIndex": 0,
+    "id": 1398
+  },
+  {
+    "type": "mcq",
+    "category": "علوم الفضاء",
+    "difficulty": "hard",
+    "question_ar": "ما هو الكوكب الذي يعرف بكوكب المشتري؟",
+    "options_ar": [
+      "كوكب الغاز",
+      "الأرض",
+      "الشمس",
+      "الزهرة"
+    ],
+    "correctIndex": 0,
+    "id": 1399
+  },
+  {
+    "type": "mcq",
+    "category": "العلوم",
+    "difficulty": "hard",
+    "question_ar": "أي من هذه العناصر يعتبر الأكثر وفرة في الكون؟",
+    "options_ar": [
+      "الأكسجين",
+      "الهيدروجين",
+      "الكربون",
+      "النيتروجين"
+    ],
+    "correctIndex": 1,
+    "id": 1400
+  },
+  {
+    "type": "mcq",
+    "category": "معلومات إسلامية",
+    "difficulty": "extreme",
+    "question_ar": "متى كان عزل عثمان بن عفان عن الخلافة؟",
+    "options_ar": [
+      "35 هجرية",
+      "36 هجرية",
+      "37 هجرية",
+      "38 هجرية"
+    ],
+    "correctIndex": 2,
+    "id": 1401
+  },
+  {
+    "type": "mcq",
+    "category": "الأحياء",
+    "difficulty": "medium",
+    "question_ar": "ما هو نوع الخلية الأساسية في جسم الإنسان؟",
+    "options_ar": [
+      "الخلايا العصبية",
+      "خلايا العضلات",
+      "الخلايا الجذعية",
+      "الخلايا البيضاء"
+    ],
+    "correctIndex": 2,
+    "id": 1402
+  },
+  {
+    "type": "mcq",
+    "category": "الجغرافيا",
+    "difficulty": "hard",
+    "question_ar": "ما هو البحر الذي يفصل بين قارة آسيا وقارة أفريقيا؟",
+    "options_ar": [
+      "البحر الأبيض المتوسط",
+      "البحر الأحمر",
+      "بحر العرب",
+      "البحر الأسود"
+    ],
+    "correctIndex": 1,
+    "id": 1403
+  },
+  {
+    "type": "mcq",
+    "category": "اللغة العربية",
+    "difficulty": "hard",
+    "question_ar": "ما هو الوزن الصرفي لكلمة \"كتب\" في اللغة العربية؟",
+    "options_ar": [
+      "فعل",
+      "اسم",
+      "فعل ماضٍ",
+      "فعل مضارع"
+    ],
+    "correctIndex": 2,
+    "id": 1404
+  },
+  {
+    "type": "tf",
+    "category": "القرآن الكريم",
+    "difficulty": "easy",
+    "question_ar": "تتكون سورة القدر من خمسة آيات فقط.",
+    "correctBoolean": true,
+    "id": 1405
+  },
+  {
+    "type": "tf",
+    "category": "السيرة",
+    "difficulty": "medium",
+    "question_ar": "قد ولد النبي محمد صلى الله عليه وسلم في عام الفيل.",
+    "correctBoolean": true,
+    "id": 1406
+  },
+  {
+    "type": "tf",
+    "category": "الفقه",
+    "difficulty": "medium",
+    "question_ar": "يجب على المسلم قضاء الصلوات الفائتة بعد التذكر.",
+    "correctBoolean": true,
+    "id": 1407
+  },
+  {
+    "type": "tf",
+    "category": "الحديث الشريف",
+    "difficulty": "hard",
+    "question_ar": "تعتبر صحيح البخاري أكثر كتب الحديث شهرة في العالم الإسلامي.",
+    "correctBoolean": true,
+    "id": 1408
+  },
+  {
+    "type": "tf",
+    "category": "الصحابة",
+    "difficulty": "hard",
+    "question_ar": "شهدت معركة أحد وفاة الصحابي أبو بكر الصديق.",
+    "correctBoolean": false,
+    "id": 1409
+  },
+  {
+    "type": "tf",
+    "category": "العقيدة",
+    "difficulty": "hard",
+    "question_ar": "يعتبر الإيمان بالملائكة من أركان الإيمان.",
+    "correctBoolean": true,
+    "id": 1410
+  },
+  {
+    "type": "tf",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "hard",
+    "question_ar": "استخدم المسلمون النظام البريدي في عهد الخليفة عمر بن الخطاب.",
+    "correctBoolean": true,
+    "id": 1411
+  },
+  {
+    "type": "tf",
+    "category": "الثقافة العامة",
+    "difficulty": "hard",
+    "question_ar": "حصلت دولة الإمارات على استقلالها في عام 1971.",
+    "correctBoolean": true,
+    "id": 1412
+  },
+  {
+    "type": "tf",
+    "category": "الجغرافيا",
+    "difficulty": "extreme",
+    "question_ar": "تُعتبر قمة كي2 الثانية الأعلى في العالم.",
+    "correctBoolean": true,
+    "id": 1413
+  },
+  {
+    "type": "tf",
+    "category": "اللغة العربية",
+    "difficulty": "extreme",
+    "question_ar": "البلاغة علم يتناول الفصاحة والبيان.",
+    "correctBoolean": true,
+    "id": 1414
+  },
+  {
+    "type": "tf",
+    "category": "العلوم",
+    "difficulty": "extreme",
+    "question_ar": "تبلغ المسافة بين الأرض والشمس حوالي 93 مليون ميل.",
+    "correctBoolean": true,
+    "id": 1415
+  },
+  {
+    "type": "tf",
+    "category": "الرياضيات",
+    "difficulty": "extreme",
+    "question_ar": "الناتج الجبري (x + 1)² يساوي x² + 2x + 1.",
+    "correctBoolean": true,
+    "id": 1416
+  },
+  {
+    "type": "mcq",
+    "category": "الفقه",
+    "difficulty": "hard",
+    "question_ar": "ما هو أقل سن لوجوب الصلاة في الإسلام؟",
+    "options_ar": [
+      "9 سنوات",
+      "10 سنوات",
+      "12 سنوات",
+      "7 سنوات"
+    ],
+    "correctIndex": 0,
+    "id": 1417
+  },
+  {
+    "type": "mcq",
+    "category": "الحديث الشريف",
+    "difficulty": "hard",
+    "question_ar": "من هو الصحابي الذي أخرج له مسلم في صحيحه أكثر من 500 حديث؟",
+    "options_ar": [
+      "أنس بن مالك",
+      "أبو هريرة",
+      "عبد الله بن عباس",
+      "علي بن أبي طالب"
+    ],
+    "correctIndex": 1,
+    "id": 1418
+  },
+  {
+    "type": "mcq",
+    "category": "الصحابة",
+    "difficulty": "hard",
+    "question_ar": "من هو أول شهيد في الإسلام؟",
+    "options_ar": [
+      "حمزة بن عبد المطلب",
+      "عمار بن ياسر",
+      "سمية بنت خياط",
+      "خبيب بن عدي"
+    ],
+    "correctIndex": 2,
+    "id": 1419
+  },
+  {
+    "type": "mcq",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "extreme",
+    "question_ar": "في أي عام تم فتح مكة؟",
+    "options_ar": [
+      "630 م",
+      "632 م",
+      "628 م",
+      "627 م"
+    ],
+    "correctIndex": 0,
+    "id": 1420
+  },
+  {
+    "type": "mcq",
+    "category": "العقيدة",
+    "difficulty": "extreme",
+    "question_ar": "متى كانت غزوة بدر الكبرى؟",
+    "options_ar": [
+      "624 م",
+      "623 م",
+      "622 م",
+      "625 م"
+    ],
+    "correctIndex": 0,
+    "id": 1421
+  },
+  {
+    "type": "mcq",
+    "category": "اللغة العربية",
+    "difficulty": "extreme",
+    "question_ar": "ما هو الوزن الشعري لقصيدة الميمية لأمير الشعراء أحمد شوقي؟",
+    "options_ar": [
+      "مفاعيلن",
+      "مفاعيلن مفاعيلن",
+      "مفاعيلن مفاعيلن مفاعيلن",
+      "مفاعيلن مفاعيل"
+    ],
+    "correctIndex": 1,
+    "id": 1422
+  },
+  {
+    "type": "tf",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "easy",
+    "question_ar": "كان فتح مكة في السنة الثامنة للهجرة؟",
+    "correctBoolean": true,
+    "id": 1423
+  },
+  {
+    "type": "mcq",
+    "category": "الفقه",
+    "difficulty": "medium",
+    "question_ar": "ما هي الحد الأدنى من الشروط لصحة الصلاة؟",
+    "options_ar": [
+      "الوضوء فقط",
+      "النية فقط",
+      "الوقت فقط",
+      "الوضوء والنية والوقت"
+    ],
+    "correctIndex": 3,
+    "id": 1424
+  },
+  {
+    "type": "tf",
+    "category": "الصحابة",
+    "difficulty": "hard",
+    "question_ar": "الصحابي أبو بكر الصديق هو أول من أسلم من الرجال؟",
+    "correctBoolean": true,
+    "id": 1425
+  },
+  {
+    "type": "mcq",
+    "category": "الحديث الشريف",
+    "difficulty": "hard",
+    "question_ar": "ما هي الفترة الزمنية التي يفصلها حديث \"إنما الأعمال بالنيات\" عن وفاته؟",
+    "options_ar": [
+      "سنة واحدة",
+      "سنتين",
+      "ثلاث سنوات",
+      "أربع سنوات"
+    ],
+    "correctIndex": 2,
+    "id": 1426
+  },
+  {
+    "type": "mcq",
+    "category": "العقيدة",
+    "difficulty": "hard",
+    "question_ar": "القول بأن الله لا يتجاوز عن الصغائر هو من أقوال أي من الفرق؟",
+    "options_ar": [
+      "المعتزلة",
+      "الأشاعرة",
+      "الزيدية",
+      "السلفية"
+    ],
+    "correctIndex": 0,
+    "id": 1427
+  },
+  {
+    "type": "tf",
+    "category": "علوم الفضاء",
+    "difficulty": "hard",
+    "question_ar": "تم اكتشاف كوكب الزهرة في القرن السابع عشر؟",
+    "correctBoolean": false,
+    "id": 1428
+  },
+  {
+    "type": "mcq",
+    "category": "اللغة العربية",
+    "difficulty": "hard",
+    "question_ar": "ما الوزن الصرفي للفعل الرباعي \"أكرم\"؟",
+    "options_ar": [
+      "فَعَل",
+      "أفْعَل",
+      "فَعَلَ",
+      "أفْعَلَ"
+    ],
+    "correctIndex": 1,
+    "id": 1429
+  },
+  {
+    "type": "tf",
+    "category": "الثقافة العامة",
+    "difficulty": "hard",
+    "question_ar": "الجائزة العالمية للكتاب العربي تمنح كل عام في يناير؟",
+    "correctBoolean": false,
+    "id": 1430
+  },
+  {
+    "type": "mcq",
+    "category": "معلومات إسلامية",
+    "difficulty": "extreme",
+    "question_ar": "ما هي السورة التي ذكر فيها اسم \"ذو الكفل\"؟",
+    "options_ar": [
+      "الصافات",
+      "ص",
+      "الأنبياء",
+      "البقرة"
+    ],
+    "correctIndex": 2,
+    "id": 1431
+  },
+  {
+    "type": "tf",
+    "category": "الفقه",
+    "difficulty": "extreme",
+    "question_ar": "طريقة الجلوس في الصلاة تسمى \"أخذ الشهادتين\"؟",
+    "correctBoolean": false,
+    "id": 1432
+  },
+  {
+    "type": "mcq",
+    "category": "الجغرافيا",
+    "difficulty": "extreme",
+    "question_ar": "ما هو اسم أكبر خليج في العالم؟",
+    "options_ar": [
+      "خليج المكسيك",
+      "خليج عمان",
+      "خليج البنغال",
+      "خليج العربي"
+    ],
+    "correctIndex": 0,
+    "id": 1433
+  },
+  {
+    "type": "mcq",
+    "category": "العلوم",
+    "difficulty": "extreme",
+    "question_ar": "ما هو العنصر الكيميائي الذي يُمثل برمز \"Hg\"؟",
+    "options_ar": [
+      "الزئبق",
+      "الحديد",
+      "الذهب",
+      "الفضة"
+    ],
+    "correctIndex": 0,
+    "id": 1434
+  },
+  {
+    "type": "tf",
+    "category": "الأحياء",
+    "difficulty": "extreme",
+    "question_ar": "الأنسجة الحيوانية تتضمن أربعة أنواع فقط؟",
+    "correctBoolean": false,
+    "id": 1435
+  },
+  {
+    "type": "mcq",
+    "category": "اللغة العربية",
+    "difficulty": "extreme",
+    "question_ar": "ما هو اسم الشاعر الذي يُعتبر رائد القصيدة النثرية؟",
+    "options_ar": [
+      "أدونيس",
+      "نبيل سليمان",
+      "يوسف الخال",
+      "بدر شاكر السياب"
+    ],
+    "correctIndex": 0,
+    "id": 1436
+  },
+  {
+    "type": "tf",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "extreme",
+    "question_ar": "متى وقعت معركة بدر الكبرى بالتحديد في السنة الهجرية؟",
+    "correctBoolean": true,
+    "id": 1437
+  },
+  {
+    "type": "tf",
+    "category": "الفقه",
+    "difficulty": "hard",
+    "question_ar": "هل تُنقض الصلاة إذا تذكر المصلي أنه كان جنباً أثناء أدائه لها؟",
+    "correctBoolean": true,
+    "id": 1438
+  },
+  {
+    "type": "tf",
+    "category": "القرآن الكريم",
+    "difficulty": "hard",
+    "question_ar": "هل الآية \"وَمَا أَرْسَلْنَاكَ إِلَّا كَافَّةً لِلنَّاسِ\" هي من سورة الأنبياء؟",
+    "correctBoolean": false,
+    "id": 1439
+  },
+  {
+    "type": "mcq",
+    "category": "الحديث الشريف",
+    "difficulty": "medium",
+    "question_ar": "من هو الصحابي الذي أول من أسلم مع النبي صلى الله عليه وسلم؟",
+    "options_ar": [
+      "أبو بكر الصديق",
+      "علي بن أبي طالب",
+      "حمزة بن عبد المطلب",
+      "عثمان بن عفان"
+    ],
+    "correctIndex": 0,
+    "id": 1440
   }
 ]
