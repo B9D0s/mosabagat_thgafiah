@@ -8,7 +8,7 @@
 
 | العنصر | التفاصيل |
 |--------|----------|
-| **عدد الأسئلة** | 585 سؤال (قابل للزيادة) |
+| **عدد الأسئلة** | 757 سؤال (قابل للزيادة) |
 | **أنواع الأسئلة** | MCQ: 419 + صح/خطأ (TF): 166 |
 | **الفئات** | 13 فئة (القرآن، السيرة، الفقه، الحديث، الصحابة، العقيدة...) |
 | **التقنيات** | HTML5، CSS3، vanilla JavaScript — بدون build |
@@ -41,8 +41,7 @@
 │   ├── questions_add_500.README.md  # كيفية إضافة أسئلة جديدة
 │   └── PROMPT-GEMINI-300-QUESTIONS.md  # برومبت AI لتوليد أسئلة
 ├── tests/
-│   ├── merge-questions.js          # دمج أسئلة من ملف إضافي
-│   ├── normalize-questions.js      # توحيد التصنيفات والمستويات
+│   ├── merge-questions.js          # دمج + توحيد (دمج بنوك، أو --normalize للداتابيس فقط)
 │   └── true-false-pool-test.js     # اختبار لعبة صح وخطأ
 ├── 7rof.html
 ├── million-game.html
@@ -63,11 +62,12 @@
 3. شغّل الدمج (يتطلب Node.js، بدون npm):
 
 ```bash
-# فحص فقط
+# دمج ملف واحد أو عدة ملفات
 node tests/merge-questions.js data/questions_add_500_new.json
+node tests/merge-questions.js data/bank1.json data/bank2.json --apply
 
-# تطبيق الدمج
-node tests/merge-questions.js data/questions_add_500_new.json --apply
+# توحيد الداتابيس فقط (type/difficulty/category)
+node tests/merge-questions.js --normalize --apply
 ```
 
 ---

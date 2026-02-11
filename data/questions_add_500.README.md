@@ -51,16 +51,15 @@
 
 ## دمج الأسئلة داخل الداتابيس الأساسية
 
-بعد ما تملأ الملف، شغّل:
-
 ```bash
+# 1. فحص
 node tests/merge-questions.js data/questions_add_500_new.json
-```
 
-هذا الأمر يعمل **فحص فقط** (بدون تعديل أي ملف). إذا طلع التقرير سليم، طبّق الدمج فعلياً:
-
-```bash
+# 2. تطبيق الدمج
 node tests/merge-questions.js data/questions_add_500_new.json --apply
+
+# 3. دمج + تفريغ الملف (جاهز للدفعة التالية)
+node tests/merge-questions.js data/questions_add_500_new.json --apply --clear-after
 ```
 
 السكربت راح:
@@ -107,3 +106,6 @@ node tests/merge-questions.js data/questions_add_500_new.json --apply
 - مصفوفة داخل مصفوفة `[[ ... ]]` — يفتحها تلقائياً
 - صيغ بديلة لـ type: `truefalse`, `multiple_choice` إلخ
 - صيغ بديلة لـ difficulty: `"سهل"`, `"very hard"` → يُحوّل تلقائياً
+- توحيد category: `General_Culture` → الثقافة العامة، `جغرافيا` → الجغرافيا إلخ
+
+**توحيد الداتابيس فقط (بدون دمج):** `node tests/merge-questions.js --normalize --apply`

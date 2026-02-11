@@ -7949,5 +7949,2051 @@
     ],
     "correctIndex": 0,
     "source_ar": "ألغاز"
+  },
+  {
+    "type": "tf",
+    "category": "السيرة",
+    "difficulty": "hard",
+    "question_ar": "وقعت غزوة بدر الكبرى في 17 شوال من السنة الثانية للهجرة.",
+    "correctBoolean": false,
+    "source_ar": "كتب السيرة",
+    "id": 586
+  },
+  {
+    "type": "mcq",
+    "category": "السيرة",
+    "difficulty": "extreme",
+    "question_ar": "من هو الصحابي الذي استخلفه النبي ﷺ على المدينة المنورة أثناء خروجه لغزوة خيبر؟",
+    "options_ar": [
+      "ابن أم مكتوم",
+      "سباع بن عرفطة",
+      "أبو ذر الغفاري",
+      "محمد بن مسلمة"
+    ],
+    "correctIndex": 1,
+    "source_ar": "المغازي",
+    "id": 587
+  },
+  {
+    "type": "tf",
+    "category": "الفقه",
+    "difficulty": "extreme",
+    "question_ar": "المسألة الأكدرية هي المسألة الوحيدة في الميراث التي يُفرض فيها للجد، ثم يعود ليقاسم الأخت.",
+    "correctBoolean": true,
+    "source_ar": "فقه المواريث",
+    "id": 588
+  },
+  {
+    "type": "mcq",
+    "category": "الفقه",
+    "difficulty": "hard",
+    "question_ar": "ما هي المسألة التي قضى فيها عمر بن الخطاب بتشريك الإخوة الأشقاء مع الإخوة لأم في الثلث؟",
+    "options_ar": [
+      "المسألة العمريّة",
+      "المسألة المشتركة (الحمارية)",
+      "المسألة الغراوية",
+      "المسألة الدينارية"
+    ],
+    "correctIndex": 1,
+    "source_ar": "الفرائض",
+    "id": 589
+  },
+  {
+    "type": "tf",
+    "category": "الحديث الشريف",
+    "difficulty": "medium",
+    "question_ar": "الحديث العزيز هو ما رواه راوٍ واحد فقط في أي طبقة من طبقات السند.",
+    "correctBoolean": false,
+    "source_ar": "مصطلح الحديث",
+    "id": 590
+  },
+  {
+    "type": "mcq",
+    "category": "الحديث الشريف",
+    "difficulty": "hard",
+    "question_ar": "ما هو الحديث الذي سقط من إسناده راويان فأكثر على التوالي؟",
+    "options_ar": [
+      "المنقطع",
+      "المعضل",
+      "المرسل",
+      "المعلق"
+    ],
+    "correctIndex": 1,
+    "source_ar": "نخبة الفكر",
+    "id": 591
+  },
+  {
+    "type": "tf",
+    "category": "الصحابة",
+    "difficulty": "medium",
+    "question_ar": "أول سفير في الإسلام هو الصحابي الجليل مصعب بن عمير.",
+    "correctBoolean": true,
+    "source_ar": "سير الصحابة",
+    "id": 592
+  },
+  {
+    "type": "mcq",
+    "category": "الصحابة",
+    "difficulty": "extreme",
+    "question_ar": "من هو الصحابي الذي لُقّب بـ 'ذي الشهادتين' وجعل النبي شهادته بشهادة رجلين؟",
+    "options_ar": [
+      "خزيمة بن ثابت",
+      "ثابت بن قيس",
+      "أبي بن كعب",
+      "زيد بن ثابت"
+    ],
+    "correctIndex": 0,
+    "source_ar": "السنن",
+    "id": 593
+  },
+  {
+    "type": "tf",
+    "category": "العقيدة",
+    "difficulty": "medium",
+    "question_ar": "الإيمان بالقدر خيره وشره هو الركن الخامس من أركان الإيمان.",
+    "correctBoolean": false,
+    "source_ar": "أركان الإيمان",
+    "id": 594
+  },
+  {
+    "type": "mcq",
+    "category": "العقيدة",
+    "difficulty": "hard",
+    "question_ar": "من هو الملك الموكل بالنفخ في الصور يوم القيامة؟",
+    "options_ar": [
+      "جبريل",
+      "ميكائيل",
+      "إسرافيل",
+      "مالك"
+    ],
+    "correctIndex": 2,
+    "source_ar": "العقيدة الإسلامية",
+    "id": 595
+  },
+  {
+    "type": "tf",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "hard",
+    "question_ar": "معركة مرج دابق وقعت بين العثمانيين والصفويين.",
+    "correctBoolean": false,
+    "source_ar": "التاريخ العثماني",
+    "id": 596
+  },
+  {
+    "type": "mcq",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "extreme",
+    "question_ar": "ماذا كان يطلق على 'ساعي البريد' السريع في التنظيم الإداري للدولة العثمانية؟",
+    "options_ar": [
+      "الدفتردار",
+      "التتار",
+      "السباهي",
+      "الينكشري"
+    ],
+    "correctIndex": 1,
+    "source_ar": "المصطلحات العثمانية",
+    "id": 597
+  },
+  {
+    "type": "tf",
+    "category": "الثقافة العامة",
+    "difficulty": "medium",
+    "question_ar": "عملة دولة اليابان هي الين.",
+    "correctBoolean": true,
+    "source_ar": "العملات",
+    "id": 598
+  },
+  {
+    "type": "tf",
+    "category": "الجغرافيا",
+    "difficulty": "hard",
+    "question_ar": "نهر الأمازون هو أطول نهر في العالم.",
+    "correctBoolean": false,
+    "source_ar": "أرقام قياسية",
+    "id": 599
+  },
+  {
+    "type": "mcq",
+    "category": "الجغرافيا",
+    "difficulty": "extreme",
+    "question_ar": "ما هي القارة الوحيدة التي تمتد أراضيها في أنصاف الكرة الأرضية الأربعة (الشمالي، الجنوبي، الشرقي، الغربي)؟",
+    "options_ar": [
+      "آسيا",
+      "أفريقيا",
+      "أوروبا",
+      "أمريكا الجنوبية"
+    ],
+    "correctIndex": 1,
+    "source_ar": "حقائق جغرافية",
+    "id": 600
+  },
+  {
+    "type": "tf",
+    "category": "اللغة العربية",
+    "difficulty": "extreme",
+    "question_ar": "جمع كلمة 'فم' في اللغة العربية هو 'أفمام'.",
+    "correctBoolean": false,
+    "source_ar": "المعاجم",
+    "id": 601
+  },
+  {
+    "type": "mcq",
+    "category": "اللغة العربية",
+    "difficulty": "hard",
+    "question_ar": "ماذا يطلق في فقه اللغة العربية على الرجل 'عظيم البطن'؟",
+    "options_ar": [
+      "الشنفرى",
+      "الأشعب",
+      "الأكثم",
+      "الأهتم"
+    ],
+    "correctIndex": 2,
+    "source_ar": "فقه اللغة",
+    "id": 602
+  },
+  {
+    "type": "tf",
+    "category": "العلوم",
+    "difficulty": "medium",
+    "question_ar": "الغاز المعروف بـ 'غاز الضحك' هو أكسيد النيتروس.",
+    "correctBoolean": true,
+    "source_ar": "الكيمياء",
+    "id": 603
+  },
+  {
+    "type": "mcq",
+    "category": "العلوم",
+    "difficulty": "hard",
+    "question_ar": "ما هو المعدن الوحيد الذي يكون في حالة سائلة عند درجة حرارة الغرفة؟",
+    "options_ar": [
+      "البروم",
+      "الزئبق",
+      "الرصاص",
+      "الزنك"
+    ],
+    "correctIndex": 1,
+    "source_ar": "الكيمياء",
+    "id": 604
+  },
+  {
+    "type": "tf",
+    "category": "الرياضيات",
+    "difficulty": "easy",
+    "question_ar": "مجموع زوايا المثلث يساوي 180 درجة.",
+    "correctBoolean": true,
+    "source_ar": "أساسيات الهندسة",
+    "id": 605
+  },
+  {
+    "type": "mcq",
+    "category": "الرياضيات",
+    "difficulty": "medium",
+    "question_ar": "ما هو العدد الأولي الزوجي الوحيد؟",
+    "options_ar": [
+      "4",
+      "2",
+      "0",
+      "1"
+    ],
+    "correctIndex": 1,
+    "source_ar": "نظرية الأعداد",
+    "id": 606
+  },
+  {
+    "type": "tf",
+    "category": "معلومات إسلامية",
+    "difficulty": "medium",
+    "question_ar": "صلاة الضحى تسمى أيضاً بصلاة الأوابين.",
+    "correctBoolean": true,
+    "source_ar": "فقه الصلاة",
+    "id": 607
+  },
+  {
+    "type": "mcq",
+    "category": "معلومات إسلامية",
+    "difficulty": "hard",
+    "question_ar": "ما هي السورة التي تسمى 'عروس القرآن'؟",
+    "options_ar": [
+      "يس",
+      "الواقعة",
+      "الرحمن",
+      "الملك"
+    ],
+    "correctIndex": 2,
+    "source_ar": "فضائل السور",
+    "id": 608
+  },
+  {
+    "type": "tf",
+    "category": "القرآن الكريم",
+    "difficulty": "medium",
+    "question_ar": "أقصر سورة في القرآن الكريم هي سورة العصر.",
+    "correctBoolean": false,
+    "source_ar": "علوم القرآن",
+    "id": 609
+  },
+  {
+    "type": "mcq",
+    "category": "القرآن الكريم",
+    "difficulty": "hard",
+    "question_ar": "كم عدد السجدات (مواضع السجود) في القرآن الكريم؟",
+    "options_ar": [
+      "14",
+      "15",
+      "12",
+      "10"
+    ],
+    "correctIndex": 1,
+    "source_ar": "علوم القرآن",
+    "id": 610
+  },
+  {
+    "type": "tf",
+    "category": "السيرة",
+    "difficulty": "hard",
+    "question_ar": "استمرت الدعوة السرية في مكة المكرمة لمدة خمس سنوات.",
+    "correctBoolean": false,
+    "source_ar": "فقه السيرة",
+    "id": 611
+  },
+  {
+    "type": "mcq",
+    "category": "السيرة",
+    "difficulty": "extreme",
+    "question_ar": "من هو اليهودي الذي سحر النبي ﷺ؟",
+    "options_ar": [
+      "كعب بن الأشرف",
+      "حيي بن أخطب",
+      "لبيد بن الأعصم",
+      "سلام بن مشكم"
+    ],
+    "correctIndex": 2,
+    "source_ar": "صحيح البخاري",
+    "id": 612
+  },
+  {
+    "type": "tf",
+    "category": "الفقه",
+    "difficulty": "medium",
+    "question_ar": "عدة المرأة المتوفى عنها زوجها هي ثلاثة قروء.",
+    "correctBoolean": false,
+    "source_ar": "الأحوال الشخصية",
+    "id": 613
+  },
+  {
+    "type": "mcq",
+    "category": "الفقه",
+    "difficulty": "hard",
+    "question_ar": "ما هو أقل سن للحيض عند الإمام الشافعي؟",
+    "options_ar": [
+      "7 سنوات",
+      "9 سنوات",
+      "12 سنة",
+      "10 سنوات"
+    ],
+    "correctIndex": 1,
+    "source_ar": "فقه العبادات",
+    "id": 614
+  },
+  {
+    "type": "tf",
+    "category": "الحديث الشريف",
+    "difficulty": "hard",
+    "question_ar": "الحديث المقطوع هو ما أضيف إلى النبي ﷺ من قول أو فعل.",
+    "correctBoolean": false,
+    "source_ar": "مصطلح الحديث",
+    "id": 615
+  },
+  {
+    "type": "mcq",
+    "category": "الحديث الشريف",
+    "difficulty": "extreme",
+    "question_ar": "من هو مؤلف كتاب 'المستدرك على الصحيحين'؟",
+    "options_ar": [
+      "الدارقطني",
+      "الحاكم النيسابوري",
+      "البيهقي",
+      "ابن خزيمة"
+    ],
+    "correctIndex": 1,
+    "source_ar": "كتب الحديث",
+    "id": 616
+  },
+  {
+    "type": "tf",
+    "category": "الصحابة",
+    "difficulty": "hard",
+    "question_ar": "عبد الله بن أم مكتوم هو الصحابي الذي نزلت فيه سورة عبس.",
+    "correctBoolean": true,
+    "source_ar": "أسباب النزول",
+    "id": 617
+  },
+  {
+    "type": "mcq",
+    "category": "الصحابة",
+    "difficulty": "extreme",
+    "question_ar": "من هو الصحابي الملقب بـ 'غسيل الملائكة'؟",
+    "options_ar": [
+      "سعد بن معاذ",
+      "حنظلة بن أبي عامر",
+      "مصعب بن عمير",
+      "جعفر بن أبي طالب"
+    ],
+    "correctIndex": 1,
+    "source_ar": "سير الصحابة",
+    "id": 618
+  },
+  {
+    "type": "tf",
+    "category": "العقيدة",
+    "difficulty": "medium",
+    "question_ar": "الإيمان بالكتب السماوية يتضمن الإيمان بأن القرآن مهيمن عليها.",
+    "correctBoolean": true,
+    "source_ar": "أصول الدين",
+    "id": 619
+  },
+  {
+    "type": "mcq",
+    "category": "العقيدة",
+    "difficulty": "hard",
+    "question_ar": "ما هي الكتب التي أنزلت على داود عليه السلام؟",
+    "options_ar": [
+      "التوراة",
+      "الإنجيل",
+      "الزبور",
+      "الصحف"
+    ],
+    "correctIndex": 2,
+    "source_ar": "الرسل والكتب",
+    "id": 620
+  },
+  {
+    "type": "tf",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "medium",
+    "question_ar": "مؤسس الدولة العباسية هو هارون الرشيد.",
+    "correctBoolean": false,
+    "source_ar": "تاريخ الخلفاء",
+    "id": 621
+  },
+  {
+    "type": "mcq",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "extreme",
+    "question_ar": "في أي عام سقطت غرناطة، آخر معاقل المسلمين في الأندلس؟",
+    "options_ar": [
+      "1453 م",
+      "1492 م",
+      "1258 م",
+      "1517 م"
+    ],
+    "correctIndex": 1,
+    "source_ar": "تاريخ الأندلس",
+    "id": 622
+  },
+  {
+    "type": "tf",
+    "category": "الثقافة العامة",
+    "difficulty": "easy",
+    "question_ar": "أسرع حيوان بري هو الفهد.",
+    "correctBoolean": true,
+    "source_ar": "عالم الحيوان",
+    "id": 623
+  },
+  {
+    "type": "tf",
+    "category": "الجغرافيا",
+    "difficulty": "medium",
+    "question_ar": "تقع جزر القمر في المحيط الأطلسي.",
+    "correctBoolean": false,
+    "source_ar": "جغرافيا الدول",
+    "id": 624
+  },
+  {
+    "type": "mcq",
+    "category": "الجغرافيا",
+    "difficulty": "extreme",
+    "question_ar": "كم عدد المناطق الزمنية التي تغطيها دولة روسيا؟",
+    "options_ar": [
+      "7 مناطق",
+      "9 مناطق",
+      "11 منطقة",
+      "13 منطقة"
+    ],
+    "correctIndex": 2,
+    "source_ar": "الجغرافيا السياسية",
+    "id": 625
+  },
+  {
+    "type": "tf",
+    "category": "اللغة العربية",
+    "difficulty": "hard",
+    "question_ar": "كلمة 'الأبتر' تعني الشخص الذي لا ولد له.",
+    "correctBoolean": true,
+    "source_ar": "المعجم",
+    "id": 626
+  },
+  {
+    "type": "mcq",
+    "category": "اللغة العربية",
+    "difficulty": "extreme",
+    "question_ar": "ما هو الجمع الصحيح لكلمة 'عندليب'؟",
+    "options_ar": [
+      "عنادل",
+      "عنادلة",
+      "عندليبات",
+      "عناديل"
+    ],
+    "correctIndex": 3,
+    "source_ar": "جموع التكسير",
+    "id": 627
+  },
+  {
+    "type": "tf",
+    "category": "العلوم",
+    "difficulty": "hard",
+    "question_ar": "الصوت ينتقل في الفراغ.",
+    "correctBoolean": false,
+    "source_ar": "الفيزياء",
+    "id": 628
+  },
+  {
+    "type": "mcq",
+    "category": "العلوم",
+    "difficulty": "medium",
+    "question_ar": "أي كوكب في مجموعتنا الشمسية يلقب بالكوكب الأحمر؟",
+    "options_ar": [
+      "المشتري",
+      "الزهرة",
+      "المريخ",
+      "زحل"
+    ],
+    "correctIndex": 2,
+    "source_ar": "الفلك",
+    "id": 629
+  },
+  {
+    "type": "tf",
+    "category": "الرياضيات",
+    "difficulty": "medium",
+    "question_ar": "الرقم 1 هو عدد أولي.",
+    "correctBoolean": false,
+    "source_ar": "أساسيات الحساب",
+    "id": 630
+  },
+  {
+    "type": "mcq",
+    "category": "الرياضيات",
+    "difficulty": "hard",
+    "question_ar": "ما هو الشكل الهندسي الذي له 8 أضلاع؟",
+    "options_ar": [
+      "مسدس",
+      "مثمن",
+      "مسبع",
+      "معشر"
+    ],
+    "correctIndex": 1,
+    "source_ar": "الهندسة",
+    "id": 631
+  },
+  {
+    "type": "tf",
+    "category": "معلومات إسلامية",
+    "difficulty": "hard",
+    "question_ar": "أول ما يحاسب عليه العبد يوم القيامة من عمله هو الزكاة.",
+    "correctBoolean": false,
+    "source_ar": "الحديث الشريف",
+    "id": 632
+  },
+  {
+    "type": "mcq",
+    "category": "معلومات إسلامية",
+    "difficulty": "medium",
+    "question_ar": "كم عدد أبواب الجنة؟",
+    "options_ar": [
+      "7",
+      "8",
+      "6",
+      "9"
+    ],
+    "correctIndex": 1,
+    "source_ar": "الغيبيات",
+    "id": 633
+  },
+  {
+    "type": "tf",
+    "category": "القرآن الكريم",
+    "difficulty": "hard",
+    "question_ar": "أطول كلمة في القرآن الكريم هي 'فأسقيناكموه' في سورة الحجر.",
+    "correctBoolean": true,
+    "source_ar": "إحصائيات القرآن",
+    "id": 634
+  },
+  {
+    "type": "mcq",
+    "category": "القرآن الكريم",
+    "difficulty": "extreme",
+    "question_ar": "ما هي السورة التي تسمى 'سورة النساء الصغرى'؟",
+    "options_ar": [
+      "الممتحنة",
+      "الطلاق",
+      "التحريم",
+      "النور"
+    ],
+    "correctIndex": 1,
+    "source_ar": "أسماء السور",
+    "id": 635
+  },
+  {
+    "type": "tf",
+    "category": "السيرة",
+    "difficulty": "medium",
+    "question_ar": "توفي النبي ﷺ وعمره 63 سنة.",
+    "correctBoolean": true,
+    "source_ar": "وفاة النبي",
+    "id": 636
+  },
+  {
+    "type": "mcq",
+    "category": "السيرة",
+    "difficulty": "hard",
+    "question_ar": "من هو الصحابي الذي أجار النبي ﷺ عند عودته من الطائف؟",
+    "options_ar": [
+      "المطعم بن عدي",
+      "أبو طالب",
+      "أبو بكر الصديق",
+      "العباس بن عبد المطلب"
+    ],
+    "correctIndex": 0,
+    "source_ar": "السيرة النبوية",
+    "id": 637
+  },
+  {
+    "type": "tf",
+    "category": "الفقه",
+    "difficulty": "hard",
+    "question_ar": "الماء المستعمل في طهارة واجبة هو ماء طهور عند الجمهور.",
+    "correctBoolean": false,
+    "source_ar": "فقه الطهارة",
+    "id": 638
+  },
+  {
+    "type": "mcq",
+    "category": "الفقه",
+    "difficulty": "extreme",
+    "question_ar": "ما هو مقدار زكاة الفطر بالكيلوجرام تقريباً (على سبيل الاحتياط)؟",
+    "options_ar": [
+      "2 كجم",
+      "2.5 كجم",
+      "3 كجم",
+      "1.5 كجم"
+    ],
+    "correctIndex": 2,
+    "source_ar": "فتاوى الزكاة",
+    "id": 639
+  },
+  {
+    "type": "tf",
+    "category": "الحديث الشريف",
+    "difficulty": "medium",
+    "question_ar": "كتاب 'الموطأ' هو من تأليف الإمام الشافعي.",
+    "correctBoolean": false,
+    "source_ar": "كتب الحديث",
+    "id": 640
+  },
+  {
+    "type": "mcq",
+    "category": "الحديث الشريف",
+    "difficulty": "hard",
+    "question_ar": "ما هو الحديث الذي انفرد بروايته راوٍ واحد؟",
+    "options_ar": [
+      "العزيز",
+      "المشهور",
+      "الغريب",
+      "المتواتر"
+    ],
+    "correctIndex": 2,
+    "source_ar": "مصطلح الحديث",
+    "id": 641
+  },
+  {
+    "type": "tf",
+    "category": "الصحابة",
+    "difficulty": "hard",
+    "question_ar": "سعد بن أبي وقاص هو أول من رمى بسهم في سبيل الله.",
+    "correctBoolean": true,
+    "source_ar": "أوائل الصحابة",
+    "id": 642
+  },
+  {
+    "type": "mcq",
+    "category": "الصحابة",
+    "difficulty": "extreme",
+    "question_ar": "من هو الصحابي الذي قتله الجن (كما ورد في الروايات التاريخية)؟",
+    "options_ar": [
+      "سعد بن معاذ",
+      "سعد بن عبادة",
+      "البراء بن مالك",
+      "أسيد بن حضير"
+    ],
+    "correctIndex": 1,
+    "source_ar": "سير الأعلام",
+    "id": 643
+  },
+  {
+    "type": "tf",
+    "category": "العقيدة",
+    "difficulty": "hard",
+    "question_ar": "الكتب السماوية المذكورة في القرآن هي خمسة كتب.",
+    "correctBoolean": true,
+    "source_ar": "الإيمان بالكتب",
+    "id": 644
+  },
+  {
+    "type": "mcq",
+    "category": "العقيدة",
+    "difficulty": "medium",
+    "question_ar": "من هو النبي الذي كلمه الله تكليماً؟",
+    "options_ar": [
+      "إبراهيم",
+      "موسى",
+      "عيسى",
+      "نوح"
+    ],
+    "correctIndex": 1,
+    "source_ar": "الرسل",
+    "id": 645
+  },
+  {
+    "type": "tf",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "hard",
+    "question_ar": "انتهت الدولة الأموية بعد معركة الزاب.",
+    "correctBoolean": true,
+    "source_ar": "سقوط الدول",
+    "id": 646
+  },
+  {
+    "type": "mcq",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "extreme",
+    "question_ar": "من هو القائد المسلم الذي انتصر في معركة ملاذكرد؟",
+    "options_ar": [
+      "ألب أرسلان",
+      "طغرل بك",
+      "صلاح الدين",
+      "بيبرس"
+    ],
+    "correctIndex": 0,
+    "source_ar": "تاريخ السلاجقة",
+    "id": 647
+  },
+  {
+    "type": "tf",
+    "category": "الثقافة العامة",
+    "difficulty": "medium",
+    "question_ar": "تقع مدينة 'البندقية' في فرنسا.",
+    "correctBoolean": false,
+    "source_ar": "مدن العالم",
+    "id": 648
+  },
+  {
+    "type": "tf",
+    "category": "الجغرافيا",
+    "difficulty": "hard",
+    "question_ar": "البحر الميت هو أخفض نقطة على يابس الكرة الأرضية.",
+    "correctBoolean": true,
+    "source_ar": "تضاريس الأرض",
+    "id": 649
+  },
+  {
+    "type": "mcq",
+    "category": "الجغرافيا",
+    "difficulty": "extreme",
+    "question_ar": "ما هي أكبر بحيرة في العالم من حيث المساحة؟",
+    "options_ar": [
+      "بحيرة فيكتوريا",
+      "بحر قزوين",
+      "بحيرة سوبيريور",
+      "بحيرة بايكال"
+    ],
+    "correctIndex": 1,
+    "source_ar": "المسطحات المائية",
+    "id": 650
+  },
+  {
+    "type": "tf",
+    "category": "اللغة العربية",
+    "difficulty": "medium",
+    "question_ar": "الاسم الموصول 'الذي' يستخدم للمفرد المذكر.",
+    "correctBoolean": true,
+    "source_ar": "النحو",
+    "id": 651
+  },
+  {
+    "type": "mcq",
+    "category": "اللغة العربية",
+    "difficulty": "hard",
+    "question_ar": "ما هو 'السمهري' في لغة العرب؟",
+    "options_ar": [
+      "السيف القاطع",
+      "الرمح الصلب",
+      "الدرع الحصين",
+      "الخيل السريع"
+    ],
+    "correctIndex": 1,
+    "source_ar": "المعجم العربي",
+    "id": 652
+  },
+  {
+    "type": "tf",
+    "category": "العلوم",
+    "difficulty": "hard",
+    "question_ar": "العنكبوت يعتبر من الحشرات.",
+    "correctBoolean": false,
+    "source_ar": "التصنيف الحيوي",
+    "id": 653
+  },
+  {
+    "type": "mcq",
+    "category": "العلوم",
+    "difficulty": "hard",
+    "question_ar": "ما هو العضو الذي لا يتوقف عن النمو في جسم الإنسان؟",
+    "options_ar": [
+      "العين",
+      "الأنف",
+      "القلب",
+      "الكبد"
+    ],
+    "correctIndex": 1,
+    "source_ar": "فسيولوجيا الإنسان",
+    "id": 654
+  },
+  {
+    "type": "tf",
+    "category": "الرياضيات",
+    "difficulty": "easy",
+    "question_ar": "حاصل ضرب أي عدد في صفر يساوي صفر.",
+    "correctBoolean": true,
+    "source_ar": "الحساب",
+    "id": 655
+  },
+  {
+    "type": "mcq",
+    "category": "الرياضيات",
+    "difficulty": "medium",
+    "question_ar": "ما هو الجذر التربيعي للعدد 144؟",
+    "options_ar": [
+      "10",
+      "11",
+      "12",
+      "14"
+    ],
+    "correctIndex": 2,
+    "source_ar": "الجبر",
+    "id": 656
+  },
+  {
+    "type": "tf",
+    "category": "معلومات إسلامية",
+    "difficulty": "medium",
+    "question_ar": "أول مسجد بني في الإسلام هو المسجد النبوي.",
+    "correctBoolean": false,
+    "source_ar": "تاريخ المساجد",
+    "id": 657
+  },
+  {
+    "type": "mcq",
+    "category": "القرآن الكريم",
+    "difficulty": "hard",
+    "question_ar": "ما هي السورة التي ذكرت فيها 'بسملة' مرتين؟",
+    "options_ar": [
+      "هود",
+      "النمل",
+      "الفرقان",
+      "النحل"
+    ],
+    "correctIndex": 1,
+    "source_ar": "لطائف قرآنية",
+    "id": 658
+  },
+  {
+    "type": "tf",
+    "category": "السيرة",
+    "difficulty": "medium",
+    "question_ar": "ماتت أم النبي ﷺ آمنة بنت وهب وهو ابن ست سنوات.",
+    "correctBoolean": true,
+    "source_ar": "نشأة النبي",
+    "id": 659
+  },
+  {
+    "type": "mcq",
+    "category": "السيرة",
+    "difficulty": "hard",
+    "question_ar": "ما هي السرية التي قُتل فيها قادة المسلمين الثلاثة (زيد، وجعفر، وابن رواحة)؟",
+    "options_ar": [
+      "سرية ذات السلاسل",
+      "غزوة مؤتة",
+      "غزوة حنين",
+      "سرية الخبط"
+    ],
+    "correctIndex": 1,
+    "source_ar": "سرايا الرسول",
+    "id": 660
+  },
+  {
+    "type": "tf",
+    "category": "الفقه",
+    "difficulty": "medium",
+    "question_ar": "لا تجب الزكاة في الذهب المعد للاستعمال الشخصي (الحلي المباح) عند جمهور العلماء.",
+    "correctBoolean": true,
+    "source_ar": "فقه الزكاة",
+    "id": 661
+  },
+  {
+    "type": "mcq",
+    "category": "الفقه",
+    "difficulty": "extreme",
+    "question_ar": "ما هي الدية المقدرة في 'الموضحة' (الشجة التي توضح العظم)؟",
+    "options_ar": [
+      "خمس من الإبل",
+      "عشر من الإبل",
+      "نصف عشر الدية",
+      "ثلث الدية"
+    ],
+    "correctIndex": 0,
+    "source_ar": "فقه الجنايات",
+    "id": 662
+  },
+  {
+    "type": "tf",
+    "category": "الحديث الشريف",
+    "difficulty": "hard",
+    "question_ar": "الحديث 'الموضوع' هو الحديث الضعيف الذي يمكن العمل به في فضائل الأعمال.",
+    "correctBoolean": false,
+    "source_ar": "مصطلح الحديث",
+    "id": 663
+  },
+  {
+    "type": "mcq",
+    "category": "الحديث الشريف",
+    "difficulty": "extreme",
+    "question_ar": "من هو الصحابي الذي روى عنه أكثر عدد من الصحابة والتابعين؟",
+    "options_ar": [
+      "أبو هريرة",
+      "عبد الله بن عمر",
+      "أنس بن مالك",
+      "عائشة بنت أبي بكر"
+    ],
+    "correctIndex": 0,
+    "source_ar": "رواة الحديث",
+    "id": 664
+  },
+  {
+    "type": "tf",
+    "category": "الصحابة",
+    "difficulty": "medium",
+    "question_ar": "لقب الخليفة عمر بن الخطاب بـ 'الفاروق'.",
+    "correctBoolean": true,
+    "source_ar": "سير الخلفاء",
+    "id": 665
+  },
+  {
+    "type": "mcq",
+    "category": "الصحابة",
+    "difficulty": "hard",
+    "question_ar": "من هو الصحابي الذي أشار بجمع القرآن في عهد أبي بكر الصديق؟",
+    "options_ar": [
+      "عثمان بن عفان",
+      "عمر بن الخطاب",
+      "علي بن أبي طالب",
+      "زيد بن ثابت"
+    ],
+    "correctIndex": 1,
+    "source_ar": "جمع القرآن",
+    "id": 666
+  },
+  {
+    "type": "tf",
+    "category": "العقيدة",
+    "difficulty": "hard",
+    "question_ar": "الشرك الأصغر يخرج صاحبه من الملة.",
+    "correctBoolean": false,
+    "source_ar": "نواقض الإسلام",
+    "id": 667
+  },
+  {
+    "type": "mcq",
+    "category": "العقيدة",
+    "difficulty": "medium",
+    "question_ar": "ما معنى 'التوحيد' اصطلاحاً؟",
+    "options_ar": [
+      "الإيمان بوجود الله",
+      "إفراد الله بالعبادة والربوبية والأسماء والصفات",
+      "الإيمان بالملائكة",
+      "أداء الصلاة في وقتها"
+    ],
+    "correctIndex": 1,
+    "source_ar": "العقيدة",
+    "id": 668
+  },
+  {
+    "type": "tf",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "medium",
+    "question_ar": "فتح القسطنطينية تم على يد السلطان محمد الفاتح.",
+    "correctBoolean": true,
+    "source_ar": "الدولة العثمانية",
+    "id": 669
+  },
+  {
+    "type": "mcq",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "hard",
+    "question_ar": "من هو الخليفة العباسي الذي بنى مدينة سامراء؟",
+    "options_ar": [
+      "هارون الرشيد",
+      "المأمون",
+      "المعتصم بالله",
+      "المتوكل"
+    ],
+    "correctIndex": 2,
+    "source_ar": "تاريخ العباسيين",
+    "id": 670
+  },
+  {
+    "type": "tf",
+    "category": "الثقافة العامة",
+    "difficulty": "medium",
+    "question_ar": "اللون الأسود يمتص جميع ألوان الضوء.",
+    "correctBoolean": true,
+    "source_ar": "الفيزياء البصرية",
+    "id": 671
+  },
+  {
+    "type": "tf",
+    "category": "الجغرافيا",
+    "difficulty": "hard",
+    "question_ar": "أصغر دولة في العالم من حيث المساحة هي موناكو.",
+    "correctBoolean": false,
+    "source_ar": "جغرافيا سياسية",
+    "id": 672
+  },
+  {
+    "type": "tf",
+    "category": "اللغة العربية",
+    "difficulty": "medium",
+    "question_ar": "الفاعل في الجملة العربية يكون دائماً مجروراً.",
+    "correctBoolean": false,
+    "source_ar": "قواعد النحو",
+    "id": 673
+  },
+  {
+    "type": "mcq",
+    "category": "اللغة العربية",
+    "difficulty": "hard",
+    "question_ar": "من هو واضع علم العروض (أوزان الشعر)؟",
+    "options_ar": [
+      "سيبويه",
+      "أبو الأسود الدؤلي",
+      "الخليل بن أحمد الفراهيدي",
+      "الكسائي"
+    ],
+    "correctIndex": 2,
+    "source_ar": "تاريخ الأدب",
+    "id": 674
+  },
+  {
+    "type": "tf",
+    "category": "العلوم",
+    "difficulty": "easy",
+    "question_ar": "الأرض تدور حول الشمس.",
+    "correctBoolean": true,
+    "source_ar": "الفلك",
+    "id": 675
+  },
+  {
+    "type": "mcq",
+    "category": "العلوم",
+    "difficulty": "hard",
+    "question_ar": "ما هو العنصر الكيميائي الذي رمزه 'Au'؟",
+    "options_ar": [
+      "الفضة",
+      "النحاس",
+      "الذهب",
+      "الألمنيوم"
+    ],
+    "correctIndex": 2,
+    "source_ar": "الكيمياء",
+    "id": 676
+  },
+  {
+    "type": "tf",
+    "category": "الرياضيات",
+    "difficulty": "medium",
+    "question_ar": "المعين هو شكل رباعي جميع أضلاعه متساوية.",
+    "correctBoolean": true,
+    "source_ar": "الهندسة",
+    "id": 677
+  },
+  {
+    "type": "mcq",
+    "category": "الرياضيات",
+    "difficulty": "hard",
+    "question_ar": "كم يساوي حاصل جمع الزوايا الداخلية للشكل الخماسي؟",
+    "options_ar": [
+      "360 درجة",
+      "540 درجة",
+      "720 درجة",
+      "180 درجة"
+    ],
+    "correctIndex": 1,
+    "source_ar": "الهندسة",
+    "id": 678
+  },
+  {
+    "type": "tf",
+    "category": "معلومات إسلامية",
+    "difficulty": "medium",
+    "question_ar": "يوم عرفة هو اليوم التاسع من شهر ذي الحجة.",
+    "correctBoolean": true,
+    "source_ar": "المناسك",
+    "id": 679
+  },
+  {
+    "type": "mcq",
+    "category": "معلومات إسلامية",
+    "difficulty": "hard",
+    "question_ar": "من هو النبي الذي لقب بـ 'ذو النون'؟",
+    "options_ar": [
+      "يونس عليه السلام",
+      "نوح عليه السلام",
+      "إدريس عليه السلام",
+      "زكريا عليه السلام"
+    ],
+    "correctIndex": 0,
+    "source_ar": "ألقاب الأنبياء",
+    "id": 680
+  },
+  {
+    "type": "tf",
+    "category": "القرآن الكريم",
+    "difficulty": "hard",
+    "question_ar": "سورة 'الفاتحة' نزلت في المدينة المنورة.",
+    "correctBoolean": false,
+    "source_ar": "المكي والمدني",
+    "id": 681
+  },
+  {
+    "type": "mcq",
+    "category": "القرآن الكريم",
+    "difficulty": "extreme",
+    "question_ar": "ما هي السورة التي بدأت بلفظ 'المر'؟",
+    "options_ar": [
+      "يونس",
+      "الرعد",
+      "هود",
+      "إبراهيم"
+    ],
+    "correctIndex": 1,
+    "source_ar": "فواتح السور",
+    "id": 682
+  },
+  {
+    "type": "tf",
+    "category": "السيرة",
+    "difficulty": "hard",
+    "question_ar": "أول من أرضعت النبي ﷺ بعد أمه هي حليمة السعدية.",
+    "correctBoolean": false,
+    "source_ar": "رضاع النبي",
+    "id": 683
+  },
+  {
+    "type": "mcq",
+    "category": "السيرة",
+    "difficulty": "hard",
+    "question_ar": "في أي سنة فُرض الحجاب على نساء المؤمنين؟",
+    "options_ar": [
+      "السنة الثالثة للهجرة",
+      "السنة الرابعة للهجرة",
+      "السنة الخامسة للهجرة",
+      "السنة السادسة للهجرة"
+    ],
+    "correctIndex": 1,
+    "source_ar": "التشريع الإسلامي",
+    "id": 684
+  },
+  {
+    "type": "tf",
+    "category": "الفقه",
+    "difficulty": "medium",
+    "question_ar": "يجوز للمسافر قصر الصلاة الرباعية (الظهر، العصر، العشاء).",
+    "correctBoolean": true,
+    "source_ar": "صلاة المسافر",
+    "id": 685
+  },
+  {
+    "type": "mcq",
+    "category": "الفقه",
+    "difficulty": "extreme",
+    "question_ar": "في باب الجنايات، ما هي 'الجائفة'؟",
+    "options_ar": [
+      "الشجة التي تصل إلى العظم",
+      "الجرح الذي يصل إلى الجوف",
+      "الكسر في اليد",
+      "قطع الأذن"
+    ],
+    "correctIndex": 1,
+    "source_ar": "فقه الجراح",
+    "id": 686
+  },
+  {
+    "type": "tf",
+    "category": "الحديث الشريف",
+    "difficulty": "medium",
+    "question_ar": "راوي الحديث هو الشخص الذي ينقل الحديث بسنده.",
+    "correctBoolean": true,
+    "source_ar": "علوم الحديث",
+    "id": 687
+  },
+  {
+    "type": "mcq",
+    "category": "الحديث الشريف",
+    "difficulty": "hard",
+    "question_ar": "ما هو الكتاب الذي ألفه الإمام مالك في الحديث؟",
+    "options_ar": [
+      "المسند",
+      "الموطأ",
+      "السنن",
+      "المعجم"
+    ],
+    "correctIndex": 1,
+    "source_ar": "دواوين السنة",
+    "id": 688
+  },
+  {
+    "type": "tf",
+    "category": "الصحابة",
+    "difficulty": "medium",
+    "question_ar": "تزوج علي بن أبي طالب من فاطمة الزهراء في السنة الثانية للهجرة.",
+    "correctBoolean": true,
+    "source_ar": "سير الصحابة",
+    "id": 689
+  },
+  {
+    "type": "mcq",
+    "category": "الصحابة",
+    "difficulty": "hard",
+    "question_ar": "من هو الصحابي الذي كان يُشبه النبي ﷺ خَلقاً وخُلقاً؟",
+    "options_ar": [
+      "جعفر بن أبي طالب",
+      "سعد بن أبي وقاص",
+      "عثمان بن عفان",
+      "عبد الله بن مسعود"
+    ],
+    "correctIndex": 0,
+    "source_ar": "مناقب الصحابة",
+    "id": 690
+  },
+  {
+    "type": "tf",
+    "category": "العقيدة",
+    "difficulty": "medium",
+    "question_ar": "الشفاعة العظمى يوم القيامة تكون للنبي إبراهيم عليه السلام.",
+    "correctBoolean": false,
+    "source_ar": "أحداث القيامة",
+    "id": 691
+  },
+  {
+    "type": "mcq",
+    "category": "العقيدة",
+    "difficulty": "hard",
+    "question_ar": "ما هو أول ما خلقه الله تعالى (حسب اختلاف الروايات والراجح منها)؟",
+    "options_ar": [
+      "القلم",
+      "العرش",
+      "السماوات",
+      "آدم"
+    ],
+    "correctIndex": 0,
+    "source_ar": "بدء الخلق",
+    "id": 692
+  },
+  {
+    "type": "tf",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "hard",
+    "question_ar": "صلاح الدين الأيوبي استرد القدس من الصليبيين في معركة حطين.",
+    "correctBoolean": false,
+    "source_ar": "الحروب الصليبية",
+    "id": 693
+  },
+  {
+    "type": "mcq",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "extreme",
+    "question_ar": "من هو المؤسس الحقيقي لدولة المرابطين في المغرب والأندلس؟",
+    "options_ar": [
+      "يوسف بن تاشفين",
+      "عبد الله بن ياسين",
+      "أبو بكر بن عمر",
+      "يعقوب المنصور"
+    ],
+    "correctIndex": 0,
+    "source_ar": "تاريخ المغرب",
+    "id": 694
+  },
+  {
+    "type": "tf",
+    "category": "الثقافة العامة",
+    "difficulty": "easy",
+    "question_ar": "الماء يغلي عند درجة حرارة 100 مئوية.",
+    "correctBoolean": true,
+    "source_ar": "علوم عامة",
+    "id": 695
+  },
+  {
+    "type": "tf",
+    "category": "الجغرافيا",
+    "difficulty": "medium",
+    "question_ar": "جبل إيفرست يقع في قارة أفريقيا.",
+    "correctBoolean": false,
+    "source_ar": "الجبال",
+    "id": 696
+  },
+  {
+    "type": "mcq",
+    "category": "الجغرافيا",
+    "difficulty": "hard",
+    "question_ar": "ما هي الدولة التي تمتلك أطول شريط ساحلي في العالم؟",
+    "options_ar": [
+      "إندونيسيا",
+      "كندا",
+      "روسيا",
+      "أستراليا"
+    ],
+    "correctIndex": 1,
+    "source_ar": "أرقام قياسية",
+    "id": 697
+  },
+  {
+    "type": "tf",
+    "category": "اللغة العربية",
+    "difficulty": "hard",
+    "question_ar": "الفعل 'كان' وأخواتها ترفع المبتدأ وتنصب الخبر.",
+    "correctBoolean": true,
+    "source_ar": "النحو",
+    "id": 698
+  },
+  {
+    "type": "mcq",
+    "category": "اللغة العربية",
+    "difficulty": "extreme",
+    "question_ar": "ما هو 'الأطروش'؟",
+    "options_ar": [
+      "الأعمى",
+      "الأصم",
+      "الأبكم",
+      "الأعرج"
+    ],
+    "correctIndex": 1,
+    "source_ar": "صفات العرب",
+    "id": 699
+  },
+  {
+    "type": "tf",
+    "category": "العلوم",
+    "difficulty": "medium",
+    "question_ar": "الخفاش يصنف من الطيور.",
+    "correctBoolean": false,
+    "source_ar": "علم الحيوان",
+    "id": 700
+  },
+  {
+    "type": "mcq",
+    "category": "العلوم",
+    "difficulty": "hard",
+    "question_ar": "ما هو الجزء المسؤول عن توازن الجسم في الإنسان؟",
+    "options_ar": [
+      "المخيخ",
+      "المخ",
+      "النخاع الشوكي",
+      "جذع الدماغ"
+    ],
+    "correctIndex": 0,
+    "source_ar": "التشريح",
+    "id": 701
+  },
+  {
+    "type": "tf",
+    "category": "الرياضيات",
+    "difficulty": "medium",
+    "question_ar": "العدد 'باي' (π) هو عدد نسبي.",
+    "correctBoolean": false,
+    "source_ar": "أنواع الأعداد",
+    "id": 702
+  },
+  {
+    "type": "mcq",
+    "category": "الرياضيات",
+    "difficulty": "hard",
+    "question_ar": "إذا كان لدينا مكعب طول ضلعه 3 سم، فكم يكون حجمه؟",
+    "options_ar": [
+      "9 سم مكعب",
+      "18 سم مكعب",
+      "27 سم مكعب",
+      "12 سم مكعب"
+    ],
+    "correctIndex": 2,
+    "source_ar": "حساب الحجوم",
+    "id": 703
+  },
+  {
+    "type": "tf",
+    "category": "معلومات إسلامية",
+    "difficulty": "easy",
+    "question_ar": "شهر رمضان هو الشهر التاسع في التقويم الهجري.",
+    "correctBoolean": true,
+    "source_ar": "التقويم الهجري",
+    "id": 704
+  },
+  {
+    "type": "mcq",
+    "category": "معلومات إسلامية",
+    "difficulty": "hard",
+    "question_ar": "ما هو المسجد الذي أمر النبي ﷺ بهدمه؟",
+    "options_ar": [
+      "مسجد الضرار",
+      "مسجد القبلتين",
+      "مسجد الغمامة",
+      "مسجد الإجابة"
+    ],
+    "correctIndex": 0,
+    "source_ar": "التاريخ الإسلامي",
+    "id": 705
+  },
+  {
+    "type": "tf",
+    "category": "القرآن الكريم",
+    "difficulty": "medium",
+    "question_ar": "سورة الكوثر هي السورة الوحيدة التي لا تحتوي على حرف الميم.",
+    "correctBoolean": true,
+    "source_ar": "إعجاز القرآن",
+    "id": 706
+  },
+  {
+    "type": "mcq",
+    "category": "القرآن الكريم",
+    "difficulty": "extreme",
+    "question_ar": "ما هي السورة التي ذُكر فيها لفظ 'رمضان'؟",
+    "options_ar": [
+      "القدر",
+      "البقرة",
+      "آل عمران",
+      "الدخان"
+    ],
+    "correctIndex": 1,
+    "source_ar": "آيات الصيام",
+    "id": 707
+  },
+  {
+    "type": "tf",
+    "category": "السيرة",
+    "difficulty": "hard",
+    "question_ar": "وقعت حادثة شق الصدر للنبي ﷺ وهو في ديار بني سعد.",
+    "correctBoolean": true,
+    "source_ar": "طفولة النبي",
+    "id": 708
+  },
+  {
+    "type": "mcq",
+    "category": "السيرة",
+    "difficulty": "hard",
+    "question_ar": "كم سنة استمر حصار قريش لبني هاشم في شعب أبي طالب؟",
+    "options_ar": [
+      "سنتان",
+      "ثلاث سنوات",
+      "أربع سنوات",
+      "سنة واحدة"
+    ],
+    "correctIndex": 1,
+    "source_ar": "مرحلة مكة",
+    "id": 709
+  },
+  {
+    "type": "tf",
+    "category": "الفقه",
+    "difficulty": "hard",
+    "question_ar": "صلاة الكسوف (كسوف الشمس) تكون سرية عند جمهور العلماء.",
+    "correctBoolean": true,
+    "source_ar": "صلوات النوافل",
+    "id": 710
+  },
+  {
+    "type": "mcq",
+    "category": "الفقه",
+    "difficulty": "extreme",
+    "question_ar": "ما هو نصيب الزوج من ميراث زوجته إذا كان لها ولد منه أو من غيره؟",
+    "options_ar": [
+      "النصف",
+      "الربع",
+      "الثمن",
+      "السدس"
+    ],
+    "correctIndex": 1,
+    "source_ar": "المواريث",
+    "id": 711
+  },
+  {
+    "type": "tf",
+    "category": "الحديث الشريف",
+    "difficulty": "medium",
+    "question_ar": "الحديث القدسي هو كلام الله تعالى بلفظه ومعناه.",
+    "correctBoolean": false,
+    "source_ar": "أنواع الحديث",
+    "id": 712
+  },
+  {
+    "type": "mcq",
+    "category": "الحديث الشريف",
+    "difficulty": "hard",
+    "question_ar": "من هم 'الشيخان' عند إطلاق هذا اللقب في علم الحديث؟",
+    "options_ar": [
+      "أبو بكر وعمر",
+      "البخاري ومسلم",
+      "أبو حنيفة والشافعي",
+      "أحمد ومالك"
+    ],
+    "correctIndex": 1,
+    "source_ar": "ألقاب المحدثين",
+    "id": 713
+  },
+  {
+    "type": "tf",
+    "category": "الصحابة",
+    "difficulty": "hard",
+    "question_ar": "عمار بن ياسر هو أول من بنى مسجداً في الإسلام (مسجد قباء).",
+    "correctBoolean": true,
+    "source_ar": "أوائل",
+    "id": 714
+  },
+  {
+    "type": "mcq",
+    "category": "الصحابة",
+    "difficulty": "extreme",
+    "question_ar": "من هو الصحابي الذي كان آخر من خرج من قبر النبي ﷺ عند دفنه؟",
+    "options_ar": [
+      "علي بن أبي طالب",
+      "قثم بن العباس",
+      "الفضل بن العباس",
+      "أوس بن خولي"
+    ],
+    "correctIndex": 1,
+    "source_ar": "وفاة النبي",
+    "id": 715
+  },
+  {
+    "type": "tf",
+    "category": "العقيدة",
+    "difficulty": "medium",
+    "question_ar": "عدد الرسل المذكورين في القرآن الكريم هو 25 رسولاً.",
+    "correctBoolean": true,
+    "source_ar": "الأنبياء",
+    "id": 716
+  },
+  {
+    "type": "mcq",
+    "category": "العقيدة",
+    "difficulty": "hard",
+    "question_ar": "ما هو الاسم الآخر ليوم القيامة الذي يعني 'الواقعة التي تقرع القلوب'؟",
+    "options_ar": [
+      "الحاقة",
+      "القارعة",
+      "الغاشية",
+      "الصاخة"
+    ],
+    "correctIndex": 1,
+    "source_ar": "أسماء القيامة",
+    "id": 717
+  },
+  {
+    "type": "tf",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "medium",
+    "question_ar": "عاصمة الدولة الأموية كانت الكوفة.",
+    "correctBoolean": false,
+    "source_ar": "عواصم الدول",
+    "id": 718
+  },
+  {
+    "type": "mcq",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "extreme",
+    "question_ar": "في أي معركة انتصر المسلمون بقيادة سيف الدين قطز على المغول؟",
+    "options_ar": [
+      "حطين",
+      "عين جالوت",
+      "اليرموك",
+      "القادسية"
+    ],
+    "correctIndex": 1,
+    "source_ar": "المعارك الفاصلة",
+    "id": 719
+  },
+  {
+    "type": "tf",
+    "category": "الثقافة العامة",
+    "difficulty": "hard",
+    "question_ar": "الألماس يتكون أساساً من عنصر الكربون.",
+    "correctBoolean": true,
+    "source_ar": "الجيولوجيا",
+    "id": 720
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "hard",
+    "question_ar": "من هو الرسام الذي رسم لوحة 'الموناليزا'؟",
+    "options_ar": [
+      "بابلو بيكاسو",
+      "ليوناردو دافنشي",
+      "مايكل أنجلو",
+      "فان جوخ"
+    ],
+    "correctIndex": 1,
+    "source_ar": "الفنون",
+    "id": 721
+  },
+  {
+    "type": "tf",
+    "category": "الجغرافيا",
+    "difficulty": "medium",
+    "question_ar": "نهر النيل يصب في البحر الأحمر.",
+    "correctBoolean": false,
+    "source_ar": "الأنهار",
+    "id": 722
+  },
+  {
+    "type": "mcq",
+    "category": "الجغرافيا",
+    "difficulty": "extreme",
+    "question_ar": "ما هي الدولة التي تسمى 'أرض المليون فيل'؟",
+    "options_ar": [
+      "لاوس",
+      "تايلاند",
+      "الهند",
+      "كينيا"
+    ],
+    "correctIndex": 0,
+    "source_ar": "ألقاب الدول",
+    "id": 723
+  },
+  {
+    "type": "tf",
+    "category": "اللغة العربية",
+    "difficulty": "medium",
+    "question_ar": "الكلمة 'مدرسة' هي اسم مكان.",
+    "correctBoolean": true,
+    "source_ar": "الصرف",
+    "id": 724
+  },
+  {
+    "type": "mcq",
+    "category": "اللغة العربية",
+    "difficulty": "hard",
+    "question_ar": "ما هو جمع كلمة 'عندليب'؟",
+    "options_ar": [
+      "عنادل",
+      "عندليبات",
+      "عنادله",
+      "عناديل"
+    ],
+    "correctIndex": 0,
+    "source_ar": "الجموع",
+    "id": 725
+  },
+  {
+    "type": "tf",
+    "category": "العلوم",
+    "difficulty": "easy",
+    "question_ar": "القلب هو العضو المسؤول عن ضخ الدم في الجسم.",
+    "correctBoolean": true,
+    "source_ar": "جسم الإنسان",
+    "id": 726
+  },
+  {
+    "type": "mcq",
+    "category": "العلوم",
+    "difficulty": "hard",
+    "question_ar": "ما هو الاسم العلمي لمرض 'اللوكيميا'؟",
+    "options_ar": [
+      "فقر الدم",
+      "سرطان الدم",
+      "تخثر الدم",
+      "ضغط الدم"
+    ],
+    "correctIndex": 1,
+    "source_ar": "الأمراض",
+    "id": 727
+  },
+  {
+    "type": "tf",
+    "category": "الرياضيات",
+    "difficulty": "medium",
+    "question_ar": "الزاوية القائمة قياسها 90 درجة.",
+    "correctBoolean": true,
+    "source_ar": "الهندسة",
+    "id": 728
+  },
+  {
+    "type": "mcq",
+    "category": "الرياضيات",
+    "difficulty": "hard",
+    "question_ar": "ما هو ناتج 2 أس 5 (2^5)؟",
+    "options_ar": [
+      "10",
+      "25",
+      "32",
+      "64"
+    ],
+    "correctIndex": 2,
+    "source_ar": "الأسس",
+    "id": 729
+  },
+  {
+    "type": "tf",
+    "category": "معلومات إسلامية",
+    "difficulty": "hard",
+    "question_ar": "يُطلق على سورة 'يس' لقب 'قلب القرآن'.",
+    "correctBoolean": true,
+    "source_ar": "فضائل القرآن",
+    "id": 730
+  },
+  {
+    "type": "mcq",
+    "category": "معلومات إسلامية",
+    "difficulty": "medium",
+    "question_ar": "ما هي المهنة التي عمل بها نبي الله داود عليه السلام؟",
+    "options_ar": [
+      "النجارة",
+      "الحدادة",
+      "الرعي",
+      "الخياطة"
+    ],
+    "correctIndex": 1,
+    "source_ar": "مهن الأنبياء",
+    "id": 731
+  },
+  {
+    "type": "tf",
+    "category": "القرآن الكريم",
+    "difficulty": "medium",
+    "question_ar": "سورة 'الرحمن' تعرف بعروس القرآن.",
+    "correctBoolean": true,
+    "source_ar": "ألقاب السور",
+    "id": 732
+  },
+  {
+    "type": "mcq",
+    "category": "القرآن الكريم",
+    "difficulty": "hard",
+    "question_ar": "في أي سورة وردت قصة أصحاب الأخدود؟",
+    "options_ar": [
+      "البروج",
+      "الفجر",
+      "الطارق",
+      "البلد"
+    ],
+    "correctIndex": 0,
+    "source_ar": "القصص القرآني",
+    "id": 733
+  },
+  {
+    "type": "tf",
+    "category": "السيرة",
+    "difficulty": "hard",
+    "question_ar": "كان عدد المسلمين في غزوة بدر 313 رجلاً.",
+    "correctBoolean": true,
+    "source_ar": "المعارك",
+    "id": 734
+  },
+  {
+    "type": "mcq",
+    "category": "السيرة",
+    "difficulty": "extreme",
+    "question_ar": "من هو الصحابي الذي قتل أبا جهل في غزوة بدر (بمشاركة أخيه)؟",
+    "options_ar": [
+      "معاذ بن عفراء",
+      "عبد الله بن مسعود",
+      "حمزة بن عبد المطلب",
+      "علي بن أبي طالب"
+    ],
+    "correctIndex": 0,
+    "source_ar": "أحداث بدر",
+    "id": 735
+  },
+  {
+    "type": "tf",
+    "category": "الفقه",
+    "difficulty": "medium",
+    "question_ar": "زكاة الفطر تجب على كل مسلم، صغيراً كان أو كبيراً.",
+    "correctBoolean": true,
+    "source_ar": "الزكاة",
+    "id": 736
+  },
+  {
+    "type": "mcq",
+    "category": "الفقه",
+    "difficulty": "hard",
+    "question_ar": "ما هو 'حد القذف' في الشريعة الإسلامية؟",
+    "options_ar": [
+      "40 جلدة",
+      "80 جلدة",
+      "100 جلدة",
+      "الرجم"
+    ],
+    "correctIndex": 1,
+    "source_ar": "الحدود",
+    "id": 737
+  },
+  {
+    "type": "tf",
+    "category": "الحديث الشريف",
+    "difficulty": "hard",
+    "question_ar": "الحديث 'المتواتر' هو ما رواه جمع عن جمع يستحيل تواطؤهم على الكذب.",
+    "correctBoolean": true,
+    "source_ar": "أقسام الحديث",
+    "id": 738
+  },
+  {
+    "type": "mcq",
+    "category": "الحديث الشريف",
+    "difficulty": "extreme",
+    "question_ar": "ما هو الكتاب الذي يعرف بـ 'الصحيح المسند المختصر'؟",
+    "options_ar": [
+      "صحيح البخاري",
+      "صحيح مسلم",
+      "سنن الترمذي",
+      "سنن النسائي"
+    ],
+    "correctIndex": 0,
+    "source_ar": "أسماء الكتب",
+    "id": 739
+  },
+  {
+    "type": "tf",
+    "category": "الصحابة",
+    "difficulty": "medium",
+    "question_ar": "عبد الله بن عباس هو ابن عم النبي ﷺ.",
+    "correctBoolean": true,
+    "source_ar": "الأنساب",
+    "id": 740
+  },
+  {
+    "type": "mcq",
+    "category": "الصحابة",
+    "difficulty": "hard",
+    "question_ar": "من هو الصحابي الذي لُقّب بـ 'حبر الأمة'؟",
+    "options_ar": [
+      "عبد الله بن عمر",
+      "عبد الله بن عباس",
+      "عبد الله بن مسعود",
+      "زيد بن ثابت"
+    ],
+    "correctIndex": 1,
+    "source_ar": "ألقاب الصحابة",
+    "id": 741
+  },
+  {
+    "type": "tf",
+    "category": "العقيدة",
+    "difficulty": "medium",
+    "question_ar": "خازن النار هو الملك 'مالك'.",
+    "correctBoolean": true,
+    "source_ar": "الملائكة",
+    "id": 742
+  },
+  {
+    "type": "mcq",
+    "category": "العقيدة",
+    "difficulty": "hard",
+    "question_ar": "ما هي الصفة التي يختص بها الله تعالى وتعني 'الأول بلا بداية'؟",
+    "options_ar": [
+      "البقاء",
+      "القدم (الأزلية)",
+      "الوحدانية",
+      "القدرة"
+    ],
+    "correctIndex": 1,
+    "source_ar": "صفات الله",
+    "id": 743
+  },
+  {
+    "type": "tf",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "medium",
+    "question_ar": "الدولة الأيوبية أسسها نور الدين زنكي.",
+    "correctBoolean": false,
+    "source_ar": "الدول الإسلامية",
+    "id": 744
+  },
+  {
+    "type": "mcq",
+    "category": "التاريخ الإسلامي",
+    "difficulty": "extreme",
+    "question_ar": "من هو القائد الذي أسس مدينة القيروان؟",
+    "options_ar": [
+      "عقبة بن نافع",
+      "موسى بن نصير",
+      "حسان بن النعمان",
+      "طارق بن زياد"
+    ],
+    "correctIndex": 0,
+    "source_ar": "الفتوحات",
+    "id": 745
+  },
+  {
+    "type": "tf",
+    "category": "الثقافة العامة",
+    "difficulty": "medium",
+    "question_ar": "عاصمة البرازيل هي ريو دي جانيرو.",
+    "correctBoolean": false,
+    "source_ar": "العواصم",
+    "id": 746
+  },
+  {
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "hard",
+    "question_ar": "ما هي العملة المستخدمة في روسيا؟",
+    "options_ar": [
+      "اليورو",
+      "الروبل",
+      "الدولار",
+      "الين"
+    ],
+    "correctIndex": 1,
+    "source_ar": "اقتصاد",
+    "id": 747
+  },
+  {
+    "type": "tf",
+    "category": "الجغرافيا",
+    "difficulty": "hard",
+    "question_ar": "قناة السويس تربط بين البحر الأبيض المتوسط والمحيط الأطلسي.",
+    "correctBoolean": false,
+    "source_ar": "الممرات المائية",
+    "id": 748
+  },
+  {
+    "type": "mcq",
+    "category": "الجغرافيا",
+    "difficulty": "medium",
+    "question_ar": "ما هي أكبر صحراء (حارة) في العالم؟",
+    "options_ar": [
+      "الصحراء الكبرى",
+      "صحراء غوبي",
+      "صحراء كالاناري",
+      "صحراء الربع الخالي"
+    ],
+    "correctIndex": 0,
+    "source_ar": "التضاريس",
+    "id": 749
+  },
+  {
+    "type": "tf",
+    "category": "اللغة العربية",
+    "difficulty": "medium",
+    "question_ar": "المثنى يرفع بالألف.",
+    "correctBoolean": true,
+    "source_ar": "الإعراب",
+    "id": 750
+  },
+  {
+    "type": "mcq",
+    "category": "اللغة العربية",
+    "difficulty": "hard",
+    "question_ar": "ما هو ضد كلمة 'الإيثار'؟",
+    "options_ar": [
+      "البخل",
+      "الأثرة",
+      "الكرم",
+      "الجبن"
+    ],
+    "correctIndex": 1,
+    "source_ar": "المترادفات والأضداد",
+    "id": 751
+  },
+  {
+    "type": "tf",
+    "category": "العلوم",
+    "difficulty": "easy",
+    "question_ar": "الرمز الكيميائي للماء هو H2O.",
+    "correctBoolean": true,
+    "source_ar": "الكيمياء",
+    "id": 752
+  },
+  {
+    "type": "mcq",
+    "category": "العلوم",
+    "difficulty": "hard",
+    "question_ar": "ما هو الكوكب الذي يسمى 'توأم الأرض'؟",
+    "options_ar": [
+      "المريخ",
+      "عطارد",
+      "الزهرة",
+      "زحل"
+    ],
+    "correctIndex": 2,
+    "source_ar": "الفلك",
+    "id": 753
+  },
+  {
+    "type": "tf",
+    "category": "الرياضيات",
+    "difficulty": "medium",
+    "question_ar": "القطر هو أطول وتر في الدائرة.",
+    "correctBoolean": true,
+    "source_ar": "الهندسة",
+    "id": 754
+  },
+  {
+    "type": "mcq",
+    "category": "الرياضيات",
+    "difficulty": "hard",
+    "question_ar": "ما هو الرقم الذي إذا ضربته في نفسه ثم أضفت إليه 5 أصبح الناتج 30؟",
+    "options_ar": [
+      "4",
+      "5",
+      "6",
+      "3"
+    ],
+    "correctIndex": 1,
+    "source_ar": "المعادلات",
+    "id": 755
+  },
+  {
+    "type": "tf",
+    "category": "معلومات إسلامية",
+    "difficulty": "medium",
+    "question_ar": "القرآن الكريم نزل منجماً (مفرقاً) على مدى 23 سنة.",
+    "correctBoolean": true,
+    "source_ar": "علوم القرآن",
+    "id": 756
+  },
+  {
+    "type": "mcq",
+    "category": "معلومات إسلامية",
+    "difficulty": "extreme",
+    "question_ar": "من هو النبي الذي آمن به جميع قومه؟",
+    "options_ar": [
+      "يونس عليه السلام",
+      "لوط عليه السلام",
+      "نوح عليه السلام",
+      "هود عليه السلام"
+    ],
+    "correctIndex": 0,
+    "source_ar": "قصص الأنبياء",
+    "id": 757
   }
 ]
