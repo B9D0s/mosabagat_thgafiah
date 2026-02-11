@@ -1,25 +1,31 @@
+# === بيئة وتثبيت ===
 node_modules/
-data/quiz.db
+package.json
+package-lock.json
 .env
+.env.*
+*.log
+seed/
+
+# === أنظمة التشغيل ===
 .DS_Store
 Thumbs.db
 nul
-*.log
+
+# === إعدادات IDE (لا تُرفع) ===
 .cursor/
 .claude/
-external/
+.vscode/
+*.local.json
 
-# ملفات PDF المصدرية
+# === ملفات مؤقتة ومصادر خارجية ===
+external/
+content/
 *.pdf
 
-# ملفات الـ API السيرفر (مانحتاجها - نستخدم CDN)
-seed/
-src/db/
-src/routes/
-src/validators/
-src/services/
-src/server.js
-render.yaml
-package-lock.json
-content/
+# === ملف إضافة الأسئلة (مؤقت — يُدمج ثم يُفرغ) ===
 data/questions_add_500_new.json
+
+# === قواعد بيانات محلية (إن وُجدت) ===
+data/quiz.db
+*.db

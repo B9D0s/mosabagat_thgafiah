@@ -30,6 +30,8 @@ Open any `.html` file directly in a web browser. No build step required.
 | million-game.html | لعبة الأسر | Family/team competition game with wallet and bank point systems |
 | mzadat.html | البرنامج التحفيزي | Student motivation system with auction mechanics and image uploads |
 | 7rof.html | مسابقة الألغام | Grid-based competitive game (Minesweeper-style) for groups |
+| matching-cards.html | مطابقة البطاقات | Card matching pairs game |
+| true-false-game.html | صح وخطأ | True/false quiz — loads questions from CDN or data/questions.json |
 | Schedule_Arrangment.html | منصة تخطيط الأسبوع | Weekly schedule planning with PDF/image export |
 
 ## Architecture Notes
