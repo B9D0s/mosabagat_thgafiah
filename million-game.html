@@ -3,80 +3,112 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>لعبة الأسر - من سيربح المليون</title>
     <style>
+        /* تيمبلت Color Hunt: #BFC6C4 #E8E2D8 #6F8F72 #F2A65A */
+        :root {
+            --palette-gray: #BFC6C4;
+            --palette-cream: #E8E2D8;
+            --palette-sage: #6F8F72;
+            --palette-orange: #F2A65A;
+            --palette-sage-dark: #5a7560;
+            --palette-orange-dark: #d99245;
+            --text-dark: #2d3436;
+            --text-muted: #636e72;
+        }
+
         body {
             margin: 0;
-            font-family: "Tahoma", Arial, sans-serif;
-            background: radial-gradient(circle at top, #243b6b 0, #060818 55%, #02030a 100%);
-            color: #f5f5f5;
+            font-family: "Tajawal", "Cairo", "Tahoma", Arial, sans-serif;
+            background: var(--palette-cream);
+            color: var(--text-dark);
+            min-height: 100vh;
+            line-height: 1.5;
         }
 
         header {
             text-align: center;
-            padding: 20px 10px;
-            background: linear-gradient(180deg, #1b2a4a, #101526);
-            border-bottom: 2px solid #f1c40f;
+            padding: 22px 16px;
+            background: linear-gradient(135deg, var(--palette-sage) 0%, var(--palette-sage-dark) 100%);
+            border-bottom: 3px solid var(--palette-orange);
             position: sticky;
             top: 0;
             z-index: 10;
+            box-shadow: 0 4px 16px rgba(111, 143, 114, 0.25);
         }
 
         #gameTitle {
-            font-size: 22px;
+            font-size: 24px;
             font-weight: bold;
-            color: #f1c40f;
+            color: #fff;
             outline: none;
             cursor: text;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.1);
         }
 
         header small {
             display: block;
-            font-size: 11px;
-            color: #bdc3c7;
-            margin-top: 4px;
+            font-size: 12px;
+            color: rgba(255,255,255,0.85);
+            margin-top: 6px;
         }
 
         .container {
             width: 95%;
             max-width: 1200px;
-            margin: 15px auto 40px auto;
+            margin: 20px auto 40px auto;
         }
 
         section {
-            background: rgba(10, 16, 36, 0.92);
-            border-radius: 12px;
-            padding: 15px;
-            margin-bottom: 15px;
-            border: 1px solid rgba(241, 196, 15, 0.4);
-            box-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
+            background: #fff;
+            border-radius: 14px;
+            padding: 18px 20px;
+            margin-bottom: 18px;
+            border: 1px solid var(--palette-gray);
+            box-shadow: 0 2px 12px rgba(191, 198, 196, 0.35);
+            transition: box-shadow 0.2s ease;
+        }
+
+        section:hover {
+            box-shadow: 0 4px 20px rgba(111, 143, 114, 0.12);
         }
 
         h2 {
             margin-top: 0;
-            color: #f1c40f;
+            margin-bottom: 12px;
+            color: var(--palette-sage);
             font-size: 18px;
+            font-weight: 700;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--palette-cream);
         }
 
         input,
         select,
         button {
-            padding: 7px 9px;
-            margin: 4px;
-            border-radius: 6px;
-            border: 1px solid #34495e;
+            padding: 9px 12px;
+            margin: 5px;
+            border-radius: 8px;
+            border: 1px solid var(--palette-gray);
             font-family: inherit;
             font-size: 14px;
         }
 
         input,
         select {
-            background: #0c1224;
-            color: #ecf0f1;
+            background: #fff;
+            color: var(--text-dark);
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: var(--palette-sage);
+            box-shadow: 0 0 0 2px rgba(111, 143, 114, 0.2);
         }
 
         input::placeholder {
-            color: #7f8c8d;
+            color: var(--text-muted);
         }
 
         button {
@@ -84,21 +116,25 @@
             border: none;
             color: #fff;
             font-weight: bold;
-            transition: transform 0.08s ease, box-shadow 0.08s ease, opacity 0.1s ease;
+            transition: transform 0.12s ease, box-shadow 0.2s ease, opacity 0.15s ease;
+        }
+
+        button:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         }
 
         button:active {
-            transform: scale(0.96);
-            box-shadow: 0 0 4px rgba(0, 0, 0, 0.6) inset;
-            opacity: 0.9;
+            transform: scale(0.98);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
         }
 
         .btn-main {
-            background: linear-gradient(135deg, #f1c40f, #f39c12);
+            background: linear-gradient(135deg, var(--palette-orange), var(--palette-orange-dark));
         }
 
         .btn-green {
-            background: linear-gradient(135deg, #2ecc71, #27ae60);
+            background: linear-gradient(135deg, var(--palette-sage), var(--palette-sage-dark));
         }
 
         .btn-red {
@@ -106,15 +142,16 @@
         }
 
         .btn-blue {
-            background: linear-gradient(135deg, #3498db, #2980b9);
+            background: linear-gradient(135deg, #6b8cae, #5a7a99);
         }
 
         .btn-purple {
-            background: linear-gradient(135deg, #9b59b6, #8e44ad);
+            background: linear-gradient(135deg, #8e7ba6, #7a6a8f);
         }
 
         .btn-dark {
-            background: linear-gradient(135deg, #34495e, #2c3e50);
+            background: linear-gradient(135deg, var(--palette-gray), #9ca5a2);
+            color: var(--text-dark);
         }
 
         .flex-row {
@@ -135,110 +172,124 @@
         }
 
         .family-card {
-            background: radial-gradient(circle at top, #1e2a52 0, #050815 80%);
-            border-radius: 12px;
-            padding: 10px;
+            background: #fff;
+            border-radius: 14px;
+            padding: 14px;
             width: 220px;
-            border: 1px solid rgba(241, 196, 15, 0.45);
-            box-shadow: 0 0 8px rgba(0, 0, 0, 0.9);
+            border: 2px solid var(--palette-gray);
+            box-shadow: 0 2px 12px rgba(191, 198, 196, 0.4);
             position: relative;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .family-card:hover {
+            border-color: var(--palette-sage);
+            box-shadow: 0 4px 16px rgba(111, 143, 114, 0.2);
         }
 
         .family-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 6px;
+            margin-bottom: 8px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--palette-cream);
         }
 
         .family-name {
             font-weight: bold;
             font-size: 16px;
-            color: #f1c40f;
+            color: var(--palette-sage);
         }
 
         .family-rank {
             font-size: 11px;
-            color: #bdc3c7;
+            color: var(--text-muted);
+            background: var(--palette-cream);
+            padding: 2px 8px;
+            border-radius: 20px;
         }
 
         .points-row {
             font-size: 13px;
-            margin: 2px 0;
+            margin: 4px 0;
         }
 
         .label {
-            color: #bdc3c7;
+            color: var(--text-muted);
         }
 
         .value {
             font-weight: bold;
-            color: #ecf0f1;
+            color: var(--text-dark);
         }
 
         .family-buttons {
-            margin-top: 6px;
+            margin-top: 10px;
             display: flex;
             flex-wrap: wrap;
-            gap: 4px;
+            gap: 6px;
             justify-content: center;
         }
 
         .family-buttons button {
             font-size: 11px;
-            padding: 4px 6px;
+            padding: 5px 8px;
         }
 
         .leader {
-            border-color: #2ecc71;
-            box-shadow: 0 0 14px rgba(46, 204, 113, 0.7);
+            border-color: var(--palette-sage);
+            box-shadow: 0 4px 20px rgba(111, 143, 114, 0.3);
         }
 
         .history-box {
             max-height: 220px;
             overflow-y: auto;
-            background: rgba(0, 0, 0, 0.4);
-            padding: 8px;
-            border-radius: 8px;
+            background: var(--palette-cream);
+            padding: 10px;
+            border-radius: 10px;
             font-size: 13px;
+            border: 1px solid var(--palette-gray);
         }
 
         .history-entry {
-            margin-bottom: 4px;
-            border-bottom: 1px dashed rgba(255, 255, 255, 0.08);
-            padding-bottom: 3px;
+            margin-bottom: 6px;
+            border-bottom: 1px dashed var(--palette-gray);
+            padding-bottom: 5px;
         }
 
         .history-entry span.time {
-            color: #7f8c8d;
+            color: var(--text-muted);
             font-size: 11px;
             margin-right: 4px;
         }
 
         .top-bar {
             font-size: 14px;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
         }
 
         .top-pill {
-            background: rgba(0, 0, 0, 0.4);
+            background: var(--palette-cream);
             border-radius: 999px;
-            padding: 5px 10px;
-            border: 1px solid rgba(241, 196, 15, 0.4);
+            padding: 6px 12px;
+            border: 1px solid var(--palette-gray);
+            color: var(--text-dark);
         }
 
         /* أوفرلاي الميني قيمز */
         .overlay {
             position: fixed;
             inset: 0;
-            background: rgba(0, 0, 0, 0.9);
+            background: rgba(45, 52, 54, 0.75);
             display: flex;
             align-items: center;
             justify-content: center;
             z-index: 50;
+            backdrop-filter: blur(4px);
         }
 
         .hidden {
@@ -246,14 +297,14 @@
         }
 
         .mini-panel {
-            background: #0b1024;
-            border-radius: 14px;
-            padding: 15px;
+            background: #fff;
+            border-radius: 16px;
+            padding: 20px;
             width: 95%;
             max-width: 800px;
             max-height: 90vh;
-            border: 1px solid #f1c40f;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.85);
+            border: 2px solid var(--palette-sage);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
             display: flex;
             flex-direction: column;
         }
@@ -262,21 +313,26 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 8px;
+            margin-bottom: 12px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--palette-cream);
         }
 
         .mini-title {
             font-size: 18px;
-            color: #f1c40f;
+            color: var(--palette-sage);
+            font-weight: 700;
         }
 
         .mini-body {
             flex: 1;
             overflow-y: auto;
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 10px;
-            padding: 10px;
+            background: var(--palette-cream);
+            border-radius: 12px;
+            padding: 14px;
             font-size: 14px;
+            color: var(--text-dark);
+            border: 1px solid var(--palette-gray);
         }
 
         /* تنسيقات لبعض الألعاب */
@@ -291,24 +347,25 @@
         .memory-card {
             width: 60px;
             height: 60px;
-            background: #1e2a52;
-            border-radius: 8px;
+            background: var(--palette-gray);
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 26px;
             cursor: pointer;
             user-select: none;
+            border: 2px solid var(--palette-cream);
         }
 
         .memory-card.flipped {
-            background: #f1c40f;
-            color: #000;
+            background: var(--palette-orange);
+            color: #fff;
         }
 
         .memory-card.matched {
-            background: #2ecc71;
-            color: #000;
+            background: var(--palette-sage);
+            color: #fff;
             cursor: default;
         }
 
@@ -320,9 +377,15 @@
         .reaction-area {
             margin-top: 15px;
             padding: 25px;
-            border-radius: 10px;
-            background: #1e2a52;
+            border-radius: 12px;
+            background: var(--palette-sage);
+            color: #fff;
             cursor: pointer;
+            transition: opacity 0.2s;
+        }
+
+        .reaction-area:hover {
+            opacity: 0.9;
         }
 
         .mole-grid {
@@ -336,18 +399,20 @@
         .mole-cell {
             width: 70px;
             height: 70px;
-            background: #1e2a52;
-            border-radius: 8px;
+            background: var(--palette-gray);
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
             user-select: none;
             font-size: 26px;
+            border: 2px solid var(--palette-cream);
         }
 
         .mole-cell.mole {
-            background: #27ae60;
+            background: var(--palette-sage);
+            color: #fff;
         }
 
         .color-grid {
@@ -361,8 +426,9 @@
         .color-cell {
             width: 40px;
             height: 40px;
-            border-radius: 6px;
+            border-radius: 8px;
             cursor: pointer;
+            border: 2px solid var(--palette-gray);
         }
 
         .cup-row {
@@ -375,9 +441,10 @@
         .cup {
             width: 60px;
             height: 70px;
-            border-radius: 6px;
-            background: #1e2a52;
-            border: 2px solid #f1c40f;
+            border-radius: 10px;
+            background: var(--palette-cream);
+            border: 2px solid var(--palette-sage);
+            color: var(--palette-sage);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -390,11 +457,17 @@
             width: 100%;
             min-height: 80px;
             margin-top: 8px;
-            background: #050815;
-            color: #ecf0f1;
-            border-radius: 8px;
-            padding: 8px;
-            border: 1px solid #34495e;
+            background: #fff;
+            color: var(--text-dark);
+            border-radius: 10px;
+            padding: 10px;
+            border: 1px solid var(--palette-gray);
+        }
+
+        .typing-box textarea:focus {
+            outline: none;
+            border-color: var(--palette-sage);
+            box-shadow: 0 0 0 2px rgba(111, 143, 114, 0.2);
         }
 
         @media (max-width: 600px) {
@@ -405,16 +478,17 @@
 
         .credit-footer {
             text-align: center;
-            padding: 14px 12px;
-            margin-top: 20px;
+            padding: 18px 12px;
+            margin-top: 24px;
             display: flex;
             flex-direction: column;
             gap: 4px;
             font-size: 12px;
-            color: #7f8c8d;
+            color: var(--palette-sage);
+            opacity: 0.9;
         }
         .credit-footer .credit-by { font-weight: 600; }
-        .credit-footer .credit-rights { font-size: 11px; opacity: 0.9; }
+        .credit-footer .credit-rights { font-size: 11px; color: var(--text-muted); }
     </style>
 </head>
 
@@ -493,7 +567,7 @@
                 <button class="btn-main" onclick="startSelectedMiniGame()">تشغيل الميني قيم المختارة</button>
                 <button class="btn-blue" onclick="startRandomMiniGame()">ميني قيم عشوائية 🎮</button>
             </div>
-            <small style="color:#bdc3c7;">
+            <small style="color:var(--text-muted, #636e72);">
                 بعد انتهاء الميني قيم، اختر الأسرة الفائزة من الكروت بالأعلى وعدّل نقاطها يدويًا.
             </small>
         </section>
@@ -601,7 +675,7 @@
             grid.innerHTML = "";
 
             if (families.length === 0) {
-                grid.innerHTML = "<p style='text-align:center;color:#bdc3c7;'>لا توجد أسر بعد. أضف أسرة من الأعلى.</p>";
+                grid.innerHTML = "<p style='text-align:center;color:#636e72;'>لا توجد أسر بعد. أضف أسرة من الأعلى.</p>";
                 return;
             }
 
@@ -909,6 +983,24 @@
         let currentGameId = null;
         let mazeCurrentIndex = -1;
 
+        /** قائمة مؤقتات الميني قيم — تُمسح عند إغلاق النافذة لوقف العدّ */
+        let miniGameTimerIds = [];
+        function registerMiniGameTimer(id) {
+            if (id != null) miniGameTimerIds.push(id);
+        }
+        function clearAllMiniGameTimers() {
+            miniGameTimerIds.forEach(function(id) {
+                try { clearTimeout(id); clearInterval(id); } catch (e) {}
+            });
+            miniGameTimerIds.length = 0;
+        }
+
+        /** لا نعرض نتيجة انتهاء الوقت إذا المستخدم أغلق النافذة */
+        function isMiniGameOverlayOpen() {
+            var el = document.getElementById('miniGameOverlay');
+            return el && !el.classList.contains('hidden');
+        }
+
         function openMiniGame(id) {
             const overlay = document.getElementById('miniGameOverlay');
             const titleEl = document.getElementById('miniGameTitle');
@@ -975,6 +1067,7 @@
         }
 
         function closeMiniGame() {
+            clearAllMiniGameTimers();
             const overlay = document.getElementById('miniGameOverlay');
             overlay.classList.add('hidden');
         }
@@ -1090,7 +1183,7 @@
                 if (timeoutId) clearTimeout(timeoutId);
                 waiting = true;
                 ready = false;
-                area.style.background = "#1e2a52";
+                area.style.background = "var(--palette-sage, #6F8F72)";
                 statusEl.textContent = "الحالة: انتظر التغيّر...";
                 const delay = 1000 + Math.random() * 3000;
                 timeoutId = setTimeout(() => {
@@ -1114,7 +1207,7 @@
                     const diff = Math.round(end - startTime);
                     statusEl.textContent = `زمن الاستجابة: ${diff} مللي ثانية.`;
                     ready = false;
-                    area.style.background = "#1e2a52";
+                    area.style.background = "var(--palette-sage, #6F8F72)";
                     alert("سجّل الزمن للأسرة، وقارن بينها لاختيار الأسرع.");
                 }
             });
@@ -1199,9 +1292,12 @@
                         clearInterval(intervalId);
                         clearInterval(timerId);
                         setMole(-1);
+                        if (!isMiniGameOverlayOpen()) return;
                         alert(`انتهى الوقت! النقاط: ${score}. اختر الأسرة الفائزة حسب أعلى نتيجة.`);
                     }
                 }, 1000);
+                registerMiniGameTimer(intervalId);
+                registerMiniGameTimer(timerId);
             });
 
             container.appendChild(info);
@@ -1279,9 +1375,11 @@
                     if (timeLeft <= 0) {
                         active = false;
                         clearInterval(timerId);
+                        if (!isMiniGameOverlayOpen()) return;
                         alert(`انتهى الوقت! عدد النقرات: ${clicks}. سجّل النتيجة للأسرة.`);
                     }
                 }, 1000);
+                registerMiniGameTimer(timerId);
             });
 
             clickBtn.addEventListener('click', () => {
@@ -1360,9 +1458,11 @@
                         running = false;
                         clickable = false;
                         clearInterval(timerId);
+                        if (!isMiniGameOverlayOpen()) return;
                         alert(`انتهى الوقت! النقاط: ${score}. سجّل النتيجة للأسرة.`);
                     }
                 }, 1000);
+                registerMiniGameTimer(timerId);
             });
 
             container.appendChild(box);
@@ -1384,7 +1484,7 @@
             box.innerHTML = `
             <div>اختر ممثلًا من كل أسرة. من يكتب الجملة بأسرع وقت وبأقل أخطاء يفوز.</div>
             <div style="margin-top:6px;">النص المطلوب كتابته:</div>
-            <div style="margin-top:4px;padding:6px;border-radius:6px;background:#050815;border:1px solid #34495e;">
+            <div style="margin-top:4px;padding:8px;border-radius:8px;background:#E8E2D8;border:1px solid #BFC6C4;">
                 ${targetText}
             </div>
             <button class="btn-main" id="typingStart">بدء القياس</button>
@@ -2469,6 +2569,7 @@
                 if (timerId) clearInterval(timerId);
                 answerInput.disabled = true;
                 submitBtn.disabled = true;
+                if (!isMiniGameOverlayOpen()) return;
                 alert(`انتهى الوقت! النقاط: ${score}. سجّل النتيجة للأسرة.`);
             }
 
@@ -2505,6 +2606,7 @@
                         endGame();
                     }
                 }, 1000);
+                registerMiniGameTimer(timerId);
             });
 
             container.appendChild(box);
@@ -2596,9 +2698,12 @@
                         running = false;
                         clearInterval(gameLoop);
                         clearInterval(timerId);
+                        if (!isMiniGameOverlayOpen()) return;
                         alert(`انتهى الوقت! النقاط: ${score}. سجّل النتيجة للأسرة.`);
                     }
                 }, 1000);
+                registerMiniGameTimer(gameLoop);
+                registerMiniGameTimer(timerId);
             });
 
             container.appendChild(box);
@@ -2674,6 +2779,7 @@
                 running = false;
                 if (gameLoop) clearInterval(gameLoop);
                 if (timerId) clearInterval(timerId);
+                if (!isMiniGameOverlayOpen()) return;
                 alert(`انتهى الوقت! النقاط: ${score}. سجّل النتيجة للأسرة.`);
             }
 
@@ -2707,6 +2813,8 @@
                         endGame();
                     }
                 }, 1000);
+                registerMiniGameTimer(gameLoop);
+                registerMiniGameTimer(timerId);
             });
 
             container.appendChild(box);
@@ -2926,6 +3034,7 @@
             function endGame() {
                 running = false;
                 if (timerId) clearInterval(timerId);
+                if (!isMiniGameOverlayOpen()) return;
                 alert(`انتهى الوقت! النقاط: ${score}. سجّل النتيجة للأسرة.`);
             }
 
@@ -2944,6 +3053,7 @@
                         endGame();
                     }
                 }, 1000);
+                registerMiniGameTimer(timerId);
             });
 
             container.appendChild(box);
@@ -3030,6 +3140,7 @@
                 if (timerId) clearInterval(timerId);
                 answerInput.disabled = true;
                 submitBtn.disabled = true;
+                if (!isMiniGameOverlayOpen()) return;
                 alert(`انتهى الوقت! النقاط: ${score}. سجّل النتيجة للأسرة.`);
             }
             
@@ -3070,6 +3181,7 @@
                         endGame();
                     }
                 }, 1000);
+                registerMiniGameTimer(timerId);
             });
             
             container.appendChild(box);
