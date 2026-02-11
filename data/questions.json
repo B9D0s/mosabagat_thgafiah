@@ -11,7 +11,8 @@
       "المريسيع"
     ],
     "correctIndex": 3,
-    "source_ar": "مسابقات أهل القرآن - ص 6"
+    "source_ar": "مسابقات أهل القرآن - ص 6",
+    "id": 1
   },
   {
     "type": "mcq",
@@ -25,7 +26,8 @@
       "الواقعة"
     ],
     "correctIndex": 1,
-    "source_ar": "مسابقات أهل القرآن - ص 6"
+    "source_ar": "مسابقات أهل القرآن - ص 6",
+    "id": 2
   },
   {
     "type": "mcq",
@@ -39,7 +41,8 @@
       "الوالدان"
     ],
     "correctIndex": 0,
-    "source_ar": "مسابقات أهل القرآن - ص 6"
+    "source_ar": "مسابقات أهل القرآن - ص 6",
+    "id": 3
   },
   {
     "type": "mcq",
@@ -53,7 +56,8 @@
       "10"
     ],
     "correctIndex": 0,
-    "source_ar": "مسابقات أهل القرآن - ص 6"
+    "source_ar": "مسابقات أهل القرآن - ص 6",
+    "id": 4
   },
   {
     "type": "mcq",
@@ -67,7 +71,8 @@
       "جميع ما تقدم"
     ],
     "correctIndex": 3,
-    "source_ar": "مسابقات أهل القرآن - ص 6"
+    "source_ar": "مسابقات أهل القرآن - ص 6",
+    "id": 5
   },
   {
     "type": "mcq",
@@ -81,7 +86,8 @@
       "حفصة بنت عمر"
     ],
     "correctIndex": 0,
-    "source_ar": "مسابقات أهل القرآن - ص 6"
+    "source_ar": "مسابقات أهل القرآن - ص 6",
+    "id": 6
   },
   {
     "type": "mcq",
@@ -95,7 +101,8 @@
       "ستة أشهر"
     ],
     "correctIndex": 1,
-    "source_ar": "مسابقات أهل القرآن - ص 6"
+    "source_ar": "مسابقات أهل القرآن - ص 6",
+    "id": 7
   },
   {
     "type": "tf",
@@ -103,7 +110,8 @@
     "difficulty": "easy",
     "question_ar": "توفي الرسول صلى الله عليه وسلم يوم الاثنين ودفن يوم الثلاثاء.",
     "correctBoolean": false,
-    "source_ar": "مسابقات أهل القرآن - ص 7"
+    "source_ar": "مسابقات أهل القرآن - ص 7",
+    "id": 8
   },
   {
     "type": "mcq",
@@ -117,7 +125,8 @@
       "الإمام النووي"
     ],
     "correctIndex": 2,
-    "source_ar": "مسابقات أهل القرآن - ص 7"
+    "source_ar": "مسابقات أهل القرآن - ص 7",
+    "id": 9
   },
   {
     "type": "mcq",
@@ -131,7 +140,8 @@
       "الإخلاص"
     ],
     "correctIndex": 0,
-    "source_ar": "مسابقات أهل القرآن - ص 7"
+    "source_ar": "مسابقات أهل القرآن - ص 7",
+    "id": 10
   },
   {
     "type": "mcq",
@@ -145,7 +155,8 @@
       "التحريم"
     ],
     "correctIndex": 1,
-    "source_ar": "مسابقات أهل القرآن - ص 7"
+    "source_ar": "مسابقات أهل القرآن - ص 7",
+    "id": 11
   },
   {
     "type": "mcq",
@@ -159,7 +170,8 @@
       "علامة حمراء"
     ],
     "correctIndex": 0,
-    "source_ar": "مسابقات أهل القرآن - ص 7"
+    "source_ar": "مسابقات أهل القرآن - ص 7",
+    "id": 12
   },
   {
     "type": "mcq",
@@ -173,7 +185,8 @@
       "الشافعي"
     ],
     "correctIndex": 2,
-    "source_ar": "مسابقات أهل القرآن - ص 8"
+    "source_ar": "مسابقات أهل القرآن - ص 8",
+    "id": 13
   },
   {
     "type": "mcq",
@@ -187,7 +200,8 @@
       "موسى عليه السلام"
     ],
     "correctIndex": 2,
-    "source_ar": "مسابقات أهل القرآن - ص 8"
+    "source_ar": "مسابقات أهل القرآن - ص 8",
+    "id": 14
   },
   {
     "type": "mcq",
@@ -201,7 +215,8 @@
       "الإمام النووي"
     ],
     "correctIndex": 3,
-    "source_ar": "مسابقات أهل القرآن - ص 8"
+    "source_ar": "مسابقات أهل القرآن - ص 8",
+    "id": 15
   },
   {
     "type": "mcq",
@@ -215,7 +230,8 @@
       "لا أدري"
     ],
     "correctIndex": 2,
-    "source_ar": "مسابقات أهل القرآن - ص 8"
+    "source_ar": "مسابقات أهل القرآن - ص 8",
+    "id": 16
   },
   {
     "type": "mcq",
@@ -229,7 +245,8 @@
       "جميع ما سبق"
     ],
     "correctIndex": 3,
-    "source_ar": "مسابقات أهل القرآن - ص 8"
+    "source_ar": "مسابقات أهل القرآن - ص 8",
+    "id": 17
   },
   {
     "type": "mcq",
@@ -243,7 +260,8 @@
       "النساء"
     ],
     "correctIndex": 1,
-    "source_ar": "مسابقات أهل القرآن - ص 8"
+    "source_ar": "مسابقات أهل القرآن - ص 8",
+    "id": 18
   },
   {
     "type": "mcq",
@@ -257,7 +275,8 @@
       "الحج"
     ],
     "correctIndex": 0,
-    "source_ar": "مسابقات أهل القرآن - ص 8"
+    "source_ar": "مسابقات أهل القرآن - ص 8",
+    "id": 19
   },
   {
     "type": "mcq",
@@ -271,7 +290,8 @@
       "معاوية بن أبي سفيان"
     ],
     "correctIndex": 0,
-    "source_ar": "مسابقات أهل القرآن - ص 9"
+    "source_ar": "مسابقات أهل القرآن - ص 9",
+    "id": 20
   },
   {
     "type": "mcq",
@@ -285,7 +305,8 @@
       "العيون"
     ],
     "correctIndex": 1,
-    "source_ar": "مسابقات أهل القرآن - ص 9"
+    "source_ar": "مسابقات أهل القرآن - ص 9",
+    "id": 21
   },
   {
     "type": "mcq",
@@ -299,7 +320,8 @@
       "75 مرة"
     ],
     "correctIndex": 2,
-    "source_ar": "مسابقات أهل القرآن - ص 9"
+    "source_ar": "مسابقات أهل القرآن - ص 9",
+    "id": 22
   },
   {
     "type": "mcq",
@@ -313,7 +335,8 @@
       "حنين"
     ],
     "correctIndex": 2,
-    "source_ar": "مسابقات أهل القرآن - ص 9"
+    "source_ar": "مسابقات أهل القرآن - ص 9",
+    "id": 23
   },
   {
     "type": "mcq",
@@ -327,7 +350,8 @@
       "السنة 7 هـ"
     ],
     "correctIndex": 3,
-    "source_ar": "مسابقات أهل القرآن - ص 9"
+    "source_ar": "مسابقات أهل القرآن - ص 9",
+    "id": 24
   },
   {
     "type": "mcq",
@@ -341,7 +365,8 @@
       "ابن كثير"
     ],
     "correctIndex": 2,
-    "source_ar": "مسابقات أهل القرآن - ص 9"
+    "source_ar": "مسابقات أهل القرآن - ص 9",
+    "id": 25
   },
   {
     "type": "mcq",
@@ -355,7 +380,8 @@
       "رجل تصدق بصدقة فأخفاها"
     ],
     "correctIndex": 0,
-    "source_ar": "مسابقات أهل القرآن - ص 9"
+    "source_ar": "مسابقات أهل القرآن - ص 9",
+    "id": 26
   },
   {
     "type": "mcq",
@@ -369,7 +395,8 @@
       "114"
     ],
     "correctIndex": 0,
-    "source_ar": "مسابقات أهل القرآن - ص 10"
+    "source_ar": "مسابقات أهل القرآن - ص 10",
+    "id": 27
   },
   {
     "type": "mcq",
@@ -383,7 +410,8 @@
       "3"
     ],
     "correctIndex": 1,
-    "source_ar": "مسابقات أهل القرآن - ص 10"
+    "source_ar": "مسابقات أهل القرآن - ص 10",
+    "id": 28
   },
   {
     "type": "mcq",
@@ -397,7 +425,8 @@
       "أم سلمة"
     ],
     "correctIndex": 0,
-    "source_ar": "مسابقات أهل القرآن - ص 10"
+    "source_ar": "مسابقات أهل القرآن - ص 10",
+    "id": 29
   },
   {
     "type": "mcq",
@@ -411,7 +440,8 @@
       "يختلف حسب العمر"
     ],
     "correctIndex": 0,
-    "source_ar": "مسابقات أهل القرآن - ص 11"
+    "source_ar": "مسابقات أهل القرآن - ص 11",
+    "id": 30
   },
   {
     "type": "mcq",
@@ -425,7 +455,8 @@
       "الدخان"
     ],
     "correctIndex": 1,
-    "source_ar": "مسابقات أهل القرآن - ص 11"
+    "source_ar": "مسابقات أهل القرآن - ص 11",
+    "id": 31
   },
   {
     "type": "mcq",
@@ -439,7 +470,8 @@
       "7 مرات"
     ],
     "correctIndex": 1,
-    "source_ar": "مسابقات أهل القرآن - ص 11"
+    "source_ar": "مسابقات أهل القرآن - ص 11",
+    "id": 32
   },
   {
     "type": "mcq",
@@ -453,7 +485,8 @@
       "نسيبة بنت كعب"
     ],
     "correctIndex": 2,
-    "source_ar": "مسابقات أهل القرآن - ص 10"
+    "source_ar": "مسابقات أهل القرآن - ص 10",
+    "id": 33
   },
   {
     "type": "mcq",
@@ -467,7 +500,8 @@
       "التحفة"
     ],
     "correctIndex": 2,
-    "source_ar": "مسابقات أهل القرآن - ص 10"
+    "source_ar": "مسابقات أهل القرآن - ص 10",
+    "id": 34
   },
   {
     "type": "mcq",
@@ -481,7 +515,8 @@
       "الوكيرة"
     ],
     "correctIndex": 3,
-    "source_ar": "مسابقات أهل القرآن - ص 12"
+    "source_ar": "مسابقات أهل القرآن - ص 12",
+    "id": 35
   },
   {
     "type": "mcq",
@@ -495,7 +530,8 @@
       "الليمون"
     ],
     "correctIndex": 1,
-    "source_ar": "مسابقات أهل القرآن - ص 12"
+    "source_ar": "مسابقات أهل القرآن - ص 12",
+    "id": 36
   },
   {
     "type": "mcq",
@@ -509,7 +545,8 @@
       "5"
     ],
     "correctIndex": 1,
-    "source_ar": "مسابقات أهل القرآن - ص 12"
+    "source_ar": "مسابقات أهل القرآن - ص 12",
+    "id": 37
   },
   {
     "type": "tf",
@@ -517,7 +554,8 @@
     "difficulty": "easy",
     "question_ar": "أبو بكر الصديق رضي الله عنه هو أول الخلفاء الراشدين.",
     "correctBoolean": true,
-    "source_ar": "معلومة عامة"
+    "source_ar": "معلومة عامة",
+    "id": 38
   },
   {
     "type": "tf",
@@ -525,7 +563,8 @@
     "difficulty": "easy",
     "question_ar": "سورة البقرة هي أطول سورة في القرآن الكريم.",
     "correctBoolean": true,
-    "source_ar": "معلومة عامة"
+    "source_ar": "معلومة عامة",
+    "id": 39
   },
   {
     "type": "tf",
@@ -533,7 +572,8 @@
     "difficulty": "easy",
     "question_ar": "ولد النبي صلى الله عليه وسلم في المدينة المنورة.",
     "correctBoolean": false,
-    "source_ar": "معلومة عامة"
+    "source_ar": "معلومة عامة",
+    "id": 40
   },
   {
     "type": "tf",
@@ -541,7 +581,8 @@
     "difficulty": "medium",
     "question_ar": "عدد سور القرآن الكريم 114 سورة.",
     "correctBoolean": true,
-    "source_ar": "معلومة عامة"
+    "source_ar": "معلومة عامة",
+    "id": 41
   },
   {
     "type": "tf",
@@ -549,7 +590,8 @@
     "difficulty": "medium",
     "question_ar": "هاجر النبي صلى الله عليه وسلم من مكة إلى المدينة مع عمر بن الخطاب.",
     "correctBoolean": false,
-    "source_ar": "معلومة عامة - هاجر مع أبي بكر الصديق"
+    "source_ar": "معلومة عامة - هاجر مع أبي بكر الصديق",
+    "id": 42
   },
   {
     "type": "tf",
@@ -557,7 +599,8 @@
     "difficulty": "easy",
     "question_ar": "عدد ركعات صلاة المغرب ثلاث ركعات.",
     "correctBoolean": true,
-    "source_ar": "معلومة عامة"
+    "source_ar": "معلومة عامة",
+    "id": 43
   },
   {
     "type": "tf",
@@ -565,7 +608,8 @@
     "difficulty": "easy",
     "question_ar": "الزكاة ركن من أركان الإسلام.",
     "correctBoolean": true,
-    "source_ar": "معلومة عامة"
+    "source_ar": "معلومة عامة",
+    "id": 44
   },
   {
     "type": "tf",
@@ -573,7 +617,8 @@
     "difficulty": "medium",
     "question_ar": "غزوة بدر وقعت في السنة الثالثة للهجرة.",
     "correctBoolean": false,
-    "source_ar": "معلومة عامة - وقعت في السنة الثانية"
+    "source_ar": "معلومة عامة - وقعت في السنة الثانية",
+    "id": 45
   },
   {
     "type": "tf",
@@ -581,7 +626,8 @@
     "difficulty": "medium",
     "question_ar": "سورة يس تُسمى قلب القرآن.",
     "correctBoolean": true,
-    "source_ar": "معلومة عامة"
+    "source_ar": "معلومة عامة",
+    "id": 46
   },
   {
     "type": "tf",
@@ -589,7 +635,8 @@
     "difficulty": "hard",
     "question_ar": "أول من أسلم من الرجال هو علي بن أبي طالب.",
     "correctBoolean": false,
-    "source_ar": "معلومة عامة - أول من أسلم من الرجال أبو بكر الصديق"
+    "source_ar": "معلومة عامة - أول من أسلم من الرجال أبو بكر الصديق",
+    "id": 47
   },
   {
     "type": "tf",
@@ -597,7 +644,8 @@
     "difficulty": "medium",
     "question_ar": "عمر بن الخطاب رضي الله عنه لقب بالفاروق.",
     "correctBoolean": true,
-    "source_ar": "معلومة عامة"
+    "source_ar": "معلومة عامة",
+    "id": 48
   },
   {
     "type": "tf",
@@ -605,7 +653,8 @@
     "difficulty": "hard",
     "question_ar": "أول سورة نزلت كاملة هي سورة الفاتحة.",
     "correctBoolean": true,
-    "source_ar": "معلومة عامة"
+    "source_ar": "معلومة عامة",
+    "id": 49
   },
   {
     "type": "tf",
@@ -613,7 +662,8 @@
     "difficulty": "medium",
     "question_ar": "صيام رمضان فُرض في السنة الأولى من الهجرة.",
     "correctBoolean": false,
-    "source_ar": "معلومة عامة - فُرض في السنة الثانية"
+    "source_ar": "معلومة عامة - فُرض في السنة الثانية",
+    "id": 50
   },
   {
     "type": "tf",
@@ -621,7 +671,8 @@
     "difficulty": "easy",
     "question_ar": "الرياض هي عاصمة المملكة العربية السعودية.",
     "correctBoolean": true,
-    "source_ar": "معلومة عامة"
+    "source_ar": "معلومة عامة",
+    "id": 51
   },
   {
     "type": "tf",
@@ -629,7 +680,8 @@
     "difficulty": "easy",
     "question_ar": "اللغة العربية تُكتب من اليسار إلى اليمين.",
     "correctBoolean": false,
-    "source_ar": "معلومة عامة"
+    "source_ar": "معلومة عامة",
+    "id": 52
   },
   {
     "type": "mcq",
@@ -643,7 +695,8 @@
       "علي بن أبي طالب"
     ],
     "correctIndex": 2,
-    "source_ar": "معلومة عامة"
+    "source_ar": "معلومة عامة",
+    "id": 53
   },
   {
     "type": "mcq",
@@ -657,7 +710,8 @@
       "الناس"
     ],
     "correctIndex": 2,
-    "source_ar": "معلومة عامة"
+    "source_ar": "معلومة عامة",
+    "id": 54
   },
   {
     "type": "mcq",
@@ -671,7 +725,8 @@
       "هالة بنت أبي طالب"
     ],
     "correctIndex": 1,
-    "source_ar": "معلومة عامة"
+    "source_ar": "معلومة عامة",
+    "id": 55
   },
   {
     "type": "mcq",
@@ -685,7 +740,8 @@
       "7"
     ],
     "correctIndex": 1,
-    "source_ar": "معلومة عامة"
+    "source_ar": "معلومة عامة",
+    "id": 56
   },
   {
     "type": "mcq",
@@ -699,7 +755,8 @@
       "يس"
     ],
     "correctIndex": 1,
-    "source_ar": "معلومة عامة"
+    "source_ar": "معلومة عامة",
+    "id": 57
   },
   {
     "type": "mcq",
@@ -713,7 +770,8 @@
       "الزبير بن العوام"
     ],
     "correctIndex": 1,
-    "source_ar": "معلومة عامة"
+    "source_ar": "معلومة عامة",
+    "id": 58
   },
   {
     "type": "mcq",
@@ -727,7 +785,8 @@
       "أنس بن مالك"
     ],
     "correctIndex": 1,
-    "source_ar": "معلومة عامة"
+    "source_ar": "معلومة عامة",
+    "id": 59
   },
   {
     "type": "mcq",
@@ -741,7 +800,8 @@
       "السنة الرابعة"
     ],
     "correctIndex": 1,
-    "source_ar": "معلومة عامة"
+    "source_ar": "معلومة عامة",
+    "id": 60
   },
   {
     "type": "mcq",
@@ -755,7 +815,8 @@
       "خالد بن الوليد"
     ],
     "correctIndex": 1,
-    "source_ar": "معلومة عامة"
+    "source_ar": "معلومة عامة",
+    "id": 61
   },
   {
     "type": "mcq",
@@ -769,7 +830,8 @@
       "محمد بن القاسم"
     ],
     "correctIndex": 2,
-    "source_ar": "معلومة عامة"
+    "source_ar": "معلومة عامة",
+    "id": 62
   },
   {
     "type": "mcq",
@@ -783,7 +845,8 @@
       "50 مثقالاً (212 جرام)"
     ],
     "correctIndex": 0,
-    "source_ar": "معلومة فقهية"
+    "source_ar": "معلومة فقهية",
+    "id": 63
   },
   {
     "type": "mcq",
@@ -797,7 +860,8 @@
       "40 جزءاً"
     ],
     "correctIndex": 2,
-    "source_ar": "معلومة عامة"
+    "source_ar": "معلومة عامة",
+    "id": 64
   },
   {
     "type": "mcq",
@@ -811,7 +875,8 @@
       "الملك"
     ],
     "correctIndex": 2,
-    "source_ar": "حديث شريف"
+    "source_ar": "حديث شريف",
+    "id": 65
   },
   {
     "type": "mcq",
@@ -825,7 +890,8 @@
       "لا يؤمن أحدكم"
     ],
     "correctIndex": 0,
-    "source_ar": "صحيح البخاري"
+    "source_ar": "صحيح البخاري",
+    "id": 66
   },
   {
     "type": "mcq",
@@ -839,7 +905,8 @@
       "حوالي 12000"
     ],
     "correctIndex": 1,
-    "source_ar": "معلومة عامة"
+    "source_ar": "معلومة عامة",
+    "id": 67
   },
   {
     "type": "mcq",
@@ -853,7 +920,8 @@
       "عثمان بن عفان"
     ],
     "correctIndex": 1,
-    "source_ar": "معلومة تاريخية"
+    "source_ar": "معلومة تاريخية",
+    "id": 68
   },
   {
     "type": "mcq",
@@ -867,7 +935,8 @@
       "المحيط المتجمد"
     ],
     "correctIndex": 1,
-    "source_ar": "معلومة عامة"
+    "source_ar": "معلومة عامة",
+    "id": 69
   },
   {
     "type": "mcq",
@@ -881,7 +950,8 @@
       "نهر اليانغتسي"
     ],
     "correctIndex": 1,
-    "source_ar": "معلومة عامة"
+    "source_ar": "معلومة عامة",
+    "id": 70
   },
   {
     "type": "mcq",
@@ -895,7 +965,8 @@
       "300 عظمة"
     ],
     "correctIndex": 1,
-    "source_ar": "معلومة علمية"
+    "source_ar": "معلومة علمية",
+    "id": 71
   },
   {
     "type": "mcq",
@@ -909,7 +980,8 @@
       "أمريكا الشمالية"
     ],
     "correctIndex": 2,
-    "source_ar": "معلومة عامة"
+    "source_ar": "معلومة عامة",
+    "id": 72
   },
   {
     "type": "mcq",
@@ -923,7 +995,8 @@
       "32 حرفاً"
     ],
     "correctIndex": 1,
-    "source_ar": "معلومة عامة"
+    "source_ar": "معلومة عامة",
+    "id": 73
   },
   {
     "type": "mcq",
@@ -937,7 +1010,8 @@
       "خبر مرفوع"
     ],
     "correctIndex": 1,
-    "source_ar": "قواعد اللغة العربية"
+    "source_ar": "قواعد اللغة العربية",
+    "id": 74
   },
   {
     "type": "mcq",
@@ -951,7 +1025,8 @@
       "4"
     ],
     "correctIndex": 1,
-    "source_ar": "معلومة عامة"
+    "source_ar": "معلومة عامة",
+    "id": 75
   },
   {
     "type": "mcq",
@@ -965,7 +1040,8 @@
       "الذين هم لفروجهم حافظون"
     ],
     "correctIndex": 1,
-    "source_ar": "سورة المؤمنون"
+    "source_ar": "سورة المؤمنون",
+    "id": 76
   },
   {
     "type": "tf",
@@ -973,7 +1049,8 @@
     "difficulty": "medium",
     "question_ar": "عثمان بن عفان رضي الله عنه لُقب بذي النورين لأنه تزوج ابنتي رسول الله.",
     "correctBoolean": true,
-    "source_ar": "معلومة عامة"
+    "source_ar": "معلومة عامة",
+    "id": 77
   },
   {
     "type": "tf",
@@ -981,7 +1058,8 @@
     "difficulty": "hard",
     "question_ar": "فُتحت القسطنطينية على يد المسلمين في القرن السابع الهجري.",
     "correctBoolean": false,
-    "source_ar": "فُتحت سنة 857 هـ (القرن التاسع الهجري)"
+    "source_ar": "فُتحت سنة 857 هـ (القرن التاسع الهجري)",
+    "id": 78
   },
   {
     "type": "tf",
@@ -989,7 +1067,8 @@
     "difficulty": "easy",
     "question_ar": "الوضوء شرط من شروط صحة الصلاة.",
     "correctBoolean": true,
-    "source_ar": "معلومة فقهية"
+    "source_ar": "معلومة فقهية",
+    "id": 79
   },
   {
     "type": "tf",
@@ -997,7 +1076,8 @@
     "difficulty": "medium",
     "question_ar": "سورة التوبة هي السورة الوحيدة التي لا تبدأ بالبسملة.",
     "correctBoolean": true,
-    "source_ar": "معلومة قرآنية"
+    "source_ar": "معلومة قرآنية",
+    "id": 80
   },
   {
     "type": "tf",
@@ -1005,7 +1085,8 @@
     "difficulty": "medium",
     "question_ar": "صحيح مسلم يحتوي على أحاديث أكثر من صحيح البخاري.",
     "correctBoolean": false,
-    "source_ar": "معلومة عامة"
+    "source_ar": "معلومة عامة",
+    "id": 81
   },
   {
     "type": "tf",
@@ -1013,7 +1094,8 @@
     "difficulty": "easy",
     "question_ar": "الماء يغلي عند درجة حرارة 100 مئوية عند مستوى سطح البحر.",
     "correctBoolean": true,
-    "source_ar": "معلومة علمية"
+    "source_ar": "معلومة علمية",
+    "id": 82
   },
   {
     "type": "tf",
@@ -1021,7 +1103,8 @@
     "difficulty": "medium",
     "question_ar": "البحر الأحمر يفصل بين قارتي آسيا وأفريقيا.",
     "correctBoolean": true,
-    "source_ar": "معلومة جغرافية"
+    "source_ar": "معلومة جغرافية",
+    "id": 83
   },
   {
     "type": "tf",
@@ -1029,7 +1112,8 @@
     "difficulty": "hard",
     "question_ar": "الفعل المضارع يُبنى على الفتح إذا اتصلت به نون التوكيد الثقيلة.",
     "correctBoolean": true,
-    "source_ar": "قواعد اللغة العربية"
+    "source_ar": "قواعد اللغة العربية",
+    "id": 84
   },
   {
     "type": "mcq",
@@ -1039,10 +1123,12 @@
     "options_ar": [
       "لا تَجوزُ",
       "تُكرَهُ",
-      "تَجوزُ"
+      "تَجوزُ",
+      "لا أدري"
     ],
     "correctIndex": 2,
-    "source_ar": "https://www.dorar.net/feqhia/6634"
+    "source_ar": "https://www.dorar.net/feqhia/6634",
+    "id": 85
   },
   {
     "type": "mcq",
@@ -1052,10 +1138,12 @@
     "options_ar": [
       "عَالمُ الأَرضِ وعَالَمُ السَّماءِ",
       "أَحبارُ اليَهُودِ",
-      "جَمع عالِمٍ"
+      "جَمع عالِمٍ",
+      "لا أدري"
     ],
     "correctIndex": 2,
-    "source_ar": "https://www.dorar.net/tafseer/30/4#tt4"
+    "source_ar": "https://www.dorar.net/tafseer/30/4#tt4",
+    "id": 86
   },
   {
     "type": "mcq",
@@ -1065,10 +1153,12 @@
     "options_ar": [
       "مُنافِقٌ مَعلومُ النِّفاِق",
       "مُسلِمٌ مُرتكِبٌ لكَبيرةٍ",
-      "كافِرٌ خارِجٌ منَ المِلَّةِ"
+      "كافِرٌ خارِجٌ منَ المِلَّةِ",
+      "لا أدري"
     ],
     "correctIndex": 2,
-    "source_ar": "https://www.dorar.net/aqeeda/2939"
+    "source_ar": "https://www.dorar.net/aqeeda/2939",
+    "id": 87
   },
   {
     "type": "mcq",
@@ -1083,7 +1173,8 @@
     ],
     "correctIndex": 0,
     "source_ar": "Islamic & Cultural Question Bank v1.0",
-    "explanation_ar": "توفي متأثراً بجراحه بعد غزوة الخندق وحكمه في بني قريظة."
+    "explanation_ar": "توفي متأثراً بجراحه بعد غزوة الخندق وحكمه في بني قريظة.",
+    "id": 88
   },
   {
     "type": "mcq",
@@ -1098,7 +1189,8 @@
     ],
     "correctIndex": 0,
     "source_ar": "Islamic & Cultural Question Bank v1.0",
-    "explanation_ar": "توفيت بالأبواء بين مكة والمدينة وهو ابن ست سنين."
+    "explanation_ar": "توفيت بالأبواء بين مكة والمدينة وهو ابن ست سنين.",
+    "id": 89
   },
   {
     "type": "mcq",
@@ -1113,7 +1205,8 @@
     ],
     "correctIndex": 0,
     "source_ar": "Islamic & Cultural Question Bank v1.0",
-    "explanation_ar": "بقيادة سيف الدين قطز عام 658 هـ."
+    "explanation_ar": "بقيادة سيف الدين قطز عام 658 هـ.",
+    "id": 90
   },
   {
     "type": "mcq",
@@ -1128,7 +1221,8 @@
     ],
     "correctIndex": 0,
     "source_ar": "Islamic & Cultural Question Bank v1.0",
-    "explanation_ar": "هي السورة رقم 58 في ترتيب المصحف."
+    "explanation_ar": "هي السورة رقم 58 في ترتيب المصحف.",
+    "id": 91
   },
   {
     "type": "mcq",
@@ -1143,7 +1237,8 @@
     ],
     "correctIndex": 0,
     "source_ar": "Islamic & Cultural Question Bank v1.0",
-    "explanation_ar": "لُقب بذلك لزواجه من ابنتي النبي رقية ثم أم كلثوم."
+    "explanation_ar": "لُقب بذلك لزواجه من ابنتي النبي رقية ثم أم كلثوم.",
+    "id": 92
   },
   {
     "type": "mcq",
@@ -1158,7 +1253,8 @@
     ],
     "correctIndex": 0,
     "source_ar": "Islamic & Cultural Question Bank v1.0",
-    "explanation_ar": "هو عبد الله بن محمد بن علي بن عبد الله بن عباس."
+    "explanation_ar": "هو عبد الله بن محمد بن علي بن عبد الله بن عباس.",
+    "id": 93
   },
   {
     "type": "mcq",
@@ -1173,7 +1269,8 @@
     ],
     "correctIndex": 0,
     "source_ar": "Islamic & Cultural Question Bank v1.0",
-    "explanation_ar": "لعدم امتلاكها أحبالاً صوتية تقليدية."
+    "explanation_ar": "لعدم امتلاكها أحبالاً صوتية تقليدية.",
+    "id": 94
   },
   {
     "type": "mcq",
@@ -1188,7 +1285,8 @@
     ],
     "correctIndex": 0,
     "source_ar": "Islamic & Cultural Question Bank v1.0",
-    "explanation_ar": "وقعت في رجب سنة 9 هـ وتسمى غزوة العسرة."
+    "explanation_ar": "وقعت في رجب سنة 9 هـ وتسمى غزوة العسرة.",
+    "id": 95
   },
   {
     "type": "mcq",
@@ -1203,7 +1301,8 @@
     ],
     "correctIndex": 0,
     "source_ar": "Islamic & Cultural Question Bank v1.0",
-    "explanation_ar": "لوجود الفرع الوارث (البنت) يقل نصيب الزوجة من الربع إلى الثمن."
+    "explanation_ar": "لوجود الفرع الوارث (البنت) يقل نصيب الزوجة من الربع إلى الثمن.",
+    "id": 96
   },
   {
     "type": "mcq",
@@ -1218,7 +1317,8 @@
     ],
     "correctIndex": 0,
     "source_ar": "Islamic & Cultural Question Bank v1.0",
-    "explanation_ar": "السلطان محمد الثاني عام 1453م، وحقق بذلك البشارة النبوية."
+    "explanation_ar": "السلطان محمد الثاني عام 1453م، وحقق بذلك البشارة النبوية.",
+    "id": 97
   },
   {
     "type": "mcq",
@@ -1233,7 +1333,8 @@
     ],
     "correctIndex": 0,
     "source_ar": "Islamic & Cultural Question Bank v1.0",
-    "explanation_ar": "تقع في هولندا وهي الذراع القضائي للأمم المتحدة."
+    "explanation_ar": "تقع في هولندا وهي الذراع القضائي للأمم المتحدة.",
+    "id": 98
   },
   {
     "type": "mcq",
@@ -1248,7 +1349,8 @@
     ],
     "correctIndex": 0,
     "source_ar": "Islamic & Cultural Question Bank v1.0",
-    "explanation_ar": "وهو خال النبي صلى الله عليه وسلم وأحد العشرة المبشرين بالجنة."
+    "explanation_ar": "وهو خال النبي صلى الله عليه وسلم وأحد العشرة المبشرين بالجنة.",
+    "id": 99
   },
   {
     "type": "mcq",
@@ -1263,7 +1365,8 @@
     ],
     "correctIndex": 0,
     "source_ar": "Islamic & Cultural Question Bank v1.0",
-    "explanation_ar": "يوافق العام الأول الهجري، وهو بداية التقويم الإسلامي."
+    "explanation_ar": "يوافق العام الأول الهجري، وهو بداية التقويم الإسلامي.",
+    "id": 100
   },
   {
     "type": "mcq",
@@ -1278,7 +1381,8 @@
     ],
     "correctIndex": 0,
     "source_ar": "Islamic & Cultural Question Bank v1.0",
-    "explanation_ar": "اتخذها معاوية بن أبي سفيان عاصمة له ولملكه."
+    "explanation_ar": "اتخذها معاوية بن أبي سفيان عاصمة له ولملكه.",
+    "id": 101
   },
   {
     "type": "mcq",
@@ -1293,7 +1397,8 @@
     ],
     "correctIndex": 0,
     "source_ar": "Islamic & Cultural Question Bank v1.0",
-    "explanation_ar": "يستخدم في مقاييس الحرارة والضغط."
+    "explanation_ar": "يستخدم في مقاييس الحرارة والضغط.",
+    "id": 102
   },
   {
     "type": "mcq",
@@ -1308,7 +1413,8 @@
     ],
     "correctIndex": 0,
     "source_ar": "Islamic & Cultural Question Bank v1.0",
-    "explanation_ar": "اقترح الخطة بناءً على خبرته في حروب الفرس."
+    "explanation_ar": "اقترح الخطة بناءً على خبرته في حروب الفرس.",
+    "id": 103
   },
   {
     "type": "mcq",
@@ -1323,7 +1429,8 @@
     ],
     "correctIndex": 0,
     "source_ar": "Islamic & Cultural Question Bank v1.0",
-    "explanation_ar": "هي التي هاجر عليها من مكة إلى المدينة."
+    "explanation_ar": "هي التي هاجر عليها من مكة إلى المدينة.",
+    "id": 104
   },
   {
     "type": "mcq",
@@ -1338,7 +1445,8 @@
     ],
     "correctIndex": 0,
     "source_ar": "Islamic & Cultural Question Bank v1.0",
-    "explanation_ar": "تأسست عام 184هـ وكانت تابعة اسمياً للخلافة العباسية."
+    "explanation_ar": "تأسست عام 184هـ وكانت تابعة اسمياً للخلافة العباسية.",
+    "id": 105
   },
   {
     "type": "mcq",
@@ -1353,7 +1461,8 @@
     ],
     "correctIndex": 0,
     "source_ar": "Islamic & Cultural Question Bank v1.0",
-    "explanation_ar": "تعتبر إقليماً دنماركياً ذاتي الحكم."
+    "explanation_ar": "تعتبر إقليماً دنماركياً ذاتي الحكم.",
+    "id": 106
   },
   {
     "type": "mcq",
@@ -1368,7 +1477,8 @@
     ],
     "correctIndex": 0,
     "source_ar": "Islamic & Cultural Question Bank v1.0",
-    "explanation_ar": "فرض في شهر شعبان من السنة الثانية."
+    "explanation_ar": "فرض في شهر شعبان من السنة الثانية.",
+    "id": 107
   },
   {
     "type": "mcq",
@@ -1383,7 +1493,8 @@
     ],
     "correctIndex": 0,
     "source_ar": "Islamic & Cultural Question Bank v1.0",
-    "explanation_ar": "لأنه استشهد في أحد وهو جنب فغسلته الملائكة."
+    "explanation_ar": "لأنه استشهد في أحد وهو جنب فغسلته الملائكة.",
+    "id": 108
   },
   {
     "type": "mcq",
@@ -1398,7 +1509,8 @@
     ],
     "correctIndex": 0,
     "source_ar": "Islamic & Cultural Question Bank v1.0",
-    "explanation_ar": "نزل تشريع الحجاب في المدينة المنورة."
+    "explanation_ar": "نزل تشريع الحجاب في المدينة المنورة.",
+    "id": 109
   },
   {
     "type": "mcq",
@@ -1413,7 +1525,8 @@
     ],
     "correctIndex": 0,
     "source_ar": "Islamic & Cultural Question Bank v1.0",
-    "explanation_ar": "وقعت عام 1920 وكانت قاسية جداً مما مهد لحرب الاستقلال التركية."
+    "explanation_ar": "وقعت عام 1920 وكانت قاسية جداً مما مهد لحرب الاستقلال التركية.",
+    "id": 110
   },
   {
     "type": "mcq",
@@ -1428,7 +1541,8 @@
     ],
     "correctIndex": 0,
     "source_ar": "Islamic & Cultural Question Bank v1.0",
-    "explanation_ar": "بينما اكتشف ابن النفيس الدورة الدموية الصغرى قبله بقرون."
+    "explanation_ar": "بينما اكتشف ابن النفيس الدورة الدموية الصغرى قبله بقرون.",
+    "id": 111
   },
   {
     "type": "mcq",
@@ -1443,7 +1557,8 @@
     ],
     "correctIndex": 0,
     "source_ar": "Islamic & Cultural Question Bank v1.0",
-    "explanation_ar": "للالتزامه بأقصى شروط الصحة في قبول الحديث."
+    "explanation_ar": "للالتزامه بأقصى شروط الصحة في قبول الحديث.",
+    "id": 112
   },
   {
     "type": "mcq",
@@ -1458,7 +1573,8 @@
     ],
     "correctIndex": 0,
     "source_ar": "Islamic & Cultural Question Bank v1.0",
-    "explanation_ar": "دعا له النبي بالفقه في الدين وتعليم التأويل."
+    "explanation_ar": "دعا له النبي بالفقه في الدين وتعليم التأويل.",
+    "id": 113
   },
   {
     "type": "mcq",
@@ -1473,7 +1589,8 @@
     ],
     "correctIndex": 0,
     "source_ar": "Islamic & Cultural Question Bank v1.0",
-    "explanation_ar": "ذكره الله في القرآن بـ 'ثاني اثنين إذ هما في الغار'."
+    "explanation_ar": "ذكره الله في القرآن بـ 'ثاني اثنين إذ هما في الغار'.",
+    "id": 114
   },
   {
     "type": "mcq",
@@ -1488,7 +1605,8 @@
     ],
     "correctIndex": 0,
     "source_ar": "Islamic & Cultural Question Bank v1.0",
-    "explanation_ar": "سلمها أبو عبد الله الصغير للملكين فرديناند وإيزابيلا."
+    "explanation_ar": "سلمها أبو عبد الله الصغير للملكين فرديناند وإيزابيلا.",
+    "id": 115
   },
   {
     "type": "mcq",
@@ -1503,7 +1621,8 @@
     ],
     "correctIndex": 0,
     "source_ar": "Islamic & Cultural Question Bank v1.0",
-    "explanation_ar": "تقع في جنوب شرق شبه الجزيرة العربية."
+    "explanation_ar": "تقع في جنوب شرق شبه الجزيرة العربية.",
+    "id": 116
   },
   {
     "type": "mcq",
@@ -1518,7 +1637,8 @@
     ],
     "correctIndex": 0,
     "source_ar": "Islamic & Cultural Question Bank v1.0",
-    "explanation_ar": "في قصة شراء النبي للفرس من الأعرابي."
+    "explanation_ar": "في قصة شراء النبي للفرس من الأعرابي.",
+    "id": 117
   },
   {
     "type": "mcq",
@@ -1533,7 +1653,8 @@
     ],
     "correctIndex": 0,
     "source_ar": "Islamic & Cultural Question Bank v1.0",
-    "explanation_ar": "بسبب مخالفة الرماة لأمر النبي ونزولهم عن الجبل."
+    "explanation_ar": "بسبب مخالفة الرماة لأمر النبي ونزولهم عن الجبل.",
+    "id": 118
   },
   {
     "type": "mcq",
@@ -1548,7 +1669,8 @@
     ],
     "correctIndex": 0,
     "source_ar": "Islamic & Cultural Question Bank v1.0",
-    "explanation_ar": "بعد استشهاد عدد كبير من الحفاظ في حروب الردة."
+    "explanation_ar": "بعد استشهاد عدد كبير من الحفاظ في حروب الردة.",
+    "id": 119
   },
   {
     "type": "mcq",
@@ -1563,7 +1685,8 @@
     ],
     "correctIndex": 0,
     "source_ar": "Islamic & Cultural Question Bank v1.0",
-    "explanation_ar": "شاعر مصري يعد من أعظم شعراء العربية في العصر الحديث."
+    "explanation_ar": "شاعر مصري يعد من أعظم شعراء العربية في العصر الحديث.",
+    "id": 120
   },
   {
     "type": "mcq",
@@ -1578,7 +1701,8 @@
     ],
     "correctIndex": 0,
     "source_ar": "Islamic & Cultural Question Bank v1.0",
-    "explanation_ar": "تعرف بـ 'الكتب الستة' وهي أهم مراجع السنة النبوية."
+    "explanation_ar": "تعرف بـ 'الكتب الستة' وهي أهم مراجع السنة النبوية.",
+    "id": 121
   },
   {
     "type": "mcq",
@@ -1593,7 +1717,8 @@
     ],
     "correctIndex": 0,
     "source_ar": "Islamic & Cultural Question Bank v1.0",
-    "explanation_ar": "توفي في قصره بالعقيق وحمل إلى المدينة."
+    "explanation_ar": "توفي في قصره بالعقيق وحمل إلى المدينة.",
+    "id": 122
   },
   {
     "type": "mcq",
@@ -1608,7 +1733,8 @@
     ],
     "correctIndex": 0,
     "source_ar": "Islamic & Cultural Question Bank v1.0",
-    "explanation_ar": "الذي حاول فيه أبرهة هدم الكعبة."
+    "explanation_ar": "الذي حاول فيه أبرهة هدم الكعبة.",
+    "id": 123
   },
   {
     "type": "mcq",
@@ -1623,7 +1749,8 @@
     ],
     "correctIndex": 0,
     "source_ar": "Islamic & Cultural Question Bank v1.0",
-    "explanation_ar": "أنهى حكم المماليك في مصر عام 1517م."
+    "explanation_ar": "أنهى حكم المماليك في مصر عام 1517م.",
+    "id": 124
   },
   {
     "type": "mcq",
@@ -1638,7 +1765,8 @@
     ],
     "correctIndex": 0,
     "source_ar": "Islamic & Cultural Question Bank v1.0",
-    "explanation_ar": "من أقدم العملات المستمرة في العالم."
+    "explanation_ar": "من أقدم العملات المستمرة في العالم.",
+    "id": 125
   },
   {
     "type": "mcq",
@@ -1653,7 +1781,8 @@
     ],
     "correctIndex": 0,
     "source_ar": "Islamic & Cultural Question Bank v1.0",
-    "explanation_ar": "واظب عليها النبي صلى الله عليه وسلم ولم يتركها."
+    "explanation_ar": "واظب عليها النبي صلى الله عليه وسلم ولم يتركها.",
+    "id": 126
   },
   {
     "type": "mcq",
@@ -1668,7 +1797,8 @@
     ],
     "correctIndex": 0,
     "source_ar": "Islamic & Cultural Question Bank v1.0",
-    "explanation_ar": "لقب بـ 'صقر يوم أحد' لكثرة ما أصابه دفاعاً عن الرسول."
+    "explanation_ar": "لقب بـ 'صقر يوم أحد' لكثرة ما أصابه دفاعاً عن الرسول.",
+    "id": 127
   },
   {
     "type": "mcq",
@@ -1683,7 +1813,8 @@
     ],
     "correctIndex": 0,
     "source_ar": "Islamic & Cultural Question Bank v1.0",
-    "explanation_ar": "القاسم، عبد الله، إبراهيم، زينب، رقية، أم كلثوم، فاطمة."
+    "explanation_ar": "القاسم، عبد الله، إبراهيم، زينب، رقية، أم كلثوم، فاطمة.",
+    "id": 128
   },
   {
     "type": "mcq",
@@ -1698,7 +1829,8 @@
     ],
     "correctIndex": 0,
     "source_ar": "Islamic & Cultural Question Bank v1.0",
-    "explanation_ar": "أول سلطنة إسلامية كبرى في سنار بالسودان."
+    "explanation_ar": "أول سلطنة إسلامية كبرى في سنار بالسودان.",
+    "id": 129
   },
   {
     "type": "mcq",
@@ -1713,7 +1845,8 @@
     ],
     "correctIndex": 0,
     "source_ar": "Islamic & Cultural Question Bank v1.0",
-    "explanation_ar": "من أهم كتب الأدب العربي التي تصور الحياة الاجتماعية في العصر العباسي."
+    "explanation_ar": "من أهم كتب الأدب العربي التي تصور الحياة الاجتماعية في العصر العباسي.",
+    "id": 130
   },
   {
     "type": "mcq",
@@ -1728,7 +1861,8 @@
     ],
     "correctIndex": 0,
     "source_ar": "Islamic & Cultural Question Bank v1.0",
-    "explanation_ar": "ورد في الأثر: 'إن لكل شيء قلباً، وقلب القرآن يس'."
+    "explanation_ar": "ورد في الأثر: 'إن لكل شيء قلباً، وقلب القرآن يس'.",
+    "id": 131
   },
   {
     "type": "mcq",
@@ -1743,7 +1877,8 @@
     ],
     "correctIndex": 0,
     "source_ar": "Islamic & Cultural Question Bank v1.0",
-    "explanation_ar": "عندما تنازل عن ماله لقريش مقابل السماح له بالهجرة."
+    "explanation_ar": "عندما تنازل عن ماله لقريش مقابل السماح له بالهجرة.",
+    "id": 132
   },
   {
     "type": "mcq",
@@ -1758,7 +1893,8 @@
     ],
     "correctIndex": 0,
     "source_ar": "Islamic & Cultural Question Bank v1.0",
-    "explanation_ar": "قال له النبي: 'ألا ترضى أن تكون مني بمنزلة هارون من موسى'."
+    "explanation_ar": "قال له النبي: 'ألا ترضى أن تكون مني بمنزلة هارون من موسى'.",
+    "id": 133
   },
   {
     "type": "mcq",
@@ -1772,7 +1908,8 @@
       "خالد بن الوليد"
     ],
     "correctIndex": 0,
-    "source_ar": "سيرة"
+    "source_ar": "سيرة",
+    "id": 134
   },
   {
     "type": "mcq",
@@ -1786,7 +1923,8 @@
       "الزبير بن العوام"
     ],
     "correctIndex": 0,
-    "source_ar": "سيرة"
+    "source_ar": "سيرة",
+    "id": 135
   },
   {
     "type": "mcq",
@@ -1800,7 +1938,8 @@
       "عمار بن ياسر"
     ],
     "correctIndex": 0,
-    "source_ar": "سيرة"
+    "source_ar": "سيرة",
+    "id": 136
   },
   {
     "type": "mcq",
@@ -1814,7 +1953,8 @@
       "زيد بن ثابت"
     ],
     "correctIndex": 0,
-    "source_ar": "سيرة"
+    "source_ar": "سيرة",
+    "id": 137
   },
   {
     "type": "mcq",
@@ -1828,7 +1968,8 @@
       "حذيفة بن اليمان"
     ],
     "correctIndex": 0,
-    "source_ar": "سيرة"
+    "source_ar": "سيرة",
+    "id": 138
   },
   {
     "type": "mcq",
@@ -1842,7 +1983,8 @@
       "سعيد بن زيد"
     ],
     "correctIndex": 0,
-    "source_ar": "سيرة"
+    "source_ar": "سيرة",
+    "id": 139
   },
   {
     "type": "mcq",
@@ -1856,7 +1998,8 @@
       "جميع ما سبق"
     ],
     "correctIndex": 3,
-    "source_ar": "سيرة"
+    "source_ar": "سيرة",
+    "id": 140
   },
   {
     "type": "mcq",
@@ -1870,7 +2013,8 @@
       "سلمان الفارسي"
     ],
     "correctIndex": 0,
-    "source_ar": "سيرة"
+    "source_ar": "سيرة",
+    "id": 141
   },
   {
     "type": "mcq",
@@ -1884,7 +2028,8 @@
       "عمر بن الخطاب"
     ],
     "correctIndex": 0,
-    "source_ar": "سيرة"
+    "source_ar": "سيرة",
+    "id": 142
   },
   {
     "type": "mcq",
@@ -1898,7 +2043,8 @@
       "أسماء بنت عميس"
     ],
     "correctIndex": 0,
-    "source_ar": "سيرة"
+    "source_ar": "سيرة",
+    "id": 143
   },
   {
     "type": "mcq",
@@ -1912,7 +2058,8 @@
       "علي بن أبي طالب"
     ],
     "correctIndex": 0,
-    "source_ar": "تاريخ"
+    "source_ar": "تاريخ",
+    "id": 144
   },
   {
     "type": "mcq",
@@ -1926,7 +2073,8 @@
       "أبي بن كعب"
     ],
     "correctIndex": 0,
-    "source_ar": "تاريخ"
+    "source_ar": "تاريخ",
+    "id": 145
   },
   {
     "type": "mcq",
@@ -1940,7 +2088,8 @@
       "عثمان بن عفان"
     ],
     "correctIndex": 0,
-    "source_ar": "سيرة"
+    "source_ar": "سيرة",
+    "id": 146
   },
   {
     "type": "mcq",
@@ -1954,7 +2103,8 @@
       "علي بن أبي طالب"
     ],
     "correctIndex": 0,
-    "source_ar": "سيرة"
+    "source_ar": "سيرة",
+    "id": 147
   },
   {
     "type": "mcq",
@@ -1968,7 +2118,8 @@
       "معاذ بن جبل"
     ],
     "correctIndex": 0,
-    "source_ar": "سيرة"
+    "source_ar": "سيرة",
+    "id": 148
   },
   {
     "type": "mcq",
@@ -1982,7 +2133,8 @@
       "عمرو بن العاص"
     ],
     "correctIndex": 0,
-    "source_ar": "تاريخ"
+    "source_ar": "تاريخ",
+    "id": 149
   },
   {
     "type": "mcq",
@@ -1996,7 +2148,8 @@
       "يزيد بن أبي سفيان"
     ],
     "correctIndex": 0,
-    "source_ar": "تاريخ"
+    "source_ar": "تاريخ",
+    "id": 150
   },
   {
     "type": "mcq",
@@ -2010,7 +2163,8 @@
       "حمزة بن عبد المطلب"
     ],
     "correctIndex": 0,
-    "source_ar": "سيرة"
+    "source_ar": "سيرة",
+    "id": 151
   },
   {
     "type": "mcq",
@@ -2024,7 +2178,8 @@
       "عبدالله بن عمر"
     ],
     "correctIndex": 0,
-    "source_ar": "سيرة"
+    "source_ar": "سيرة",
+    "id": 152
   },
   {
     "type": "mcq",
@@ -2038,7 +2193,8 @@
       "أبي بن كعب"
     ],
     "correctIndex": 0,
-    "source_ar": "سيرة"
+    "source_ar": "سيرة",
+    "id": 153
   },
   {
     "type": "mcq",
@@ -2052,7 +2208,8 @@
       "عباد بن بشر"
     ],
     "correctIndex": 0,
-    "source_ar": "تاريخ"
+    "source_ar": "تاريخ",
+    "id": 154
   },
   {
     "type": "mcq",
@@ -2066,7 +2223,8 @@
       "خولة بنت الأزور"
     ],
     "correctIndex": 0,
-    "source_ar": "سيرة"
+    "source_ar": "سيرة",
+    "id": 155
   },
   {
     "type": "mcq",
@@ -2080,7 +2238,8 @@
       "عثمان بن عفان"
     ],
     "correctIndex": 0,
-    "source_ar": "سيرة"
+    "source_ar": "سيرة",
+    "id": 156
   },
   {
     "type": "mcq",
@@ -2094,7 +2253,8 @@
       "عبدالرحمن بن عوف"
     ],
     "correctIndex": 0,
-    "source_ar": "سيرة"
+    "source_ar": "سيرة",
+    "id": 157
   },
   {
     "type": "mcq",
@@ -2108,7 +2268,8 @@
       "علي بن أبي طالب"
     ],
     "correctIndex": 0,
-    "source_ar": "سيرة"
+    "source_ar": "سيرة",
+    "id": 158
   },
   {
     "type": "mcq",
@@ -2122,7 +2283,8 @@
       "العباس بن عبد المطلب"
     ],
     "correctIndex": 0,
-    "source_ar": "سيرة"
+    "source_ar": "سيرة",
+    "id": 159
   },
   {
     "type": "mcq",
@@ -2136,7 +2298,8 @@
       "الحسين بن علي"
     ],
     "correctIndex": 0,
-    "source_ar": "سيرة"
+    "source_ar": "سيرة",
+    "id": 160
   },
   {
     "type": "mcq",
@@ -2150,7 +2313,8 @@
       "علي بن أبي طالب"
     ],
     "correctIndex": 0,
-    "source_ar": "قرآن"
+    "source_ar": "قرآن",
+    "id": 161
   },
   {
     "type": "mcq",
@@ -2164,7 +2328,8 @@
       "زياد بن أبيه"
     ],
     "correctIndex": 0,
-    "source_ar": "تاريخ"
+    "source_ar": "تاريخ",
+    "id": 162
   },
   {
     "type": "mcq",
@@ -2178,7 +2343,8 @@
       "يزيد بن أبي سفيان"
     ],
     "correctIndex": 0,
-    "source_ar": "تاريخ"
+    "source_ar": "تاريخ",
+    "id": 163
   },
   {
     "type": "mcq",
@@ -2192,7 +2358,8 @@
       "عمرو بن العاص"
     ],
     "correctIndex": 0,
-    "source_ar": "تاريخ"
+    "source_ar": "تاريخ",
+    "id": 164
   },
   {
     "type": "mcq",
@@ -2206,7 +2373,8 @@
       "الزبير بن العوام"
     ],
     "correctIndex": 0,
-    "source_ar": "سيرة"
+    "source_ar": "سيرة",
+    "id": 165
   },
   {
     "type": "mcq",
@@ -2220,7 +2388,8 @@
       "علي بن أبي طالب"
     ],
     "correctIndex": 0,
-    "source_ar": "سيرة"
+    "source_ar": "سيرة",
+    "id": 166
   },
   {
     "type": "mcq",
@@ -2234,7 +2403,8 @@
       "لبيد بن ربيعة"
     ],
     "correctIndex": 0,
-    "source_ar": "أدب"
+    "source_ar": "أدب",
+    "id": 167
   },
   {
     "type": "mcq",
@@ -2248,7 +2418,8 @@
       "عمر بن الخطاب"
     ],
     "correctIndex": 0,
-    "source_ar": "سيرة"
+    "source_ar": "سيرة",
+    "id": 168
   },
   {
     "type": "mcq",
@@ -2262,7 +2433,8 @@
       "عبدالله بن جحش"
     ],
     "correctIndex": 0,
-    "source_ar": "سيرة"
+    "source_ar": "سيرة",
+    "id": 169
   },
   {
     "type": "mcq",
@@ -2276,11 +2448,12 @@
       "لا أحد منهما"
     ],
     "correctIndex": 2,
-    "source_ar": "سيرة"
+    "source_ar": "سيرة",
+    "id": 170
   },
   {
     "type": "mcq",
-    "category": "السيرة النبوية",
+    "category": "السيرة",
     "difficulty": "easy",
     "question_ar": "في أي عام ولد النبي صلى الله عليه وسلم؟",
     "options_ar": [
@@ -2290,11 +2463,12 @@
       "عام الوفود"
     ],
     "correctIndex": 0,
-    "source_ar": "سيرة"
+    "source_ar": "سيرة",
+    "id": 171
   },
   {
     "type": "mcq",
-    "category": "السيرة النبوية",
+    "category": "السيرة",
     "difficulty": "easy",
     "question_ar": "ما اسم والدة النبي صلى الله عليه وسلم؟",
     "options_ar": [
@@ -2304,11 +2478,12 @@
       "بركة بنت ثعلبة"
     ],
     "correctIndex": 0,
-    "source_ar": "سيرة"
+    "source_ar": "سيرة",
+    "id": 172
   },
   {
     "type": "mcq",
-    "category": "السيرة النبوية",
+    "category": "السيرة",
     "difficulty": "easy",
     "question_ar": "من هي مرضعة النبي صلى الله عليه وسلم؟",
     "options_ar": [
@@ -2318,11 +2493,12 @@
       "ثويبة"
     ],
     "correctIndex": 0,
-    "source_ar": "سيرة"
+    "source_ar": "سيرة",
+    "id": 173
   },
   {
     "type": "mcq",
-    "category": "السيرة النبوية",
+    "category": "السيرة",
     "difficulty": "medium",
     "question_ar": "كم كان عمر النبي عند البعثة؟",
     "options_ar": [
@@ -2332,11 +2508,12 @@
       "35 سنة"
     ],
     "correctIndex": 0,
-    "source_ar": "سيرة"
+    "source_ar": "سيرة",
+    "id": 174
   },
   {
     "type": "mcq",
-    "category": "السيرة النبوية",
+    "category": "السيرة",
     "difficulty": "medium",
     "question_ar": "ما هي أول غزوة في الإسلام؟",
     "options_ar": [
@@ -2346,11 +2523,12 @@
       "غزوة الخندق"
     ],
     "correctIndex": 0,
-    "source_ar": "سيرة"
+    "source_ar": "سيرة",
+    "id": 175
   },
   {
     "type": "mcq",
-    "category": "السيرة النبوية",
+    "category": "السيرة",
     "difficulty": "medium",
     "question_ar": "في أي سنة كانت غزوة بدر الكبرى؟",
     "options_ar": [
@@ -2360,11 +2538,12 @@
       "5 هـ"
     ],
     "correctIndex": 0,
-    "source_ar": "سيرة"
+    "source_ar": "سيرة",
+    "id": 176
   },
   {
     "type": "mcq",
-    "category": "السيرة النبوية",
+    "category": "السيرة",
     "difficulty": "medium",
     "question_ar": "في أي سنة كانت غزوة أحد؟",
     "options_ar": [
@@ -2374,11 +2553,12 @@
       "5 هـ"
     ],
     "correctIndex": 0,
-    "source_ar": "سيرة"
+    "source_ar": "سيرة",
+    "id": 177
   },
   {
     "type": "mcq",
-    "category": "السيرة النبوية",
+    "category": "السيرة",
     "difficulty": "hard",
     "question_ar": "ما هي الغزوة التي سميت بـ غزوة الأحزاب؟",
     "options_ar": [
@@ -2388,11 +2568,12 @@
       "غزوة تبوك"
     ],
     "correctIndex": 0,
-    "source_ar": "سيرة"
+    "source_ar": "سيرة",
+    "id": 178
   },
   {
     "type": "mcq",
-    "category": "السيرة النبوية",
+    "category": "السيرة",
     "difficulty": "medium",
     "question_ar": "ما هي آخر غزوة غزاها الرسول صلى الله عليه وسلم؟",
     "options_ar": [
@@ -2402,11 +2583,12 @@
       "غزوة مؤتة"
     ],
     "correctIndex": 0,
-    "source_ar": "سيرة"
+    "source_ar": "سيرة",
+    "id": 179
   },
   {
     "type": "mcq",
-    "category": "السيرة النبوية",
+    "category": "السيرة",
     "difficulty": "medium",
     "question_ar": "في أي سنة كان فتح مكة؟",
     "options_ar": [
@@ -2416,11 +2598,12 @@
       "10 هـ"
     ],
     "correctIndex": 0,
-    "source_ar": "سيرة"
+    "source_ar": "سيرة",
+    "id": 180
   },
   {
     "type": "mcq",
-    "category": "السيرة النبوية",
+    "category": "السيرة",
     "difficulty": "hard",
     "question_ar": "من هو قائد المشركين في غزوة أحد؟",
     "options_ar": [
@@ -2430,11 +2613,12 @@
       "عتبة بن ربيعة"
     ],
     "correctIndex": 0,
-    "source_ar": "سيرة"
+    "source_ar": "سيرة",
+    "id": 181
   },
   {
     "type": "mcq",
-    "category": "السيرة النبوية",
+    "category": "السيرة",
     "difficulty": "hard",
     "question_ar": "كم عدد المسلمين في غزوة بدر؟",
     "options_ar": [
@@ -2444,11 +2628,12 @@
       "3000"
     ],
     "correctIndex": 0,
-    "source_ar": "سيرة"
+    "source_ar": "سيرة",
+    "id": 182
   },
   {
     "type": "mcq",
-    "category": "السيرة النبوية",
+    "category": "السيرة",
     "difficulty": "hard",
     "question_ar": "كم عدد المسلمين في غزوة أحد؟",
     "options_ar": [
@@ -2458,11 +2643,12 @@
       "3000"
     ],
     "correctIndex": 0,
-    "source_ar": "سيرة"
+    "source_ar": "سيرة",
+    "id": 183
   },
   {
     "type": "mcq",
-    "category": "السيرة النبوية",
+    "category": "السيرة",
     "difficulty": "extreme",
     "question_ar": "ما اسم الدابة التي ركبها النبي في رحلة الإسراء والمعراج؟",
     "options_ar": [
@@ -2472,11 +2658,12 @@
       "اليعفور"
     ],
     "correctIndex": 0,
-    "source_ar": "سيرة"
+    "source_ar": "سيرة",
+    "id": 184
   },
   {
     "type": "mcq",
-    "category": "السيرة النبوية",
+    "category": "السيرة",
     "difficulty": "medium",
     "question_ar": "أين توفيت آمنة بنت وهب أم النبي؟",
     "options_ar": [
@@ -2486,11 +2673,12 @@
       "الطائف"
     ],
     "correctIndex": 0,
-    "source_ar": "سيرة"
+    "source_ar": "سيرة",
+    "id": 185
   },
   {
     "type": "mcq",
-    "category": "السيرة النبوية",
+    "category": "السيرة",
     "difficulty": "medium",
     "question_ar": "من هو أول من آمن من الرجال؟",
     "options_ar": [
@@ -2500,11 +2688,12 @@
       "عثمان بن عفان"
     ],
     "correctIndex": 0,
-    "source_ar": "سيرة"
+    "source_ar": "سيرة",
+    "id": 186
   },
   {
     "type": "mcq",
-    "category": "السيرة النبوية",
+    "category": "السيرة",
     "difficulty": "medium",
     "question_ar": "من هو أول من آمن من الصبيان؟",
     "options_ar": [
@@ -2514,11 +2703,12 @@
       "الحسن بن علي"
     ],
     "correctIndex": 0,
-    "source_ar": "سيرة"
+    "source_ar": "سيرة",
+    "id": 187
   },
   {
     "type": "mcq",
-    "category": "السيرة النبوية",
+    "category": "السيرة",
     "difficulty": "hard",
     "question_ar": "ما هي بيعة العقبة الأولى؟",
     "options_ar": [
@@ -2528,11 +2718,12 @@
       "بيعة الشجرة"
     ],
     "correctIndex": 0,
-    "source_ar": "سيرة"
+    "source_ar": "سيرة",
+    "id": 188
   },
   {
     "type": "mcq",
-    "category": "السيرة النبوية",
+    "category": "السيرة",
     "difficulty": "extreme",
     "question_ar": "من هو الصحابي الذي نزل عليه جبريل في صورة دحية الكلبي؟",
     "options_ar": [
@@ -2542,11 +2733,12 @@
       "حسان بن ثابت"
     ],
     "correctIndex": 0,
-    "source_ar": "سيرة"
+    "source_ar": "سيرة",
+    "id": 189
   },
   {
     "type": "mcq",
-    "category": "السيرة النبوية",
+    "category": "السيرة",
     "difficulty": "medium",
     "question_ar": "ما هو الغار الذي اختبأ فيه النبي وأبو بكر أثناء الهجرة؟",
     "options_ar": [
@@ -2556,11 +2748,12 @@
       "غار الكهف"
     ],
     "correctIndex": 0,
-    "source_ar": "سيرة"
+    "source_ar": "سيرة",
+    "id": 190
   },
   {
     "type": "mcq",
-    "category": "السيرة النبوية",
+    "category": "السيرة",
     "difficulty": "medium",
     "question_ar": "ما هو الغار الذي كان يتعبد فيه النبي قبل البعثة؟",
     "options_ar": [
@@ -2570,11 +2763,12 @@
       "غار الكهف"
     ],
     "correctIndex": 0,
-    "source_ar": "سيرة"
+    "source_ar": "سيرة",
+    "id": 191
   },
   {
     "type": "mcq",
-    "category": "السيرة النبوية",
+    "category": "السيرة",
     "difficulty": "medium",
     "question_ar": "كم سنة استمرت الدعوة السرية؟",
     "options_ar": [
@@ -2584,11 +2778,12 @@
       "سنتان"
     ],
     "correctIndex": 0,
-    "source_ar": "سيرة"
+    "source_ar": "سيرة",
+    "id": 192
   },
   {
     "type": "mcq",
-    "category": "السيرة النبوية",
+    "category": "السيرة",
     "difficulty": "hard",
     "question_ar": "من هو عم النبي الذي لقبه الله بـ أبي لهب؟",
     "options_ar": [
@@ -2598,11 +2793,12 @@
       "حمزة"
     ],
     "correctIndex": 0,
-    "source_ar": "سيرة"
+    "source_ar": "سيرة",
+    "id": 193
   },
   {
     "type": "mcq",
-    "category": "السيرة النبوية",
+    "category": "السيرة",
     "difficulty": "medium",
     "question_ar": "من هي زوجة النبي التي لقبت بـ خديجة الكبرى؟",
     "options_ar": [
@@ -2612,11 +2808,12 @@
       "أم سلمة"
     ],
     "correctIndex": 0,
-    "source_ar": "سيرة"
+    "source_ar": "سيرة",
+    "id": 194
   },
   {
     "type": "mcq",
-    "category": "السيرة النبوية",
+    "category": "السيرة",
     "difficulty": "hard",
     "question_ar": "من هي آخر زوجات النبي وفاة؟",
     "options_ar": [
@@ -2626,11 +2823,12 @@
       "ميمونة بنت الحارث"
     ],
     "correctIndex": 0,
-    "source_ar": "سيرة"
+    "source_ar": "سيرة",
+    "id": 195
   },
   {
     "type": "mcq",
-    "category": "السيرة النبوية",
+    "category": "السيرة",
     "difficulty": "medium",
     "question_ar": "من هي ابنة النبي التي لقبت بـ الزهراء؟",
     "options_ar": [
@@ -2640,11 +2838,12 @@
       "أم كلثوم"
     ],
     "correctIndex": 0,
-    "source_ar": "سيرة"
+    "source_ar": "سيرة",
+    "id": 196
   },
   {
     "type": "mcq",
-    "category": "السيرة النبوية",
+    "category": "السيرة",
     "difficulty": "hard",
     "question_ar": "من هي زوجة النبي التي نزلت فيها آية التيمم؟",
     "options_ar": [
@@ -2654,11 +2853,12 @@
       "زينب بنت جحش"
     ],
     "correctIndex": 0,
-    "source_ar": "سيرة"
+    "source_ar": "سيرة",
+    "id": 197
   },
   {
     "type": "mcq",
-    "category": "السيرة النبوية",
+    "category": "السيرة",
     "difficulty": "extreme",
     "question_ar": "من هو اليهودي الذي سحر النبي صلى الله عليه وسلم؟",
     "options_ar": [
@@ -2668,11 +2868,12 @@
       "سلام بن مشكم"
     ],
     "correctIndex": 0,
-    "source_ar": "سيرة"
+    "source_ar": "سيرة",
+    "id": 198
   },
   {
     "type": "mcq",
-    "category": "السيرة النبوية",
+    "category": "السيرة",
     "difficulty": "hard",
     "question_ar": "ما هو المسجد الذي أسس على التقوى؟",
     "options_ar": [
@@ -2682,11 +2883,12 @@
       "مسجد القبلتين"
     ],
     "correctIndex": 0,
-    "source_ar": "قرآن"
+    "source_ar": "قرآن",
+    "id": 199
   },
   {
     "type": "mcq",
-    "category": "السيرة النبوية",
+    "category": "السيرة",
     "difficulty": "medium",
     "question_ar": "ما هي القبلة الأولى للمسلمين؟",
     "options_ar": [
@@ -2696,11 +2898,12 @@
       "مسجد قباء"
     ],
     "correctIndex": 0,
-    "source_ar": "سيرة"
+    "source_ar": "سيرة",
+    "id": 200
   },
   {
     "type": "mcq",
-    "category": "السيرة النبوية",
+    "category": "السيرة",
     "difficulty": "hard",
     "question_ar": "في أي سنة تم تحويل القبلة؟",
     "options_ar": [
@@ -2710,11 +2913,12 @@
       "4 هـ"
     ],
     "correctIndex": 0,
-    "source_ar": "سيرة"
+    "source_ar": "سيرة",
+    "id": 201
   },
   {
     "type": "mcq",
-    "category": "السيرة النبوية",
+    "category": "السيرة",
     "difficulty": "medium",
     "question_ar": "ما هي الصلاة التي صلاها النبي في رحلة الإسراء والمعراج؟",
     "options_ar": [
@@ -2724,11 +2928,12 @@
       "خلف إبراهيم"
     ],
     "correctIndex": 0,
-    "source_ar": "سيرة"
+    "source_ar": "سيرة",
+    "id": 202
   },
   {
     "type": "mcq",
-    "category": "السيرة النبوية",
+    "category": "السيرة",
     "difficulty": "extreme",
     "question_ar": "من هو الصحابي الذي أرسله النبي إلى اليمن قاضياً ومعلماً؟",
     "options_ar": [
@@ -2738,11 +2943,12 @@
       "جميع ما سبق"
     ],
     "correctIndex": 3,
-    "source_ar": "سيرة"
+    "source_ar": "سيرة",
+    "id": 203
   },
   {
     "type": "mcq",
-    "category": "السيرة النبوية",
+    "category": "السيرة",
     "difficulty": "medium",
     "question_ar": "ما اسم ناقة النبي صلى الله عليه وسلم؟",
     "options_ar": [
@@ -2752,11 +2958,12 @@
       "جميع ما سبق"
     ],
     "correctIndex": 3,
-    "source_ar": "سيرة"
+    "source_ar": "سيرة",
+    "id": 204
   },
   {
     "type": "mcq",
-    "category": "السيرة النبوية",
+    "category": "السيرة",
     "difficulty": "hard",
     "question_ar": "من هو الصحابي الذي قتل مسيلمة الكذاب؟",
     "options_ar": [
@@ -2766,11 +2973,12 @@
       "البراء بن عازب"
     ],
     "correctIndex": 0,
-    "source_ar": "تاريخ"
+    "source_ar": "تاريخ",
+    "id": 205
   },
   {
     "type": "mcq",
-    "category": "السيرة النبوية",
+    "category": "السيرة",
     "difficulty": "hard",
     "question_ar": "من هو الصحابي الذي ادعى النبوة وحاربه المسلمون؟",
     "options_ar": [
@@ -2780,11 +2988,12 @@
       "سجاح"
     ],
     "correctIndex": 0,
-    "source_ar": "تاريخ"
+    "source_ar": "تاريخ",
+    "id": 206
   },
   {
     "type": "mcq",
-    "category": "السيرة النبوية",
+    "category": "السيرة",
     "difficulty": "medium",
     "question_ar": "ما هي الحجة التي حجها النبي صلى الله عليه وسلم؟",
     "options_ar": [
@@ -2794,11 +3003,12 @@
       "جميع ما سبق"
     ],
     "correctIndex": 3,
-    "source_ar": "سيرة"
+    "source_ar": "سيرة",
+    "id": 207
   },
   {
     "type": "mcq",
-    "category": "السيرة النبوية",
+    "category": "السيرة",
     "difficulty": "medium",
     "question_ar": "كم مرة اعتمر النبي صلى الله عليه وسلم؟",
     "options_ar": [
@@ -2808,11 +3018,12 @@
       "مرتان"
     ],
     "correctIndex": 0,
-    "source_ar": "سيرة"
+    "source_ar": "سيرة",
+    "id": 208
   },
   {
     "type": "mcq",
-    "category": "السيرة النبوية",
+    "category": "السيرة",
     "difficulty": "hard",
     "question_ar": "في أي يوم توفي النبي صلى الله عليه وسلم؟",
     "options_ar": [
@@ -2822,11 +3033,12 @@
       "الأربعاء"
     ],
     "correctIndex": 0,
-    "source_ar": "سيرة"
+    "source_ar": "سيرة",
+    "id": 209
   },
   {
     "type": "mcq",
-    "category": "السيرة النبوية",
+    "category": "السيرة",
     "difficulty": "medium",
     "question_ar": "كم كان عمر النبي حين توفي؟",
     "options_ar": [
@@ -2836,7 +3048,8 @@
       "40 سنة"
     ],
     "correctIndex": 0,
-    "source_ar": "سيرة"
+    "source_ar": "سيرة",
+    "id": 210
   },
   {
     "type": "mcq",
@@ -2850,7 +3063,8 @@
       "عبدالملك بن مروان"
     ],
     "correctIndex": 0,
-    "source_ar": "تاريخ"
+    "source_ar": "تاريخ",
+    "id": 211
   },
   {
     "type": "mcq",
@@ -2864,7 +3078,8 @@
       "عبدالله بن الزبير"
     ],
     "correctIndex": 2,
-    "source_ar": "تاريخ"
+    "source_ar": "تاريخ",
+    "id": 212
   },
   {
     "type": "mcq",
@@ -2878,7 +3093,8 @@
       "هشام بن عبدالملك"
     ],
     "correctIndex": 0,
-    "source_ar": "تاريخ"
+    "source_ar": "تاريخ",
+    "id": 213
   },
   {
     "type": "mcq",
@@ -2892,7 +3108,8 @@
       "البصرة"
     ],
     "correctIndex": 0,
-    "source_ar": "تاريخ"
+    "source_ar": "تاريخ",
+    "id": 214
   },
   {
     "type": "mcq",
@@ -2906,7 +3123,8 @@
       "هارون الرشيد"
     ],
     "correctIndex": 0,
-    "source_ar": "تاريخ"
+    "source_ar": "تاريخ",
+    "id": 215
   },
   {
     "type": "mcq",
@@ -2920,7 +3138,8 @@
       "120 هـ"
     ],
     "correctIndex": 0,
-    "source_ar": "تاريخ"
+    "source_ar": "تاريخ",
+    "id": 216
   },
   {
     "type": "mcq",
@@ -2934,7 +3153,8 @@
       "800 هـ"
     ],
     "correctIndex": 0,
-    "source_ar": "تاريخ"
+    "source_ar": "تاريخ",
+    "id": 217
   },
   {
     "type": "mcq",
@@ -2948,7 +3168,8 @@
       "يوسف بن تاشفين"
     ],
     "correctIndex": 0,
-    "source_ar": "تاريخ"
+    "source_ar": "تاريخ",
+    "id": 218
   },
   {
     "type": "mcq",
@@ -2962,7 +3183,8 @@
       "الوليد بن عبدالملك"
     ],
     "correctIndex": 0,
-    "source_ar": "تاريخ"
+    "source_ar": "تاريخ",
+    "id": 219
   },
   {
     "type": "mcq",
@@ -2976,7 +3198,8 @@
       "1258 م"
     ],
     "correctIndex": 0,
-    "source_ar": "تاريخ"
+    "source_ar": "تاريخ",
+    "id": 220
   },
   {
     "type": "mcq",
@@ -2990,7 +3213,8 @@
       "عثمان الأول"
     ],
     "correctIndex": 0,
-    "source_ar": "تاريخ"
+    "source_ar": "تاريخ",
+    "id": 221
   },
   {
     "type": "mcq",
@@ -3004,7 +3228,8 @@
       "1299 م"
     ],
     "correctIndex": 0,
-    "source_ar": "تاريخ"
+    "source_ar": "تاريخ",
+    "id": 222
   },
   {
     "type": "mcq",
@@ -3018,7 +3243,8 @@
       "نور الدين زنكي"
     ],
     "correctIndex": 0,
-    "source_ar": "تاريخ"
+    "source_ar": "تاريخ",
+    "id": 223
   },
   {
     "type": "mcq",
@@ -3032,7 +3258,8 @@
       "بيبرس"
     ],
     "correctIndex": 0,
-    "source_ar": "تاريخ"
+    "source_ar": "تاريخ",
+    "id": 224
   },
   {
     "type": "mcq",
@@ -3046,7 +3273,8 @@
       "القادسية"
     ],
     "correctIndex": 0,
-    "source_ar": "تاريخ"
+    "source_ar": "تاريخ",
+    "id": 225
   },
   {
     "type": "mcq",
@@ -3060,7 +3288,8 @@
       "مراد الأول"
     ],
     "correctIndex": 0,
-    "source_ar": "تاريخ"
+    "source_ar": "تاريخ",
+    "id": 226
   },
   {
     "type": "mcq",
@@ -3074,7 +3303,8 @@
       "علي بن يوسف"
     ],
     "correctIndex": 1,
-    "source_ar": "تاريخ"
+    "source_ar": "تاريخ",
+    "id": 227
   },
   {
     "type": "mcq",
@@ -3088,7 +3318,8 @@
       "المنصور الموحدي"
     ],
     "correctIndex": 0,
-    "source_ar": "تاريخ"
+    "source_ar": "تاريخ",
+    "id": 228
   },
   {
     "type": "mcq",
@@ -3102,7 +3333,8 @@
       "علي بن أبي طالب"
     ],
     "correctIndex": 0,
-    "source_ar": "تاريخ"
+    "source_ar": "تاريخ",
+    "id": 229
   },
   {
     "type": "mcq",
@@ -3116,7 +3348,8 @@
       "جلولاء"
     ],
     "correctIndex": 0,
-    "source_ar": "تاريخ"
+    "source_ar": "تاريخ",
+    "id": 230
   },
   {
     "type": "mcq",
@@ -3130,7 +3363,8 @@
       "تبوك"
     ],
     "correctIndex": 0,
-    "source_ar": "تاريخ"
+    "source_ar": "تاريخ",
+    "id": 231
   },
   {
     "type": "mcq",
@@ -3144,7 +3378,8 @@
       "محمد بن الأغلب"
     ],
     "correctIndex": 0,
-    "source_ar": "تاريخ"
+    "source_ar": "تاريخ",
+    "id": 232
   },
   {
     "type": "mcq",
@@ -3158,7 +3393,8 @@
       "عجيب المانجلك"
     ],
     "correctIndex": 0,
-    "source_ar": "تاريخ"
+    "source_ar": "تاريخ",
+    "id": 233
   },
   {
     "type": "mcq",
@@ -3172,7 +3408,8 @@
       "الدولة الإخشيدية"
     ],
     "correctIndex": 0,
-    "source_ar": "تاريخ"
+    "source_ar": "تاريخ",
+    "id": 234
   },
   {
     "type": "mcq",
@@ -3186,7 +3423,8 @@
       "علي بن أبي طالب"
     ],
     "correctIndex": 0,
-    "source_ar": "تاريخ"
+    "source_ar": "تاريخ",
+    "id": 235
   },
   {
     "type": "mcq",
@@ -3200,7 +3438,8 @@
       "المأمون"
     ],
     "correctIndex": 0,
-    "source_ar": "تاريخ"
+    "source_ar": "تاريخ",
+    "id": 236
   },
   {
     "type": "mcq",
@@ -3214,7 +3453,8 @@
       "القاهرة"
     ],
     "correctIndex": 0,
-    "source_ar": "تاريخ"
+    "source_ar": "تاريخ",
+    "id": 237
   },
   {
     "type": "mcq",
@@ -3228,7 +3468,8 @@
       "عمرو بن العاص"
     ],
     "correctIndex": 0,
-    "source_ar": "تاريخ"
+    "source_ar": "تاريخ",
+    "id": 238
   },
   {
     "type": "mcq",
@@ -3242,7 +3483,8 @@
       "زهير بن قيس"
     ],
     "correctIndex": 0,
-    "source_ar": "تاريخ"
+    "source_ar": "تاريخ",
+    "id": 239
   },
   {
     "type": "mcq",
@@ -3256,7 +3498,8 @@
       "العباس بن المأمون"
     ],
     "correctIndex": 0,
-    "source_ar": "تاريخ"
+    "source_ar": "تاريخ",
+    "id": 240
   },
   {
     "type": "mcq",
@@ -3270,7 +3513,8 @@
       "العقاب"
     ],
     "correctIndex": 0,
-    "source_ar": "تاريخ"
+    "source_ar": "تاريخ",
+    "id": 241
   },
   {
     "type": "mcq",
@@ -3284,7 +3528,8 @@
       "موسى بن نصير"
     ],
     "correctIndex": 0,
-    "source_ar": "تاريخ"
+    "source_ar": "تاريخ",
+    "id": 242
   },
   {
     "type": "mcq",
@@ -3298,7 +3543,8 @@
       "محمد الفاتح"
     ],
     "correctIndex": 0,
-    "source_ar": "تاريخ"
+    "source_ar": "تاريخ",
+    "id": 243
   },
   {
     "type": "mcq",
@@ -3312,7 +3558,8 @@
       "عبدالمجيد الثاني"
     ],
     "correctIndex": 0,
-    "source_ar": "تاريخ"
+    "source_ar": "تاريخ",
+    "id": 244
   },
   {
     "type": "mcq",
@@ -3326,7 +3573,8 @@
       "العباسيين"
     ],
     "correctIndex": 0,
-    "source_ar": "تاريخ"
+    "source_ar": "تاريخ",
+    "id": 245
   },
   {
     "type": "mcq",
@@ -3340,7 +3588,8 @@
       "الإخشيد"
     ],
     "correctIndex": 0,
-    "source_ar": "تاريخ"
+    "source_ar": "تاريخ",
+    "id": 246
   },
   {
     "type": "mcq",
@@ -3354,7 +3603,8 @@
       "جوهر الصقلي"
     ],
     "correctIndex": 0,
-    "source_ar": "تاريخ"
+    "source_ar": "تاريخ",
+    "id": 247
   },
   {
     "type": "mcq",
@@ -3368,7 +3618,8 @@
       "يرموك"
     ],
     "correctIndex": 0,
-    "source_ar": "تاريخ"
+    "source_ar": "تاريخ",
+    "id": 248
   },
   {
     "type": "mcq",
@@ -3382,7 +3633,8 @@
       "الدمام"
     ],
     "correctIndex": 0,
-    "source_ar": "ثقافة عامة"
+    "source_ar": "ثقافة عامة",
+    "id": 249
   },
   {
     "type": "mcq",
@@ -3396,7 +3648,8 @@
       "أوروبا"
     ],
     "correctIndex": 0,
-    "source_ar": "ثقافة عامة"
+    "source_ar": "ثقافة عامة",
+    "id": 250
   },
   {
     "type": "mcq",
@@ -3410,7 +3663,8 @@
       "الدولار"
     ],
     "correctIndex": 0,
-    "source_ar": "ثقافة عامة"
+    "source_ar": "ثقافة عامة",
+    "id": 251
   },
   {
     "type": "mcq",
@@ -3424,7 +3678,8 @@
       "بوينس آيرس"
     ],
     "correctIndex": 0,
-    "source_ar": "ثقافة عامة"
+    "source_ar": "ثقافة عامة",
+    "id": 252
   },
   {
     "type": "mcq",
@@ -3438,7 +3693,8 @@
       "الأردن"
     ],
     "correctIndex": 0,
-    "source_ar": "ثقافة عامة"
+    "source_ar": "ثقافة عامة",
+    "id": 253
   },
   {
     "type": "mcq",
@@ -3452,7 +3708,8 @@
       "8"
     ],
     "correctIndex": 0,
-    "source_ar": "ثقافة عامة"
+    "source_ar": "ثقافة عامة",
+    "id": 254
   },
   {
     "type": "mcq",
@@ -3466,7 +3723,8 @@
       "أينشتاين"
     ],
     "correctIndex": 0,
-    "source_ar": "ثقافة عامة"
+    "source_ar": "ثقافة عامة",
+    "id": 255
   },
   {
     "type": "mcq",
@@ -3480,7 +3738,8 @@
       "الرازي"
     ],
     "correctIndex": 0,
-    "source_ar": "ثقافة عامة"
+    "source_ar": "ثقافة عامة",
+    "id": 256
   },
   {
     "type": "mcq",
@@ -3494,7 +3753,8 @@
       "فحيح"
     ],
     "correctIndex": 0,
-    "source_ar": "لغة"
+    "source_ar": "لغة",
+    "id": 257
   },
   {
     "type": "mcq",
@@ -3508,7 +3768,8 @@
       "وجار"
     ],
     "correctIndex": 0,
-    "source_ar": "لغة"
+    "source_ar": "لغة",
+    "id": 258
   },
   {
     "type": "mcq",
@@ -3522,7 +3783,8 @@
       "النحاس"
     ],
     "correctIndex": 0,
-    "source_ar": "علوم"
+    "source_ar": "علوم",
+    "id": 259
   },
   {
     "type": "mcq",
@@ -3536,7 +3798,8 @@
       "الغزال"
     ],
     "correctIndex": 0,
-    "source_ar": "علوم"
+    "source_ar": "علوم",
+    "id": 260
   },
   {
     "type": "mcq",
@@ -3550,7 +3813,8 @@
       "الثعبان"
     ],
     "correctIndex": 0,
-    "source_ar": "علوم"
+    "source_ar": "علوم",
+    "id": 261
   },
   {
     "type": "mcq",
@@ -3564,7 +3828,8 @@
       "4"
     ],
     "correctIndex": 0,
-    "source_ar": "علوم"
+    "source_ar": "علوم",
+    "id": 262
   },
   {
     "type": "mcq",
@@ -3578,7 +3843,8 @@
       "مصر"
     ],
     "correctIndex": 0,
-    "source_ar": "ثقافة عامة"
+    "source_ar": "ثقافة عامة",
+    "id": 263
   },
   {
     "type": "mcq",
@@ -3592,7 +3858,8 @@
       "الكويت"
     ],
     "correctIndex": 0,
-    "source_ar": "ثقافة عامة"
+    "source_ar": "ثقافة عامة",
+    "id": 264
   },
   {
     "type": "mcq",
@@ -3606,7 +3873,8 @@
       "بيرث"
     ],
     "correctIndex": 0,
-    "source_ar": "ثقافة عامة"
+    "source_ar": "ثقافة عامة",
+    "id": 265
   },
   {
     "type": "mcq",
@@ -3620,7 +3888,8 @@
       "جميع ما سبق"
     ],
     "correctIndex": 3,
-    "source_ar": "ثقافة عامة"
+    "source_ar": "ثقافة عامة",
+    "id": 266
   },
   {
     "type": "mcq",
@@ -3634,7 +3903,8 @@
       "بحر قزوين"
     ],
     "correctIndex": 0,
-    "source_ar": "ثقافة عامة"
+    "source_ar": "ثقافة عامة",
+    "id": 267
   },
   {
     "type": "mcq",
@@ -3648,7 +3918,8 @@
       "بديع الزمان"
     ],
     "correctIndex": 0,
-    "source_ar": "أدب"
+    "source_ar": "أدب",
+    "id": 268
   },
   {
     "type": "mcq",
@@ -3662,7 +3933,8 @@
       "نزار قباني"
     ],
     "correctIndex": 0,
-    "source_ar": "أدب"
+    "source_ar": "أدب",
+    "id": 269
   },
   {
     "type": "mcq",
@@ -3676,7 +3948,8 @@
       "البارودي"
     ],
     "correctIndex": 0,
-    "source_ar": "أدب"
+    "source_ar": "أدب",
+    "id": 270
   },
   {
     "type": "mcq",
@@ -3690,7 +3963,8 @@
       "المقتضب"
     ],
     "correctIndex": 0,
-    "source_ar": "أدب"
+    "source_ar": "أدب",
+    "id": 271
   },
   {
     "type": "mcq",
@@ -3704,7 +3978,8 @@
       "9"
     ],
     "correctIndex": 0,
-    "source_ar": "رياضة"
+    "source_ar": "رياضة",
+    "id": 272
   },
   {
     "type": "mcq",
@@ -3718,7 +3993,8 @@
       "فرنسا"
     ],
     "correctIndex": 0,
-    "source_ar": "رياضة"
+    "source_ar": "رياضة",
+    "id": 273
   },
   {
     "type": "mcq",
@@ -3732,7 +4008,8 @@
       "القهوة"
     ],
     "correctIndex": 0,
-    "source_ar": "ثقافة عامة"
+    "source_ar": "ثقافة عامة",
+    "id": 274
   },
   {
     "type": "mcq",
@@ -3746,7 +4023,8 @@
       "الملح"
     ],
     "correctIndex": 0,
-    "source_ar": "ثقافة عامة"
+    "source_ar": "ثقافة عامة",
+    "id": 275
   },
   {
     "type": "mcq",
@@ -3760,7 +4038,8 @@
       "النيتروجين"
     ],
     "correctIndex": 0,
-    "source_ar": "علوم"
+    "source_ar": "علوم",
+    "id": 276
   },
   {
     "type": "mcq",
@@ -3774,7 +4053,8 @@
       "الفضة"
     ],
     "correctIndex": 0,
-    "source_ar": "علوم"
+    "source_ar": "علوم",
+    "id": 277
   },
   {
     "type": "mcq",
@@ -3788,7 +4068,8 @@
       "النيكل"
     ],
     "correctIndex": 0,
-    "source_ar": "علوم"
+    "source_ar": "علوم",
+    "id": 278
   },
   {
     "type": "mcq",
@@ -3802,7 +4083,8 @@
       "بحيرة بايكال"
     ],
     "correctIndex": 0,
-    "source_ar": "ثقافة عامة"
+    "source_ar": "ثقافة عامة",
+    "id": 279
   },
   {
     "type": "mcq",
@@ -3816,7 +4098,8 @@
       "فوجي"
     ],
     "correctIndex": 0,
-    "source_ar": "ثقافة عامة"
+    "source_ar": "ثقافة عامة",
+    "id": 280
   },
   {
     "type": "mcq",
@@ -3830,7 +4113,8 @@
       "إيطاليا"
     ],
     "correctIndex": 0,
-    "source_ar": "ثقافة عامة"
+    "source_ar": "ثقافة عامة",
+    "id": 281
   },
   {
     "type": "mcq",
@@ -3844,7 +4128,8 @@
       "باطن الكف"
     ],
     "correctIndex": 0,
-    "source_ar": "لغة"
+    "source_ar": "لغة",
+    "id": 282
   },
   {
     "type": "mcq",
@@ -3858,7 +4143,8 @@
       "أكثر من 100"
     ],
     "correctIndex": 0,
-    "source_ar": "لغة"
+    "source_ar": "لغة",
+    "id": 283
   },
   {
     "type": "mcq",
@@ -3872,7 +4158,8 @@
       "الرمان"
     ],
     "correctIndex": 0,
-    "source_ar": "لغة"
+    "source_ar": "لغة",
+    "id": 284
   },
   {
     "type": "mcq",
@@ -3886,7 +4173,8 @@
       "الأشقر"
     ],
     "correctIndex": 0,
-    "source_ar": "لغة"
+    "source_ar": "لغة",
+    "id": 285
   },
   {
     "type": "mcq",
@@ -3900,7 +4188,8 @@
       "الخليل بن أحمد"
     ],
     "correctIndex": 0,
-    "source_ar": "لغة"
+    "source_ar": "لغة",
+    "id": 286
   },
   {
     "type": "mcq",
@@ -3914,7 +4203,8 @@
       "ابن جني"
     ],
     "correctIndex": 0,
-    "source_ar": "لغة"
+    "source_ar": "لغة",
+    "id": 287
   },
   {
     "type": "mcq",
@@ -3928,7 +4218,8 @@
       "100"
     ],
     "correctIndex": 0,
-    "source_ar": "قرآن"
+    "source_ar": "قرآن",
+    "id": 288
   },
   {
     "type": "mcq",
@@ -3942,7 +4233,8 @@
       "المائدة"
     ],
     "correctIndex": 0,
-    "source_ar": "قرآن"
+    "source_ar": "قرآن",
+    "id": 289
   },
   {
     "type": "mcq",
@@ -3956,7 +4248,8 @@
       "الناس"
     ],
     "correctIndex": 0,
-    "source_ar": "قرآن"
+    "source_ar": "قرآن",
+    "id": 290
   },
   {
     "type": "mcq",
@@ -3970,7 +4263,8 @@
       "هود"
     ],
     "correctIndex": 0,
-    "source_ar": "قرآن"
+    "source_ar": "قرآن",
+    "id": 291
   },
   {
     "type": "mcq",
@@ -3984,7 +4278,8 @@
       "النساء"
     ],
     "correctIndex": 0,
-    "source_ar": "قرآن"
+    "source_ar": "قرآن",
+    "id": 292
   },
   {
     "type": "mcq",
@@ -3998,7 +4293,8 @@
       "12"
     ],
     "correctIndex": 0,
-    "source_ar": "قرآن"
+    "source_ar": "قرآن",
+    "id": 293
   },
   {
     "type": "mcq",
@@ -4012,7 +4308,8 @@
       "التحريم"
     ],
     "correctIndex": 0,
-    "source_ar": "قرآن"
+    "source_ar": "قرآن",
+    "id": 294
   },
   {
     "type": "mcq",
@@ -4026,7 +4323,8 @@
       "يوسف"
     ],
     "correctIndex": 0,
-    "source_ar": "قرآن"
+    "source_ar": "قرآن",
+    "id": 295
   },
   {
     "type": "mcq",
@@ -4040,7 +4338,8 @@
       "الحج"
     ],
     "correctIndex": 0,
-    "source_ar": "فقه"
+    "source_ar": "فقه",
+    "id": 296
   },
   {
     "type": "mcq",
@@ -4054,7 +4353,8 @@
       "الفجر والعشاء"
     ],
     "correctIndex": 0,
-    "source_ar": "فقه"
+    "source_ar": "فقه",
+    "id": 297
   },
   {
     "type": "mcq",
@@ -4068,7 +4368,8 @@
       "صلاة الضحى"
     ],
     "correctIndex": 0,
-    "source_ar": "فقه"
+    "source_ar": "فقه",
+    "id": 298
   },
   {
     "type": "mcq",
@@ -4082,7 +4383,8 @@
       "2"
     ],
     "correctIndex": 0,
-    "source_ar": "فقه"
+    "source_ar": "فقه",
+    "id": 299
   },
   {
     "type": "mcq",
@@ -4096,7 +4398,8 @@
       "السدس"
     ],
     "correctIndex": 0,
-    "source_ar": "مواريث"
+    "source_ar": "مواريث",
+    "id": 300
   },
   {
     "type": "mcq",
@@ -4110,7 +4413,8 @@
       "الثلثان"
     ],
     "correctIndex": 0,
-    "source_ar": "مواريث"
+    "source_ar": "مواريث",
+    "id": 301
   },
   {
     "type": "mcq",
@@ -4124,7 +4428,8 @@
       "غير ذلك"
     ],
     "correctIndex": 0,
-    "source_ar": "حديث"
+    "source_ar": "حديث",
+    "id": 302
   },
   {
     "type": "mcq",
@@ -4138,7 +4443,8 @@
       "الإمام أبو حنيفة"
     ],
     "correctIndex": 0,
-    "source_ar": "حديث"
+    "source_ar": "حديث",
+    "id": 303
   },
   {
     "type": "mcq",
@@ -4152,7 +4458,8 @@
       "قول التابعي"
     ],
     "correctIndex": 0,
-    "source_ar": "حديث"
+    "source_ar": "حديث",
+    "id": 304
   },
   {
     "type": "mcq",
@@ -4166,7 +4473,8 @@
       "11 ذو الحجة"
     ],
     "correctIndex": 0,
-    "source_ar": "فقه"
+    "source_ar": "فقه",
+    "id": 305
   },
   {
     "type": "mcq",
@@ -4180,7 +4488,8 @@
       "12 ذو الحجة"
     ],
     "correctIndex": 0,
-    "source_ar": "فقه"
+    "source_ar": "فقه",
+    "id": 306
   },
   {
     "type": "mcq",
@@ -4194,7 +4503,8 @@
       "العشر الأواخر من رمضان"
     ],
     "correctIndex": 0,
-    "source_ar": "فقه"
+    "source_ar": "فقه",
+    "id": 307
   },
   {
     "type": "mcq",
@@ -4208,7 +4518,8 @@
       "يلملم"
     ],
     "correctIndex": 0,
-    "source_ar": "فقه"
+    "source_ar": "فقه",
+    "id": 308
   },
   {
     "type": "mcq",
@@ -4222,7 +4533,8 @@
       "ذات عرق"
     ],
     "correctIndex": 0,
-    "source_ar": "فقه"
+    "source_ar": "فقه",
+    "id": 309
   },
   {
     "type": "mcq",
@@ -4236,7 +4548,8 @@
       "عيسى"
     ],
     "correctIndex": 0,
-    "source_ar": "قصص الأنبياء"
+    "source_ar": "قصص الأنبياء",
+    "id": 310
   },
   {
     "type": "mcq",
@@ -4250,7 +4563,8 @@
       "نوح"
     ],
     "correctIndex": 0,
-    "source_ar": "قصص الأنبياء"
+    "source_ar": "قصص الأنبياء",
+    "id": 311
   },
   {
     "type": "mcq",
@@ -4264,7 +4578,8 @@
       "يحيى"
     ],
     "correctIndex": 0,
-    "source_ar": "قصص الأنبياء"
+    "source_ar": "قصص الأنبياء",
+    "id": 312
   },
   {
     "type": "mcq",
@@ -4278,7 +4593,8 @@
       "أيوب"
     ],
     "correctIndex": 0,
-    "source_ar": "قصص الأنبياء"
+    "source_ar": "قصص الأنبياء",
+    "id": 313
   },
   {
     "type": "mcq",
@@ -4292,7 +4608,8 @@
       "إسحاق"
     ],
     "correctIndex": 0,
-    "source_ar": "قصص الأنبياء"
+    "source_ar": "قصص الأنبياء",
+    "id": 314
   },
   {
     "type": "mcq",
@@ -4306,7 +4623,8 @@
       "إلياس"
     ],
     "correctIndex": 0,
-    "source_ar": "قصص الأنبياء"
+    "source_ar": "قصص الأنبياء",
+    "id": 315
   },
   {
     "type": "mcq",
@@ -4320,7 +4638,8 @@
       "15"
     ],
     "correctIndex": 0,
-    "source_ar": "قرآن"
+    "source_ar": "قرآن",
+    "id": 316
   },
   {
     "type": "mcq",
@@ -4334,7 +4653,8 @@
       "الصحف"
     ],
     "correctIndex": 0,
-    "source_ar": "عقيدة"
+    "source_ar": "عقيدة",
+    "id": 317
   },
   {
     "type": "mcq",
@@ -4348,7 +4668,8 @@
       "الفرقان"
     ],
     "correctIndex": 0,
-    "source_ar": "عقيدة"
+    "source_ar": "عقيدة",
+    "id": 318
   },
   {
     "type": "mcq",
@@ -4362,7 +4683,8 @@
       "الصحف"
     ],
     "correctIndex": 0,
-    "source_ar": "عقيدة"
+    "source_ar": "عقيدة",
+    "id": 319
   },
   {
     "type": "mcq",
@@ -4376,7 +4698,8 @@
       "الأرض"
     ],
     "correctIndex": 0,
-    "source_ar": "قرآن"
+    "source_ar": "قرآن",
+    "id": 320
   },
   {
     "type": "mcq",
@@ -4390,7 +4713,8 @@
       "نوح، هود، صالح، شعيب، محمد"
     ],
     "correctIndex": 0,
-    "source_ar": "عقيدة"
+    "source_ar": "عقيدة",
+    "id": 321
   },
   {
     "type": "mcq",
@@ -4404,7 +4728,8 @@
       "من مات غريقاً"
     ],
     "correctIndex": 0,
-    "source_ar": "مواريث"
+    "source_ar": "مواريث",
+    "id": 322
   },
   {
     "type": "mcq",
@@ -4418,7 +4743,8 @@
       "لا شيء مما ذكر"
     ],
     "correctIndex": 0,
-    "source_ar": "مواريث"
+    "source_ar": "مواريث",
+    "id": 323
   },
   {
     "type": "mcq",
@@ -4432,7 +4758,8 @@
       "القتل"
     ],
     "correctIndex": 0,
-    "source_ar": "فقه"
+    "source_ar": "فقه",
+    "id": 324
   },
   {
     "type": "mcq",
@@ -4446,7 +4773,8 @@
       "الصدقة"
     ],
     "correctIndex": 0,
-    "source_ar": "فقه"
+    "source_ar": "فقه",
+    "id": 325
   },
   {
     "type": "mcq",
@@ -4460,7 +4788,8 @@
       "سعد بن معاذ"
     ],
     "correctIndex": 0,
-    "source_ar": "سيرة"
+    "source_ar": "سيرة",
+    "id": 326
   },
   {
     "type": "mcq",
@@ -4474,7 +4803,8 @@
       "عمار بن ياسر"
     ],
     "correctIndex": 0,
-    "source_ar": "سيرة"
+    "source_ar": "سيرة",
+    "id": 327
   },
   {
     "type": "mcq",
@@ -4488,7 +4818,8 @@
       "قتيلة بنت عبدالعزى"
     ],
     "correctIndex": 0,
-    "source_ar": "سيرة"
+    "source_ar": "سيرة",
+    "id": 328
   },
   {
     "type": "mcq",
@@ -4502,11 +4833,12 @@
       "سالم مولى أبي حذيفة"
     ],
     "correctIndex": 0,
-    "source_ar": "سيرة"
+    "source_ar": "سيرة",
+    "id": 329
   },
   {
     "type": "mcq",
-    "category": "السيرة النبوية",
+    "category": "السيرة",
     "difficulty": "hard",
     "question_ar": "ما هو اسم ملك الروم الذي أرسل له النبي رسالة؟",
     "options_ar": [
@@ -4516,11 +4848,12 @@
       "النجاشي"
     ],
     "correctIndex": 0,
-    "source_ar": "سيرة"
+    "source_ar": "سيرة",
+    "id": 330
   },
   {
     "type": "mcq",
-    "category": "السيرة النبوية",
+    "category": "السيرة",
     "difficulty": "hard",
     "question_ar": "ما هو اسم ملك الفرس الذي مزق رسالة النبي؟",
     "options_ar": [
@@ -4530,11 +4863,12 @@
       "النجاشي"
     ],
     "correctIndex": 0,
-    "source_ar": "سيرة"
+    "source_ar": "سيرة",
+    "id": 331
   },
   {
     "type": "mcq",
-    "category": "السيرة النبوية",
+    "category": "السيرة",
     "difficulty": "hard",
     "question_ar": "ما هو اسم ملك الحبشة الذي آمن بالنبي؟",
     "options_ar": [
@@ -4544,11 +4878,12 @@
       "كسرى"
     ],
     "correctIndex": 0,
-    "source_ar": "سيرة"
+    "source_ar": "سيرة",
+    "id": 332
   },
   {
     "type": "mcq",
-    "category": "السيرة النبوية",
+    "category": "السيرة",
     "difficulty": "extreme",
     "question_ar": "من هو الصحابي الذي أرسله النبي إلى النجاشي؟",
     "options_ar": [
@@ -4558,11 +4893,12 @@
       "حاطب بن أبي بلتعة"
     ],
     "correctIndex": 0,
-    "source_ar": "سيرة"
+    "source_ar": "سيرة",
+    "id": 333
   },
   {
     "type": "mcq",
-    "category": "السيرة النبوية",
+    "category": "السيرة",
     "difficulty": "extreme",
     "question_ar": "من هو الصحابي الذي أرسله النبي إلى المقوقس؟",
     "options_ar": [
@@ -4572,7 +4908,8 @@
       "شجاع بن وهب"
     ],
     "correctIndex": 0,
-    "source_ar": "سيرة"
+    "source_ar": "سيرة",
+    "id": 334
   },
   {
     "type": "mcq",
@@ -4586,7 +4923,8 @@
       "الوليد بن عبدالملك"
     ],
     "correctIndex": 0,
-    "source_ar": "تاريخ"
+    "source_ar": "تاريخ",
+    "id": 335
   },
   {
     "type": "mcq",
@@ -4600,7 +4938,8 @@
       "طارق بن زياد"
     ],
     "correctIndex": 0,
-    "source_ar": "تاريخ"
+    "source_ar": "تاريخ",
+    "id": 336
   },
   {
     "type": "mcq",
@@ -4614,7 +4953,8 @@
       "مسلمة بن عبدالملك"
     ],
     "correctIndex": 0,
-    "source_ar": "تاريخ"
+    "source_ar": "تاريخ",
+    "id": 337
   },
   {
     "type": "mcq",
@@ -4628,7 +4968,8 @@
       "الفرنك"
     ],
     "correctIndex": 0,
-    "source_ar": "ثقافة عامة"
+    "source_ar": "ثقافة عامة",
+    "id": 338
   },
   {
     "type": "mcq",
@@ -4642,7 +4983,8 @@
       "الين"
     ],
     "correctIndex": 0,
-    "source_ar": "ثقافة عامة"
+    "source_ar": "ثقافة عامة",
+    "id": 339
   },
   {
     "type": "mcq",
@@ -4656,7 +4998,8 @@
       "فانكوفر"
     ],
     "correctIndex": 0,
-    "source_ar": "ثقافة عامة"
+    "source_ar": "ثقافة عامة",
+    "id": 340
   },
   {
     "type": "mcq",
@@ -4670,7 +5013,8 @@
       "ووهان"
     ],
     "correctIndex": 0,
-    "source_ar": "ثقافة عامة"
+    "source_ar": "ثقافة عامة",
+    "id": 341
   },
   {
     "type": "mcq",
@@ -4684,7 +5028,8 @@
       "فارس"
     ],
     "correctIndex": 0,
-    "source_ar": "ثقافة عامة"
+    "source_ar": "ثقافة عامة",
+    "id": 342
   },
   {
     "type": "mcq",
@@ -4698,7 +5043,8 @@
       "بيزنطة"
     ],
     "correctIndex": 0,
-    "source_ar": "ثقافة عامة"
+    "source_ar": "ثقافة عامة",
+    "id": 343
   },
   {
     "type": "mcq",
@@ -4712,7 +5058,8 @@
       "آلة موسيقية"
     ],
     "correctIndex": 0,
-    "source_ar": "لغة"
+    "source_ar": "لغة",
+    "id": 344
   },
   {
     "type": "mcq",
@@ -4726,7 +5073,8 @@
       "الحر الشديد"
     ],
     "correctIndex": 0,
-    "source_ar": "لغة"
+    "source_ar": "لغة",
+    "id": 345
   },
   {
     "type": "mcq",
@@ -4740,7 +5088,8 @@
       "الضباب"
     ],
     "correctIndex": 0,
-    "source_ar": "لغة"
+    "source_ar": "لغة",
+    "id": 346
   },
   {
     "type": "mcq",
@@ -4754,7 +5103,8 @@
       "صلاة الاستسقاء"
     ],
     "correctIndex": 0,
-    "source_ar": "فقه"
+    "source_ar": "فقه",
+    "id": 347
   },
   {
     "type": "mcq",
@@ -4768,7 +5118,8 @@
       "صلاة العيد"
     ],
     "correctIndex": 0,
-    "source_ar": "فقه"
+    "source_ar": "فقه",
+    "id": 348
   },
   {
     "type": "mcq",
@@ -4782,7 +5133,8 @@
       "صلاة السفر"
     ],
     "correctIndex": 0,
-    "source_ar": "فقه"
+    "source_ar": "فقه",
+    "id": 349
   },
   {
     "type": "mcq",
@@ -4796,7 +5148,8 @@
       "300"
     ],
     "correctIndex": 0,
-    "source_ar": "قرآن"
+    "source_ar": "قرآن",
+    "id": 350
   },
   {
     "type": "mcq",
@@ -4810,7 +5163,8 @@
       "120"
     ],
     "correctIndex": 0,
-    "source_ar": "قرآن"
+    "source_ar": "قرآن",
+    "id": 351
   },
   {
     "type": "mcq",
@@ -4824,7 +5178,8 @@
       "130"
     ],
     "correctIndex": 0,
-    "source_ar": "قرآن"
+    "source_ar": "قرآن",
+    "id": 352
   },
   {
     "type": "mcq",
@@ -4838,7 +5193,8 @@
       "الكافرون"
     ],
     "correctIndex": 0,
-    "source_ar": "قرآن"
+    "source_ar": "قرآن",
+    "id": 353
   },
   {
     "type": "mcq",
@@ -4852,7 +5208,8 @@
       "المائدة"
     ],
     "correctIndex": 0,
-    "source_ar": "قرآن"
+    "source_ar": "قرآن",
+    "id": 354
   },
   {
     "type": "mcq",
@@ -4866,7 +5223,8 @@
       "أبو بكر الصديق"
     ],
     "correctIndex": 0,
-    "source_ar": "سيرة"
+    "source_ar": "سيرة",
+    "id": 355
   },
   {
     "type": "mcq",
@@ -4880,7 +5238,8 @@
       "زينب بنت جحش"
     ],
     "correctIndex": 0,
-    "source_ar": "سيرة"
+    "source_ar": "سيرة",
+    "id": 356
   },
   {
     "type": "mcq",
@@ -4894,7 +5253,8 @@
       "عمر بن الخطاب"
     ],
     "correctIndex": 0,
-    "source_ar": "قرآن"
+    "source_ar": "قرآن",
+    "id": 357
   },
   {
     "type": "mcq",
@@ -4908,7 +5268,8 @@
       "المعتصم"
     ],
     "correctIndex": 0,
-    "source_ar": "تاريخ"
+    "source_ar": "تاريخ",
+    "id": 358
   },
   {
     "type": "mcq",
@@ -4922,7 +5283,8 @@
       "الرشيد"
     ],
     "correctIndex": 0,
-    "source_ar": "تاريخ"
+    "source_ar": "تاريخ",
+    "id": 359
   },
   {
     "type": "mcq",
@@ -4936,7 +5298,8 @@
       "الفلبين"
     ],
     "correctIndex": 0,
-    "source_ar": "ثقافة عامة"
+    "source_ar": "ثقافة عامة",
+    "id": 360
   },
   {
     "type": "mcq",
@@ -4950,7 +5313,8 @@
       "أوزون"
     ],
     "correctIndex": 0,
-    "source_ar": "علوم"
+    "source_ar": "علوم",
+    "id": 361
   },
   {
     "type": "mcq",
@@ -4964,7 +5328,8 @@
       "الحصان"
     ],
     "correctIndex": 0,
-    "source_ar": "علوم"
+    "source_ar": "علوم",
+    "id": 362
   },
   {
     "type": "mcq",
@@ -4978,7 +5343,8 @@
       "ذبح شاة"
     ],
     "correctIndex": 0,
-    "source_ar": "فقه"
+    "source_ar": "فقه",
+    "id": 363
   },
   {
     "type": "mcq",
@@ -4992,7 +5358,8 @@
       "حتى تضع حملها (لغير الحامل)"
     ],
     "correctIndex": 0,
-    "source_ar": "فقه"
+    "source_ar": "فقه",
+    "id": 364
   },
   {
     "type": "mcq",
@@ -5006,7 +5373,8 @@
       "شهر واحد"
     ],
     "correctIndex": 0,
-    "source_ar": "فقه"
+    "source_ar": "فقه",
+    "id": 365
   },
   {
     "type": "mcq",
@@ -5020,11 +5388,12 @@
       "حسان بن ثابت"
     ],
     "correctIndex": 0,
-    "source_ar": "قرآن"
+    "source_ar": "قرآن",
+    "id": 366
   },
   {
     "type": "mcq",
-    "category": "السيرة النبوية",
+    "category": "السيرة",
     "difficulty": "hard",
     "question_ar": "من هو الصحابي الذي أسر العباس يوم بدر؟",
     "options_ar": [
@@ -5034,11 +5403,12 @@
       "سعد بن أبي وقاص"
     ],
     "correctIndex": 0,
-    "source_ar": "سيرة"
+    "source_ar": "سيرة",
+    "id": 367
   },
   {
     "type": "mcq",
-    "category": "السيرة النبوية",
+    "category": "السيرة",
     "difficulty": "hard",
     "question_ar": "من هو قتيل الجن؟",
     "options_ar": [
@@ -5048,7 +5418,8 @@
       "خبيب بن عدي"
     ],
     "correctIndex": 0,
-    "source_ar": "سيرة"
+    "source_ar": "سيرة",
+    "id": 368
   },
   {
     "type": "mcq",
@@ -5062,7 +5433,8 @@
       "المتوكل"
     ],
     "correctIndex": 0,
-    "source_ar": "تاريخ"
+    "source_ar": "تاريخ",
+    "id": 369
   },
   {
     "type": "mcq",
@@ -5076,7 +5448,8 @@
       "الأرض"
     ],
     "correctIndex": 0,
-    "source_ar": "علوم"
+    "source_ar": "علوم",
+    "id": 370
   },
   {
     "type": "mcq",
@@ -5090,7 +5463,8 @@
       "زحل"
     ],
     "correctIndex": 0,
-    "source_ar": "علوم"
+    "source_ar": "علوم",
+    "id": 371
   },
   {
     "type": "mcq",
@@ -5104,7 +5478,8 @@
       "نبتون"
     ],
     "correctIndex": 0,
-    "source_ar": "علوم"
+    "source_ar": "علوم",
+    "id": 372
   },
   {
     "type": "mcq",
@@ -5118,7 +5493,8 @@
       "صالح"
     ],
     "correctIndex": 0,
-    "source_ar": "قصص الأنبياء"
+    "source_ar": "قصص الأنبياء",
+    "id": 373
   },
   {
     "type": "mcq",
@@ -5132,7 +5508,8 @@
       "يوسف"
     ],
     "correctIndex": 0,
-    "source_ar": "قصص الأنبياء"
+    "source_ar": "قصص الأنبياء",
+    "id": 374
   },
   {
     "type": "mcq",
@@ -5146,547 +5523,608 @@
       "عيسى"
     ],
     "correctIndex": 0,
-    "source_ar": "قصص الأنبياء"
+    "source_ar": "قصص الأنبياء",
+    "id": 375
   },
   {
     "type": "tf",
-    "category": "علوم",
+    "category": "العلوم",
     "difficulty": "easy",
     "question_ar": "الأرض تدور حول الشمس",
     "correctBoolean": true,
     "source_ar": "معلومات عامة",
-    "explanation_ar": "الأرض تدور حول الشمس في مدار إهليلجي مرة كل 365.25 يوم."
+    "explanation_ar": "الأرض تدور حول الشمس في مدار إهليلجي مرة كل 365.25 يوم.",
+    "id": 376
   },
   {
     "type": "tf",
-    "category": "علوم",
+    "category": "العلوم",
     "difficulty": "easy",
     "question_ar": "عدد أيام السنة الميلادية 360 يوماً",
     "correctBoolean": false,
     "source_ar": "معلومات عامة",
-    "explanation_ar": "عدد أيام السنة الميلادية 365 يوماً أو 366 في السنة الكبيسة."
+    "explanation_ar": "عدد أيام السنة الميلادية 365 يوماً أو 366 في السنة الكبيسة.",
+    "id": 377
   },
   {
     "type": "tf",
-    "category": "علوم",
+    "category": "العلوم",
     "difficulty": "easy",
     "question_ar": "الحوت هو أكبر حيوان على وجه الأرض",
     "correctBoolean": true,
     "source_ar": "معلومات عامة",
-    "explanation_ar": "الحوت الأزرق هو أكبر حيوان عاش على الأرض على الإطلاق."
+    "explanation_ar": "الحوت الأزرق هو أكبر حيوان عاش على الأرض على الإطلاق.",
+    "id": 378
   },
   {
     "type": "tf",
-    "category": "جغرافيا",
+    "category": "الجغرافيا",
     "difficulty": "easy",
     "question_ar": "عاصمة اليابان هي بكين",
     "correctBoolean": false,
     "source_ar": "معلومات عامة",
-    "explanation_ar": "عاصمة اليابان هي طوكيو، أما بكين فهي عاصمة الصين."
+    "explanation_ar": "عاصمة اليابان هي طوكيو، أما بكين فهي عاصمة الصين.",
+    "id": 379
   },
   {
     "type": "tf",
-    "category": "علوم",
+    "category": "العلوم",
     "difficulty": "easy",
     "question_ar": "الماء يتكون من ذرتي هيدروجين وذرة أكسجين",
     "correctBoolean": true,
     "source_ar": "كيمياء",
-    "explanation_ar": "الصيغة الكيميائية للماء H₂O."
+    "explanation_ar": "الصيغة الكيميائية للماء H₂O.",
+    "id": 380
   },
   {
     "type": "tf",
-    "category": "علوم",
+    "category": "العلوم",
     "difficulty": "easy",
     "question_ar": "القمر ينتج ضوءه الخاص",
     "correctBoolean": false,
     "source_ar": "فلك",
-    "explanation_ar": "القمر يعكس ضوء الشمس ولا ينتج ضوءاً بنفسه."
+    "explanation_ar": "القمر يعكس ضوء الشمس ولا ينتج ضوءاً بنفسه.",
+    "id": 381
   },
   {
     "type": "tf",
-    "category": "جغرافيا",
+    "category": "الجغرافيا",
     "difficulty": "medium",
     "question_ar": "أطول نهر في العالم هو نهر النيل",
     "correctBoolean": true,
     "source_ar": "جغرافيا",
-    "explanation_ar": "يبلغ طول نهر النيل حوالي 6,650 كم."
+    "explanation_ar": "يبلغ طول نهر النيل حوالي 6,650 كم.",
+    "id": 382
   },
   {
     "type": "tf",
-    "category": "جغرافيا",
+    "category": "الجغرافيا",
     "difficulty": "easy",
     "question_ar": "عدد قارات العالم خمس قارات",
     "correctBoolean": false,
     "source_ar": "جغرافيا",
-    "explanation_ar": "عدد قارات العالم سبع قارات."
+    "explanation_ar": "عدد قارات العالم سبع قارات.",
+    "id": 383
   },
   {
     "type": "tf",
-    "category": "علوم",
+    "category": "العلوم",
     "difficulty": "easy",
     "question_ar": "النحل يصنع العسل",
     "correctBoolean": true,
     "source_ar": "أحياء",
-    "explanation_ar": "النحل يجمع الرحيق من الأزهار ويحوله إلى عسل."
+    "explanation_ar": "النحل يجمع الرحيق من الأزهار ويحوله إلى عسل.",
+    "id": 384
   },
   {
     "type": "tf",
-    "category": "علوم",
+    "category": "العلوم",
     "difficulty": "medium",
     "question_ar": "الصوت ينتقل في الفضاء الخارجي",
     "correctBoolean": false,
     "source_ar": "فيزياء",
-    "explanation_ar": "الصوت يحتاج وسطاً مادياً للانتقال والفضاء فراغ."
+    "explanation_ar": "الصوت يحتاج وسطاً مادياً للانتقال والفضاء فراغ.",
+    "id": 385
   },
   {
     "type": "tf",
-    "category": "جغرافيا",
+    "category": "الجغرافيا",
     "difficulty": "easy",
     "question_ar": "جبل إيفرست هو أعلى جبل في العالم",
     "correctBoolean": true,
     "source_ar": "جغرافيا",
-    "explanation_ar": "يبلغ ارتفاعه 8,848 متراً فوق سطح البحر."
+    "explanation_ar": "يبلغ ارتفاعه 8,848 متراً فوق سطح البحر.",
+    "id": 386
   },
   {
     "type": "tf",
-    "category": "علوم",
+    "category": "العلوم",
     "difficulty": "medium",
     "question_ar": "الخفاش من الطيور",
     "correctBoolean": false,
     "source_ar": "أحياء",
-    "explanation_ar": "الخفاش من الثدييات وهو الثديي الوحيد القادر على الطيران."
+    "explanation_ar": "الخفاش من الثدييات وهو الثديي الوحيد القادر على الطيران.",
+    "id": 387
   },
   {
     "type": "tf",
-    "category": "علوم",
+    "category": "العلوم",
     "difficulty": "medium",
     "question_ar": "الذهب لا يصدأ",
     "correctBoolean": true,
     "source_ar": "كيمياء",
-    "explanation_ar": "الذهب لا يتأكسد ولا يتفاعل مع الأكسجين في الظروف العادية."
+    "explanation_ar": "الذهب لا يتأكسد ولا يتفاعل مع الأكسجين في الظروف العادية.",
+    "id": 388
   },
   {
     "type": "tf",
-    "category": "علوم",
+    "category": "العلوم",
     "difficulty": "easy",
     "question_ar": "كوكب المريخ يُلقب بالكوكب الأحمر",
     "correctBoolean": true,
     "source_ar": "فلك",
-    "explanation_ar": "بسبب لونه الأحمر الناتج عن أكسيد الحديد على سطحه."
+    "explanation_ar": "بسبب لونه الأحمر الناتج عن أكسيد الحديد على سطحه.",
+    "id": 389
   },
   {
     "type": "tf",
-    "category": "علوم",
+    "category": "العلوم",
     "difficulty": "easy",
     "question_ar": "البطريق يستطيع الطيران",
     "correctBoolean": false,
     "source_ar": "أحياء",
-    "explanation_ar": "البطريق طائر لا يطير لكنه سباح ماهر."
+    "explanation_ar": "البطريق طائر لا يطير لكنه سباح ماهر.",
+    "id": 390
   },
   {
     "type": "tf",
-    "category": "جغرافيا",
+    "category": "الجغرافيا",
     "difficulty": "medium",
     "question_ar": "المحيط الهادئ هو أكبر محيطات العالم",
     "correctBoolean": true,
     "source_ar": "جغرافيا",
-    "explanation_ar": "يغطي مساحة أكبر من جميع اليابسة مجتمعة."
+    "explanation_ar": "يغطي مساحة أكبر من جميع اليابسة مجتمعة.",
+    "id": 391
   },
   {
     "type": "tf",
-    "category": "علوم",
+    "category": "العلوم",
     "difficulty": "medium",
     "question_ar": "الألماس مصنوع من الكربون",
     "correctBoolean": true,
     "source_ar": "كيمياء",
-    "explanation_ar": "الألماس هو شكل بلوري من الكربون النقي."
+    "explanation_ar": "الألماس هو شكل بلوري من الكربون النقي.",
+    "id": 392
   },
   {
     "type": "tf",
-    "category": "علوم",
+    "category": "العلوم",
     "difficulty": "hard",
     "question_ar": "الإنسان يستخدم 10% فقط من دماغه",
     "correctBoolean": false,
     "source_ar": "أحياء",
-    "explanation_ar": "خرافة شائعة، الإنسان يستخدم كامل دماغه لكن ليس كل الأجزاء في نفس الوقت."
+    "explanation_ar": "خرافة شائعة، الإنسان يستخدم كامل دماغه لكن ليس كل الأجزاء في نفس الوقت.",
+    "id": 393
   },
   {
     "type": "tf",
-    "category": "ثقافة عامة",
+    "category": "الثقافة العامة",
     "difficulty": "hard",
     "question_ar": "سور الصين العظيم يمكن رؤيته من الفضاء بالعين المجردة",
     "correctBoolean": false,
     "source_ar": "خرافات شائعة",
-    "explanation_ar": "لا يمكن رؤيته بالعين المجردة من الفضاء، وأكد ذلك رواد الفضاء."
+    "explanation_ar": "لا يمكن رؤيته بالعين المجردة من الفضاء، وأكد ذلك رواد الفضاء.",
+    "id": 394
   },
   {
     "type": "tf",
-    "category": "علوم",
+    "category": "العلوم",
     "difficulty": "hard",
     "question_ar": "الأخطبوط لديه ثلاثة قلوب",
     "correctBoolean": true,
     "source_ar": "أحياء",
-    "explanation_ar": "قلبان لضخ الدم للخياشيم وقلب واحد لضخه لباقي الجسم."
+    "explanation_ar": "قلبان لضخ الدم للخياشيم وقلب واحد لضخه لباقي الجسم.",
+    "id": 395
   },
   {
     "type": "tf",
-    "category": "علوم",
+    "category": "العلوم",
     "difficulty": "easy",
     "question_ar": "درجة غليان الماء هي 100 درجة مئوية",
     "correctBoolean": true,
     "source_ar": "فيزياء",
-    "explanation_ar": "عند الضغط الجوي القياسي (مستوى سطح البحر)."
+    "explanation_ar": "عند الضغط الجوي القياسي (مستوى سطح البحر).",
+    "id": 396
   },
   {
     "type": "tf",
-    "category": "جغرافيا",
+    "category": "الجغرافيا",
     "difficulty": "medium",
     "question_ar": "أستراليا هي أصغر قارة في العالم",
     "correctBoolean": true,
     "source_ar": "جغرافيا",
-    "explanation_ar": "أستراليا هي أصغر قارة وأكبر جزيرة."
+    "explanation_ar": "أستراليا هي أصغر قارة وأكبر جزيرة.",
+    "id": 397
   },
   {
     "type": "tf",
-    "category": "علوم",
+    "category": "العلوم",
     "difficulty": "hard",
     "question_ar": "البرق والرعد يحدثان في نفس اللحظة",
     "correctBoolean": true,
     "source_ar": "فيزياء",
-    "explanation_ar": "يحدثان معاً لكن نرى البرق أولاً لأن الضوء أسرع من الصوت."
+    "explanation_ar": "يحدثان معاً لكن نرى البرق أولاً لأن الضوء أسرع من الصوت.",
+    "id": 398
   },
   {
     "type": "tf",
-    "category": "علوم",
+    "category": "العلوم",
     "difficulty": "easy",
     "question_ar": "الضوء أسرع من الصوت",
     "correctBoolean": true,
     "source_ar": "فيزياء",
-    "explanation_ar": "سرعة الضوء حوالي 300,000 كم/ث بينما الصوت 343 م/ث."
+    "explanation_ar": "سرعة الضوء حوالي 300,000 كم/ث بينما الصوت 343 م/ث.",
+    "id": 399
   },
   {
     "type": "tf",
-    "category": "علوم",
+    "category": "العلوم",
     "difficulty": "medium",
     "question_ar": "عدد ألوان قوس قزح ستة ألوان",
     "correctBoolean": false,
     "source_ar": "فيزياء",
-    "explanation_ar": "عدد ألوان قوس قزح سبعة ألوان."
+    "explanation_ar": "عدد ألوان قوس قزح سبعة ألوان.",
+    "id": 400
   },
   {
     "type": "tf",
-    "category": "جغرافيا",
+    "category": "الجغرافيا",
     "difficulty": "easy",
     "question_ar": "المملكة العربية السعودية أكبر دولة في شبه الجزيرة العربية",
     "correctBoolean": true,
     "source_ar": "جغرافيا",
-    "explanation_ar": "تحتل معظم مساحة شبه الجزيرة العربية."
+    "explanation_ar": "تحتل معظم مساحة شبه الجزيرة العربية.",
+    "id": 401
   },
   {
     "type": "tf",
-    "category": "علوم",
+    "category": "العلوم",
     "difficulty": "medium",
     "question_ar": "الفيل يخاف من الفأر",
     "correctBoolean": false,
     "source_ar": "خرافات شائعة",
-    "explanation_ar": "خرافة شائعة لا أساس علمي لها."
+    "explanation_ar": "خرافة شائعة لا أساس علمي لها.",
+    "id": 402
   },
   {
     "type": "tf",
-    "category": "علوم",
+    "category": "العلوم",
     "difficulty": "easy",
     "question_ar": "كوكب زحل لديه حلقات",
     "correctBoolean": true,
     "source_ar": "فلك",
-    "explanation_ar": "حلقات زحل تتكون من جليد وصخور تدور حوله."
+    "explanation_ar": "حلقات زحل تتكون من جليد وصخور تدور حوله.",
+    "id": 403
   },
   {
     "type": "tf",
-    "category": "علوم",
+    "category": "العلوم",
     "difficulty": "hard",
     "question_ar": "الطماطم من الفواكه وليست من الخضروات",
     "correctBoolean": true,
     "source_ar": "أحياء",
-    "explanation_ar": "نباتياً تُصنف كفاكهة لأنها تنمو من زهرة وتحتوي بذوراً."
+    "explanation_ar": "نباتياً تُصنف كفاكهة لأنها تنمو من زهرة وتحتوي بذوراً.",
+    "id": 404
   },
   {
     "type": "tf",
-    "category": "علوم",
+    "category": "العلوم",
     "difficulty": "easy",
     "question_ar": "عدد أسنان الإنسان البالغ 32 سناً",
     "correctBoolean": true,
     "source_ar": "أحياء",
-    "explanation_ar": "تشمل القواطع والأنياب والطواحن وضرس العقل."
+    "explanation_ar": "تشمل القواطع والأنياب والطواحن وضرس العقل.",
+    "id": 405
   },
   {
     "type": "tf",
-    "category": "علوم",
+    "category": "العلوم",
     "difficulty": "medium",
     "question_ar": "النعامة تدفن رأسها في الرمال عند الخوف",
     "correctBoolean": false,
     "source_ar": "خرافات شائعة",
-    "explanation_ar": "خرافة شائعة، النعامة تنبطح وتمد رقبتها على الأرض للتمويه."
+    "explanation_ar": "خرافة شائعة، النعامة تنبطح وتمد رقبتها على الأرض للتمويه.",
+    "id": 406
   },
   {
     "type": "tf",
-    "category": "علوم",
+    "category": "العلوم",
     "difficulty": "hard",
     "question_ar": "الزرافة ليس لها صوت",
     "correctBoolean": false,
     "source_ar": "أحياء",
-    "explanation_ar": "الزرافة تصدر أصواتاً منخفضة التردد لا يسمعها البشر عادة."
+    "explanation_ar": "الزرافة تصدر أصواتاً منخفضة التردد لا يسمعها البشر عادة.",
+    "id": 407
   },
   {
     "type": "tf",
-    "category": "ثقافة عامة",
+    "category": "الثقافة العامة",
     "difficulty": "easy",
     "question_ar": "عدد حروف اللغة العربية 28 حرفاً",
     "correctBoolean": true,
     "source_ar": "لغة عربية",
-    "explanation_ar": "من الألف إلى الياء."
+    "explanation_ar": "من الألف إلى الياء.",
+    "id": 408
   },
   {
     "type": "tf",
-    "category": "ثقافة عامة",
+    "category": "الثقافة العامة",
     "difficulty": "easy",
     "question_ar": "أول من مشى على سطح القمر هو نيل أرمسترونغ",
     "correctBoolean": true,
     "source_ar": "تاريخ",
-    "explanation_ar": "في 20 يوليو 1969 ضمن مهمة أبولو 11."
+    "explanation_ar": "في 20 يوليو 1969 ضمن مهمة أبولو 11.",
+    "id": 409
   },
   {
     "type": "tf",
-    "category": "علوم",
+    "category": "العلوم",
     "difficulty": "medium",
     "question_ar": "يستطيع الإنسان العيش بدون ماء لمدة شهر",
     "correctBoolean": false,
     "source_ar": "أحياء",
-    "explanation_ar": "الإنسان يعيش بدون ماء 3-5 أيام فقط تقريباً."
+    "explanation_ar": "الإنسان يعيش بدون ماء 3-5 أيام فقط تقريباً.",
+    "id": 410
   },
   {
     "type": "tf",
-    "category": "علوم",
+    "category": "العلوم",
     "difficulty": "hard",
     "question_ar": "الكلب يرى بالأبيض والأسود فقط",
     "correctBoolean": false,
     "source_ar": "أحياء",
-    "explanation_ar": "الكلب يرى بعض الألوان لكن طيفه اللوني محدود مقارنة بالإنسان."
+    "explanation_ar": "الكلب يرى بعض الألوان لكن طيفه اللوني محدود مقارنة بالإنسان.",
+    "id": 411
   },
   {
     "type": "tf",
-    "category": "علوم",
+    "category": "العلوم",
     "difficulty": "easy",
     "question_ar": "عدد أرجل العنكبوت ثمانية",
     "correctBoolean": true,
     "source_ar": "أحياء",
-    "explanation_ar": "العنكبوت من العنكبوتيات وليس من الحشرات."
+    "explanation_ar": "العنكبوت من العنكبوتيات وليس من الحشرات.",
+    "id": 412
   },
   {
     "type": "tf",
-    "category": "علوم",
+    "category": "العلوم",
     "difficulty": "medium",
     "question_ar": "الحليب حمضي",
     "correctBoolean": false,
     "source_ar": "كيمياء",
-    "explanation_ar": "الحليب الطازج قلوي قليلاً (pH حوالي 6.5-6.7)."
+    "explanation_ar": "الحليب الطازج قلوي قليلاً (pH حوالي 6.5-6.7).",
+    "id": 413
   },
   {
     "type": "tf",
-    "category": "علوم",
+    "category": "العلوم",
     "difficulty": "hard",
     "question_ar": "القلب يقع في الجهة اليسرى من الصدر",
     "correctBoolean": false,
     "source_ar": "أحياء",
-    "explanation_ar": "القلب يقع في منتصف الصدر مع ميل طفيف لليسار."
+    "explanation_ar": "القلب يقع في منتصف الصدر مع ميل طفيف لليسار.",
+    "id": 414
   },
   {
     "type": "tf",
-    "category": "جغرافيا",
+    "category": "الجغرافيا",
     "difficulty": "medium",
     "question_ar": "البحر الميت هو أخفض نقطة على سطح الأرض",
     "correctBoolean": true,
     "source_ar": "جغرافيا",
-    "explanation_ar": "يقع على عمق حوالي 430 متراً تحت مستوى سطح البحر."
+    "explanation_ar": "يقع على عمق حوالي 430 متراً تحت مستوى سطح البحر.",
+    "id": 415
   },
   {
     "type": "tf",
-    "category": "علوم",
+    "category": "العلوم",
     "difficulty": "medium",
     "question_ar": "سرعة الضوء حوالي 300 ألف كيلومتر في الثانية",
     "correctBoolean": true,
     "source_ar": "فيزياء",
-    "explanation_ar": "تحديداً 299,792 كم/ث في الفراغ."
+    "explanation_ar": "تحديداً 299,792 كم/ث في الفراغ.",
+    "id": 416
   },
   {
     "type": "tf",
-    "category": "علوم",
+    "category": "العلوم",
     "difficulty": "medium",
     "question_ar": "يمكن للإنسان أن يعطس وعيناه مفتوحتان",
     "correctBoolean": false,
     "source_ar": "أحياء",
-    "explanation_ar": "إغلاق العينين أثناء العطس رد فعل لا إرادي."
+    "explanation_ar": "إغلاق العينين أثناء العطس رد فعل لا إرادي.",
+    "id": 417
   },
   {
     "type": "tf",
-    "category": "ثقافة عامة",
+    "category": "الثقافة العامة",
     "difficulty": "medium",
     "question_ar": "اللغة الصينية هي أكثر لغة يتحدث بها سكان العالم",
     "correctBoolean": true,
     "source_ar": "معلومات عامة",
-    "explanation_ar": "الماندرين الصينية بعدد متحدثين يتجاوز المليار."
+    "explanation_ar": "الماندرين الصينية بعدد متحدثين يتجاوز المليار.",
+    "id": 418
   },
   {
     "type": "tf",
-    "category": "علوم",
+    "category": "العلوم",
     "difficulty": "medium",
     "question_ar": "عدد كواكب المجموعة الشمسية تسعة كواكب",
     "correctBoolean": false,
     "source_ar": "فلك",
-    "explanation_ar": "ثمانية كواكب بعد إعادة تصنيف بلوتو ككوكب قزم عام 2006."
+    "explanation_ar": "ثمانية كواكب بعد إعادة تصنيف بلوتو ككوكب قزم عام 2006.",
+    "id": 419
   },
   {
     "type": "tf",
-    "category": "علوم",
+    "category": "العلوم",
     "difficulty": "hard",
     "question_ar": "الجمل يخزن الماء في سنامه",
     "correctBoolean": false,
     "source_ar": "أحياء",
-    "explanation_ar": "السنام يخزن الدهون وليس الماء."
+    "explanation_ar": "السنام يخزن الدهون وليس الماء.",
+    "id": 420
   },
   {
     "type": "tf",
-    "category": "علوم",
+    "category": "العلوم",
     "difficulty": "easy",
     "question_ar": "حاسة الشم عند الكلاب أقوى من الإنسان",
     "correctBoolean": true,
     "source_ar": "أحياء",
-    "explanation_ar": "حاسة الشم عند الكلب أقوى 10,000-100,000 مرة من الإنسان."
+    "explanation_ar": "حاسة الشم عند الكلب أقوى 10,000-100,000 مرة من الإنسان.",
+    "id": 421
   },
   {
     "type": "tf",
-    "category": "جغرافيا",
+    "category": "الجغرافيا",
     "difficulty": "easy",
     "question_ar": "مصر تقع في قارة آسيا",
     "correctBoolean": false,
     "source_ar": "جغرافيا",
-    "explanation_ar": "مصر تقع في قارة أفريقيا مع جزء صغير (سيناء) في آسيا."
+    "explanation_ar": "مصر تقع في قارة أفريقيا مع جزء صغير (سيناء) في آسيا.",
+    "id": 422
   },
   {
     "type": "tf",
-    "category": "ثقافة عامة",
+    "category": "الثقافة العامة",
     "difficulty": "easy",
     "question_ar": "عدد أيام شهر فبراير دائماً 28 يوماً",
     "correctBoolean": false,
     "source_ar": "معلومات عامة",
-    "explanation_ar": "في السنة الكبيسة يكون 29 يوماً."
+    "explanation_ar": "في السنة الكبيسة يكون 29 يوماً.",
+    "id": 423
   },
   {
     "type": "tf",
-    "category": "علوم",
+    "category": "العلوم",
     "difficulty": "easy",
     "question_ar": "السكر الأبيض مصدره نبات قصب السكر أو البنجر",
     "correctBoolean": true,
     "source_ar": "زراعة",
-    "explanation_ar": "يُستخرج من قصب السكر أو بنجر السكر."
+    "explanation_ar": "يُستخرج من قصب السكر أو بنجر السكر.",
+    "id": 424
   },
   {
     "type": "tf",
-    "category": "علوم",
+    "category": "العلوم",
     "difficulty": "medium",
     "question_ar": "الأذن هي أصغر عظمة في جسم الإنسان",
     "correctBoolean": true,
     "source_ar": "أحياء",
-    "explanation_ar": "عظمة الركاب في الأذن الوسطى هي أصغر عظمة."
+    "explanation_ar": "عظمة الركاب في الأذن الوسطى هي أصغر عظمة.",
+    "id": 425
   },
   {
     "type": "tf",
-    "category": "علوم",
+    "category": "العلوم",
     "difficulty": "easy",
     "question_ar": "البصل يسبب البكاء بسبب مادة كيميائية تتطاير عند تقطيعه",
     "correctBoolean": true,
     "source_ar": "كيمياء",
-    "explanation_ar": "مادة syn-propanethial-S-oxide تهيّج العينين."
+    "explanation_ar": "مادة syn-propanethial-S-oxide تهيّج العينين.",
+    "id": 426
   },
   {
     "type": "tf",
-    "category": "علوم",
+    "category": "العلوم",
     "difficulty": "easy",
     "question_ar": "الثلج يغرق في الماء",
     "correctBoolean": false,
     "source_ar": "فيزياء",
-    "explanation_ar": "الثلج أقل كثافة من الماء لذلك يطفو."
+    "explanation_ar": "الثلج أقل كثافة من الماء لذلك يطفو.",
+    "id": 427
   },
   {
     "type": "tf",
-    "category": "علوم",
+    "category": "العلوم",
     "difficulty": "hard",
     "question_ar": "يتغير لون دم الإنسان إلى أزرق داخل الجسم",
     "correctBoolean": false,
     "source_ar": "أحياء",
-    "explanation_ar": "الدم دائماً أحمر، لكنه أغمق عندما يكون غير مؤكسد."
+    "explanation_ar": "الدم دائماً أحمر، لكنه أغمق عندما يكون غير مؤكسد.",
+    "id": 428
   },
   {
     "type": "tf",
-    "category": "علوم",
+    "category": "العلوم",
     "difficulty": "hard",
     "question_ar": "الموز ينمو على أشجار",
     "correctBoolean": false,
     "source_ar": "أحياء",
-    "explanation_ar": "الموز ينمو على نبتة عشبية عملاقة وليست شجرة حقيقية."
+    "explanation_ar": "الموز ينمو على نبتة عشبية عملاقة وليست شجرة حقيقية.",
+    "id": 429
   },
   {
     "type": "tf",
-    "category": "إسلامية",
+    "category": "معلومات إسلامية",
     "difficulty": "easy",
     "question_ar": "الكعبة المشرفة تقع في مدينة مكة المكرمة",
     "correctBoolean": true,
     "source_ar": "معلومات إسلامية",
-    "explanation_ar": "في المسجد الحرام بمكة المكرمة."
+    "explanation_ar": "في المسجد الحرام بمكة المكرمة.",
+    "id": 430
   },
   {
     "type": "tf",
-    "category": "علوم",
+    "category": "العلوم",
     "difficulty": "medium",
     "question_ar": "الحصان ينام واقفاً",
     "correctBoolean": true,
     "source_ar": "أحياء",
-    "explanation_ar": "بفضل آلية تثبيت في أرجله تسمح بالنوم واقفاً."
+    "explanation_ar": "بفضل آلية تثبيت في أرجله تسمح بالنوم واقفاً.",
+    "id": 431
   },
   {
     "type": "tf",
-    "category": "رياضيات",
+    "category": "الرياضيات",
     "difficulty": "easy",
     "question_ar": "عدد أضلاع المثلث أربعة",
     "correctBoolean": false,
     "source_ar": "رياضيات",
-    "explanation_ar": "المثلث له ثلاثة أضلاع."
+    "explanation_ar": "المثلث له ثلاثة أضلاع.",
+    "id": 432
   },
   {
     "type": "tf",
-    "category": "علوم",
+    "category": "العلوم",
     "difficulty": "medium",
     "question_ar": "فصيلة الدم الأكثر شيوعاً في العالم هي O+",
     "correctBoolean": true,
     "source_ar": "طب",
-    "explanation_ar": "حوالي 38% من سكان العالم يحملون هذه الفصيلة."
+    "explanation_ar": "حوالي 38% من سكان العالم يحملون هذه الفصيلة.",
+    "id": 433
   },
   {
     "type": "tf",
-    "category": "علوم",
+    "category": "العلوم",
     "difficulty": "easy",
     "question_ar": "الأرض أقرب كوكب إلى الشمس",
     "correctBoolean": false,
     "source_ar": "فلك",
-    "explanation_ar": "عطارد هو أقرب كوكب إلى الشمس."
+    "explanation_ar": "عطارد هو أقرب كوكب إلى الشمس.",
+    "id": 434
   },
   {
     "type": "tf",
-    "category": "علوم",
+    "category": "العلوم",
     "difficulty": "medium",
     "question_ar": "يمكن لسمكة القرش أن تشم الدم من مسافة بعيدة",
     "correctBoolean": true,
     "source_ar": "أحياء",
-    "explanation_ar": "يمكنها شم قطرة دم واحدة في ملايين اللترات من الماء."
+    "explanation_ar": "يمكنها شم قطرة دم واحدة في ملايين اللترات من الماء.",
+    "id": 435
   },
   {
     "type": "tf",
@@ -5695,16 +6133,18 @@
     "question_ar": "معركة اليرموك وقعت في عهد أبي بكر الصديق",
     "correctBoolean": false,
     "source_ar": "تاريخ",
-    "explanation_ar": "وقعت في عهد عمر بن الخطاب سنة 15 هـ."
+    "explanation_ar": "وقعت في عهد عمر بن الخطاب سنة 15 هـ.",
+    "id": 436
   },
   {
     "type": "tf",
-    "category": "إسلامية",
+    "category": "معلومات إسلامية",
     "difficulty": "hard",
     "question_ar": "أول مسجد بُني في الإسلام هو المسجد النبوي",
     "correctBoolean": false,
     "source_ar": "سيرة",
-    "explanation_ar": "أول مسجد هو مسجد قباء."
+    "explanation_ar": "أول مسجد هو مسجد قباء.",
+    "id": 437
   },
   {
     "type": "tf",
@@ -5713,16 +6153,18 @@
     "question_ar": "صلح الحديبية كان في السنة السادسة للهجرة",
     "correctBoolean": true,
     "source_ar": "سيرة",
-    "explanation_ar": "وقع في ذي القعدة سنة 6 هـ."
+    "explanation_ar": "وقع في ذي القعدة سنة 6 هـ.",
+    "id": 438
   },
   {
     "type": "tf",
-    "category": "إسلامية",
+    "category": "معلومات إسلامية",
     "difficulty": "hard",
     "question_ar": "النبي صلى الله عليه وسلم حجّ مرتين",
     "correctBoolean": false,
     "source_ar": "سيرة",
-    "explanation_ar": "حجّ مرة واحدة فقط وهي حجة الوداع."
+    "explanation_ar": "حجّ مرة واحدة فقط وهي حجة الوداع.",
+    "id": 439
   },
   {
     "type": "tf",
@@ -5731,7 +6173,8 @@
     "question_ar": "عدد الأنبياء المذكورين في القرآن الكريم 25 نبياً",
     "correctBoolean": true,
     "source_ar": "علوم القرآن",
-    "explanation_ar": "ذُكروا بأسمائهم في مواضع مختلفة."
+    "explanation_ar": "ذُكروا بأسمائهم في مواضع مختلفة.",
+    "id": 440
   },
   {
     "type": "tf",
@@ -5740,7 +6183,8 @@
     "question_ar": "غزوة الخندق تُسمى أيضاً بغزوة الأحزاب",
     "correctBoolean": true,
     "source_ar": "سيرة",
-    "explanation_ar": "لتحزّب القبائل ضد المسلمين."
+    "explanation_ar": "لتحزّب القبائل ضد المسلمين.",
+    "id": 441
   },
   {
     "type": "tf",
@@ -5749,7 +6193,8 @@
     "question_ar": "خالد بن الوليد أسلم بعد فتح مكة",
     "correctBoolean": false,
     "source_ar": "سيرة",
-    "explanation_ar": "أسلم قبل فتح مكة مع عمرو بن العاص."
+    "explanation_ar": "أسلم قبل فتح مكة مع عمرو بن العاص.",
+    "id": 442
   },
   {
     "type": "tf",
@@ -5758,214 +6203,238 @@
     "question_ar": "الصحابي الذي رُوي عنه أكثر الأحاديث هو عبد الله بن عمر",
     "correctBoolean": false,
     "source_ar": "حديث",
-    "explanation_ar": "أكثرهم رواية أبو هريرة رضي الله عنه."
+    "explanation_ar": "أكثرهم رواية أبو هريرة رضي الله عنه.",
+    "id": 443
   },
   {
     "type": "tf",
-    "category": "علوم",
+    "category": "العلوم",
     "difficulty": "hard",
     "question_ar": "الماء يتمدد عندما يتجمّد",
     "correctBoolean": true,
     "source_ar": "فيزياء",
-    "explanation_ar": "خاصية فريدة تجعل الثلج يطفو."
+    "explanation_ar": "خاصية فريدة تجعل الثلج يطفو.",
+    "id": 444
   },
   {
     "type": "tf",
-    "category": "علوم",
+    "category": "العلوم",
     "difficulty": "hard",
     "question_ar": "الجاذبية على سطح القمر تساوي سُدس جاذبية الأرض",
     "correctBoolean": true,
     "source_ar": "فلك",
-    "explanation_ar": "لذلك يقفز رواد الفضاء عالياً."
+    "explanation_ar": "لذلك يقفز رواد الفضاء عالياً.",
+    "id": 445
   },
   {
     "type": "tf",
-    "category": "علوم",
+    "category": "العلوم",
     "difficulty": "hard",
     "question_ar": "ذرة الهيدروجين هي أصغر ذرة في الطبيعة",
     "correctBoolean": true,
     "source_ar": "كيمياء",
-    "explanation_ar": "بروتون واحد وإلكترون واحد."
+    "explanation_ar": "بروتون واحد وإلكترون واحد.",
+    "id": 446
   },
   {
     "type": "tf",
-    "category": "علوم",
+    "category": "العلوم",
     "difficulty": "hard",
     "question_ar": "سرعة الصوت في الماء أبطأ من سرعته في الهواء",
     "correctBoolean": false,
     "source_ar": "فيزياء",
-    "explanation_ar": "الصوت أسرع 4 مرات في الماء."
+    "explanation_ar": "الصوت أسرع 4 مرات في الماء.",
+    "id": 447
   },
   {
     "type": "tf",
-    "category": "علوم",
+    "category": "العلوم",
     "difficulty": "hard",
     "question_ar": "الحمض النووي DNA يوجد فقط في نواة الخلية",
     "correctBoolean": false,
     "source_ar": "أحياء",
-    "explanation_ar": "يوجد أيضاً في الميتوكوندريا."
+    "explanation_ar": "يوجد أيضاً في الميتوكوندريا.",
+    "id": 448
   },
   {
     "type": "tf",
-    "category": "علوم",
+    "category": "العلوم",
     "difficulty": "hard",
     "question_ar": "البلازما هي الحالة الرابعة للمادة",
     "correctBoolean": true,
     "source_ar": "فيزياء",
-    "explanation_ar": "إضافة للصلبة والسائلة والغازية."
+    "explanation_ar": "إضافة للصلبة والسائلة والغازية.",
+    "id": 449
   },
   {
     "type": "tf",
-    "category": "علوم",
+    "category": "العلوم",
     "difficulty": "hard",
     "question_ar": "العظام أقوى من الفولاذ بنسبة الوزن",
     "correctBoolean": true,
     "source_ar": "أحياء",
-    "explanation_ar": "قطعة عظم صغيرة تتحمل 9 أطنان ضغط."
+    "explanation_ar": "قطعة عظم صغيرة تتحمل 9 أطنان ضغط.",
+    "id": 450
   },
   {
     "type": "tf",
-    "category": "علوم",
+    "category": "العلوم",
     "difficulty": "hard",
     "question_ar": "دم الحشرات لونه أحمر مثل دم الإنسان",
     "correctBoolean": false,
     "source_ar": "أحياء",
-    "explanation_ar": "عديم اللون أو أخضر."
+    "explanation_ar": "عديم اللون أو أخضر.",
+    "id": 451
   },
   {
     "type": "tf",
-    "category": "جغرافيا",
+    "category": "الجغرافيا",
     "difficulty": "hard",
     "question_ar": "أعمق نقطة في المحيط هي خندق ماريانا",
     "correctBoolean": true,
     "source_ar": "جغرافيا",
-    "explanation_ar": "عمقه 11,000 متر."
+    "explanation_ar": "عمقه 11,000 متر.",
+    "id": 452
   },
   {
     "type": "tf",
-    "category": "جغرافيا",
+    "category": "الجغرافيا",
     "difficulty": "hard",
     "question_ar": "صحراء الربع الخالي أكبر صحراء رملية متصلة في العالم",
     "correctBoolean": true,
     "source_ar": "جغرافيا",
-    "explanation_ar": "مساحتها 650,000 كم²."
+    "explanation_ar": "مساحتها 650,000 كم².",
+    "id": 453
   },
   {
     "type": "tf",
-    "category": "جغرافيا",
+    "category": "الجغرافيا",
     "difficulty": "hard",
     "question_ar": "جبال الهملايا تقع في قارة أفريقيا",
     "correctBoolean": false,
     "source_ar": "جغرافيا",
-    "explanation_ar": "تقع في آسيا."
+    "explanation_ar": "تقع في آسيا.",
+    "id": 454
   },
   {
     "type": "tf",
-    "category": "إسلامية",
+    "category": "معلومات إسلامية",
     "difficulty": "hard",
     "question_ar": "المسجد الأقصى يقع في مدينة الخليل",
     "correctBoolean": false,
     "source_ar": "إسلامية",
-    "explanation_ar": "يقع في القدس."
+    "explanation_ar": "يقع في القدس.",
+    "id": 455
   },
   {
     "type": "tf",
-    "category": "جغرافيا",
+    "category": "الجغرافيا",
     "difficulty": "hard",
     "question_ar": "نهر الفرات يمر بثلاث دول",
     "correctBoolean": true,
     "source_ar": "جغرافيا",
-    "explanation_ar": "تركيا وسوريا والعراق."
+    "explanation_ar": "تركيا وسوريا والعراق.",
+    "id": 456
   },
   {
     "type": "tf",
-    "category": "علوم",
+    "category": "العلوم",
     "difficulty": "hard",
     "question_ar": "النحلة تموت بعد أن تلسع الإنسان",
     "correctBoolean": true,
     "source_ar": "أحياء",
-    "explanation_ar": "إبرتها تنفصل مع أحشائها."
+    "explanation_ar": "إبرتها تنفصل مع أحشائها.",
+    "id": 457
   },
   {
     "type": "tf",
-    "category": "علوم",
+    "category": "العلوم",
     "difficulty": "hard",
     "question_ar": "الأرض تكون أقرب إلى الشمس في فصل الصيف",
     "correctBoolean": false,
     "source_ar": "فلك",
-    "explanation_ar": "أقرب في يناير (الشتاء)."
+    "explanation_ar": "أقرب في يناير (الشتاء).",
+    "id": 458
   },
   {
     "type": "tf",
-    "category": "علوم",
+    "category": "العلوم",
     "difficulty": "hard",
     "question_ar": "عدد فقرات رقبة الزرافة يختلف عن عدد فقرات رقبة الإنسان",
     "correctBoolean": false,
     "source_ar": "أحياء",
-    "explanation_ar": "كلاهما 7 فقرات."
+    "explanation_ar": "كلاهما 7 فقرات.",
+    "id": 459
   },
   {
     "type": "tf",
-    "category": "ثقافة عامة",
+    "category": "الثقافة العامة",
     "difficulty": "hard",
     "question_ar": "أول من اخترع الطباعة بالحروف المتحركة هو غوتنبرغ",
     "correctBoolean": true,
     "source_ar": "تاريخ",
-    "explanation_ar": "حوالي عام 1440م."
+    "explanation_ar": "حوالي عام 1440م.",
+    "id": 460
   },
   {
     "type": "tf",
-    "category": "جغرافيا",
+    "category": "الجغرافيا",
     "difficulty": "hard",
     "question_ar": "مساحة روسيا أكبر من مساحة قارة أوقيانوسيا",
     "correctBoolean": true,
     "source_ar": "جغرافيا",
-    "explanation_ar": "17.1 مقابل 8.5 مليون كم²."
+    "explanation_ar": "17.1 مقابل 8.5 مليون كم².",
+    "id": 461
   },
   {
     "type": "tf",
-    "category": "علوم",
+    "category": "العلوم",
     "difficulty": "hard",
     "question_ar": "الكربون هو العنصر الأكثر وفرة في جسم الإنسان",
     "correctBoolean": false,
     "source_ar": "كيمياء",
-    "explanation_ar": "الأكسجين الأكثر وفرة 65%."
+    "explanation_ar": "الأكسجين الأكثر وفرة 65%.",
+    "id": 462
   },
   {
     "type": "tf",
-    "category": "علوم",
+    "category": "العلوم",
     "difficulty": "hard",
     "question_ar": "يمكن للضوء أن ينحني حول الأجسام الثقيلة جداً",
     "correctBoolean": true,
     "source_ar": "فيزياء",
-    "explanation_ar": "الجاذبية تحني مسار الضوء."
+    "explanation_ar": "الجاذبية تحني مسار الضوء.",
+    "id": 463
   },
   {
     "type": "tf",
-    "category": "علوم",
+    "category": "العلوم",
     "difficulty": "hard",
     "question_ar": "لسان الحوت الأزرق يزن أكثر من وزن فيل",
     "correctBoolean": true,
     "source_ar": "أحياء",
-    "explanation_ar": "لسانه 2.7 طن والفيل 2.3 طن."
+    "explanation_ar": "لسانه 2.7 طن والفيل 2.3 طن.",
+    "id": 464
   },
   {
     "type": "tf",
-    "category": "علوم",
+    "category": "العلوم",
     "difficulty": "hard",
     "question_ar": "الحبّار العملاق يملك أكبر عين في مملكة الحيوان",
     "correctBoolean": true,
     "source_ar": "أحياء",
-    "explanation_ar": "قطر عينه 27 سم."
+    "explanation_ar": "قطر عينه 27 سم.",
+    "id": 465
   },
   {
     "type": "tf",
-    "category": "إسلامية",
+    "category": "معلومات إسلامية",
     "difficulty": "hard",
     "question_ar": "القدس هي ثاني أقدس مدينة في الإسلام",
     "correctBoolean": false,
     "source_ar": "إسلامية",
-    "explanation_ar": "المدينة المنورة الثانية والقدس الثالثة."
+    "explanation_ar": "المدينة المنورة الثانية والقدس الثالثة.",
+    "id": 466
   },
   {
     "type": "tf",
@@ -5974,16 +6443,18 @@
     "question_ar": "سورة الرحمن تُسمى عروس القرآن",
     "correctBoolean": true,
     "source_ar": "علوم القرآن",
-    "explanation_ar": "لجمالها وتكرار فبأي آلاء ربكما تكذبان 31 مرة."
+    "explanation_ar": "لجمالها وتكرار فبأي آلاء ربكما تكذبان 31 مرة.",
+    "id": 467
   },
   {
     "type": "tf",
-    "category": "علوم",
+    "category": "العلوم",
     "difficulty": "hard",
     "question_ar": "معدن التيتانيوم أقوى من الفولاذ وأخف وزناً منه",
     "correctBoolean": true,
     "source_ar": "كيمياء",
-    "explanation_ar": "يُستخدم في الطائرات."
+    "explanation_ar": "يُستخدم في الطائرات.",
+    "id": 468
   },
   {
     "type": "tf",
@@ -5992,25 +6463,28 @@
     "question_ar": "الدولة العثمانية استمرت أكثر من ستة قرون",
     "correctBoolean": true,
     "source_ar": "تاريخ",
-    "explanation_ar": "من 1299م حتى 1922م."
+    "explanation_ar": "من 1299م حتى 1922م.",
+    "id": 469
   },
   {
     "type": "tf",
-    "category": "جغرافيا",
+    "category": "الجغرافيا",
     "difficulty": "hard",
     "question_ar": "البرازيل هي أكبر دولة في أمريكا الجنوبية",
     "correctBoolean": true,
     "source_ar": "جغرافيا",
-    "explanation_ar": "مساحتها 8.5 مليون كم²."
+    "explanation_ar": "مساحتها 8.5 مليون كم².",
+    "id": 470
   },
   {
     "type": "tf",
-    "category": "إسلامية",
+    "category": "معلومات إسلامية",
     "difficulty": "medium",
     "question_ar": "عدد الصلوات المفروضة في اليوم والليلة خمس صلوات",
     "correctBoolean": true,
     "source_ar": "فقه",
-    "explanation_ar": "الفجر والظهر والعصر والمغرب والعشاء."
+    "explanation_ar": "الفجر والظهر والعصر والمغرب والعشاء.",
+    "id": 471
   },
   {
     "type": "tf",
@@ -6019,16 +6493,18 @@
     "question_ar": "سورة الكهف هي السورة رقم 18 في ترتيب المصحف",
     "correctBoolean": true,
     "source_ar": "علوم القرآن",
-    "explanation_ar": "تقع في الجزء 15 و16."
+    "explanation_ar": "تقع في الجزء 15 و16.",
+    "id": 472
   },
   {
     "type": "tf",
-    "category": "إسلامية",
+    "category": "معلومات إسلامية",
     "difficulty": "medium",
     "question_ar": "موسم الحج يكون في شهر رجب",
     "correctBoolean": false,
     "source_ar": "فقه",
-    "explanation_ar": "في شهر ذي الحجة."
+    "explanation_ar": "في شهر ذي الحجة.",
+    "id": 473
   },
   {
     "type": "tf",
@@ -6037,249 +6513,1441 @@
     "question_ar": "أركان الإيمان ستة أركان",
     "correctBoolean": true,
     "source_ar": "عقيدة",
-    "explanation_ar": "بالله والملائكة والكتب والرسل واليوم الآخر والقدر."
+    "explanation_ar": "بالله والملائكة والكتب والرسل واليوم الآخر والقدر.",
+    "id": 474
   },
   {
     "type": "tf",
-    "category": "علوم",
+    "category": "العلوم",
     "difficulty": "medium",
     "question_ar": "القطب الشمالي أبرد من القطب الجنوبي",
     "correctBoolean": false,
     "source_ar": "جغرافيا",
-    "explanation_ar": "القطب الجنوبي أبرد بكثير."
+    "explanation_ar": "القطب الجنوبي أبرد بكثير.",
+    "id": 475
   },
   {
     "type": "tf",
-    "category": "علوم",
+    "category": "العلوم",
     "difficulty": "medium",
     "question_ar": "الكبد هو أكبر عضو داخلي في جسم الإنسان",
     "correctBoolean": true,
     "source_ar": "أحياء",
-    "explanation_ar": "يزن حوالي 1.5 كيلوغرام."
+    "explanation_ar": "يزن حوالي 1.5 كيلوغرام.",
+    "id": 476
   },
   {
     "type": "tf",
-    "category": "علوم",
+    "category": "العلوم",
     "difficulty": "medium",
     "question_ar": "عدد العظام في جسم الطفل أكثر من عددها في جسم البالغ",
     "correctBoolean": true,
     "source_ar": "أحياء",
-    "explanation_ar": "270 عظمة تلتحم لتصبح 206."
+    "explanation_ar": "270 عظمة تلتحم لتصبح 206.",
+    "id": 477
   },
   {
     "type": "tf",
-    "category": "علوم",
+    "category": "العلوم",
     "difficulty": "medium",
     "question_ar": "الزجاج مصنوع أساساً من الرمل",
     "correctBoolean": true,
     "source_ar": "كيمياء",
-    "explanation_ar": "ثاني أكسيد السيليكون."
+    "explanation_ar": "ثاني أكسيد السيليكون.",
+    "id": 478
   },
   {
     "type": "tf",
-    "category": "علوم",
+    "category": "العلوم",
     "difficulty": "medium",
     "question_ar": "الأرنب لا يستطيع التقيّؤ",
     "correctBoolean": true,
     "source_ar": "أحياء",
-    "explanation_ar": "بسبب تركيب عضلات معدته."
+    "explanation_ar": "بسبب تركيب عضلات معدته.",
+    "id": 479
   },
   {
     "type": "tf",
-    "category": "جغرافيا",
+    "category": "الجغرافيا",
     "difficulty": "medium",
     "question_ar": "نهر الأمازون يصب في المحيط الأطلسي",
     "correctBoolean": true,
     "source_ar": "جغرافيا",
-    "explanation_ar": "ينبع من الأنديز ويصب شرق البرازيل."
+    "explanation_ar": "ينبع من الأنديز ويصب شرق البرازيل.",
+    "id": 480
   },
   {
     "type": "tf",
-    "category": "ثقافة عامة",
+    "category": "الثقافة العامة",
     "difficulty": "medium",
     "question_ar": "الصين لديها أكبر عدد سكان في العالم حالياً",
     "correctBoolean": false,
     "source_ar": "معلومات عامة",
-    "explanation_ar": "الهند تجاوزت الصين."
+    "explanation_ar": "الهند تجاوزت الصين.",
+    "id": 481
   },
   {
     "type": "tf",
-    "category": "جغرافيا",
+    "category": "الجغرافيا",
     "difficulty": "medium",
     "question_ar": "عدد دول العالم العربي 22 دولة",
     "correctBoolean": true,
     "source_ar": "جغرافيا",
-    "explanation_ar": "أعضاء جامعة الدول العربية."
+    "explanation_ar": "أعضاء جامعة الدول العربية.",
+    "id": 482
   },
   {
     "type": "tf",
-    "category": "جغرافيا",
+    "category": "الجغرافيا",
     "difficulty": "medium",
     "question_ar": "مملكة البحرين سُمّيت بهذا الاسم لوقوعها بين بحرين",
     "correctBoolean": true,
     "source_ar": "جغرافيا",
-    "explanation_ar": "المياه المالحة والعيون العذبة."
+    "explanation_ar": "المياه المالحة والعيون العذبة.",
+    "id": 483
   },
   {
     "type": "tf",
-    "category": "ثقافة عامة",
+    "category": "الثقافة العامة",
     "difficulty": "medium",
     "question_ar": "أول جامعة في العالم هي جامعة أكسفورد",
     "correctBoolean": false,
     "source_ar": "تاريخ",
-    "explanation_ar": "جامعة القرويين بفاس 859م."
+    "explanation_ar": "جامعة القرويين بفاس 859م.",
+    "id": 484
   },
   {
     "type": "tf",
-    "category": "علوم",
+    "category": "العلوم",
     "difficulty": "medium",
     "question_ar": "الشمس نجم وليست كوكباً",
     "correctBoolean": true,
     "source_ar": "فلك",
-    "explanation_ar": "نجم قزم أصفر."
+    "explanation_ar": "نجم قزم أصفر.",
+    "id": 485
   },
   {
     "type": "tf",
-    "category": "ثقافة عامة",
+    "category": "الثقافة العامة",
     "difficulty": "medium",
     "question_ar": "ساعة بيغ بن موجودة في فرنسا",
     "correctBoolean": false,
     "source_ar": "معلومات عامة",
-    "explanation_ar": "في لندن."
+    "explanation_ar": "في لندن.",
+    "id": 486
   },
   {
     "type": "tf",
-    "category": "جغرافيا",
+    "category": "الجغرافيا",
     "difficulty": "medium",
     "question_ar": "عدد دول مجلس التعاون الخليجي ست دول",
     "correctBoolean": true,
     "source_ar": "جغرافيا",
-    "explanation_ar": "السعودية والإمارات والكويت والبحرين وقطر وعمان."
+    "explanation_ar": "السعودية والإمارات والكويت والبحرين وقطر وعمان.",
+    "id": 487
   },
   {
     "type": "tf",
-    "category": "علوم",
+    "category": "العلوم",
     "difficulty": "medium",
     "question_ar": "فيتامين D يمكن الحصول عليه من أشعة الشمس",
     "correctBoolean": true,
     "source_ar": "طب",
-    "explanation_ar": "الجلد ينتجه عند التعرض للأشعة فوق البنفسجية."
+    "explanation_ar": "الجلد ينتجه عند التعرض للأشعة فوق البنفسجية.",
+    "id": 488
   },
   {
     "type": "tf",
-    "category": "ثقافة عامة",
+    "category": "الثقافة العامة",
     "difficulty": "medium",
     "question_ar": "طوكيو هي أكبر مدينة من حيث عدد السكان في العالم",
     "correctBoolean": true,
     "source_ar": "جغرافيا",
-    "explanation_ar": "حوالي 37 مليون نسمة."
+    "explanation_ar": "حوالي 37 مليون نسمة.",
+    "id": 489
   },
   {
     "type": "tf",
-    "category": "ثقافة عامة",
+    "category": "الثقافة العامة",
     "difficulty": "easy",
     "question_ar": "الشمس تشرق من جهة الشرق",
     "correctBoolean": true,
     "source_ar": "معلومات عامة",
-    "explanation_ar": "وتغرب من الغرب."
+    "explanation_ar": "وتغرب من الغرب.",
+    "id": 490
   },
   {
     "type": "tf",
-    "category": "ثقافة عامة",
+    "category": "الثقافة العامة",
     "difficulty": "easy",
     "question_ar": "عدد أيام الأسبوع سبعة أيام",
     "correctBoolean": true,
     "source_ar": "معلومات عامة",
-    "explanation_ar": "من السبت إلى الجمعة."
+    "explanation_ar": "من السبت إلى الجمعة.",
+    "id": 491
   },
   {
     "type": "tf",
-    "category": "علوم",
+    "category": "العلوم",
     "difficulty": "easy",
     "question_ar": "النار باردة",
     "correctBoolean": false,
     "source_ar": "معلومات عامة",
-    "explanation_ar": "النار حارة جداً."
+    "explanation_ar": "النار حارة جداً.",
+    "id": 492
   },
   {
     "type": "tf",
-    "category": "علوم",
+    "category": "العلوم",
     "difficulty": "easy",
     "question_ar": "السمك يعيش في الماء",
     "correctBoolean": true,
     "source_ar": "أحياء",
-    "explanation_ar": "يتنفس عبر الخياشيم."
+    "explanation_ar": "يتنفس عبر الخياشيم.",
+    "id": 493
   },
   {
     "type": "tf",
-    "category": "ثقافة عامة",
+    "category": "الثقافة العامة",
     "difficulty": "easy",
     "question_ar": "عدد أصابع اليد الواحدة خمسة أصابع",
     "correctBoolean": true,
     "source_ar": "معلومات عامة",
-    "explanation_ar": "الإبهام والسبابة والوسطى والبنصر والخنصر."
+    "explanation_ar": "الإبهام والسبابة والوسطى والبنصر والخنصر.",
+    "id": 494
   },
   {
     "type": "tf",
-    "category": "علوم",
+    "category": "العلوم",
     "difficulty": "easy",
     "question_ar": "الثلج أبيض اللون",
     "correctBoolean": true,
     "source_ar": "فيزياء",
-    "explanation_ar": "بسبب انعكاس الضوء."
+    "explanation_ar": "بسبب انعكاس الضوء.",
+    "id": 495
   },
   {
     "type": "tf",
-    "category": "علوم",
+    "category": "العلوم",
     "difficulty": "easy",
     "question_ar": "القطة من الزواحف",
     "correctBoolean": false,
     "source_ar": "أحياء",
-    "explanation_ar": "من الثدييات."
+    "explanation_ar": "من الثدييات.",
+    "id": 496
   },
   {
     "type": "tf",
-    "category": "ثقافة عامة",
+    "category": "الثقافة العامة",
     "difficulty": "easy",
     "question_ar": "الأسد يُسمّى ملك الغابة",
     "correctBoolean": true,
     "source_ar": "معلومات عامة",
-    "explanation_ar": "لقوته وهيبته."
+    "explanation_ar": "لقوته وهيبته.",
+    "id": 497
   },
   {
     "type": "tf",
-    "category": "ثقافة عامة",
+    "category": "الثقافة العامة",
     "difficulty": "easy",
     "question_ar": "فصل الشتاء أبرد من فصل الصيف",
     "correctBoolean": true,
     "source_ar": "معلومات عامة",
-    "explanation_ar": "بسبب ميل محور الأرض."
+    "explanation_ar": "بسبب ميل محور الأرض.",
+    "id": 498
   },
   {
     "type": "tf",
-    "category": "علوم",
+    "category": "العلوم",
     "difficulty": "easy",
     "question_ar": "الحديد يطفو على سطح الماء",
     "correctBoolean": false,
     "source_ar": "فيزياء",
-    "explanation_ar": "أكثر كثافة فيغرق."
+    "explanation_ar": "أكثر كثافة فيغرق.",
+    "id": 499
   },
   {
     "type": "tf",
-    "category": "ثقافة عامة",
+    "category": "الثقافة العامة",
     "difficulty": "easy",
     "question_ar": "عدد فصول السنة أربعة فصول",
     "correctBoolean": true,
     "source_ar": "معلومات عامة",
-    "explanation_ar": "الربيع والصيف والخريف والشتاء."
+    "explanation_ar": "الربيع والصيف والخريف والشتاء.",
+    "id": 500
   },
   {
     "type": "tf",
-    "category": "ثقافة عامة",
+    "category": "الثقافة العامة",
     "difficulty": "easy",
     "question_ar": "التفاح فاكهة",
     "correctBoolean": true,
     "source_ar": "معلومات عامة",
-    "explanation_ar": "من أكثر الفواكه انتشاراً."
+    "explanation_ar": "من أكثر الفواكه انتشاراً.",
+    "id": 501
+  },
+  {
+    "id": 502,
+    "type": "tf",
+    "category": "الثقافة العامة",
+    "difficulty": "easy",
+    "question_ar": "الحوت الأزرق هو أضخم حيوان على وجه الأرض.",
+    "correctBoolean": true,
+    "source_ar": "علم الحيوان"
+  },
+  {
+    "id": 503,
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "medium",
+    "question_ar": "كم عدد قارات العالم؟",
+    "options_ar": [
+      "7",
+      "6",
+      "5",
+      "8"
+    ],
+    "correctIndex": 0,
+    "source_ar": "الجغرافيا"
+  },
+  {
+    "id": 504,
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "hard",
+    "question_ar": "ما هو العنصر الكيميائي الذي رمزه O؟",
+    "options_ar": [
+      "الأكسجين",
+      "الأوزون",
+      "الذهب",
+      "الحديد"
+    ],
+    "correctIndex": 0,
+    "source_ar": "الكيمياء"
+  },
+  {
+    "id": 505,
+    "type": "tf",
+    "category": "الثقافة العامة",
+    "difficulty": "medium",
+    "question_ar": "عنكبوت الأرملة السوداء سام جداً.",
+    "correctBoolean": true,
+    "source_ar": "علم الحيوان"
+  },
+  {
+    "id": 506,
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "extreme",
+    "question_ar": "ما هي الدولة التي تسمى 'بلاد الرافدين'؟",
+    "options_ar": [
+      "العراق",
+      "مصر",
+      "سوريا",
+      "الأردن"
+    ],
+    "correctIndex": 0,
+    "source_ar": "التاريخ والجغرافيا"
+  },
+  {
+    "id": 507,
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "hard",
+    "question_ar": "من هو مؤلف 'البؤساء'؟",
+    "options_ar": [
+      "فيكتور هوجو",
+      "تشالز ديكنز",
+      "ليو تولستوي",
+      "شكسبير"
+    ],
+    "correctIndex": 0,
+    "source_ar": "الأدب العالمي"
+  },
+  {
+    "id": 508,
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "medium",
+    "question_ar": "ما هي العملة الرسمية لليابان؟",
+    "options_ar": [
+      "الين",
+      "اليوان",
+      "الون",
+      "الدولار"
+    ],
+    "correctIndex": 0,
+    "source_ar": "الاقتصاد"
+  },
+  {
+    "id": 509,
+    "type": "tf",
+    "category": "الثقافة العامة",
+    "difficulty": "easy",
+    "question_ar": "الشمس تدور حول الأرض.",
+    "correctBoolean": false,
+    "source_ar": "الفلك (الأرض تدور حول الشمس)"
+  },
+  {
+    "id": 510,
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "easy",
+    "question_ar": "ما هو لون دم الأخطبوط؟",
+    "options_ar": [
+      "أزرق",
+      "أحمر",
+      "أخضر",
+      "أسود"
+    ],
+    "correctIndex": 0,
+    "source_ar": "الأحياء"
+  },
+  {
+    "id": 511,
+    "type": "tf",
+    "category": "الثقافة العامة",
+    "difficulty": "extreme",
+    "question_ar": "الماس هو أصلب مادة طبيعية.",
+    "correctBoolean": true,
+    "source_ar": "الجيولوجيا"
+  },
+  {
+    "id": 512,
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "medium",
+    "question_ar": "ما هي الدولة التي يمر بها خط الاستواء؟",
+    "options_ar": [
+      "الصومال",
+      "مصر",
+      "المغرب",
+      "السعودية"
+    ],
+    "correctIndex": 0,
+    "source_ar": "الجغرافيا"
+  },
+  {
+    "id": 513,
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "hard",
+    "question_ar": "من هو 'أمير الشعراء'؟",
+    "options_ar": [
+      "أحمد شوقي",
+      "حافظ إبراهيم",
+      "المتنبي",
+      "نزار قباني"
+    ],
+    "correctIndex": 0,
+    "source_ar": "الأدب العربي"
+  },
+  {
+    "id": 514,
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "easy",
+    "question_ar": "ما هي عاصمة مصر؟",
+    "options_ar": [
+      "القاهرة",
+      "الإسكندرية",
+      "أسوان",
+      "الأقصر"
+    ],
+    "correctIndex": 0,
+    "source_ar": "الجغرافيا"
+  },
+  {
+    "id": 515,
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "medium",
+    "question_ar": "ما هو الغاز الذي يتنفسه الإنسان؟",
+    "options_ar": [
+      "الأكسجين",
+      "الهيدروجين",
+      "النيتروجين",
+      "ثاني أكسيد الكربون"
+    ],
+    "correctIndex": 0,
+    "source_ar": "الأحياء"
+  },
+  {
+    "id": 516,
+    "type": "tf",
+    "category": "الثقافة العامة",
+    "difficulty": "extreme",
+    "question_ar": "الخفاش هو طائر.",
+    "correctBoolean": false,
+    "source_ar": "علم الحيوان (هو ثديي)"
+  },
+  {
+    "id": 517,
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "medium",
+    "question_ar": "ما هي أكبر محيطات العالم؟",
+    "options_ar": [
+      "المحيط الهادئ",
+      "المحيط الأطلسي",
+      "المحيط الهندي",
+      "المحيط المتجمد"
+    ],
+    "correctIndex": 0,
+    "source_ar": "الجغرافيا"
+  },
+  {
+    "id": 518,
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "hard",
+    "question_ar": "من هو مكتشف البنسلين؟",
+    "options_ar": [
+      "ألكسندر فليمنج",
+      "لويس باستير",
+      "روبرت كوخ",
+      "إدوارد جينر"
+    ],
+    "correctIndex": 0,
+    "source_ar": "تاريخ الطب"
+  },
+  {
+    "id": 519,
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "extreme",
+    "question_ar": "ما هي الدولة الأكثر سكاناً في العالم (2025)؟",
+    "options_ar": [
+      "الهند",
+      "الصين",
+      "أمريكا",
+      "إندونيسيا"
+    ],
+    "correctIndex": 0,
+    "source_ar": "الإحصائيات"
+  },
+  {
+    "id": 520,
+    "type": "tf",
+    "category": "الثقافة العامة",
+    "difficulty": "hard",
+    "question_ar": "الضوء أسرع من الصوت.",
+    "correctBoolean": true,
+    "source_ar": "الفيزياء"
+  },
+  {
+    "id": 521,
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "medium",
+    "question_ar": "من هو رسام الموناليزا؟",
+    "options_ar": [
+      "ليوناردو دافنشي",
+      "مايكل أنجلو",
+      "بيكاسو",
+      "فان جوخ"
+    ],
+    "correctIndex": 0,
+    "source_ar": "الفنون"
+  },
+  {
+    "id": 522,
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "hard",
+    "question_ar": "ما هو الاسم القديم لمدينة اسطنبول؟",
+    "options_ar": [
+      "القسطنطينية",
+      "بيزنطة",
+      "إسلام بول",
+      "جميع ما سبق"
+    ],
+    "correctIndex": 3,
+    "source_ar": "التاريخ"
+  },
+  {
+    "id": 523,
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "easy",
+    "question_ar": "ما هو الحيوان الذي يسمى 'سفينة الصحراء'؟",
+    "options_ar": [
+      "الجمل",
+      "الحصان",
+      "الفيل",
+      "الأسد"
+    ],
+    "correctIndex": 0,
+    "source_ar": "الثقافة العامة"
+  },
+  {
+    "id": 524,
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "extreme",
+    "question_ar": "كم عدد أسنان الإنسان البالغ؟",
+    "options_ar": [
+      "32",
+      "28",
+      "30",
+      "34"
+    ],
+    "correctIndex": 0,
+    "source_ar": "الطب"
+  },
+  {
+    "id": 525,
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "medium",
+    "question_ar": "ما هي أكبر دولة عربية من حيث المساحة؟",
+    "options_ar": [
+      "الجزائر",
+      "السعودية",
+      "السودان",
+      "ليبيا"
+    ],
+    "correctIndex": 0,
+    "source_ar": "الجغرافيا"
+  },
+  {
+    "id": 526,
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "hard",
+    "question_ar": "ما هو الحيوان الذي لا يصدر صوتاً؟",
+    "options_ar": [
+      "الزرافة",
+      "السلحفاة",
+      "الكنغر",
+      "التمساح"
+    ],
+    "correctIndex": 0,
+    "source_ar": "عالم الحيوان"
+  },
+  {
+    "id": 527,
+    "type": "tf",
+    "category": "الثقافة العامة",
+    "difficulty": "easy",
+    "question_ar": "الماء يتكون من هيدروجين وأكسجين.",
+    "correctBoolean": true,
+    "source_ar": "الكيمياء"
+  },
+  {
+    "id": 528,
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "extreme",
+    "question_ar": "ما هو أثقل حيوان في العالم؟",
+    "options_ar": [
+      "الحوت الأزرق",
+      "الفيل",
+      "فرس النهر",
+      "وحيد القرن"
+    ],
+    "correctIndex": 0,
+    "source_ar": "عالم الحيوان"
+  },
+  {
+    "id": 529,
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "medium",
+    "question_ar": "من هو أول من صعد إلى الفضاء؟",
+    "options_ar": [
+      "يوري جاجارين",
+      "نيل أرمسترونج",
+      "باز ألدرين",
+      "مايكل كولينز"
+    ],
+    "correctIndex": 0,
+    "source_ar": "الفضاء"
+  },
+  {
+    "id": 530,
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "hard",
+    "question_ar": "ما هي الدولة التي تسمى 'أرض الشمس المشرقة'؟",
+    "options_ar": [
+      "اليابان",
+      "كوريا",
+      "الصين",
+      "تايلاند"
+    ],
+    "correctIndex": 0,
+    "source_ar": "الجغرافيا"
+  },
+  {
+    "id": 531,
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "extreme",
+    "question_ar": "ما هو المعدن الذي يرمز له بـ Au؟",
+    "options_ar": [
+      "الذهب",
+      "الفضة",
+      "النحاس",
+      "البلاتين"
+    ],
+    "correctIndex": 0,
+    "source_ar": "الكيمياء"
+  },
+  {
+    "id": 532,
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "medium",
+    "question_ar": "ما هو أعلى جبل في العالم؟",
+    "options_ar": [
+      "إيفرست",
+      "كي 2",
+      "كلمنجارو",
+      "جبال الألب"
+    ],
+    "correctIndex": 0,
+    "source_ar": "الجغرافيا"
+  },
+  {
+    "id": 533,
+    "type": "tf",
+    "category": "الثقافة العامة",
+    "difficulty": "easy",
+    "question_ar": "البرازيل تقع في قارة أفريقيا.",
+    "correctBoolean": false,
+    "source_ar": "الجغرافيا"
+  },
+  {
+    "id": 534,
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "hard",
+    "question_ar": "ما هو العلم الذي يدرس طبقات الأرض؟",
+    "options_ar": [
+      "الجيولوجيا",
+      "البيولوجيا",
+      "السيكولوجيا",
+      "الأنثروبولوجيا"
+    ],
+    "correctIndex": 0,
+    "source_ar": "العلوم"
+  },
+  {
+    "id": 535,
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "extreme",
+    "question_ar": "كم عدد عيون النحلة؟",
+    "options_ar": [
+      "5",
+      "2",
+      "3",
+      "4"
+    ],
+    "correctIndex": 0,
+    "source_ar": "علم الحشرات"
+  },
+  {
+    "id": 536,
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "medium",
+    "question_ar": "ما هي لغة النمسا الرسمية؟",
+    "options_ar": [
+      "الألمانية",
+      "الفرنسية",
+      "الإنجليزية",
+      "الإيطالية"
+    ],
+    "correctIndex": 0,
+    "source_ar": "اللغات"
+  },
+  {
+    "id": 537,
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "easy",
+    "question_ar": "ما هو الشيء الذي كلما زاد نقص؟",
+    "options_ar": [
+      "العمر",
+      "المال",
+      "الماء",
+      "الطعام"
+    ],
+    "correctIndex": 0,
+    "source_ar": "ألغاز"
+  },
+  {
+    "id": 538,
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "hard",
+    "question_ar": "ما هي المدينة التي تسمى 'مدينة الضباب'؟",
+    "options_ar": [
+      "لندن",
+      "باريس",
+      "نيويورك",
+      "برلين"
+    ],
+    "correctIndex": 0,
+    "source_ar": "مدن العالم"
+  },
+  {
+    "id": 539,
+    "type": "tf",
+    "category": "الثقافة العامة",
+    "difficulty": "medium",
+    "question_ar": "القدس عاصمة فلسطين.",
+    "correctBoolean": true,
+    "source_ar": "الجغرافيا"
+  },
+  {
+    "id": 540,
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "extreme",
+    "question_ar": "ما هو الاسم الكيميائي للطباشير؟",
+    "options_ar": [
+      "كربونات الكالسيوم",
+      "كلوريد الصوديوم",
+      "أكسيد الحديد",
+      "نترات البوتاسيوم"
+    ],
+    "correctIndex": 0,
+    "source_ar": "الكيمياء"
+  },
+  {
+    "id": 541,
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "medium",
+    "question_ar": "من هو أول من اخترع الهاتف؟",
+    "options_ar": [
+      "ألكسندر غراهام بيل",
+      "ماركوني",
+      "إديسون",
+      "أينشتاين"
+    ],
+    "correctIndex": 0,
+    "source_ar": "الاختراعات"
+  },
+  {
+    "id": 542,
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "hard",
+    "question_ar": "ما هي أصغر دولة في العالم؟",
+    "options_ar": [
+      "الفاتيكان",
+      "موناكو",
+      "ناورو",
+      "سان مارينو"
+    ],
+    "correctIndex": 0,
+    "source_ar": "الجغرافيا"
+  },
+  {
+    "id": 543,
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "extreme",
+    "question_ar": "كم يبلغ طول الأمعاء الدقيقة للإنسان تقريباً؟",
+    "options_ar": [
+      "6-7 أمتار",
+      "2-3 أمتار",
+      "10 أمتار",
+      "1 متر"
+    ],
+    "correctIndex": 0,
+    "source_ar": "الأحياء"
+  },
+  {
+    "id": 544,
+    "type": "tf",
+    "category": "الثقافة العامة",
+    "difficulty": "medium",
+    "question_ar": "الفيل هو الحيوان الوحيد الذي لا يستطيع القفز.",
+    "correctBoolean": true,
+    "source_ar": "عالم الحيوان"
+  },
+  {
+    "id": 545,
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "hard",
+    "question_ar": "ما هي الدولة التي فازت بكأس العالم 2022؟",
+    "options_ar": [
+      "الأرجنتين",
+      "فرنسا",
+      "البرازيل",
+      "ألمانيا"
+    ],
+    "correctIndex": 0,
+    "source_ar": "الرياضة"
+  },
+  {
+    "id": 546,
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "extreme",
+    "question_ar": "من هو مؤلف كتاب 'ألف ليلة وليلة'؟",
+    "options_ar": [
+      "غير معروف (تراث شعبي)",
+      "الجاحظ",
+      "ابن المقفع",
+      "الأصمعي"
+    ],
+    "correctIndex": 0,
+    "source_ar": "الأدب"
+  },
+  {
+    "id": 547,
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "medium",
+    "question_ar": "ما هو البحر الذي يفصل بين أفريقيا وأوروبا؟",
+    "options_ar": [
+      "البحر الأبيض المتوسط",
+      "البحر الأحمر",
+      "بحر العرب",
+      "البحر الأسود"
+    ],
+    "correctIndex": 0,
+    "source_ar": "الجغرافيا"
+  },
+  {
+    "id": 548,
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "easy",
+    "question_ar": "كم عدد لاعبي فريق كرة القدم؟",
+    "options_ar": [
+      "11",
+      "10",
+      "12",
+      "9"
+    ],
+    "correctIndex": 0,
+    "source_ar": "الرياضة"
+  },
+  {
+    "id": 549,
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "extreme",
+    "question_ar": "ما هي المدينة التي استضافت أول ألعاب أولمبية حديثة؟",
+    "options_ar": [
+      "أثينا",
+      "باريس",
+      "لندن",
+      "روما"
+    ],
+    "correctIndex": 0,
+    "source_ar": "الرياضة"
+  },
+  {
+    "id": 550,
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "medium",
+    "question_ar": "من هو صاحب لقب 'عميد الأدب العربي'؟",
+    "options_ar": [
+      "طه حسين",
+      "نجيب محفوظ",
+      "توفيق الحكيم",
+      "عباس العقاد"
+    ],
+    "correctIndex": 0,
+    "source_ar": "الأدب"
+  },
+  {
+    "id": 551,
+    "type": "tf",
+    "category": "الثقافة العامة",
+    "difficulty": "easy",
+    "question_ar": "البطريق طائر يعيش في القطب الشمالي.",
+    "correctBoolean": false,
+    "source_ar": "الجغرافيا (القطب الجنوبي)"
+  },
+  {
+    "id": 552,
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "hard",
+    "question_ar": "ما هو الحيوان الذي يستخرج منه المسك؟",
+    "options_ar": [
+      "الغزال",
+      "الحوت",
+      "الفيل",
+      "النمور"
+    ],
+    "correctIndex": 0,
+    "source_ar": "الأحياء"
+  },
+  {
+    "id": 553,
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "extreme",
+    "question_ar": "ما هي الدولة التي تمتلك أكبر عدد من الأهرامات في العالم؟",
+    "options_ar": [
+      "السودان",
+      "مصر",
+      "المكسيك",
+      "بيرو"
+    ],
+    "correctIndex": 0,
+    "source_ar": "الآثار"
+  },
+  {
+    "id": 554,
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "medium",
+    "question_ar": "ما هو الغاز المضحك؟",
+    "options_ar": [
+      "أكسيد النيتروز",
+      "الهيليوم",
+      "الميثان",
+      "البروبان"
+    ],
+    "correctIndex": 0,
+    "source_ar": "الكيمياء"
+  },
+  {
+    "id": 555,
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "easy",
+    "question_ar": "ما هو اللون الناتج عن خلط الأزرق والأصفر؟",
+    "options_ar": [
+      "الأخضر",
+      "البنفسجي",
+      "البرتقالي",
+      "البني"
+    ],
+    "correctIndex": 0,
+    "source_ar": "الفنون"
+  },
+  {
+    "id": 556,
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "hard",
+    "question_ar": "ما هي أكبر بحيرة عذبة في العالم (من حيث الحجم)؟",
+    "options_ar": [
+      "بحيرة بايكال",
+      "بحيرة سوبيريور",
+      "بحيرة فيكتوريا",
+      "بحر قزوين"
+    ],
+    "correctIndex": 0,
+    "source_ar": "الجغرافيا"
+  },
+  {
+    "id": 557,
+    "type": "tf",
+    "category": "الثقافة العامة",
+    "difficulty": "extreme",
+    "question_ar": "الجزر يقوي النظر (حقيقة علمية مطلقة).",
+    "correctBoolean": false,
+    "source_ar": "الطب (خرافة شائعة، هو مفيد لكنه لا يصحح البصر)"
+  },
+  {
+    "id": 558,
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "hard",
+    "question_ar": "من هو أول من حصل على جائزة نوبل في الأدب من العرب؟",
+    "options_ar": [
+      "نجيب محفوظ",
+      "طه حسين",
+      "جبران خليل جبران",
+      "أدونيس"
+    ],
+    "correctIndex": 0,
+    "source_ar": "الأدب"
+  },
+  {
+    "id": 559,
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "extreme",
+    "question_ar": "ما هو الحيوان الذي له أكبر قلب؟",
+    "options_ar": [
+      "الحوت الأزرق",
+      "الفيل",
+      "الزرافة",
+      "وحيد القرن"
+    ],
+    "correctIndex": 0,
+    "source_ar": "الأحياء"
+  },
+  {
+    "id": 560,
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "easy",
+    "question_ar": "كم يبلغ عدد أيام السنة الكبيسة؟",
+    "options_ar": [
+      "366",
+      "365",
+      "364",
+      "360"
+    ],
+    "correctIndex": 0,
+    "source_ar": "التقويم"
+  },
+  {
+    "id": 561,
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "medium",
+    "question_ar": "ما هو الفيتامين الذي ينتجه الجسم عند التعرض للشمس؟",
+    "options_ar": [
+      "فيتامين د",
+      "فيتامين سي",
+      "فيتامين أ",
+      "فيتامين ب"
+    ],
+    "correctIndex": 0,
+    "source_ar": "الصحة"
+  },
+  {
+    "id": 562,
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "hard",
+    "question_ar": "ما هي الدولة التي تمتلك أطول ساحل في العالم؟",
+    "options_ar": [
+      "كندا",
+      "أستراليا",
+      "روسيا",
+      "إندونيسيا"
+    ],
+    "correctIndex": 0,
+    "source_ar": "الجغرافيا"
+  },
+  {
+    "id": 563,
+    "type": "tf",
+    "category": "الثقافة العامة",
+    "difficulty": "extreme",
+    "question_ar": "الألماس هو مجرد فحم (كربون) مضغوط.",
+    "correctBoolean": true,
+    "source_ar": "الكيمياء"
+  },
+  {
+    "id": 564,
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "medium",
+    "question_ar": "ما هو الحيوان الذي ينام وعيناه مفتوحتان؟",
+    "options_ar": [
+      "السمك (الدولفين)",
+      "الحصان",
+      "الزرافة",
+      "الأسد"
+    ],
+    "correctIndex": 0,
+    "source_ar": "عالم الحيوان"
+  },
+  {
+    "id": 565,
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "hard",
+    "question_ar": "من هو مخترع الديناميت؟",
+    "options_ar": [
+      "ألفرد نوبل",
+      "أينشتاين",
+      "أوبنهايمر",
+      "إديسون"
+    ],
+    "correctIndex": 0,
+    "source_ar": "الاختراعات"
+  },
+  {
+    "id": 566,
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "easy",
+    "question_ar": "ما هو أسرع كوكب يدور حول الشمس؟",
+    "options_ar": [
+      "عطارد",
+      "الأرض",
+      "المشتري",
+      "الزهرة"
+    ],
+    "correctIndex": 0,
+    "source_ar": "الفلك"
+  },
+  {
+    "id": 567,
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "extreme",
+    "question_ar": "ما هي اللغة الأكثر تحدثاً في العالم (كلغة أم)؟",
+    "options_ar": [
+      "الصينية (الماندرين)",
+      "الإنجليزية",
+      "الإسبانية",
+      "العربية"
+    ],
+    "correctIndex": 0,
+    "source_ar": "اللغات"
+  },
+  {
+    "id": 568,
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "medium",
+    "question_ar": "ما هو الحيوان الذي يستطيع تغيير لونه؟",
+    "options_ar": [
+      "الحرباء",
+      "السحلية",
+      "الضفدع",
+      "الثعبان"
+    ],
+    "correctIndex": 0,
+    "source_ar": "الأحياء"
+  },
+  {
+    "id": 569,
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "hard",
+    "question_ar": "كم عدد الدول العربية؟",
+    "options_ar": [
+      "22",
+      "21",
+      "23",
+      "20"
+    ],
+    "correctIndex": 0,
+    "source_ar": "السياسة"
+  },
+  {
+    "id": 570,
+    "type": "tf",
+    "category": "الثقافة العامة",
+    "difficulty": "easy",
+    "question_ar": "التفاحة سقطت على رأس نيوتن فألهمته الجاذبية.",
+    "correctBoolean": true,
+    "source_ar": "تاريخ العلوم"
+  },
+  {
+    "id": 571,
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "extreme",
+    "question_ar": "ما هو الاسم القديم لمدينة طوكيو؟",
+    "options_ar": [
+      "إيدو",
+      "كيوتو",
+      "أوساكا",
+      "نارا"
+    ],
+    "correctIndex": 0,
+    "source_ar": "التاريخ"
+  },
+  {
+    "id": 572,
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "medium",
+    "question_ar": "ما هي الدولة التي تشتهر بصناعة الساعات؟",
+    "options_ar": [
+      "سويسرا",
+      "اليابان",
+      "ألمانيا",
+      "فرنسا"
+    ],
+    "correctIndex": 0,
+    "source_ar": "الاقتصاد"
+  },
+  {
+    "id": 573,
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "hard",
+    "question_ar": "من هو الرسام الذي قطع أذنه؟",
+    "options_ar": [
+      "فان جوخ",
+      "بيكاسو",
+      "دالي",
+      "رامبرانت"
+    ],
+    "correctIndex": 0,
+    "source_ar": "الفنون"
+  },
+  {
+    "id": 574,
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "extreme",
+    "question_ar": "ما هو الحيوان الذي يموت إذا فتح فمه لأكثر من دقيقة؟",
+    "options_ar": [
+      "لا يوجد (سؤال مخادع)",
+      "الثعبان",
+      "التمساح",
+      "الضفدع"
+    ],
+    "correctIndex": 2,
+    "source_ar": "عالم الحيوان (الضفدع لا يستطيع التنفس وفمه مفتوح لفترة طويلة)"
+  },
+  {
+    "id": 575,
+    "type": "tf",
+    "category": "الثقافة العامة",
+    "difficulty": "medium",
+    "question_ar": "نهر النيل يصب في البحر المتوسط.",
+    "correctBoolean": true,
+    "source_ar": "الجغرافيا"
+  },
+  {
+    "id": 576,
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "hard",
+    "question_ar": "ما هو العلم الذي يهتم بدراسة الطقس؟",
+    "options_ar": [
+      "الأرصاد الجوية",
+      "الجيولوجيا",
+      "الفلك",
+      "الفيزياء"
+    ],
+    "correctIndex": 0,
+    "source_ar": "العلوم"
+  },
+  {
+    "id": 577,
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "extreme",
+    "question_ar": "ما هي الدولة التي لا تملك جيشاً؟",
+    "options_ar": [
+      "أيسلندا (وكوستاريكا)",
+      "سويسرا",
+      "فنلندا",
+      "النرويج"
+    ],
+    "correctIndex": 0,
+    "source_ar": "السياسة"
+  },
+  {
+    "id": 578,
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "medium",
+    "question_ar": "ما هو أسرع طائر في العالم (عند الانقضاض)؟",
+    "options_ar": [
+      "الشاهين",
+      "النسر",
+      "الصقر",
+      "النعامة"
+    ],
+    "correctIndex": 0,
+    "source_ar": "عالم الطيور"
+  },
+  {
+    "id": 579,
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "easy",
+    "question_ar": "ما هو الحيوان الذي يغطي جسمه الشوك؟",
+    "options_ar": [
+      "القنفذ",
+      "الأرنب",
+      "السلحفاة",
+      "السنجاب"
+    ],
+    "correctIndex": 0,
+    "source_ar": "عالم الحيوان"
+  },
+  {
+    "id": 580,
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "hard",
+    "question_ar": "من هو مخترع الطائرة؟",
+    "options_ar": [
+      "الأخوان رايت",
+      "عباس بن فرناس",
+      "إديسون",
+      "فورد"
+    ],
+    "correctIndex": 0,
+    "source_ar": "تاريخ الطيران"
+  },
+  {
+    "id": 581,
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "extreme",
+    "question_ar": "ما هو العنصر الأكثر وفرة في الكون؟",
+    "options_ar": [
+      "الهيدروجين",
+      "الأكسجين",
+      "الكربون",
+      "الحديد"
+    ],
+    "correctIndex": 0,
+    "source_ar": "الفيزياء"
+  },
+  {
+    "id": 582,
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "medium",
+    "question_ar": "ما هي الدولة التي تشتهر بالأهرامات (المايا)؟",
+    "options_ar": [
+      "المكسيك",
+      "البرازيل",
+      "الأرجنتين",
+      "كندا"
+    ],
+    "correctIndex": 0,
+    "source_ar": "التاريخ"
+  },
+  {
+    "id": 583,
+    "type": "tf",
+    "category": "الثقافة العامة",
+    "difficulty": "hard",
+    "question_ar": "زحل هو الكوكب الوحيد الذي لديه حلقات.",
+    "correctBoolean": false,
+    "source_ar": "الفلك"
+  },
+  {
+    "id": 584,
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "medium",
+    "question_ar": "من هو صاحب لوحة 'الصرخة'؟",
+    "options_ar": [
+      "إدفارد مونك",
+      "فان جوخ",
+      "بيكاسو",
+      "دالي"
+    ],
+    "correctIndex": 0,
+    "source_ar": "الفنون"
+  },
+  {
+    "id": 585,
+    "type": "mcq",
+    "category": "الثقافة العامة",
+    "difficulty": "easy",
+    "question_ar": "ما هو الشيء الذي له أسنان ولا يعض؟",
+    "options_ar": [
+      "المشط",
+      "المفتاح",
+      "المنشار",
+      "القلم"
+    ],
+    "correctIndex": 0,
+    "source_ar": "ألغاز"
   }
 ]
