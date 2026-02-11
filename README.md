@@ -10,7 +10,7 @@
 |--------|----------|
 | **عدد الأسئلة** | 757 سؤال (قابل للزيادة) |
 | **أنواع الأسئلة** | MCQ: 419 + صح/خطأ (TF): 166 |
-| **الفئات** | 13 فئة (القرآن، السيرة، الفقه، الحديث، الصحابة، العقيدة...) |
+| **الفئات** | 17 فئة (القرآن، أكمل الآية، الأحياء، علوم الفضاء، من القائل...) |
 | **التقنيات** | HTML5، CSS3، vanilla JavaScript — بدون build |
 | **مصدر الأسئلة** | CDN (GitHub) أو ملف محلي `data/questions.json` |
 
@@ -39,7 +39,8 @@
 │   ├── questions.json              # بنك الأسئلة (مصدر رئيسي)
 │   ├── README-DATABASE.md          # شرح هيكلة الداتا
 │   ├── questions_add_500.README.md  # كيفية إضافة أسئلة جديدة
-│   └── PROMPT-GEMINI-300-QUESTIONS.md  # برومبت AI لتوليد أسئلة
+│   ├── PROMPT-GEMINI-300-QUESTIONS.md  # برومبت AI عام
+│   └── PROMPT-GEMINI-NEW-CATEGORIES.md # برومبت للتصنيفات الجديدة (أحياء، فضاء، من القائل، أكمل الآية)
 ├── tests/
 │   ├── merge-questions.js          # دمج + توحيد (دمج بنوك، أو --normalize للداتابيس فقط)
 │   └── true-false-pool-test.js     # اختبار لعبة صح وخطأ
@@ -57,9 +58,20 @@
 
 ## ➕ إضافة أسئلة جديدة
 
-1. ضع الأسئلة الجديدة في `data/questions_add_500_new.json` بالهيكلة الموضحة في `data/questions_add_500.README.md`
-2. استخدم برومبت Gemini من `data/PROMPT-GEMINI-300-QUESTIONS.md` لتوليد أسئلة جاهزة
-3. شغّل الدمج (يتطلب Node.js، بدون npm):
+### الطريقة 1: توليد آلي عبر Gemini (موصى بها)
+
+```bash
+# 1. ضع GEMINI_API_KEY في .env (انظر scripts/README.md)
+# 2. npm install && npm run gen
+# 3. دمج الناتج
+node tests/merge-questions.js data/questions_add_500_new.json --apply --clear-after
+```
+
+### الطريقة 2: يدوي أو من برومبت
+
+1. ضع الأسئلة في `data/questions_add_500_new.json` بالهيكلة في `data/questions_add_500.README.md`
+2. أو استخدم برومبت Gemini من `data/PROMPT-GEMINI-300-QUESTIONS.md`
+3. شغّل الدمج (يتطلب Node.js):
 
 ```bash
 # دمج ملف واحد أو عدة ملفات

@@ -1,0 +1,15 @@
+{
+  "name": "mosabagat-thgafiah",
+  "version": "1.0.0",
+  "description": "مسابقات السلطان - ألعاب تعليمية عربية",
+  "private": true,
+  "scripts": {
+    "gen": "node scripts/gen_questions_gemini.mjs",
+    "merge": "node tests/merge-questions.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "jsonrepair": "^3.13.0",
+    "zod": "^3.23.8"
+  }
+}
