@@ -1,0 +1,306 @@
+/* بنك الأسئلة الثقافية — متجاوب مع جميع الأجهزة */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* احترام خاصية hidden لعناصر المودال وغيرها */
+[hidden] {
+  display: none !important;
+}
+
+:root {
+  --bg: #f0f4f3;
+  --bg-card: #ffffff;
+  --primary: #0d7377;
+  --primary-dark: #095456;
+  --accent: #ffb400;
+  --accent-dark: #e6a200;
+  --text: #1a1a1a;
+  --text-muted: #555;
+  --border: #e0e6e5;
+  --radius: 12px;
+  --shadow: 0 2px 12px rgba(0,0,0,.08);
+  --shadow-hover: 0 4px 20px rgba(0,0,0,.12);
+  --font: "Tajawal", "Cairo", "Segoe UI", Arial, sans-serif;
+  /* صعوبة */
+  --easy: #2e7d32;
+  --medium: #1565c0;
+  --hard: #ef6c00;
+  --extreme: #c62828;
+}
+
+html { font-size: 16px; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+button { font-family: inherit; cursor: pointer; border: none; outline: none; }
+input, select { font-family: inherit; }
+a { color: var(--primary); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ========== الهيدر ========== */
+.top-bar {
+  background: var(--primary);
+  color: #fff;
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.title-block h1 { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.25rem; }
+.tagline { font-size: 0.875rem; opacity: .9; }
+
+.top-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.search-input {
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255,255,255,.3);
+  background: rgba(255,255,255,.15);
+  color: #fff;
+  min-width: 180px;
+  font-size: 0.9rem;
+}
+.search-input::placeholder { color: rgba(255,255,255,.7); }
+.search-input:focus { background: rgba(255,255,255,.25); border-color: var(--accent); }
+
+.btn {
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: transform .15s, box-shadow .15s;
+}
+.btn:active { transform: scale(.98); }
+.btn-accent { background: var(--accent); color: #1a1a1a; }
+.btn-accent:hover { background: var(--accent-dark); color: #fff; }
+.btn-outline { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,.6); }
+.btn-outline:hover { border-color: #fff; background: rgba(255,255,255,.1); }
+.btn-ghost { background: transparent; color: var(--primary); border: 1px solid var(--border); }
+.btn-ghost:hover { background: var(--bg); }
+.btn-small { padding: 0.35rem 0.75rem; font-size: 0.8rem; background: var(--bg); color: var(--text); border: 1px solid var(--border); }
+.btn-small:hover { background: var(--border); }
+
+/* ========== التخطيط الرئيسي ========== */
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 80px);
+}
+@media (min-width: 768px) {
+  .layout { flex-direction: row; }
+}
+
+/* ========== الشريط الجانبي ========== */
+.sidebar {
+  background: var(--bg-card);
+  border-left: 1px solid var(--border);
+  padding: 1rem;
+  flex-shrink: 0;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+@media (min-width: 768px) {
+  .sidebar {
+    width: 280px;
+    max-height: none;
+    min-height: calc(100vh - 80px);
+  }
+}
+
+.stats-box h2, .filter-section h3 {
+  font-size: 0.95rem;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+.stats-box p { font-size: 0.875rem; margin-bottom: 0.25rem; color: var(--text-muted); }
+.diff-bars { margin-top: 0.5rem; display: flex; flex-wrap: wrap; gap: 4px; }
+.diff-bar {
+  font-size: 0.7rem;
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: #fff;
+}
+.diff-bar.easy { background: var(--easy); }
+.diff-bar.medium { background: var(--medium); }
+.diff-bar.hard { background: var(--hard); }
+.diff-bar.extreme { background: var(--extreme); }
+
+.filter-section { margin-top: 1.25rem; }
+.filter-scroll { max-height: 200px; overflow-y: auto; }
+.filter-scroll label {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+.radio-group label { display: block; margin-bottom: 0.35rem; font-size: 0.9rem; cursor: pointer; }
+.radio-group input { margin-left: 0.5rem; }
+#resetFiltersBtn { width: 100%; margin-top: 1rem; padding: 0.6rem; }
+
+/* ========== المحتوى الرئيسي ========== */
+.main {
+  flex: 1;
+  padding: 1rem;
+  min-width: 0;
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.toolbar-info { font-size: 0.9rem; color: var(--text-muted); }
+.per-page { font-size: 0.875rem; display: flex; align-items: center; gap: 0.5rem; }
+.per-page select { padding: 0.35rem; border-radius: 6px; border: 1px solid var(--border); }
+
+.loading, .error {
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.1rem;
+}
+.error { color: var(--extreme); }
+
+.questions-grid {
+  display: grid;
+  gap: 1rem;
+}
+@media (min-width: 600px) {
+  .questions-grid { grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); }
+}
+
+/* ========== كرت السؤال ========== */
+.question-card {
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  padding: 1rem;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  transition: box-shadow .2s;
+}
+.question-card:hover { box-shadow: var(--shadow-hover); }
+
+.card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+.badge {
+  font-size: 0.75rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+}
+.badge.cat { background: #e3f2fd; color: var(--medium); }
+.badge.easy { background: #e8f5e9; color: var(--easy); }
+.badge.medium { background: #e3f2fd; color: var(--medium); }
+.badge.hard { background: #fff3e0; color: var(--hard); }
+.badge.extreme { background: #ffebee; color: var(--extreme); }
+.badge.tf { background: #f3e5f5; color: #6a1b9a; }
+.badge.mcq { background: #e0f2f1; color: #00695c; }
+
+.card-q { font-size: 1rem; font-weight: 600; margin-bottom: 0.75rem; line-height: 1.5; }
+.card-options { list-style: none; }
+.card-options li {
+  padding: 0.4rem 0.5rem;
+  margin-bottom: 0.25rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  background: var(--bg);
+}
+.card-options li.correct { background: #e8f5e9; color: var(--easy); }
+.card-source { font-size: 0.75rem; color: var(--text-muted); margin-top: 0.5rem; }
+
+/* ========== الترقيم ========== */
+.pagination {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  padding: 1rem 0;
+}
+.pagination button {
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-size: 0.9rem;
+}
+.pagination button:hover { background: var(--bg); }
+.pagination button.active { background: var(--primary); color: #fff; border-color: var(--primary); }
+.pagination button:disabled { opacity: .5; cursor: not-allowed; }
+
+/* ========== المودال (سؤال عشوائي) ========== */
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+.modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,.5);
+}
+.modal-content {
+  position: relative;
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  max-width: 500px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 8px 32px rgba(0,0,0,.2);
+}
+.modal-close {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  width: 36px;
+  height: 36px;
+  font-size: 1.5rem;
+  line-height: 1;
+  background: var(--bg);
+  border-radius: 50%;
+  color: var(--text-muted);
+}
+.modal-close:hover { color: var(--text); background: var(--border); }
+
+/* ========== أيباد / شاشات متوسطة ========== */
+@media (min-width: 1024px) {
+  .sidebar { width: 300px; }
+  .main { padding: 1.5rem; }
+}
+
+/* ========== جوال: هيدر عمودي ========== */
+@media (max-width: 767px) {
+  .top-bar { flex-direction: column; align-items: stretch; text-align: center; }
+  .top-actions { justify-content: center; }
+  .search-input { min-width: 100%; }
+}

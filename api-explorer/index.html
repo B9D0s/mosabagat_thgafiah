@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>بنك الأسئلة الثقافية</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="top-bar">
+    <div class="title-block">
+      <h1>بنك الأسئلة الثقافية</h1>
+      <p class="tagline">استكشف الأسئلة حسب التصنيف، الصعوبة، والنوع</p>
+    </div>
+    <div class="top-actions">
+      <input type="search" id="searchInput" class="search-input" placeholder="ابحث في نص السؤال..." autocomplete="off" />
+      <button type="button" id="randomBtn" class="btn btn-accent">سؤال عشوائي</button>
+      <button type="button" id="copyApiBtn" class="btn btn-outline">نسخ رابط الـ API</button>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <section class="stats-box">
+        <h2>إحصائيات</h2>
+        <p>إجمالي الأسئلة: <strong id="totalCount">0</strong></p>
+        <p>بعد الفلترة: <strong id="filteredCount">0</strong></p>
+        <div class="diff-bars" id="diffBars"></div>
+      </section>
+
+      <section class="filter-section">
+        <h3>التصنيف</h3>
+        <div class="filter-scroll" id="categoryFilters"></div>
+      </section>
+
+      <section class="filter-section">
+        <h3>الصعوبة</h3>
+        <div class="radio-group" id="difficultyFilters"></div>
+      </section>
+
+      <section class="filter-section">
+        <h3>نوع السؤال</h3>
+        <div class="radio-group" id="typeFilters"></div>
+      </section>
+
+      <button type="button" id="resetFiltersBtn" class="btn btn-ghost">إعادة ضبط الفلاتر</button>
+    </aside>
+
+    <main class="main">
+      <div class="toolbar">
+        <span class="toolbar-info" id="toolbarInfo">يعرض 0 سؤال</span>
+        <label class="per-page">
+          في الصفحة:
+          <select id="perPage">
+            <option value="10">10</option>
+            <option value="25" selected>25</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+          </select>
+        </label>
+        <button type="button" id="downloadJsonBtn" class="btn btn-small">تحميل كـ JSON</button>
+      </div>
+
+      <div id="loading" class="loading">جاري تحميل الأسئلة...</div>
+      <div id="error" class="error" hidden></div>
+      <div id="questionsGrid" class="questions-grid"></div>
+      <div id="pagination" class="pagination"></div>
+    </main>
+  </div>
+
+  <div id="randomModal" class="modal" hidden>
+    <div class="modal-backdrop"></div>
+    <div class="modal-content">
+      <button type="button" class="modal-close" id="modalClose" aria-label="إغلاق">×</button>
+      <div id="randomQuestionCard"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
