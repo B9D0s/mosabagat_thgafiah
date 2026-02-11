@@ -60,7 +60,6 @@ const CATEGORIES = [
   "الأحياء",
   "علوم الفضاء",
   "من القائل",
-  "أكمل الآية",
 ];
 
 const DifficultyEnum = z.enum(["easy", "medium", "hard", "extreme"]);
