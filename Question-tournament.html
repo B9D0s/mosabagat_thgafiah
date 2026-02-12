@@ -449,6 +449,14 @@ html { scroll-behavior: smooth; }
 .q-diff-row { display:flex; gap:6px; justify-content:center; flex-wrap:wrap; margin-top:10px; }
 .q-diff-chip { padding:5px 12px; border-radius:20px; font-size:0.78rem; font-weight:600; color:#fff; display:flex; align-items:center; gap:4px; }
 .q-diff-chip .dcount { background:rgba(255,255,255,0.3); border-radius:10px; padding:1px 7px; font-size:0.72rem; }
+/* ===== التذييل ===== */
+.footer {
+  text-align: center; padding: 16px 20px; font-size: 12px;
+  color: var(--textLight); margin-top: 20px;
+  display: flex; flex-direction: column; gap: 4px;
+}
+.footer .credit-by { font-weight: 600; }
+.footer .credit-rights { font-size: 11px; opacity: 0.9; }
 </style>
 </head>
 <body>
@@ -3069,5 +3077,11 @@ function resumeTournament() {
 
 document.addEventListener('DOMContentLoaded', init);
 </script>
+
+<!-- التذييل -->
+<div class="footer">
+  <span class="credit-by">صنع بواسطة مــداد — 0534349939</span>
+  <span class="credit-rights">جميع الحقوق محفوظة</span>
+</div>
 </body>
 </html>
