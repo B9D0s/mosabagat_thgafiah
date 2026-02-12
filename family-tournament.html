@@ -1,0 +1,3054 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>بطولة الأسر</title>
+<style>
+:root {
+  --primary: #0D3B66;
+  --primaryDark: #0D3B66;
+  --accent: #F4D35E;
+  --accentLight: #FAF0CA;
+  --highlight: #F4D35E;
+  --winner: #F4D35E;
+  --bg: #FAF0CA;
+  --card: #ffffff;
+  --text: #0D3B66;
+  --textLight: #3a5a7a;
+  --danger: #c0392b;
+  --success: #27ae60;
+  --shadow: 0 4px 16px rgba(13,59,102,0.10);
+  --radius: 16px;
+  --radiusSm: 10px;
+  --transition: 0.3s cubic-bezier(.4,0,.2,1);
+  --pink: #FF0DDD;
+  --orange: #E2A16F;
+  --gray: #D1D3D4;
+  --blue: #86B0BD;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+  background: linear-gradient(160deg, var(--bg) 0%, #fdf8e8 40%, #f0f4f8 100%);
+  color: var(--text);
+  min-height: 100vh;
+  direction: rtl;
+  line-height: 1.6;
+}
+/* ===== TOP BAR ===== */
+.top-bar {
+  position: sticky; top: 0; z-index: 100;
+  background: var(--primary);
+  color: #fff;
+  padding: 12px 20px;
+  display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+}
+.top-bar h1 { font-size: 1.3rem; flex: 1; white-space: nowrap; }
+.badge {
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 4px 12px; border-radius: 20px;
+  font-size: 0.78rem; font-weight: 600;
+  background: rgba(255,255,255,0.2); color: #fff;
+}
+.badge.online { background: var(--success); }
+.badge.offline { background: var(--danger); }
+.badge.mode-badge { background: var(--accent); color: var(--primary); }
+.top-btn {
+  background: rgba(244,211,94,0.2); border: none; color: var(--accent);
+  padding: 8px 14px; border-radius: var(--radiusSm);
+  cursor: pointer; font-size: 0.85rem; font-weight: 600;
+  transition: var(--transition);
+}
+.top-btn:hover { background: var(--accent); color: var(--primary); transform: translateY(-1px); }
+/* ===== VIEWS ===== */
+.view { display: none; padding: 20px; max-width: 900px; margin: 0 auto; animation: fadeIn 0.35s ease; }
+.view.active { display: block; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+/* ===== CARDS ===== */
+.card {
+  background: var(--card); border-radius: var(--radius);
+  box-shadow: var(--shadow); padding: 24px; margin-bottom: 16px;
+  transition: var(--transition);
+}
+.card:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.12); }
+.card-title {
+  font-size: 1.15rem; font-weight: 700; margin-bottom: 12px;
+  padding-bottom: 8px; border-bottom: 2px solid var(--primary);
+  color: var(--primaryDark);
+}
+/* ===== BUTTONS ===== */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  padding: 12px 24px; border: none; border-radius: var(--radiusSm);
+  font-size: 1rem; font-weight: 600; cursor: pointer;
+  transition: var(--transition); min-width: 120px;
+}
+.btn:active { transform: scale(0.97); }
+.btn-primary { background: var(--primary); color: #fff; }
+.btn-primary:hover { background: #0a2f54; }
+.btn-highlight { background: var(--accent); color: var(--primary); }
+.btn-highlight:hover { background: #e6c24e; }
+.btn-winner { background: var(--accent); color: var(--primary); font-weight:700; }
+.btn-winner:hover { background: #e6c24e; }
+.btn-danger { background: var(--danger); color: #fff; }
+.btn-danger:hover { background: #a93226; }
+.btn-outline {
+  background: transparent; color: var(--primary);
+  border: 2px solid var(--primary);
+}
+.btn-outline:hover { background: var(--primary); color: #fff; }
+.btn-sm { padding: 8px 16px; font-size: 0.85rem; min-width: 80px; }
+.btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+/* ===== INPUTS ===== */
+.form-group { margin-bottom: 16px; }
+.form-group label { display: block; font-weight: 600; margin-bottom: 6px; color: var(--textLight); }
+.form-input, .form-select {
+  width: 100%; padding: 12px 16px; border: 2px solid #d4d6d8;
+  border-radius: var(--radiusSm); font-size: 1rem;
+  transition: var(--transition); direction: rtl;
+  font-family: inherit; background: #fff;
+}
+.form-input:focus, .form-select:focus {
+  outline: none; border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(13,59,102,0.12);
+}
+/* ===== MODAL ===== */
+.modal-overlay {
+  position: fixed; inset: 0; z-index: 200;
+  background: rgba(0,0,0,0.5); display: none;
+  align-items: center; justify-content: center;
+  padding: 20px; animation: fadeIn 0.2s ease;
+}
+.modal-overlay.active { display: flex; }
+.modal-box {
+  background: var(--card); border-radius: var(--radius);
+  box-shadow: 0 8px 40px rgba(0,0,0,0.2);
+  padding: 32px; max-width: 480px; width: 100%;
+  text-align: center;
+}
+.modal-box h2 { margin-bottom: 16px; color: var(--primaryDark); }
+.modal-box p { margin-bottom: 24px; color: var(--textLight); }
+.modal-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+/* ===== MATCH AREA ===== */
+.match-header {
+  text-align: center; padding: 20px;
+  background: var(--primary);
+  border-radius: var(--radius); color: #fff; margin-bottom: 16px;
+}
+.match-header .vs { font-size: 2rem; font-weight: 800; margin: 8px 0; }
+.match-header .player-name { font-size: 1.2rem; font-weight: 600; }
+.match-header .score-display { font-size: 1.8rem; font-weight: 800; margin-top: 8px; }
+.question-card {
+  background: var(--card); border-radius: var(--radius);
+  box-shadow: var(--shadow); padding: 28px; margin-bottom: 16px;
+}
+.question-text { font-size: 1.15rem; font-weight: 600; margin-bottom: 20px; line-height: 1.8; }
+.options-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.option-btn {
+  padding: 14px 18px; border: 2px solid #d4d6d8;
+  border-radius: var(--radiusSm); background: #fff;
+  cursor: pointer; font-size: 0.95rem; font-weight: 500;
+  transition: var(--transition); text-align: center; color: var(--text);
+}
+.option-btn:hover:not(.locked) { border-color: var(--primary); background: var(--accentLight); }
+.option-btn.selected { border-color: var(--primary); background: var(--primary); color: #fff; }
+.option-btn.correct { border-color: var(--success); background: #d4edda; color: #155724; }
+.option-btn.wrong { border-color: var(--danger); background: #f8d7da; color: #721c24; }
+.option-btn.locked { cursor: not-allowed; opacity: 0.7; }
+.timer-bar {
+  height: 6px; background: #e0e0e0; border-radius: 3px;
+  margin-bottom: 16px; overflow: hidden;
+}
+.timer-bar .fill {
+  height: 100%; background: var(--primaryDark);
+  border-radius: 3px; transition: width 1s linear;
+}
+.timer-text { text-align: center; font-size: 1.1rem; font-weight: 700; color: var(--primaryDark); margin-bottom: 8px; }
+/* ===== BRACKET ===== */
+.bracket-container { overflow-x: auto; padding: 20px 0; }
+.bracket-flex { display: flex; gap: 0; direction: rtl; align-items: stretch; min-width: fit-content; }
+.bracket-round { display: flex; flex-direction: column; justify-content: space-around; min-width: 200px; padding: 0 12px; position: relative; }
+.bracket-round-title { text-align: center; font-weight: 700; color: var(--primary); margin-bottom: 14px; font-size: 0.95rem;
+  background: var(--accentLight); padding: 6px 14px; border-radius: 20px; }
+.bracket-match-wrap { position: relative; display: flex; align-items: center; flex: 1; padding: 6px 0; }
+.bracket-match {
+  background: var(--card); border-radius: var(--radiusSm);
+  box-shadow: var(--shadow); padding: 0; cursor: pointer;
+  transition: var(--transition); border: 2px solid #e0e0e0;
+  width: 100%; overflow: hidden;
+}
+.bracket-match:hover { box-shadow: 0 4px 20px rgba(13,59,102,0.18); border-color: var(--primary); }
+.bracket-match.completed { border-color: var(--accent); }
+.bracket-match.bye { opacity: 0.45; border-style: dashed; }
+.bracket-player {
+  display: flex; justify-content: space-between; padding: 10px 14px;
+  font-size: 0.88rem; border-bottom: 1px solid #f0f0f0; transition: var(--transition);
+}
+.bracket-player:last-child { border-bottom: none; }
+.bracket-player.winner { background: var(--accentLight); font-weight: 700; color: var(--primary); }
+.bracket-player .score {
+  font-weight: 800; min-width: 22px; text-align: center;
+  background: var(--primary); color: #fff; border-radius: 6px; padding: 0 6px; font-size: 0.82rem;
+}
+.bracket-player.winner .score { background: var(--accent); color: var(--primary); }
+/* Connector lines */
+.bracket-connector {
+  position: absolute; left: -20px; top: 0; bottom: 0; width: 20px;
+}
+.bracket-connector svg { width: 100%; height: 100%; }
+.bracket-connector svg line, .bracket-connector svg path { stroke: var(--primary); stroke-width: 2; fill: none; opacity: 0.35; }
+/* ===== GROUPS ===== */
+.group-table {
+  width: 100%; border-collapse: collapse; margin-top: 12px;
+  font-size: 0.9rem;
+}
+.group-table th {
+  background: var(--primaryDark); color: #fff; padding: 10px 8px;
+  text-align: center; font-weight: 600;
+}
+.group-table td { padding: 10px 8px; text-align: center; border-bottom: 1px solid #e8e8e8; }
+.group-table tr:hover { background: #f0f3f4; }
+.group-table tr.qualified { background: #d4edda; }
+/* ===== STATS ===== */
+.stat-card {
+  display: flex; align-items: center; gap: 16px;
+  background: var(--card); border-radius: var(--radiusSm);
+  box-shadow: var(--shadow); padding: 16px; margin-bottom: 10px;
+}
+.stat-rank {
+  width: 40px; height: 40px; border-radius: 50%;
+  background: var(--primaryDark); color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 800; font-size: 1.1rem; flex-shrink: 0;
+}
+.stat-rank.gold { background: #FFD700; }
+.stat-rank.silver { background: #C0C0C0; }
+.stat-rank.bronze { background: #CD7F32; }
+.stat-info { flex: 1; }
+.stat-info .name { font-weight: 700; font-size: 1rem; }
+.stat-info .detail { font-size: 0.82rem; color: var(--textLight); }
+/* ===== CEREMONY ===== */
+.ceremony-container { text-align: center; padding: 40px 20px; }
+.trophy { font-size: 5rem; animation: bounce 1.5s infinite; }
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+.champion-name {
+  font-size: 2rem; font-weight: 800; color: var(--primaryDark);
+  margin: 16px 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+.champion-family {
+  font-size: 1.4rem; font-weight: 600; color: var(--orange);
+  margin-bottom: 24px;
+}
+.confetti-canvas {
+  position: fixed; inset: 0; z-index: 150; pointer-events: none;
+}
+/* ===== TOGGLE ===== */
+.toggle-wrapper { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+.toggle {
+  position: relative; width: 50px; height: 28px;
+  background: #ccc; border-radius: 14px; cursor: pointer;
+  transition: var(--transition);
+}
+.toggle.active { background: var(--primary); }
+.toggle::after {
+  content: ''; position: absolute; top: 3px; right: 3px;
+  width: 22px; height: 22px; background: #fff;
+  border-radius: 50%; transition: var(--transition);
+}
+.toggle.active::after { right: auto; left: 3px; }
+.toggle-label { font-weight: 600; font-size: 0.95rem; }
+/* ===== QUESTION PROGRESS DOTS ===== */
+.q-progress { display: flex; justify-content: center; gap: 8px; margin-bottom: 14px; }
+.q-dot {
+  width: 12px; height: 12px; border-radius: 50%;
+  background: #ddd; transition: var(--transition);
+  position: relative;
+}
+.q-dot.current { background: var(--primary); transform: scale(1.3); box-shadow: 0 0 0 3px rgba(13,59,102,0.2); }
+.q-dot.s1win { background: var(--primary); }
+.q-dot.s2win { background: var(--accent); }
+.q-dot.draw { background: #aaa; }
+.q-dot.sudden { background: var(--danger); }
+/* ===== ANSWER FEEDBACK ===== */
+@keyframes correctPop { 0% { transform: scale(1); } 50% { transform: scale(1.08); } 100% { transform: scale(1); } }
+@keyframes wrongShake { 0%, 100% { transform: translateX(0); } 20%, 60% { transform: translateX(-4px); } 40%, 80% { transform: translateX(4px); } }
+.option-btn.correct { animation: correctPop 0.4s ease; }
+.option-btn.wrong { animation: wrongShake 0.4s ease; }
+/* ===== TOAST ===== */
+.toast-container { position: fixed; top: 70px; left: 50%; transform: translateX(-50%); z-index: 300; display: flex; flex-direction: column; gap: 8px; pointer-events: none; }
+.toast {
+  padding: 12px 24px; border-radius: var(--radiusSm);
+  font-weight: 600; font-size: 0.9rem; text-align: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  animation: toastIn 0.3s ease, toastOut 0.3s ease 2.2s forwards;
+  pointer-events: auto;
+}
+.toast.success { background: var(--success); color: #fff; }
+.toast.error { background: var(--danger); color: #fff; }
+.toast.info { background: var(--primary); color: #fff; }
+@keyframes toastIn { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes toastOut { from { opacity: 1; } to { opacity: 0; transform: translateY(-10px); } }
+/* ===== LOADING SPINNER ===== */
+.loading-overlay {
+  position: fixed; inset: 0; z-index: 250; background: rgba(250,240,202,0.7);
+  display: flex; align-items: center; justify-content: center;
+}
+.spinner {
+  width: 48px; height: 48px; border: 4px solid var(--accentLight);
+  border-top-color: var(--primary); border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+/* ===== MATCH RESULT BANNER ===== */
+.result-banner {
+  text-align: center; padding: 16px; margin: 12px 0;
+  border-radius: var(--radiusSm); font-weight: 700;
+}
+.result-banner.s1 { background: linear-gradient(135deg, var(--primary), #1a5276); color: #fff; }
+.result-banner.s2 { background: linear-gradient(135deg, var(--accent), #e6c24e); color: var(--primary); }
+/* ===== RESPONSIVE ===== */
+html { scroll-behavior: smooth; }
+@media (max-width: 600px) {
+  .top-bar { padding: 10px 12px; gap: 8px; }
+  .top-bar h1 { font-size: 1.05rem; }
+  .view { padding: 12px; }
+  .card { padding: 16px; }
+  .options-grid { grid-template-columns: 1fr; }
+  .btn { min-width: 100px; padding: 10px 18px; font-size: 0.9rem; }
+  .modal-box { padding: 24px 16px; }
+  .match-header .vs { font-size: 1.4rem; }
+  .trophy { font-size: 3.5rem; }
+  .champion-name { font-size: 1.5rem; }
+  .q-dot { width: 10px; height: 10px; }
+  .bracket-round { min-width: 160px; padding: 0 6px; }
+  .bracket-round-title { font-size: 0.82rem; padding: 4px 10px; }
+  .bracket-player { padding: 8px 10px; font-size: 0.82rem; }
+}
+/* ===== FAMILY COLOR CHIPS ===== */
+.family-chip {
+  display: inline-block; padding: 2px 10px; border-radius: 12px;
+  font-size: 0.8rem; font-weight: 600; color: #fff;
+}
+/* ===== SETUP GRID ===== */
+.families-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+.family-card {
+  background: var(--card); border-radius: var(--radius);
+  box-shadow: var(--shadow); padding: 20px;
+  border-top: 4px solid var(--primary);
+}
+.family-card .family-header {
+  display: flex; align-items: center; gap: 10px; margin-bottom: 14px;
+}
+.family-card .family-header input { flex: 1; }
+.player-row { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+.player-row input { flex: 1; }
+.player-row .remove-player {
+  background: none; border: none; color: var(--danger);
+  cursor: pointer; font-size: 1.2rem; padding: 4px;
+}
+.add-player-btn {
+  background: none; border: 2px dashed #d4d6d8; border-radius: var(--radiusSm);
+  padding: 8px; width: 100%; cursor: pointer; color: var(--primaryDark);
+  font-weight: 600; transition: var(--transition); font-family: inherit;
+}
+.add-player-btn:hover { background: var(--accentLight); border-color: var(--primary); }
+.players-textarea {
+  width: 100%; min-height: 90px; padding: 12px; border: 2px solid #d4d6d8;
+  border-radius: var(--radiusSm); font-size: 0.95rem; font-family: inherit;
+  direction: rtl; resize: vertical; line-height: 1.8; transition: var(--transition);
+}
+.players-textarea:focus {
+  outline: none; border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(13,59,102,0.12);
+}
+.players-textarea::placeholder { color: #aaa; }
+.family-player-count {
+  font-size: 0.8rem; color: var(--textLight); margin-top: 6px;
+  display: flex; align-items: center; gap: 4px;
+}
+.setup-summary {
+  background: var(--primary);
+  color: #fff; border-radius: var(--radius); padding: 20px;
+  margin-bottom: 16px; text-align: center;
+}
+.setup-summary .summary-grid {
+  display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; margin-top: 12px;
+}
+.setup-summary .summary-item {
+  display: flex; flex-direction: column; align-items: center; gap: 2px;
+}
+.setup-summary .summary-num { font-size: 1.8rem; font-weight: 800; }
+.setup-summary .summary-label { font-size: 0.85rem; opacity: 0.9; }
+.validation-error {
+  background: #fef2f2; border: 1px solid #fecaca; border-radius: var(--radiusSm);
+  padding: 12px 16px; color: var(--danger); font-weight: 600;
+  margin-top: 12px; display: none;
+}
+/* ===== SERIES SCORE (Final Bo3) ===== */
+.series-score {
+  display: flex; justify-content: center; gap: 8px; margin: 12px 0;
+}
+.series-dot {
+  width: 16px; height: 16px; border-radius: 50%;
+  background: #ddd; transition: var(--transition);
+}
+.series-dot.won { background: var(--accent); }
+.series-dot.lost { background: #ccc; }
+/* ===== SUDDEN DEATH ===== */
+.sudden-death-banner {
+  background: linear-gradient(135deg, var(--danger), #c0392b);
+  color: #fff; text-align: center; padding: 12px;
+  border-radius: var(--radiusSm); font-weight: 700;
+  font-size: 1.1rem; margin-bottom: 12px;
+  animation: pulse 1.5s infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+/* ===== MATCH CONTROL BUTTONS ===== */
+.match-controls {
+  display: flex; gap: 12px; justify-content: center;
+  flex-wrap: wrap; margin-top: 16px;
+}
+/* ===== SIDE LABELS ===== */
+.side-label {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 6px 14px; border-radius: 20px; font-weight: 700;
+  font-size: 0.9rem; margin-bottom: 8px;
+}
+.side-label.side1 { background: var(--primary); color: #fff; }
+.side-label.side2 { background: var(--accent); color: var(--primary); }
+/* ===== QUESTION META BADGES ===== */
+.q-meta { display:flex; gap:8px; justify-content:center; flex-wrap:wrap; margin-bottom:10px; }
+.q-badge { display:inline-flex; align-items:center; gap:4px; padding:3px 10px; border-radius:14px; font-size:0.75rem; font-weight:600; }
+.q-badge.cat { background:var(--accentLight); color:var(--primaryDark); }
+.q-badge.diff-easy { background:#d4edda; color:#155724; }
+.q-badge.diff-medium { background:#fff3cd; color:#856404; }
+.q-badge.diff-hard { background:#fde2c8; color:#7c4a1a; }
+.q-badge.diff-extreme { background:#f8d7da; color:#721c24; }
+/* ===== QUESTION BANK EXPLORER ===== */
+.q-stats-panel { margin-top:18px; background:var(--accentLight); border-radius:var(--radiusSm); padding:16px; border:2px solid #e0e0e0; animation:fadeIn .3s ease; }
+.q-stats-panel h3 { font-size:1rem; color:var(--primaryDark); margin-bottom:12px; text-align:center; }
+.q-stats-grid { display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin-bottom:14px; }
+.q-stat-box { background:var(--card); border-radius:var(--radiusSm); padding:10px 16px; text-align:center; min-width:80px; box-shadow:var(--shadow); }
+.q-stat-box .num { font-size:1.3rem; font-weight:800; color:var(--primaryDark); }
+.q-stat-box .lbl { font-size:0.72rem; color:var(--textLight); margin-top:2px; }
+.q-cat-list { display:flex; flex-direction:column; gap:6px; margin-top:10px; }
+.q-cat-row { display:flex; align-items:center; gap:8px; font-size:0.82rem; }
+.q-cat-row .cat-name { min-width:100px; font-weight:600; color:var(--text); text-align:right; }
+.q-cat-row .cat-bar-wrap { flex:1; height:18px; background:#e0e0e0; border-radius:9px; overflow:hidden; position:relative; }
+.q-cat-row .cat-bar { height:100%; border-radius:9px; transition:width .5s ease; background:var(--accent); }
+.q-cat-row .cat-bar.top { background:var(--primary); }
+.q-cat-row .cat-count { min-width:36px; text-align:center; font-weight:700; font-size:0.78rem; color:var(--textLight); }
+.q-diff-row { display:flex; gap:6px; justify-content:center; flex-wrap:wrap; margin-top:10px; }
+.q-diff-chip { padding:5px 12px; border-radius:20px; font-size:0.78rem; font-weight:600; color:#fff; display:flex; align-items:center; gap:4px; }
+.q-diff-chip .dcount { background:rgba(255,255,255,0.3); border-radius:10px; padding:1px 7px; font-size:0.72rem; }
+</style>
+</head>
+<body>
+
+<!-- ===== TOP BAR ===== -->
+<div class="top-bar">
+  <h1>بطولة الأسر</h1>
+  <span id="badge-mode" class="badge mode-badge" style="display:none;"></span>
+  <span id="badge-connection" class="badge online">متصل</span>
+  <button class="top-btn" id="btn-settings" onclick="goSettings()" style="display:none;">الإعدادات</button>
+  <button class="top-btn" id="btn-save" onclick="manualSave()" style="display:none;">حفظ</button>
+  <button class="top-btn" id="btn-reset" onclick="confirmReset()" style="display:none;">إعادة ضبط</button>
+</div>
+
+<!-- ===== VIEW: SETUP ===== -->
+<div id="view-setup" class="view active">
+  <div id="setup-summary" class="setup-summary" style="display:none;">
+    <div style="font-size:1.2rem;font-weight:700;">ملخص البطولة</div>
+    <div class="summary-grid">
+      <div class="summary-item"><span class="summary-num" id="sum-families">0</span><span class="summary-label">أسرة</span></div>
+      <div class="summary-item"><span class="summary-num" id="sum-players">0</span><span class="summary-label">لاعب</span></div>
+      <div class="summary-item"><span class="summary-num" id="sum-questions">0</span><span class="summary-label">سؤال</span></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">إعدادات البطولة</div>
+    <div class="form-group">
+      <label>عدد الأسر</label>
+      <div style="display:flex;gap:10px;align-items:center;">
+        <input type="range" id="input-family-count" min="3" max="12" value="4"
+          oninput="updateFamilyCount()" style="flex:1;">
+        <span id="family-count-display" style="font-weight:700;font-size:1.2rem;min-width:30px;text-align:center;">4</span>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>نظام البطولة</label>
+      <select id="input-mode" class="form-select" onchange="updateModeUI()">
+        <option value="direct_knockout">خروج مغلوب مباشر</option>
+        <option value="groups_knockout">مجموعات ثم خروج مغلوب</option>
+      </select>
+    </div>
+    <div id="groups-settings" style="display:none;">
+      <div class="form-group">
+        <label>حجم المجموعة</label>
+        <select id="input-group-size" class="form-select">
+          <option value="3">3 لاعبين</option>
+          <option value="4" selected>4 لاعبين</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>عدد المتأهلين من كل مجموعة</label>
+        <select id="input-advance-count" class="form-select">
+          <option value="1">1</option>
+          <option value="2" selected>2</option>
+        </select>
+      </div>
+    </div>
+    <div class="toggle-wrapper">
+      <div class="toggle" id="toggle-override" onclick="toggleSwitch(this)"></div>
+      <span class="toggle-label">السماح بتحديد الفائز يدويًا</span>
+    </div>
+    <div class="toggle-wrapper">
+      <div class="toggle" id="toggle-debug" onclick="toggleSwitch(this)"></div>
+      <span class="toggle-label">وضع التصحيح</span>
+    </div>
+    <p style="font-size:0.8rem;color:var(--textLight);margin:-6px 60px 12px;">يعرض معلومات تقنية في وحدة التحكم (Console) للمتصفح، مثل عدد الأسئلة المحمّلة ومصدرها وتفاصيل توليد البطولة. مخصص للمنظّم عند وجود مشكلة.</p>
+  </div>
+
+  <div class="card">
+    <div class="card-title">الأسر واللاعبون</div>
+    <p style="font-size:0.88rem;color:var(--textLight);margin-bottom:14px;">أدخل اسم كل لاعب في سطر مستقل داخل المربع</p>
+    <div id="families-container" class="families-grid"></div>
+  </div>
+
+  <div id="qStatsContainer"></div>
+  <div style="text-align:center;margin-top:20px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap;">
+    <button class="btn btn-primary" style="min-width:220px;font-size:1.1rem;padding:14px 32px;"
+      onclick="startTournament()">بدء البطولة</button>
+    <button class="btn btn-outline btn-sm" onclick="showQuestionStats()" id="btnQStats">استكشاف بنك الأسئلة</button>
+    <div id="setup-error" class="validation-error" style="width:100%;"></div>
+  </div>
+</div>
+
+<!-- ===== VIEW: GROUPS ===== -->
+<div id="view-groups" class="view">
+  <div class="card">
+    <div class="card-title">مرحلة المجموعات</div>
+    <div id="groups-container"></div>
+  </div>
+  <div style="text-align:center;margin-top:16px;">
+    <button class="btn btn-primary" id="btn-advance-knockout" onclick="advanceToKnockout()" style="display:none;">
+      الانتقال لمرحلة خروج المغلوب
+    </button>
+  </div>
+</div>
+
+<!-- ===== VIEW: BRACKET ===== -->
+<div id="view-bracket" class="view">
+  <div class="card">
+    <div class="card-title">شجرة البطولة</div>
+    <div id="bracket-container" class="bracket-container"></div>
+  </div>
+</div>
+
+<!-- ===== VIEW: MATCH ===== -->
+<div id="view-match" class="view">
+  <div id="match-header" class="match-header">
+    <span class="side-label side1" id="match-side1-name">الطرف الأول</span>
+    <div class="vs">ضد</div>
+    <span class="side-label side2" id="match-side2-name">الطرف الثاني</span>
+    <div class="score-display"><span id="match-score1">0</span> - <span id="match-score2">0</span></div>
+    <div id="match-series-info" style="display:none;margin-top:8px;font-size:0.9rem;"></div>
+  </div>
+  <div id="sudden-death-banner" class="sudden-death-banner" style="display:none;">الموت المفاجئ!</div>
+  <div class="timer-text">الوقت: <span id="timer-display">20</span> ثانية</div>
+  <div class="timer-bar"><div class="fill" id="timer-fill" style="width:100%;"></div></div>
+  <div id="question-area" class="question-card">
+    <div class="question-text" id="question-text">نص السؤال</div>
+    <div id="current-side-label" style="text-align:center;margin-bottom:12px;"></div>
+    <div class="options-grid" id="options-grid"></div>
+  </div>
+  <div class="match-controls" id="match-controls"></div>
+</div>
+
+<!-- ===== VIEW: STATS ===== -->
+<div id="view-stats" class="view">
+  <div class="card">
+    <div class="card-title">ترتيب أفضل اللاعبين</div>
+    <div id="mvp-list"></div>
+  </div>
+  <div class="card">
+    <div class="card-title">إحصائيات الأسر</div>
+    <div id="family-stats-list"></div>
+  </div>
+  <div class="card">
+    <div class="card-title">جوائز الأسر</div>
+    <div id="family-awards"></div>
+  </div>
+  <div style="text-align:center;margin-top:16px;">
+    <button class="btn btn-outline" onclick="goBack()">رجوع</button>
+  </div>
+</div>
+
+<!-- ===== VIEW: CEREMONY ===== -->
+<div id="view-ceremony" class="view">
+  <canvas id="confetti-canvas" class="confetti-canvas"></canvas>
+  <div class="ceremony-container">
+    <div class="trophy" id="ceremony-trophy">🏆</div>
+    <div id="ceremony-champion-family" class="champion-family"></div>
+    <div id="ceremony-champion-player" class="champion-name"></div>
+    <div id="ceremony-series-result" style="margin:12px 0;font-size:1.1rem;font-weight:700;color:var(--primaryDark);"></div>
+    <div id="ceremony-series-detail" style="margin:8px 0;font-size:0.95rem;color:var(--textLight);"></div>
+    <div id="ceremony-mvp" style="margin:20px auto;max-width:400px;"></div>
+    <div id="ceremony-third" style="margin:12px 0;font-size:1rem;color:var(--textLight);"></div>
+    <div id="ceremony-match-count" style="margin:8px 0;font-size:0.95rem;color:var(--textLight);"></div>
+    <div class="match-controls" style="margin-top:30px;">
+      <button class="btn btn-primary" onclick="showStatsView()">عرض الإحصائيات</button>
+      <button class="btn btn-highlight" onclick="confirmNewTournament()">بطولة جديدة</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== MODAL OVERLAY ===== -->
+<div id="modal-overlay" class="modal-overlay">
+  <div class="modal-box">
+    <h2 id="modal-title"></h2>
+    <p id="modal-message"></p>
+    <div class="modal-actions" id="modal-actions"></div>
+  </div>
+</div>
+
+<div id="toast-container" class="toast-container"></div>
+
+<script>
+/* ============================================================
+   SECTION 1: LOCAL QUESTIONS (60 Arabic MCQ)
+   ============================================================ */
+const localQuestions = [
+  {qid:"lq1",category:"جغرافيا",difficulty:"easy",question:"ما هي عاصمة المملكة العربية السعودية؟",options:["الرياض","جدة","مكة","المدينة"],correctIndex:0},
+  {qid:"lq2",category:"جغرافيا",difficulty:"easy",question:"ما هو أطول نهر في العالم؟",options:["النيل","الأمازون","المسيسيبي","اليانغتسي"],correctIndex:0},
+  {qid:"lq3",category:"جغرافيا",difficulty:"medium",question:"في أي قارة تقع دولة البرازيل؟",options:["أمريكا الجنوبية","أفريقيا","آسيا","أوروبا"],correctIndex:0},
+  {qid:"lq4",category:"جغرافيا",difficulty:"medium",question:"ما هي أكبر دولة في العالم من حيث المساحة؟",options:["روسيا","كندا","الصين","أمريكا"],correctIndex:0},
+  {qid:"lq5",category:"جغرافيا",difficulty:"hard",question:"ما هي عاصمة أستراليا؟",options:["كانبرا","سيدني","ملبورن","بيرث"],correctIndex:0},
+  {qid:"lq6",category:"تاريخ",difficulty:"easy",question:"في أي عام هجري كانت غزوة بدر؟",options:["2 هـ","3 هـ","4 هـ","5 هـ"],correctIndex:0},
+  {qid:"lq7",category:"تاريخ",difficulty:"medium",question:"من هو مؤسس الدولة الأموية؟",options:["معاوية بن أبي سفيان","عبد الملك بن مروان","يزيد بن معاوية","مروان بن الحكم"],correctIndex:0},
+  {qid:"lq8",category:"تاريخ",difficulty:"medium",question:"متى فُتحت القسطنطينية على يد العثمانيين؟",options:["1453م","1492م","1389م","1517م"],correctIndex:0},
+  {qid:"lq9",category:"تاريخ",difficulty:"easy",question:"من هو أول خليفة في الإسلام؟",options:["أبو بكر الصديق","عمر بن الخطاب","عثمان بن عفان","علي بن أبي طالب"],correctIndex:0},
+  {qid:"lq10",category:"تاريخ",difficulty:"hard",question:"في أي عام تأسست المملكة العربية السعودية؟",options:["1932م","1945م","1920م","1953م"],correctIndex:0},
+  {qid:"lq11",category:"علوم",difficulty:"easy",question:"ما هو العنصر الكيميائي الذي رمزه O؟",options:["الأكسجين","الذهب","الفضة","الحديد"],correctIndex:0},
+  {qid:"lq12",category:"علوم",difficulty:"medium",question:"كم عدد كواكب المجموعة الشمسية؟",options:["8","9","7","10"],correctIndex:0},
+  {qid:"lq13",category:"علوم",difficulty:"medium",question:"ما هو أصلب معدن طبيعي؟",options:["الألماس","الحديد","التيتانيوم","الكوارتز"],correctIndex:0},
+  {qid:"lq14",category:"علوم",difficulty:"easy",question:"ما هو الغاز الذي تتنفسه الكائنات الحية؟",options:["الأكسجين","النيتروجين","الهيدروجين","ثاني أكسيد الكربون"],correctIndex:0},
+  {qid:"lq15",category:"علوم",difficulty:"hard",question:"ما هي وحدة قياس شدة التيار الكهربائي؟",options:["الأمبير","الفولت","الأوم","الواط"],correctIndex:0},
+  {qid:"lq16",category:"دين",difficulty:"easy",question:"كم عدد أركان الإسلام؟",options:["5","4","6","3"],correctIndex:0},
+  {qid:"lq17",category:"دين",difficulty:"easy",question:"ما هي أطول سورة في القرآن الكريم؟",options:["البقرة","آل عمران","النساء","المائدة"],correctIndex:0},
+  {qid:"lq18",category:"دين",difficulty:"medium",question:"كم عدد أجزاء القرآن الكريم؟",options:["30","28","25","32"],correctIndex:0},
+  {qid:"lq19",category:"دين",difficulty:"medium",question:"من هو النبي الذي ابتلعه الحوت؟",options:["يونس","يوسف","أيوب","إلياس"],correctIndex:0},
+  {qid:"lq20",category:"دين",difficulty:"hard",question:"كم عدد السور المدنية في القرآن؟",options:["28","30","24","35"],correctIndex:0},
+  {qid:"lq21",category:"رياضة",difficulty:"easy",question:"كم عدد لاعبي فريق كرة القدم؟",options:["11","10","12","9"],correctIndex:0},
+  {qid:"lq22",category:"رياضة",difficulty:"medium",question:"في أي دولة أُقيمت كأس العالم 2022؟",options:["قطر","روسيا","البرازيل","فرنسا"],correctIndex:0},
+  {qid:"lq23",category:"رياضة",difficulty:"easy",question:"ما هي المدة الزمنية لشوط كرة القدم؟",options:["45 دقيقة","30 دقيقة","60 دقيقة","40 دقيقة"],correctIndex:0},
+  {qid:"lq24",category:"رياضة",difficulty:"medium",question:"كم مرة فازت البرازيل بكأس العالم؟",options:["5","4","6","3"],correctIndex:0},
+  {qid:"lq25",category:"رياضة",difficulty:"hard",question:"في أي عام بدأت الألعاب الأولمبية الحديثة؟",options:["1896","1900","1888","1904"],correctIndex:0},
+  {qid:"lq26",category:"لغة",difficulty:"easy",question:"كم عدد حروف اللغة العربية؟",options:["28","26","30","27"],correctIndex:0},
+  {qid:"lq27",category:"لغة",difficulty:"medium",question:"ما هو جمع كلمة 'كتاب'؟",options:["كُتُب","كتابات","كتّاب","مكاتب"],correctIndex:0},
+  {qid:"lq28",category:"لغة",difficulty:"medium",question:"ما إعراب كلمة 'محمدٌ' في: جاء محمدٌ؟",options:["فاعل مرفوع","مبتدأ","خبر","مفعول به"],correctIndex:0},
+  {qid:"lq29",category:"لغة",difficulty:"easy",question:"ما هو مرادف كلمة 'الجسور'؟",options:["الشجاع","الجميل","الكبير","الذكي"],correctIndex:0},
+  {qid:"lq30",category:"لغة",difficulty:"hard",question:"ما هو المصدر من الفعل 'استغفر'؟",options:["استغفار","غفران","مغفرة","غفر"],correctIndex:0},
+  {qid:"lq31",category:"ثقافة",difficulty:"easy",question:"ما هي عملة اليابان؟",options:["الين","الدولار","اليوان","الوون"],correctIndex:0},
+  {qid:"lq32",category:"ثقافة",difficulty:"medium",question:"من هو مخترع المصباح الكهربائي؟",options:["توماس إديسون","نيكولا تسلا","غراهام بل","جيمس واط"],correctIndex:0},
+  {qid:"lq33",category:"ثقافة",difficulty:"easy",question:"ما هي أكبر قارة في العالم؟",options:["آسيا","أفريقيا","أوروبا","أمريكا الشمالية"],correctIndex:0},
+  {qid:"lq34",category:"ثقافة",difficulty:"medium",question:"كم عدد ألوان قوس قزح؟",options:["7","6","8","5"],correctIndex:0},
+  {qid:"lq35",category:"ثقافة",difficulty:"hard",question:"ما هو أصغر محيط في العالم؟",options:["المتجمد الشمالي","الهندي","الأطلسي","الهادئ"],correctIndex:0},
+  {qid:"lq36",category:"جغرافيا",difficulty:"easy",question:"في أي قارة تقع مصر؟",options:["أفريقيا","آسيا","أوروبا","أمريكا الجنوبية"],correctIndex:0},
+  {qid:"lq37",category:"جغرافيا",difficulty:"medium",question:"ما هو أعلى جبل في العالم؟",options:["إفرست","كي 2","كانغشينجونغا","ماكالو"],correctIndex:0},
+  {qid:"lq38",category:"جغرافيا",difficulty:"hard",question:"ما هي عاصمة نيوزيلندا؟",options:["ولينغتون","أوكلاند","كرايستشيرش","هاميلتون"],correctIndex:0},
+  {qid:"lq39",category:"علوم",difficulty:"easy",question:"ما هو أقرب كوكب إلى الشمس؟",options:["عطارد","الزهرة","الأرض","المريخ"],correctIndex:0},
+  {qid:"lq40",category:"علوم",difficulty:"medium",question:"ما هي درجة غليان الماء بالدرجة المئوية؟",options:["100","90","110","80"],correctIndex:0},
+  {qid:"lq41",category:"علوم",difficulty:"hard",question:"ما هو العنصر الأكثر وفرة في الكون؟",options:["الهيدروجين","الهيليوم","الأكسجين","الكربون"],correctIndex:0},
+  {qid:"lq42",category:"تاريخ",difficulty:"easy",question:"من بنى الأهرامات؟",options:["المصريون القدماء","الرومان","الإغريق","الفرس"],correctIndex:0},
+  {qid:"lq43",category:"تاريخ",difficulty:"medium",question:"ما اسم أول مسجد بُني في الإسلام؟",options:["مسجد قباء","المسجد النبوي","المسجد الحرام","المسجد الأقصى"],correctIndex:0},
+  {qid:"lq44",category:"تاريخ",difficulty:"hard",question:"من هو قائد معركة عين جالوت؟",options:["سيف الدين قطز","صلاح الدين","بيبرس","نور الدين زنكي"],correctIndex:0},
+  {qid:"lq45",category:"دين",difficulty:"easy",question:"ما هي أول سورة في القرآن الكريم؟",options:["الفاتحة","البقرة","الإخلاص","الناس"],correctIndex:0},
+  {qid:"lq46",category:"دين",difficulty:"medium",question:"كم عدد الأنبياء المذكورين في القرآن؟",options:["25","24","26","23"],correctIndex:0},
+  {qid:"lq47",category:"دين",difficulty:"hard",question:"ما هي السورة التي تُسمى قلب القرآن؟",options:["يس","الرحمن","الملك","الكهف"],correctIndex:0},
+  {qid:"lq48",category:"رياضة",difficulty:"easy",question:"ما هي لعبة الريشة الطائرة بالإنجليزية؟",options:["بادمنتون","تنس","سكواش","كريكيت"],correctIndex:0},
+  {qid:"lq49",category:"رياضة",difficulty:"medium",question:"كم تبلغ مسافة سباق الماراثون بالكيلومتر؟",options:["42","40","45","38"],correctIndex:0},
+  {qid:"lq50",category:"رياضة",difficulty:"hard",question:"في أي رياضة يُستخدم مصطلح 'إيس'؟",options:["التنس","كرة القدم","السباحة","الملاكمة"],correctIndex:0},
+  {qid:"lq51",category:"ثقافة",difficulty:"easy",question:"من كتب مسرحية 'روميو وجولييت'؟",options:["شكسبير","تشارلز ديكنز","فيكتور هوغو","مارك توين"],correctIndex:0},
+  {qid:"lq52",category:"ثقافة",difficulty:"medium",question:"ما هي اللغة الأكثر تحدثًا في العالم؟",options:["الماندرين","الإنجليزية","الإسبانية","العربية"],correctIndex:0},
+  {qid:"lq53",category:"ثقافة",difficulty:"hard",question:"ما هو أقدم خط مترو في العالم؟",options:["لندن","نيويورك","باريس","موسكو"],correctIndex:0},
+  {qid:"lq54",category:"علوم",difficulty:"easy",question:"ما هو الكوكب الأحمر؟",options:["المريخ","المشتري","زحل","عطارد"],correctIndex:0},
+  {qid:"lq55",category:"علوم",difficulty:"medium",question:"كم عظمة في جسم الإنسان البالغ؟",options:["206","208","200","210"],correctIndex:0},
+  {qid:"lq56",category:"علوم",difficulty:"hard",question:"ما هو أسرع حيوان بري؟",options:["الفهد","الأسد","الحصان","الغزال"],correctIndex:0},
+  {qid:"lq57",category:"جغرافيا",difficulty:"easy",question:"ما هي أكبر صحراء في العالم؟",options:["الصحراء الكبرى","صحراء الربع الخالي","صحراء جوبي","صحراء كالاهاري"],correctIndex:0},
+  {qid:"lq58",category:"جغرافيا",difficulty:"medium",question:"ما هي الدولة التي تقع فيها مدينة أنقرة؟",options:["تركيا","إيران","اليونان","بلغاريا"],correctIndex:0},
+  {qid:"lq59",category:"ثقافة",difficulty:"medium",question:"ما هو أشهر معلم في باريس؟",options:["برج إيفل","قوس النصر","اللوفر","كاتدرائية نوتردام"],correctIndex:0},
+  {qid:"lq60",category:"تاريخ",difficulty:"medium",question:"من هو أول رائد فضاء؟",options:["يوري غاغارين","نيل أرمسترونغ","بز ألدرن","جون غلين"],correctIndex:0}
+];
+
+/* ============================================================
+   SECTION 2: APP STATE
+   ============================================================ */
+let appState = {
+  settings: {
+    familyCount: 4,
+    mode: 'direct_knockout',
+    groupSize: 4,
+    advanceCount: 2,
+    allowManualOverride: false,
+    debugMode: false
+  },
+  families: [],
+  players: [],
+  groups: [],
+  bracket: {
+    rounds: [],
+    thirdPlaceMatchId: null,
+    finalSeriesMatchIds: [],
+    finalSeriesScore: {side1: 0, side2: 0}
+  },
+  matches: {},
+  usedQuestionIds: new Set(),
+  questionsPool: [],
+  questionsSource: 'local',
+  playerStats: {},
+  ui: {
+    currentView: 'view-setup',
+    currentMatchId: null,
+    timerRunning: false,
+    timerValue: 20
+  },
+  undoStack: [],
+  phase: 'setup'
+};
+
+/* ============================================================
+   SECTION 3: VIEW ROUTER
+   ============================================================ */
+const viewIds = ['view-setup','view-groups','view-bracket','view-match','view-stats','view-ceremony'];
+
+function showView(viewName) {
+  viewIds.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) { el.classList.remove('active'); }
+  });
+  const target = document.getElementById(viewName);
+  if (target) { target.classList.add('active'); }
+  appState.ui.currentView = viewName;
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+
+  // Show/hide top bar buttons based on phase
+  const inSetup = viewName === 'view-setup';
+  document.getElementById('btn-settings').style.display = inSetup ? 'none' : '';
+  document.getElementById('btn-save').style.display = inSetup ? 'none' : '';
+  document.getElementById('btn-reset').style.display = inSetup ? 'none' : '';
+
+  // Auto-render stats when entering stats view
+  if (viewName === 'view-stats') renderStatsView();
+  // Stop confetti when leaving ceremony
+  if (viewName !== 'view-ceremony') stopConfetti();
+}
+
+function goSettings() {
+  showView('view-setup');
+}
+
+function goBack() {
+  if (appState.phase === 'knockout' || appState.phase === 'ceremony') {
+    showView('view-bracket');
+  } else if (appState.phase === 'groups') {
+    showView('view-groups');
+  } else {
+    showView('view-setup');
+  }
+}
+
+/* ============================================================
+   SECTION 4: MODAL SYSTEM
+   ============================================================ */
+function showModal(title, message, buttons) {
+  document.getElementById('modal-title').textContent = title;
+  document.getElementById('modal-message').textContent = message;
+  const actionsEl = document.getElementById('modal-actions');
+  actionsEl.innerHTML = '';
+  buttons.forEach(btn => {
+    const b = document.createElement('button');
+    b.className = 'btn ' + (btn.class || 'btn-primary');
+    b.textContent = btn.text;
+    b.onclick = () => { hideModal(); if (btn.action) btn.action(); };
+    actionsEl.appendChild(b);
+  });
+  document.getElementById('modal-overlay').classList.add('active');
+}
+
+function hideModal() {
+  document.getElementById('modal-overlay').classList.remove('active');
+}
+
+function confirmReset() {
+  showModal('إعادة ضبط', 'هل أنت متأكد من إعادة ضبط البطولة بالكامل؟ ستُفقد جميع البيانات.', [
+    {text: 'نعم، إعادة ضبط', class: 'btn-danger', action: () => { resetAll(); }},
+    {text: 'إلغاء', class: 'btn-outline'}
+  ]);
+}
+
+function confirmNewTournament() {
+  showModal('بطولة جديدة', 'هل تريد بدء بطولة جديدة؟', [
+    {text: 'نعم', class: 'btn-primary', action: () => { resetAll(); }},
+    {text: 'إلغاء', class: 'btn-outline'}
+  ]);
+}
+
+function resetAll() {
+  localStorage.removeItem('familyTournament_v1');
+  // Preserve loaded questions pool
+  const pool = appState.questionsPool;
+  const src = appState.questionsSource;
+  appState = {
+    settings: { familyCount: 4, mode: 'direct_knockout', groupSize: 4, advanceCount: 2, allowManualOverride: false, debugMode: false },
+    families: [], players: [], groups: [],
+    bracket: { rounds: [], thirdPlaceMatchId: null, finalSeriesMatchIds: [], finalSeriesScore: {side1:0,side2:0} },
+    matches: {}, usedQuestionIds: new Set(),
+    questionsPool: pool.length > 0 ? pool : localQuestions.slice(),
+    questionsSource: pool.length > 0 ? src : 'local',
+    playerStats: {}, ui: { currentView: 'view-setup', currentMatchId: null, timerRunning: false, timerValue: 20 },
+    undoStack: [], phase: 'setup'
+  };
+  document.getElementById('badge-mode').style.display = 'none';
+  // Reset toggles
+  document.getElementById('toggle-override').classList.remove('active');
+  document.getElementById('toggle-debug').classList.remove('active');
+  initSetup();
+  showView('view-setup');
+}
+
+function manualSave() {
+  saveState();
+  showModal('تم الحفظ', 'تم حفظ حالة البطولة بنجاح.', [
+    {text: 'حسنًا', class: 'btn-primary'}
+  ]);
+}
+
+/* ============================================================
+   SECTION 4B: QUESTIONS LOADER (API + Cache + Offline)
+   ============================================================ */
+const QUESTIONS_API = 'https://raw.githubusercontent.com/B9D0s/mosabagat_thgafiah/main/data/questions.json';
+const CACHE_KEY = 'cachedQuestions';
+const FETCH_TIMEOUT = 6000;
+
+function normalizeMCQ(raw) {
+  const out = [];
+  if (!Array.isArray(raw)) return out;
+  raw.forEach((q, i) => {
+    // Skip non-MCQ (tf type)
+    if (q.type === 'tf' || q.type === 'true_false') return;
+    const opts = q.options_ar || q.options;
+    if (!Array.isArray(opts) || opts.length !== 4) return;
+    const ci = parseInt(q.correctIndex ?? q.correct_index ?? q.answer);
+    if (isNaN(ci) || ci < 0 || ci > 3) return;
+    const text = q.question_ar || q.question;
+    if (!text) return;
+    out.push({
+      qid: q.qid || q.id || ('api_' + i),
+      category: q.category_ar || q.category || 'عام',
+      difficulty: q.difficulty || 'medium',
+      question: text,
+      options: opts.slice(0, 4),
+      correctIndex: ci
+    });
+  });
+  return out;
+}
+
+async function fetchWithTimeout(url, ms) {
+  const ctrl = new AbortController();
+  const tid = setTimeout(() => ctrl.abort(), ms);
+  try {
+    const res = await fetch(url, {signal: ctrl.signal});
+    clearTimeout(tid);
+    return res;
+  } catch(e) {
+    clearTimeout(tid);
+    throw e;
+  }
+}
+
+async function loadQuestions() {
+  // 1) Try API
+  try {
+    if (navigator.onLine) {
+      const res = await fetchWithTimeout(QUESTIONS_API, FETCH_TIMEOUT);
+      if (res.ok) {
+        const raw = await res.json();
+        const normalized = normalizeMCQ(raw);
+        if (normalized.length > 0) {
+          appState.questionsPool = normalized;
+          appState.questionsSource = 'api';
+          // Cache in localStorage
+          try { localStorage.setItem(CACHE_KEY, JSON.stringify(normalized)); } catch(e) {}
+          updateSourceBadge();
+          return;
+        }
+      }
+    }
+  } catch(e) {
+    // API failed, continue to fallback
+  }
+
+  // 2) Fallback: cached questions
+  try {
+    const cached = localStorage.getItem(CACHE_KEY);
+    if (cached) {
+      const parsed = JSON.parse(cached);
+      if (Array.isArray(parsed) && parsed.length > 0) {
+        appState.questionsPool = parsed;
+        appState.questionsSource = 'cache';
+        updateSourceBadge();
+        return;
+      }
+    }
+  } catch(e) {}
+
+  // 3) Final fallback: localQuestions
+  appState.questionsPool = localQuestions.slice();
+  appState.questionsSource = 'local';
+  updateSourceBadge();
+}
+
+function updateSourceBadge() {
+  const badge = document.getElementById('badge-connection');
+  const src = appState.questionsSource;
+  if (src === 'api') {
+    badge.className = 'badge online';
+    badge.textContent = 'متصل';
+  } else if (src === 'cache') {
+    badge.className = 'badge offline';
+    badge.textContent = 'أسئلة محفوظة';
+  } else {
+    badge.className = 'badge offline';
+    badge.textContent = 'أسئلة مدمجة';
+  }
+}
+
+function getNextQuestion() {
+  const pool = appState.questionsPool;
+  const used = appState.usedQuestionIds;
+  const available = pool.filter(q => !used.has(q.qid));
+
+  if (available.length === 0) {
+    // All questions used — show confirmation modal to reset
+    return new Promise((resolve) => {
+      showModal(
+        'نفاد الأسئلة',
+        'تم استخدام جميع الأسئلة المتاحة. هل تريد إعادة استخدام الأسئلة؟',
+        [
+          {text: 'نعم، أعد الاستخدام', class: 'btn-primary', action: () => {
+            appState.usedQuestionIds = new Set();
+            const q = pickRandom(pool);
+            appState.usedQuestionIds.add(q.qid);
+            resolve(q);
+          }},
+          {text: 'إلغاء', class: 'btn-outline', action: () => { resolve(null); }}
+        ]
+      );
+    });
+  }
+
+  const q = pickRandom(available);
+  used.add(q.qid);
+  return Promise.resolve(q);
+}
+
+function pickRandom(arr) {
+  return arr[Math.floor(Math.random() * arr.length)];
+}
+
+function resetUsedQuestions() {
+  appState.usedQuestionIds = new Set();
+}
+
+function getQuestionsStats() {
+  const total = appState.questionsPool.length;
+  const used = appState.usedQuestionIds.size;
+  return { total, used, remaining: total - used, source: appState.questionsSource };
+}
+
+/* --- Helper: Arabic numerals --- */
+function toArabicNum(n) {
+  return String(n).replace(/\d/g, d => '٠١٢٣٤٥٦٧٨٩'[d]);
+}
+/* --- Helper: HTML escape --- */
+function esc(s) {
+  const el = document.createElement('span');
+  el.textContent = s;
+  return el.innerHTML;
+}
+
+const DIFF_LABELS = {easy:'سهل', medium:'متوسط', hard:'صعب', extreme:'صعب جداً'};
+
+function showQuestionStats() {
+  const container = document.getElementById('qStatsContainer');
+  if (container.innerHTML !== '') { container.innerHTML = ''; return; }
+  const pool = appState.questionsPool;
+  if (!pool || pool.length === 0) {
+    container.innerHTML = '<div class="q-stats-panel"><h3>لم يتم تحميل الأسئلة بعد</h3></div>';
+    return;
+  }
+
+  const catMap = {};
+  const diffMap = {easy:0, medium:0, hard:0, extreme:0};
+  pool.forEach(q => {
+    const cat = q.category || 'أخرى';
+    catMap[cat] = (catMap[cat] || 0) + 1;
+    if (diffMap[q.difficulty] !== undefined) diffMap[q.difficulty]++;
+  });
+
+  const catArr = Object.keys(catMap).map(k => ({name:k, count:catMap[k]}));
+  catArr.sort((a,b) => b.count - a.count);
+  const maxCat = catArr.length > 0 ? catArr[0].count : 1;
+
+  const srcLabel = appState.questionsSource === 'api' ? 'الإنترنت (API)' :
+                   appState.questionsSource === 'cache' ? 'مخزنة محلياً' : 'مدمجة';
+
+  let html = '<div class="q-stats-panel">';
+  html += '<h3>📊 بنك الأسئلة — ' + toArabicNum(pool.length) + ' سؤال</h3>';
+
+  html += '<div class="q-stats-grid">';
+  html += '<div class="q-stat-box"><div class="num">' + toArabicNum(pool.length) + '</div><div class="lbl">إجمالي</div></div>';
+  html += '<div class="q-stat-box"><div class="num">' + toArabicNum(catArr.length) + '</div><div class="lbl">تصنيف</div></div>';
+  html += '<div class="q-stat-box" style="border:2px solid var(--primary)"><div class="num" style="font-size:0.85rem">' + esc(srcLabel) + '</div><div class="lbl">المصدر</div></div>';
+  html += '</div>';
+
+  const diffColors = {easy:'var(--success)', medium:'#e6c24e', hard:'#e67e22', extreme:'var(--danger)'};
+  html += '<div class="q-diff-row">';
+  ['easy','medium','hard','extreme'].forEach(dk => {
+    if (diffMap[dk] > 0) {
+      html += '<div class="q-diff-chip" style="background:' + diffColors[dk] + '">';
+      html += (DIFF_LABELS[dk] || dk);
+      html += ' <span class="dcount">' + toArabicNum(diffMap[dk]) + '</span></div>';
+    }
+  });
+  html += '</div>';
+
+  html += '<div class="q-cat-list">';
+  catArr.forEach((c, idx) => {
+    const pct = Math.round(c.count / maxCat * 100);
+    const isTop = idx === 0;
+    html += '<div class="q-cat-row">';
+    html += '<span class="cat-name">' + (isTop ? '⭐ ' : '') + esc(c.name) + '</span>';
+    html += '<span class="cat-bar-wrap"><span class="cat-bar' + (isTop ? ' top' : '') + '" style="width:' + pct + '%"></span></span>';
+    html += '<span class="cat-count">' + toArabicNum(c.count) + '</span>';
+    html += '</div>';
+  });
+  html += '</div></div>';
+
+  container.innerHTML = html;
+}
+
+/* ============================================================
+   SECTION 5: SETUP UI
+   ============================================================ */
+const familyColors = ['#0D3B66','#E2A16F','#86B0BD','#F4D35E','#FF0DDD','#D1D3D4','#3a6d94','#c4894e','#5a96ab','#d4b94e','#cc0ab2','#a0a2a3'];
+
+function initSetup() {
+  const s = appState.settings;
+  document.getElementById('input-family-count').value = s.familyCount;
+  document.getElementById('family-count-display').textContent = s.familyCount;
+  document.getElementById('input-mode').value = s.mode;
+  if (s.allowManualOverride) document.getElementById('toggle-override').classList.add('active');
+  if (s.debugMode) document.getElementById('toggle-debug').classList.add('active');
+  updateModeUI();
+  renderFamilyCards(s.familyCount);
+  updateSetupSummary();
+}
+
+function updateFamilyCount() {
+  const val = parseInt(document.getElementById('input-family-count').value);
+  document.getElementById('family-count-display').textContent = val;
+  appState.settings.familyCount = val;
+  renderFamilyCards(val);
+  updateSetupSummary();
+}
+
+function updateModeUI() {
+  const mode = document.getElementById('input-mode').value;
+  appState.settings.mode = mode;
+  document.getElementById('groups-settings').style.display = mode === 'groups_knockout' ? 'block' : 'none';
+}
+
+function renderFamilyCards(count) {
+  const container = document.getElementById('families-container');
+  container.innerHTML = '';
+  for (let i = 0; i < count; i++) {
+    const existing = appState.families[i];
+    const familyName = existing ? existing.name : 'الأسرة ' + (i + 1);
+    const playersText = existing ? existing.players.map(p => p.name).join('\n') : '';
+    const color = familyColors[i % familyColors.length];
+    const playerCount = playersText ? playersText.split('\n').filter(l => l.trim()).length : 0;
+    container.innerHTML += `<div class="family-card" style="border-top-color:${color};">
+      <div class="family-header">
+        <span style="background:${color};width:14px;height:14px;border-radius:50%;display:inline-block;flex-shrink:0;"></span>
+        <input class="form-input" value="${familyName}" id="fname-${i}" style="font-weight:700;">
+      </div>
+      <textarea class="players-textarea" id="fplayers-${i}"
+        placeholder="أحمد\nمحمد\nخالد"
+        oninput="onPlayersInput(${i})">${playersText}</textarea>
+      <div class="family-player-count" id="fcount-${i}">${playerCount > 0 ? playerCount + ' لاعب' : 'لا يوجد لاعبون'}</div>
+    </div>`;
+  }
+}
+
+function onPlayersInput(familyIdx) {
+  const ta = document.getElementById('fplayers-' + familyIdx);
+  if (!ta) return;
+  const names = ta.value.split('\n').filter(l => l.trim());
+  const countEl = document.getElementById('fcount-' + familyIdx);
+  if (countEl) {
+    countEl.textContent = names.length > 0 ? names.length + ' لاعب' : 'لا يوجد لاعبون';
+  }
+  updateSetupSummary();
+}
+
+function updateSetupSummary() {
+  const count = appState.settings.familyCount;
+  let totalPlayers = 0;
+  for (let i = 0; i < count; i++) {
+    const ta = document.getElementById('fplayers-' + i);
+    if (ta) totalPlayers += ta.value.split('\n').filter(l => l.trim()).length;
+  }
+  const sumEl = document.getElementById('setup-summary');
+  if (totalPlayers > 0) {
+    sumEl.style.display = '';
+    document.getElementById('sum-families').textContent = count;
+    document.getElementById('sum-players').textContent = totalPlayers;
+    document.getElementById('sum-questions').textContent = appState.questionsPool.length || localQuestions.length;
+  } else {
+    sumEl.style.display = 'none';
+  }
+}
+
+function toggleSwitch(el) {
+  el.classList.toggle('active');
+}
+
+function showSetupError(msg) {
+  const el = document.getElementById('setup-error');
+  el.textContent = msg;
+  el.style.display = 'block';
+  el.scrollIntoView({behavior:'smooth', block:'center'});
+}
+function hideSetupError() {
+  document.getElementById('setup-error').style.display = 'none';
+}
+
+/* ============================================================
+   SECTION 6: START TOURNAMENT (build appState)
+   ============================================================ */
+function startTournament() {
+  hideSetupError();
+
+  // Collect settings
+  appState.settings.familyCount = parseInt(document.getElementById('input-family-count').value);
+  appState.settings.mode = document.getElementById('input-mode').value;
+  appState.settings.groupSize = parseInt(document.getElementById('input-group-size').value);
+  appState.settings.advanceCount = parseInt(document.getElementById('input-advance-count').value);
+  appState.settings.allowManualOverride = document.getElementById('toggle-override').classList.contains('active');
+  appState.settings.debugMode = document.getElementById('toggle-debug').classList.contains('active');
+
+  // Collect families & players from textareas
+  const families = [];
+  const allPlayers = [];
+  let pid = 1;
+  const emptyFamilies = [];
+  const duplicateNames = [];
+  const allNamesSet = new Set();
+
+  for (let i = 0; i < appState.settings.familyCount; i++) {
+    const fnameEl = document.getElementById('fname-' + i);
+    const fname = fnameEl ? fnameEl.value.trim() : '';
+    const taEl = document.getElementById('fplayers-' + i);
+    const raw = taEl ? taEl.value : '';
+    const lines = raw.split('\n').map(l => l.trim()).filter(l => l.length > 0);
+
+    if (lines.length === 0) {
+      emptyFamilies.push(fname || ('الأسرة ' + (i+1)));
+    }
+
+    const familyId = 'f' + (i + 1);
+    const players = [];
+    lines.forEach(name => {
+      // Check duplicates
+      const key = name.toLowerCase();
+      if (allNamesSet.has(key)) {
+        duplicateNames.push(name);
+      }
+      allNamesSet.add(key);
+      const p = { id: 'p' + pid, name: name, familyId: familyId };
+      players.push(p);
+      allPlayers.push(p);
+      pid++;
+    });
+
+    families.push({
+      id: familyId,
+      name: fname || ('الأسرة ' + (i + 1)),
+      players: players,
+      color: familyColors[i % familyColors.length]
+    });
+  }
+
+  // === Validation ===
+  if (emptyFamilies.length > 0) {
+    showSetupError('الأسر التالية بدون لاعبين: ' + emptyFamilies.join('، ') + '. أضف لاعبًا واحدًا على الأقل لكل أسرة.');
+    return;
+  }
+  if (allPlayers.length < 4) {
+    showSetupError('يجب أن يكون هناك 4 لاعبين على الأقل لإقامة بطولة.');
+    return;
+  }
+  if (duplicateNames.length > 0) {
+    showSetupError('أسماء مكررة: ' + [...new Set(duplicateNames)].join('، ') + '. يجب أن يكون كل اسم فريدًا.');
+    return;
+  }
+
+  // Groups mode validation
+  if (appState.settings.mode === 'groups_knockout') {
+    const gs = appState.settings.groupSize;
+    const ac = appState.settings.advanceCount;
+    if (ac >= gs) {
+      showSetupError('عدد المتأهلين يجب أن يكون أقل من حجم المجموعة.');
+      return;
+    }
+    if (allPlayers.length < gs * 2) {
+      showSetupError('عدد اللاعبين غير كافٍ لنظام المجموعات. تحتاج على الأقل ' + (gs * 2) + ' لاعب.');
+      return;
+    }
+  }
+
+  // Questions check
+  if (appState.questionsPool.length === 0) {
+    appState.questionsPool = localQuestions.slice();
+    appState.questionsSource = 'local';
+  }
+
+  // === Build appState ===
+  appState.families = families;
+  appState.players = allPlayers;
+  appState.matches = {};
+  appState.groups = [];
+  appState.bracket = { rounds: [], thirdPlaceMatchId: null, finalSeriesMatchIds: [], finalSeriesScore: {side1:0, side2:0} };
+  appState.usedQuestionIds = new Set();
+  appState.undoStack = [];
+
+  // Init player stats
+  appState.playerStats = {};
+  allPlayers.forEach(p => {
+    appState.playerStats[p.id] = {
+      correctTotal: 0, questionsAnswered: 0,
+      matchesPlayed: 0, matchesWon: 0,
+      totalAnswerTime: 0, pointDiff: 0
+    };
+  });
+
+  // Update mode badge
+  const modeBadge = document.getElementById('badge-mode');
+  modeBadge.style.display = '';
+  modeBadge.textContent = appState.settings.mode === 'groups_knockout' ? 'مجموعات + إقصاء' : 'إقصاء مباشر';
+
+  // Transition to next phase
+  if (appState.settings.mode === 'groups_knockout') {
+    appState.phase = 'groups';
+    generateTournament();
+    saveState();
+    showView('view-groups');
+  } else {
+    appState.phase = 'knockout';
+    generateTournament();
+    saveState();
+    showView('view-bracket');
+  }
+}
+
+/* ============================================================
+   SECTION 6B: TOURNAMENT GENERATION ENGINE
+   ============================================================ */
+let matchIdCounter = 1;
+function nextMatchId() { return 'm' + (matchIdCounter++); }
+
+function createMatch(side1, side2, round, type, groupId) {
+  const id = nextMatchId();
+  const s1 = side1 ? (Array.isArray(side1) ? side1 : [side1]) : null;
+  const s2 = side2 ? (Array.isArray(side2) ? side2 : [side2]) : null;
+  // BYE = one side has a player, the other is null
+  // Empty = both sides null (placeholder for future rounds)
+  const isBye = (s1 && !s2) || (!s1 && s2);
+  const isEmpty = !s1 && !s2;
+  let status = 'pending';
+  let winningSide = null;
+  if (isBye) {
+    status = 'completed';
+    winningSide = s1 ? 1 : 2;
+  } else if (isEmpty) {
+    status = 'waiting'; // not yet ready — both sides TBD
+  }
+  appState.matches[id] = {
+    id, round, type,
+    groupId: groupId || null,
+    side1: s1, side2: s2,
+    side1Score: 0, side2Score: 0,
+    questions: [], currentQ: 0,
+    side1Answers: [], side2Answers: [],
+    status, winningSide,
+    isBye, isSuddenDeath: false,
+    revealed: false, scored: false,
+    seriesIndex: null
+  };
+  if (isBye) {
+    const winner = s1 || s2;
+    winner.forEach(pid => {
+      if (appState.playerStats[pid]) appState.playerStats[pid].matchesWon++;
+    });
+  }
+  return id;
+}
+
+function shuffleArray(arr) {
+  const a = arr.slice();
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+function generateTournament() {
+  matchIdCounter = 1;
+  appState.matches = {};
+  const mode = appState.settings.mode;
+  const dbg = appState.settings.debugMode;
+
+  if (mode === 'groups_knockout') {
+    generateGroups();
+    renderGroups();
+    if (dbg) console.log('[بطولة] مجموعات:', appState.groups.length);
+  } else {
+    generateKnockoutBracket(appState.players.map(p => p.id));
+    renderBracket();
+    if (dbg) console.log('[بطولة] إقصاء مباشر:', appState.bracket.rounds.length, 'جولات');
+  }
+}
+
+/* ========== GROUPS MODE ========== */
+function generateGroups() {
+  const players = shuffleArray(appState.players.map(p => p.id));
+  const gs = appState.settings.groupSize;
+  const groups = [];
+  let gi = 0;
+
+  // Distribute into groups of size gs, last group may be gs-1
+  for (let i = 0; i < players.length; i += gs) {
+    const chunk = players.slice(i, i + gs);
+    if (chunk.length < 2) {
+      // Too small, merge with previous group
+      if (groups.length > 0) groups[groups.length - 1].playerIds.push(...chunk);
+      else groups.push({ id: 'g1', name: 'المجموعة 1', playerIds: chunk, matches: [], standings: [] });
+      continue;
+    }
+    gi++;
+    groups.push({ id: 'g' + gi, name: 'المجموعة ' + gi, playerIds: chunk, matches: [], standings: [] });
+  }
+
+  // Generate round-robin matches for each group
+  groups.forEach(g => {
+    const pids = g.playerIds;
+    for (let a = 0; a < pids.length; a++) {
+      for (let b = a + 1; b < pids.length; b++) {
+        const mid = createMatch(pids[a], pids[b], 0, 'group', g.id);
+        g.matches.push(mid);
+      }
+    }
+    g.standings = computeGroupStandings(g);
+  });
+
+  appState.groups = groups;
+}
+
+function computeGroupStandings(group) {
+  const stats = {};
+  group.playerIds.forEach(pid => {
+    stats[pid] = { pid, wins: 0, losses: 0, totalCorrect: 0, totalAnswered: 0, totalTime: 0, matchesPlayed: 0, h2h: {} };
+  });
+
+  group.matches.forEach(mid => {
+    const m = appState.matches[mid];
+    if (m.status !== 'completed' || m.isBye) return;
+    const s1 = m.side1[0], s2 = m.side2[0];
+    if (!stats[s1] || !stats[s2]) return;
+    stats[s1].matchesPlayed++;
+    stats[s2].matchesPlayed++;
+    stats[s1].totalCorrect += m.side1Score;
+    stats[s2].totalCorrect += m.side2Score;
+
+    if (m.winningSide === 1) {
+      stats[s1].wins++;
+      stats[s2].losses++;
+      if (!stats[s1].h2h[s2]) stats[s1].h2h[s2] = 0;
+      stats[s1].h2h[s2]++;
+    } else if (m.winningSide === 2) {
+      stats[s2].wins++;
+      stats[s1].losses++;
+      if (!stats[s2].h2h[s1]) stats[s2].h2h[s1] = 0;
+      stats[s2].h2h[s1]++;
+    }
+  });
+
+  // Sort: wins desc > totalCorrect desc > h2h > avgTime asc
+  const arr = Object.values(stats);
+  arr.sort((a, b) => {
+    if (b.wins !== a.wins) return b.wins - a.wins;
+    if (b.totalCorrect !== a.totalCorrect) return b.totalCorrect - a.totalCorrect;
+    // Head to head
+    const aH2H = a.h2h[b.pid] || 0;
+    const bH2H = b.h2h[a.pid] || 0;
+    if (bH2H !== aH2H) return bH2H - aH2H;
+    // Avg time (lower = better)
+    const aAvg = a.totalAnswered > 0 ? a.totalTime / a.totalAnswered : 999;
+    const bAvg = b.totalAnswered > 0 ? b.totalTime / b.totalAnswered : 999;
+    return aAvg - bAvg;
+  });
+
+  return arr;
+}
+
+function isGroupPhaseComplete() {
+  return appState.groups.every(g =>
+    g.matches.every(mid => appState.matches[mid].status === 'completed')
+  );
+}
+
+function advanceToKnockout() {
+  if (!isGroupPhaseComplete()) {
+    showModal('لم تنتهِ المجموعات', 'أكمل جميع مباريات المجموعات أولاً.', [{text: 'حسنًا', class: 'btn-primary'}]);
+    return;
+  }
+
+  // Recompute standings
+  appState.groups.forEach(g => { g.standings = computeGroupStandings(g); });
+
+  const ac = appState.settings.advanceCount;
+  const qualifiedIds = [];
+  appState.groups.forEach(g => {
+    const top = g.standings.slice(0, ac);
+    top.forEach(s => qualifiedIds.push(s.pid));
+  });
+
+  if (qualifiedIds.length < 2) {
+    showModal('خطأ', 'عدد المتأهلين غير كافٍ لإنشاء مرحلة الإقصاء.', [{text: 'حسنًا', class: 'btn-primary'}]);
+    return;
+  }
+
+  // Update qualified count in stats
+  qualifiedIds.forEach(pid => {
+    if (appState.playerStats[pid]) appState.playerStats[pid].qualified = true;
+  });
+
+  appState.phase = 'knockout';
+  generateKnockoutBracket(qualifiedIds);
+  saveState();
+  renderBracket();
+  showView('view-bracket');
+}
+
+/* ========== KNOCKOUT BRACKET ========== */
+function generateKnockoutBracket(playerIds) {
+  const n = playerIds.length;
+  // Next power of 2
+  let size = 1;
+  while (size < n) size *= 2;
+  const totalByes = size - n;
+
+  // Seed: try to avoid same family in R1
+  const seeded = seedPlayers(playerIds, size);
+
+  // Build rounds
+  const rounds = [];
+  const r1Matches = [];
+  for (let i = 0; i < size; i += 2) {
+    const p1 = seeded[i];
+    const p2 = seeded[i + 1];
+    const mid = createMatch(p1, p2, 0, 'knockout', null);
+    r1Matches.push(mid);
+  }
+  rounds.push(r1Matches);
+
+  // Build subsequent rounds (empty slots)
+  let prevCount = r1Matches.length;
+  let roundIdx = 1;
+  while (prevCount > 1) {
+    const roundMatches = [];
+    const isFinalRound = (prevCount === 2);
+    for (let i = 0; i < prevCount; i += 2) {
+      if (isFinalRound) {
+        // Final: create 3 Bo3 match slots
+        for (let s = 0; s < 3; s++) {
+          const mid = createMatch(null, null, roundIdx, 'final_series', null);
+          appState.matches[mid].seriesIndex = s;
+          appState.bracket.finalSeriesMatchIds.push(mid);
+        }
+        // Also create third-place match
+        const thirdId = createMatch(null, null, roundIdx, 'third', null);
+        appState.bracket.thirdPlaceMatchId = thirdId;
+        roundMatches.push(appState.bracket.finalSeriesMatchIds[0]); // placeholder in bracket
+      } else {
+        const mid = createMatch(null, null, roundIdx, 'knockout', null);
+        roundMatches.push(mid);
+      }
+    }
+    rounds.push(roundMatches);
+    prevCount = roundMatches.length;
+    roundIdx++;
+  }
+
+  appState.bracket.rounds = rounds;
+  appState.bracket.finalSeriesScore = { side1: 0, side2: 0 };
+
+  if (appState.settings.debugMode) {
+    console.log('[شجرة] الحجم:', size, '| اللاعبون:', n, '| BYE:', totalByes);
+    console.log('[شجرة] الترتيب:', seeded.map(s => s || 'BYE'));
+    console.log('[شجرة] الجولات:', rounds.length, '| المباريات:', Object.keys(appState.matches).length);
+    r1Matches.forEach((mid, idx) => {
+      const m = appState.matches[mid];
+      console.log('[شجرة] R1 م' + (idx+1) + ':', m.side1 || 'فارغ', 'ضد', m.side2 || 'فارغ', '→', m.status);
+    });
+  }
+
+  // Auto-advance BYE winners in R1
+  autoAdvanceByes(0);
+
+  if (appState.settings.debugMode) {
+    rounds.forEach((rnd, ri) => {
+      rnd.forEach((mid, mi) => {
+        const m = appState.matches[mid];
+        console.log('[شجرة] ج' + (ri+1) + ' م' + (mi+1) + ':', m.side1 || '—', 'ضد', m.side2 || '—', '| الحالة:', m.status, m.isBye ? '(BYE)' : '');
+      });
+    });
+  }
+}
+
+function seedPlayers(playerIds, bracketSize) {
+  const ids = shuffleArray(playerIds);
+  const slots = new Array(bracketSize).fill(null);
+  const getFamily = pid => {
+    const p = appState.players.find(x => x.id === pid);
+    return p ? p.familyId : null;
+  };
+
+  // Place players trying to avoid same-family matchups in R1
+  const placed = [];
+  for (const pid of ids) {
+    const fam = getFamily(pid);
+    let bestSlot = -1;
+    let bestScore = -1;
+    for (let s = 0; s < bracketSize; s++) {
+      if (slots[s] !== null) continue;
+      // Check opponent slot (paired slot)
+      const opp = s % 2 === 0 ? s + 1 : s - 1;
+      const oppFam = slots[opp] ? getFamily(slots[opp]) : null;
+      let score = 1; // base
+      if (oppFam && oppFam === fam) score = 0; // same family = bad
+      // Also check neighbors for diversity
+      const neighbors = [s - 2, s + 2].filter(x => x >= 0 && x < bracketSize);
+      neighbors.forEach(ns => {
+        if (slots[ns] && getFamily(slots[ns]) === fam) score -= 0.1;
+      });
+      if (score > bestScore) { bestScore = score; bestSlot = s; }
+    }
+    if (bestSlot === -1) bestSlot = slots.findIndex(x => x === null);
+    slots[bestSlot] = pid;
+  }
+
+  // CRITICAL FIX: Eliminate null-null pairs (empty matches).
+  // When both slots in a match pair are null, no match is created and
+  // the next round never gets that side filled, breaking the bracket.
+  // Fix: redistribute so every pair has at least one player.
+  for (let i = 0; i < bracketSize; i += 2) {
+    if (slots[i] === null && slots[i + 1] === null) {
+      // Find a pair where both slots have players and donate one
+      let fixed = false;
+      for (let j = 0; j < bracketSize; j += 2) {
+        if (j === i) continue;
+        if (slots[j] !== null && slots[j + 1] !== null) {
+          slots[i] = slots[j + 1];
+          slots[j + 1] = null;
+          fixed = true;
+          break;
+        }
+      }
+      if (!fixed && appState.settings.debugMode) {
+        console.warn('[شجرة] لم يمكن إصلاح الزوج الفارغ عند الموقع', i);
+      }
+    }
+  }
+
+  return slots;
+}
+
+function autoAdvanceByes(roundIdx) {
+  const rounds = appState.bracket.rounds;
+  const round = rounds[roundIdx];
+  if (!round) return;
+  const nextRound = rounds[roundIdx + 1];
+  if (!nextRound) return;
+
+  // Check if next round is the final round (semifinal → final)
+  const isSemifinal = (roundIdx + 2 === rounds.length);
+
+  round.forEach((mid, i) => {
+    const m = appState.matches[mid];
+    if (!m.isBye || !m.winningSide) return;
+    const winnerIds = m.winningSide === 1 ? m.side1 : m.side2;
+
+    if (isSemifinal) {
+      // Advance to final series + third place
+      const slot = i % 2 === 0 ? 'side1' : 'side2';
+      appState.bracket.finalSeriesMatchIds.forEach(fmid => {
+        appState.matches[fmid][slot] = winnerIds;
+      });
+      const firstFinal = appState.matches[appState.bracket.finalSeriesMatchIds[0]];
+      if (firstFinal.side1 && firstFinal.side2) firstFinal.status = 'pending';
+    } else {
+      const nextMatchIdx = Math.floor(i / 2);
+      const nextMid = nextRound[nextMatchIdx];
+      if (!nextMid) return;
+      const nm = appState.matches[nextMid];
+      if (i % 2 === 0) nm.side1 = winnerIds;
+      else nm.side2 = winnerIds;
+      if (nm.side1 && nm.side2) {
+        nm.status = 'pending';
+        nm.isBye = false;
+      } else if (nm.side1 || nm.side2) {
+        nm.status = 'waiting';
+      }
+    }
+  });
+
+  // Check if any next-round match now has only one side (the other feeder was
+  // an empty/waiting match that will never complete). In this case, treat it as
+  // a BYE so the bracket can progress.
+  if (!isSemifinal) {
+    nextRound.forEach((nmid, ni) => {
+      const nm = appState.matches[nmid];
+      if (nm.status !== 'waiting') return;
+      if (!nm.side1 && !nm.side2) return; // still fully empty
+      // Check if the missing side's feeder is an empty/waiting match (null-null)
+      const feeder1Idx = ni * 2;
+      const feeder2Idx = ni * 2 + 1;
+      const feeder1 = round[feeder1Idx] ? appState.matches[round[feeder1Idx]] : null;
+      const feeder2 = round[feeder2Idx] ? appState.matches[round[feeder2Idx]] : null;
+      // If a feeder is "waiting" (both sides null), it will never produce a winner
+      const feeder1Dead = feeder1 && feeder1.status === 'waiting' && !feeder1.side1 && !feeder1.side2;
+      const feeder2Dead = feeder2 && feeder2.status === 'waiting' && !feeder2.side1 && !feeder2.side2;
+      if ((nm.side1 && !nm.side2 && feeder2Dead) || (!nm.side1 && nm.side2 && feeder1Dead)) {
+        // This is effectively a BYE — one side filled, other will never come
+        nm.isBye = true;
+        nm.status = 'completed';
+        nm.winningSide = nm.side1 ? 1 : 2;
+        const w = nm.winningSide === 1 ? nm.side1 : nm.side2;
+        if (w) w.forEach(pid => { if (appState.playerStats[pid]) appState.playerStats[pid].matchesWon++; });
+        if (appState.settings.debugMode) console.log('[شجرة] تقدم تلقائي (BYE متتالي) في الجولة', roundIdx + 1, 'مباراة', nmid);
+      }
+    });
+    // Recursively cascade to the next round if new BYEs were created
+    const hasNewByes = nextRound.some(nmid => {
+      const nm = appState.matches[nmid];
+      return nm.isBye && nm.status === 'completed' && nm.winningSide;
+    });
+    if (hasNewByes) {
+      autoAdvanceByes(roundIdx + 1);
+    }
+  }
+}
+
+function advanceWinner(matchId) {
+  const m = appState.matches[matchId];
+  if (m.status !== 'completed' || !m.winningSide) return;
+  const winnerIds = m.winningSide === 1 ? m.side1 : m.side2;
+  const loserIds = m.winningSide === 1 ? m.side2 : m.side1;
+
+  if (m.type === 'group') {
+    const g = appState.groups.find(gr => gr.id === m.groupId);
+    if (g) {
+      g.standings = computeGroupStandings(g);
+      renderGroups();
+      if (isGroupPhaseComplete()) {
+        document.getElementById('btn-advance-knockout').style.display = '';
+      }
+    }
+    return;
+  }
+
+  if (m.type === 'final_series') {
+    handleFinalSeriesAdvance(matchId);
+    return;
+  }
+
+  if (m.type === 'third') {
+    saveState();
+    return;
+  }
+
+  // Knockout: find this match in the bracket
+  const rounds = appState.bracket.rounds;
+  let roundIdx = -1, matchIdx = -1;
+  for (let r = 0; r < rounds.length; r++) {
+    const idx = rounds[r].indexOf(matchId);
+    if (idx !== -1) { roundIdx = r; matchIdx = idx; break; }
+  }
+  if (roundIdx === -1) return;
+
+  // Check if this is the semifinal (next round is the last = final)
+  const isSemifinal = (roundIdx + 2 === rounds.length);
+
+  if (isSemifinal) {
+    // Winner → final series, Loser → third place
+    const slot = matchIdx % 2 === 0 ? 'side1' : 'side2';
+    appState.bracket.finalSeriesMatchIds.forEach(fmid => {
+      appState.matches[fmid][slot] = winnerIds;
+    });
+    const tpId = appState.bracket.thirdPlaceMatchId;
+    if (tpId) {
+      const tp = appState.matches[tpId];
+      tp[slot] = loserIds;
+      if (tp.side1 && tp.side2) tp.status = 'pending';
+    }
+    const firstFinal = appState.matches[appState.bracket.finalSeriesMatchIds[0]];
+    if (firstFinal.side1 && firstFinal.side2) firstFinal.status = 'pending';
+    winnerIds.forEach(pid => {
+      if (appState.playerStats[pid]) appState.playerStats[pid].semifinal = true;
+    });
+  } else {
+    // Normal knockout → advance to next round
+    const nextRound = rounds[roundIdx + 1];
+    if (!nextRound) {
+      if (appState.settings.debugMode) console.warn('[شجرة] لا توجد جولة تالية بعد الجولة', roundIdx);
+      saveState(); renderBracket(); return;
+    }
+    const nextMatchIdx = Math.floor(matchIdx / 2);
+    const nextMid = nextRound[nextMatchIdx];
+    if (!nextMid) {
+      if (appState.settings.debugMode) console.warn('[شجرة] لا توجد مباراة في الجولة التالية عند الفهرس', nextMatchIdx);
+      saveState(); renderBracket(); return;
+    }
+    const nm = appState.matches[nextMid];
+
+    // Handle case where nextMid is a final_series placeholder
+    if (nm.type === 'final_series') {
+      const slot = matchIdx % 2 === 0 ? 'side1' : 'side2';
+      appState.bracket.finalSeriesMatchIds.forEach(fmid => {
+        appState.matches[fmid][slot] = winnerIds;
+      });
+      const tpId = appState.bracket.thirdPlaceMatchId;
+      if (tpId) {
+        const tp = appState.matches[tpId];
+        tp[slot] = loserIds;
+        if (tp.side1 && tp.side2) tp.status = 'pending';
+      }
+      const firstFinal = appState.matches[appState.bracket.finalSeriesMatchIds[0]];
+      if (firstFinal.side1 && firstFinal.side2) firstFinal.status = 'pending';
+    } else {
+      if (matchIdx % 2 === 0) nm.side1 = winnerIds;
+      else nm.side2 = winnerIds;
+      // If both sides are now filled, match is ready
+      if (nm.side1 && nm.side2) {
+        nm.status = 'pending';
+        nm.isBye = false;
+      } else {
+        nm.status = 'waiting';
+      }
+    }
+
+    if (appState.settings.debugMode) {
+      console.log('[شجرة] تقدم الفائز:', winnerIds, 'من المباراة', matchId, '→ الجولة', roundIdx + 1, 'مباراة', nextMid);
+    }
+  }
+
+  saveState();
+  renderBracket();
+}
+
+function handleFinalSeriesAdvance(matchId) {
+  const m = appState.matches[matchId];
+  const seriesIds = appState.bracket.finalSeriesMatchIds;
+  const score = appState.bracket.finalSeriesScore;
+
+  if (m.winningSide === 1) score.side1++;
+  else score.side2++;
+
+  // Check Bo3 winner (first to 2)
+  if (score.side1 >= 2 || score.side2 >= 2) {
+    // Tournament complete!
+    appState.phase = 'ceremony';
+    saveState();
+    renderBracket();
+    showCeremony();
+    return;
+  }
+
+  // Open next final match
+  const idx = seriesIds.indexOf(matchId);
+  if (idx < seriesIds.length - 1) {
+    const nextFid = seriesIds[idx + 1];
+    const nf = appState.matches[nextFid];
+    nf.side1 = m.side1;
+    nf.side2 = m.side2;
+    nf.status = 'pending';
+  }
+
+  saveState();
+  renderBracket();
+}
+
+/* showCeremony — implemented in Section 6D */
+
+/* ========== RENDER GROUPS ========== */
+function renderGroups() {
+  const container = document.getElementById('groups-container');
+  container.innerHTML = '';
+  const getPlayer = id => appState.players.find(p => p.id === id);
+  const getFamily = pid => {
+    const p = getPlayer(pid);
+    return p ? appState.families.find(f => f.id === p.familyId) : null;
+  };
+
+  appState.groups.forEach(g => {
+    g.standings = computeGroupStandings(g);
+    const ac = appState.settings.advanceCount;
+    let html = `<div class="card" style="margin-bottom:16px;">
+      <div class="card-title">${g.name}</div>
+      <table class="group-table"><thead><tr>
+        <th>#</th><th>اللاعب</th><th>الأسرة</th><th>فاز</th><th>خسر</th><th>الصحيحة</th>
+      </tr></thead><tbody>`;
+
+    g.standings.forEach((s, idx) => {
+      const p = getPlayer(s.pid);
+      const f = getFamily(s.pid);
+      const qualified = idx < ac ? 'qualified' : '';
+      html += `<tr class="${qualified}">
+        <td>${idx + 1}</td>
+        <td style="font-weight:600;">${p ? p.name : s.pid}</td>
+        <td><span class="family-chip" style="background:${f ? f.color : '#999'}">${f ? f.name : ''}</span></td>
+        <td>${s.wins}</td><td>${s.losses}</td><td>${s.totalCorrect}</td>
+      </tr>`;
+    });
+
+    html += `</tbody></table>`;
+
+    // Group matches list
+    html += `<div style="margin-top:14px;"><strong>المباريات:</strong></div>`;
+    g.matches.forEach(mid => {
+      const m = appState.matches[mid];
+      const p1 = getPlayer(m.side1 ? m.side1[0] : null);
+      const p2 = getPlayer(m.side2 ? m.side2[0] : null);
+      const statusText = m.status === 'completed'
+        ? `${m.side1Score} - ${m.side2Score}`
+        : 'لم تبدأ';
+      const clickable = m.status !== 'completed' ? `onclick="openMatch('${mid}')" style="cursor:pointer;"` : '';
+      const statusClass = m.status === 'completed' ? 'color:var(--success);' : 'color:var(--textLight);';
+      html += `<div class="stat-card" ${clickable}>
+        <div style="flex:1;display:flex;justify-content:space-between;align-items:center;">
+          <span style="font-weight:600;">${p1 ? p1.name : '؟'}</span>
+          <span style="font-size:0.85rem;${statusClass}">${statusText}</span>
+          <span style="font-weight:600;">${p2 ? p2.name : '؟'}</span>
+        </div>
+      </div>`;
+    });
+
+    html += `</div>`;
+    container.innerHTML += html;
+  });
+
+  // Show advance button if all done
+  if (isGroupPhaseComplete() && appState.phase === 'groups') {
+    document.getElementById('btn-advance-knockout').style.display = '';
+  }
+}
+
+/* ========== RENDER BRACKET ========== */
+function renderBracket() {
+  const container = document.getElementById('bracket-container');
+  container.innerHTML = '';
+  const rounds = appState.bracket.rounds;
+  if (rounds.length === 0) { container.innerHTML = '<p style="text-align:center;color:var(--textLight);">لا توجد شجرة بعد.</p>'; return; }
+
+  const getPlayer = id => appState.players.find(p => p.id === id);
+  const getFamily = pid => { const p = getPlayer(pid); return p ? appState.families.find(f => f.id === p.familyId) : null; };
+  const roundNames = getRoundNames(rounds.length);
+
+  // Build bracket with connectors
+  let html = '<div class="bracket-flex">';
+
+  rounds.forEach((round, ri) => {
+    html += `<div class="bracket-round" data-round="${ri}">
+      <div class="bracket-round-title">${roundNames[ri]}</div>`;
+
+    round.forEach((mid, mi) => {
+      const m = appState.matches[mid];
+      const p1 = m.side1 ? getPlayer(m.side1[0]) : null;
+      const p2 = m.side2 ? getPlayer(m.side2[0]) : null;
+      const f1 = p1 ? getFamily(p1.id) : null;
+      const f2 = p2 ? getFamily(p2.id) : null;
+      const p1Name = p1 ? p1.name : (m.side1 ? '—' : 'في الانتظار');
+      const p2Name = p2 ? p2.name : (m.side2 ? '—' : 'في الانتظار');
+      const isComplete = m.status === 'completed';
+      const isByeClass = m.isBye ? 'bye' : '';
+      const completeClass = isComplete ? 'completed' : '';
+      const canClick = (m.status === 'pending' || m.status === 'in_progress') && !m.isBye && m.side1 && m.side2;
+      const clickable = canClick ? `onclick="openMatch('${mid}')"` : '';
+      const w1 = isComplete && m.winningSide === 1 ? 'winner' : '';
+      const w2 = isComplete && m.winningSide === 2 ? 'winner' : '';
+      const statusLabel = canClick ? '<div style="text-align:center;font-size:0.7rem;color:var(--accent);padding:3px;background:var(--primary);border-radius:0 0 8px 8px;">اضغط للبدء</div>' : '';
+
+      html += `<div class="bracket-match-wrap">
+        <div class="bracket-match ${isByeClass} ${completeClass}" ${clickable}>
+          <div class="bracket-player ${w1}">
+            <span>${m.side1 ? (f1 ? '<small style="opacity:.5">' + f1.name + '</small> ' : '') + p1Name : '—'}</span>
+            ${isComplete ? '<span class="score">' + m.side1Score + '</span>' : ''}
+          </div>
+          <div class="bracket-player ${w2}">
+            <span>${m.side2 ? (f2 ? '<small style="opacity:.5">' + f2.name + '</small> ' : '') + p2Name : '—'}</span>
+            ${isComplete ? '<span class="score">' + m.side2Score + '</span>' : ''}
+          </div>
+          ${statusLabel}
+        </div>
+      </div>`;
+    });
+    html += `</div>`;
+
+    // Add connector column between rounds (except after last)
+    if (ri < rounds.length - 1) {
+      const matchCount = round.length;
+      html += `<div class="bracket-connector-col" style="width:28px;display:flex;flex-direction:column;justify-content:space-around;">`;
+      for (let c = 0; c < matchCount; c += 2) {
+        html += `<div style="flex:1;display:flex;align-items:center;justify-content:center;position:relative;">
+          <svg width="28" height="100%" viewBox="0 0 28 100" preserveAspectRatio="none" style="overflow:visible;">
+            <line x1="0" y1="25%" x2="14" y2="25%" stroke="var(--primary)" stroke-width="2" opacity="0.3"/>
+            <line x1="0" y1="75%" x2="14" y2="75%" stroke="var(--primary)" stroke-width="2" opacity="0.3"/>
+            <line x1="14" y1="25%" x2="14" y2="75%" stroke="var(--primary)" stroke-width="2" opacity="0.3"/>
+            <line x1="14" y1="50%" x2="28" y2="50%" stroke="var(--primary)" stroke-width="2" opacity="0.3"/>
+          </svg>
+        </div>`;
+      }
+      html += `</div>`;
+    }
+  });
+  html += `</div>`;
+
+  // Third place match
+  const tpId = appState.bracket.thirdPlaceMatchId;
+  if (tpId) {
+    const tp = appState.matches[tpId];
+    const tp1 = tp.side1 ? getPlayer(tp.side1[0]) : null;
+    const tp2 = tp.side2 ? getPlayer(tp.side2[0]) : null;
+    const canClickTp = (tp.status === 'pending' || tp.status === 'in_progress') && !tp.isBye && tp.side1 && tp.side2;
+    const tpClick = canClickTp ? `onclick="openMatch('${tpId}')"` : '';
+    html += `<div class="card" style="margin-top:20px;border-right:4px solid var(--orange);">
+      <div class="card-title" style="border-bottom-color:var(--orange);">🥉 مباراة المركز الثالث</div>
+      <div class="bracket-match ${tp.status === 'completed' ? 'completed' : ''}" ${tpClick} style="max-width:300px;margin:0 auto;">
+        <div class="bracket-player ${tp.winningSide === 1 ? 'winner' : ''}"><span>${tp1 ? tp1.name : '—'}</span>${tp.status === 'completed' ? '<span class="score">' + tp.side1Score + '</span>' : ''}</div>
+        <div class="bracket-player ${tp.winningSide === 2 ? 'winner' : ''}"><span>${tp2 ? tp2.name : '—'}</span>${tp.status === 'completed' ? '<span class="score">' + tp.side2Score + '</span>' : ''}</div>
+        ${canClickTp ? '<div style="text-align:center;font-size:0.7rem;color:var(--accent);padding:3px;background:var(--primary);border-radius:0 0 8px 8px;">اضغط للبدء</div>' : ''}
+      </div></div>`;
+  }
+
+  // Final series Bo3
+  const fIds = appState.bracket.finalSeriesMatchIds;
+  if (fIds.length > 0) {
+    const fs = appState.bracket.finalSeriesScore;
+    const fm0 = appState.matches[fIds[0]];
+    const fp1 = fm0.side1 ? getPlayer(fm0.side1[0]) : null;
+    const fp2 = fm0.side2 ? getPlayer(fm0.side2[0]) : null;
+    html += `<div class="card" style="margin-top:20px;border-right:4px solid var(--accent);background:linear-gradient(135deg,#fff,var(--accentLight));">
+      <div class="card-title" style="border-bottom-color:var(--accent);">🏆 النهائي — أفضل من 3</div>
+      <div style="text-align:center;margin-bottom:14px;">
+        <span style="font-weight:700;font-size:1.1rem;">${fp1 ? fp1.name : '—'}</span>
+        <span style="margin:0 16px;font-size:1.8rem;font-weight:900;color:var(--primary);">${fs.side1} - ${fs.side2}</span>
+        <span style="font-weight:700;font-size:1.1rem;">${fp2 ? fp2.name : '—'}</span>
+      </div>
+      <div class="series-score">${fIds.map((fid, idx) => {
+        const fm = appState.matches[fid];
+        let cls = '';
+        if (fm.status === 'completed') cls = fm.winningSide === 1 ? 'won' : 'lost';
+        return `<div class="series-dot ${cls}" title="المباراة ${idx+1}"></div>`;
+      }).join('')}</div>
+      <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:12px;">`;
+
+    fIds.forEach((fid, idx) => {
+      const fm = appState.matches[fid];
+      const canClickF = (fm.status === 'pending' || fm.status === 'in_progress') && fm.side1 && fm.side2;
+      const clickF = canClickF ? `onclick="openMatch('${fid}')"` : '';
+      const isDone = fm.status === 'completed';
+      const label = isDone ? fm.side1Score + ' - ' + fm.side2Score : (canClickF ? 'ابدأ' : 'في الانتظار');
+      const bg = isDone ? 'var(--accentLight)' : canClickF ? 'var(--primary)' : '#f0f0f0';
+      const clr = isDone ? 'var(--primary)' : canClickF ? '#fff' : 'var(--textLight)';
+      html += `<div ${clickF} style="padding:10px 20px;border-radius:var(--radiusSm);background:${bg};color:${clr};
+        font-weight:700;cursor:${canClickF ? 'pointer' : 'default'};text-align:center;min-width:100px;transition:var(--transition);">
+        <div style="font-size:0.75rem;opacity:0.7;">المباراة ${idx+1}</div>
+        <div style="font-size:1.1rem;">${label}</div>
+      </div>`;
+    });
+    html += `</div></div>`;
+  }
+
+  container.innerHTML = html;
+}
+
+function getRoundNames(totalRounds) {
+  const names = [];
+  for (let i = 0; i < totalRounds; i++) {
+    const remaining = totalRounds - i;
+    if (remaining === 1) names.push('النهائي');
+    else if (remaining === 2) names.push('نصف النهائي');
+    else if (remaining === 3) names.push('ربع النهائي');
+    else names.push('الجولة ' + (i + 1));
+  }
+  return names;
+}
+
+/* ============================================================
+   SECTION 6C: MATCH ENGINE
+   ============================================================ */
+const QUESTIONS_PER_MATCH = 5;
+const TIMER_SECONDS = 20;
+const MAX_SUDDEN_DEATH = 5;
+let timerInterval = null;
+let isLoadingQuestion = false;
+
+/* ===== TOAST NOTIFICATIONS ===== */
+function showToast(message, type = 'info') {
+  const container = document.getElementById('toast-container');
+  const toast = document.createElement('div');
+  toast.className = 'toast ' + type;
+  toast.textContent = message;
+  container.appendChild(toast);
+  setTimeout(() => { if (toast.parentNode) toast.remove(); }, 2600);
+}
+let matchEngine = {
+  currentQuestion: null,
+  side1Choice: null,
+  side2Choice: null,
+  side1Confirmed: false,
+  side2Confirmed: false,
+  revealed: false,
+  questionStartTime: 0,
+  side1AnswerTime: 0,
+  side2AnswerTime: 0,
+  undoSnapshot: null
+};
+
+function getPlayerName(pid) {
+  const p = appState.players.find(x => x.id === pid);
+  return p ? p.name : '—';
+}
+
+function getSideName(sideArr) {
+  if (!sideArr) return '—';
+  return sideArr.map(id => getPlayerName(id)).join(' و ');
+}
+
+function openMatch(matchId) {
+  const m = appState.matches[matchId];
+  if (!m || m.status === 'completed' || m.status === 'waiting' || m.isBye) return;
+  if (!m.side1 || !m.side2) return; // Both sides must be filled
+
+  appState.ui.currentMatchId = matchId;
+  m.status = 'in_progress';
+
+  // Reset engine state
+  matchEngine = {
+    currentQuestion: null, side1Choice: null, side2Choice: null,
+    side1Confirmed: false, side2Confirmed: false, revealed: false,
+    questionStartTime: 0, side1AnswerTime: 0, side2AnswerTime: 0, undoSnapshot: null
+  };
+
+  // Prepare questions if not loaded yet
+  if (!m.questions || m.questions.length === 0) {
+    m.questions = [];
+    m.currentQ = 0;
+    m.side1Answers = [];
+    m.side2Answers = [];
+    m.side1Score = 0;
+    m.side2Score = 0;
+  }
+
+  showView('view-match');
+  renderMatchHeader(m);
+
+  // Show series info for final
+  const seriesInfo = document.getElementById('match-series-info');
+  if (m.type === 'final_series') {
+    const fs = appState.bracket.finalSeriesScore;
+    seriesInfo.style.display = '';
+    seriesInfo.textContent = 'النتيجة في السلسلة: ' + fs.side1 + ' - ' + fs.side2 + ' (المباراة ' + (m.seriesIndex + 1) + ')';
+  } else {
+    seriesInfo.style.display = 'none';
+  }
+
+  document.getElementById('sudden-death-banner').style.display = m.isSuddenDeath ? '' : 'none';
+  loadNextQuestion(matchId);
+}
+
+function renderMatchHeader(m) {
+  document.getElementById('match-side1-name').textContent = getSideName(m.side1);
+  document.getElementById('match-side2-name').textContent = getSideName(m.side2);
+  document.getElementById('match-score1').textContent = m.side1Score;
+  document.getElementById('match-score2').textContent = m.side2Score;
+}
+
+async function loadNextQuestion(matchId) {
+  if (isLoadingQuestion) return; // prevent double-click race
+  isLoadingQuestion = true;
+
+  const m = appState.matches[matchId];
+  if (!m) { isLoadingQuestion = false; return; }
+
+  // Check if match is done (5 questions asked and not tied, or sudden death resolved)
+  if (m.currentQ >= QUESTIONS_PER_MATCH && !m.isSuddenDeath) {
+    if (m.side1Score !== m.side2Score) {
+      isLoadingQuestion = false;
+      completeMatch(matchId);
+      return;
+    } else {
+      // Start sudden death
+      m.isSuddenDeath = true;
+      document.getElementById('sudden-death-banner').style.display = '';
+      showToast('تعادل! بدأ الموت المفاجئ', 'error');
+    }
+  }
+
+  // In sudden death, check if last question broke the tie
+  if (m.isSuddenDeath && m.currentQ > QUESTIONS_PER_MATCH) {
+    if (m.side1Score !== m.side2Score) {
+      isLoadingQuestion = false;
+      completeMatch(matchId);
+      return;
+    }
+    // Max sudden death limit — force random winner
+    const sdCount = m.currentQ - QUESTIONS_PER_MATCH;
+    if (sdCount >= MAX_SUDDEN_DEATH) {
+      isLoadingQuestion = false;
+      showToast('وصلنا الحد الأقصى للموت المفاجئ!', 'error');
+      // Pick winner by fastest average answer time in this match
+      const s1AvgTime = m.side1Answers.length > 0 ? m.side1Answers.reduce((s,a) => s + a.time, 0) / m.side1Answers.length : 99999;
+      const s2AvgTime = m.side2Answers.length > 0 ? m.side2Answers.reduce((s,a) => s + a.time, 0) / m.side2Answers.length : 99999;
+      if (s1AvgTime <= s2AvgTime) m.side1Score++;
+      else m.side2Score++;
+      renderMatchHeader(m);
+      completeMatch(matchId);
+      return;
+    }
+  }
+
+  const q = await getNextQuestion();
+  if (!q) {
+    isLoadingQuestion = false;
+    showModal('لا توجد أسئلة', 'لا يمكن متابعة المباراة بدون أسئلة.', [
+      {text: 'رجوع', class: 'btn-outline', action: () => goBack()}
+    ]);
+    return;
+  }
+
+  matchEngine.currentQuestion = q;
+  matchEngine.side1Choice = null;
+  matchEngine.side2Choice = null;
+  matchEngine.side1Confirmed = false;
+  matchEngine.side2Confirmed = false;
+  matchEngine.revealed = false;
+  matchEngine.questionStartTime = Date.now();
+  matchEngine.side1AnswerTime = 0;
+  matchEngine.side2AnswerTime = 0;
+
+  // Save undo snapshot (before this question) — includes player stats
+  const playerStatsSnap = {};
+  if (m.side1) m.side1.forEach(pid => { if (appState.playerStats[pid]) playerStatsSnap[pid] = {...appState.playerStats[pid]}; });
+  if (m.side2) m.side2.forEach(pid => { if (appState.playerStats[pid]) playerStatsSnap[pid] = {...appState.playerStats[pid]}; });
+  matchEngine.undoSnapshot = {
+    side1Score: m.side1Score,
+    side2Score: m.side2Score,
+    currentQ: m.currentQ,
+    side1Answers: m.side1Answers.slice(),
+    side2Answers: m.side2Answers.slice(),
+    isSuddenDeath: m.isSuddenDeath,
+    playerStats: playerStatsSnap
+  };
+
+  renderQuestion(matchId);
+  startTimer();
+  isLoadingQuestion = false;
+}
+
+function renderQuestion(matchId) {
+  const m = appState.matches[matchId];
+  const q = matchEngine.currentQuestion;
+  if (!q) return;
+
+  const qNum = m.isSuddenDeath
+    ? 'الموت المفاجئ - سؤال ' + (m.currentQ - QUESTIONS_PER_MATCH + 1)
+    : 'السؤال ' + (m.currentQ + 1) + ' من ' + QUESTIONS_PER_MATCH;
+
+  // Build question progress dots
+  let dotsHTML = '<div class="q-progress">';
+  const totalQ = m.isSuddenDeath ? m.currentQ + 1 : QUESTIONS_PER_MATCH;
+  for (let i = 0; i < totalQ; i++) {
+    let dotClass = '';
+    if (i < m.side1Answers.length) {
+      const s1c = m.side1Answers[i].correct;
+      const s2c = m.side2Answers[i].correct;
+      if (s1c && !s2c) dotClass = 's1win';
+      else if (!s1c && s2c) dotClass = 's2win';
+      else dotClass = 'draw';
+      if (i >= QUESTIONS_PER_MATCH) dotClass += ' sudden';
+    } else if (i === m.currentQ) {
+      dotClass = 'current';
+    }
+    dotsHTML += `<div class="q-dot ${dotClass}"></div>`;
+  }
+  dotsHTML += '</div>';
+
+  const diffClass = 'diff-' + (q.difficulty || 'medium');
+  const diffLabel = DIFF_LABELS[q.difficulty] || q.difficulty || '';
+  const catLabel = q.category || '';
+  const metaHTML = `<div class="q-meta">`
+    + (catLabel ? `<span class="q-badge cat">${esc(catLabel)}</span>` : '')
+    + (diffLabel ? `<span class="q-badge ${diffClass}">${esc(diffLabel)}</span>` : '')
+    + `</div>`;
+
+  document.getElementById('question-text').innerHTML =
+    dotsHTML +
+    `<div style="font-size:0.85rem;color:var(--primaryDark);margin-bottom:8px;">${qNum}</div>` +
+    metaHTML +
+    `<div>${q.question}</div>`;
+
+  // Current turn label
+  const sideLabel = document.getElementById('current-side-label');
+  if (!matchEngine.side1Confirmed) {
+    sideLabel.innerHTML = '<span class="side-label side1">دور ' + getSideName(m.side1) + '</span>';
+  } else if (!matchEngine.side2Confirmed) {
+    sideLabel.innerHTML = '<span class="side-label side2">دور ' + getSideName(m.side2) + '</span>';
+  } else {
+    sideLabel.innerHTML = '';
+  }
+
+  // Options
+  const grid = document.getElementById('options-grid');
+  grid.innerHTML = '';
+  q.options.forEach((opt, idx) => {
+    const btn = document.createElement('div');
+    btn.className = 'option-btn';
+    btn.textContent = opt;
+    btn.setAttribute('data-idx', idx);
+
+    if (matchEngine.revealed) {
+      btn.classList.add('locked');
+      if (idx === q.correctIndex) btn.classList.add('correct');
+      if (matchEngine.side1Choice === idx && idx !== q.correctIndex) btn.classList.add('wrong');
+      if (matchEngine.side2Choice === idx && idx !== q.correctIndex) btn.classList.add('wrong');
+    } else if (matchEngine.side2Confirmed) {
+      // Both confirmed, show nothing specific
+      btn.classList.add('locked');
+    } else if (matchEngine.side1Confirmed) {
+      // Side 2 picking
+      if (matchEngine.side2Choice === idx) btn.classList.add('selected');
+      if (!matchEngine.side2Confirmed) {
+        btn.onclick = () => selectOption(2, idx);
+      }
+    } else {
+      // Side 1 picking
+      if (matchEngine.side1Choice === idx) btn.classList.add('selected');
+      btn.onclick = () => selectOption(1, idx);
+    }
+    grid.appendChild(btn);
+  });
+
+  renderMatchControls(matchId);
+}
+
+function selectOption(side, idx) {
+  if (matchEngine.revealed) return;
+  if (side === 1 && matchEngine.side1Confirmed) return;
+  if (side === 2 && matchEngine.side2Confirmed) return;
+
+  if (side === 1) matchEngine.side1Choice = idx;
+  else matchEngine.side2Choice = idx;
+
+  const matchId = appState.ui.currentMatchId;
+  renderQuestion(matchId);
+}
+
+function renderMatchControls(matchId) {
+  const m = appState.matches[matchId];
+  const ctrl = document.getElementById('match-controls');
+  let html = '';
+
+  if (!matchEngine.side1Confirmed) {
+    html += `<button class="btn btn-primary" ${matchEngine.side1Choice === null ? 'disabled' : ''}
+      onclick="confirmSide(1)">تأكيد إجابة ${getSideName(m.side1)}</button>`;
+  } else if (!matchEngine.side2Confirmed) {
+    html += `<button class="btn btn-highlight" ${matchEngine.side2Choice === null ? 'disabled' : ''}
+      onclick="confirmSide(2)">تأكيد إجابة ${getSideName(m.side2)}</button>`;
+  } else if (!matchEngine.revealed) {
+    html += `<button class="btn btn-winner" onclick="revealAnswer()">إظهار الإجابة وحساب النقاط</button>`;
+  } else {
+    // After reveal — decide what's next
+    const matchDone = m.currentQ >= QUESTIONS_PER_MATCH && m.side1Score !== m.side2Score;
+    const suddenDeathDone = m.isSuddenDeath && m.side1Score !== m.side2Score;
+    const needSuddenDeath = m.currentQ >= QUESTIONS_PER_MATCH && m.side1Score === m.side2Score;
+
+    if (matchDone || suddenDeathDone) {
+      // Match is over — show finish button
+      const winnerName = m.side1Score > m.side2Score ? getSideName(m.side1) : getSideName(m.side2);
+      html += `<button class="btn btn-primary" style="font-size:1.1rem;padding:14px 28px;" onclick="completeMatch('${matchId}')">اعتماد النتيجة — الفائز: ${winnerName}</button>`;
+    } else if (needSuddenDeath) {
+      html += `<button class="btn btn-danger" style="font-size:1.05rem;" onclick="nextQuestionBtn()">تعادل! الموت المفاجئ ←</button>`;
+    } else {
+      html += `<button class="btn btn-primary" onclick="nextQuestionBtn()">السؤال التالي</button>`;
+    }
+  }
+
+  // Undo button (before reveal only, and if there's a snapshot)
+  if (!matchEngine.revealed && matchEngine.undoSnapshot && m.currentQ > 0) {
+    html += `<button class="btn btn-outline btn-sm" onclick="undoLastQuestion()">تراجع</button>`;
+  }
+
+  // Host override
+  if (appState.settings.allowManualOverride && !matchEngine.revealed) {
+    html += `<button class="btn btn-danger btn-sm" onclick="hostOverride(1)">فوز ${getSideName(m.side1)}</button>`;
+    html += `<button class="btn btn-danger btn-sm" onclick="hostOverride(2)">فوز ${getSideName(m.side2)}</button>`;
+  }
+
+  // Back button
+  html += `<button class="btn btn-outline btn-sm" onclick="confirmLeaveMatch()">رجوع</button>`;
+
+  ctrl.innerHTML = html;
+}
+
+function confirmSide(side) {
+  if (matchEngine.revealed) return;
+
+  if (side === 1) {
+    if (matchEngine.side1Choice === null || matchEngine.side1Confirmed) return;
+    matchEngine.side1Confirmed = true;
+    matchEngine.side1AnswerTime = Date.now() - matchEngine.questionStartTime;
+    // Hide side1 choice for side2
+  } else {
+    if (matchEngine.side2Choice === null || matchEngine.side2Confirmed) return;
+    matchEngine.side2Confirmed = true;
+    matchEngine.side2AnswerTime = Date.now() - matchEngine.questionStartTime;
+  }
+
+  const matchId = appState.ui.currentMatchId;
+  renderQuestion(matchId);
+}
+
+function revealAnswer() {
+  if (matchEngine.revealed) return;
+  if (!matchEngine.side1Confirmed || !matchEngine.side2Confirmed) return;
+
+  matchEngine.revealed = true;
+  stopTimer();
+
+  const matchId = appState.ui.currentMatchId;
+  const m = appState.matches[matchId];
+  const q = matchEngine.currentQuestion;
+
+  const s1Correct = matchEngine.side1Choice === q.correctIndex;
+  const s2Correct = matchEngine.side2Choice === q.correctIndex;
+
+  if (s1Correct) m.side1Score++;
+  if (s2Correct) m.side2Score++;
+
+  // Record answers
+  m.side1Answers.push({
+    qid: q.qid, choice: matchEngine.side1Choice,
+    correct: s1Correct, time: matchEngine.side1AnswerTime
+  });
+  m.side2Answers.push({
+    qid: q.qid, choice: matchEngine.side2Choice,
+    correct: s2Correct, time: matchEngine.side2AnswerTime
+  });
+
+  // Update player stats
+  if (m.side1) m.side1.forEach(pid => updatePlayerStat(pid, s1Correct, matchEngine.side1AnswerTime));
+  if (m.side2) m.side2.forEach(pid => updatePlayerStat(pid, s2Correct, matchEngine.side2AnswerTime));
+
+  m.currentQ++;
+
+  renderMatchHeader(m);
+  renderQuestion(matchId);
+  saveState();
+}
+
+function updatePlayerStat(pid, correct, timeMs) {
+  const st = appState.playerStats[pid];
+  if (!st) return;
+  st.questionsAnswered++;
+  if (correct) st.correctTotal++;
+  st.totalAnswerTime += timeMs;
+}
+
+function nextQuestionBtn() {
+  const matchId = appState.ui.currentMatchId;
+  loadNextQuestion(matchId);
+}
+
+function completeMatch(matchId) {
+  stopTimer();
+  const m = appState.matches[matchId];
+  m.status = 'completed';
+  m.winningSide = m.side1Score > m.side2Score ? 1 : 2;
+
+  // Update matchesPlayed and matchesWon
+  const winners = m.winningSide === 1 ? m.side1 : m.side2;
+  const losers = m.winningSide === 1 ? m.side2 : m.side1;
+
+  if (m.side1) m.side1.forEach(pid => {
+    if (appState.playerStats[pid]) appState.playerStats[pid].matchesPlayed++;
+  });
+  if (m.side2) m.side2.forEach(pid => {
+    if (appState.playerStats[pid]) appState.playerStats[pid].matchesPlayed++;
+  });
+  if (winners) winners.forEach(pid => {
+    if (appState.playerStats[pid]) {
+      appState.playerStats[pid].matchesWon++;
+      appState.playerStats[pid].pointDiff += (m.side1Score - m.side2Score) * (m.winningSide === 1 ? 1 : -1);
+    }
+  });
+  if (losers) losers.forEach(pid => {
+    if (appState.playerStats[pid]) {
+      appState.playerStats[pid].pointDiff -= Math.abs(m.side1Score - m.side2Score);
+    }
+  });
+
+  const winnerName = getSideName(winners);
+  const s1Name = getSideName(m.side1);
+  const s2Name = getSideName(m.side2);
+
+  showModal('انتهت المباراة',
+    `${s1Name} ${m.side1Score} - ${m.side2Score} ${s2Name}\nالفائز: ${winnerName}`,
+    [{text: 'متابعة', class: 'btn-primary', action: () => {
+      advanceWinner(matchId);
+      saveState();
+      if (appState.phase === 'ceremony') return; // ceremony handler takes over
+      if (appState.phase === 'groups') {
+        renderGroups();
+        showView('view-groups');
+      } else {
+        renderBracket();
+        showView('view-bracket');
+      }
+    }}]
+  );
+}
+
+function undoLastQuestion() {
+  if (matchEngine.revealed) return;
+  const matchId = appState.ui.currentMatchId;
+  const m = appState.matches[matchId];
+  const snap = matchEngine.undoSnapshot;
+  if (!snap) return;
+
+  m.side1Score = snap.side1Score;
+  m.side2Score = snap.side2Score;
+  m.currentQ = snap.currentQ;
+  m.side1Answers = snap.side1Answers;
+  m.side2Answers = snap.side2Answers;
+  m.isSuddenDeath = snap.isSuddenDeath;
+  document.getElementById('sudden-death-banner').style.display = m.isSuddenDeath ? '' : 'none';
+
+  // Restore player stats from snapshot
+  if (snap.playerStats) {
+    for (const pid in snap.playerStats) {
+      if (appState.playerStats[pid]) {
+        Object.assign(appState.playerStats[pid], snap.playerStats[pid]);
+      }
+    }
+  }
+
+  renderMatchHeader(m);
+  loadNextQuestion(matchId);
+}
+
+function hostOverride(winningSide) {
+  const matchId = appState.ui.currentMatchId;
+  const m = appState.matches[matchId];
+  const winnerName = getSideName(winningSide === 1 ? m.side1 : m.side2);
+
+  showModal('تأكيد فوز يدوي',
+    'هل أنت متأكد من منح الفوز لـ ' + winnerName + '؟ سيتم إنهاء المباراة فورًا.',
+    [
+      {text: 'نعم، تأكيد الفوز', class: 'btn-danger', action: () => {
+        stopTimer();
+        m.winningSide = winningSide;
+        m.status = 'completed';
+        // Ensure winner has higher score (at minimum 1-0)
+        if (m.side1Score === m.side2Score) {
+          if (winningSide === 1) m.side1Score = Math.max(m.side1Score, 1);
+          else m.side2Score = Math.max(m.side2Score, 1);
+        }
+        // Update stats
+        if (m.side1) m.side1.forEach(pid => {
+          if (appState.playerStats[pid]) appState.playerStats[pid].matchesPlayed++;
+        });
+        if (m.side2) m.side2.forEach(pid => {
+          if (appState.playerStats[pid]) appState.playerStats[pid].matchesPlayed++;
+        });
+        const winners = winningSide === 1 ? m.side1 : m.side2;
+        if (winners) winners.forEach(pid => {
+          if (appState.playerStats[pid]) appState.playerStats[pid].matchesWon++;
+        });
+        advanceWinner(matchId);
+        saveState();
+        if (appState.phase === 'ceremony') return;
+        if (appState.phase === 'groups') { renderGroups(); showView('view-groups'); }
+        else { renderBracket(); showView('view-bracket'); }
+      }},
+      {text: 'إلغاء', class: 'btn-outline'}
+    ]
+  );
+}
+
+function confirmLeaveMatch() {
+  const matchId = appState.ui.currentMatchId;
+  const m = appState.matches[matchId];
+  if (m && m.currentQ > 0 && m.status === 'in_progress') {
+    showModal('مغادرة المباراة',
+      'المباراة لم تنتهِ بعد. سيتم حفظ التقدم الحالي.',
+      [
+        {text: 'مغادرة', class: 'btn-danger', action: () => { stopTimer(); saveState(); goBack(); }},
+        {text: 'متابعة', class: 'btn-outline'}
+      ]
+    );
+  } else {
+    stopTimer();
+    goBack();
+  }
+}
+
+/* ===== TIMER ===== */
+function startTimer() {
+  stopTimer();
+  appState.ui.timerValue = TIMER_SECONDS;
+  appState.ui.timerRunning = true;
+  updateTimerDisplay();
+
+  timerInterval = setInterval(() => {
+    if (appState.ui.timerValue > 0) {
+      appState.ui.timerValue--;
+      updateTimerDisplay();
+    } else {
+      stopTimer();
+      // Timer expired — no penalty, just stops
+    }
+  }, 1000);
+}
+
+function stopTimer() {
+  if (timerInterval) {
+    clearInterval(timerInterval);
+    timerInterval = null;
+  }
+  appState.ui.timerRunning = false;
+}
+
+function updateTimerDisplay() {
+  const v = appState.ui.timerValue;
+  document.getElementById('timer-display').textContent = v;
+  const pct = (v / TIMER_SECONDS) * 100;
+  document.getElementById('timer-fill').style.width = pct + '%';
+  // Color change when low
+  const fill = document.getElementById('timer-fill');
+  if (v <= 5) fill.style.background = 'var(--danger)';
+  else if (v <= 10) fill.style.background = 'var(--winner)';
+  else fill.style.background = 'var(--primaryDark)';
+}
+
+/* ============================================================
+   SECTION 6D: STATS + CEREMONY + EFFECTS
+   ============================================================ */
+
+/* ===== MVP CALCULATION ===== */
+function computeMVPRanking() {
+  const arr = [];
+  for (const pid in appState.playerStats) {
+    const st = appState.playerStats[pid];
+    const p = appState.players.find(x => x.id === pid);
+    if (!p) continue;
+    const fam = appState.families.find(f => f.id === p.familyId);
+    const avgTime = st.questionsAnswered > 0 ? st.totalAnswerTime / st.questionsAnswered : 99999;
+    const accuracy = st.questionsAnswered > 0 ? (st.correctTotal / st.questionsAnswered * 100) : 0;
+    arr.push({
+      pid, name: p.name,
+      familyName: fam ? fam.name : '',
+      familyColor: fam ? fam.color : '#999',
+      familyId: p.familyId,
+      correct: st.correctTotal,
+      answered: st.questionsAnswered,
+      matchesPlayed: st.matchesPlayed,
+      matchesWon: st.matchesWon,
+      avgTime, accuracy,
+      pointDiff: st.pointDiff || 0,
+      totalTime: st.totalAnswerTime
+    });
+  }
+  // Sort: correctTotal desc → avgTime asc → matchesWon desc → pointDiff desc
+  arr.sort((a, b) => {
+    if (b.correct !== a.correct) return b.correct - a.correct;
+    if (a.avgTime !== b.avgTime) return a.avgTime - b.avgTime;
+    if (b.matchesWon !== a.matchesWon) return b.matchesWon - a.matchesWon;
+    return b.pointDiff - a.pointDiff;
+  });
+  return arr;
+}
+
+/* ===== FAMILY STATS ===== */
+function computeFamilyStats() {
+  const fmap = {};
+  appState.families.forEach(f => {
+    fmap[f.id] = {
+      id: f.id, name: f.name, color: f.color || '#999',
+      totalCorrect: 0, totalAnswered: 0, totalTime: 0,
+      playerCount: f.players.length,
+      qualifiedCount: 0, semifinalCount: 0, totalWins: 0
+    };
+  });
+  for (const pid in appState.playerStats) {
+    const st = appState.playerStats[pid];
+    const p = appState.players.find(x => x.id === pid);
+    if (!p || !fmap[p.familyId]) continue;
+    const fs = fmap[p.familyId];
+    fs.totalCorrect += st.correctTotal;
+    fs.totalAnswered += st.questionsAnswered;
+    fs.totalTime += st.totalAnswerTime;
+    fs.totalWins += st.matchesWon;
+    if (st.qualified) fs.qualifiedCount++;
+    if (st.semifinal) fs.semifinalCount++;
+  }
+  return Object.values(fmap).map(fs => ({
+    ...fs,
+    avgTime: fs.totalAnswered > 0 ? fs.totalTime / fs.totalAnswered : 99999,
+    accuracy: fs.totalAnswered > 0 ? (fs.totalCorrect / fs.totalAnswered * 100) : 0
+  }));
+}
+
+function computeFamilyAwards(famStats) {
+  const awards = [];
+  const active = famStats.filter(f => f.totalAnswered > 0);
+  if (active.length === 0) return awards;
+  // Fastest family
+  const fastest = active.slice().sort((a, b) => a.avgTime - b.avgTime)[0];
+  awards.push({ icon: '⚡', title: 'أسرع أسرة', family: fastest.name, color: fastest.color,
+    detail: 'متوسط ' + (fastest.avgTime / 1000).toFixed(1) + ' ثانية' });
+  // Most accurate
+  const accurate = active.slice().sort((a, b) => b.accuracy - a.accuracy)[0];
+  awards.push({ icon: '🎯', title: 'أدق أسرة', family: accurate.name, color: accurate.color,
+    detail: 'دقة ' + accurate.accuracy.toFixed(0) + '%' });
+  // Strongest (most wins/qualifications)
+  const strongest = active.slice().sort((a, b) => {
+    if (b.qualifiedCount !== a.qualifiedCount) return b.qualifiedCount - a.qualifiedCount;
+    return b.totalWins - a.totalWins;
+  })[0];
+  awards.push({ icon: '💪', title: 'أقوى أسرة', family: strongest.name, color: strongest.color,
+    detail: strongest.totalWins + ' انتصار' });
+  return awards;
+}
+
+/* ===== RENDER STATS VIEW ===== */
+function showStatsView() {
+  renderStatsView();
+  showView('view-stats');
+}
+
+function renderStatsView() {
+  // MVP list
+  const mvpRank = computeMVPRanking();
+  const mvpEl = document.getElementById('mvp-list');
+  mvpEl.innerHTML = '';
+  mvpRank.forEach((p, idx) => {
+    if (p.answered === 0) return;
+    const rankClass = idx === 0 ? 'gold' : idx === 1 ? 'silver' : idx === 2 ? 'bronze' : '';
+    const avgSec = (p.avgTime / 1000).toFixed(1);
+    mvpEl.innerHTML += `<div class="stat-card">
+      <div class="stat-rank ${rankClass}">${idx + 1}</div>
+      <div class="stat-info">
+        <div class="name">${p.name} <span class="family-chip" style="background:${p.familyColor}">${p.familyName}</span></div>
+        <div class="detail">
+          الصحيحة: ${p.correct}/${p.answered} (${p.accuracy.toFixed(0)}%)
+          · المباريات: ${p.matchesWon}/${p.matchesPlayed}
+          · المتوسط: ${avgSec}ث
+          · فارق النقاط: ${p.pointDiff > 0 ? '+' : ''}${p.pointDiff}
+        </div>
+      </div>
+    </div>`;
+  });
+
+  // Family stats
+  const famStats = computeFamilyStats();
+  const famEl = document.getElementById('family-stats-list');
+  famEl.innerHTML = '';
+  famStats.sort((a, b) => b.totalCorrect - a.totalCorrect);
+  famStats.forEach(fs => {
+    const avgSec = fs.totalAnswered > 0 ? (fs.avgTime / 1000).toFixed(1) : '—';
+    famEl.innerHTML += `<div class="stat-card">
+      <div class="stat-rank" style="background:${fs.color};">${fs.name.charAt(0)}</div>
+      <div class="stat-info">
+        <div class="name">${fs.name}</div>
+        <div class="detail">
+          الصحيحة: ${fs.totalCorrect}/${fs.totalAnswered}
+          · الدقة: ${fs.accuracy.toFixed(0)}%
+          · المتوسط: ${avgSec}ث
+          · الانتصارات: ${fs.totalWins}
+          · المتأهلون: ${fs.qualifiedCount}
+        </div>
+      </div>
+    </div>`;
+  });
+
+  // Awards
+  const awards = computeFamilyAwards(famStats);
+  const awEl = document.getElementById('family-awards');
+  awEl.innerHTML = '';
+  awards.forEach(a => {
+    awEl.innerHTML += `<div class="stat-card">
+      <div class="stat-rank" style="background:${a.color};font-size:1.4rem;">${a.icon}</div>
+      <div class="stat-info">
+        <div class="name">${a.title}</div>
+        <div class="detail">${a.family} — ${a.detail}</div>
+      </div>
+    </div>`;
+  });
+}
+
+/* ===== CEREMONY ===== */
+function showCeremony() {
+  // Determine champion
+  const fIds = appState.bracket.finalSeriesMatchIds;
+  const fs = appState.bracket.finalSeriesScore;
+  let championIds = null;
+  let runnerUpIds = null;
+  if (fIds.length > 0) {
+    const fm = appState.matches[fIds[0]];
+    if (fs.side1 >= 2) { championIds = fm.side1; runnerUpIds = fm.side2; }
+    else { championIds = fm.side2; runnerUpIds = fm.side1; }
+  }
+
+  const champPlayer = championIds ? appState.players.find(p => p.id === championIds[0]) : null;
+  const champFamily = champPlayer ? appState.families.find(f => f.id === champPlayer.familyId) : null;
+
+  // Champion display
+  document.getElementById('ceremony-champion-family').textContent =
+    champFamily ? 'الأسرة البطلة: ' + champFamily.name : '';
+  document.getElementById('ceremony-champion-player').textContent =
+    champPlayer ? champPlayer.name : '';
+
+  // Series result
+  const seriesEl = document.getElementById('ceremony-series-result');
+  seriesEl.textContent = 'نتيجة النهائي: ' + fs.side1 + ' - ' + fs.side2;
+
+  // Series detail — each match score
+  const detailEl = document.getElementById('ceremony-series-detail');
+  let detailHTML = '';
+  fIds.forEach((fid, idx) => {
+    const fm = appState.matches[fid];
+    if (fm.status === 'completed') {
+      detailHTML += 'المباراة ' + (idx + 1) + ': ' + fm.side1Score + ' - ' + fm.side2Score + '   ';
+    }
+  });
+  detailEl.textContent = detailHTML;
+
+  // Third place
+  const tpId = appState.bracket.thirdPlaceMatchId;
+  const thirdEl = document.getElementById('ceremony-third');
+  if (tpId) {
+    const tp = appState.matches[tpId];
+    if (tp.status === 'completed' && tp.winningSide) {
+      const thirdIds = tp.winningSide === 1 ? tp.side1 : tp.side2;
+      const thirdPlayer = thirdIds ? appState.players.find(p => p.id === thirdIds[0]) : null;
+      thirdEl.textContent = thirdPlayer ? 'المركز الثالث: ' + thirdPlayer.name : '';
+    } else {
+      thirdEl.textContent = 'المركز الثالث: لم تُحسم بعد';
+    }
+  } else {
+    thirdEl.textContent = '';
+  }
+
+  // MVP
+  const mvpRank = computeMVPRanking();
+  const mvpEl = document.getElementById('ceremony-mvp');
+  if (mvpRank.length > 0 && mvpRank[0].answered > 0) {
+    const mvp = mvpRank[0];
+    const avgSec = (mvp.avgTime / 1000).toFixed(1);
+    mvpEl.innerHTML = `<div class="card" style="background:linear-gradient(135deg,var(--accentLight),#fff);border:2px solid var(--accent);">
+      <div style="text-align:center;">
+        <div style="font-size:2rem;">⭐</div>
+        <div style="font-weight:800;font-size:1.2rem;color:var(--primaryDark);">أفضل لاعب</div>
+        <div style="font-size:1.3rem;font-weight:700;margin:6px 0;">${mvp.name}</div>
+        <span class="family-chip" style="background:${mvp.familyColor}">${mvp.familyName}</span>
+        <div style="margin-top:10px;font-size:0.9rem;color:var(--textLight);">
+          الصحيحة: ${mvp.correct}/${mvp.answered} (${mvp.accuracy.toFixed(0)}%)
+          · المباريات: ${mvp.matchesWon}/${mvp.matchesPlayed}
+          · المتوسط: ${avgSec}ث
+        </div>
+      </div>
+    </div>`;
+  }
+
+  // Match count
+  const totalMatches = Object.values(appState.matches).filter(m => m.status === 'completed' && !m.isBye).length;
+  document.getElementById('ceremony-match-count').textContent = 'إجمالي المباريات: ' + totalMatches;
+
+  showView('view-ceremony');
+  startConfetti();
+  playCelebrationSound();
+}
+
+/* ===== CONFETTI (pure JS canvas) ===== */
+let confettiAnimId = null;
+function startConfetti() {
+  stopConfetti();
+  const canvas = document.getElementById('confetti-canvas');
+  const ctx = canvas.getContext('2d');
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  const colors = ['#F4D35E', '#0D3B66', '#E2A16F', '#FF0DDD', '#86B0BD', '#FAF0CA', '#D1D3D4', '#F4D35E'];
+  const particles = [];
+  const PARTICLE_COUNT = 150;
+
+  for (let i = 0; i < PARTICLE_COUNT; i++) {
+    particles.push({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height - canvas.height,
+      w: Math.random() * 10 + 5,
+      h: Math.random() * 6 + 3,
+      color: colors[Math.floor(Math.random() * colors.length)],
+      vx: (Math.random() - 0.5) * 3,
+      vy: Math.random() * 3 + 2,
+      rot: Math.random() * 360,
+      rotSpeed: (Math.random() - 0.5) * 8,
+      opacity: 1
+    });
+  }
+
+  let frame = 0;
+  function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    frame++;
+    let alive = false;
+    particles.forEach(p => {
+      if (p.opacity <= 0) return;
+      alive = true;
+      p.x += p.vx;
+      p.y += p.vy;
+      p.rot += p.rotSpeed;
+      p.vy += 0.04; // gravity
+      // Fade after 3 seconds (180 frames)
+      if (frame > 180) p.opacity -= 0.008;
+
+      ctx.save();
+      ctx.translate(p.x, p.y);
+      ctx.rotate(p.rot * Math.PI / 180);
+      ctx.globalAlpha = Math.max(0, p.opacity);
+      ctx.fillStyle = p.color;
+      ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
+      ctx.restore();
+    });
+    if (alive && frame < 400) {
+      confettiAnimId = requestAnimationFrame(animate);
+    } else {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }
+  }
+  confettiAnimId = requestAnimationFrame(animate);
+
+  // Handle resize
+  window.addEventListener('resize', () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }, { once: true });
+}
+
+function stopConfetti() {
+  if (confettiAnimId) {
+    cancelAnimationFrame(confettiAnimId);
+    confettiAnimId = null;
+  }
+  const canvas = document.getElementById('confetti-canvas');
+  if (canvas) {
+    const ctx = canvas.getContext('2d');
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+  }
+}
+
+/* ===== CELEBRATION SOUND (WebAudio ascending scale) ===== */
+function playCelebrationSound() {
+  try {
+    const AudioCtx = window.AudioContext || window.webkitAudioContext;
+    if (!AudioCtx) return;
+    const actx = new AudioCtx();
+    // Ascending notes: C5, E5, G5, C6
+    const notes = [523.25, 659.25, 783.99, 1046.50];
+    const dur = 0.25;
+    notes.forEach((freq, i) => {
+      const osc = actx.createOscillator();
+      const gain = actx.createGain();
+      osc.type = 'sine';
+      osc.frequency.value = freq;
+      gain.gain.setValueAtTime(0.3, actx.currentTime + i * dur);
+      gain.gain.exponentialRampToValueAtTime(0.01, actx.currentTime + i * dur + dur * 1.5);
+      osc.connect(gain);
+      gain.connect(actx.destination);
+      osc.start(actx.currentTime + i * dur);
+      osc.stop(actx.currentTime + i * dur + dur * 2);
+    });
+    // Final chord
+    const chordTime = actx.currentTime + notes.length * dur;
+    [523.25, 659.25, 783.99, 1046.50].forEach(freq => {
+      const osc = actx.createOscillator();
+      const gain = actx.createGain();
+      osc.type = 'triangle';
+      osc.frequency.value = freq;
+      gain.gain.setValueAtTime(0.2, chordTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, chordTime + 1.5);
+      osc.connect(gain);
+      gain.connect(actx.destination);
+      osc.start(chordTime);
+      osc.stop(chordTime + 2);
+    });
+  } catch (e) {
+    // WebAudio not available, silent fail
+  }
+}
+
+/* ============================================================
+   SECTION 7: PERSISTENCE (basic)
+   ============================================================ */
+function saveState() {
+  try {
+    const toSave = JSON.parse(JSON.stringify(appState));
+    toSave.usedQuestionIds = Array.from(appState.usedQuestionIds);
+    localStorage.setItem('familyTournament_v1', JSON.stringify(toSave));
+  } catch(e) {
+    console.warn('Save failed:', e);
+  }
+}
+
+function loadState() {
+  try {
+    const raw = localStorage.getItem('familyTournament_v1');
+    if (!raw) return false;
+    const saved = JSON.parse(raw);
+    // Validate essential structure
+    if (!saved.phase || !saved.settings || !saved.matches) {
+      console.warn('بيانات محفوظة تالفة — يتم تجاهلها');
+      localStorage.removeItem('familyTournament_v1');
+      return false;
+    }
+    if (saved.usedQuestionIds && Array.isArray(saved.usedQuestionIds)) {
+      saved.usedQuestionIds = new Set(saved.usedQuestionIds);
+    } else {
+      saved.usedQuestionIds = new Set();
+    }
+    // Ensure bracket structure exists
+    if (!saved.bracket) {
+      saved.bracket = { rounds: [], thirdPlaceMatchId: null, finalSeriesMatchIds: [], finalSeriesScore: {side1:0,side2:0} };
+    }
+    if (!saved.bracket.finalSeriesMatchIds) saved.bracket.finalSeriesMatchIds = [];
+    if (!saved.bracket.finalSeriesScore) saved.bracket.finalSeriesScore = {side1:0, side2:0};
+    if (!saved.playerStats) saved.playerStats = {};
+    if (!saved.undoStack) saved.undoStack = [];
+    Object.assign(appState, saved);
+    return true;
+  } catch(e) {
+    console.warn('Load failed:', e);
+    localStorage.removeItem('familyTournament_v1');
+    return false;
+  }
+}
+
+/* ============================================================
+   SECTION 8: ONLINE/OFFLINE DETECTION
+   ============================================================ */
+function updateConnectionBadge() {
+  const badge = document.getElementById('badge-connection');
+  if (navigator.onLine) {
+    badge.className = 'badge online';
+    badge.textContent = 'متصل';
+  } else {
+    badge.className = 'badge offline';
+    badge.textContent = 'غير متصل';
+  }
+}
+window.addEventListener('online', updateConnectionBadge);
+window.addEventListener('offline', updateConnectionBadge);
+
+/* ============================================================
+   SECTION 9: INIT
+   ============================================================ */
+async function init() {
+  updateConnectionBadge();
+  // Load questions in background
+  await loadQuestions();
+  const hasSaved = loadState();
+  if (hasSaved && appState.phase !== 'setup') {
+    showModal('بطولة محفوظة', 'تم العثور على بطولة سابقة. هل تريد المتابعة أم بدء بطولة جديدة؟', [
+      {text: 'متابعة البطولة', class: 'btn-primary', action: () => { resumeTournament(); }},
+      {text: 'بطولة جديدة', class: 'btn-highlight', action: () => { resetAll(); }}
+    ]);
+  } else {
+    initSetup();
+  }
+  // Debug: log questions stats
+  if (appState.settings.debugMode) {
+    const s = getQuestionsStats();
+    console.log('[أسئلة]', s.source, '| الإجمالي:', s.total, '| المستخدمة:', s.used);
+  }
+}
+
+function resumeTournament() {
+  // Restore matchIdCounter
+  const existingIds = Object.keys(appState.matches).map(k => parseInt(k.replace('m','')));
+  matchIdCounter = existingIds.length > 0 ? Math.max(...existingIds) + 1 : 1;
+
+  // Reset any in_progress matches back to pending (browser was closed mid-match)
+  Object.values(appState.matches).forEach(m => {
+    if (m.status === 'in_progress') {
+      m.status = 'pending';
+    }
+  });
+
+  const modeBadge = document.getElementById('badge-mode');
+  modeBadge.style.display = '';
+  modeBadge.textContent = appState.settings.mode === 'groups_knockout' ? 'مجموعات + إقصاء' : 'إقصاء مباشر';
+
+  if (appState.phase === 'groups') {
+    renderGroups();
+    showView('view-groups');
+  } else if (appState.phase === 'knockout') {
+    renderBracket();
+    showView('view-bracket');
+  } else if (appState.phase === 'ceremony') {
+    renderBracket();
+    showCeremony();
+  } else {
+    initSetup();
+    showView('view-setup');
+  }
+}
+
+document.addEventListener('DOMContentLoaded', init);
+</script>
+</body>
+</html>
