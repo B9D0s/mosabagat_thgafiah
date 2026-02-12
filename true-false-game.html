@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>صح أو خطأ × مضاعفة</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#657780;--bg-light:#758a94;--bg-dark:#556870;
+  --accent:#FFB400;--accent-dark:#e6a200;--accent-light:#ffc940;
+  --text:#f0f0f0;--text-dark:#1a1a1a;
+  --card:#4e6068;--card-hover:#5a6e77;
+  --green:#2ecc71;--red:#e74c3c;
+  --radius:14px;--shadow:0 4px 20px rgba(0,0,0,.25);
+  --transition:all .25s ease;
+}
+body{
+  font-family:"Tajawal","Cairo","Segoe UI",Arial,sans-serif;
+  background:var(--bg);color:var(--text);
+  min-height:100vh;overflow-x:hidden;line-height:1.6;
+}
+button{
+  font-family:inherit;cursor:pointer;border:none;
+  border-radius:var(--radius);padding:10px 20px;
+  font-size:15px;font-weight:700;transition:var(--transition);outline:none;
+}
+button:active{transform:scale(.95)}
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:var(--bg-dark)}
+::-webkit-scrollbar-thumb{background:var(--accent);border-radius:3px}
+
+/* ===== TOP BAR ===== */
+.top-bar{
+  background:var(--bg-dark);padding:12px 24px;
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:10px;
+  box-shadow:0 2px 12px rgba(0,0,0,.3);
+  position:sticky;top:0;z-index:100;
+}
+.top-bar .title-section{text-align:center;flex:1}
+.top-bar h1{font-size:22px;color:var(--accent);margin:0;line-height:1.3}
+.top-bar .info{display:flex;align-items:center;gap:12px;font-size:14px}
+.top-bar .info span{background:var(--card);padding:4px 12px;border-radius:8px}
+.bar-btns{display:flex;gap:8px;flex-wrap:wrap}
+.bar-btns button{background:var(--card);color:var(--text);font-size:13px;padding:8px 14px}
+.bar-btns button:hover{background:var(--accent);color:var(--text-dark)}
+.bar-btns button.active-toggle{background:var(--accent);color:var(--text-dark)}
+
+/* ===== TIMER ===== */
+.timer-container{width:100%;height:6px;background:var(--bg-dark);border-radius:3px;overflow:hidden;margin-top:4px;display:none}
+.timer-container.visible{display:block}
+.timer-bar{height:100%;background:var(--accent);transition:width .3s linear;border-radius:3px}
+.timer-bar.warning{background:var(--red)}
+.timer-text{font-size:28px;font-weight:900;color:var(--accent);min-width:60px;text-align:center;font-variant-numeric:tabular-nums}
+.timer-text.warning{color:var(--red);animation:pulse .5s infinite alternate}
+@keyframes pulse{from{opacity:1}to{opacity:.4}}
+
+/* ===== SCOREBOARD ===== */
+.scoreboard{display:grid;gap:12px;padding:16px 24px}
+.score-card{
+  background:var(--card);border-radius:var(--radius);
+  padding:14px;text-align:center;
+  box-shadow:var(--shadow);transition:var(--transition);
+  border:2px solid transparent;
+}
+.score-card.highlight{border-color:var(--accent)}
+.score-card .fname{font-size:16px;font-weight:700;margin-bottom:4px}
+.score-card .fscore{font-size:32px;font-weight:900;color:var(--accent);line-height:1.2}
+.score-card .badge{
+  display:inline-block;padding:2px 10px;border-radius:20px;
+  font-size:11px;margin-top:4px;background:var(--bg-light);color:var(--text);
+}
+.score-card .badge.answered{background:var(--accent);color:var(--text-dark)}
+.score-card .badge.correct{background:var(--green);color:#fff}
+.score-card .badge.wrong{background:var(--red);color:#fff}
+
+/* ===== QUESTION AREA ===== */
+.question-area{text-align:center;padding:20px 24px}
+.question-box{
+  background:var(--card);border-radius:var(--radius);
+  padding:30px 24px;box-shadow:var(--shadow);
+  max-width:900px;margin:0 auto;position:relative;overflow:hidden;
+}
+.question-box .q-number{font-size:13px;opacity:.6;margin-bottom:8px}
+.question-box .q-text{font-size:24px;font-weight:700;line-height:1.6;min-height:60px}
+.question-box .q-points{
+  display:inline-block;background:var(--accent);color:var(--text-dark);
+  padding:4px 14px;border-radius:20px;font-size:13px;font-weight:700;margin-top:10px;
+}
+.answer-reveal{margin-top:16px;padding:14px;border-radius:var(--radius);font-size:20px;font-weight:700;animation:fadeIn .4s ease}
+.answer-reveal.true-ans{background:rgba(46,204,113,.2);color:var(--green)}
+.answer-reveal.false-ans{background:rgba(231,76,60,.2);color:var(--red)}
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.hidden-answer{margin-top:16px;padding:14px;background:var(--bg-dark);border-radius:var(--radius);font-size:16px;opacity:.5}
+
+/* ===== GAME PROGRESS ===== */
+.game-progress{text-align:center;padding:0 24px 8px}
+.progress-outer{
+  max-width:900px;margin:0 auto;background:var(--bg-dark);
+  border-radius:20px;height:22px;overflow:hidden;position:relative;
+}
+.progress-inner{
+  height:100%;background:linear-gradient(90deg,var(--accent),var(--accent-light));
+  border-radius:20px;transition:width .4s ease;
+}
+.progress-label{
+  position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  font-size:11px;font-weight:700;color:var(--text);text-shadow:0 1px 2px rgba(0,0,0,.5);
+}
+
+/* ===== FAMILY PANELS ===== */
+.family-panels{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:12px 24px;max-width:1100px;margin:0 auto}
+.family-panel{
+  background:var(--card);border-radius:var(--radius);
+  padding:16px;box-shadow:var(--shadow);border:3px solid transparent;transition:var(--transition);
+}
+.family-panel.correct-flash{animation:flashGreen .6s ease}
+.family-panel.wrong-flash{animation:flashRed .6s ease}
+@keyframes flashGreen{0%,100%{border-color:transparent}50%{border-color:var(--green);box-shadow:0 0 20px rgba(46,204,113,.4)}}
+@keyframes flashRed{0%,100%{border-color:transparent}50%{border-color:var(--red);box-shadow:0 0 20px rgba(231,76,60,.4)}}
+.family-panel .panel-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.family-panel .panel-name{font-size:16px;font-weight:700}
+.family-panel .panel-status{font-size:12px;padding:3px 10px;border-radius:20px;background:var(--bg-light)}
+.family-panel .panel-status.done{background:var(--accent);color:var(--text-dark)}
+.panel-buttons{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.btn-true,.btn-false{
+  flex:1;padding:12px 8px;font-size:16px;border-radius:var(--radius);
+  color:var(--text);background:var(--bg-light);border:2px solid transparent;
+}
+.btn-true:hover,.btn-false:hover{background:var(--bg-dark)}
+.btn-true.selected{background:var(--green);color:#fff;border-color:rgba(255,255,255,.3);box-shadow:0 0 12px rgba(46,204,113,.3)}
+.btn-false.selected{background:var(--red);color:#fff;border-color:rgba(255,255,255,.3);box-shadow:0 0 12px rgba(231,76,60,.3)}
+.btn-true:disabled,.btn-false:disabled,.btn-double:disabled{opacity:.5;cursor:not-allowed;transform:none}
+.btn-double{padding:10px 14px;font-size:14px;background:var(--bg-light);color:var(--text);border:2px solid transparent;white-space:nowrap}
+.btn-double.active{
+  background:var(--accent);color:var(--text-dark);border-color:rgba(255,255,255,.3);
+  box-shadow:0 0 15px rgba(255,180,0,.4);animation:doubleGlow 1.5s ease infinite alternate;
+}
+@keyframes doubleGlow{from{box-shadow:0 0 10px rgba(255,180,0,.3)}to{box-shadow:0 0 25px rgba(255,180,0,.5)}}
+
+/* ===== HOST CONTROLS ===== */
+.host-controls{padding:16px 24px;display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+.host-controls button{background:var(--accent);color:var(--text-dark);padding:12px 22px;font-size:15px}
+.host-controls button:hover{background:var(--accent-light)}
+.host-controls button:disabled{background:var(--bg-light);color:var(--text);opacity:.5;cursor:not-allowed;transform:none}
+.host-controls .btn-danger{background:var(--red);color:#fff}
+.host-controls .btn-danger:hover{background:#c0392b}
+.host-controls .btn-secondary{background:var(--card);color:var(--text)}
+.host-controls .btn-secondary:hover{background:var(--bg-light)}
+
+/* ===== GAME OVER ===== */
+.game-over-banner{
+  text-align:center;padding:20px;margin:10px 24px;
+  background:linear-gradient(135deg,var(--accent),var(--accent-dark));
+  border-radius:var(--radius);color:var(--text-dark);
+  animation:fadeIn .5s ease;
+}
+.game-over-banner h2{font-size:28px;margin-bottom:6px}
+.game-over-banner .winner{font-size:20px;margin-top:4px}
+
+/* ===== MODAL ===== */
+.modal-overlay{
+  display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);
+  z-index:200;justify-content:center;align-items:center;padding:20px;
+}
+.modal-overlay.open{display:flex}
+.modal{
+  background:var(--bg);border-radius:var(--radius);padding:24px;
+  max-width:550px;width:100%;max-height:85vh;overflow-y:auto;
+  box-shadow:0 8px 40px rgba(0,0,0,.5);animation:modalIn .3s ease;
+}
+@keyframes modalIn{from{opacity:0;transform:scale(.9)}to{opacity:1;transform:scale(1)}}
+.modal h2{color:var(--accent);margin-bottom:16px;font-size:20px;text-align:center}
+.modal-section{background:var(--card);border-radius:10px;padding:14px;margin-bottom:12px}
+.modal-section h3{font-size:14px;color:var(--accent);margin-bottom:10px}
+.modal-row{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+.modal-row:last-child{margin-bottom:0}
+.modal-row label{font-size:14px;flex:1}
+.modal-row select,.modal-row input[type="number"],.modal-row input[type="text"]{
+  background:var(--bg);border:1px solid var(--bg-light);color:var(--text);
+  border-radius:8px;padding:6px 10px;font-size:14px;font-family:inherit;min-width:100px;
+}
+.modal-row input[type="number"]{width:80px;text-align:center}
+.toggle{position:relative;width:48px;height:26px;background:var(--bg-light);border-radius:13px;cursor:pointer;transition:var(--transition);flex-shrink:0}
+.toggle.on{background:var(--accent)}
+.toggle::after{content:'';position:absolute;top:3px;right:3px;width:20px;height:20px;background:#fff;border-radius:50%;transition:var(--transition)}
+.toggle.on::after{right:25px}
+.modal .btn-close{display:block;margin:12px auto 0;background:var(--accent);color:var(--text-dark);padding:10px 30px;font-size:16px}
+.modal .btn-reset-all{display:block;margin:8px auto 0;background:var(--red);color:#fff;padding:8px 20px;font-size:13px}
+.family-names-container{max-height:200px;overflow-y:auto}
+.footer{text-align:center;padding:16px;font-size:12px;opacity:.4}
+
+@media(max-width:768px){
+  .scoreboard{grid-template-columns:repeat(2,1fr)!important}
+  .family-panels{grid-template-columns:1fr}
+  .top-bar{padding:10px 12px}
+  .top-bar h1{font-size:18px}
+  .question-box .q-text{font-size:20px}
+  .host-controls button{padding:10px 14px;font-size:13px}
+}
+@media(max-width:480px){
+  .scoreboard{grid-template-columns:repeat(2,1fr)!important;gap:8px;padding:10px}
+  .score-card .fscore{font-size:24px}
+  .question-box{padding:20px 14px}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== شريط علوي ===== -->
+<div class="top-bar">
+  <div class="bar-btns">
+    <button onclick="openSettings()">⚙️ الإعدادات</button>
+    <button id="btnHostView" onclick="toggleHostView()">👁️ عرض المقدم</button>
+  </div>
+  <div class="title-section">
+    <h1 id="gameTitle">صح أو خطأ × مضاعفة</h1>
+  </div>
+  <div class="info">
+    <span id="roundInfo">السؤال ـ / ـ</span>
+    <span class="timer-text" id="timerText" style="display:none">25</span>
+  </div>
+</div>
+<div class="timer-container" id="timerContainer">
+  <div class="timer-bar" id="timerBar" style="width:100%"></div>
+</div>
+
+<!-- ===== لوحة النتائج ===== -->
+<div class="scoreboard" id="scoreboard"></div>
+
+<!-- ===== شريط تقدم اللعبة ===== -->
+<div class="game-progress" id="gameProgressArea">
+  <div class="progress-outer">
+    <div class="progress-inner" id="progressBar" style="width:0%"></div>
+    <div class="progress-label" id="progressLabel"></div>
+  </div>
+</div>
+
+<!-- ===== منطقة السؤال ===== -->
+<div class="question-area">
+  <div class="question-box" id="questionBox">
+    <div class="q-number" id="qNumber"></div>
+    <div class="q-text" id="qText">اضغط "سؤال جديد" للبدء</div>
+    <div id="qPoints"></div>
+    <div id="answerArea"></div>
+  </div>
+</div>
+
+<!-- ===== بانر انتهاء اللعبة ===== -->
+<div id="gameOverBanner"></div>
+
+<!-- ===== لوحات الأسر ===== -->
+<div class="family-panels" id="familyPanels"></div>
+
+<!-- ===== أزرار التحكم ===== -->
+<div class="host-controls">
+  <button onclick="newQuestion()" id="btnNew">📝 سؤال جديد</button>
+  <button onclick="lockAnswers()" id="btnLock" disabled>🔒 قفل الإجابات</button>
+  <button onclick="revealAnswer()" id="btnReveal" disabled>✨ كشف الإجابة</button>
+  <button onclick="undoLastReveal()" id="btnUndo" class="btn-secondary" disabled>↩️ تراجع</button>
+  <button onclick="resetScores()" class="btn-danger">🔄 صفر النقاط</button>
+</div>
+
+<div class="footer" id="footerText">صح أو خطأ × مضاعفة — السلطان</div>
+
+<!-- ===== نافذة الإعدادات ===== -->
+<div class="modal-overlay" id="settingsModal">
+  <div class="modal">
+    <h2>⚙️ الإعدادات</h2>
+
+    <!-- اسم اللعبة -->
+    <div class="modal-section">
+      <h3>🏷️ اسم اللعبة</h3>
+      <div class="modal-row">
+        <label>اسم اللعبة:</label>
+        <input type="text" id="gameTitleInput" placeholder="صح أو خطأ × مضاعفة"
+          onchange="updateGameTitle(this.value)">
+      </div>
+    </div>
+
+    <!-- عدد الأسر -->
+    <div class="modal-section">
+      <h3>👨‍👩‍👧‍👦 عدد الأسر</h3>
+      <div class="modal-row">
+        <label>عدد الأسر المتنافسة:</label>
+        <select id="familyCount" onchange="updateFamilyCount(parseInt(this.value))">
+          <option value="2">٢ أسر</option>
+          <option value="3">٣ أسر</option>
+          <option value="4" selected>٤ أسر</option>
+          <option value="5">٥ أسر</option>
+          <option value="6">٦ أسر</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- أسماء الأسر -->
+    <div class="modal-section">
+      <h3>✏️ أسماء الأسر</h3>
+      <div class="family-names-container" id="familyNamesContainer"></div>
+    </div>
+
+    <!-- عدد الأسئلة -->
+    <div class="modal-section">
+      <h3>📊 عدد الأسئلة</h3>
+      <div class="modal-row">
+        <label>كم سؤال تبي تلعب؟</label>
+        <select id="totalQuestionsSelect" onchange="updateSetting('totalQuestions',parseInt(this.value))">
+          <option value="5">٥ أسئلة</option>
+          <option value="10">١٠ أسئلة</option>
+          <option value="15">١٥ سؤال</option>
+          <option value="20">٢٠ سؤال</option>
+          <option value="25">٢٥ سؤال</option>
+          <option value="30">٣٠ سؤال</option>
+          <option value="40">٤٠ سؤال</option>
+          <option value="50">٥٠ سؤال</option>
+          <option value="60">٦٠ سؤال (الكل)</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- نظام العقوبات -->
+    <div class="modal-section">
+      <h3>⚖️ نظام العقوبات</h3>
+      <div class="modal-row">
+        <label>عند الإجابة الخاطئة:</label>
+        <select id="penaltyMode" onchange="updateSetting('penaltyMode',this.value)">
+          <option value="none">بدون خصم</option>
+          <option value="minus">خصم نقاط</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- المؤقت -->
+    <div class="modal-section">
+      <h3>⏱️ المؤقت</h3>
+      <div class="modal-row">
+        <label>تفعيل المؤقت:</label>
+        <div class="toggle" id="toggleTimer" onclick="toggleSetting('timerEnabled')"></div>
+      </div>
+      <div class="modal-row">
+        <label>المدة (ثواني):</label>
+        <input type="number" id="timerSeconds" min="5" max="120" value="25"
+          onchange="updateSetting('timerSeconds',parseInt(this.value))">
+      </div>
+    </div>
+
+    <!-- القفل والتتابع -->
+    <div class="modal-section">
+      <h3>🔄 القفل والتتابع</h3>
+      <div class="modal-row">
+        <label>قفل تلقائي عند إجابة الجميع:</label>
+        <div class="toggle" id="toggleAutoLock" onclick="toggleSetting('autoLockWhenAllAnswered')"></div>
+      </div>
+      <div class="modal-row">
+        <label>انتقال تلقائي بعد الكشف:</label>
+        <div class="toggle" id="toggleAutoNext" onclick="toggleSetting('autoNextAfterReveal')"></div>
+      </div>
+      <div class="modal-row">
+        <label>تأخير الانتقال (ثواني):</label>
+        <input type="number" id="autoNextDelay" min="1" max="10" value="2"
+          onchange="updateSetting('autoNextDelay',parseInt(this.value))">
+      </div>
+    </div>
+
+    <!-- ترتيب الأسئلة -->
+    <div class="modal-section">
+      <h3>🎲 ترتيب الأسئلة</h3>
+      <div class="modal-row">
+        <label>ترتيب الأسئلة:</label>
+        <select id="questionOrder" onchange="updateSetting('questionOrder',this.value)">
+          <option value="sequential">تتابعي</option>
+          <option value="random">عشوائي</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- الصوت -->
+    <div class="modal-section">
+      <h3>🔊 الصوت</h3>
+      <div class="modal-row">
+        <label>تفعيل الأصوات:</label>
+        <div class="toggle" id="toggleSound" onclick="toggleSetting('soundEnabled')"></div>
+      </div>
+    </div>
+
+    <button class="btn-close" onclick="closeSettings()">✅ حفظ وإغلاق</button>
+    <button class="btn-reset-all" onclick="resetEverything()">🗑️ إعادة تعيين كل شيء</button>
+  </div>
+</div>
+
+<script>
+/* ===== قاعدة بيانات الأسئلة (60 سؤال) ===== */
+const QUESTIONS = [
+  {id:1, q:"الأرض تدور حول الشمس", a:true, pts:10},
+  {id:2, q:"عدد أيام السنة الميلادية 360 يوماً", a:false, pts:10},
+  {id:3, q:"الحوت هو أكبر حيوان على وجه الأرض", a:true, pts:10},
+  {id:4, q:"عاصمة اليابان هي بكين", a:false, pts:10},
+  {id:5, q:"الماء يتكون من ذرتي هيدروجين وذرة أكسجين", a:true, pts:10},
+  {id:6, q:"القمر ينتج ضوءه الخاص", a:false, pts:10},
+  {id:7, q:"أطول نهر في العالم هو نهر النيل", a:true, pts:20},
+  {id:8, q:"عدد قارات العالم خمس قارات", a:false, pts:10},
+  {id:9, q:"النحل يصنع العسل", a:true, pts:10},
+  {id:10, q:"الصوت ينتقل في الفضاء الخارجي", a:false, pts:20},
+  {id:11, q:"جبل إيفرست هو أعلى جبل في العالم", a:true, pts:10},
+  {id:12, q:"الخفاش من الطيور", a:false, pts:20},
+  {id:13, q:"الذهب لا يصدأ", a:true, pts:20},
+  {id:14, q:"كوكب المريخ يُلقب بالكوكب الأحمر", a:true, pts:10},
+  {id:15, q:"البطريق يستطيع الطيران", a:false, pts:10},
+  {id:16, q:"المحيط الهادئ هو أكبر محيطات العالم", a:true, pts:20},
+  {id:17, q:"الألماس مصنوع من الكربون", a:true, pts:20},
+  {id:18, q:"الإنسان يستخدم 10% فقط من دماغه", a:false, pts:30},
+  {id:19, q:"سور الصين العظيم يمكن رؤيته من الفضاء بالعين المجردة", a:false, pts:30},
+  {id:20, q:"الأخطبوط لديه ثلاثة قلوب", a:true, pts:30},
+  {id:21, q:"درجة غليان الماء هي 100 درجة مئوية", a:true, pts:10},
+  {id:22, q:"أستراليا هي أصغر قارة في العالم", a:true, pts:20},
+  {id:23, q:"البرق والرعد يحدثان في نفس اللحظة", a:true, pts:30},
+  {id:24, q:"الضوء أسرع من الصوت", a:true, pts:10},
+  {id:25, q:"عدد ألوان قوس قزح ستة ألوان", a:false, pts:20},
+  {id:26, q:"المملكة العربية السعودية أكبر دولة في شبه الجزيرة العربية", a:true, pts:10},
+  {id:27, q:"الفيل يخاف من الفأر", a:false, pts:20},
+  {id:28, q:"كوكب زحل لديه حلقات", a:true, pts:10},
+  {id:29, q:"الطماطم من الفواكه وليست من الخضروات", a:true, pts:30},
+  {id:30, q:"عدد أسنان الإنسان البالغ 32 سناً", a:true, pts:10},
+  {id:31, q:"النعامة تدفن رأسها في الرمال عند الخوف", a:false, pts:20},
+  {id:32, q:"الزرافة ليس لها صوت", a:false, pts:30},
+  {id:33, q:"عدد حروف اللغة العربية 28 حرفاً", a:true, pts:10},
+  {id:34, q:"أول من مشى على سطح القمر هو نيل أرمسترونغ", a:true, pts:10},
+  {id:35, q:"يستطيع الإنسان العيش بدون ماء لمدة شهر", a:false, pts:20},
+  {id:36, q:"الكلب يرى بالأبيض والأسود فقط", a:false, pts:30},
+  {id:37, q:"عدد أرجل العنكبوت ثمانية", a:true, pts:10},
+  {id:38, q:"الحليب حمضي", a:false, pts:20},
+  {id:39, q:"القلب يقع في الجهة اليسرى من الصدر", a:false, pts:30},
+  {id:40, q:"البحر الميت هو أخفض نقطة على سطح الأرض", a:true, pts:20},
+  {id:41, q:"سرعة الضوء حوالي 300 ألف كيلومتر في الثانية", a:true, pts:20},
+  {id:42, q:"يمكن للإنسان أن يعطس وعيناه مفتوحتان", a:false, pts:20},
+  {id:43, q:"اللغة الصينية هي أكثر لغة يتحدث بها سكان العالم", a:true, pts:20},
+  {id:44, q:"عدد كواكب المجموعة الشمسية تسعة كواكب", a:false, pts:20},
+  {id:45, q:"الجمل يخزن الماء في سنامه", a:false, pts:30},
+  {id:46, q:"حاسة الشم عند الكلاب أقوى من الإنسان", a:true, pts:10},
+  {id:47, q:"مصر تقع في قارة آسيا", a:false, pts:10},
+  {id:48, q:"عدد أيام شهر فبراير دائماً 28 يوماً", a:false, pts:10},
+  {id:49, q:"السكر الأبيض مصدره نبات قصب السكر أو البنجر", a:true, pts:10},
+  {id:50, q:"الأذن هي أصغر عظمة في جسم الإنسان", a:true, pts:20},
+  {id:51, q:"البصل يسبب البكاء بسبب مادة كيميائية تتطاير عند تقطيعه", a:true, pts:10},
+  {id:52, q:"الثلج يغرق في الماء", a:false, pts:10},
+  {id:53, q:"يتغير لون دم الإنسان إلى أزرق داخل الجسم", a:false, pts:30},
+  {id:54, q:"الموز ينمو على أشجار", a:false, pts:30},
+  {id:55, q:"الكعبة المشرفة تقع في مدينة مكة المكرمة", a:true, pts:10},
+  {id:56, q:"الحصان ينام واقفاً", a:true, pts:20},
+  {id:57, q:"عدد أضلاع المثلث أربعة", a:false, pts:10},
+  {id:58, q:"فصيلة الدم الأكثر شيوعاً في العالم هي O+", a:true, pts:20},
+  {id:59, q:"الأرض أقرب كوكب إلى الشمس", a:false, pts:10},
+  {id:60, q:"يمكن لسمكة القرش أن تشم الدم من مسافة بعيدة", a:true, pts:20}
+];
+
+/* ===== مفاتيح الأسر ===== */
+const ALL_FAMILY_KEYS = ['A','B','C','D','E','F'];
+const DEFAULT_FAMILY_NAMES = {
+  A:'الأسرة الأولى', B:'الأسرة الثانية', C:'الأسرة الثالثة',
+  D:'الأسرة الرابعة', E:'الأسرة الخامسة', F:'الأسرة السادسة'
+};
+
+function getActiveFamilyKeys(){
+  const count = state.settings.familyCount || 4;
+  return ALL_FAMILY_KEYS.slice(0, count);
+}
+
+/* ===== الحالة الافتراضية ===== */
+function defaultState(){
+  const families = {};
+  ALL_FAMILY_KEYS.forEach(k => {
+    families[k] = {name:DEFAULT_FAMILY_NAMES[k], score:0, choice:null, double:false, answered:false};
+  });
+  return {
+    settings:{
+      gameTitle:'صح أو خطأ × مضاعفة',
+      familyCount:4,
+      penaltyMode:'none',
+      timerEnabled:false,
+      timerSeconds:25,
+      autoLockWhenAllAnswered:false,
+      autoNextAfterReveal:false,
+      autoNextDelay:2,
+      questionOrder:'sequential',
+      soundEnabled:true,
+      totalQuestions:20,
+    },
+    families: families,
+    questionIndex:-1,
+    questionsPlayed:0,
+    currentQuestion:null,
+    isLocked:false,
+    isRevealed:false,
+    hostView:true,
+    historyStack:[],
+    usedQuestions:[],
+    gameFinished:false,
+  };
+}
+
+/* ===== إدارة الحالة ===== */
+let state;
+const STORAGE_KEY = 'tfx_double_state_v2';
+
+function loadState(){
+  try{
+    const saved = localStorage.getItem(STORAGE_KEY);
+    if(saved){
+      state = JSON.parse(saved);
+      const def = defaultState();
+      if(!state.settings) state.settings = def.settings;
+      Object.keys(def.settings).forEach(k => {
+        if(state.settings[k] === undefined) state.settings[k] = def.settings[k];
+      });
+      if(!state.families) state.families = def.families;
+      // تأكد من وجود جميع الأسر
+      ALL_FAMILY_KEYS.forEach(k => {
+        if(!state.families[k]) state.families[k] = {name:DEFAULT_FAMILY_NAMES[k],score:0,choice:null,double:false,answered:false};
+      });
+      if(!state.historyStack) state.historyStack = [];
+      if(!state.usedQuestions) state.usedQuestions = [];
+      if(state.hostView === undefined) state.hostView = true;
+      if(state.questionsPlayed === undefined) state.questionsPlayed = 0;
+      if(state.gameFinished === undefined) state.gameFinished = false;
+    } else {
+      state = defaultState();
+    }
+  } catch(e){
+    state = defaultState();
+  }
+}
+
+function saveState(){
+  try{ localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch(e){}
+}
+
+/* ===== الصوت ===== */
+let audioCtx;
+function getAudioCtx(){
+  if(!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  return audioCtx;
+}
+function playBeep(freq,duration,type='sine'){
+  if(!state.settings.soundEnabled) return;
+  try{
+    const ctx=getAudioCtx(), osc=ctx.createOscillator(), gain=ctx.createGain();
+    osc.type=type; osc.frequency.value=freq;
+    gain.gain.value=0.15; gain.gain.exponentialRampToValueAtTime(0.001,ctx.currentTime+duration);
+    osc.connect(gain); gain.connect(ctx.destination);
+    osc.start(ctx.currentTime); osc.stop(ctx.currentTime+duration);
+  }catch(e){}
+}
+function soundCorrect(){ playBeep(880,.2); setTimeout(()=>playBeep(1100,.3),150); }
+function soundWrong(){ playBeep(220,.4,'sawtooth'); }
+function soundLock(){ playBeep(660,.15); }
+function soundTick(){ playBeep(1000,.05); }
+function soundNewQ(){ playBeep(523,.1); setTimeout(()=>playBeep(659,.1),100); setTimeout(()=>playBeep(784,.15),200); }
+function soundTimeUp(){ playBeep(330,.15,'square'); setTimeout(()=>playBeep(260,.3,'square'),150); }
+function soundGameOver(){ playBeep(523,.15); setTimeout(()=>playBeep(659,.15),150); setTimeout(()=>playBeep(784,.15),300); setTimeout(()=>playBeep(1047,.4),450); }
+
+/* ===== المؤقت ===== */
+let timerInterval=null, timerRemaining=0;
+function startTimer(){
+  stopTimer();
+  if(!state.settings.timerEnabled) return;
+  timerRemaining = state.settings.timerSeconds;
+  const total = timerRemaining;
+  const tt=document.getElementById('timerText'), tb=document.getElementById('timerBar'), tc=document.getElementById('timerContainer');
+  tt.style.display='inline'; tc.classList.add('visible');
+  tb.style.width='100%'; tb.classList.remove('warning'); tt.classList.remove('warning');
+  tt.textContent=timerRemaining;
+  timerInterval=setInterval(()=>{
+    timerRemaining--;
+    if(timerRemaining<=0){
+      timerRemaining=0; tt.textContent='0'; tb.style.width='0%';
+      stopTimer(); soundTimeUp(); lockAnswers(); return;
+    }
+    tt.textContent=timerRemaining;
+    tb.style.width=(timerRemaining/total*100)+'%';
+    if(timerRemaining<=5){ tb.classList.add('warning'); tt.classList.add('warning'); soundTick(); }
+  },1000);
+}
+function stopTimer(){ if(timerInterval){clearInterval(timerInterval);timerInterval=null;} }
+
+/* ===== وظائف اللعبة الأساسية ===== */
+
+function setQuestion(q){
+  state.currentQuestion=q; state.isLocked=false; state.isRevealed=false;
+  getActiveFamilyKeys().forEach(k=>{
+    state.families[k].choice=null; state.families[k].double=false; state.families[k].answered=false;
+  });
+  saveState(); render(); startTimer(); soundNewQ();
+}
+
+function newQuestion(){
+  if(state.gameFinished) return;
+  stopTimer();
+  const total = state.settings.totalQuestions;
+  // تحقق من انتهاء الأسئلة
+  if(state.questionsPlayed >= total){
+    finishGame(); return;
+  }
+
+  const order = state.settings.questionOrder;
+  let nextQ = null;
+
+  if(order === 'sequential'){
+    state.questionIndex++;
+    if(state.questionIndex >= QUESTIONS.length) state.questionIndex = 0;
+    nextQ = QUESTIONS[state.questionIndex];
+  } else {
+    const unused = QUESTIONS.filter(q => !state.usedQuestions.includes(q.id));
+    if(unused.length === 0){
+      state.usedQuestions = [];
+      nextQ = QUESTIONS[Math.floor(Math.random()*QUESTIONS.length)];
+    } else {
+      nextQ = unused[Math.floor(Math.random()*unused.length)];
+    }
+    state.questionIndex = QUESTIONS.indexOf(nextQ);
+    state.usedQuestions.push(nextQ.id);
+  }
+  setQuestion(nextQ);
+}
+
+function selectChoice(family,choice){
+  if(state.isLocked||state.isRevealed||!state.currentQuestion||state.gameFinished) return;
+  const f=state.families[family];
+  if(f.choice===choice){ f.choice=null; f.answered=false; }
+  else { f.choice=choice; f.answered=true; playBeep(600,.08); }
+  saveState(); render(); checkAutoLock();
+}
+
+function toggleDouble(family){
+  if(state.isLocked||state.isRevealed||!state.currentQuestion||state.gameFinished) return;
+  state.families[family].double=!state.families[family].double;
+  if(state.families[family].double) playBeep(900,.1);
+  saveState(); render();
+}
+
+function checkAutoLock(){
+  if(!state.settings.autoLockWhenAllAnswered||state.isLocked) return;
+  const allAnswered = getActiveFamilyKeys().every(k=>state.families[k].answered);
+  if(allAnswered) lockAnswers();
+}
+
+function lockAnswers(){
+  if(!state.currentQuestion||state.isLocked) return;
+  state.isLocked=true; stopTimer(); soundLock(); saveState(); render();
+}
+
+function revealAnswer(){
+  if(!state.currentQuestion||!state.isLocked||state.isRevealed) return;
+  const snapshot={
+    families:JSON.parse(JSON.stringify(state.families)),
+    questionIndex:state.questionIndex,
+    currentQuestion:{...state.currentQuestion},
+    questionsPlayed:state.questionsPlayed,
+    gameFinished:state.gameFinished,
+  };
+  state.historyStack.push(snapshot);
+
+  const correctAns=state.currentQuestion.a, pts=state.currentQuestion.pts;
+  getActiveFamilyKeys().forEach(k=>{
+    const f=state.families[k];
+    if(!f.answered||f.choice===null) return;
+    const mult=f.double?2:1;
+    if(f.choice===correctAns) f.score+=pts*mult;
+    else if(state.settings.penaltyMode==='minus') f.score-=pts*mult;
+  });
+
+  state.isRevealed=true;
+  state.questionsPlayed++;
+  saveState(); render();
+
+  // تأثيرات بصرية
+  const correctAnsVal=state.currentQuestion.a;
+  getActiveFamilyKeys().forEach(k=>{
+    const f=state.families[k], panel=document.getElementById('panel-'+k);
+    if(!panel||!f.answered) return;
+    if(f.choice===correctAnsVal){ panel.classList.add('correct-flash'); setTimeout(()=>panel.classList.remove('correct-flash'),700); }
+    else { panel.classList.add('wrong-flash'); setTimeout(()=>panel.classList.remove('wrong-flash'),700); }
+  });
+
+  const anyCorrect=getActiveFamilyKeys().some(k=>state.families[k].answered&&state.families[k].choice===correctAnsVal);
+  if(anyCorrect) soundCorrect(); else soundWrong();
+
+  // تحقق من انتهاء اللعبة
+  if(state.questionsPlayed>=state.settings.totalQuestions){
+    setTimeout(()=>finishGame(), 1500);
+    return;
+  }
+
+  if(state.settings.autoNextAfterReveal){
+    setTimeout(()=>{ if(state.isRevealed&&!state.gameFinished) newQuestion(); }, state.settings.autoNextDelay*1000);
+  }
+}
+
+function undoLastReveal(){
+  if(state.historyStack.length===0) return;
+  const snap=state.historyStack.pop();
+  state.families=snap.families;
+  state.questionIndex=snap.questionIndex;
+  state.currentQuestion=snap.currentQuestion;
+  state.questionsPlayed=snap.questionsPlayed;
+  state.gameFinished=snap.gameFinished;
+  state.isLocked=true; state.isRevealed=false;
+  saveState(); render();
+}
+
+function finishGame(){
+  state.gameFinished=true;
+  saveState(); render();
+  soundGameOver();
+}
+
+function resetScores(){
+  if(!confirm('هل تريد تصفير نقاط جميع الأسر؟')) return;
+  ALL_FAMILY_KEYS.forEach(k=>state.families[k].score=0);
+  state.historyStack=[];
+  state.questionsPlayed=0;
+  state.gameFinished=false;
+  state.currentQuestion=null;
+  state.questionIndex=-1;
+  state.usedQuestions=[];
+  saveState(); render();
+}
+
+function resetEverything(){
+  if(!confirm('هل تريد إعادة تعيين كل شيء؟ سيتم حذف جميع البيانات.')) return;
+  localStorage.removeItem(STORAGE_KEY); stopTimer();
+  state=defaultState(); saveState(); render(); syncSettingsUI(); closeSettings();
+}
+
+/* ===== عرض المقدم ===== */
+function toggleHostView(){ state.hostView=!state.hostView; saveState(); render(); }
+
+/* ===== الإعدادات ===== */
+function openSettings(){ syncSettingsUI(); document.getElementById('settingsModal').classList.add('open'); }
+function closeSettings(){ document.getElementById('settingsModal').classList.remove('open'); }
+
+function syncSettingsUI(){
+  const s=state.settings;
+  document.getElementById('gameTitleInput').value=s.gameTitle;
+  document.getElementById('familyCount').value=s.familyCount;
+  document.getElementById('penaltyMode').value=s.penaltyMode;
+  document.getElementById('timerSeconds').value=s.timerSeconds;
+  document.getElementById('autoNextDelay').value=s.autoNextDelay;
+  document.getElementById('questionOrder').value=s.questionOrder;
+  document.getElementById('totalQuestionsSelect').value=s.totalQuestions;
+  setToggle('toggleTimer',s.timerEnabled);
+  setToggle('toggleAutoLock',s.autoLockWhenAllAnswered);
+  setToggle('toggleAutoNext',s.autoNextAfterReveal);
+  setToggle('toggleSound',s.soundEnabled);
+  renderFamilyNamesSettings();
+}
+
+function renderFamilyNamesSettings(){
+  const container=document.getElementById('familyNamesContainer');
+  const keys=getActiveFamilyKeys();
+  container.innerHTML=keys.map((k,i)=>`
+    <div class="modal-row">
+      <label>الأسرة ${i+1}:</label>
+      <input type="text" value="${esc(state.families[k].name)}"
+        onchange="updateFamilyName('${k}',this.value)">
+    </div>
+  `).join('');
+}
+
+function setToggle(id,val){
+  const el=document.getElementById(id);
+  if(val) el.classList.add('on'); else el.classList.remove('on');
+}
+
+function toggleSetting(key){
+  state.settings[key]=!state.settings[key]; saveState(); syncSettingsUI(); render();
+}
+
+function updateSetting(key,val){
+  state.settings[key]=val; saveState(); render();
+}
+
+function updateGameTitle(val){
+  state.settings.gameTitle=val||'صح أو خطأ × مضاعفة';
+  saveState(); render();
+}
+
+function updateFamilyCount(count){
+  state.settings.familyCount=count;
+  saveState(); render(); renderFamilyNamesSettings();
+}
+
+function updateFamilyName(key,name){
+  state.families[key].name=name||DEFAULT_FAMILY_NAMES[key];
+  saveState(); render();
+}
+
+/* ===== الرسم ===== */
+function render(){
+  renderTitle();
+  renderScoreboard();
+  renderProgress();
+  renderQuestion();
+  renderGameOver();
+  renderFamilyPanels();
+  renderControls();
+  renderTimerVisibility();
+  renderHostViewBtn();
+}
+
+function renderTitle(){
+  document.getElementById('gameTitle').textContent=state.settings.gameTitle;
+  document.title=state.settings.gameTitle;
+  document.getElementById('footerText').textContent=state.settings.gameTitle+' — السلطان';
+}
+
+function renderScoreboard(){
+  const sb=document.getElementById('scoreboard');
+  const keys=getActiveFamilyKeys();
+  const cols=keys.length<=4?keys.length:Math.ceil(keys.length/2);
+  sb.style.gridTemplateColumns=`repeat(${Math.min(keys.length,cols)},1fr)`;
+  sb.innerHTML=keys.map(k=>{
+    const f=state.families[k];
+    let badgeClass='',badgeText='—';
+    if(state.isRevealed&&f.answered){
+      if(f.choice===state.currentQuestion.a){ badgeClass='correct'; badgeText='✅ صحيح'; }
+      else { badgeClass='wrong'; badgeText='❌ خطأ'; }
+    } else if(f.answered){ badgeClass='answered'; badgeText='تمت الإجابة'; }
+    const highlight=f.answered&&!state.isRevealed?'highlight':'';
+    return `<div class="score-card ${highlight}">
+      <div class="fname">${esc(f.name)}</div>
+      <div class="fscore">${f.score}</div>
+      <div class="badge ${badgeClass}">${badgeText}</div>
+    </div>`;
+  }).join('');
+}
+
+function renderProgress(){
+  const total=state.settings.totalQuestions;
+  const played=state.questionsPlayed;
+  const pct=total>0?Math.min((played/total)*100,100):0;
+  document.getElementById('progressBar').style.width=pct+'%';
+  document.getElementById('progressLabel').textContent=`${played} / ${total} سؤال`;
+}
+
+function renderQuestion(){
+  const q=state.currentQuestion;
+  const qNum=document.getElementById('qNumber');
+  const qText=document.getElementById('qText');
+  const qPts=document.getElementById('qPoints');
+  const ansArea=document.getElementById('answerArea');
+  const roundInfo=document.getElementById('roundInfo');
+  const total=state.settings.totalQuestions;
+
+  if(!q){
+    qNum.textContent='';
+    qText.textContent=state.gameFinished?'🏆 انتهت اللعبة!':'اضغط "سؤال جديد" للبدء';
+    qPts.innerHTML=''; ansArea.innerHTML='';
+    roundInfo.textContent=`السؤال ـ / ${total}`;
+    return;
+  }
+  const idx=state.questionsPlayed+(state.isRevealed?0:1);
+  roundInfo.textContent=`السؤال ${idx} / ${total}`;
+  qNum.textContent=`السؤال رقم ${idx}`;
+  qText.textContent=q.q;
+  qPts.innerHTML=`<span class="q-points">${q.pts} نقطة</span>`;
+
+  if(state.isRevealed){
+    const cls=q.a?'true-ans':'false-ans';
+    const txt=q.a?'الإجابة الصحيحة: ✅ صح':'الإجابة الصحيحة: ❌ خطأ';
+    ansArea.innerHTML=`<div class="answer-reveal ${cls}">${txt}</div>`;
+  } else if(state.hostView&&state.isLocked){
+    ansArea.innerHTML=`<div class="hidden-answer">🔒 الإجابة مخفية — اضغط "كشف الإجابة"</div>`;
+  } else if(!state.hostView&&q){
+    const cls=q.a?'true-ans':'false-ans';
+    const txt=q.a?'(الإجابة: ✅ صح)':'(الإجابة: ❌ خطأ)';
+    ansArea.innerHTML=`<div class="answer-reveal ${cls}" style="opacity:.6;font-size:16px">${txt}</div>`;
+  } else { ansArea.innerHTML=''; }
+}
+
+function renderGameOver(){
+  const banner=document.getElementById('gameOverBanner');
+  if(!state.gameFinished){ banner.innerHTML=''; return; }
+  const keys=getActiveFamilyKeys();
+  const maxScore=Math.max(...keys.map(k=>state.families[k].score));
+  const winners=keys.filter(k=>state.families[k].score===maxScore);
+  const winnerNames=winners.map(k=>state.families[k].name).join(' و ');
+  const isTie=winners.length>1;
+  banner.innerHTML=`<div class="game-over-banner">
+    <h2>🏆 انتهت اللعبة!</h2>
+    <div class="winner">${isTie?'تعادل بين: ':' الفائز: '}${esc(winnerNames)}</div>
+    <div style="margin-top:6px;font-size:16px">بمجموع ${maxScore} نقطة</div>
+  </div>`;
+}
+
+function renderFamilyPanels(){
+  const panels=document.getElementById('familyPanels');
+  const keys=getActiveFamilyKeys();
+  panels.innerHTML=keys.map(k=>{
+    const f=state.families[k];
+    const disabled=state.isLocked||state.isRevealed||!state.currentQuestion||state.gameFinished;
+    const disabledAttr=disabled?'disabled':'';
+    const statusText=f.answered?'تمت الإجابة ✅':'بانتظار الإجابة...';
+    const statusClass=f.answered?'done':'';
+    const trueSelected=f.choice===true?'selected':'';
+    const falseSelected=f.choice===false?'selected':'';
+    const doubleActive=f.double?'active':'';
+    return `<div class="family-panel" id="panel-${k}">
+      <div class="panel-header">
+        <span class="panel-name">${esc(f.name)}</span>
+        <span class="panel-status ${statusClass}">${statusText}</span>
+      </div>
+      <div class="panel-buttons">
+        <button class="btn-true ${trueSelected}" ${disabledAttr} onclick="selectChoice('${k}',true)">✅ صح</button>
+        <button class="btn-false ${falseSelected}" ${disabledAttr} onclick="selectChoice('${k}',false)">❌ خطأ</button>
+        <button class="btn-double ${doubleActive}" ${disabledAttr} onclick="toggleDouble('${k}')">🔥 مضاعفة</button>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function renderControls(){
+  const hasQ=!!state.currentQuestion;
+  document.getElementById('btnNew').disabled=state.gameFinished;
+  document.getElementById('btnLock').disabled=!hasQ||state.isLocked||state.gameFinished;
+  document.getElementById('btnReveal').disabled=!hasQ||!state.isLocked||state.isRevealed||state.gameFinished;
+  document.getElementById('btnUndo').disabled=state.historyStack.length===0;
+}
+
+function renderTimerVisibility(){
+  const tc=document.getElementById('timerContainer'), tt=document.getElementById('timerText');
+  if(state.settings.timerEnabled) tc.classList.add('visible');
+  else { tc.classList.remove('visible'); tt.style.display='none'; }
+}
+
+function renderHostViewBtn(){
+  const btn=document.getElementById('btnHostView');
+  if(state.hostView){ btn.classList.remove('active-toggle'); btn.textContent='👁️ عرض المقدم'; }
+  else { btn.classList.add('active-toggle'); btn.textContent='👁️‍🗨️ إخفاء الإجابة'; }
+}
+
+/* ===== أدوات ===== */
+function esc(str){ const d=document.createElement('div'); d.textContent=str; return d.innerHTML; }
+
+/* ===== تشغيل ===== */
+loadState(); render();
+document.getElementById('settingsModal').addEventListener('click',function(e){ if(e.target===this) closeSettings(); });
+document.addEventListener('keydown',function(e){
+  if(document.getElementById('settingsModal').classList.contains('open')) return;
+  if(e.key==='n'||e.key==='N') newQuestion();
+  if(e.key==='l'||e.key==='L') lockAnswers();
+  if(e.key==='r'||e.key==='R') revealAnswer();
+  if(e.key==='z'||e.key==='Z') undoLastReveal();
+});
+</script>
+</body>
+</html>
