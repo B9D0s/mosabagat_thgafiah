@@ -27,6 +27,8 @@
 | `7rof.html` | مسابقة الألغام | لعبة شبكة تنافسية |
 | `matching-cards.html` | مطابقة البطاقات | لعبة أزواج |
 | `true-false-game.html` | صح وخطأ | لعبة أسئلة صح/خطأ |
+| `Question-tournament.html` | بطولة الأسر | بطولة أسر MCQ مع مجموعات وإقصاء |
+| `streak-tournament.html` | بطولة السلسلة | بطولة سلسلة تنافسية |
 | `Schedule_Arrangment.html` | تخطيط الأسبوع | جدولة مع تصدير PDF |
 
 ---
@@ -49,6 +51,8 @@
 ├── mzadat.html
 ├── matching-cards.html
 ├── true-false-game.html
+├── Question-tournament.html
+├── streak-tournament.html
 ├── Schedule_Arrangment.html
 ├── CLAUDE.md
 └── README.md

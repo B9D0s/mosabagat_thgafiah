@@ -913,9 +913,25 @@ async function loadQuestions() {
     }
   } catch(e) {}
 
-  // 3) Final fallback: localQuestions
+  // 3) Fallback: ملف محلي data/questions.json (مفيد عند فتح الصفحة محلياً)
+  try {
+    const resLocal = await fetch('data/questions.json');
+    if (resLocal.ok) {
+      const raw = await resLocal.json();
+      const normalized = normalizeMCQ(raw);
+      if (normalized.length > 0) {
+        appState.questionsPool = normalized;
+        appState.questionsSource = 'local';
+        try { localStorage.setItem(CACHE_KEY, JSON.stringify(normalized)); } catch(e) {}
+        updateSourceBadge();
+        return;
+      }
+    }
+  } catch(e) {}
+
+  // 4) الملاذ الأخير: الأسئلة المدمجة
   appState.questionsPool = localQuestions.slice();
-  appState.questionsSource = 'local';
+  appState.questionsSource = 'embedded';
   updateSourceBadge();
 }
 
@@ -928,6 +944,9 @@ function updateSourceBadge() {
   } else if (src === 'cache') {
     badge.className = 'badge offline';
     badge.textContent = 'أسئلة محفوظة';
+  } else if (src === 'local') {
+    badge.className = 'badge offline';
+    badge.textContent = 'ملف محلي';
   } else {
     badge.className = 'badge offline';
     badge.textContent = 'أسئلة مدمجة';
