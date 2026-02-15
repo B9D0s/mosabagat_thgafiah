@@ -1,0 +1,1342 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>درجات ودركات</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+/* ============================================
+   RESET & VARIABLES
+   ============================================ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#F4F0E4;
+  --accent:#44A194;
+  --secondary:#537D96;
+  --highlight:#EC8F8D;
+  --white:#fff;
+  --dark:#2a2a2a;
+  --gray:#999;
+  --border:#e2ded2;
+  --r:16px;
+  --rs:10px;
+  --rf:50px;
+  --shadow:0 6px 28px rgba(0,0,0,0.08);
+  --shadow-lg:0 14px 48px rgba(0,0,0,0.13);
+  --ease:cubic-bezier(.4,0,.2,1);
+  --green:#2ecc71;
+  --red:#e74c3c;
+}
+html{height:100%}
+body{
+  font-family:'Tajawal',sans-serif;
+  background:var(--bg);
+  color:var(--dark);
+  min-height:100vh;
+  overflow-x:hidden;
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+@keyframes scaleIn{from{opacity:0;transform:scale(.88)}to{opacity:1;transform:scale(1)}}
+@keyframes bounceIn{0%{transform:scale(.3);opacity:0}50%{transform:scale(1.06)}70%{transform:scale(.96)}100%{transform:scale(1);opacity:1}}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.04)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes confetti{0%{transform:translateY(-100vh) rotate(0);opacity:1}100%{transform:translateY(100vh) rotate(720deg);opacity:0}}
+@keyframes glow{0%,100%{box-shadow:0 0 8px rgba(68,161,148,.2)}50%{box-shadow:0 0 24px rgba(68,161,148,.45)}}
+@keyframes slideDown{from{transform:translateX(-50%) translateY(-80px)}to{transform:translateX(-50%) translateY(0)}}
+@keyframes timerTick{0%,100%{transform:scale(1)}50%{transform:scale(1.15)}}
+@keyframes crownFloat{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-10px) rotate(3deg)}}
+@keyframes scoreCount{from{transform:scale(1.3);opacity:.5}to{transform:scale(1);opacity:1}}
+@keyframes glowPulse{
+  0%,100%{box-shadow:0 0 6px 2px var(--glow-color,rgba(68,161,148,.3))}
+  50%{box-shadow:0 0 18px 6px var(--glow-color,rgba(68,161,148,.5))}
+}
+
+/* ============================================
+   SPA SCREEN SYSTEM — strict single screen
+   ============================================ */
+.screen{
+  display:none !important;
+}
+.screen.active{
+  display:flex !important;
+  animation:fadeUp .4s var(--ease);
+}
+
+/* ============================================
+   CENTERED SCREEN LAYOUT
+   All screens use flex centering by default.
+   Screens with scrollable board content use
+   flex-direction:column + align-items:center.
+   ============================================ */
+.screen{
+  min-height:100vh;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  width:100%;
+}
+/* Board/Cat screens need full width children */
+#boardScreen,#catScreen{
+  align-items:stretch;
+  justify-content:flex-start;
+  padding-top:10px;
+}
+
+.container{max-width:1100px;margin:0 auto;padding:20px 16px;width:100%}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:12px 28px;border:none;border-radius:var(--rs);
+  font-family:inherit;font-size:1rem;font-weight:700;
+  cursor:pointer;transition:all .3s var(--ease);position:relative;overflow:hidden;
+}
+.btn:active{transform:scale(.97)}
+.btn:disabled{opacity:.4;cursor:not-allowed;transform:none!important}
+.btn-accent{background:var(--accent);color:var(--white);box-shadow:0 4px 16px rgba(68,161,148,.3)}
+.btn-accent:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 8px 24px rgba(68,161,148,.4)}
+.btn-secondary{background:var(--secondary);color:var(--white)}
+.btn-secondary:hover:not(:disabled){transform:translateY(-2px)}
+.btn-highlight{background:var(--highlight);color:var(--white)}
+.btn-outline{background:transparent;border:2px solid var(--accent);color:var(--accent)}
+.btn-outline:hover:not(:disabled){background:var(--accent);color:var(--white)}
+.btn-sm{padding:8px 18px;font-size:.88rem}
+.btn-lg{padding:14px 36px;font-size:1.1rem}
+
+/* ============================================
+   CARDS & INPUTS
+   ============================================ */
+.card{background:var(--white);border-radius:var(--r);padding:28px;box-shadow:var(--shadow)}
+.input,.select-field{
+  width:100%;padding:12px 16px;border:2px solid var(--border);
+  border-radius:var(--rs);font-family:inherit;font-size:1rem;font-weight:500;
+  background:var(--bg);color:var(--dark);transition:border-color .3s;text-align:right;
+  appearance:none;-webkit-appearance:none;
+}
+.input:focus,.select-field:focus{outline:none;border-color:var(--accent)}
+.select-field{cursor:pointer;padding-left:36px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23999' stroke-width='2' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:16px center}
+
+/* ============================================
+   WELCOME SCREEN — perfectly centered
+   ============================================ */
+#welcomeScreen{
+  padding:20px 16px;
+}
+.welcome-inner{max-width:540px;width:100%;text-align:center}
+.welcome-logo{
+  width:120px;height:120px;margin:0 auto 20px;
+  background:linear-gradient(135deg,var(--accent),var(--secondary));
+  border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-size:2.6rem;font-weight:900;color:var(--white);
+  animation:glow 3s ease-in-out infinite;
+}
+.welcome-inner h1{font-size:2.2rem;color:var(--accent);margin-bottom:4px}
+.welcome-inner .sub{color:var(--gray);margin-bottom:28px;font-size:1rem}
+.welcome-inner .card{text-align:right}
+.field{margin-bottom:16px}
+.field label{display:block;margin-bottom:6px;font-weight:700;font-size:.92rem;color:var(--secondary)}
+.team-dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-left:6px;vertical-align:middle}
+.welcome-actions{text-align:center;margin-top:20px}
+.form-err{text-align:center;color:var(--highlight);font-weight:700;font-size:.88rem;min-height:1.2em;margin-top:8px}
+
+#teamInputsArea{max-height:300px;overflow-y:auto;padding:4px 0}
+#teamInputsArea .field{animation:fadeUp .3s var(--ease)}
+
+.td0{background:#44A194}.td1{background:#EC8F8D}.td2{background:#537D96}
+.td3{background:#e6a23c}.td4{background:#9b59b6}.td5{background:#1abc9c}
+.td6{background:#e74c3c}.td7{background:#3498db}
+
+/* ============================================
+   CATEGORY SELECTION
+   ============================================ */
+#catScreen .container{max-width:750px}
+.cat-header{text-align:center;margin-bottom:20px}
+.cat-header h2{color:var(--accent);font-size:1.5rem}
+.cat-header p{color:var(--gray);font-size:.95rem;margin-top:4px}
+
+.cat-turn{
+  text-align:center;padding:10px 20px;border-radius:var(--rf);
+  font-weight:700;font-size:1rem;margin-bottom:16px;transition:all .3s;
+}
+.cat-grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:10px;
+  margin-bottom:20px;
+}
+.cat-card{
+  background:var(--white);border:2px solid var(--border);border-radius:var(--r);
+  padding:16px 12px;text-align:center;cursor:pointer;
+  transition:all .3s var(--ease);font-weight:700;font-size:.95rem;
+}
+.cat-card:hover:not(.picked):not(.disabled){
+  border-color:var(--accent);transform:translateY(-3px);box-shadow:var(--shadow);
+}
+.cat-card.picked{opacity:.5;cursor:not-allowed;border-style:dashed}
+.cat-card .cat-icon{font-size:1.5rem;margin-bottom:4px;display:block}
+.cat-card .cat-count{font-size:.72rem;color:var(--gray);font-weight:500;margin-top:3px}
+
+.cat-selected{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:16px}
+.cat-sel-group h4{font-size:.85rem;font-weight:700;margin-bottom:4px;text-align:center}
+.cat-sel-group .chips{display:flex;gap:5px;flex-wrap:wrap;justify-content:center}
+.cat-sel-group .chip{
+  padding:3px 10px;border-radius:var(--rf);font-size:.78rem;font-weight:600;
+  background:rgba(68,161,148,.1);color:var(--accent);
+}
+.cat-actions{text-align:center}
+
+/* ============================================
+   GAME BOARD
+   ============================================ */
+
+/* Top scoreboard */
+.board-top{
+  display:flex;justify-content:center;align-items:center;
+  gap:10px;flex-wrap:wrap;padding:10px 0;margin-bottom:6px;
+}
+.ts-box{
+  background:var(--white);border-radius:var(--r);padding:10px 14px;
+  display:flex;align-items:center;gap:10px;
+  box-shadow:0 3px 12px rgba(0,0,0,.05);
+  transition:all .4s var(--ease);min-width:110px;
+  border:3px solid transparent;
+}
+/* Active team highlight — dynamic glow */
+.ts-box.active-t{
+  transform:scale(1.06);
+  animation:glowPulse 1.8s ease-in-out infinite;
+}
+.ts-box .ts-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.ts-box .ts-name{font-weight:700;font-size:.85rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:80px}
+.ts-box .ts-score{font-size:1.4rem;font-weight:900;margin-right:auto}
+
+/* Turn badge — color set dynamically via inline style */
+.turn-badge{
+  color:var(--white);padding:6px 16px;
+  border-radius:var(--rf);font-size:.82rem;font-weight:700;
+  white-space:nowrap;transition:background .3s;
+}
+
+/* Board grid */
+.board-grid{display:grid;gap:8px;margin-bottom:14px}
+.board-col-header{
+  background:var(--secondary);color:var(--white);
+  border-radius:var(--rs) var(--rs) 0 0;
+  padding:10px 4px;text-align:center;
+  font-weight:700;font-size:.8rem;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.board-cell{
+  background:var(--white);border:2px solid var(--border);
+  border-radius:var(--rs);padding:12px 4px;text-align:center;
+  cursor:pointer;transition:all .25s var(--ease);
+  font-weight:800;font-size:.95rem;color:var(--accent);
+  min-height:48px;display:flex;align-items:center;justify-content:center;
+}
+.board-cell:hover:not(.used){
+  border-color:var(--accent);transform:translateY(-2px);box-shadow:var(--shadow);
+}
+.board-cell.used{
+  background:var(--bg);border-color:transparent;
+  color:var(--border);cursor:default;
+}
+.board-cell.used i{color:var(--accent);opacity:.4}
+.board-cell.pts-200{color:var(--accent)}
+.board-cell.pts-400{color:var(--secondary)}
+.board-cell.pts-600{color:var(--highlight);font-size:1rem}
+
+/* Lifelines */
+.ll-section{margin-bottom:12px}
+.ll-section-title{text-align:center;font-size:.82rem;color:var(--gray);font-weight:600;margin-bottom:8px}
+.lifelines-row{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+.ll-group{
+  display:flex;align-items:center;gap:5px;
+  background:var(--white);border-radius:var(--r);padding:7px 10px;
+  box-shadow:0 2px 8px rgba(0,0,0,.04);
+}
+.ll-group .ll-label{font-weight:700;font-size:.75rem;max-width:65px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ll-btn{
+  width:34px;height:34px;border-radius:50%;border:2px solid var(--border);
+  background:var(--white);cursor:pointer;display:flex;align-items:center;justify-content:center;
+  transition:all .25s;font-size:.85rem;color:var(--secondary);
+  position:relative;
+}
+.ll-btn:hover:not(:disabled){border-color:var(--accent);color:var(--accent);transform:scale(1.08)}
+.ll-btn:disabled{opacity:.25;cursor:not-allowed}
+.ll-btn.active-ll{border-color:var(--highlight);color:var(--highlight);animation:pulse .8s infinite}
+/* Tooltip for lifeline */
+.ll-btn[title]:hover::after{
+  content:attr(title);position:absolute;bottom:110%;left:50%;transform:translateX(-50%);
+  background:var(--dark);color:var(--white);padding:3px 10px;border-radius:6px;
+  font-size:.7rem;white-space:nowrap;pointer-events:none;z-index:10;
+}
+
+/* ============================================
+   QUESTION MODAL
+   ============================================ */
+.modal-overlay{
+  position:fixed;inset:0;background:rgba(30,30,30,.85);
+  display:none;align-items:center;justify-content:center;
+  z-index:1000;padding:16px;
+}
+.modal-overlay.show{display:flex}
+.modal-box{
+  background:var(--white);border-radius:var(--r);padding:28px 24px;
+  max-width:580px;width:100%;box-shadow:var(--shadow-lg);
+  animation:scaleIn .35s var(--ease);position:relative;
+  max-height:90vh;overflow-y:auto;
+}
+.modal-close{
+  position:absolute;top:10px;left:10px;background:none;border:none;
+  font-size:1.3rem;color:var(--gray);cursor:pointer;transition:color .2s;
+}
+.modal-close:hover{color:var(--dark)}
+
+.modal-cat{
+  display:inline-block;background:rgba(68,161,148,.08);color:var(--accent);
+  padding:3px 14px;border-radius:var(--rf);font-size:.76rem;font-weight:700;
+  margin-bottom:10px;
+}
+.modal-pts-badge{
+  display:inline-block;margin-right:8px;background:rgba(83,125,150,.1);color:var(--secondary);
+  padding:3px 12px;border-radius:var(--rf);font-size:.76rem;font-weight:700;
+}
+.modal-q{
+  font-size:1.15rem;font-weight:700;line-height:1.9;text-align:center;margin-bottom:16px;
+}
+.modal-timer{text-align:center;margin-bottom:14px}
+.modal-timer .mt-num{font-size:1.8rem;font-weight:900;color:var(--accent);transition:color .3s}
+.modal-timer .mt-num.warn{color:var(--highlight);animation:timerTick .5s infinite}
+.modal-timer .mt-bar{height:5px;background:var(--border);border-radius:4px;margin-top:5px;overflow:hidden}
+.modal-timer .mt-fill{height:100%;background:var(--accent);border-radius:4px;transition:width 1s linear,background .3s}
+.modal-timer .mt-fill.warn{background:var(--highlight)}
+
+.modal-opts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.mo-btn{
+  background:var(--white);border:2px solid var(--border);border-radius:var(--rs);
+  padding:13px 10px;font-family:inherit;font-size:.97rem;font-weight:600;
+  cursor:pointer;transition:all .25s var(--ease);text-align:center;
+}
+.mo-btn:hover:not(:disabled):not(.correct):not(.wrong){border-color:var(--accent);transform:translateY(-2px)}
+.mo-btn:disabled{cursor:not-allowed}
+/* Correct = vivid green */
+.mo-btn.correct{
+  background:var(--green) !important;
+  border-color:var(--green) !important;
+  color:var(--white) !important;
+  animation:bounceIn .4s;
+  transform:scale(1.03);
+}
+/* Wrong = vivid red */
+.mo-btn.wrong{
+  background:var(--red) !important;
+  border-color:var(--red) !important;
+  color:var(--white) !important;
+  animation:shake .4s;
+}
+/* Reveal correct after wrong */
+.mo-btn.reveal{
+  background:rgba(46,204,113,.15) !important;
+  border-color:var(--green) !important;
+  color:var(--green) !important;
+}
+.mo-btn .mo-lbl{
+  display:inline-flex;width:24px;height:24px;border-radius:50%;background:var(--bg);
+  align-items:center;justify-content:center;font-size:.73rem;font-weight:800;
+  margin-left:6px;vertical-align:middle;transition:all .25s;
+}
+.mo-btn.correct .mo-lbl,.mo-btn.wrong .mo-lbl{background:rgba(255,255,255,.25);color:var(--white)}
+
+.modal-feedback{
+  text-align:center;margin-top:14px;font-weight:700;font-size:.95rem;min-height:1.3em;
+}
+.modal-feedback.ok{color:var(--green)}
+.modal-feedback.fail{color:var(--red)}
+
+.modal-ll-info{
+  text-align:center;margin-bottom:10px;padding:5px 12px;
+  border-radius:var(--rf);font-size:.82rem;font-weight:700;
+}
+.ll-info-hole{background:rgba(236,143,141,.1);color:var(--highlight)}
+.ll-info-double{background:rgba(83,125,150,.1);color:var(--secondary)}
+.ll-info-call{background:rgba(68,161,148,.1);color:var(--accent)}
+.ll-info-rest{background:rgba(155,89,182,.1);color:#9b59b6}
+
+/* Rest lifeline modal */
+.rest-overlay{
+  position:fixed;inset:0;background:rgba(30,30,30,.8);
+  display:none;align-items:center;justify-content:center;
+  z-index:1001;padding:16px;
+}
+.rest-overlay.show{display:flex}
+.rest-box{
+  background:var(--white);border-radius:var(--r);padding:28px;
+  max-width:400px;width:100%;text-align:center;
+  box-shadow:var(--shadow-lg);animation:scaleIn .3s var(--ease);
+}
+.rest-box h3{color:#9b59b6;margin-bottom:12px;font-size:1.1rem}
+.rest-box p{color:var(--gray);font-size:.9rem;margin-bottom:16px}
+.rest-badge{
+  display:inline-block;background:#9b59b6;color:var(--white);
+  padding:6px 20px;border-radius:var(--rf);font-weight:700;font-size:.9rem;
+  margin-bottom:8px;
+}
+
+/* ============================================
+   RESULT SCREEN — grand game over
+   ============================================ */
+#resultScreen{padding:20px 16px}
+.result-inner{max-width:580px;width:100%;text-align:center}
+.result-box{
+  background:var(--white);border-radius:var(--r);padding:36px 24px;
+  box-shadow:var(--shadow-lg);animation:scaleIn .5s var(--ease);
+  position:relative;overflow:hidden;
+}
+.result-box::before{
+  content:'';position:absolute;top:-60px;left:-60px;
+  width:160px;height:160px;border-radius:50%;
+  background:radial-gradient(circle,rgba(68,161,148,.1),transparent);
+  pointer-events:none;
+}
+.result-box::after{
+  content:'';position:absolute;bottom:-40px;right:-40px;
+  width:120px;height:120px;border-radius:50%;
+  background:radial-gradient(circle,rgba(236,143,141,.1),transparent);
+  pointer-events:none;
+}
+.trophy{font-size:4.5rem;margin-bottom:8px;animation:crownFloat 3s ease-in-out infinite;display:inline-block}
+.res-winner{font-size:2rem;font-weight:900;color:var(--accent);margin-bottom:2px}
+.res-sub{color:var(--gray);font-weight:600;margin-bottom:24px;font-size:.95rem}
+.res-scores{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:10px;margin-bottom:28px}
+.res-team{background:var(--bg);border-radius:var(--rs);padding:16px 10px;position:relative}
+.res-team.win{border:3px solid var(--accent);background:rgba(68,161,148,.04)}
+.res-team .rt-rank{font-size:.7rem;color:var(--gray);font-weight:600}
+.res-team .rt-name{font-weight:700;font-size:.88rem;margin-bottom:3px}
+.res-team .rt-score{font-size:1.6rem;font-weight:900;animation:scoreCount .6s var(--ease)}
+.res-team.win .rt-score{color:var(--accent)}
+.res-team:not(.win) .rt-score{color:var(--gray)}
+.res-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.tie-icon{font-size:3.5rem;margin-bottom:8px}
+.tie-text{font-size:1.7rem;font-weight:900;color:var(--secondary);margin-bottom:2px}
+
+/* Game Over label */
+.game-over-label{
+  font-size:.8rem;font-weight:700;color:var(--highlight);
+  text-transform:uppercase;letter-spacing:2px;margin-bottom:12px;
+}
+
+.confetti{position:fixed;top:-20px;z-index:1050;animation:confetti linear forwards}
+
+/* ============================================
+   TOAST
+   ============================================ */
+.toast{
+  position:fixed;top:14px;left:50%;transform:translateX(-50%) translateY(-80px);
+  padding:10px 24px;border-radius:var(--rf);font-weight:700;font-size:.9rem;
+  color:var(--white);z-index:1100;font-family:'Tajawal',sans-serif;
+  transition:transform .4s var(--ease);white-space:nowrap;
+}
+.toast.show{animation:slideDown .4s var(--ease) forwards}
+.toast.t-ok{background:var(--green)}
+.toast.t-fail{background:var(--red)}
+.toast.t-info{background:var(--secondary)}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.footer{
+  position:fixed;bottom:0;left:0;right:0;text-align:center;
+  padding:8px;font-size:.76rem;font-weight:600;color:var(--gray);
+  background:rgba(244,240,228,.92);backdrop-filter:blur(8px);z-index:100;
+}
+.footer a{color:var(--accent);text-decoration:none;font-weight:700}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media(max-width:768px){
+  .modal-opts{grid-template-columns:1fr}
+  .ts-box{min-width:auto;padding:8px 10px}
+  .ts-box .ts-name{max-width:50px;font-size:.78rem}
+  .ts-box .ts-score{font-size:1.1rem}
+  .turn-badge{font-size:.75rem;padding:5px 12px}
+}
+@media(max-width:500px){
+  .cat-grid{grid-template-columns:repeat(2,1fr)}
+  .welcome-logo{width:90px;height:90px;font-size:2rem}
+  .welcome-inner h1{font-size:1.7rem}
+  .board-col-header{font-size:.68rem;padding:8px 2px}
+  .board-cell{padding:10px 2px;font-size:.8rem;min-height:40px}
+  .ll-group{padding:5px 8px;gap:4px}
+  .ll-btn{width:30px;height:30px;font-size:.78rem}
+}
+</style>
+</head>
+<body>
+
+<!-- ====== WELCOME — centered ====== -->
+<div id="welcomeScreen" class="screen active">
+  <div class="welcome-inner">
+    <div class="welcome-logo">دد</div>
+    <h1>درجات ودركات</h1>
+    <p class="sub">مسابقة الفرق — التحدي المعرفي</p>
+    <div class="card">
+      <div class="field">
+        <label><i class="fas fa-users"></i> عدد الفرق / اللاعبين</label>
+        <select id="numTeamsSelect" class="select-field" onchange="App.buildTeamInputs()">
+          <option value="2">٢ فرق</option>
+          <option value="3">٣ فرق</option>
+          <option value="4">٤ فرق</option>
+          <option value="5">٥ فرق</option>
+          <option value="6">٦ فرق</option>
+        </select>
+      </div>
+      <div class="field">
+        <label><i class="fas fa-th-large"></i> عدد الفئات (عدد زوجي)</label>
+        <select id="numCatsSelect" class="select-field">
+          <option value="4">٤ فئات</option>
+          <option value="6" selected>٦ فئات</option>
+          <option value="8">٨ فئات</option>
+          <option value="10">١٠ فئات</option>
+        </select>
+      </div>
+      <hr style="border:none;border-top:1px solid var(--border);margin:16px 0">
+      <div id="teamInputsArea"></div>
+      <div class="form-err" id="welErr"></div>
+      <div class="welcome-actions">
+        <button class="btn btn-accent btn-lg" onclick="App.goCategories()">التالي <i class="fas fa-arrow-left"></i></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ====== CATEGORY SELECTION ====== -->
+<div id="catScreen" class="screen">
+  <div class="container">
+    <div class="cat-header">
+      <h2>اختيار الفئات</h2>
+      <p id="catHeaderSub"></p>
+    </div>
+    <div class="cat-turn" id="catTurn"></div>
+    <div class="cat-grid" id="catGrid"></div>
+    <div class="cat-selected" id="catSelected"></div>
+    <div class="cat-actions">
+      <button class="btn btn-accent btn-lg" id="catStartBtn" onclick="App.startBoard()" disabled>ابدأ اللعبة <i class="fas fa-play"></i></button>
+    </div>
+  </div>
+</div>
+
+<!-- ====== GAME BOARD ====== -->
+<div id="boardScreen" class="screen">
+  <div class="container">
+    <div class="board-top" id="boardTop"></div>
+    <div class="ll-section">
+      <div class="ll-section-title">وسائل المساعدة</div>
+      <div class="lifelines-row" id="llRow"></div>
+    </div>
+    <div class="board-grid" id="boardGrid"></div>
+  </div>
+</div>
+
+<!-- ====== RESULT / GAME OVER ====== -->
+<div id="resultScreen" class="screen">
+  <div class="result-inner">
+    <div class="result-box" id="resultBox"></div>
+  </div>
+</div>
+
+<!-- Question Modal -->
+<div class="modal-overlay" id="qModal">
+  <div class="modal-box" id="qModalBox"></div>
+</div>
+
+<!-- Rest Lifeline Modal -->
+<div class="rest-overlay" id="restModal">
+  <div class="rest-box" id="restBox"></div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<!-- Footer -->
+<div class="footer">صنع بإبداع بواسطة <a href="#">مداد</a></div>
+
+<script>
+/* ============================================
+   CONSTANTS
+   ============================================ */
+const API_URL = 'https://raw.githubusercontent.com/B9D0s/mosabagat_thgafiah/main/data/questions.json';
+const LABELS = ['أ','ب','ج','د'];
+const AR = ['٠','١','٢','٣','٤','٥','٦','٧','٨','٩'];
+const toAr = n => String(n).replace(/\d/g, d => AR[d]);
+const $ = id => document.getElementById(id);
+
+const Q_PER_CAT = 6;
+const POINT_TIERS = [200, 200, 400, 400, 600, 600];
+const BASE_TIME = 30;
+const CALL_EXTRA = 30;
+const ANSWER_SHOW_DELAY = 2000; // 2 seconds to show green/red
+
+const CAT_ICONS = ['🧠','📚','🌍','⚡','🔬','🎯','🏛️','🎭','⚽','🌙','📖','💡','🎓','🗺️','🔭','🏆','🎨','🔮'];
+const GENERIC_NAMES = ['ثقافة عامة','تاريخ وحضارات','علوم ومعرفة','جغرافيا','أدب ولغة','رياضة','فنون','طبيعة','تقنية','إسلاميات','صحة','فلك','اختراعات','مجتمع','اقتصاد','سياسة'];
+const TEAM_COLORS = ['#44A194','#EC8F8D','#537D96','#e6a23c','#9b59b6','#1abc9c','#e74c3c','#3498db'];
+
+/* ============================================
+   STATE
+   ============================================ */
+const G = {
+  numTeams: 2,
+  numCats: 6,
+  teams: [],
+  allCategories: [],
+  teamPicks: [],
+  pickTurn: 0,
+  chosenCats: [],
+  turn: 0,
+  boardUsed: new Set(),
+  totalCells: 0,
+  answeredCount: 0,
+  lifelines: [],       // [{call, double, hole, rest}]
+  activeHole: false,
+  activeDouble: false,
+  activeCall: false,
+  activeRest: false,   // rest lifeline active
+  restTarget: -1,      // which team is rested (sits out)
+  doubleUsed: false,
+  timerID: null,
+  timerVal: 0,
+  locked: false,
+  currentQ: null,
+  currentCell: null,
+  currentPts: 0,
+  rawCache: null
+};
+
+function resetG() {
+  G.teams = [];
+  G.allCategories = [];
+  G.teamPicks = [];
+  G.pickTurn = 0;
+  G.chosenCats = [];
+  G.turn = 0;
+  G.boardUsed.clear();
+  G.totalCells = 0;
+  G.answeredCount = 0;
+  G.lifelines = [];
+  G.activeHole = false;
+  G.activeDouble = false;
+  G.activeCall = false;
+  G.activeRest = false;
+  G.restTarget = -1;
+  G.doubleUsed = false;
+  G.locked = false;
+  G.currentQ = null;
+  G.currentCell = null;
+  G.currentPts = 0;
+  stopTimer();
+}
+
+/* ============================================
+   TIMER
+   ============================================ */
+function startTimer(sec, onTick, onEnd) {
+  stopTimer();
+  G.timerVal = sec;
+  onTick(sec, sec);
+  G.timerID = setInterval(() => {
+    G.timerVal--;
+    onTick(G.timerVal, sec);
+    if (G.timerVal <= 0) { stopTimer(); onEnd(); }
+  }, 1000);
+}
+function stopTimer() {
+  if (G.timerID) { clearInterval(G.timerID); G.timerID = null; }
+}
+
+/* ============================================
+   UTILITIES
+   ============================================ */
+function shuffle(a) {
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+function showScreen(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  $(id).classList.add('active');
+  window.scrollTo(0, 0);
+}
+
+function toast(type, msg) {
+  const t = $('toast');
+  t.textContent = msg;
+  t.className = `toast t-${type}`;
+  requestAnimationFrame(() => t.classList.add('show'));
+  setTimeout(() => t.classList.remove('show'), 2000);
+}
+
+function openModal() { $('qModal').classList.add('show'); }
+function closeModal() { $('qModal').classList.remove('show'); }
+
+function spawnConfetti() {
+  const colors = TEAM_COLORS.concat(['#FFD700','#F4F0E4','#2ecc71']);
+  for (let i = 0; i < 60; i++) {
+    const el = document.createElement('div');
+    el.className = 'confetti';
+    el.style.left = Math.random() * 100 + 'vw';
+    el.style.width = (6 + Math.random() * 10) + 'px';
+    el.style.height = (6 + Math.random() * 10) + 'px';
+    el.style.background = colors[Math.floor(Math.random() * colors.length)];
+    el.style.borderRadius = Math.random() > .5 ? '50%' : '2px';
+    el.style.animationDuration = (2.5 + Math.random() * 3) + 's';
+    el.style.animationDelay = (Math.random() * 2) + 's';
+    document.body.appendChild(el);
+    setTimeout(() => el.remove(), 7000);
+  }
+}
+
+/* ============================================
+   API & DATA
+   ============================================ */
+async function loadQuestions() {
+  try {
+    if (G.rawCache) return G.rawCache;
+    const r = await fetch(API_URL);
+    if (!r.ok) throw 0;
+    const data = await r.json();
+    if (!Array.isArray(data) || !data.length) throw 0;
+    G.rawCache = data;
+    return data;
+  } catch {
+    return null;
+  }
+}
+
+function transformQ(raw) {
+  if (raw.type === 'mcq' && raw.question_ar && Array.isArray(raw.options_ar) && raw.options_ar.length === 4 && typeof raw.correctIndex === 'number') {
+    return { q: raw.question_ar, opts: [...raw.options_ar], ans: raw.correctIndex, cat: raw.category || '', exp: raw.explanation_ar || '' };
+  }
+  if (raw.type === 'tf' && raw.question_ar && typeof raw.correctBoolean === 'boolean') {
+    return { q: raw.question_ar, opts: ['صح','خطأ','لا أعرف','تخطي'], ans: raw.correctBoolean ? 0 : 1, cat: raw.category || '', exp: raw.explanation_ar || '' };
+  }
+  return null;
+}
+
+function buildCategories(rawData) {
+  const cats = {};
+  for (const raw of rawData) {
+    const t = transformQ(raw);
+    if (!t) continue;
+    const key = t.cat || 'عام';
+    if (!cats[key]) cats[key] = [];
+    cats[key].push(t);
+  }
+  const result = [];
+  let iconIdx = 0;
+  for (const [name, qs] of Object.entries(cats)) {
+    if (qs.length >= Q_PER_CAT) {
+      result.push({ name, icon: CAT_ICONS[iconIdx % CAT_ICONS.length], questions: shuffle(qs).slice(0, Q_PER_CAT) });
+      iconIdx++;
+    }
+  }
+  if (result.length < 16) {
+    const usedQs = new Set(result.flatMap(c => c.questions.map(q => q.q)));
+    const leftover = [];
+    for (const raw of rawData) {
+      const t = transformQ(raw);
+      if (t && !usedQs.has(t.q)) leftover.push(t);
+    }
+    shuffle(leftover);
+    let genIdx = 0;
+    while (leftover.length >= Q_PER_CAT && result.length < 16) {
+      const chunk = leftover.splice(0, Q_PER_CAT);
+      result.push({
+        name: GENERIC_NAMES[genIdx % GENERIC_NAMES.length],
+        icon: CAT_ICONS[(iconIdx + genIdx) % CAT_ICONS.length],
+        questions: chunk
+      });
+      genIdx++;
+    }
+  }
+  return shuffle(result);
+}
+
+const FALLBACK_RAW = [
+  {type:'mcq',question_ar:'ما عاصمة دولة الكويت؟',options_ar:['مدينة الكويت','الجهراء','حولي','الأحمدي'],correctIndex:0,category:'جغرافيا'},
+  {type:'mcq',question_ar:'كم عدد أركان الإسلام؟',options_ar:['أربعة','خمسة','ستة','ثلاثة'],correctIndex:1,category:'إسلاميات'},
+  {type:'mcq',question_ar:'ما أطول نهر في العالم؟',options_ar:['الأمازون','النيل','المسيسيبي','اليانغتسي'],correctIndex:1,category:'جغرافيا'},
+  {type:'mcq',question_ar:'من مؤلف كتاب المقدمة؟',options_ar:['ابن سينا','ابن خلدون','الفارابي','ابن رشد'],correctIndex:1,category:'تاريخ'},
+  {type:'mcq',question_ar:'ما العنصر الأكثر وفرة في الكون؟',options_ar:['الأكسجين','الهيدروجين','الهيليوم','الكربون'],correctIndex:1,category:'علوم'},
+  {type:'mcq',question_ar:'ما أكبر دولة عربية مساحة؟',options_ar:['السعودية','الجزائر','مصر','السودان'],correctIndex:1,category:'جغرافيا'},
+  {type:'mcq',question_ar:'كم عدد سور القرآن الكريم؟',options_ar:['١١٠','١١٤','١٢٠','١٠٤'],correctIndex:1,category:'إسلاميات'},
+  {type:'mcq',question_ar:'ما الدولة المشتهرة بالأهرامات؟',options_ar:['العراق','مصر','المكسيك','السودان'],correctIndex:1,category:'جغرافيا'},
+  {type:'mcq',question_ar:'ما الغاز الذي تمتصه النباتات؟',options_ar:['الأكسجين','النيتروجين','ثاني أكسيد الكربون','الهيدروجين'],correctIndex:2,category:'علوم'},
+  {type:'mcq',question_ar:'من اخترع المصباح الكهربائي؟',options_ar:['تسلا','إديسون','أينشتاين','بيل'],correctIndex:1,category:'علوم'},
+  {type:'mcq',question_ar:'ما أصغر قارة في العالم؟',options_ar:['أوروبا','أفريقيا','أستراليا','أنتاركتيكا'],correctIndex:2,category:'جغرافيا'},
+  {type:'mcq',question_ar:'كم عدد ألوان قوس قزح؟',options_ar:['خمسة','ستة','سبعة','ثمانية'],correctIndex:2,category:'علوم'},
+  {type:'mcq',question_ar:'ما أسرع حيوان بري؟',options_ar:['الأسد','الفهد','الحصان','الغزال'],correctIndex:1,category:'طبيعة'},
+  {type:'mcq',question_ar:'ما عملة اليابان؟',options_ar:['اليوان','الين','الوون','الباهت'],correctIndex:1,category:'ثقافة عامة'},
+  {type:'mcq',question_ar:'كم عدد أسنان الإنسان البالغ؟',options_ar:['٢٨','٣٠','٣٢','٣٤'],correctIndex:2,category:'علوم'},
+  {type:'mcq',question_ar:'ما أكبر محيط في العالم؟',options_ar:['الأطلسي','الهندي','الهادئ','المتجمد'],correctIndex:2,category:'جغرافيا'},
+  {type:'mcq',question_ar:'من أول رائد فضاء؟',options_ar:['أرمسترونغ','غاغارين','ألدرين','غلين'],correctIndex:1,category:'تاريخ'},
+  {type:'mcq',question_ar:'ما اللغة الأكثر تحدثاً في العالم؟',options_ar:['الإنجليزية','الصينية','الإسبانية','العربية'],correctIndex:1,category:'ثقافة عامة'},
+  {type:'mcq',question_ar:'في أي بحر يقع خليج العقبة؟',options_ar:['المتوسط','الأحمر','بحر العرب','الخليج العربي'],correctIndex:1,category:'جغرافيا'},
+  {type:'mcq',question_ar:'في أي عام افتتحت قناة السويس؟',options_ar:['١٨٥٩','١٨٦٩','١٨٧٩','١٨٤٩'],correctIndex:1,category:'تاريخ'},
+  {type:'mcq',question_ar:'ما عاصمة فرنسا؟',options_ar:['ليون','باريس','مارسيليا','نيس'],correctIndex:1,category:'جغرافيا'},
+  {type:'mcq',question_ar:'كم عدد الكواكب في المجموعة الشمسية؟',options_ar:['سبعة','ثمانية','تسعة','عشرة'],correctIndex:1,category:'علوم'},
+  {type:'mcq',question_ar:'من بنى الأهرامات؟',options_ar:['الرومان','الفراعنة','الإغريق','الفينيقيون'],correctIndex:1,category:'تاريخ'},
+  {type:'mcq',question_ar:'ما أكبر حيوان على الأرض؟',options_ar:['الفيل','الحوت الأزرق','الزرافة','وحيد القرن'],correctIndex:1,category:'طبيعة'},
+  {type:'mcq',question_ar:'كم عدد أحرف اللغة العربية؟',options_ar:['٢٦','٢٨','٣٠','٣٢'],correctIndex:1,category:'ثقافة عامة'},
+  {type:'mcq',question_ar:'ما أصلب مادة طبيعية؟',options_ar:['الحديد','الألماس','الذهب','الكوارتز'],correctIndex:1,category:'علوم'},
+  {type:'mcq',question_ar:'ما عاصمة تركيا؟',options_ar:['إسطنبول','أنقرة','أنطاليا','بورصة'],correctIndex:1,category:'جغرافيا'},
+  {type:'mcq',question_ar:'كم عدد أيام السنة الميلادية؟',options_ar:['٣٦٠','٣٦٥','٣٧٠','٣٥٤'],correctIndex:1,category:'ثقافة عامة'},
+  {type:'mcq',question_ar:'ما أطول سورة في القرآن؟',options_ar:['آل عمران','البقرة','النساء','المائدة'],correctIndex:1,category:'إسلاميات'},
+  {type:'mcq',question_ar:'في أي قارة تقع البرازيل؟',options_ar:['أفريقيا','أمريكا الجنوبية','أوروبا','آسيا'],correctIndex:1,category:'جغرافيا'},
+  {type:'mcq',question_ar:'ما لون الدم في الأوردة؟',options_ar:['أحمر فاتح','أحمر غامق','أزرق','بنفسجي'],correctIndex:1,category:'علوم'},
+  {type:'mcq',question_ar:'من هو خاتم الأنبياء؟',options_ar:['عيسى','محمد ﷺ','إبراهيم','موسى'],correctIndex:1,category:'إسلاميات'},
+  {type:'mcq',question_ar:'ما أكبر صحراء في العالم؟',options_ar:['جوبي','الصحراء الكبرى','الربع الخالي','كالاهاري'],correctIndex:1,category:'جغرافيا'},
+  {type:'mcq',question_ar:'كم ركعة في صلاة الظهر؟',options_ar:['ركعتان','ثلاث','أربع','خمس'],correctIndex:2,category:'إسلاميات'},
+  {type:'mcq',question_ar:'ما المعدن الأكثر توصيلاً للكهرباء؟',options_ar:['الذهب','الفضة','النحاس','الألمنيوم'],correctIndex:1,category:'علوم'},
+  {type:'mcq',question_ar:'ما أصغر دولة في العالم؟',options_ar:['موناكو','الفاتيكان','سان مارينو','لوكسمبورغ'],correctIndex:1,category:'جغرافيا'},
+  {type:'mcq',question_ar:'ما الحيوان الوطني لأستراليا؟',options_ar:['الكوالا','الكنغر','البلاتيبوس','الإيمو'],correctIndex:1,category:'طبيعة'},
+  {type:'mcq',question_ar:'ما الكوكب الأقرب للشمس؟',options_ar:['الزهرة','عطارد','المريخ','الأرض'],correctIndex:1,category:'علوم'},
+  {type:'mcq',question_ar:'أين يقع برج إيفل؟',options_ar:['لندن','باريس','روما','برلين'],correctIndex:1,category:'ثقافة عامة'},
+  {type:'mcq',question_ar:'كم عدد أرجل العنكبوت؟',options_ar:['٦','٨','١٠','١٢'],correctIndex:1,category:'طبيعة'},
+  {type:'mcq',question_ar:'ما أقدم حضارة في التاريخ؟',options_ar:['المصرية','السومرية','الصينية','الهندية'],correctIndex:1,category:'تاريخ'},
+  {type:'mcq',question_ar:'ما عاصمة اليابان؟',options_ar:['أوساكا','طوكيو','كيوتو','يوكوهاما'],correctIndex:1,category:'جغرافيا'},
+  {type:'mcq',question_ar:'من اكتشف أمريكا؟',options_ar:['ماجلان','كولومبوس','كوك','فاسكو دي غاما'],correctIndex:1,category:'تاريخ'},
+  {type:'mcq',question_ar:'كم عدد أضلاع المثلث؟',options_ar:['اثنان','ثلاثة','أربعة','خمسة'],correctIndex:1,category:'علوم'},
+  {type:'mcq',question_ar:'ما عاصمة إسبانيا؟',options_ar:['برشلونة','مدريد','إشبيلية','فالنسيا'],correctIndex:1,category:'جغرافيا'},
+  {type:'mcq',question_ar:'ما لغة البرمجة الأكثر استخداماً؟',options_ar:['بايثون','جافاسكريبت','جافا','سي++'],correctIndex:1,category:'تقنية'},
+  {type:'mcq',question_ar:'من رسم لوحة الموناليزا؟',options_ar:['بيكاسو','دا فينشي','مايكل أنجلو','رمبرانت'],correctIndex:1,category:'فنون'},
+  {type:'mcq',question_ar:'كم عدد لاعبي فريق كرة القدم؟',options_ar:['٩','١٠','١١','١٢'],correctIndex:2,category:'رياضة'},
+  {type:'mcq',question_ar:'ما أعلى قمة في العالم؟',options_ar:['كلمنجارو','إيفرست','مون بلان','أكونكاغوا'],correctIndex:1,category:'جغرافيا'},
+  {type:'mcq',question_ar:'ما العملة الرسمية لبريطانيا؟',options_ar:['اليورو','الجنيه الإسترليني','الدولار','الفرنك'],correctIndex:1,category:'ثقافة عامة'},
+  {type:'mcq',question_ar:'ما أول سورة نزلت في القرآن؟',options_ar:['الفاتحة','العلق','المدثر','القلم'],correctIndex:1,category:'إسلاميات'},
+  {type:'mcq',question_ar:'ما الفيتامين الذي يأتي من الشمس؟',options_ar:['فيتامين أ','فيتامين د','فيتامين سي','فيتامين ب'],correctIndex:1,category:'صحة'},
+  {type:'mcq',question_ar:'ما الحيوان الملقب بسفينة الصحراء؟',options_ar:['الحصان','الجمل','الحمار','البغل'],correctIndex:1,category:'طبيعة'},
+  {type:'mcq',question_ar:'من مؤسس شركة مايكروسوفت؟',options_ar:['ستيف جوبز','بيل غيتس','مارك زوكربيرغ','إيلون ماسك'],correctIndex:1,category:'تقنية'},
+  {type:'mcq',question_ar:'ما أطول نهر في آسيا؟',options_ar:['الغانج','اليانغتسي','ميكونغ','دجلة'],correctIndex:1,category:'جغرافيا'},
+  {type:'mcq',question_ar:'كم مرة فازت البرازيل بكأس العالم؟',options_ar:['٣','٤','٥','٦'],correctIndex:2,category:'رياضة'},
+  {type:'mcq',question_ar:'ما الغاز الضروري للتنفس؟',options_ar:['النيتروجين','الأكسجين','ثاني أكسيد الكربون','الهيدروجين'],correctIndex:1,category:'علوم'},
+  {type:'mcq',question_ar:'من بنى مدينة بغداد؟',options_ar:['هارون الرشيد','المنصور','المأمون','المعتصم'],correctIndex:1,category:'تاريخ'},
+  {type:'mcq',question_ar:'ما أكبر كوكب في المجموعة الشمسية؟',options_ar:['زحل','المشتري','أورانوس','نبتون'],correctIndex:1,category:'علوم'},
+  {type:'mcq',question_ar:'من مخترع الهاتف؟',options_ar:['إديسون','غراهام بيل','ماركوني','تسلا'],correctIndex:1,category:'تاريخ'},
+];
+
+/* ============================================
+   APP CONTROLLER
+   ============================================ */
+const App = {
+  /* ---- Welcome ---- */
+  buildTeamInputs() {
+    const n = parseInt($('numTeamsSelect').value);
+    G.numTeams = n;
+    let html = '';
+    for (let i = 0; i < n; i++) {
+      html += `<div class="field">
+        <label><span class="team-dot td${i}"></span> اسم الفريق ${toAr(i + 1)}</label>
+        <input type="text" id="tInp${i}" class="input" placeholder="أدخل اسم الفريق..." maxlength="20">
+      </div>`;
+    }
+    $('teamInputsArea').innerHTML = html;
+  },
+
+  async goCategories() {
+    const n = parseInt($('numTeamsSelect').value);
+    const numCats = parseInt($('numCatsSelect').value);
+
+    const names = [];
+    for (let i = 0; i < n; i++) {
+      const inp = $(`tInp${i}`);
+      if (!inp) { $('welErr').textContent = 'خطأ في النموذج'; return; }
+      const v = inp.value.trim();
+      if (!v) { $('welErr').textContent = 'أدخل جميع أسماء الفرق'; return; }
+      names.push(v);
+    }
+    $('welErr').textContent = '';
+
+    resetG();
+    G.numTeams = n;
+    G.numCats = numCats;
+    for (let i = 0; i < n; i++) {
+      G.teams.push({ name: names[i], score: 0, color: TEAM_COLORS[i % TEAM_COLORS.length] });
+      G.lifelines.push({ call: true, double: true, hole: true, rest: true });
+      G.teamPicks.push([]);
+    }
+
+    toast('info', 'جاري تحميل الأسئلة...');
+    let raw = await loadQuestions();
+    if (!raw) raw = FALLBACK_RAW;
+    G.allCategories = buildCategories(raw);
+
+    if (G.allCategories.length < numCats) {
+      toast('fail', `لا توجد فئات كافية (${toAr(G.allCategories.length)} فقط)`);
+      return;
+    }
+
+    $('catHeaderSub').textContent = `كل فريق يختار فئاته — المجموع ${toAr(numCats)} فئات`;
+    G.pickTurn = 0;
+    showScreen('catScreen');
+    this._renderCatSelection();
+  },
+
+  /* ---- Category Selection ---- */
+  _getPicksNeeded(t) {
+    const base = Math.floor(G.numCats / G.numTeams);
+    const rem = G.numCats % G.numTeams;
+    return base + (t < rem ? 1 : 0);
+  },
+  _allPicksDone() {
+    let total = 0;
+    for (let i = 0; i < G.numTeams; i++) total += G.teamPicks[i].length;
+    return total >= G.numCats;
+  },
+  _currentTeamDone() {
+    return G.teamPicks[G.pickTurn].length >= this._getPicksNeeded(G.pickTurn);
+  },
+  _advancePickTurn() {
+    for (let s = 1; s <= G.numTeams; s++) {
+      const next = (G.pickTurn + s) % G.numTeams;
+      if (G.teamPicks[next].length < this._getPicksNeeded(next)) {
+        G.pickTurn = next;
+        return;
+      }
+    }
+  },
+
+  _renderCatSelection() {
+    const allPicked = new Set(G.teamPicks.flat());
+    const done = this._allPicksDone();
+
+    if (!done) {
+      const team = G.teams[G.pickTurn];
+      const rem = this._getPicksNeeded(G.pickTurn) - G.teamPicks[G.pickTurn].length;
+      $('catTurn').innerHTML = `<i class="fas fa-hand-pointer"></i> ${team.name} — اختر ${toAr(rem)} ${rem === 1 ? 'فئة' : 'فئات'}`;
+      $('catTurn').style.background = `${team.color}18`;
+      $('catTurn').style.color = team.color;
+    } else {
+      $('catTurn').innerHTML = '<i class="fas fa-check-circle"></i> اكتمل الاختيار!';
+      $('catTurn').style.background = 'rgba(68,161,148,.1)';
+      $('catTurn').style.color = 'var(--accent)';
+    }
+
+    $('catGrid').innerHTML = G.allCategories.map((c, i) => {
+      const picked = allPicked.has(i);
+      return `<div class="cat-card${picked ? ' picked' : ''}" onclick="App.pickCat(${i})">
+        <span class="cat-icon">${c.icon}</span>
+        ${c.name}
+        <div class="cat-count">${toAr(c.questions.length)} أسئلة</div>
+      </div>`;
+    }).join('');
+
+    let selHTML = '';
+    for (let t = 0; t < G.numTeams; t++) {
+      if (G.teamPicks[t].length) {
+        const team = G.teams[t];
+        selHTML += `<div class="cat-sel-group">
+          <h4 style="color:${team.color}">${team.name}</h4>
+          <div class="chips">${G.teamPicks[t].map(i =>
+            `<span class="chip" style="background:${team.color}18;color:${team.color}">${G.allCategories[i].name}</span>`
+          ).join('')}</div>
+        </div>`;
+      }
+    }
+    $('catSelected').innerHTML = selHTML;
+    $('catStartBtn').disabled = !done;
+  },
+
+  pickCat(idx) {
+    if (this._allPicksDone()) return;
+    if (new Set(G.teamPicks.flat()).has(idx)) return;
+    if (this._currentTeamDone()) return;
+    G.teamPicks[G.pickTurn].push(idx);
+    if (this._currentTeamDone()) this._advancePickTurn();
+    this._renderCatSelection();
+  },
+
+  /* ---- Game Board ---- */
+  startBoard() {
+    G.chosenCats = G.teamPicks.flat().map(i => G.allCategories[i]);
+    G.totalCells = G.chosenCats.length * Q_PER_CAT;
+    G.answeredCount = 0;
+    G.turn = 0;
+    showScreen('boardScreen');
+    this._renderBoard();
+    this._renderLifelines();
+  },
+
+  _renderBoard() {
+    const numCols = G.chosenCats.length;
+    const grid = $('boardGrid');
+    grid.style.gridTemplateColumns = `repeat(${numCols}, 1fr)`;
+
+    let html = '';
+    G.chosenCats.forEach(c => {
+      html += `<div class="board-col-header">${c.icon} ${c.name}</div>`;
+    });
+    for (let row = 0; row < Q_PER_CAT; row++) {
+      const pts = POINT_TIERS[row];
+      for (let col = 0; col < numCols; col++) {
+        const key = `${col}-${row}`;
+        const used = G.boardUsed.has(key);
+        html += `<div class="board-cell ${used ? 'used' : 'pts-' + pts}" data-key="${key}" onclick="App.openQuestion(${col},${row})">
+          ${used ? '<i class="fas fa-check"></i>' : toAr(pts)}
+        </div>`;
+      }
+    }
+    grid.innerHTML = html;
+    this._updateTopBar();
+  },
+
+  _updateTopBar() {
+    const team = G.teams[G.turn];
+    let html = '';
+    for (let t = 0; t < G.numTeams; t++) {
+      const tm = G.teams[t];
+      const isActive = t === G.turn;
+      // Dynamic glow color via CSS variable
+      const glowStyle = isActive
+        ? `--glow-color:${tm.color}60;border-color:${tm.color};`
+        : '';
+      html += `<div class="ts-box${isActive ? ' active-t' : ''}" style="${glowStyle}">
+        <span class="ts-dot" style="background:${tm.color}"></span>
+        <div>
+          <div class="ts-name">${tm.name}</div>
+          <div class="ts-score" style="color:${tm.color}">${toAr(tm.score)}</div>
+        </div>
+      </div>`;
+    }
+    // Turn badge with dynamic team color
+    html += `<div class="turn-badge" style="background:${team.color}"><i class="fas fa-gamepad"></i> دور: ${team.name}</div>`;
+    $('boardTop').innerHTML = html;
+  },
+
+  _renderLifelines() {
+    let html = '';
+    for (let t = 0; t < G.numTeams; t++) {
+      const ll = G.lifelines[t];
+      const team = G.teams[t];
+      html += `<div class="ll-group">
+        <span class="ll-label" style="color:${team.color}">${team.name}</span>
+        <button class="ll-btn" title="اتصال بصديق" onclick="App.useLL(${t},'call')" ${!ll.call?'disabled':''}><i class="fas fa-phone"></i></button>
+        <button class="ll-btn" title="جاوب جوابين" onclick="App.useLL(${t},'double')" ${!ll.double?'disabled':''}><i class="fas fa-clone"></i></button>
+        <button class="ll-btn" title="الحفرة" onclick="App.useLL(${t},'hole')" ${!ll.hole?'disabled':''}><i class="fas fa-bomb"></i></button>
+        <button class="ll-btn" title="استريح" onclick="App.useLL(${t},'rest')" ${!ll.rest?'disabled':''} style="color:#9b59b6"><i class="fas fa-couch"></i></button>
+      </div>`;
+    }
+    $('llRow').innerHTML = html;
+  },
+
+  useLL(team, type) {
+    if (team !== G.turn) { toast('fail', 'ليس دورك!'); return; }
+    if (!G.lifelines[team][type]) return;
+
+    G.lifelines[team][type] = false;
+
+    if (type === 'call') {
+      G.activeCall = true;
+      toast('ok', 'اتصال بصديق! ٣٠ ثانية إضافية');
+    } else if (type === 'double') {
+      G.activeDouble = true;
+      G.doubleUsed = false;
+      toast('info', 'جاوب جوابين! لديك فرصتان');
+    } else if (type === 'hole') {
+      G.activeHole = true;
+      toast('info', 'الحفرة مفعّلة! النقاط تُخصم من الخصم');
+    } else if (type === 'rest') {
+      // Show rest target selection
+      this._showRestPicker(team);
+      this._renderLifelines();
+      return;
+    }
+
+    this._renderLifelines();
+  },
+
+  /* ---- Rest Lifeline: pick opponent to bench ---- */
+  _showRestPicker(activatingTeam) {
+    let html = `<h3><i class="fas fa-couch"></i> استريح</h3>
+      <p>اختر الفريق الذي سيستريح لاعبه المميز في السؤال القادم</p>`;
+    for (let t = 0; t < G.numTeams; t++) {
+      if (t === activatingTeam) continue;
+      html += `<button class="btn btn-secondary btn-sm" style="margin:4px;background:${G.teams[t].color}" onclick="App.confirmRest(${t})">
+        ${G.teams[t].name}
+      </button>`;
+    }
+    html += `<br><button class="btn btn-outline btn-sm" style="margin-top:12px" onclick="App.cancelRest(${activatingTeam})">إلغاء</button>`;
+    $('restBox').innerHTML = html;
+    $('restModal').classList.add('show');
+  },
+
+  confirmRest(targetTeam) {
+    G.activeRest = true;
+    G.restTarget = targetTeam;
+    $('restModal').classList.remove('show');
+    toast('info', `${G.teams[targetTeam].name} — لاعبهم المميز يستريح هذا السؤال!`);
+  },
+
+  cancelRest(activatingTeam) {
+    // Give the lifeline back
+    G.lifelines[activatingTeam].rest = true;
+    $('restModal').classList.remove('show');
+    this._renderLifelines();
+  },
+
+  /* ---- Question Modal ---- */
+  openQuestion(col, row) {
+    const key = `${col}-${row}`;
+    if (G.boardUsed.has(key)) return;
+
+    const cat = G.chosenCats[col];
+    const q = cat.questions[row];
+    const pts = POINT_TIERS[row];
+
+    G.currentQ = q;
+    G.currentCell = key;
+    G.currentPts = pts;
+    G.locked = false;
+
+    const totalTime = BASE_TIME + (G.activeCall ? CALL_EXTRA : 0);
+
+    let llInfo = '';
+    if (G.activeHole) llInfo += '<div class="modal-ll-info ll-info-hole"><i class="fas fa-bomb"></i> الحفرة — النقاط تُخصم من الخصم</div>';
+    if (G.activeDouble) llInfo += '<div class="modal-ll-info ll-info-double"><i class="fas fa-clone"></i> جاوب جوابين — فرصتان</div>';
+    if (G.activeCall) llInfo += '<div class="modal-ll-info ll-info-call"><i class="fas fa-phone"></i> اتصال بصديق — وقت إضافي</div>';
+    if (G.activeRest) llInfo += `<div class="modal-ll-info ll-info-rest"><i class="fas fa-couch"></i> استريح — لاعب ${G.teams[G.restTarget].name} المميز يستريح</div>`;
+
+    $('qModalBox').innerHTML = `
+      <button class="modal-close" onclick="App.forceClose()"><i class="fas fa-times"></i></button>
+      <div style="margin-bottom:12px">
+        <span class="modal-cat">${cat.icon} ${cat.name}</span>
+        <span class="modal-pts-badge">${toAr(pts)} نقطة</span>
+      </div>
+      ${llInfo}
+      <div class="modal-q">${q.q}</div>
+      <div class="modal-timer">
+        <div class="mt-num" id="mtNum">${toAr(totalTime)}</div>
+        <div class="mt-bar"><div class="mt-fill" id="mtFill" style="width:100%"></div></div>
+      </div>
+      <div class="modal-opts" id="mOpts">
+        ${q.opts.map((o, i) => `
+          <button class="mo-btn" data-i="${i}" onclick="App.answer(${i})">
+            <span class="mo-lbl">${LABELS[i]}</span> ${o}
+          </button>`).join('')}
+      </div>
+      <div class="modal-feedback" id="mFeedback"></div>`;
+
+    openModal();
+
+    startTimer(totalTime,
+      (v, total) => {
+        const numEl = $('mtNum');
+        const fillEl = $('mtFill');
+        if (!numEl) return;
+        numEl.textContent = toAr(v);
+        fillEl.style.width = (v / total * 100) + '%';
+        if (v <= 5) { numEl.classList.add('warn'); fillEl.classList.add('warn'); }
+      },
+      () => this._timeout()
+    );
+  },
+
+  answer(idx) {
+    if (G.locked) return;
+    const q = G.currentQ;
+    const correct = idx === q.ans;
+    const btns = document.querySelectorAll('#mOpts .mo-btn');
+    const clicked = btns[idx];
+
+    if (correct) {
+      G.locked = true;
+      stopTimer();
+      clicked.classList.add('correct');
+      btns.forEach(b => b.disabled = true);
+
+      if (G.activeHole) {
+        const opp = (G.turn + 1) % G.numTeams;
+        G.teams[opp].score = Math.max(0, G.teams[opp].score - G.currentPts);
+        $('mFeedback').className = 'modal-feedback ok';
+        $('mFeedback').innerHTML = `<i class="fas fa-bomb"></i> صحيح! خُصمت ${toAr(G.currentPts)} نقطة من ${G.teams[opp].name}`;
+      } else {
+        G.teams[G.turn].score += G.currentPts;
+        $('mFeedback').className = 'modal-feedback ok';
+        $('mFeedback').innerHTML = `<i class="fas fa-check-circle"></i> صحيح! +${toAr(G.currentPts)} نقطة`;
+      }
+
+      this._updateTopBar();
+      this._clearLL();
+      // Wait ANSWER_SHOW_DELAY before closing
+      setTimeout(() => this._afterAnswer(), ANSWER_SHOW_DELAY);
+
+    } else {
+      clicked.classList.add('wrong');
+      clicked.disabled = true;
+
+      // Double-dip: first wrong gets a second chance
+      if (G.activeDouble && !G.doubleUsed) {
+        G.doubleUsed = true;
+        $('mFeedback').className = 'modal-feedback fail';
+        $('mFeedback').textContent = 'خطأ! لديك فرصة ثانية...';
+        return; // Don't lock — allow another pick
+      }
+
+      // Fully wrong
+      G.locked = true;
+      stopTimer();
+      btns.forEach(b => b.disabled = true);
+      // Reveal correct in green
+      if (btns[q.ans]) btns[q.ans].classList.add('reveal');
+      $('mFeedback').className = 'modal-feedback fail';
+      $('mFeedback').innerHTML = '<i class="fas fa-times-circle"></i> إجابة خاطئة!';
+      this._clearLL();
+      setTimeout(() => this._afterAnswer(), ANSWER_SHOW_DELAY);
+    }
+  },
+
+  _timeout() {
+    if (G.locked) return;
+    G.locked = true;
+    const q = G.currentQ;
+    const btns = document.querySelectorAll('#mOpts .mo-btn');
+    btns.forEach(b => b.disabled = true);
+    if (btns[q.ans]) btns[q.ans].classList.add('reveal');
+    $('mFeedback').className = 'modal-feedback fail';
+    $('mFeedback').innerHTML = '<i class="fas fa-clock"></i> انتهى الوقت!';
+    this._clearLL();
+    setTimeout(() => this._afterAnswer(), ANSWER_SHOW_DELAY);
+  },
+
+  _clearLL() {
+    G.activeHole = false;
+    G.activeDouble = false;
+    G.activeCall = false;
+    G.activeRest = false;
+    G.restTarget = -1;
+    G.doubleUsed = false;
+  },
+
+  _afterAnswer() {
+    closeModal();
+    G.boardUsed.add(G.currentCell);
+    G.answeredCount++;
+    G.turn = (G.turn + 1) % G.numTeams;
+
+    this._renderBoard();
+    this._renderLifelines();
+
+    // Check game over
+    if (G.answeredCount >= G.totalCells) {
+      setTimeout(() => this._endGame(), 400);
+    }
+  },
+
+  forceClose() {
+    if (!G.locked) return;
+    closeModal();
+  },
+
+  /* ---- Game Over ---- */
+  _endGame() {
+    showScreen('resultScreen');
+
+    // Sort teams by score descending
+    const sorted = [...G.teams].sort((a, b) => b.score - a.score);
+    const maxScore = sorted[0].score;
+    const winners = sorted.filter(t => t.score === maxScore);
+    const tie = winners.length > 1;
+
+    let html = '<div class="game-over-label">انتهت اللعبة</div>';
+
+    if (tie) {
+      html += `
+        <div class="tie-icon">🤝</div>
+        <div class="tie-text">تعادل!</div>
+        <div class="res-sub">النتيجة متساوية بين ${winners.map(w => w.name).join(' و ')}</div>`;
+    } else {
+      html += `
+        <div class="trophy">🏆</div>
+        <div class="res-winner">${winners[0].name}</div>
+        <div class="res-sub">الفائز بمسابقة درجات ودركات!</div>`;
+      setTimeout(spawnConfetti, 200);
+      setTimeout(spawnConfetti, 1500);
+    }
+
+    // Ranked scores
+    html += '<div class="res-scores">';
+    sorted.forEach((t, i) => {
+      const isWin = !tie && t === winners[0];
+      const rank = i === 0 ? '🥇' : i === 1 ? '🥈' : i === 2 ? '🥉' : `#${i+1}`;
+      html += `<div class="res-team ${isWin ? 'win' : ''}">
+        <div class="rt-rank">${rank}</div>
+        <div class="rt-name">${t.name}</div>
+        <div class="rt-score">${toAr(t.score)}</div>
+      </div>`;
+    });
+    html += '</div>';
+
+    html += `<div class="res-actions">
+      <button class="btn btn-accent btn-lg" onclick="App.playAgain()"><i class="fas fa-redo"></i> العب مرة أخرى</button>
+      <button class="btn btn-secondary btn-lg" onclick="App.home()"><i class="fas fa-home"></i> الرئيسية</button>
+    </div>`;
+
+    $('resultBox').innerHTML = html;
+  },
+
+  playAgain() {
+    // Keep team names, restart everything else
+    const names = G.teams.map(t => t.name);
+    const n = G.numTeams;
+    const nc = G.numCats;
+    resetG();
+    G.numTeams = n;
+    G.numCats = nc;
+    for (let i = 0; i < n; i++) {
+      G.teams.push({ name: names[i], score: 0, color: TEAM_COLORS[i % TEAM_COLORS.length] });
+      G.lifelines.push({ call: true, double: true, hole: true, rest: true });
+      G.teamPicks.push([]);
+    }
+    G.pickTurn = 0;
+    // Reload categories
+    G.allCategories = buildCategories(G.rawCache || FALLBACK_RAW);
+    $('catHeaderSub').textContent = `كل فريق يختار فئاته — المجموع ${toAr(nc)} فئات`;
+    showScreen('catScreen');
+    this._renderCatSelection();
+  },
+
+  home() {
+    resetG();
+    showScreen('welcomeScreen');
+    App.buildTeamInputs();
+  }
+};
+
+/* ============================================
+   KEYBOARD
+   ============================================ */
+document.addEventListener('keydown', e => {
+  if (G.locked) return;
+  const map = {'1':0,'2':1,'3':2,'4':3};
+  if (map[e.key] !== undefined && $('qModal').classList.contains('show')) {
+    const btn = document.querySelector(`#mOpts .mo-btn[data-i="${map[e.key]}"]`);
+    if (btn && !btn.disabled) btn.click();
+  }
+});
+
+/* ============================================
+   INIT
+   ============================================ */
+App.buildTeamInputs();
+</script>
+</body>
+</html>

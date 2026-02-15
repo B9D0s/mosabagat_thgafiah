@@ -13,10 +13,15 @@
  *   node tests/merge-questions.js --normalize
  *   node tests/merge-questions.js --normalize --apply
  *
+ *   # تطبيع عربي أدق عند كشف التكرار: همزات + تاء مربوطة (دائماً)، وإزالة الحركات (اختياري)
+ *   node tests/merge-questions.js data/questions_add_500_new.json --strip-diacritics
+ *
  * المميزات:
  * - دمج ملف واحد أو عدة ملفات مع questions.json
  * - توحيد type / difficulty / category (بما فيها خريطة التصنيفات)
- * - منع التكرار + ترقيم id — افتراضياً فحص فقط، --apply للتطبيق
+ * - منع التكرار + ترقيم id — مفتاح التكرار: type + تطبيع عربي (همزات، ة→ه، ئ→ي، ؤ→و)
+ * - --strip-diacritics: تجاهل الحركات عند كشف التكرار (أدق)
+ * - افتراضياً فحص فقط، --apply للتطبيق
  */
 const fs = require('fs');
 const path = require('path');
@@ -27,6 +32,7 @@ const argv = process.argv.slice(2);
 const apply = argv.includes('--apply');
 const clearAfter = argv.includes('--clear-after');
 const normalizeOnly = argv.includes('--normalize');
+const stripDiacritics = argv.includes('--strip-diacritics');
 const addFiles = argv.filter(a => a && !a.startsWith('-'));
 
 function readJsonArray(p) {
@@ -38,6 +44,30 @@ function readJsonArray(p) {
 
 function normalizeString(s) {
   return String(s || '').trim().replace(/\s+/g, ' ');
+}
+
+/**
+ * تطبيع عربي لمفتاح التكرار: همزات، تاء مربوطة، واختيارياً إزالة الحركات.
+ * - التاء المربوطة ة → ه
+ * - ألف بأشكالها أ إ آ ٱ → ا
+ * - إن --strip-diacritics: إزالة الحركات (الضمة، الكسرة، الشدة، السكون، إلخ)
+ */
+function normalizeArabicForKey(s, stripHarakat) {
+  if (!s || typeof s !== 'string') return '';
+  let t = s;
+  // التاء المربوطة → ه
+  t = t.replace(/\u0629/g, '\u0647');
+  // همزات الألف: أ إ آ ٱ → ا
+  t = t.replace(/[\u0622\u0623\u0625\u0671]/g, '\u0627');
+  // ئ → ي، ؤ → و (توحيد لأجل المقارنة)
+  t = t.replace(/\u0626/g, '\u064A');
+  t = t.replace(/\u0624/g, '\u0648');
+  t = t.replace(/\u0621/g, ''); // همزة منفردة تُحذف للمقارنة
+  if (stripHarakat) {
+    // نطاق الحركات والعلامات فوق/تحت الحرف (Unicode)
+    t = t.replace(/[\u064B-\u0652\u0670\u0653-\u0655\u0656-\u065F]/g, '');
+  }
+  return t;
 }
 
 function normalizeType(type) {
@@ -70,6 +100,8 @@ const CATEGORY_MAP = {
   'أحياء': 'الأحياء', 'الاحياء': 'الأحياء', 'الأحياء': 'الأحياء',
   'علوم الفضاء': 'علوم الفضاء', 'علوم_الفضاء': 'علوم الفضاء',
   'من القائل': 'من القائل', 'من_القائل': 'من القائل',
+  'من انا': 'من أنا؟', 'من أنا': 'من أنا؟', 'من أنا؟': 'من أنا؟',
+  'تاريخ': 'التاريخ', 'التاريخ': 'التاريخ',
 };
 
 function normalizeCategory(cat) {
@@ -109,7 +141,9 @@ function validateQuestion(q) {
 }
 
 function keyOf(q) {
-  return `${q.type}|${normalizeString(q.question_ar).toLowerCase()}`;
+  const raw = normalizeString(q.question_ar);
+  const arabicNorm = normalizeArabicForKey(raw, stripDiacritics);
+  return `${q.type}|${arabicNorm.toLowerCase()}`;
 }
 
 function expandPaths(patterns) {
@@ -161,6 +195,8 @@ function runNormalizeOnly() {
 
   const invalidTotal = [...invalidReasons.values()].reduce((a, b) => a + b, 0);
   console.log(apply ? '✅ (تطبيق) تم توحيد الداتابيس' : '✅ (فحص) تقرير توحيد — لم يتم تعديل أي ملف');
+  if (stripDiacritics) console.log('- كشف التكرار: تطبيع عربي (همزات، ة→ه) + إزالة الحركات');
+  else console.log('- كشف التكرار: تطبيع عربي (همزات، ة→ه)');
   console.log(`- إجمالي: ${normalized.length} | تغييرات type: ${changes.type} | difficulty: ${changes.difficulty} | category: ${changes.category}`);
   console.log(`- تكرار: ${dup} | غير مطابقة: ${invalidTotal}`);
   if (invalidTotal > 0) {
@@ -244,6 +280,8 @@ function main() {
 
   const filesLabel = toMerge.length === 1 ? path.relative(repoRoot, toMerge[0]) : `${toMerge.length} ملف`;
   console.log(apply ? '✅ (تطبيق) تم الدمج بنجاح' : '✅ (فحص) تم التحقق بنجاح — لم يتم تعديل أي ملف');
+  if (stripDiacritics) console.log('- كشف التكرار: تطبيع عربي (همزات، ة→ه) + إزالة الحركات');
+  else console.log('- كشف التكرار: تطبيع عربي (همزات، ة→ه)');
   console.log(`- الداتابيس الحالية: data/questions.json = ${stats.main_total} سؤال`);
   if (stats.main_invalid > 0) console.log(`- تحذير: عناصر غير مطابقة داخل الداتابيس الحالية: ${stats.main_invalid}`);
   console.log(`- ملفات الإضافة: ${filesLabel}`);
