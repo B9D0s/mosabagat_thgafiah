@@ -364,10 +364,61 @@ body{
   text-align:center;margin-bottom:10px;padding:5px 12px;
   border-radius:var(--rf);font-size:.82rem;font-weight:700;
 }
-.ll-info-hole{background:rgba(236,143,141,.1);color:var(--highlight)}
-.ll-info-double{background:rgba(83,125,150,.1);color:var(--secondary)}
-.ll-info-call{background:rgba(68,161,148,.1);color:var(--accent)}
 .ll-info-rest{background:rgba(155,89,182,.1);color:#9b59b6}
+
+/* Hidden choices area */
+.modal-opts.hidden-choices{display:none !important}
+
+/* Host control buttons */
+.host-actions{text-align:center;margin-top:16px;display:flex;flex-direction:column;gap:10px;align-items:center}
+.host-btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:11px 24px;border:none;border-radius:var(--rs);
+  font-family:inherit;font-size:.95rem;font-weight:700;
+  cursor:pointer;transition:all .3s var(--ease);
+}
+.host-btn:hover:not(:disabled){transform:translateY(-2px)}
+.host-btn:disabled{opacity:.35;cursor:not-allowed;transform:none!important}
+.host-btn.reveal-ans{background:var(--accent);color:var(--white);box-shadow:0 4px 14px rgba(68,161,148,.3)}
+.host-btn.show-choices{background:var(--secondary);color:var(--white)}
+.host-btn.show-choices .sc-count{
+  display:inline-flex;width:22px;height:22px;border-radius:50%;
+  background:rgba(255,255,255,.25);font-size:.75rem;
+  align-items:center;justify-content:center;margin-right:4px;
+}
+
+/* Host scoring panel */
+.host-scoring{
+  margin-top:16px;padding:16px;border-radius:var(--rs);
+  background:var(--bg);border:2px solid var(--border);
+  animation:fadeUp .3s var(--ease);
+}
+.host-scoring-title{
+  text-align:center;font-weight:700;font-size:.88rem;
+  color:var(--gray);margin-bottom:12px;
+}
+.host-scoring-btns{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.hs-btn{
+  padding:10px 18px;border:2px solid var(--border);border-radius:var(--rs);
+  background:var(--white);font-family:inherit;font-size:.88rem;font-weight:700;
+  cursor:pointer;transition:all .25s var(--ease);
+}
+.hs-btn:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+.hs-btn.hs-team:hover{color:var(--white)}
+.hs-btn.hs-none{border-color:var(--gray);color:var(--gray)}
+.hs-btn.hs-none:hover{background:var(--gray);color:var(--white)}
+
+/* Correct answer reveal box */
+.correct-reveal{
+  text-align:center;padding:14px;margin-top:12px;
+  border-radius:var(--rs);border:2px solid var(--green);
+  background:rgba(46,204,113,.08);animation:bounceIn .4s;
+}
+.correct-reveal .cr-label{font-size:.78rem;color:var(--gray);font-weight:600;margin-bottom:4px}
+.correct-reveal .cr-answer{font-size:1.15rem;font-weight:800;color:var(--green)}
+
+/* Timer expired state */
+.modal-timer .mt-num.expired{color:var(--highlight);animation:none;font-size:1.2rem}
 
 /* Rest lifeline modal */
 .rest-overlay{
@@ -581,8 +632,7 @@ const $ = id => document.getElementById(id);
 const Q_PER_CAT = 6;
 const POINT_TIERS = [200, 200, 400, 400, 600, 600];
 const BASE_TIME = 30;
-const CALL_EXTRA = 30;
-const ANSWER_SHOW_DELAY = 2000; // 2 seconds to show green/red
+const SHOW_CHOICES_PER_TEAM = 3;
 
 const CAT_ICONS = ['🧠','📚','🌍','⚡','🔬','🎯','🏛️','🎭','⚽','🌙','📖','💡','🎓','🗺️','🔭','🏆','🎨','🔮'];
 const GENERIC_NAMES = ['ثقافة عامة','تاريخ وحضارات','علوم ومعرفة','جغرافيا','أدب ولغة','رياضة','فنون','طبيعة','تقنية','إسلاميات','صحة','فلك','اختراعات','مجتمع','اقتصاد','سياسة'];
@@ -603,16 +653,18 @@ const G = {
   boardUsed: new Set(),
   totalCells: 0,
   answeredCount: 0,
-  lifelines: [],       // [{call, double, hole, rest}]
-  activeHole: false,
-  activeDouble: false,
+  lifelines: [],       // [{call,double,hole,rest,showChoices}]
   activeCall: false,
-  activeRest: false,   // rest lifeline active
-  restTarget: -1,      // which team is rested (sits out)
-  doubleUsed: false,
+  activeDouble: false,
+  activeHole: false,
+  holeUser: -1,        // which team activated the hole
+  activeRest: false,
+  restTarget: -1,
   timerID: null,
   timerVal: 0,
-  locked: false,
+  timerExpired: false,
+  answerRevealed: false,
+  choicesShown: false,
   currentQ: null,
   currentCell: null,
   currentPts: 0,
@@ -630,13 +682,15 @@ function resetG() {
   G.totalCells = 0;
   G.answeredCount = 0;
   G.lifelines = [];
-  G.activeHole = false;
-  G.activeDouble = false;
   G.activeCall = false;
+  G.activeDouble = false;
+  G.activeHole = false;
+  G.holeUser = -1;
   G.activeRest = false;
   G.restTarget = -1;
-  G.doubleUsed = false;
-  G.locked = false;
+  G.timerExpired = false;
+  G.answerRevealed = false;
+  G.choicesShown = false;
   G.currentQ = null;
   G.currentCell = null;
   G.currentPts = 0;
@@ -871,7 +925,7 @@ const App = {
     G.numCats = numCats;
     for (let i = 0; i < n; i++) {
       G.teams.push({ name: names[i], score: 0, color: TEAM_COLORS[i % TEAM_COLORS.length] });
-      G.lifelines.push({ call: true, double: true, hole: true, rest: true });
+      G.lifelines.push({ call: true, double: true, hole: true, rest: true, showChoices: SHOW_CHOICES_PER_TEAM });
       G.teamPicks.push([]);
     }
 
@@ -1033,6 +1087,10 @@ const App = {
         <button class="ll-btn" title="جاوب جوابين" onclick="App.useLL(${t},'double')" ${!ll.double?'disabled':''}><i class="fas fa-clone"></i></button>
         <button class="ll-btn" title="الحفرة" onclick="App.useLL(${t},'hole')" ${!ll.hole?'disabled':''}><i class="fas fa-bomb"></i></button>
         <button class="ll-btn" title="استريح" onclick="App.useLL(${t},'rest')" ${!ll.rest?'disabled':''} style="color:#9b59b6"><i class="fas fa-couch"></i></button>
+        <button class="ll-btn" title="إظهار الخيارات (${toAr(ll.showChoices)})" ${ll.showChoices<=0?'disabled':''}>
+          <i class="fas fa-eye"></i>
+          <span style="position:absolute;top:-4px;right:-4px;background:var(--accent);color:#fff;font-size:.6rem;width:16px;height:16px;border-radius:50%;display:flex;align-items:center;justify-content:center">${toAr(ll.showChoices)}</span>
+        </button>
       </div>`;
     }
     $('llRow').innerHTML = html;
@@ -1046,16 +1104,15 @@ const App = {
 
     if (type === 'call') {
       G.activeCall = true;
-      toast('ok', 'اتصال بصديق! ٣٠ ثانية إضافية');
+      toast('ok', 'اتصال بصديق! الفريق يتشاور مع صديقه');
     } else if (type === 'double') {
       G.activeDouble = true;
-      G.doubleUsed = false;
-      toast('info', 'جاوب جوابين! لديك فرصتان');
+      toast('info', 'جاوب جوابين! الفريق لديه تخمينان شفهيان');
     } else if (type === 'hole') {
       G.activeHole = true;
-      toast('info', 'الحفرة مفعّلة! النقاط تُخصم من الخصم');
+      G.holeUser = team;
+      toast('info', 'الحفرة مفعّلة! النقاط تُخصم من الخصم عند الإجابة الصحيحة');
     } else if (type === 'rest') {
-      // Show rest target selection
       this._showRestPicker(team);
       this._renderLifelines();
       return;
@@ -1093,7 +1150,7 @@ const App = {
     this._renderLifelines();
   },
 
-  /* ---- Question Modal ---- */
+  /* ---- Question Modal (Host-Controlled) ---- */
   openQuestion(col, row) {
     const key = `${col}-${row}`;
     if (G.boardUsed.has(key)) return;
@@ -1105,14 +1162,17 @@ const App = {
     G.currentQ = q;
     G.currentCell = key;
     G.currentPts = pts;
-    G.locked = false;
+    G.timerExpired = false;
+    G.answerRevealed = false;
+    G.choicesShown = false;
 
-    const totalTime = BASE_TIME + (G.activeCall ? CALL_EXTRA : 0);
+    const activeTeam = G.teams[G.turn];
+    const ll = G.lifelines[G.turn];
 
     let llInfo = '';
-    if (G.activeHole) llInfo += '<div class="modal-ll-info ll-info-hole"><i class="fas fa-bomb"></i> الحفرة — النقاط تُخصم من الخصم</div>';
-    if (G.activeDouble) llInfo += '<div class="modal-ll-info ll-info-double"><i class="fas fa-clone"></i> جاوب جوابين — فرصتان</div>';
-    if (G.activeCall) llInfo += '<div class="modal-ll-info ll-info-call"><i class="fas fa-phone"></i> اتصال بصديق — وقت إضافي</div>';
+    if (G.activeCall) llInfo += '<div class="modal-ll-info" style="background:rgba(68,161,148,.1);color:var(--accent)"><i class="fas fa-phone"></i> اتصال بصديق — الفريق يتشاور مع صديقه</div>';
+    if (G.activeDouble) llInfo += '<div class="modal-ll-info" style="background:rgba(83,125,150,.1);color:var(--secondary)"><i class="fas fa-clone"></i> جاوب جوابين — تخمينان شفهيان قبل الكشف</div>';
+    if (G.activeHole) llInfo += '<div class="modal-ll-info" style="background:rgba(236,143,141,.1);color:var(--highlight)"><i class="fas fa-bomb"></i> الحفرة — النقاط تُخصم من الخصم عند الإجابة الصحيحة</div>';
     if (G.activeRest) llInfo += `<div class="modal-ll-info ll-info-rest"><i class="fas fa-couch"></i> استريح — لاعب ${G.teams[G.restTarget].name} المميز يستريح</div>`;
 
     $('qModalBox').innerHTML = `
@@ -1124,20 +1184,38 @@ const App = {
       ${llInfo}
       <div class="modal-q">${q.q}</div>
       <div class="modal-timer">
-        <div class="mt-num" id="mtNum">${toAr(totalTime)}</div>
+        <div class="mt-num" id="mtNum">${toAr(BASE_TIME)}</div>
         <div class="mt-bar"><div class="mt-fill" id="mtFill" style="width:100%"></div></div>
       </div>
-      <div class="modal-opts" id="mOpts">
+      <!-- Choices: HIDDEN by default -->
+      <div class="modal-opts hidden-choices" id="mOpts">
         ${q.opts.map((o, i) => `
-          <button class="mo-btn" data-i="${i}" onclick="App.answer(${i})">
+          <div class="mo-btn" style="cursor:default">
             <span class="mo-lbl">${LABELS[i]}</span> ${o}
-          </button>`).join('')}
+          </div>`).join('')}
       </div>
+      <!-- Correct answer reveal area -->
+      <div id="correctRevealArea"></div>
+      <!-- Host action buttons -->
+      <div class="host-actions" id="hostActions">
+        <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center">
+          <button class="host-btn show-choices" id="showChoicesBtn" onclick="App.useShowChoices()"
+            ${ll.showChoices <= 0 ? 'disabled' : ''}>
+            <i class="fas fa-eye"></i> إظهار الخيارات
+            <span class="sc-count">${toAr(ll.showChoices)}</span>
+          </button>
+          <button class="host-btn reveal-ans" id="revealAnsBtn" onclick="App.showCorrectAnswer()">
+            <i class="fas fa-lightbulb"></i> إظهار الإجابة
+          </button>
+        </div>
+      </div>
+      <!-- Host scoring panel (hidden until answer revealed) -->
+      <div id="hostScoringArea"></div>
       <div class="modal-feedback" id="mFeedback"></div>`;
 
     openModal();
 
-    startTimer(totalTime,
+    startTimer(BASE_TIME,
       (v, total) => {
         const numEl = $('mtNum');
         const fillEl = $('mtFill');
@@ -1150,83 +1228,139 @@ const App = {
     );
   },
 
-  answer(idx) {
-    if (G.locked) return;
-    const q = G.currentQ;
-    const correct = idx === q.ans;
-    const btns = document.querySelectorAll('#mOpts .mo-btn');
-    const clicked = btns[idx];
+  /* Show Choices lifeline — used inside the modal */
+  useShowChoices() {
+    const ll = G.lifelines[G.turn];
+    if (ll.showChoices <= 0) return;
+    ll.showChoices--;
+    G.choicesShown = true;
 
-    if (correct) {
-      G.locked = true;
-      stopTimer();
-      clicked.classList.add('correct');
-      btns.forEach(b => b.disabled = true);
+    // Unhide the choices
+    const optsEl = $('mOpts');
+    if (optsEl) optsEl.classList.remove('hidden-choices');
 
-      if (G.activeHole) {
-        const opp = (G.turn + 1) % G.numTeams;
-        G.teams[opp].score = Math.max(0, G.teams[opp].score - G.currentPts);
-        $('mFeedback').className = 'modal-feedback ok';
-        $('mFeedback').innerHTML = `<i class="fas fa-bomb"></i> صحيح! خُصمت ${toAr(G.currentPts)} نقطة من ${G.teams[opp].name}`;
-      } else {
-        G.teams[G.turn].score += G.currentPts;
-        $('mFeedback').className = 'modal-feedback ok';
-        $('mFeedback').innerHTML = `<i class="fas fa-check-circle"></i> صحيح! +${toAr(G.currentPts)} نقطة`;
-      }
-
-      this._updateTopBar();
-      this._clearLL();
-      // Wait ANSWER_SHOW_DELAY before closing
-      setTimeout(() => this._afterAnswer(), ANSWER_SHOW_DELAY);
-
-    } else {
-      clicked.classList.add('wrong');
-      clicked.disabled = true;
-
-      // Double-dip: first wrong gets a second chance
-      if (G.activeDouble && !G.doubleUsed) {
-        G.doubleUsed = true;
-        $('mFeedback').className = 'modal-feedback fail';
-        $('mFeedback').textContent = 'خطأ! لديك فرصة ثانية...';
-        return; // Don't lock — allow another pick
-      }
-
-      // Fully wrong
-      G.locked = true;
-      stopTimer();
-      btns.forEach(b => b.disabled = true);
-      // Reveal correct in green
-      if (btns[q.ans]) btns[q.ans].classList.add('reveal');
-      $('mFeedback').className = 'modal-feedback fail';
-      $('mFeedback').innerHTML = '<i class="fas fa-times-circle"></i> إجابة خاطئة!';
-      this._clearLL();
-      setTimeout(() => this._afterAnswer(), ANSWER_SHOW_DELAY);
+    // Update the button counter
+    const btn = $('showChoicesBtn');
+    if (btn) {
+      const cnt = btn.querySelector('.sc-count');
+      if (cnt) cnt.textContent = toAr(ll.showChoices);
+      btn.disabled = true; // Already used for this question
     }
+
+    // Update the board lifeline display too
+    this._renderLifelines();
+    toast('info', `تم إظهار الخيارات — متبقي ${toAr(ll.showChoices)} لـ${G.teams[G.turn].name}`);
   },
 
-  _timeout() {
-    if (G.locked) return;
-    G.locked = true;
+  /* Host clicks "إظهار الإجابة" */
+  showCorrectAnswer() {
+    if (G.answerRevealed) return;
+    G.answerRevealed = true;
+    stopTimer();
+
     const q = G.currentQ;
-    const btns = document.querySelectorAll('#mOpts .mo-btn');
-    btns.forEach(b => b.disabled = true);
-    if (btns[q.ans]) btns[q.ans].classList.add('reveal');
-    $('mFeedback').className = 'modal-feedback fail';
-    $('mFeedback').innerHTML = '<i class="fas fa-clock"></i> انتهى الوقت!';
-    this._clearLL();
-    setTimeout(() => this._afterAnswer(), ANSWER_SHOW_DELAY);
+    const correctText = q.opts[q.ans];
+
+    // Highlight correct in choices if they're visible
+    if (G.choicesShown) {
+      const btns = document.querySelectorAll('#mOpts .mo-btn');
+      if (btns[q.ans]) btns[q.ans].classList.add('correct');
+    }
+
+    // Show correct answer reveal box
+    $('correctRevealArea').innerHTML = `
+      <div class="correct-reveal">
+        <div class="cr-label">الإجابة الصحيحة</div>
+        <div class="cr-answer"><i class="fas fa-check-circle"></i> ${correctText}</div>
+      </div>`;
+
+    // Disable the reveal button
+    const revBtn = $('revealAnsBtn');
+    if (revBtn) revBtn.disabled = true;
+
+    // Show host scoring panel
+    this._showScoringPanel();
   },
 
-  _clearLL() {
-    G.activeHole = false;
-    G.activeDouble = false;
+  /* Host Scoring Panel */
+  _showScoringPanel() {
+    const holeActive = G.activeHole;
+    const holeTeam = G.holeUser;
+
+    let btnsHTML = '';
+    for (let t = 0; t < G.numTeams; t++) {
+      const tm = G.teams[t];
+      // If hole is active and the awarding team IS the hole user,
+      // the button deducts from opponents instead
+      if (holeActive && t === holeTeam) {
+        btnsHTML += `<button class="hs-btn hs-team" style="border-color:${tm.color};color:${tm.color}"
+          onmouseover="this.style.background='${tm.color}'" onmouseout="this.style.background='var(--white)';this.style.color='${tm.color}'"
+          onclick="App.awardPoints(${t})">
+          <i class="fas fa-bomb"></i> صحيحة لـ ${tm.name} (الحفرة — خصم من الخصم)
+        </button>`;
+      } else {
+        btnsHTML += `<button class="hs-btn hs-team" style="border-color:${tm.color};color:${tm.color}"
+          onmouseover="this.style.background='${tm.color}'" onmouseout="this.style.background='var(--white)';this.style.color='${tm.color}'"
+          onclick="App.awardPoints(${t})">
+          <i class="fas fa-check"></i> إجابة صحيحة لـ ${tm.name}
+        </button>`;
+      }
+    }
+    btnsHTML += `<button class="hs-btn hs-none" onclick="App.awardPoints(-1)">
+      <i class="fas fa-minus-circle"></i> لا أحد
+    </button>`;
+
+    $('hostScoringArea').innerHTML = `
+      <div class="host-scoring">
+        <div class="host-scoring-title"><i class="fas fa-gavel"></i> لوحة تحكم المقدم — من أجاب بشكل صحيح؟</div>
+        <div class="host-scoring-btns">${btnsHTML}</div>
+      </div>`;
+  },
+
+  /* Host awards points to a team (or -1 for no one) */
+  awardPoints(teamIdx) {
+    if (teamIdx >= 0) {
+      // If the Hole is active and the winning team is the hole user,
+      // deduct points from ALL other teams instead of adding
+      if (G.activeHole && teamIdx === G.holeUser) {
+        for (let t = 0; t < G.numTeams; t++) {
+          if (t === teamIdx) continue;
+          G.teams[t].score = Math.max(0, G.teams[t].score - G.currentPts);
+        }
+        toast('ok', `الحفرة! خُصمت ${toAr(G.currentPts)} نقطة من الخصوم`);
+      } else {
+        G.teams[teamIdx].score += G.currentPts;
+        toast('ok', `+${toAr(G.currentPts)} نقطة لـ${G.teams[teamIdx].name}`);
+      }
+    } else {
+      toast('info', 'لا أحد حصل على النقاط');
+    }
+
+    this._updateTopBar();
+    this._clearAndClose();
+  },
+
+  /* Timer expires — just display "انتهى الوقت", host stays in control */
+  _timeout() {
+    G.timerExpired = true;
+    const numEl = $('mtNum');
+    if (numEl) {
+      numEl.textContent = 'انتهى الوقت';
+      numEl.classList.remove('warn');
+      numEl.classList.add('expired');
+    }
+    const fillEl = $('mtFill');
+    if (fillEl) { fillEl.style.width = '0%'; fillEl.classList.add('warn'); }
+    // Do NOT close modal or deduct anything — host stays in control
+  },
+
+  _clearAndClose() {
     G.activeCall = false;
+    G.activeDouble = false;
+    G.activeHole = false;
+    G.holeUser = -1;
     G.activeRest = false;
     G.restTarget = -1;
-    G.doubleUsed = false;
-  },
-
-  _afterAnswer() {
     closeModal();
     G.boardUsed.add(G.currentCell);
     G.answeredCount++;
@@ -1235,14 +1369,27 @@ const App = {
     this._renderBoard();
     this._renderLifelines();
 
-    // Check game over
     if (G.answeredCount >= G.totalCells) {
       setTimeout(() => this._endGame(), 400);
     }
   },
 
   forceClose() {
-    if (!G.locked) return;
+    // Only allow force close if answer was already revealed and scored
+    // Or allow host to dismiss without scoring (skip question)
+    if (!G.answerRevealed) {
+      // Host is closing without answering — skip this question
+      stopTimer();
+      G.activeCall = false;
+      G.activeDouble = false;
+      G.activeHole = false;
+      G.holeUser = -1;
+      G.activeRest = false;
+      G.restTarget = -1;
+      closeModal();
+      // Don't mark as used, don't change turn — let them pick again
+      return;
+    }
     closeModal();
   },
 
@@ -1303,7 +1450,7 @@ const App = {
     G.numCats = nc;
     for (let i = 0; i < n; i++) {
       G.teams.push({ name: names[i], score: 0, color: TEAM_COLORS[i % TEAM_COLORS.length] });
-      G.lifelines.push({ call: true, double: true, hole: true, rest: true });
+      G.lifelines.push({ call: true, double: true, hole: true, rest: true, showChoices: SHOW_CHOICES_PER_TEAM });
       G.teamPicks.push([]);
     }
     G.pickTurn = 0;
@@ -1322,14 +1469,14 @@ const App = {
 };
 
 /* ============================================
-   KEYBOARD
+   KEYBOARD — host shortcuts
    ============================================ */
 document.addEventListener('keydown', e => {
-  if (G.locked) return;
-  const map = {'1':0,'2':1,'3':2,'4':3};
-  if (map[e.key] !== undefined && $('qModal').classList.contains('show')) {
-    const btn = document.querySelector(`#mOpts .mo-btn[data-i="${map[e.key]}"]`);
-    if (btn && !btn.disabled) btn.click();
+  if (!$('qModal').classList.contains('show')) return;
+  // Spacebar or Enter → reveal answer
+  if ((e.key === ' ' || e.key === 'Enter') && !G.answerRevealed) {
+    e.preventDefault();
+    App.showCorrectAnswer();
   }
 });
 
